@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string description;
 					std::string expression;
-					std::string queryId;
 					std::string createTime;
+					std::string queryId;
 					std::string updateTime;
 					std::string name;
 				};

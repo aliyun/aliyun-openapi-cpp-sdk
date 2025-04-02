@@ -64,6 +64,9 @@ void ListResourceTypesResult::parse(const std::string &payload)
 		auto allFilterKeys = value["FilterKeys"]["FilterKey"];
 		for (auto value : allFilterKeys)
 			resourceTypesObject.filterKeys.push_back(value.asString());
+		auto allRelatedResourceTypes = value["RelatedResourceTypes"]["RelatedResourceType"];
+		for (auto value : allRelatedResourceTypes)
+			resourceTypesObject.relatedResourceTypes.push_back(value.asString());
 		resourceTypes_.push_back(resourceTypesObject);
 	}
 	if(!value["DynamicCode"].isNull())

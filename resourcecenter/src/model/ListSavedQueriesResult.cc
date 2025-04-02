@@ -43,14 +43,14 @@ void ListSavedQueriesResult::parse(const std::string &payload)
 	for (auto valueSavedQueriesSavedQuery : allSavedQueriesNode)
 	{
 		SavedQuery savedQueriesObject;
-		if(!valueSavedQueriesSavedQuery["QueryId"].isNull())
-			savedQueriesObject.queryId = valueSavedQueriesSavedQuery["QueryId"].asString();
-		if(!valueSavedQueriesSavedQuery["Name"].isNull())
-			savedQueriesObject.name = valueSavedQueriesSavedQuery["Name"].asString();
-		if(!valueSavedQueriesSavedQuery["Description"].isNull())
-			savedQueriesObject.description = valueSavedQueriesSavedQuery["Description"].asString();
 		if(!valueSavedQueriesSavedQuery["CreateTime"].isNull())
 			savedQueriesObject.createTime = valueSavedQueriesSavedQuery["CreateTime"].asString();
+		if(!valueSavedQueriesSavedQuery["Description"].isNull())
+			savedQueriesObject.description = valueSavedQueriesSavedQuery["Description"].asString();
+		if(!valueSavedQueriesSavedQuery["Name"].isNull())
+			savedQueriesObject.name = valueSavedQueriesSavedQuery["Name"].asString();
+		if(!valueSavedQueriesSavedQuery["QueryId"].isNull())
+			savedQueriesObject.queryId = valueSavedQueriesSavedQuery["QueryId"].asString();
 		if(!valueSavedQueriesSavedQuery["UpdateTime"].isNull())
 			savedQueriesObject.updateTime = valueSavedQueriesSavedQuery["UpdateTime"].asString();
 		savedQueries_.push_back(savedQueriesObject);

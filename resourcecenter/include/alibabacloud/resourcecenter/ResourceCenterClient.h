@@ -66,10 +66,14 @@
 #include "model/ListFiltersResult.h"
 #include "model/ListMultiAccountResourceGroupsRequest.h"
 #include "model/ListMultiAccountResourceGroupsResult.h"
+#include "model/ListMultiAccountResourceRelationshipsRequest.h"
+#include "model/ListMultiAccountResourceRelationshipsResult.h"
 #include "model/ListMultiAccountTagKeysRequest.h"
 #include "model/ListMultiAccountTagKeysResult.h"
 #include "model/ListMultiAccountTagValuesRequest.h"
 #include "model/ListMultiAccountTagValuesResult.h"
+#include "model/ListResourceRelationshipsRequest.h"
+#include "model/ListResourceRelationshipsResult.h"
 #include "model/ListResourceTypesRequest.h"
 #include "model/ListResourceTypesResult.h"
 #include "model/ListSavedQueriesRequest.h"
@@ -161,12 +165,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListMultiAccountResourceGroupsResult> ListMultiAccountResourceGroupsOutcome;
 			typedef std::future<ListMultiAccountResourceGroupsOutcome> ListMultiAccountResourceGroupsOutcomeCallable;
 			typedef std::function<void(const ResourceCenterClient*, const Model::ListMultiAccountResourceGroupsRequest&, const ListMultiAccountResourceGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMultiAccountResourceGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ListMultiAccountResourceRelationshipsResult> ListMultiAccountResourceRelationshipsOutcome;
+			typedef std::future<ListMultiAccountResourceRelationshipsOutcome> ListMultiAccountResourceRelationshipsOutcomeCallable;
+			typedef std::function<void(const ResourceCenterClient*, const Model::ListMultiAccountResourceRelationshipsRequest&, const ListMultiAccountResourceRelationshipsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMultiAccountResourceRelationshipsAsyncHandler;
 			typedef Outcome<Error, Model::ListMultiAccountTagKeysResult> ListMultiAccountTagKeysOutcome;
 			typedef std::future<ListMultiAccountTagKeysOutcome> ListMultiAccountTagKeysOutcomeCallable;
 			typedef std::function<void(const ResourceCenterClient*, const Model::ListMultiAccountTagKeysRequest&, const ListMultiAccountTagKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMultiAccountTagKeysAsyncHandler;
 			typedef Outcome<Error, Model::ListMultiAccountTagValuesResult> ListMultiAccountTagValuesOutcome;
 			typedef std::future<ListMultiAccountTagValuesOutcome> ListMultiAccountTagValuesOutcomeCallable;
 			typedef std::function<void(const ResourceCenterClient*, const Model::ListMultiAccountTagValuesRequest&, const ListMultiAccountTagValuesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMultiAccountTagValuesAsyncHandler;
+			typedef Outcome<Error, Model::ListResourceRelationshipsResult> ListResourceRelationshipsOutcome;
+			typedef std::future<ListResourceRelationshipsOutcome> ListResourceRelationshipsOutcomeCallable;
+			typedef std::function<void(const ResourceCenterClient*, const Model::ListResourceRelationshipsRequest&, const ListResourceRelationshipsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceRelationshipsAsyncHandler;
 			typedef Outcome<Error, Model::ListResourceTypesResult> ListResourceTypesOutcome;
 			typedef std::future<ListResourceTypesOutcome> ListResourceTypesOutcomeCallable;
 			typedef std::function<void(const ResourceCenterClient*, const Model::ListResourceTypesRequest&, const ListResourceTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceTypesAsyncHandler;
@@ -262,12 +272,18 @@ namespace AlibabaCloud
 			ListMultiAccountResourceGroupsOutcome listMultiAccountResourceGroups(const Model::ListMultiAccountResourceGroupsRequest &request)const;
 			void listMultiAccountResourceGroupsAsync(const Model::ListMultiAccountResourceGroupsRequest& request, const ListMultiAccountResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMultiAccountResourceGroupsOutcomeCallable listMultiAccountResourceGroupsCallable(const Model::ListMultiAccountResourceGroupsRequest& request) const;
+			ListMultiAccountResourceRelationshipsOutcome listMultiAccountResourceRelationships(const Model::ListMultiAccountResourceRelationshipsRequest &request)const;
+			void listMultiAccountResourceRelationshipsAsync(const Model::ListMultiAccountResourceRelationshipsRequest& request, const ListMultiAccountResourceRelationshipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMultiAccountResourceRelationshipsOutcomeCallable listMultiAccountResourceRelationshipsCallable(const Model::ListMultiAccountResourceRelationshipsRequest& request) const;
 			ListMultiAccountTagKeysOutcome listMultiAccountTagKeys(const Model::ListMultiAccountTagKeysRequest &request)const;
 			void listMultiAccountTagKeysAsync(const Model::ListMultiAccountTagKeysRequest& request, const ListMultiAccountTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMultiAccountTagKeysOutcomeCallable listMultiAccountTagKeysCallable(const Model::ListMultiAccountTagKeysRequest& request) const;
 			ListMultiAccountTagValuesOutcome listMultiAccountTagValues(const Model::ListMultiAccountTagValuesRequest &request)const;
 			void listMultiAccountTagValuesAsync(const Model::ListMultiAccountTagValuesRequest& request, const ListMultiAccountTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMultiAccountTagValuesOutcomeCallable listMultiAccountTagValuesCallable(const Model::ListMultiAccountTagValuesRequest& request) const;
+			ListResourceRelationshipsOutcome listResourceRelationships(const Model::ListResourceRelationshipsRequest &request)const;
+			void listResourceRelationshipsAsync(const Model::ListResourceRelationshipsRequest& request, const ListResourceRelationshipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListResourceRelationshipsOutcomeCallable listResourceRelationshipsCallable(const Model::ListResourceRelationshipsRequest& request) const;
 			ListResourceTypesOutcome listResourceTypes(const Model::ListResourceTypesRequest &request)const;
 			void listResourceTypesAsync(const Model::ListResourceTypesRequest& request, const ListResourceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListResourceTypesOutcomeCallable listResourceTypesCallable(const Model::ListResourceTypesRequest& request) const;

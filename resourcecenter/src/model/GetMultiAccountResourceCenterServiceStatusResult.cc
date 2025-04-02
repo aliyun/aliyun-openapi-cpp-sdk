@@ -39,10 +39,10 @@ void GetMultiAccountResourceCenterServiceStatusResult::parse(const std::string &
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ServiceStatus"].isNull())
-		serviceStatus_ = value["ServiceStatus"].asString();
 	if(!value["InitialStatus"].isNull())
 		initialStatus_ = value["InitialStatus"].asString();
+	if(!value["ServiceStatus"].isNull())
+		serviceStatus_ = value["ServiceStatus"].asString();
 
 }
 

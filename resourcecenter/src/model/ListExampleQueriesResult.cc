@@ -43,12 +43,12 @@ void ListExampleQueriesResult::parse(const std::string &payload)
 	for (auto valueExampleQueriesExampleQuery : allExampleQueriesNode)
 	{
 		ExampleQuery exampleQueriesObject;
-		if(!valueExampleQueriesExampleQuery["QueryId"].isNull())
-			exampleQueriesObject.queryId = valueExampleQueriesExampleQuery["QueryId"].asString();
-		if(!valueExampleQueriesExampleQuery["Name"].isNull())
-			exampleQueriesObject.name = valueExampleQueriesExampleQuery["Name"].asString();
 		if(!valueExampleQueriesExampleQuery["Description"].isNull())
 			exampleQueriesObject.description = valueExampleQueriesExampleQuery["Description"].asString();
+		if(!valueExampleQueriesExampleQuery["Name"].isNull())
+			exampleQueriesObject.name = valueExampleQueriesExampleQuery["Name"].asString();
+		if(!valueExampleQueriesExampleQuery["QueryId"].isNull())
+			exampleQueriesObject.queryId = valueExampleQueriesExampleQuery["QueryId"].asString();
 		exampleQueries_.push_back(exampleQueriesObject);
 	}
 	if(!value["MaxResults"].isNull())

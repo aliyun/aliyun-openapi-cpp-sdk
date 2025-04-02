@@ -32,52 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_RESOURCECENTER_EXPORT GetMultiAccountResourceConfigurationResult : public ServiceResult
 			{
 			public:
-				struct IpAddressAttribute
-				{
-					std::string version;
-					std::string networkType;
-					std::string ipAddress;
-				};
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
 
 
 				GetMultiAccountResourceConfigurationResult();
 				explicit GetMultiAccountResourceConfigurationResult(const std::string &payload);
 				~GetMultiAccountResourceConfigurationResult();
-				std::string getAccountId()const;
-				std::string getConfiguration()const;
-				std::string getResourceGroupId()const;
-				std::string getZoneId()const;
-				std::string getResourceName()const;
-				std::string getCreateTime()const;
-				std::string getResourceType()const;
-				std::vector<std::string> getIpAddresses()const;
-				std::string getResourceId()const;
-				std::string getRegionId()const;
-				std::vector<IpAddressAttribute> getIpAddressAttributes()const;
-				std::string getExpireTime()const;
-				std::vector<Tag> getTags()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string accountId_;
-				std::string configuration_;
-				std::string resourceGroupId_;
-				std::string zoneId_;
-				std::string resourceName_;
-				std::string createTime_;
-				std::string resourceType_;
-				std::vector<std::string> ipAddresses_;
-				std::string resourceId_;
-				std::string regionId_;
-				std::vector<IpAddressAttribute> ipAddressAttributes_;
-				std::string expireTime_;
-				std::vector<Tag> tags_;
 
 			};
 		}

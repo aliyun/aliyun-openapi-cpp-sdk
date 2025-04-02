@@ -56,34 +56,24 @@ void SearchResourcesResult::parse(const std::string &payload)
 	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!valueResourcesResource["ResourceType"].isNull())
-			resourcesObject.resourceType = valueResourcesResource["ResourceType"].asString();
-		if(!valueResourcesResource["CreateTime"].isNull())
-			resourcesObject.createTime = valueResourcesResource["CreateTime"].asString();
-		if(!valueResourcesResource["ResourceGroupId"].isNull())
-			resourcesObject.resourceGroupId = valueResourcesResource["ResourceGroupId"].asString();
-		if(!valueResourcesResource["ZoneId"].isNull())
-			resourcesObject.zoneId = valueResourcesResource["ZoneId"].asString();
 		if(!valueResourcesResource["AccountId"].isNull())
 			resourcesObject.accountId = valueResourcesResource["AccountId"].asString();
+		if(!valueResourcesResource["CreateTime"].isNull())
+			resourcesObject.createTime = valueResourcesResource["CreateTime"].asString();
+		if(!valueResourcesResource["ExpireTime"].isNull())
+			resourcesObject.expireTime = valueResourcesResource["ExpireTime"].asString();
+		if(!valueResourcesResource["RegionId"].isNull())
+			resourcesObject.regionId = valueResourcesResource["RegionId"].asString();
+		if(!valueResourcesResource["ResourceGroupId"].isNull())
+			resourcesObject.resourceGroupId = valueResourcesResource["ResourceGroupId"].asString();
 		if(!valueResourcesResource["ResourceId"].isNull())
 			resourcesObject.resourceId = valueResourcesResource["ResourceId"].asString();
 		if(!valueResourcesResource["ResourceName"].isNull())
 			resourcesObject.resourceName = valueResourcesResource["ResourceName"].asString();
-		if(!valueResourcesResource["RegionId"].isNull())
-			resourcesObject.regionId = valueResourcesResource["RegionId"].asString();
-		if(!valueResourcesResource["ExpireTime"].isNull())
-			resourcesObject.expireTime = valueResourcesResource["ExpireTime"].asString();
-		auto allTagsNode = valueResourcesResource["Tags"]["Tag"];
-		for (auto valueResourcesResourceTagsTag : allTagsNode)
-		{
-			Resource::Tag tagsObject;
-			if(!valueResourcesResourceTagsTag["Key"].isNull())
-				tagsObject.key = valueResourcesResourceTagsTag["Key"].asString();
-			if(!valueResourcesResourceTagsTag["Value"].isNull())
-				tagsObject.value = valueResourcesResourceTagsTag["Value"].asString();
-			resourcesObject.tags.push_back(tagsObject);
-		}
+		if(!valueResourcesResource["ResourceType"].isNull())
+			resourcesObject.resourceType = valueResourcesResource["ResourceType"].asString();
+		if(!valueResourcesResource["ZoneId"].isNull())
+			resourcesObject.zoneId = valueResourcesResource["ZoneId"].asString();
 		auto allIpAddressAttributesNode = valueResourcesResource["IpAddressAttributes"]["IpAddressAttribute"];
 		for (auto valueResourcesResourceIpAddressAttributesIpAddressAttribute : allIpAddressAttributesNode)
 		{
@@ -96,15 +86,25 @@ void SearchResourcesResult::parse(const std::string &payload)
 				ipAddressAttributesObject.version = valueResourcesResourceIpAddressAttributesIpAddressAttribute["Version"].asString();
 			resourcesObject.ipAddressAttributes.push_back(ipAddressAttributesObject);
 		}
+		auto allTagsNode = valueResourcesResource["Tags"]["Tag"];
+		for (auto valueResourcesResourceTagsTag : allTagsNode)
+		{
+			Resource::Tag tagsObject;
+			if(!valueResourcesResourceTagsTag["Key"].isNull())
+				tagsObject.key = valueResourcesResourceTagsTag["Key"].asString();
+			if(!valueResourcesResourceTagsTag["Value"].isNull())
+				tagsObject.value = valueResourcesResourceTagsTag["Value"].asString();
+			resourcesObject.tags.push_back(tagsObject);
+		}
 		auto allIpAddresses = value["IpAddresses"]["IpAddress"];
 		for (auto value : allIpAddresses)
 			resourcesObject.ipAddresses.push_back(value.asString());
 		resources_.push_back(resourcesObject);
 	}
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
 		maxResults_ = std::stoi(value["MaxResults"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 

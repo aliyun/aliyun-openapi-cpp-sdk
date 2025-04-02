@@ -40,16 +40,16 @@ namespace AlibabaCloud
 				};
 				struct Resource
 				{
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
 					struct IpAddressAttribute
 					{
 						std::string version;
 						std::string networkType;
 						std::string ipAddress;
+					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
 					};
 					std::vector<std::string> ipAddresses;
 					std::string accountId;

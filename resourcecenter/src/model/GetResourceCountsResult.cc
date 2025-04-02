@@ -54,10 +54,10 @@ void GetResourceCountsResult::parse(const std::string &payload)
 	for (auto valueResourceCountsResourceCount : allResourceCountsNode)
 	{
 		ResourceCount resourceCountsObject;
-		if(!valueResourceCountsResourceCount["GroupName"].isNull())
-			resourceCountsObject.groupName = valueResourceCountsResourceCount["GroupName"].asString();
 		if(!valueResourceCountsResourceCount["Count"].isNull())
 			resourceCountsObject.count = std::stol(valueResourceCountsResourceCount["Count"].asString());
+		if(!valueResourceCountsResourceCount["GroupName"].isNull())
+			resourceCountsObject.groupName = valueResourceCountsResourceCount["GroupName"].asString();
 		resourceCounts_.push_back(resourceCountsObject);
 	}
 	if(!value["GroupByKey"].isNull())

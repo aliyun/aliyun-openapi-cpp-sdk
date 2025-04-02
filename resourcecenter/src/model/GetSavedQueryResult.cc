@@ -40,16 +40,16 @@ void GetSavedQueryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto savedQueryNode = value["SavedQuery"];
-	if(!savedQueryNode["QueryId"].isNull())
-		savedQuery_.queryId = savedQueryNode["QueryId"].asString();
+	if(!savedQueryNode["CreateTime"].isNull())
+		savedQuery_.createTime = savedQueryNode["CreateTime"].asString();
+	if(!savedQueryNode["Description"].isNull())
+		savedQuery_.description = savedQueryNode["Description"].asString();
 	if(!savedQueryNode["Expression"].isNull())
 		savedQuery_.expression = savedQueryNode["Expression"].asString();
 	if(!savedQueryNode["Name"].isNull())
 		savedQuery_.name = savedQueryNode["Name"].asString();
-	if(!savedQueryNode["Description"].isNull())
-		savedQuery_.description = savedQueryNode["Description"].asString();
-	if(!savedQueryNode["CreateTime"].isNull())
-		savedQuery_.createTime = savedQueryNode["CreateTime"].asString();
+	if(!savedQueryNode["QueryId"].isNull())
+		savedQuery_.queryId = savedQueryNode["QueryId"].asString();
 	if(!savedQueryNode["UpdateTime"].isNull())
 		savedQuery_.updateTime = savedQueryNode["UpdateTime"].asString();
 

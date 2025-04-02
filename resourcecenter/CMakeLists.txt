@@ -65,10 +65,14 @@ set(resourcecenter_public_header_model
 	include/alibabacloud/resourcecenter/model/ListFiltersResult.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountResourceGroupsRequest.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountResourceGroupsResult.h
+	include/alibabacloud/resourcecenter/model/ListMultiAccountResourceRelationshipsRequest.h
+	include/alibabacloud/resourcecenter/model/ListMultiAccountResourceRelationshipsResult.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountTagKeysRequest.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountTagKeysResult.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountTagValuesRequest.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountTagValuesResult.h
+	include/alibabacloud/resourcecenter/model/ListResourceRelationshipsRequest.h
+	include/alibabacloud/resourcecenter/model/ListResourceRelationshipsResult.h
 	include/alibabacloud/resourcecenter/model/ListResourceTypesRequest.h
 	include/alibabacloud/resourcecenter/model/ListResourceTypesResult.h
 	include/alibabacloud/resourcecenter/model/ListSavedQueriesRequest.h
@@ -132,10 +136,14 @@ set(resourcecenter_src
 	src/model/ListFiltersResult.cc
 	src/model/ListMultiAccountResourceGroupsRequest.cc
 	src/model/ListMultiAccountResourceGroupsResult.cc
+	src/model/ListMultiAccountResourceRelationshipsRequest.cc
+	src/model/ListMultiAccountResourceRelationshipsResult.cc
 	src/model/ListMultiAccountTagKeysRequest.cc
 	src/model/ListMultiAccountTagKeysResult.cc
 	src/model/ListMultiAccountTagValuesRequest.cc
 	src/model/ListMultiAccountTagValuesResult.cc
+	src/model/ListResourceRelationshipsRequest.cc
+	src/model/ListResourceRelationshipsResult.cc
 	src/model/ListResourceTypesRequest.cc
 	src/model/ListResourceTypesResult.cc
 	src/model/ListSavedQueriesRequest.cc

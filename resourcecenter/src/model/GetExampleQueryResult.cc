@@ -40,14 +40,14 @@ void GetExampleQueryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto exampleQueryNode = value["ExampleQuery"];
-	if(!exampleQueryNode["QueryId"].isNull())
-		exampleQuery_.queryId = exampleQueryNode["QueryId"].asString();
+	if(!exampleQueryNode["Description"].isNull())
+		exampleQuery_.description = exampleQueryNode["Description"].asString();
 	if(!exampleQueryNode["Expression"].isNull())
 		exampleQuery_.expression = exampleQueryNode["Expression"].asString();
 	if(!exampleQueryNode["Name"].isNull())
 		exampleQuery_.name = exampleQueryNode["Name"].asString();
-	if(!exampleQueryNode["Description"].isNull())
-		exampleQuery_.description = exampleQueryNode["Description"].asString();
+	if(!exampleQueryNode["QueryId"].isNull())
+		exampleQuery_.queryId = exampleQueryNode["QueryId"].asString();
 
 }
 

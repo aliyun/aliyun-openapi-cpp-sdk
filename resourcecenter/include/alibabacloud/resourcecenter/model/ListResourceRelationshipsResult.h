@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCECENTER_MODEL_LISTSAVEDQUERIESRESULT_H_
-#define ALIBABACLOUD_RESOURCECENTER_MODEL_LISTSAVEDQUERIESRESULT_H_
+#ifndef ALIBABACLOUD_RESOURCECENTER_MODEL_LISTRESOURCERELATIONSHIPSRESULT_H_
+#define ALIBABACLOUD_RESOURCECENTER_MODEL_LISTRESOURCERELATIONSHIPSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RESOURCECENTER_EXPORT ListSavedQueriesResult : public ServiceResult
+			class ALIBABACLOUD_RESOURCECENTER_EXPORT ListResourceRelationshipsResult : public ServiceResult
 			{
 			public:
-				struct SavedQuery
+				struct ResourceRelationship
 				{
-					std::string description;
-					std::string createTime;
-					std::string queryId;
-					std::string updateTime;
-					std::string name;
+					std::string relatedResourceRegionId;
+					std::string relatedResourceId;
+					std::string resourceId;
+					std::string resourceType;
+					std::string regionId;
+					std::string relatedResourceType;
 				};
 
 
-				ListSavedQueriesResult();
-				explicit ListSavedQueriesResult(const std::string &payload);
-				~ListSavedQueriesResult();
+				ListResourceRelationshipsResult();
+				explicit ListResourceRelationshipsResult(const std::string &payload);
+				~ListResourceRelationshipsResult();
+				std::vector<ResourceRelationship> getResourceRelationships()const;
 				std::string getNextToken()const;
-				std::string getMaxResults()const;
-				std::vector<SavedQuery> getSavedQueries()const;
+				int getMaxResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<ResourceRelationship> resourceRelationships_;
 				std::string nextToken_;
-				std::string maxResults_;
-				std::vector<SavedQuery> savedQueries_;
+				int maxResults_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RESOURCECENTER_MODEL_LISTSAVEDQUERIESRESULT_H_
+#endif // !ALIBABACLOUD_RESOURCECENTER_MODEL_LISTRESOURCERELATIONSHIPSRESULT_H_

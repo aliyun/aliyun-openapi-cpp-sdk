@@ -30,19 +30,19 @@ class ALIBABACLOUD_RESOURCECENTER_EXPORT ListResourceTypesRequest : public RpcSe
 public:
 	ListResourceTypesRequest();
 	~ListResourceTypesRequest();
+	std::string getScene() const;
+	void setScene(const std::string &scene);
 	std::vector<std::string> getQuery() const;
 	void setQuery(const std::vector<std::string> &query);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
-	std::string getScene() const;
-	void setScene(const std::string &scene);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string scene_;
 	std::vector<std::string> query_;
 	std::string resourceType_;
-	std::string scene_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

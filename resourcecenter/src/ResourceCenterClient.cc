@@ -843,6 +843,42 @@ ResourceCenterClient::ListMultiAccountResourceGroupsOutcomeCallable ResourceCent
 	return task->get_future();
 }
 
+ResourceCenterClient::ListMultiAccountResourceRelationshipsOutcome ResourceCenterClient::listMultiAccountResourceRelationships(const ListMultiAccountResourceRelationshipsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMultiAccountResourceRelationshipsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMultiAccountResourceRelationshipsOutcome(ListMultiAccountResourceRelationshipsResult(outcome.result()));
+	else
+		return ListMultiAccountResourceRelationshipsOutcome(outcome.error());
+}
+
+void ResourceCenterClient::listMultiAccountResourceRelationshipsAsync(const ListMultiAccountResourceRelationshipsRequest& request, const ListMultiAccountResourceRelationshipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMultiAccountResourceRelationships(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::ListMultiAccountResourceRelationshipsOutcomeCallable ResourceCenterClient::listMultiAccountResourceRelationshipsCallable(const ListMultiAccountResourceRelationshipsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMultiAccountResourceRelationshipsOutcome()>>(
+			[this, request]()
+			{
+			return this->listMultiAccountResourceRelationships(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceCenterClient::ListMultiAccountTagKeysOutcome ResourceCenterClient::listMultiAccountTagKeys(const ListMultiAccountTagKeysRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +945,42 @@ ResourceCenterClient::ListMultiAccountTagValuesOutcomeCallable ResourceCenterCli
 			[this, request]()
 			{
 			return this->listMultiAccountTagValues(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceCenterClient::ListResourceRelationshipsOutcome ResourceCenterClient::listResourceRelationships(const ListResourceRelationshipsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListResourceRelationshipsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListResourceRelationshipsOutcome(ListResourceRelationshipsResult(outcome.result()));
+	else
+		return ListResourceRelationshipsOutcome(outcome.error());
+}
+
+void ResourceCenterClient::listResourceRelationshipsAsync(const ListResourceRelationshipsRequest& request, const ListResourceRelationshipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listResourceRelationships(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::ListResourceRelationshipsOutcomeCallable ResourceCenterClient::listResourceRelationshipsCallable(const ListResourceRelationshipsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListResourceRelationshipsOutcome()>>(
+			[this, request]()
+			{
+			return this->listResourceRelationships(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

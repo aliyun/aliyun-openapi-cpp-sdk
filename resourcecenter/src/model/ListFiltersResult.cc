@@ -43,10 +43,10 @@ void ListFiltersResult::parse(const std::string &payload)
 	for (auto valueFiltersFilter : allFiltersNode)
 	{
 		Filter filtersObject;
-		if(!valueFiltersFilter["FilterName"].isNull())
-			filtersObject.filterName = valueFiltersFilter["FilterName"].asString();
 		if(!valueFiltersFilter["FilterConfiguration"].isNull())
 			filtersObject.filterConfiguration = valueFiltersFilter["FilterConfiguration"].asString();
+		if(!valueFiltersFilter["FilterName"].isNull())
+			filtersObject.filterName = valueFiltersFilter["FilterName"].asString();
 		filters_.push_back(filtersObject);
 	}
 	if(!value["DefaultFilterName"].isNull())

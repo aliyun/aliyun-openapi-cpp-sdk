@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					CodeMapping codeMapping;
 					std::string resourceType;
 					Urls urls;
+					std::vector<std::string> relatedResourceTypes;
 				};
 
 
