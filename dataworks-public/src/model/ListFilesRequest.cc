@@ -52,6 +52,15 @@ void ListFilesRequest::setNeedContent(bool needContent) {
   setBodyParameter(std::string("NeedContent"), needContent ? "true" : "false");
 }
 
+int ListFilesRequest::getCommitStatus() const {
+  return commitStatus_;
+}
+
+void ListFilesRequest::setCommitStatus(int commitStatus) {
+  commitStatus_ = commitStatus;
+  setBodyParameter(std::string("CommitStatus"), std::to_string(commitStatus));
+}
+
 bool ListFilesRequest::getNeedAbsoluteFolderPath() const {
   return needAbsoluteFolderPath_;
 }

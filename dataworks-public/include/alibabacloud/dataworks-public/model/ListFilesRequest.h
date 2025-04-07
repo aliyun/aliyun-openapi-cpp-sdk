@@ -36,6 +36,8 @@ public:
 	void setFileTypes(const std::string &fileTypes);
 	bool getNeedContent() const;
 	void setNeedContent(bool needContent);
+	int getCommitStatus() const;
+	void setCommitStatus(int commitStatus);
 	bool getNeedAbsoluteFolderPath() const;
 	void setNeedAbsoluteFolderPath(bool needAbsoluteFolderPath);
 	std::string getProjectIdentifier() const;
@@ -65,6 +67,7 @@ private:
 	std::string owner_;
 	std::string fileTypes_;
 	bool needContent_;
+	int commitStatus_;
 	bool needAbsoluteFolderPath_;
 	std::string projectIdentifier_;
 	int pageNumber_;
