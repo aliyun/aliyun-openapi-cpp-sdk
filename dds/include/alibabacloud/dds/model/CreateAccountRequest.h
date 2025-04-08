@@ -46,6 +46,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getAccountPassword() const;
 	void setAccountPassword(const std::string &accountPassword);
+	std::string getCharacterType() const;
+	void setCharacterType(const std::string &characterType);
 
 private:
 	long resourceOwnerId_;
@@ -56,6 +58,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string accountPassword_;
+	std::string characterType_;
 };
 } // namespace Model
 } // namespace Dds

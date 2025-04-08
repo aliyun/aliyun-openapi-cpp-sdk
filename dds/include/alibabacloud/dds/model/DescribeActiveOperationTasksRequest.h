@@ -40,6 +40,8 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getInsName() const;
 	void setInsName(const std::string &insName);
 	std::string getRegionId() const;
@@ -71,6 +73,7 @@ private:
 	std::string changeLevel_;
 	int pageNumber_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string insName_;
 	std::string regionId_;
 	int pageSize_;

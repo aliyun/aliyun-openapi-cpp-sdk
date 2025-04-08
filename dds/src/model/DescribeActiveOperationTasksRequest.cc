@@ -70,6 +70,15 @@ void DescribeActiveOperationTasksRequest::setAccessKeyId(const std::string &acce
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeActiveOperationTasksRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeActiveOperationTasksRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeActiveOperationTasksRequest::getInsName() const {
   return insName_;
 }

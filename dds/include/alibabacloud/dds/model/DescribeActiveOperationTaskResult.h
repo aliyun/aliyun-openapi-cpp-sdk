@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEHISTORYTASKSRESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_DESCRIBEHISTORYTASKSRESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKRESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT DescribeHistoryTasksResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT DescribeActiveOperationTaskResult : public ServiceResult
 			{
 			public:
 				struct ItemsItem
 				{
-					std::string status;
-					float progress;
-					std::string taskId;
-					std::string endTime;
-					std::string instanceId;
+					int status;
+					std::string createdTime;
+					std::string deadline;
 					std::string startTime;
-					std::string product;
-					std::string actionInfo;
-					std::string reasonCode;
+					std::string insName;
 					std::string dbType;
-					std::string taskDetail;
-					std::string callerUid;
-					std::string instanceName;
-					std::string uid;
-					std::string callerSource;
-					std::string currentStepName;
+					std::string taskParams;
+					std::string modifiedTime;
 					std::string taskType;
-					std::string regionId;
-					int remainTime;
-					std::string instanceType;
+					std::string prepareInterval;
+					std::string region;
+					int id;
+					std::string resultInfo;
+					std::string switchTime;
 				};
 
 
-				DescribeHistoryTasksResult();
-				explicit DescribeHistoryTasksResult(const std::string &payload);
-				~DescribeHistoryTasksResult();
-				int getTotalCount()const;
+				DescribeActiveOperationTaskResult();
+				explicit DescribeActiveOperationTaskResult(const std::string &payload);
+				~DescribeActiveOperationTaskResult();
+				int getTotalRecordCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
 				std::vector<ItemsItem> getItems()const;
@@ -68,7 +62,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
+				int totalRecordCount_;
 				int pageSize_;
 				int pageNumber_;
 				std::vector<ItemsItem> items_;
@@ -77,4 +71,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEHISTORYTASKSRESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKRESULT_H_

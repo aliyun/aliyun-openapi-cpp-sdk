@@ -34,6 +34,15 @@ void DescribeDBInstancesOverviewRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool DescribeDBInstancesOverviewRequest::getShowTags() const {
+  return showTags_;
+}
+
+void DescribeDBInstancesOverviewRequest::setShowTags(bool showTags) {
+  showTags_ = showTags;
+  setParameter(std::string("ShowTags"), showTags ? "true" : "false");
+}
+
 std::string DescribeDBInstancesOverviewRequest::getNetworkType() const {
   return networkType_;
 }

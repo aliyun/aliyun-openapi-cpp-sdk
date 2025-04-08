@@ -46,6 +46,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getExcludeZoneId() const;
 	void setExcludeZoneId(const std::string &excludeZoneId);
+	std::string getInstanceType() const;
+	void setInstanceType(const std::string &instanceType);
 	std::string getExcludeSecondaryZoneId() const;
 	void setExcludeSecondaryZoneId(const std::string &excludeSecondaryZoneId);
 	std::string getInstanceChargeType() const;
@@ -80,6 +82,7 @@ private:
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string excludeZoneId_;
+	std::string instanceType_;
 	std::string excludeSecondaryZoneId_;
 	std::string instanceChargeType_;
 	std::string resourceOwnerAccount_;

@@ -89,6 +89,10 @@ void DescribePriceResult::parse(const std::string &payload)
 				moduleInstanceObject.contractActivity = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["ContractActivity"].asString() == "true";
 			if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["StandDiscountPrice"].isNull())
 				moduleInstanceObject.standDiscountPrice = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["StandDiscountPrice"].asString();
+			if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["priceUnit"].isNull())
+				moduleInstanceObject.priceUnit = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["priceUnit"].asString();
+			if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["priceType"].isNull())
+				moduleInstanceObject.priceType = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["priceType"].asString();
 			auto allPromDetailList2Node = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["PromDetailList"]["PromDetail"];
 			for (auto valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail : allPromDetailList2Node)
 			{

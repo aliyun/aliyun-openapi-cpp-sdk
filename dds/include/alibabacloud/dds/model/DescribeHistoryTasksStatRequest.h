@@ -36,6 +36,8 @@ public:
 	void setToStartTime(const std::string &toStartTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getTaskId() const;
@@ -59,6 +61,7 @@ private:
 	long resourceOwnerId_;
 	std::string toStartTime_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string taskId_;
 	int toExecTime_;

@@ -97,3 +97,12 @@ void CreateAccountRequest::setAccountPassword(const std::string &accountPassword
   setParameter(std::string("AccountPassword"), accountPassword);
 }
 
+std::string CreateAccountRequest::getCharacterType() const {
+  return characterType_;
+}
+
+void CreateAccountRequest::setCharacterType(const std::string &characterType) {
+  characterType_ = characterType;
+  setParameter(std::string("CharacterType"), characterType);
+}
+

@@ -29,6 +29,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/CheckCloudResourceAuthorizedResult.h
 	include/alibabacloud/dds/model/CheckRecoveryConditionRequest.h
 	include/alibabacloud/dds/model/CheckRecoveryConditionResult.h
+	include/alibabacloud/dds/model/CheckServiceLinkedRoleRequest.h
+	include/alibabacloud/dds/model/CheckServiceLinkedRoleResult.h
 	include/alibabacloud/dds/model/CreateAccountRequest.h
 	include/alibabacloud/dds/model/CreateAccountResult.h
 	include/alibabacloud/dds/model/CreateBackupRequest.h
@@ -51,8 +53,14 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DeleteNodeResult.h
 	include/alibabacloud/dds/model/DescribeAccountsRequest.h
 	include/alibabacloud/dds/model/DescribeAccountsResult.h
+	include/alibabacloud/dds/model/DescribeActiveOperationMaintenanceConfigRequest.h
+	include/alibabacloud/dds/model/DescribeActiveOperationMaintenanceConfigResult.h
+	include/alibabacloud/dds/model/DescribeActiveOperationTaskRequest.h
+	include/alibabacloud/dds/model/DescribeActiveOperationTaskResult.h
 	include/alibabacloud/dds/model/DescribeActiveOperationTaskCountRequest.h
 	include/alibabacloud/dds/model/DescribeActiveOperationTaskCountResult.h
+	include/alibabacloud/dds/model/DescribeActiveOperationTaskRegionRequest.h
+	include/alibabacloud/dds/model/DescribeActiveOperationTaskRegionResult.h
 	include/alibabacloud/dds/model/DescribeActiveOperationTaskTypeRequest.h
 	include/alibabacloud/dds/model/DescribeActiveOperationTaskTypeResult.h
 	include/alibabacloud/dds/model/DescribeActiveOperationTasksRequest.h
@@ -93,6 +101,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeDBInstancePerformanceResult.h
 	include/alibabacloud/dds/model/DescribeDBInstanceSSLRequest.h
 	include/alibabacloud/dds/model/DescribeDBInstanceSSLResult.h
+	include/alibabacloud/dds/model/DescribeDBInstanceSpecInfoRequest.h
+	include/alibabacloud/dds/model/DescribeDBInstanceSpecInfoResult.h
 	include/alibabacloud/dds/model/DescribeDBInstanceSwitchLogRequest.h
 	include/alibabacloud/dds/model/DescribeDBInstanceSwitchLogResult.h
 	include/alibabacloud/dds/model/DescribeDBInstanceTDEInfoRequest.h
@@ -173,6 +183,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifyAuditPolicyResult.h
 	include/alibabacloud/dds/model/ModifyBackupPolicyRequest.h
 	include/alibabacloud/dds/model/ModifyBackupPolicyResult.h
+	include/alibabacloud/dds/model/ModifyDBInstanceConfigRequest.h
+	include/alibabacloud/dds/model/ModifyDBInstanceConfigResult.h
 	include/alibabacloud/dds/model/ModifyDBInstanceConnectionStringRequest.h
 	include/alibabacloud/dds/model/ModifyDBInstanceConnectionStringResult.h
 	include/alibabacloud/dds/model/ModifyDBInstanceDescriptionRequest.h
@@ -256,6 +268,8 @@ set(dds_src
 	src/model/CheckCloudResourceAuthorizedResult.cc
 	src/model/CheckRecoveryConditionRequest.cc
 	src/model/CheckRecoveryConditionResult.cc
+	src/model/CheckServiceLinkedRoleRequest.cc
+	src/model/CheckServiceLinkedRoleResult.cc
 	src/model/CreateAccountRequest.cc
 	src/model/CreateAccountResult.cc
 	src/model/CreateBackupRequest.cc
@@ -278,8 +292,14 @@ set(dds_src
 	src/model/DeleteNodeResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
+	src/model/DescribeActiveOperationMaintenanceConfigRequest.cc
+	src/model/DescribeActiveOperationMaintenanceConfigResult.cc
+	src/model/DescribeActiveOperationTaskRequest.cc
+	src/model/DescribeActiveOperationTaskResult.cc
 	src/model/DescribeActiveOperationTaskCountRequest.cc
 	src/model/DescribeActiveOperationTaskCountResult.cc
+	src/model/DescribeActiveOperationTaskRegionRequest.cc
+	src/model/DescribeActiveOperationTaskRegionResult.cc
 	src/model/DescribeActiveOperationTaskTypeRequest.cc
 	src/model/DescribeActiveOperationTaskTypeResult.cc
 	src/model/DescribeActiveOperationTasksRequest.cc
@@ -320,6 +340,8 @@ set(dds_src
 	src/model/DescribeDBInstancePerformanceResult.cc
 	src/model/DescribeDBInstanceSSLRequest.cc
 	src/model/DescribeDBInstanceSSLResult.cc
+	src/model/DescribeDBInstanceSpecInfoRequest.cc
+	src/model/DescribeDBInstanceSpecInfoResult.cc
 	src/model/DescribeDBInstanceSwitchLogRequest.cc
 	src/model/DescribeDBInstanceSwitchLogResult.cc
 	src/model/DescribeDBInstanceTDEInfoRequest.cc
@@ -400,6 +422,8 @@ set(dds_src
 	src/model/ModifyAuditPolicyResult.cc
 	src/model/ModifyBackupPolicyRequest.cc
 	src/model/ModifyBackupPolicyResult.cc
+	src/model/ModifyDBInstanceConfigRequest.cc
+	src/model/ModifyDBInstanceConfigResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc
 	src/model/ModifyDBInstanceConnectionStringResult.cc
 	src/model/ModifyDBInstanceDescriptionRequest.cc

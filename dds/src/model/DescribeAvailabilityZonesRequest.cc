@@ -97,6 +97,15 @@ void DescribeAvailabilityZonesRequest::setExcludeZoneId(const std::string &exclu
   setParameter(std::string("ExcludeZoneId"), excludeZoneId);
 }
 
+std::string DescribeAvailabilityZonesRequest::getInstanceType() const {
+  return instanceType_;
+}
+
+void DescribeAvailabilityZonesRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setParameter(std::string("InstanceType"), instanceType);
+}
+
 std::string DescribeAvailabilityZonesRequest::getExcludeSecondaryZoneId() const {
   return excludeSecondaryZoneId_;
 }

@@ -64,6 +64,7 @@ namespace AlibabaCloud
 						std::string currentKernelVersion;
 						std::string nodeId;
 						std::string vpcCloudInstanceId;
+						std::string connectString;
 					};
 					struct ShardAttribute
 					{

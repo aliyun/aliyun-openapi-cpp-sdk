@@ -32,6 +32,8 @@ public:
 	~DescribeDBInstancesOverviewRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	bool getShowTags() const;
+	void setShowTags(bool showTags);
 	std::string getNetworkType() const;
 	void setNetworkType(const std::string &networkType);
 	std::string getEngineVersion() const;
@@ -67,6 +69,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	bool showTags_;
 	std::string networkType_;
 	std::string engineVersion_;
 	std::string instanceClass_;

@@ -61,6 +61,15 @@ void DescribeHistoryTasksRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeHistoryTasksRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeHistoryTasksRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeHistoryTasksRequest::getRegionId() const {
   return regionId_;
 }

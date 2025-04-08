@@ -158,11 +158,13 @@ namespace AlibabaCloud
 						bool contractActivity;
 						std::string cycleFee;
 						long moduleId;
+						std::string priceUnit;
 						bool pricingModule;
 						std::string moduleCode;
 						DepreciateInfo1 depreciateInfo1;
 						double totalProductFee;
 						std::vector<ModuleInstanceItem::ModuleAttr> moduleAttrs;
+						std::string priceType;
 					};
 					struct OptionalPromotion
 					{

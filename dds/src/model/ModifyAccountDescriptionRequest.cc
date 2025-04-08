@@ -97,3 +97,12 @@ void ModifyAccountDescriptionRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ModifyAccountDescriptionRequest::getCharacterType() const {
+  return characterType_;
+}
+
+void ModifyAccountDescriptionRequest::setCharacterType(const std::string &characterType) {
+  characterType_ = characterType;
+  setParameter(std::string("CharacterType"), characterType);
+}
+

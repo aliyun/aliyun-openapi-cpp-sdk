@@ -201,6 +201,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 				mongosListObject.status = valueDBInstancesDBInstanceMongosListMongosAttribute["Status"].asString();
 			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["CurrentKernelVersion"].isNull())
 				mongosListObject.currentKernelVersion = valueDBInstancesDBInstanceMongosListMongosAttribute["CurrentKernelVersion"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["ConnectString"].isNull())
+				mongosListObject.connectString = valueDBInstancesDBInstanceMongosListMongosAttribute["ConnectString"].asString();
 			dBInstancesObject.mongosList.push_back(mongosListObject);
 		}
 		auto allShardListNode = valueDBInstancesDBInstance["ShardList"]["ShardAttribute"];

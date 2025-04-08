@@ -43,6 +43,15 @@ void ModifyActiveOperationTasksRequest::setAccessKeyId(const std::string &access
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyActiveOperationTasksRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyActiveOperationTasksRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ModifyActiveOperationTasksRequest::getRegionId() const {
   return regionId_;
 }
