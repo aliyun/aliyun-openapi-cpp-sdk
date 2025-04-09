@@ -11,9 +11,7 @@ English | [简体中文](./README-CN.md)
 <a href="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk/branch/master/graph/badge.svg" alt="codecov"></a>
 </p>
 
-Alibaba Cloud SDK for C++ allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
-
-This document introduces how to obtain and call this SDK.
+The Alibaba Cloud V1.0 SDK will soon enter the Basic Security Maintenance phase and is no longer recommended for use. It is suggested to use the V2.0 SDK instead.
 
 If you have any problem while using Alibaba Cloud SDK for C++, please submit an [issue](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new).
 

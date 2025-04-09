@@ -11,9 +11,9 @@
 <a href="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk/branch/master/graph/badge.svg" alt="codecov"></a>
 </p>
 
-Alibaba Cloud SDK for C++ 让您不用复杂编程即可访问云服务器、负载均衡、云监控等阿里云服务。这里向您介绍如何获取 Alibaba Cloud SDK for C++ 并开始调用。
+阿里云 V1.0 SDK 即将进入基础安全维护阶段，不再建议使用，建议使用 V2.0 SDK。
 
-如果您在使用的过程中遇到任何问题，欢迎前往[阿里云SDK问答社区](https://yq.aliyun.com/tags/type_ask-tagid_23350)提问，提问前请阅读[提问引导](https://help.aliyun.com/document_detail/93957.html)。亦可在当前 GitHub [提交 Issues](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new)。
+如果您在使用的过程中遇到任何问题，可在当前 GitHub [提交 Issues](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new)。
 
 ## 使用诊断
 
