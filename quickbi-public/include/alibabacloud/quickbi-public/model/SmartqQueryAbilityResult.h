@@ -43,6 +43,8 @@ namespace AlibabaCloud
 					{
 						std::vector<std::string> row;
 					};
+					std::string conclusionText;
+					std::string logicSql;
 					std::vector<ValuesItem> values;
 					std::string chartType;
 					std::vector<MetaTypeItem> metaType;

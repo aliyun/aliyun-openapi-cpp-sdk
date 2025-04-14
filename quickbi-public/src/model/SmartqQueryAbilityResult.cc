@@ -42,6 +42,10 @@ void SmartqQueryAbilityResult::parse(const std::string &payload)
 	auto resultNode = value["Result"];
 	if(!resultNode["ChartType"].isNull())
 		result_.chartType = resultNode["ChartType"].asString();
+	if(!resultNode["LogicSql"].isNull())
+		result_.logicSql = resultNode["LogicSql"].asString();
+	if(!resultNode["ConclusionText"].isNull())
+		result_.conclusionText = resultNode["ConclusionText"].asString();
 	auto allMetaTypeNode = resultNode["MetaType"]["MetaTypeItem"];
 	for (auto resultNodeMetaTypeMetaTypeItem : allMetaTypeNode)
 	{
