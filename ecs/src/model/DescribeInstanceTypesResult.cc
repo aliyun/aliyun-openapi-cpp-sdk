@@ -127,6 +127,16 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 				networkCardsObject.networkCardIndex = std::stoi(valueInstanceTypesInstanceTypeNetworkCardsNetworkCardInfo["NetworkCardIndex"].asString());
 			instanceTypesObject.networkCards.push_back(networkCardsObject);
 		}
+		auto allAttributesNode = valueInstanceTypesInstanceType["Attributes"]["Attribute"];
+		for (auto valueInstanceTypesInstanceTypeAttributesAttribute : allAttributesNode)
+		{
+			InstanceType::Attribute attributesObject;
+			if(!valueInstanceTypesInstanceTypeAttributesAttribute["Name"].isNull())
+				attributesObject.name = valueInstanceTypesInstanceTypeAttributesAttribute["Name"].asString();
+			if(!valueInstanceTypesInstanceTypeAttributesAttribute["Value"].isNull())
+				attributesObject.value = valueInstanceTypesInstanceTypeAttributesAttribute["Value"].asString();
+			instanceTypesObject.attributes.push_back(attributesObject);
+		}
 		auto enhancedNetworkNode = value["EnhancedNetwork"];
 		if(!enhancedNetworkNode["SriovSupport"].isNull())
 			instanceTypesObject.enhancedNetwork.sriovSupport = enhancedNetworkNode["SriovSupport"].asString() == "true";

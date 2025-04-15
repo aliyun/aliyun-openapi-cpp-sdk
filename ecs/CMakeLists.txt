@@ -91,8 +91,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateCommandResult.h
 	include/alibabacloud/ecs/model/CreateDedicatedHostClusterRequest.h
 	include/alibabacloud/ecs/model/CreateDedicatedHostClusterResult.h
-	include/alibabacloud/ecs/model/CreateDemandRequest.h
-	include/alibabacloud/ecs/model/CreateDemandResult.h
 	include/alibabacloud/ecs/model/CreateDeploymentSetRequest.h
 	include/alibabacloud/ecs/model/CreateDeploymentSetResult.h
 	include/alibabacloud/ecs/model/CreateDiagnosticMetricSetRequest.h
@@ -131,6 +129,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateNetworkInterfacePermissionResult.h
 	include/alibabacloud/ecs/model/CreatePhysicalConnectionRequest.h
 	include/alibabacloud/ecs/model/CreatePhysicalConnectionResult.h
+	include/alibabacloud/ecs/model/CreatePortRangeListRequest.h
+	include/alibabacloud/ecs/model/CreatePortRangeListResult.h
 	include/alibabacloud/ecs/model/CreatePrefixListRequest.h
 	include/alibabacloud/ecs/model/CreatePrefixListResult.h
 	include/alibabacloud/ecs/model/CreateRouteEntryRequest.h
@@ -169,8 +169,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteCommandResult.h
 	include/alibabacloud/ecs/model/DeleteDedicatedHostClusterRequest.h
 	include/alibabacloud/ecs/model/DeleteDedicatedHostClusterResult.h
-	include/alibabacloud/ecs/model/DeleteDemandRequest.h
-	include/alibabacloud/ecs/model/DeleteDemandResult.h
 	include/alibabacloud/ecs/model/DeleteDeploymentSetRequest.h
 	include/alibabacloud/ecs/model/DeleteDeploymentSetResult.h
 	include/alibabacloud/ecs/model/DeleteDiagnosticMetricSetsRequest.h
@@ -209,6 +207,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteNetworkInterfacePermissionResult.h
 	include/alibabacloud/ecs/model/DeletePhysicalConnectionRequest.h
 	include/alibabacloud/ecs/model/DeletePhysicalConnectionResult.h
+	include/alibabacloud/ecs/model/DeletePortRangeListRequest.h
+	include/alibabacloud/ecs/model/DeletePortRangeListResult.h
 	include/alibabacloud/ecs/model/DeletePrefixListRequest.h
 	include/alibabacloud/ecs/model/DeletePrefixListResult.h
 	include/alibabacloud/ecs/model/DeleteRouteEntryRequest.h
@@ -273,8 +273,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeDedicatedHostTypesResult.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostsRequest.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostsResult.h
-	include/alibabacloud/ecs/model/DescribeDemandsRequest.h
-	include/alibabacloud/ecs/model/DescribeDemandsResult.h
 	include/alibabacloud/ecs/model/DescribeDeploymentSetSupportedInstanceTypeFamilyRequest.h
 	include/alibabacloud/ecs/model/DescribeDeploymentSetSupportedInstanceTypeFamilyResult.h
 	include/alibabacloud/ecs/model/DescribeDeploymentSetsRequest.h
@@ -385,6 +383,12 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeNewProjectEipMonitorDataResult.h
 	include/alibabacloud/ecs/model/DescribePhysicalConnectionsRequest.h
 	include/alibabacloud/ecs/model/DescribePhysicalConnectionsResult.h
+	include/alibabacloud/ecs/model/DescribePortRangeListAssociationsRequest.h
+	include/alibabacloud/ecs/model/DescribePortRangeListAssociationsResult.h
+	include/alibabacloud/ecs/model/DescribePortRangeListEntriesRequest.h
+	include/alibabacloud/ecs/model/DescribePortRangeListEntriesResult.h
+	include/alibabacloud/ecs/model/DescribePortRangeListsRequest.h
+	include/alibabacloud/ecs/model/DescribePortRangeListsResult.h
 	include/alibabacloud/ecs/model/DescribePrefixListAssociationsRequest.h
 	include/alibabacloud/ecs/model/DescribePrefixListAssociationsResult.h
 	include/alibabacloud/ecs/model/DescribePrefixListAttributesRequest.h
@@ -537,8 +541,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyDedicatedHostClusterAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostsChargeTypeRequest.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostsChargeTypeResult.h
-	include/alibabacloud/ecs/model/ModifyDemandRequest.h
-	include/alibabacloud/ecs/model/ModifyDemandResult.h
 	include/alibabacloud/ecs/model/ModifyDeploymentSetAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyDeploymentSetAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyDiagnosticMetricSetRequest.h
@@ -605,6 +607,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyNetworkInterfaceAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyPhysicalConnectionAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyPhysicalConnectionAttributeResult.h
+	include/alibabacloud/ecs/model/ModifyPortRangeListRequest.h
+	include/alibabacloud/ecs/model/ModifyPortRangeListResult.h
 	include/alibabacloud/ecs/model/ModifyPrefixListRequest.h
 	include/alibabacloud/ecs/model/ModifyPrefixListResult.h
 	include/alibabacloud/ecs/model/ModifyPrepayInstanceSpecRequest.h
@@ -812,8 +816,6 @@ set(ecs_src
 	src/model/CreateCommandResult.cc
 	src/model/CreateDedicatedHostClusterRequest.cc
 	src/model/CreateDedicatedHostClusterResult.cc
-	src/model/CreateDemandRequest.cc
-	src/model/CreateDemandResult.cc
 	src/model/CreateDeploymentSetRequest.cc
 	src/model/CreateDeploymentSetResult.cc
 	src/model/CreateDiagnosticMetricSetRequest.cc
@@ -852,6 +854,8 @@ set(ecs_src
 	src/model/CreateNetworkInterfacePermissionResult.cc
 	src/model/CreatePhysicalConnectionRequest.cc
 	src/model/CreatePhysicalConnectionResult.cc
+	src/model/CreatePortRangeListRequest.cc
+	src/model/CreatePortRangeListResult.cc
 	src/model/CreatePrefixListRequest.cc
 	src/model/CreatePrefixListResult.cc
 	src/model/CreateRouteEntryRequest.cc
@@ -890,8 +894,6 @@ set(ecs_src
 	src/model/DeleteCommandResult.cc
 	src/model/DeleteDedicatedHostClusterRequest.cc
 	src/model/DeleteDedicatedHostClusterResult.cc
-	src/model/DeleteDemandRequest.cc
-	src/model/DeleteDemandResult.cc
 	src/model/DeleteDeploymentSetRequest.cc
 	src/model/DeleteDeploymentSetResult.cc
 	src/model/DeleteDiagnosticMetricSetsRequest.cc
@@ -930,6 +932,8 @@ set(ecs_src
 	src/model/DeleteNetworkInterfacePermissionResult.cc
 	src/model/DeletePhysicalConnectionRequest.cc
 	src/model/DeletePhysicalConnectionResult.cc
+	src/model/DeletePortRangeListRequest.cc
+	src/model/DeletePortRangeListResult.cc
 	src/model/DeletePrefixListRequest.cc
 	src/model/DeletePrefixListResult.cc
 	src/model/DeleteRouteEntryRequest.cc
@@ -994,8 +998,6 @@ set(ecs_src
 	src/model/DescribeDedicatedHostTypesResult.cc
 	src/model/DescribeDedicatedHostsRequest.cc
 	src/model/DescribeDedicatedHostsResult.cc
-	src/model/DescribeDemandsRequest.cc
-	src/model/DescribeDemandsResult.cc
 	src/model/DescribeDeploymentSetSupportedInstanceTypeFamilyRequest.cc
 	src/model/DescribeDeploymentSetSupportedInstanceTypeFamilyResult.cc
 	src/model/DescribeDeploymentSetsRequest.cc
@@ -1106,6 +1108,12 @@ set(ecs_src
 	src/model/DescribeNewProjectEipMonitorDataResult.cc
 	src/model/DescribePhysicalConnectionsRequest.cc
 	src/model/DescribePhysicalConnectionsResult.cc
+	src/model/DescribePortRangeListAssociationsRequest.cc
+	src/model/DescribePortRangeListAssociationsResult.cc
+	src/model/DescribePortRangeListEntriesRequest.cc
+	src/model/DescribePortRangeListEntriesResult.cc
+	src/model/DescribePortRangeListsRequest.cc
+	src/model/DescribePortRangeListsResult.cc
 	src/model/DescribePrefixListAssociationsRequest.cc
 	src/model/DescribePrefixListAssociationsResult.cc
 	src/model/DescribePrefixListAttributesRequest.cc
@@ -1258,8 +1266,6 @@ set(ecs_src
 	src/model/ModifyDedicatedHostClusterAttributeResult.cc
 	src/model/ModifyDedicatedHostsChargeTypeRequest.cc
 	src/model/ModifyDedicatedHostsChargeTypeResult.cc
-	src/model/ModifyDemandRequest.cc
-	src/model/ModifyDemandResult.cc
 	src/model/ModifyDeploymentSetAttributeRequest.cc
 	src/model/ModifyDeploymentSetAttributeResult.cc
 	src/model/ModifyDiagnosticMetricSetRequest.cc
@@ -1326,6 +1332,8 @@ set(ecs_src
 	src/model/ModifyNetworkInterfaceAttributeResult.cc
 	src/model/ModifyPhysicalConnectionAttributeRequest.cc
 	src/model/ModifyPhysicalConnectionAttributeResult.cc
+	src/model/ModifyPortRangeListRequest.cc
+	src/model/ModifyPortRangeListResult.cc
 	src/model/ModifyPrefixListRequest.cc
 	src/model/ModifyPrefixListResult.cc
 	src/model/ModifyPrepayInstanceSpecRequest.cc

@@ -34,6 +34,33 @@ void DescribeSavingsPlanPriceRequest::setInstanceTypeFamilyGroup(const std::stri
   setParameter(std::string("InstanceTypeFamilyGroup"), instanceTypeFamilyGroup);
 }
 
+std::string DescribeSavingsPlanPriceRequest::getPlanType() const {
+  return planType_;
+}
+
+void DescribeSavingsPlanPriceRequest::setPlanType(const std::string &planType) {
+  planType_ = planType;
+  setParameter(std::string("PlanType"), planType);
+}
+
+std::string DescribeSavingsPlanPriceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeSavingsPlanPriceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeSavingsPlanPriceRequest::getCommittedAmount() const {
+  return committedAmount_;
+}
+
+void DescribeSavingsPlanPriceRequest::setCommittedAmount(const std::string &committedAmount) {
+  committedAmount_ = committedAmount;
+  setParameter(std::string("CommittedAmount"), committedAmount);
+}
+
 int DescribeSavingsPlanPriceRequest::getPeriod() const {
   return period_;
 }
@@ -60,15 +87,6 @@ void DescribeSavingsPlanPriceRequest::setInstanceTypeFamily(const std::string &i
   setParameter(std::string("InstanceTypeFamily"), instanceTypeFamily);
 }
 
-std::string DescribeSavingsPlanPriceRequest::getPlanType() const {
-  return planType_;
-}
-
-void DescribeSavingsPlanPriceRequest::setPlanType(const std::string &planType) {
-  planType_ = planType;
-  setParameter(std::string("PlanType"), planType);
-}
-
 std::string DescribeSavingsPlanPriceRequest::getPeriodUnit() const {
   return periodUnit_;
 }
@@ -85,23 +103,5 @@ std::string DescribeSavingsPlanPriceRequest::getOfferingType() const {
 void DescribeSavingsPlanPriceRequest::setOfferingType(const std::string &offeringType) {
   offeringType_ = offeringType;
   setParameter(std::string("OfferingType"), offeringType);
-}
-
-std::string DescribeSavingsPlanPriceRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeSavingsPlanPriceRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string DescribeSavingsPlanPriceRequest::getCommittedAmount() const {
-  return committedAmount_;
-}
-
-void DescribeSavingsPlanPriceRequest::setCommittedAmount(const std::string &committedAmount) {
-  committedAmount_ = committedAmount;
-  setParameter(std::string("CommittedAmount"), committedAmount);
 }
 

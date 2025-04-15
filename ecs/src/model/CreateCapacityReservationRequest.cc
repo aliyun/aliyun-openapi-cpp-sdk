@@ -34,24 +34,6 @@ void CreateCapacityReservationRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CreateCapacityReservationRequest::getClientToken() const {
-  return clientToken_;
-}
-
-void CreateCapacityReservationRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
-}
-
-std::string CreateCapacityReservationRequest::getDescription() const {
-  return description_;
-}
-
-void CreateCapacityReservationRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
-}
-
 std::string CreateCapacityReservationRequest::getStartTime() const {
   return startTime_;
 }
@@ -59,15 +41,6 @@ std::string CreateCapacityReservationRequest::getStartTime() const {
 void CreateCapacityReservationRequest::setStartTime(const std::string &startTime) {
   startTime_ = startTime;
   setParameter(std::string("StartTime"), startTime);
-}
-
-std::string CreateCapacityReservationRequest::getPlatform() const {
-  return platform_;
-}
-
-void CreateCapacityReservationRequest::setPlatform(const std::string &platform) {
-  platform_ = platform;
-  setParameter(std::string("Platform"), platform);
 }
 
 std::string CreateCapacityReservationRequest::getResourceGroupId() const {
@@ -88,24 +61,6 @@ void CreateCapacityReservationRequest::setPrivatePoolOptionsMatchCriteria(const 
   setParameter(std::string("PrivatePoolOptions.MatchCriteria"), privatePoolOptionsMatchCriteria);
 }
 
-std::string CreateCapacityReservationRequest::getRegionId() const {
-  return regionId_;
-}
-
-void CreateCapacityReservationRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string CreateCapacityReservationRequest::getInstanceType() const {
-  return instanceType_;
-}
-
-void CreateCapacityReservationRequest::setInstanceType(const std::string &instanceType) {
-  instanceType_ = instanceType;
-  setParameter(std::string("InstanceType"), instanceType);
-}
-
 std::vector<CreateCapacityReservationRequest::Tag> CreateCapacityReservationRequest::getTag() const {
   return tag_;
 }
@@ -118,15 +73,6 @@ void CreateCapacityReservationRequest::setTag(const std::vector<CreateCapacityRe
     setParameter(tagObjStr + ".Key", tagObj.key);
     setParameter(tagObjStr + ".Value", tagObj.value);
   }
-}
-
-std::string CreateCapacityReservationRequest::getInstanceChargeType() const {
-  return instanceChargeType_;
-}
-
-void CreateCapacityReservationRequest::setInstanceChargeType(const std::string &instanceChargeType) {
-  instanceChargeType_ = instanceChargeType;
-  setParameter(std::string("InstanceChargeType"), instanceChargeType);
 }
 
 int CreateCapacityReservationRequest::getEfficientStatus() const {
@@ -154,6 +100,104 @@ std::string CreateCapacityReservationRequest::getEndTimeType() const {
 void CreateCapacityReservationRequest::setEndTimeType(const std::string &endTimeType) {
   endTimeType_ = endTimeType;
   setParameter(std::string("EndTimeType"), endTimeType);
+}
+
+long CreateCapacityReservationRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void CreateCapacityReservationRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string CreateCapacityReservationRequest::getPeriodUnit() const {
+  return periodUnit_;
+}
+
+void CreateCapacityReservationRequest::setPeriodUnit(const std::string &periodUnit) {
+  periodUnit_ = periodUnit;
+  setParameter(std::string("PeriodUnit"), periodUnit);
+}
+
+std::vector<std::string> CreateCapacityReservationRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void CreateCapacityReservationRequest::setZoneId(const std::vector<std::string> &zoneId) {
+  zoneId_ = zoneId;
+}
+
+std::string CreateCapacityReservationRequest::getPackageType() const {
+  return packageType_;
+}
+
+void CreateCapacityReservationRequest::setPackageType(const std::string &packageType) {
+  packageType_ = packageType;
+  setParameter(std::string("PackageType"), packageType);
+}
+
+int CreateCapacityReservationRequest::getInstanceAmount() const {
+  return instanceAmount_;
+}
+
+void CreateCapacityReservationRequest::setInstanceAmount(int instanceAmount) {
+  instanceAmount_ = instanceAmount;
+  setParameter(std::string("InstanceAmount"), std::to_string(instanceAmount));
+}
+
+std::string CreateCapacityReservationRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CreateCapacityReservationRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string CreateCapacityReservationRequest::getDescription() const {
+  return description_;
+}
+
+void CreateCapacityReservationRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
+std::string CreateCapacityReservationRequest::getPlatform() const {
+  return platform_;
+}
+
+void CreateCapacityReservationRequest::setPlatform(const std::string &platform) {
+  platform_ = platform;
+  setParameter(std::string("Platform"), platform);
+}
+
+std::string CreateCapacityReservationRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateCapacityReservationRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string CreateCapacityReservationRequest::getInstanceType() const {
+  return instanceType_;
+}
+
+void CreateCapacityReservationRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setParameter(std::string("InstanceType"), instanceType);
+}
+
+std::string CreateCapacityReservationRequest::getInstanceChargeType() const {
+  return instanceChargeType_;
+}
+
+void CreateCapacityReservationRequest::setInstanceChargeType(const std::string &instanceChargeType) {
+  instanceChargeType_ = instanceChargeType;
+  setParameter(std::string("InstanceChargeType"), instanceChargeType);
 }
 
 std::string CreateCapacityReservationRequest::getResourceOwnerAccount() const {
@@ -192,15 +236,6 @@ void CreateCapacityReservationRequest::setEndTime(const std::string &endTime) {
   setParameter(std::string("EndTime"), endTime);
 }
 
-long CreateCapacityReservationRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void CreateCapacityReservationRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string CreateCapacityReservationRequest::getResourceType() const {
   return resourceType_;
 }
@@ -208,15 +243,6 @@ std::string CreateCapacityReservationRequest::getResourceType() const {
 void CreateCapacityReservationRequest::setResourceType(const std::string &resourceType) {
   resourceType_ = resourceType;
   setParameter(std::string("ResourceType"), resourceType);
-}
-
-std::string CreateCapacityReservationRequest::getPeriodUnit() const {
-  return periodUnit_;
-}
-
-void CreateCapacityReservationRequest::setPeriodUnit(const std::string &periodUnit) {
-  periodUnit_ = periodUnit;
-  setParameter(std::string("PeriodUnit"), periodUnit);
 }
 
 std::string CreateCapacityReservationRequest::getTimeSlot() const {
@@ -228,14 +254,6 @@ void CreateCapacityReservationRequest::setTimeSlot(const std::string &timeSlot) 
   setParameter(std::string("TimeSlot"), timeSlot);
 }
 
-std::vector<std::string> CreateCapacityReservationRequest::getZoneId() const {
-  return zoneId_;
-}
-
-void CreateCapacityReservationRequest::setZoneId(const std::vector<std::string> &zoneId) {
-  zoneId_ = zoneId;
-}
-
 std::string CreateCapacityReservationRequest::getChargeType() const {
   return chargeType_;
 }
@@ -243,23 +261,5 @@ std::string CreateCapacityReservationRequest::getChargeType() const {
 void CreateCapacityReservationRequest::setChargeType(const std::string &chargeType) {
   chargeType_ = chargeType;
   setParameter(std::string("ChargeType"), chargeType);
-}
-
-std::string CreateCapacityReservationRequest::getPackageType() const {
-  return packageType_;
-}
-
-void CreateCapacityReservationRequest::setPackageType(const std::string &packageType) {
-  packageType_ = packageType;
-  setParameter(std::string("PackageType"), packageType);
-}
-
-int CreateCapacityReservationRequest::getInstanceAmount() const {
-  return instanceAmount_;
-}
-
-void CreateCapacityReservationRequest::setInstanceAmount(int instanceAmount) {
-  instanceAmount_ = instanceAmount;
-  setParameter(std::string("InstanceAmount"), std::to_string(instanceAmount));
 }
 

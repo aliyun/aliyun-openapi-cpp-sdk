@@ -139,6 +139,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.oSType = valueInstancesInstance["OSType"].asString();
 		if(!valueInstancesInstance["SpotInterruptionBehavior"].isNull())
 			instancesObject.spotInterruptionBehavior = valueInstancesInstance["SpotInterruptionBehavior"].asString();
+		if(!valueInstancesInstance["EnableNVS"].isNull())
+			instancesObject.enableNVS = valueInstancesInstance["EnableNVS"].asString() == "true";
 		auto allNetworkInterfacesNode = valueInstancesInstance["NetworkInterfaces"]["NetworkInterface"];
 		for (auto valueInstancesInstanceNetworkInterfacesNetworkInterface : allNetworkInterfacesNode)
 		{
@@ -259,6 +261,12 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.cpuOptions.threadsPerCore = std::stoi(cpuOptionsNode["ThreadsPerCore"].asString());
 		if(!cpuOptionsNode["TopologyType"].isNull())
 			instancesObject.cpuOptions.topologyType = cpuOptionsNode["TopologyType"].asString();
+		if(!cpuOptionsNode["EnableVISST"].isNull())
+			instancesObject.cpuOptions.enableVISST = cpuOptionsNode["EnableVISST"].asString() == "true";
+		if(!cpuOptionsNode["TurboMode"].isNull())
+			instancesObject.cpuOptions.turboMode = cpuOptionsNode["TurboMode"].asString();
+		if(!cpuOptionsNode["EnableVRDT"].isNull())
+			instancesObject.cpuOptions.enableVRDT = cpuOptionsNode["EnableVRDT"].asString() == "true";
 		auto metadataOptionsNode = value["MetadataOptions"];
 		if(!metadataOptionsNode["HttpEndpoint"].isNull())
 			instancesObject.metadataOptions.httpEndpoint = metadataOptionsNode["HttpEndpoint"].asString();

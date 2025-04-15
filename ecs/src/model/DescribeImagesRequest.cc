@@ -34,15 +34,6 @@ void DescribeImagesRequest::setActionType(const std::string &actionType) {
   setParameter(std::string("ActionType"), actionType);
 }
 
-long DescribeImagesRequest::getImageOwnerId() const {
-  return imageOwnerId_;
-}
-
-void DescribeImagesRequest::setImageOwnerId(long imageOwnerId) {
-  imageOwnerId_ = imageOwnerId;
-  setParameter(std::string("ImageOwnerId"), std::to_string(imageOwnerId));
-}
-
 long DescribeImagesRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
@@ -50,6 +41,101 @@ long DescribeImagesRequest::getResourceOwnerId() const {
 void DescribeImagesRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
+std::string DescribeImagesRequest::getUsage() const {
+  return usage_;
+}
+
+void DescribeImagesRequest::setUsage(const std::string &usage) {
+  usage_ = usage;
+  setParameter(std::string("Usage"), usage);
+}
+
+std::string DescribeImagesRequest::getImageOwnerAlias() const {
+  return imageOwnerAlias_;
+}
+
+void DescribeImagesRequest::setImageOwnerAlias(const std::string &imageOwnerAlias) {
+  imageOwnerAlias_ = imageOwnerAlias;
+  setParameter(std::string("ImageOwnerAlias"), imageOwnerAlias);
+}
+
+std::string DescribeImagesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeImagesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+bool DescribeImagesRequest::getIsSupportCloudinit() const {
+  return isSupportCloudinit_;
+}
+
+void DescribeImagesRequest::setIsSupportCloudinit(bool isSupportCloudinit) {
+  isSupportCloudinit_ = isSupportCloudinit;
+  setParameter(std::string("IsSupportCloudinit"), isSupportCloudinit ? "true" : "false");
+}
+
+bool DescribeImagesRequest::getIsPublic() const {
+  return isPublic_;
+}
+
+void DescribeImagesRequest::setIsPublic(bool isPublic) {
+  isPublic_ = isPublic;
+  setParameter(std::string("IsPublic"), isPublic ? "true" : "false");
+}
+
+std::vector<DescribeImagesRequest::Tag> DescribeImagesRequest::getTag() const {
+  return tag_;
+}
+
+void DescribeImagesRequest::setTag(const std::vector<DescribeImagesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
+bool DescribeImagesRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DescribeImagesRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
+long DescribeImagesRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeImagesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeImagesRequest::getStatus() const {
+  return status_;
+}
+
+void DescribeImagesRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+
+long DescribeImagesRequest::getImageOwnerId() const {
+  return imageOwnerId_;
+}
+
+void DescribeImagesRequest::setImageOwnerId(long imageOwnerId) {
+  imageOwnerId_ = imageOwnerId;
+  setParameter(std::string("ImageOwnerId"), std::to_string(imageOwnerId));
 }
 
 std::string DescribeImagesRequest::getImageId() const {
@@ -70,15 +156,6 @@ void DescribeImagesRequest::setSnapshotId(const std::string &snapshotId) {
   setParameter(std::string("SnapshotId"), snapshotId);
 }
 
-std::string DescribeImagesRequest::getUsage() const {
-  return usage_;
-}
-
-void DescribeImagesRequest::setUsage(const std::string &usage) {
-  usage_ = usage;
-  setParameter(std::string("Usage"), usage);
-}
-
 int DescribeImagesRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -86,24 +163,6 @@ int DescribeImagesRequest::getPageNumber() const {
 void DescribeImagesRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
-}
-
-std::string DescribeImagesRequest::getImageOwnerAlias() const {
-  return imageOwnerAlias_;
-}
-
-void DescribeImagesRequest::setImageOwnerAlias(const std::string &imageOwnerAlias) {
-  imageOwnerAlias_ = imageOwnerAlias;
-  setParameter(std::string("ImageOwnerAlias"), imageOwnerAlias);
-}
-
-std::string DescribeImagesRequest::getResourceGroupId() const {
-  return resourceGroupId_;
-}
-
-void DescribeImagesRequest::setResourceGroupId(const std::string &resourceGroupId) {
-  resourceGroupId_ = resourceGroupId;
-  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 bool DescribeImagesRequest::getIsSupportIoOptimized() const {
@@ -133,24 +192,6 @@ void DescribeImagesRequest::setImageName(const std::string &imageName) {
   setParameter(std::string("ImageName"), imageName);
 }
 
-bool DescribeImagesRequest::getIsSupportCloudinit() const {
-  return isSupportCloudinit_;
-}
-
-void DescribeImagesRequest::setIsSupportCloudinit(bool isSupportCloudinit) {
-  isSupportCloudinit_ = isSupportCloudinit;
-  setParameter(std::string("IsSupportCloudinit"), isSupportCloudinit ? "true" : "false");
-}
-
-bool DescribeImagesRequest::getIsPublic() const {
-  return isPublic_;
-}
-
-void DescribeImagesRequest::setIsPublic(bool isPublic) {
-  isPublic_ = isPublic;
-  setParameter(std::string("IsPublic"), isPublic ? "true" : "false");
-}
-
 int DescribeImagesRequest::getPageSize() const {
   return pageSize_;
 }
@@ -169,20 +210,6 @@ void DescribeImagesRequest::setInstanceType(const std::string &instanceType) {
   setParameter(std::string("InstanceType"), instanceType);
 }
 
-std::vector<DescribeImagesRequest::Tag> DescribeImagesRequest::getTag() const {
-  return tag_;
-}
-
-void DescribeImagesRequest::setTag(const std::vector<DescribeImagesRequest::Tag> &tag) {
-  tag_ = tag;
-  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
-  auto tagObj = tag.at(dep1);
-  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
-    setParameter(tagObjStr + ".Value", tagObj.value);
-    setParameter(tagObjStr + ".Key", tagObj.key);
-  }
-}
-
 std::string DescribeImagesRequest::getArchitecture() const {
   return architecture_;
 }
@@ -190,15 +217,6 @@ std::string DescribeImagesRequest::getArchitecture() const {
 void DescribeImagesRequest::setArchitecture(const std::string &architecture) {
   architecture_ = architecture;
   setParameter(std::string("Architecture"), architecture);
-}
-
-bool DescribeImagesRequest::getDryRun() const {
-  return dryRun_;
-}
-
-void DescribeImagesRequest::setDryRun(bool dryRun) {
-  dryRun_ = dryRun;
-  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 std::string DescribeImagesRequest::getResourceOwnerAccount() const {
@@ -237,15 +255,6 @@ void DescribeImagesRequest::setOSType(const std::string &oSType) {
   setParameter(std::string("OSType"), oSType);
 }
 
-long DescribeImagesRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeImagesRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::vector<DescribeImagesRequest::Filter> DescribeImagesRequest::getFilter() const {
   return filter_;
 }
@@ -267,14 +276,5 @@ std::string DescribeImagesRequest::getImageFamily() const {
 void DescribeImagesRequest::setImageFamily(const std::string &imageFamily) {
   imageFamily_ = imageFamily;
   setParameter(std::string("ImageFamily"), imageFamily);
-}
-
-std::string DescribeImagesRequest::getStatus() const {
-  return status_;
-}
-
-void DescribeImagesRequest::setStatus(const std::string &status) {
-  status_ = status;
-  setParameter(std::string("Status"), status);
 }
 

@@ -34,24 +34,6 @@ void DescribeNetworkInterfacesRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-bool DescribeNetworkInterfacesRequest::getServiceManaged() const {
-  return serviceManaged_;
-}
-
-void DescribeNetworkInterfacesRequest::setServiceManaged(bool serviceManaged) {
-  serviceManaged_ = serviceManaged;
-  setParameter(std::string("ServiceManaged"), serviceManaged ? "true" : "false");
-}
-
-std::string DescribeNetworkInterfacesRequest::getSecurityGroupId() const {
-  return securityGroupId_;
-}
-
-void DescribeNetworkInterfacesRequest::setSecurityGroupId(const std::string &securityGroupId) {
-  securityGroupId_ = securityGroupId;
-  setParameter(std::string("SecurityGroupId"), securityGroupId);
-}
-
 std::string DescribeNetworkInterfacesRequest::getType() const {
   return type_;
 }
@@ -61,15 +43,6 @@ void DescribeNetworkInterfacesRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
-int DescribeNetworkInterfacesRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void DescribeNetworkInterfacesRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
-}
-
 std::string DescribeNetworkInterfacesRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
@@ -77,33 +50,6 @@ std::string DescribeNetworkInterfacesRequest::getResourceGroupId() const {
 void DescribeNetworkInterfacesRequest::setResourceGroupId(const std::string &resourceGroupId) {
   resourceGroupId_ = resourceGroupId;
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
-}
-
-std::string DescribeNetworkInterfacesRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeNetworkInterfacesRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string DescribeNetworkInterfacesRequest::getNextToken() const {
-  return nextToken_;
-}
-
-void DescribeNetworkInterfacesRequest::setNextToken(const std::string &nextToken) {
-  nextToken_ = nextToken;
-  setParameter(std::string("NextToken"), nextToken);
-}
-
-int DescribeNetworkInterfacesRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void DescribeNetworkInterfacesRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 std::vector<DescribeNetworkInterfacesRequest::Tag> DescribeNetworkInterfacesRequest::getTag() const {
@@ -127,24 +73,6 @@ std::string DescribeNetworkInterfacesRequest::getNetworkInterfaceName() const {
 void DescribeNetworkInterfacesRequest::setNetworkInterfaceName(const std::string &networkInterfaceName) {
   networkInterfaceName_ = networkInterfaceName;
   setParameter(std::string("NetworkInterfaceName"), networkInterfaceName);
-}
-
-std::string DescribeNetworkInterfacesRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeNetworkInterfacesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string DescribeNetworkInterfacesRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void DescribeNetworkInterfacesRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
 long DescribeNetworkInterfacesRequest::getOwnerId() const {
@@ -182,6 +110,104 @@ void DescribeNetworkInterfacesRequest::setInstanceId(const std::string &instance
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+int DescribeNetworkInterfacesRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeNetworkInterfacesRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+
+std::vector<std::string> DescribeNetworkInterfacesRequest::getIpv6Address() const {
+  return ipv6Address_;
+}
+
+void DescribeNetworkInterfacesRequest::setIpv6Address(const std::vector<std::string> &ipv6Address) {
+  ipv6Address_ = ipv6Address;
+}
+
+std::string DescribeNetworkInterfacesRequest::getStatus() const {
+  return status_;
+}
+
+void DescribeNetworkInterfacesRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+
+bool DescribeNetworkInterfacesRequest::getServiceManaged() const {
+  return serviceManaged_;
+}
+
+void DescribeNetworkInterfacesRequest::setServiceManaged(bool serviceManaged) {
+  serviceManaged_ = serviceManaged;
+  setParameter(std::string("ServiceManaged"), serviceManaged ? "true" : "false");
+}
+
+std::string DescribeNetworkInterfacesRequest::getSecurityGroupId() const {
+  return securityGroupId_;
+}
+
+void DescribeNetworkInterfacesRequest::setSecurityGroupId(const std::string &securityGroupId) {
+  securityGroupId_ = securityGroupId;
+  setParameter(std::string("SecurityGroupId"), securityGroupId);
+}
+
+int DescribeNetworkInterfacesRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void DescribeNetworkInterfacesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+std::string DescribeNetworkInterfacesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeNetworkInterfacesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeNetworkInterfacesRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeNetworkInterfacesRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
+int DescribeNetworkInterfacesRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeNetworkInterfacesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeNetworkInterfacesRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeNetworkInterfacesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string DescribeNetworkInterfacesRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void DescribeNetworkInterfacesRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
 std::string DescribeNetworkInterfacesRequest::getVpcId() const {
   return vpcId_;
 }
@@ -200,37 +226,11 @@ void DescribeNetworkInterfacesRequest::setPrimaryIpAddress(const std::string &pr
   setParameter(std::string("PrimaryIpAddress"), primaryIpAddress);
 }
 
-int DescribeNetworkInterfacesRequest::getMaxResults() const {
-  return maxResults_;
-}
-
-void DescribeNetworkInterfacesRequest::setMaxResults(int maxResults) {
-  maxResults_ = maxResults;
-  setParameter(std::string("MaxResults"), std::to_string(maxResults));
-}
-
 std::vector<std::string> DescribeNetworkInterfacesRequest::getNetworkInterfaceId() const {
   return networkInterfaceId_;
 }
 
 void DescribeNetworkInterfacesRequest::setNetworkInterfaceId(const std::vector<std::string> &networkInterfaceId) {
   networkInterfaceId_ = networkInterfaceId;
-}
-
-std::vector<std::string> DescribeNetworkInterfacesRequest::getIpv6Address() const {
-  return ipv6Address_;
-}
-
-void DescribeNetworkInterfacesRequest::setIpv6Address(const std::vector<std::string> &ipv6Address) {
-  ipv6Address_ = ipv6Address;
-}
-
-std::string DescribeNetworkInterfacesRequest::getStatus() const {
-  return status_;
-}
-
-void DescribeNetworkInterfacesRequest::setStatus(const std::string &status) {
-  status_ = status;
-  setParameter(std::string("Status"), status);
 }
 

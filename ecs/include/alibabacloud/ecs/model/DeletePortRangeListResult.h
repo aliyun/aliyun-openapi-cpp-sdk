@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYDEMANDRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_MODIFYDEMANDRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DELETEPORTRANGELISTRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_DELETEPORTRANGELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT ModifyDemandResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT DeletePortRangeListResult : public ServiceResult
 			{
 			public:
 
 
-				ModifyDemandResult();
-				explicit ModifyDemandResult(const std::string &payload);
-				~ModifyDemandResult();
+				DeletePortRangeListResult();
+				explicit DeletePortRangeListResult(const std::string &payload);
+				~DeletePortRangeListResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYDEMANDRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DELETEPORTRANGELISTRESULT_H_

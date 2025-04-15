@@ -91,6 +91,10 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 			permissionsObject.sourceGroupName = valuePermissionsPermission["SourceGroupName"].asString();
 		if(!valuePermissionsPermission["SourcePortRange"].isNull())
 			permissionsObject.sourcePortRange = valuePermissionsPermission["SourcePortRange"].asString();
+		if(!valuePermissionsPermission["PortRangeListId"].isNull())
+			permissionsObject.portRangeListId = valuePermissionsPermission["PortRangeListId"].asString();
+		if(!valuePermissionsPermission["PortRangeListName"].isNull())
+			permissionsObject.portRangeListName = valuePermissionsPermission["PortRangeListName"].asString();
 		permissions_.push_back(permissionsObject);
 	}
 	auto referencedInfoNode = value["ReferencedInfo"];

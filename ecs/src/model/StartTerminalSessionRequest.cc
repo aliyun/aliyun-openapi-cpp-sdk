@@ -61,6 +61,15 @@ void StartTerminalSessionRequest::setTargetServer(const std::string &targetServe
   setParameter(std::string("TargetServer"), targetServer);
 }
 
+std::string StartTerminalSessionRequest::getConnectionType() const {
+  return connectionType_;
+}
+
+void StartTerminalSessionRequest::setConnectionType(const std::string &connectionType) {
+  connectionType_ = connectionType;
+  setParameter(std::string("ConnectionType"), connectionType);
+}
+
 std::string StartTerminalSessionRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

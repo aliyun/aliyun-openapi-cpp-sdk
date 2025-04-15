@@ -130,12 +130,19 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 		creditSpecification_ = value["CreditSpecification"].asString();
 	if(!value["EnableJumboFrame"].isNull())
 		enableJumboFrame_ = value["EnableJumboFrame"].asString() == "true";
+	if(!value["EnableNetworkEncryption"].isNull())
+		enableNetworkEncryption_ = value["EnableNetworkEncryption"].asString() == "true";
 
 }
 
 std::string DescribeInstanceAttributeResult::getDescription()const
 {
 	return description_;
+}
+
+bool DescribeInstanceAttributeResult::getEnableNetworkEncryption()const
+{
+	return enableNetworkEncryption_;
 }
 
 int DescribeInstanceAttributeResult::getMemory()const

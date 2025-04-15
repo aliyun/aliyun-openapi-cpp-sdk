@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DELETEDEMANDREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DELETEDEMANDREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTASSOCIATIONSREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTASSOCIATIONSREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,38 +26,38 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT DeleteDemandRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT DescribePortRangeListAssociationsRequest : public RpcServiceRequest {
 public:
-	DeleteDemandRequest();
-	~DeleteDemandRequest();
-	std::string getReason() const;
-	void setReason(const std::string &reason);
+	DescribePortRangeListAssociationsRequest();
+	~DescribePortRangeListAssociationsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getClientToken() const;
-	void setClientToken(const std::string &clientToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	std::string getPortRangeListId() const;
+	void setPortRangeListId(const std::string &portRangeListId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getDemandId() const;
-	void setDemandId(const std::string &demandId);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
-	std::string reason_;
 	long resourceOwnerId_;
-	std::string clientToken_;
 	std::string regionId_;
+	std::string nextToken_;
+	std::string portRangeListId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string demandId_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_DELETEDEMANDREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTASSOCIATIONSREQUEST_H_

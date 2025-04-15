@@ -92,8 +92,6 @@
 #include "model/CreateCommandResult.h"
 #include "model/CreateDedicatedHostClusterRequest.h"
 #include "model/CreateDedicatedHostClusterResult.h"
-#include "model/CreateDemandRequest.h"
-#include "model/CreateDemandResult.h"
 #include "model/CreateDeploymentSetRequest.h"
 #include "model/CreateDeploymentSetResult.h"
 #include "model/CreateDiagnosticMetricSetRequest.h"
@@ -132,6 +130,8 @@
 #include "model/CreateNetworkInterfacePermissionResult.h"
 #include "model/CreatePhysicalConnectionRequest.h"
 #include "model/CreatePhysicalConnectionResult.h"
+#include "model/CreatePortRangeListRequest.h"
+#include "model/CreatePortRangeListResult.h"
 #include "model/CreatePrefixListRequest.h"
 #include "model/CreatePrefixListResult.h"
 #include "model/CreateRouteEntryRequest.h"
@@ -170,8 +170,6 @@
 #include "model/DeleteCommandResult.h"
 #include "model/DeleteDedicatedHostClusterRequest.h"
 #include "model/DeleteDedicatedHostClusterResult.h"
-#include "model/DeleteDemandRequest.h"
-#include "model/DeleteDemandResult.h"
 #include "model/DeleteDeploymentSetRequest.h"
 #include "model/DeleteDeploymentSetResult.h"
 #include "model/DeleteDiagnosticMetricSetsRequest.h"
@@ -210,6 +208,8 @@
 #include "model/DeleteNetworkInterfacePermissionResult.h"
 #include "model/DeletePhysicalConnectionRequest.h"
 #include "model/DeletePhysicalConnectionResult.h"
+#include "model/DeletePortRangeListRequest.h"
+#include "model/DeletePortRangeListResult.h"
 #include "model/DeletePrefixListRequest.h"
 #include "model/DeletePrefixListResult.h"
 #include "model/DeleteRouteEntryRequest.h"
@@ -274,8 +274,6 @@
 #include "model/DescribeDedicatedHostTypesResult.h"
 #include "model/DescribeDedicatedHostsRequest.h"
 #include "model/DescribeDedicatedHostsResult.h"
-#include "model/DescribeDemandsRequest.h"
-#include "model/DescribeDemandsResult.h"
 #include "model/DescribeDeploymentSetSupportedInstanceTypeFamilyRequest.h"
 #include "model/DescribeDeploymentSetSupportedInstanceTypeFamilyResult.h"
 #include "model/DescribeDeploymentSetsRequest.h"
@@ -386,6 +384,12 @@
 #include "model/DescribeNewProjectEipMonitorDataResult.h"
 #include "model/DescribePhysicalConnectionsRequest.h"
 #include "model/DescribePhysicalConnectionsResult.h"
+#include "model/DescribePortRangeListAssociationsRequest.h"
+#include "model/DescribePortRangeListAssociationsResult.h"
+#include "model/DescribePortRangeListEntriesRequest.h"
+#include "model/DescribePortRangeListEntriesResult.h"
+#include "model/DescribePortRangeListsRequest.h"
+#include "model/DescribePortRangeListsResult.h"
 #include "model/DescribePrefixListAssociationsRequest.h"
 #include "model/DescribePrefixListAssociationsResult.h"
 #include "model/DescribePrefixListAttributesRequest.h"
@@ -538,8 +542,6 @@
 #include "model/ModifyDedicatedHostClusterAttributeResult.h"
 #include "model/ModifyDedicatedHostsChargeTypeRequest.h"
 #include "model/ModifyDedicatedHostsChargeTypeResult.h"
-#include "model/ModifyDemandRequest.h"
-#include "model/ModifyDemandResult.h"
 #include "model/ModifyDeploymentSetAttributeRequest.h"
 #include "model/ModifyDeploymentSetAttributeResult.h"
 #include "model/ModifyDiagnosticMetricSetRequest.h"
@@ -606,6 +608,8 @@
 #include "model/ModifyNetworkInterfaceAttributeResult.h"
 #include "model/ModifyPhysicalConnectionAttributeRequest.h"
 #include "model/ModifyPhysicalConnectionAttributeResult.h"
+#include "model/ModifyPortRangeListRequest.h"
+#include "model/ModifyPortRangeListResult.h"
 #include "model/ModifyPrefixListRequest.h"
 #include "model/ModifyPrefixListResult.h"
 #include "model/ModifyPrepayInstanceSpecRequest.h"
@@ -854,9 +858,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDedicatedHostClusterResult> CreateDedicatedHostClusterOutcome;
 			typedef std::future<CreateDedicatedHostClusterOutcome> CreateDedicatedHostClusterOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateDedicatedHostClusterRequest&, const CreateDedicatedHostClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedHostClusterAsyncHandler;
-			typedef Outcome<Error, Model::CreateDemandResult> CreateDemandOutcome;
-			typedef std::future<CreateDemandOutcome> CreateDemandOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::CreateDemandRequest&, const CreateDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDemandAsyncHandler;
 			typedef Outcome<Error, Model::CreateDeploymentSetResult> CreateDeploymentSetOutcome;
 			typedef std::future<CreateDeploymentSetOutcome> CreateDeploymentSetOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateDeploymentSetRequest&, const CreateDeploymentSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeploymentSetAsyncHandler;
@@ -914,6 +915,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePhysicalConnectionResult> CreatePhysicalConnectionOutcome;
 			typedef std::future<CreatePhysicalConnectionOutcome> CreatePhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreatePhysicalConnectionRequest&, const CreatePhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePhysicalConnectionAsyncHandler;
+			typedef Outcome<Error, Model::CreatePortRangeListResult> CreatePortRangeListOutcome;
+			typedef std::future<CreatePortRangeListOutcome> CreatePortRangeListOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreatePortRangeListRequest&, const CreatePortRangeListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePortRangeListAsyncHandler;
 			typedef Outcome<Error, Model::CreatePrefixListResult> CreatePrefixListOutcome;
 			typedef std::future<CreatePrefixListOutcome> CreatePrefixListOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreatePrefixListRequest&, const CreatePrefixListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrefixListAsyncHandler;
@@ -971,9 +975,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDedicatedHostClusterResult> DeleteDedicatedHostClusterOutcome;
 			typedef std::future<DeleteDedicatedHostClusterOutcome> DeleteDedicatedHostClusterOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteDedicatedHostClusterRequest&, const DeleteDedicatedHostClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDedicatedHostClusterAsyncHandler;
-			typedef Outcome<Error, Model::DeleteDemandResult> DeleteDemandOutcome;
-			typedef std::future<DeleteDemandOutcome> DeleteDemandOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::DeleteDemandRequest&, const DeleteDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDemandAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDeploymentSetResult> DeleteDeploymentSetOutcome;
 			typedef std::future<DeleteDeploymentSetOutcome> DeleteDeploymentSetOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteDeploymentSetRequest&, const DeleteDeploymentSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeploymentSetAsyncHandler;
@@ -1031,6 +1032,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeletePhysicalConnectionResult> DeletePhysicalConnectionOutcome;
 			typedef std::future<DeletePhysicalConnectionOutcome> DeletePhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeletePhysicalConnectionRequest&, const DeletePhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePhysicalConnectionAsyncHandler;
+			typedef Outcome<Error, Model::DeletePortRangeListResult> DeletePortRangeListOutcome;
+			typedef std::future<DeletePortRangeListOutcome> DeletePortRangeListOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DeletePortRangeListRequest&, const DeletePortRangeListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePortRangeListAsyncHandler;
 			typedef Outcome<Error, Model::DeletePrefixListResult> DeletePrefixListOutcome;
 			typedef std::future<DeletePrefixListOutcome> DeletePrefixListOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeletePrefixListRequest&, const DeletePrefixListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrefixListAsyncHandler;
@@ -1127,9 +1131,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDedicatedHostsResult> DescribeDedicatedHostsOutcome;
 			typedef std::future<DescribeDedicatedHostsOutcome> DescribeDedicatedHostsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDedicatedHostsRequest&, const DescribeDedicatedHostsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedHostsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDemandsResult> DescribeDemandsOutcome;
-			typedef std::future<DescribeDemandsOutcome> DescribeDemandsOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::DescribeDemandsRequest&, const DescribeDemandsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDemandsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDeploymentSetSupportedInstanceTypeFamilyResult> DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome;
 			typedef std::future<DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome> DescribeDeploymentSetSupportedInstanceTypeFamilyOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDeploymentSetSupportedInstanceTypeFamilyRequest&, const DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeploymentSetSupportedInstanceTypeFamilyAsyncHandler;
@@ -1295,6 +1296,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribePhysicalConnectionsResult> DescribePhysicalConnectionsOutcome;
 			typedef std::future<DescribePhysicalConnectionsOutcome> DescribePhysicalConnectionsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribePhysicalConnectionsRequest&, const DescribePhysicalConnectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhysicalConnectionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePortRangeListAssociationsResult> DescribePortRangeListAssociationsOutcome;
+			typedef std::future<DescribePortRangeListAssociationsOutcome> DescribePortRangeListAssociationsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribePortRangeListAssociationsRequest&, const DescribePortRangeListAssociationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortRangeListAssociationsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePortRangeListEntriesResult> DescribePortRangeListEntriesOutcome;
+			typedef std::future<DescribePortRangeListEntriesOutcome> DescribePortRangeListEntriesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribePortRangeListEntriesRequest&, const DescribePortRangeListEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortRangeListEntriesAsyncHandler;
+			typedef Outcome<Error, Model::DescribePortRangeListsResult> DescribePortRangeListsOutcome;
+			typedef std::future<DescribePortRangeListsOutcome> DescribePortRangeListsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribePortRangeListsRequest&, const DescribePortRangeListsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortRangeListsAsyncHandler;
 			typedef Outcome<Error, Model::DescribePrefixListAssociationsResult> DescribePrefixListAssociationsOutcome;
 			typedef std::future<DescribePrefixListAssociationsOutcome> DescribePrefixListAssociationsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribePrefixListAssociationsRequest&, const DescribePrefixListAssociationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrefixListAssociationsAsyncHandler;
@@ -1523,9 +1533,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDedicatedHostsChargeTypeResult> ModifyDedicatedHostsChargeTypeOutcome;
 			typedef std::future<ModifyDedicatedHostsChargeTypeOutcome> ModifyDedicatedHostsChargeTypeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDedicatedHostsChargeTypeRequest&, const ModifyDedicatedHostsChargeTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDedicatedHostsChargeTypeAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDemandResult> ModifyDemandOutcome;
-			typedef std::future<ModifyDemandOutcome> ModifyDemandOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::ModifyDemandRequest&, const ModifyDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDemandAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDeploymentSetAttributeResult> ModifyDeploymentSetAttributeOutcome;
 			typedef std::future<ModifyDeploymentSetAttributeOutcome> ModifyDeploymentSetAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDeploymentSetAttributeRequest&, const ModifyDeploymentSetAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeploymentSetAttributeAsyncHandler;
@@ -1625,6 +1632,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyPhysicalConnectionAttributeResult> ModifyPhysicalConnectionAttributeOutcome;
 			typedef std::future<ModifyPhysicalConnectionAttributeOutcome> ModifyPhysicalConnectionAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyPhysicalConnectionAttributeRequest&, const ModifyPhysicalConnectionAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPhysicalConnectionAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyPortRangeListResult> ModifyPortRangeListOutcome;
+			typedef std::future<ModifyPortRangeListOutcome> ModifyPortRangeListOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyPortRangeListRequest&, const ModifyPortRangeListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPortRangeListAsyncHandler;
 			typedef Outcome<Error, Model::ModifyPrefixListResult> ModifyPrefixListOutcome;
 			typedef std::future<ModifyPrefixListOutcome> ModifyPrefixListOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyPrefixListRequest&, const ModifyPrefixListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrefixListAsyncHandler;
@@ -1936,9 +1946,6 @@ namespace AlibabaCloud
 			CreateDedicatedHostClusterOutcome createDedicatedHostCluster(const Model::CreateDedicatedHostClusterRequest &request)const;
 			void createDedicatedHostClusterAsync(const Model::CreateDedicatedHostClusterRequest& request, const CreateDedicatedHostClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDedicatedHostClusterOutcomeCallable createDedicatedHostClusterCallable(const Model::CreateDedicatedHostClusterRequest& request) const;
-			CreateDemandOutcome createDemand(const Model::CreateDemandRequest &request)const;
-			void createDemandAsync(const Model::CreateDemandRequest& request, const CreateDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateDemandOutcomeCallable createDemandCallable(const Model::CreateDemandRequest& request) const;
 			CreateDeploymentSetOutcome createDeploymentSet(const Model::CreateDeploymentSetRequest &request)const;
 			void createDeploymentSetAsync(const Model::CreateDeploymentSetRequest& request, const CreateDeploymentSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDeploymentSetOutcomeCallable createDeploymentSetCallable(const Model::CreateDeploymentSetRequest& request) const;
@@ -1996,6 +2003,9 @@ namespace AlibabaCloud
 			CreatePhysicalConnectionOutcome createPhysicalConnection(const Model::CreatePhysicalConnectionRequest &request)const;
 			void createPhysicalConnectionAsync(const Model::CreatePhysicalConnectionRequest& request, const CreatePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePhysicalConnectionOutcomeCallable createPhysicalConnectionCallable(const Model::CreatePhysicalConnectionRequest& request) const;
+			CreatePortRangeListOutcome createPortRangeList(const Model::CreatePortRangeListRequest &request)const;
+			void createPortRangeListAsync(const Model::CreatePortRangeListRequest& request, const CreatePortRangeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreatePortRangeListOutcomeCallable createPortRangeListCallable(const Model::CreatePortRangeListRequest& request) const;
 			CreatePrefixListOutcome createPrefixList(const Model::CreatePrefixListRequest &request)const;
 			void createPrefixListAsync(const Model::CreatePrefixListRequest& request, const CreatePrefixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePrefixListOutcomeCallable createPrefixListCallable(const Model::CreatePrefixListRequest& request) const;
@@ -2053,9 +2063,6 @@ namespace AlibabaCloud
 			DeleteDedicatedHostClusterOutcome deleteDedicatedHostCluster(const Model::DeleteDedicatedHostClusterRequest &request)const;
 			void deleteDedicatedHostClusterAsync(const Model::DeleteDedicatedHostClusterRequest& request, const DeleteDedicatedHostClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDedicatedHostClusterOutcomeCallable deleteDedicatedHostClusterCallable(const Model::DeleteDedicatedHostClusterRequest& request) const;
-			DeleteDemandOutcome deleteDemand(const Model::DeleteDemandRequest &request)const;
-			void deleteDemandAsync(const Model::DeleteDemandRequest& request, const DeleteDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteDemandOutcomeCallable deleteDemandCallable(const Model::DeleteDemandRequest& request) const;
 			DeleteDeploymentSetOutcome deleteDeploymentSet(const Model::DeleteDeploymentSetRequest &request)const;
 			void deleteDeploymentSetAsync(const Model::DeleteDeploymentSetRequest& request, const DeleteDeploymentSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDeploymentSetOutcomeCallable deleteDeploymentSetCallable(const Model::DeleteDeploymentSetRequest& request) const;
@@ -2113,6 +2120,9 @@ namespace AlibabaCloud
 			DeletePhysicalConnectionOutcome deletePhysicalConnection(const Model::DeletePhysicalConnectionRequest &request)const;
 			void deletePhysicalConnectionAsync(const Model::DeletePhysicalConnectionRequest& request, const DeletePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePhysicalConnectionOutcomeCallable deletePhysicalConnectionCallable(const Model::DeletePhysicalConnectionRequest& request) const;
+			DeletePortRangeListOutcome deletePortRangeList(const Model::DeletePortRangeListRequest &request)const;
+			void deletePortRangeListAsync(const Model::DeletePortRangeListRequest& request, const DeletePortRangeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeletePortRangeListOutcomeCallable deletePortRangeListCallable(const Model::DeletePortRangeListRequest& request) const;
 			DeletePrefixListOutcome deletePrefixList(const Model::DeletePrefixListRequest &request)const;
 			void deletePrefixListAsync(const Model::DeletePrefixListRequest& request, const DeletePrefixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePrefixListOutcomeCallable deletePrefixListCallable(const Model::DeletePrefixListRequest& request) const;
@@ -2209,9 +2219,6 @@ namespace AlibabaCloud
 			DescribeDedicatedHostsOutcome describeDedicatedHosts(const Model::DescribeDedicatedHostsRequest &request)const;
 			void describeDedicatedHostsAsync(const Model::DescribeDedicatedHostsRequest& request, const DescribeDedicatedHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDedicatedHostsOutcomeCallable describeDedicatedHostsCallable(const Model::DescribeDedicatedHostsRequest& request) const;
-			DescribeDemandsOutcome describeDemands(const Model::DescribeDemandsRequest &request)const;
-			void describeDemandsAsync(const Model::DescribeDemandsRequest& request, const DescribeDemandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDemandsOutcomeCallable describeDemandsCallable(const Model::DescribeDemandsRequest& request) const;
 			DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome describeDeploymentSetSupportedInstanceTypeFamily(const Model::DescribeDeploymentSetSupportedInstanceTypeFamilyRequest &request)const;
 			void describeDeploymentSetSupportedInstanceTypeFamilyAsync(const Model::DescribeDeploymentSetSupportedInstanceTypeFamilyRequest& request, const DescribeDeploymentSetSupportedInstanceTypeFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDeploymentSetSupportedInstanceTypeFamilyOutcomeCallable describeDeploymentSetSupportedInstanceTypeFamilyCallable(const Model::DescribeDeploymentSetSupportedInstanceTypeFamilyRequest& request) const;
@@ -2377,6 +2384,15 @@ namespace AlibabaCloud
 			DescribePhysicalConnectionsOutcome describePhysicalConnections(const Model::DescribePhysicalConnectionsRequest &request)const;
 			void describePhysicalConnectionsAsync(const Model::DescribePhysicalConnectionsRequest& request, const DescribePhysicalConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePhysicalConnectionsOutcomeCallable describePhysicalConnectionsCallable(const Model::DescribePhysicalConnectionsRequest& request) const;
+			DescribePortRangeListAssociationsOutcome describePortRangeListAssociations(const Model::DescribePortRangeListAssociationsRequest &request)const;
+			void describePortRangeListAssociationsAsync(const Model::DescribePortRangeListAssociationsRequest& request, const DescribePortRangeListAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePortRangeListAssociationsOutcomeCallable describePortRangeListAssociationsCallable(const Model::DescribePortRangeListAssociationsRequest& request) const;
+			DescribePortRangeListEntriesOutcome describePortRangeListEntries(const Model::DescribePortRangeListEntriesRequest &request)const;
+			void describePortRangeListEntriesAsync(const Model::DescribePortRangeListEntriesRequest& request, const DescribePortRangeListEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePortRangeListEntriesOutcomeCallable describePortRangeListEntriesCallable(const Model::DescribePortRangeListEntriesRequest& request) const;
+			DescribePortRangeListsOutcome describePortRangeLists(const Model::DescribePortRangeListsRequest &request)const;
+			void describePortRangeListsAsync(const Model::DescribePortRangeListsRequest& request, const DescribePortRangeListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePortRangeListsOutcomeCallable describePortRangeListsCallable(const Model::DescribePortRangeListsRequest& request) const;
 			DescribePrefixListAssociationsOutcome describePrefixListAssociations(const Model::DescribePrefixListAssociationsRequest &request)const;
 			void describePrefixListAssociationsAsync(const Model::DescribePrefixListAssociationsRequest& request, const DescribePrefixListAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePrefixListAssociationsOutcomeCallable describePrefixListAssociationsCallable(const Model::DescribePrefixListAssociationsRequest& request) const;
@@ -2605,9 +2621,6 @@ namespace AlibabaCloud
 			ModifyDedicatedHostsChargeTypeOutcome modifyDedicatedHostsChargeType(const Model::ModifyDedicatedHostsChargeTypeRequest &request)const;
 			void modifyDedicatedHostsChargeTypeAsync(const Model::ModifyDedicatedHostsChargeTypeRequest& request, const ModifyDedicatedHostsChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDedicatedHostsChargeTypeOutcomeCallable modifyDedicatedHostsChargeTypeCallable(const Model::ModifyDedicatedHostsChargeTypeRequest& request) const;
-			ModifyDemandOutcome modifyDemand(const Model::ModifyDemandRequest &request)const;
-			void modifyDemandAsync(const Model::ModifyDemandRequest& request, const ModifyDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDemandOutcomeCallable modifyDemandCallable(const Model::ModifyDemandRequest& request) const;
 			ModifyDeploymentSetAttributeOutcome modifyDeploymentSetAttribute(const Model::ModifyDeploymentSetAttributeRequest &request)const;
 			void modifyDeploymentSetAttributeAsync(const Model::ModifyDeploymentSetAttributeRequest& request, const ModifyDeploymentSetAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDeploymentSetAttributeOutcomeCallable modifyDeploymentSetAttributeCallable(const Model::ModifyDeploymentSetAttributeRequest& request) const;
@@ -2707,6 +2720,9 @@ namespace AlibabaCloud
 			ModifyPhysicalConnectionAttributeOutcome modifyPhysicalConnectionAttribute(const Model::ModifyPhysicalConnectionAttributeRequest &request)const;
 			void modifyPhysicalConnectionAttributeAsync(const Model::ModifyPhysicalConnectionAttributeRequest& request, const ModifyPhysicalConnectionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPhysicalConnectionAttributeOutcomeCallable modifyPhysicalConnectionAttributeCallable(const Model::ModifyPhysicalConnectionAttributeRequest& request) const;
+			ModifyPortRangeListOutcome modifyPortRangeList(const Model::ModifyPortRangeListRequest &request)const;
+			void modifyPortRangeListAsync(const Model::ModifyPortRangeListRequest& request, const ModifyPortRangeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyPortRangeListOutcomeCallable modifyPortRangeListCallable(const Model::ModifyPortRangeListRequest& request) const;
 			ModifyPrefixListOutcome modifyPrefixList(const Model::ModifyPrefixListRequest &request)const;
 			void modifyPrefixListAsync(const Model::ModifyPrefixListRequest& request, const ModifyPrefixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPrefixListOutcomeCallable modifyPrefixListCallable(const Model::ModifyPrefixListRequest& request) const;

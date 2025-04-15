@@ -34,42 +34,6 @@ void ModifyInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-bool ModifyInstanceAttributeRequest::getRecyclable() const {
-  return recyclable_;
-}
-
-void ModifyInstanceAttributeRequest::setRecyclable(bool recyclable) {
-  recyclable_ = recyclable;
-  setParameter(std::string("Recyclable"), recyclable ? "true" : "false");
-}
-
-int ModifyInstanceAttributeRequest::getNetworkInterfaceQueueNumber() const {
-  return networkInterfaceQueueNumber_;
-}
-
-void ModifyInstanceAttributeRequest::setNetworkInterfaceQueueNumber(int networkInterfaceQueueNumber) {
-  networkInterfaceQueueNumber_ = networkInterfaceQueueNumber;
-  setParameter(std::string("NetworkInterfaceQueueNumber"), std::to_string(networkInterfaceQueueNumber));
-}
-
-std::string ModifyInstanceAttributeRequest::getDescription() const {
-  return description_;
-}
-
-void ModifyInstanceAttributeRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
-}
-
-int ModifyInstanceAttributeRequest::getCpuOptionsThreadsPerCore() const {
-  return cpuOptionsThreadsPerCore_;
-}
-
-void ModifyInstanceAttributeRequest::setCpuOptionsThreadsPerCore(int cpuOptionsThreadsPerCore) {
-  cpuOptionsThreadsPerCore_ = cpuOptionsThreadsPerCore;
-  setParameter(std::string("CpuOptions.ThreadsPerCore"), std::to_string(cpuOptionsThreadsPerCore));
-}
-
 bool ModifyInstanceAttributeRequest::getDeletionProtection() const {
   return deletionProtection_;
 }
@@ -79,13 +43,13 @@ void ModifyInstanceAttributeRequest::setDeletionProtection(bool deletionProtecti
   setParameter(std::string("DeletionProtection"), deletionProtection ? "true" : "false");
 }
 
-std::string ModifyInstanceAttributeRequest::getUserData() const {
-  return userData_;
+bool ModifyInstanceAttributeRequest::getEnableNVS() const {
+  return enableNVS_;
 }
 
-void ModifyInstanceAttributeRequest::setUserData(const std::string &userData) {
-  userData_ = userData;
-  setParameter(std::string("UserData"), userData);
+void ModifyInstanceAttributeRequest::setEnableNVS(bool enableNVS) {
+  enableNVS_ = enableNVS;
+  setParameter(std::string("EnableNVS"), enableNVS ? "true" : "false");
 }
 
 std::string ModifyInstanceAttributeRequest::getPassword() const {
@@ -104,19 +68,6 @@ std::string ModifyInstanceAttributeRequest::getHostName() const {
 void ModifyInstanceAttributeRequest::setHostName(const std::string &hostName) {
   hostName_ = hostName;
   setParameter(std::string("HostName"), hostName);
-}
-
-ModifyInstanceAttributeRequest::PrivateDnsNameOptions ModifyInstanceAttributeRequest::getPrivateDnsNameOptions() const {
-  return privateDnsNameOptions_;
-}
-
-void ModifyInstanceAttributeRequest::setPrivateDnsNameOptions(const ModifyInstanceAttributeRequest::PrivateDnsNameOptions &privateDnsNameOptions) {
-  privateDnsNameOptions_ = privateDnsNameOptions;
-  setParameter(std::string("PrivateDnsNameOptions") + ".HostnameType", privateDnsNameOptions.hostnameType);
-  setParameter(std::string("PrivateDnsNameOptions") + ".EnableInstanceIdDnsARecord", privateDnsNameOptions.enableInstanceIdDnsARecord ? "true" : "false");
-  setParameter(std::string("PrivateDnsNameOptions") + ".EnableInstanceIdDnsAAAARecord", privateDnsNameOptions.enableInstanceIdDnsAAAARecord ? "true" : "false");
-  setParameter(std::string("PrivateDnsNameOptions") + ".EnableIpDnsARecord", privateDnsNameOptions.enableIpDnsARecord ? "true" : "false");
-  setParameter(std::string("PrivateDnsNameOptions") + ".EnableIpDnsPtrRecord", privateDnsNameOptions.enableIpDnsPtrRecord ? "true" : "false");
 }
 
 std::string ModifyInstanceAttributeRequest::getCpuOptionsTopologyType() const {
@@ -146,15 +97,6 @@ void ModifyInstanceAttributeRequest::setOSNameEn(const std::string &oSNameEn) {
   setParameter(std::string("OSNameEn"), oSNameEn);
 }
 
-bool ModifyInstanceAttributeRequest::getEnableJumboFrame() const {
-  return enableJumboFrame_;
-}
-
-void ModifyInstanceAttributeRequest::setEnableJumboFrame(bool enableJumboFrame) {
-  enableJumboFrame_ = enableJumboFrame;
-  setParameter(std::string("EnableJumboFrame"), enableJumboFrame ? "true" : "false");
-}
-
 int ModifyInstanceAttributeRequest::getCpuOptionsCore() const {
   return cpuOptionsCore_;
 }
@@ -162,6 +104,130 @@ int ModifyInstanceAttributeRequest::getCpuOptionsCore() const {
 void ModifyInstanceAttributeRequest::setCpuOptionsCore(int cpuOptionsCore) {
   cpuOptionsCore_ = cpuOptionsCore;
   setParameter(std::string("CpuOptions.Core"), std::to_string(cpuOptionsCore));
+}
+
+long ModifyInstanceAttributeRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ModifyInstanceAttributeRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+ModifyInstanceAttributeRequest::AdditionalInfo ModifyInstanceAttributeRequest::getAdditionalInfo() const {
+  return additionalInfo_;
+}
+
+void ModifyInstanceAttributeRequest::setAdditionalInfo(const ModifyInstanceAttributeRequest::AdditionalInfo &additionalInfo) {
+  additionalInfo_ = additionalInfo;
+  setParameter(std::string("AdditionalInfo") + ".PvdConfig", additionalInfo.pvdConfig);
+  setParameter(std::string("AdditionalInfo") + ".EnableHighDensityMode", additionalInfo.enableHighDensityMode ? "true" : "false");
+}
+
+ModifyInstanceAttributeRequest::CpuOptions ModifyInstanceAttributeRequest::getCpuOptions() const {
+  return cpuOptions_;
+}
+
+void ModifyInstanceAttributeRequest::setCpuOptions(const ModifyInstanceAttributeRequest::CpuOptions &cpuOptions) {
+  cpuOptions_ = cpuOptions;
+  setParameter(std::string("CpuOptions") + ".EnableVRDT", cpuOptions.enableVRDT ? "true" : "false");
+  setParameter(std::string("CpuOptions") + ".EnableVISST", cpuOptions.enableVISST ? "true" : "false");
+  setParameter(std::string("CpuOptions") + ".TurboMode", cpuOptions.turboMode);
+}
+
+std::string ModifyInstanceAttributeRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ModifyInstanceAttributeRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ModifyInstanceAttributeRequest::getInstanceName() const {
+  return instanceName_;
+}
+
+void ModifyInstanceAttributeRequest::setInstanceName(const std::string &instanceName) {
+  instanceName_ = instanceName;
+  setParameter(std::string("InstanceName"), instanceName);
+}
+
+bool ModifyInstanceAttributeRequest::getRecyclable() const {
+  return recyclable_;
+}
+
+void ModifyInstanceAttributeRequest::setRecyclable(bool recyclable) {
+  recyclable_ = recyclable;
+  setParameter(std::string("Recyclable"), recyclable ? "true" : "false");
+}
+
+int ModifyInstanceAttributeRequest::getNetworkInterfaceQueueNumber() const {
+  return networkInterfaceQueueNumber_;
+}
+
+void ModifyInstanceAttributeRequest::setNetworkInterfaceQueueNumber(int networkInterfaceQueueNumber) {
+  networkInterfaceQueueNumber_ = networkInterfaceQueueNumber;
+  setParameter(std::string("NetworkInterfaceQueueNumber"), std::to_string(networkInterfaceQueueNumber));
+}
+
+bool ModifyInstanceAttributeRequest::getEnableNetworkEncryption() const {
+  return enableNetworkEncryption_;
+}
+
+void ModifyInstanceAttributeRequest::setEnableNetworkEncryption(bool enableNetworkEncryption) {
+  enableNetworkEncryption_ = enableNetworkEncryption;
+  setParameter(std::string("EnableNetworkEncryption"), enableNetworkEncryption ? "true" : "false");
+}
+
+std::string ModifyInstanceAttributeRequest::getDescription() const {
+  return description_;
+}
+
+void ModifyInstanceAttributeRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
+int ModifyInstanceAttributeRequest::getCpuOptionsThreadsPerCore() const {
+  return cpuOptionsThreadsPerCore_;
+}
+
+void ModifyInstanceAttributeRequest::setCpuOptionsThreadsPerCore(int cpuOptionsThreadsPerCore) {
+  cpuOptionsThreadsPerCore_ = cpuOptionsThreadsPerCore;
+  setParameter(std::string("CpuOptions.ThreadsPerCore"), std::to_string(cpuOptionsThreadsPerCore));
+}
+
+std::string ModifyInstanceAttributeRequest::getUserData() const {
+  return userData_;
+}
+
+void ModifyInstanceAttributeRequest::setUserData(const std::string &userData) {
+  userData_ = userData;
+  setParameter(std::string("UserData"), userData);
+}
+
+ModifyInstanceAttributeRequest::PrivateDnsNameOptions ModifyInstanceAttributeRequest::getPrivateDnsNameOptions() const {
+  return privateDnsNameOptions_;
+}
+
+void ModifyInstanceAttributeRequest::setPrivateDnsNameOptions(const ModifyInstanceAttributeRequest::PrivateDnsNameOptions &privateDnsNameOptions) {
+  privateDnsNameOptions_ = privateDnsNameOptions;
+  setParameter(std::string("PrivateDnsNameOptions") + ".HostnameType", privateDnsNameOptions.hostnameType);
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableInstanceIdDnsARecord", privateDnsNameOptions.enableInstanceIdDnsARecord ? "true" : "false");
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableInstanceIdDnsAAAARecord", privateDnsNameOptions.enableInstanceIdDnsAAAARecord ? "true" : "false");
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableIpDnsARecord", privateDnsNameOptions.enableIpDnsARecord ? "true" : "false");
+  setParameter(std::string("PrivateDnsNameOptions") + ".EnableIpDnsPtrRecord", privateDnsNameOptions.enableIpDnsPtrRecord ? "true" : "false");
+}
+
+bool ModifyInstanceAttributeRequest::getEnableJumboFrame() const {
+  return enableJumboFrame_;
+}
+
+void ModifyInstanceAttributeRequest::setEnableJumboFrame(bool enableJumboFrame) {
+  enableJumboFrame_ = enableJumboFrame;
+  setParameter(std::string("EnableJumboFrame"), enableJumboFrame ? "true" : "false");
 }
 
 std::string ModifyInstanceAttributeRequest::getResourceOwnerAccount() const {
@@ -191,49 +257,12 @@ void ModifyInstanceAttributeRequest::setCreditSpecification(const std::string &c
   setParameter(std::string("CreditSpecification"), creditSpecification);
 }
 
-long ModifyInstanceAttributeRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ModifyInstanceAttributeRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::vector<std::string> ModifyInstanceAttributeRequest::getSecurityGroupIds() const {
   return securityGroupIds_;
 }
 
 void ModifyInstanceAttributeRequest::setSecurityGroupIds(const std::vector<std::string> &securityGroupIds) {
   securityGroupIds_ = securityGroupIds;
-}
-
-ModifyInstanceAttributeRequest::AdditionalInfo ModifyInstanceAttributeRequest::getAdditionalInfo() const {
-  return additionalInfo_;
-}
-
-void ModifyInstanceAttributeRequest::setAdditionalInfo(const ModifyInstanceAttributeRequest::AdditionalInfo &additionalInfo) {
-  additionalInfo_ = additionalInfo;
-  setParameter(std::string("AdditionalInfo") + ".PvdConfig", additionalInfo.pvdConfig);
-  setParameter(std::string("AdditionalInfo") + ".EnableHighDensityMode", additionalInfo.enableHighDensityMode ? "true" : "false");
-}
-
-std::string ModifyInstanceAttributeRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ModifyInstanceAttributeRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string ModifyInstanceAttributeRequest::getInstanceName() const {
-  return instanceName_;
-}
-
-void ModifyInstanceAttributeRequest::setInstanceName(const std::string &instanceName) {
-  instanceName_ = instanceName;
-  setParameter(std::string("InstanceName"), instanceName);
 }
 
 ModifyInstanceAttributeRequest::RemoteConnectionOptions ModifyInstanceAttributeRequest::getRemoteConnectionOptions() const {

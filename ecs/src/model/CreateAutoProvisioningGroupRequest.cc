@@ -47,6 +47,7 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationDataDisk(const st
     setParameter(launchConfigurationDataDiskObjStr + ".EncryptAlgorithm", launchConfigurationDataDiskObj.encryptAlgorithm);
     setParameter(launchConfigurationDataDiskObjStr + ".ProvisionedIops", std::to_string(launchConfigurationDataDiskObj.provisionedIops));
     setParameter(launchConfigurationDataDiskObjStr + ".BurstingEnabled", launchConfigurationDataDiskObj.burstingEnabled ? "true" : "false");
+    setParameter(launchConfigurationDataDiskObjStr + ".AutoSnapshotPolicyId", launchConfigurationDataDiskObj.autoSnapshotPolicyId);
   }
 }
 
@@ -328,6 +329,9 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfiguration(const CreateAuto
   setParameter(std::string("LaunchConfiguration") + ".PeriodUnit", launchConfiguration.periodUnit);
   setParameter(std::string("LaunchConfiguration") + ".AutoRenew", launchConfiguration.autoRenew ? "true" : "false");
   setParameter(std::string("LaunchConfiguration") + ".AutoRenewPeriod", std::to_string(launchConfiguration.autoRenewPeriod));
+  setParameter(std::string("LaunchConfiguration") + ".SpotDuration", std::to_string(launchConfiguration.spotDuration));
+  setParameter(std::string("LaunchConfiguration") + ".SpotInterruptionBehavior", launchConfiguration.spotInterruptionBehavior);
+  setParameter(std::string("LaunchConfiguration") + ".ImageOptions.LoginAsNonRoot", launchConfiguration.imageOptions.loginAsNonRoot ? "true" : "false");
 }
 
 std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationArn> CreateAutoProvisioningGroupRequest::getLaunchConfigurationArn() const {
@@ -419,6 +423,7 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDisk(const 
   setParameter(std::string("LaunchConfiguration.SystemDisk") + ".EncryptAlgorithm", launchConfigurationSystemDisk.encryptAlgorithm);
   setParameter(std::string("LaunchConfiguration.SystemDisk") + ".ProvisionedIops", std::to_string(launchConfigurationSystemDisk.provisionedIops));
   setParameter(std::string("LaunchConfiguration.SystemDisk") + ".BurstingEnabled", launchConfigurationSystemDisk.burstingEnabled ? "true" : "false");
+  setParameter(std::string("LaunchConfiguration.SystemDisk") + ".AutoSnapshotPolicyId", launchConfigurationSystemDisk.autoSnapshotPolicyId);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationInstanceName() const {

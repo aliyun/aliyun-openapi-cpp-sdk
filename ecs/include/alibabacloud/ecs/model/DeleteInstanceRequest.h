@@ -32,6 +32,8 @@ public:
 	~DeleteInstanceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	bool getForceStop() const;
+	void setForceStop(bool forceStop);
 	bool getTerminateSubscription() const;
 	void setTerminateSubscription(bool terminateSubscription);
 	bool getDryRun() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	bool forceStop_;
 	bool terminateSubscription_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;

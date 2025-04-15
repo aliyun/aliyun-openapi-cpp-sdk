@@ -61,6 +61,7 @@ namespace AlibabaCloud
 				explicit DescribeInstanceAttributeResult(const std::string &payload);
 				~DescribeInstanceAttributeResult();
 				std::string getDescription()const;
+				bool getEnableNetworkEncryption()const;
 				int getMemory()const;
 				std::string getInstanceChargeType()const;
 				int getCpu()const;
@@ -97,6 +98,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string description_;
+				bool enableNetworkEncryption_;
 				int memory_;
 				std::string instanceChargeType_;
 				int cpu_;

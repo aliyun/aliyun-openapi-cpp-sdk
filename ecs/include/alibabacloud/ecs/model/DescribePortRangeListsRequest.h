@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEDEMANDSREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEDEMANDSREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTSREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTSREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,66 +26,51 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT DescribeDemandsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT DescribePortRangeListsRequest : public RpcServiceRequest {
 public:
 	struct Tag {
 		std::string key;
 		std::string value;
 	};
-	DescribeDemandsRequest();
-	~DescribeDemandsRequest();
+	DescribePortRangeListsRequest();
+	~DescribePortRangeListsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getInstanceType() const;
-	void setInstanceType(const std::string &instanceType);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
-	std::string getInstanceChargeType() const;
-	void setInstanceChargeType(const std::string &instanceChargeType);
-	bool getDryRun() const;
-	void setDryRun(bool dryRun);
+	std::vector<std::string> getPortRangeListId() const;
+	void setPortRangeListId(const std::vector<std::string> &portRangeListId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
-	std::string getInstanceTypeFamily() const;
-	void setInstanceTypeFamily(const std::string &instanceTypeFamily);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::vector<std::string> getDemandStatus() const;
-	void setDemandStatus(const std::vector<std::string> &demandStatus);
-	std::string getDemandId() const;
-	void setDemandId(const std::string &demandId);
-	std::string getZoneId() const;
-	void setZoneId(const std::string &zoneId);
-	std::string getDemandType() const;
-	void setDemandType(const std::string &demandType);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
+	std::string getPortRangeListName() const;
+	void setPortRangeListName(const std::string &portRangeListName);
 
 private:
 	long resourceOwnerId_;
-	int pageNumber_;
+	std::string resourceGroupId_;
 	std::string regionId_;
-	int pageSize_;
-	std::string instanceType_;
+	std::string nextToken_;
 	std::vector<Tag> tag_;
-	std::string instanceChargeType_;
-	bool dryRun_;
+	std::vector<std::string> portRangeListId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
-	std::string instanceTypeFamily_;
 	long ownerId_;
-	std::vector<std::string> demandStatus_;
-	std::string demandId_;
-	std::string zoneId_;
-	std::string demandType_;
+	int maxResults_;
+	std::string portRangeListName_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEDEMANDSREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTSREQUEST_H_

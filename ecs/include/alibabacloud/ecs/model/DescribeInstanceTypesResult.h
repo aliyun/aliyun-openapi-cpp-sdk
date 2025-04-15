@@ -52,6 +52,11 @@ namespace AlibabaCloud
 					{
 						int networkCardIndex;
 					};
+					struct Attribute
+					{
+						std::string value;
+						std::string name;
+					};
 					long instancePpsTx;
 					std::string nvmeSupport;
 					int primaryEniQueueNumber;
@@ -60,6 +65,7 @@ namespace AlibabaCloud
 					bool eniTrunkSupported;
 					std::string instanceTypeFamily;
 					long instancePpsRx;
+					std::vector<InstanceType::Attribute> attributes;
 					bool networkEncryptionSupport;
 					int eriQuantity;
 					int instanceBandwidthRx;

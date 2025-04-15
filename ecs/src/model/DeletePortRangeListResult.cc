@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/ModifyDemandResult.h>
+#include <alibabacloud/ecs/model/DeletePortRangeListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-ModifyDemandResult::ModifyDemandResult() :
+DeletePortRangeListResult::DeletePortRangeListResult() :
 	ServiceResult()
 {}
 
-ModifyDemandResult::ModifyDemandResult(const std::string &payload) :
+DeletePortRangeListResult::DeletePortRangeListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyDemandResult::~ModifyDemandResult()
+DeletePortRangeListResult::~DeletePortRangeListResult()
 {}
 
-void ModifyDemandResult::parse(const std::string &payload)
+void DeletePortRangeListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

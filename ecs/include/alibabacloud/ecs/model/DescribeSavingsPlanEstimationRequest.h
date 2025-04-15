@@ -30,32 +30,32 @@ class ALIBABACLOUD_ECS_EXPORT DescribeSavingsPlanEstimationRequest : public RpcS
 public:
 	DescribeSavingsPlanEstimationRequest();
 	~DescribeSavingsPlanEstimationRequest();
+	std::string getPlanType() const;
+	void setPlanType(const std::string &planType);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getEstimationResource() const;
+	void setEstimationResource(const std::string &estimationResource);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	std::string getPeriod() const;
 	void setPeriod(const std::string &period);
-	std::string getPlanType() const;
-	void setPlanType(const std::string &planType);
 	std::string getInstanceTypeScope() const;
 	void setInstanceTypeScope(const std::string &instanceTypeScope);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
 	std::string getOfferingType() const;
 	void setOfferingType(const std::string &offeringType);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	std::string getEstimationResource() const;
-	void setEstimationResource(const std::string &estimationResource);
 
 private:
+	std::string planType_;
+	std::string regionId_;
+	std::string estimationResource_;
 	std::string resourceId_;
 	std::string period_;
-	std::string planType_;
 	std::string instanceTypeScope_;
 	std::string periodUnit_;
 	std::string offeringType_;
-	std::string regionId_;
-	std::string estimationResource_;
 };
 } // namespace Model
 } // namespace Ecs

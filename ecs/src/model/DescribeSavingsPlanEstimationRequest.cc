@@ -25,6 +25,33 @@ DescribeSavingsPlanEstimationRequest::DescribeSavingsPlanEstimationRequest()
 
 DescribeSavingsPlanEstimationRequest::~DescribeSavingsPlanEstimationRequest() {}
 
+std::string DescribeSavingsPlanEstimationRequest::getPlanType() const {
+  return planType_;
+}
+
+void DescribeSavingsPlanEstimationRequest::setPlanType(const std::string &planType) {
+  planType_ = planType;
+  setParameter(std::string("PlanType"), planType);
+}
+
+std::string DescribeSavingsPlanEstimationRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeSavingsPlanEstimationRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeSavingsPlanEstimationRequest::getEstimationResource() const {
+  return estimationResource_;
+}
+
+void DescribeSavingsPlanEstimationRequest::setEstimationResource(const std::string &estimationResource) {
+  estimationResource_ = estimationResource;
+  setParameter(std::string("EstimationResource"), estimationResource);
+}
+
 std::string DescribeSavingsPlanEstimationRequest::getResourceId() const {
   return resourceId_;
 }
@@ -41,15 +68,6 @@ std::string DescribeSavingsPlanEstimationRequest::getPeriod() const {
 void DescribeSavingsPlanEstimationRequest::setPeriod(const std::string &period) {
   period_ = period;
   setParameter(std::string("Period"), period);
-}
-
-std::string DescribeSavingsPlanEstimationRequest::getPlanType() const {
-  return planType_;
-}
-
-void DescribeSavingsPlanEstimationRequest::setPlanType(const std::string &planType) {
-  planType_ = planType;
-  setParameter(std::string("PlanType"), planType);
 }
 
 std::string DescribeSavingsPlanEstimationRequest::getInstanceTypeScope() const {
@@ -77,23 +95,5 @@ std::string DescribeSavingsPlanEstimationRequest::getOfferingType() const {
 void DescribeSavingsPlanEstimationRequest::setOfferingType(const std::string &offeringType) {
   offeringType_ = offeringType;
   setParameter(std::string("OfferingType"), offeringType);
-}
-
-std::string DescribeSavingsPlanEstimationRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeSavingsPlanEstimationRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string DescribeSavingsPlanEstimationRequest::getEstimationResource() const {
-  return estimationResource_;
-}
-
-void DescribeSavingsPlanEstimationRequest::setEstimationResource(const std::string &estimationResource) {
-  estimationResource_ = estimationResource;
-  setParameter(std::string("EstimationResource"), estimationResource);
 }
 

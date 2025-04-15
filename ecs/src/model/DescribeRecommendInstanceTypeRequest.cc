@@ -34,24 +34,6 @@ void DescribeRecommendInstanceTypeRequest::setResourceOwnerId(long resourceOwner
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-float DescribeRecommendInstanceTypeRequest::getMemory() const {
-  return memory_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setMemory(float memory) {
-  memory_ = memory;
-  setParameter(std::string("Memory"), std::to_string(memory));
-}
-
-std::string DescribeRecommendInstanceTypeRequest::getIoOptimized() const {
-  return ioOptimized_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setIoOptimized(const std::string &ioOptimized) {
-  ioOptimized_ = ioOptimized;
-  setParameter(std::string("IoOptimized"), ioOptimized);
-}
-
 std::string DescribeRecommendInstanceTypeRequest::getNetworkType() const {
   return networkType_;
 }
@@ -79,15 +61,6 @@ void DescribeRecommendInstanceTypeRequest::setCores(int cores) {
   setParameter(std::string("Cores"), std::to_string(cores));
 }
 
-std::string DescribeRecommendInstanceTypeRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string DescribeRecommendInstanceTypeRequest::getSystemDiskCategory() const {
   return systemDiskCategory_;
 }
@@ -95,6 +68,78 @@ std::string DescribeRecommendInstanceTypeRequest::getSystemDiskCategory() const 
 void DescribeRecommendInstanceTypeRequest::setSystemDiskCategory(const std::string &systemDiskCategory) {
   systemDiskCategory_ = systemDiskCategory;
   setParameter(std::string("SystemDiskCategory"), systemDiskCategory);
+}
+
+float DescribeRecommendInstanceTypeRequest::getMaxPrice() const {
+  return maxPrice_;
+}
+
+void DescribeRecommendInstanceTypeRequest::setMaxPrice(float maxPrice) {
+  maxPrice_ = maxPrice;
+  setParameter(std::string("MaxPrice"), std::to_string(maxPrice));
+}
+
+long DescribeRecommendInstanceTypeRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeRecommendInstanceTypeRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeRecommendInstanceTypeRequest::getSpotStrategy() const {
+  return spotStrategy_;
+}
+
+void DescribeRecommendInstanceTypeRequest::setSpotStrategy(const std::string &spotStrategy) {
+  spotStrategy_ = spotStrategy;
+  setParameter(std::string("SpotStrategy"), spotStrategy);
+}
+
+std::string DescribeRecommendInstanceTypeRequest::getInstanceFamilyLevel() const {
+  return instanceFamilyLevel_;
+}
+
+void DescribeRecommendInstanceTypeRequest::setInstanceFamilyLevel(const std::string &instanceFamilyLevel) {
+  instanceFamilyLevel_ = instanceFamilyLevel;
+  setParameter(std::string("InstanceFamilyLevel"), instanceFamilyLevel);
+}
+
+std::string DescribeRecommendInstanceTypeRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void DescribeRecommendInstanceTypeRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
+}
+
+float DescribeRecommendInstanceTypeRequest::getMemory() const {
+  return memory_;
+}
+
+void DescribeRecommendInstanceTypeRequest::setMemory(float memory) {
+  memory_ = memory;
+  setParameter(std::string("Memory"), std::to_string(memory));
+}
+
+std::string DescribeRecommendInstanceTypeRequest::getIoOptimized() const {
+  return ioOptimized_;
+}
+
+void DescribeRecommendInstanceTypeRequest::setIoOptimized(const std::string &ioOptimized) {
+  ioOptimized_ = ioOptimized;
+  setParameter(std::string("IoOptimized"), ioOptimized);
+}
+
+std::string DescribeRecommendInstanceTypeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeRecommendInstanceTypeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getInstanceType() const {
@@ -113,15 +158,6 @@ std::string DescribeRecommendInstanceTypeRequest::getInstanceChargeType() const 
 void DescribeRecommendInstanceTypeRequest::setInstanceChargeType(const std::string &instanceChargeType) {
   instanceChargeType_ = instanceChargeType;
   setParameter(std::string("InstanceChargeType"), instanceChargeType);
-}
-
-float DescribeRecommendInstanceTypeRequest::getMaxPrice() const {
-  return maxPrice_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setMaxPrice(float maxPrice) {
-  maxPrice_ = maxPrice;
-  setParameter(std::string("MaxPrice"), std::to_string(maxPrice));
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getResourceOwnerAccount() const {
@@ -159,24 +195,6 @@ void DescribeRecommendInstanceTypeRequest::setInstanceTypeFamily(const std::vect
   instanceTypeFamily_ = instanceTypeFamily;
 }
 
-long DescribeRecommendInstanceTypeRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DescribeRecommendInstanceTypeRequest::getSpotStrategy() const {
-  return spotStrategy_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setSpotStrategy(const std::string &spotStrategy) {
-  spotStrategy_ = spotStrategy;
-  setParameter(std::string("SpotStrategy"), spotStrategy);
-}
-
 std::string DescribeRecommendInstanceTypeRequest::getPriorityStrategy() const {
   return priorityStrategy_;
 }
@@ -184,23 +202,5 @@ std::string DescribeRecommendInstanceTypeRequest::getPriorityStrategy() const {
 void DescribeRecommendInstanceTypeRequest::setPriorityStrategy(const std::string &priorityStrategy) {
   priorityStrategy_ = priorityStrategy;
   setParameter(std::string("PriorityStrategy"), priorityStrategy);
-}
-
-std::string DescribeRecommendInstanceTypeRequest::getInstanceFamilyLevel() const {
-  return instanceFamilyLevel_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setInstanceFamilyLevel(const std::string &instanceFamilyLevel) {
-  instanceFamilyLevel_ = instanceFamilyLevel;
-  setParameter(std::string("InstanceFamilyLevel"), instanceFamilyLevel);
-}
-
-std::string DescribeRecommendInstanceTypeRequest::getZoneId() const {
-  return zoneId_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setZoneId(const std::string &zoneId) {
-  zoneId_ = zoneId;
-  setParameter(std::string("ZoneId"), zoneId);
 }
 

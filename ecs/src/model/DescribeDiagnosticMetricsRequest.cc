@@ -33,15 +33,6 @@ void DescribeDiagnosticMetricsRequest::setMetricIds(const std::vector<std::strin
   metricIds_ = metricIds;
 }
 
-std::string DescribeDiagnosticMetricsRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void DescribeDiagnosticMetricsRequest::setResourceType(const std::string &resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), resourceType);
-}
-
 std::string DescribeDiagnosticMetricsRequest::getRegionId() const {
   return regionId_;
 }
@@ -58,6 +49,15 @@ std::string DescribeDiagnosticMetricsRequest::getNextToken() const {
 void DescribeDiagnosticMetricsRequest::setNextToken(const std::string &nextToken) {
   nextToken_ = nextToken;
   setParameter(std::string("NextToken"), nextToken);
+}
+
+std::string DescribeDiagnosticMetricsRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void DescribeDiagnosticMetricsRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
 int DescribeDiagnosticMetricsRequest::getMaxResults() const {

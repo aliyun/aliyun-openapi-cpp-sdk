@@ -25,14 +25,6 @@ DeleteDiagnosticReportsRequest::DeleteDiagnosticReportsRequest()
 
 DeleteDiagnosticReportsRequest::~DeleteDiagnosticReportsRequest() {}
 
-std::vector<std::string> DeleteDiagnosticReportsRequest::getReportIds() const {
-  return reportIds_;
-}
-
-void DeleteDiagnosticReportsRequest::setReportIds(const std::vector<std::string> &reportIds) {
-  reportIds_ = reportIds;
-}
-
 std::string DeleteDiagnosticReportsRequest::getRegionId() const {
   return regionId_;
 }
@@ -40,5 +32,13 @@ std::string DeleteDiagnosticReportsRequest::getRegionId() const {
 void DeleteDiagnosticReportsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::vector<std::string> DeleteDiagnosticReportsRequest::getReportIds() const {
+  return reportIds_;
+}
+
+void DeleteDiagnosticReportsRequest::setReportIds(const std::vector<std::string> &reportIds) {
+  reportIds_ = reportIds;
 }
 

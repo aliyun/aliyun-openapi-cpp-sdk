@@ -52,15 +52,6 @@ void RevokeSecurityGroupEgressRequest::setSourcePortRange(const std::string &sou
   setParameter(std::string("SourcePortRange"), sourcePortRange);
 }
 
-std::string RevokeSecurityGroupEgressRequest::getClientToken() const {
-  return clientToken_;
-}
-
-void RevokeSecurityGroupEgressRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
-}
-
 std::string RevokeSecurityGroupEgressRequest::getDestPrefixListId() const {
   return destPrefixListId_;
 }
@@ -68,6 +59,112 @@ std::string RevokeSecurityGroupEgressRequest::getDestPrefixListId() const {
 void RevokeSecurityGroupEgressRequest::setDestPrefixListId(const std::string &destPrefixListId) {
   destPrefixListId_ = destPrefixListId;
   setParameter(std::string("DestPrefixListId"), destPrefixListId);
+}
+
+std::vector<RevokeSecurityGroupEgressRequest::Permissions> RevokeSecurityGroupEgressRequest::getPermissions() const {
+  return permissions_;
+}
+
+void RevokeSecurityGroupEgressRequest::setPermissions(const std::vector<RevokeSecurityGroupEgressRequest::Permissions> &permissions) {
+  permissions_ = permissions;
+  for(int dep1 = 0; dep1 != permissions.size(); dep1++) {
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Policy", permissions[dep1].policy);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Priority", permissions[dep1].priority);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".IpProtocol", permissions[dep1].ipProtocol);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestCidrIp", permissions[dep1].destCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Ipv6DestCidrIp", permissions[dep1].ipv6DestCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestGroupId", permissions[dep1].destGroupId);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestPrefixListId", permissions[dep1].destPrefixListId);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".PortRange", permissions[dep1].portRange);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourceCidrIp", permissions[dep1].sourceCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Ipv6SourceCidrIp", permissions[dep1].ipv6SourceCidrIp);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourcePortRange", permissions[dep1].sourcePortRange);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestGroupOwnerAccount", permissions[dep1].destGroupOwnerAccount);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestGroupOwnerId", permissions[dep1].destGroupOwnerId);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".NicType", permissions[dep1].nicType);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Description", permissions[dep1].description);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".PortRangeListId", permissions[dep1].portRangeListId);
+  }
+}
+
+std::string RevokeSecurityGroupEgressRequest::getIpv6DestCidrIp() const {
+  return ipv6DestCidrIp_;
+}
+
+void RevokeSecurityGroupEgressRequest::setIpv6DestCidrIp(const std::string &ipv6DestCidrIp) {
+  ipv6DestCidrIp_ = ipv6DestCidrIp;
+  setParameter(std::string("Ipv6DestCidrIp"), ipv6DestCidrIp);
+}
+
+std::string RevokeSecurityGroupEgressRequest::getPortRange() const {
+  return portRange_;
+}
+
+void RevokeSecurityGroupEgressRequest::setPortRange(const std::string &portRange) {
+  portRange_ = portRange;
+  setParameter(std::string("PortRange"), portRange);
+}
+
+std::string RevokeSecurityGroupEgressRequest::getIpProtocol() const {
+  return ipProtocol_;
+}
+
+void RevokeSecurityGroupEgressRequest::setIpProtocol(const std::string &ipProtocol) {
+  ipProtocol_ = ipProtocol;
+  setParameter(std::string("IpProtocol"), ipProtocol);
+}
+
+std::string RevokeSecurityGroupEgressRequest::getSourceCidrIp() const {
+  return sourceCidrIp_;
+}
+
+void RevokeSecurityGroupEgressRequest::setSourceCidrIp(const std::string &sourceCidrIp) {
+  sourceCidrIp_ = sourceCidrIp;
+  setParameter(std::string("SourceCidrIp"), sourceCidrIp);
+}
+
+long RevokeSecurityGroupEgressRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void RevokeSecurityGroupEgressRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string RevokeSecurityGroupEgressRequest::getPriority() const {
+  return priority_;
+}
+
+void RevokeSecurityGroupEgressRequest::setPriority(const std::string &priority) {
+  priority_ = priority;
+  setParameter(std::string("Priority"), priority);
+}
+
+std::string RevokeSecurityGroupEgressRequest::getDestCidrIp() const {
+  return destCidrIp_;
+}
+
+void RevokeSecurityGroupEgressRequest::setDestCidrIp(const std::string &destCidrIp) {
+  destCidrIp_ = destCidrIp;
+  setParameter(std::string("DestCidrIp"), destCidrIp);
+}
+
+std::vector<std::string> RevokeSecurityGroupEgressRequest::getSecurityGroupRuleId() const {
+  return securityGroupRuleId_;
+}
+
+void RevokeSecurityGroupEgressRequest::setSecurityGroupRuleId(const std::vector<std::string> &securityGroupRuleId) {
+  securityGroupRuleId_ = securityGroupRuleId;
+}
+
+std::string RevokeSecurityGroupEgressRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void RevokeSecurityGroupEgressRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
 std::string RevokeSecurityGroupEgressRequest::getSecurityGroupId() const {
@@ -97,31 +194,6 @@ void RevokeSecurityGroupEgressRequest::setRegionId(const std::string &regionId) 
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::vector<RevokeSecurityGroupEgressRequest::Permissions> RevokeSecurityGroupEgressRequest::getPermissions() const {
-  return permissions_;
-}
-
-void RevokeSecurityGroupEgressRequest::setPermissions(const std::vector<RevokeSecurityGroupEgressRequest::Permissions> &permissions) {
-  permissions_ = permissions;
-  for(int dep1 = 0; dep1 != permissions.size(); dep1++) {
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Policy", permissions[dep1].policy);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Priority", permissions[dep1].priority);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".IpProtocol", permissions[dep1].ipProtocol);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestCidrIp", permissions[dep1].destCidrIp);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Ipv6DestCidrIp", permissions[dep1].ipv6DestCidrIp);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestGroupId", permissions[dep1].destGroupId);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestPrefixListId", permissions[dep1].destPrefixListId);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".PortRange", permissions[dep1].portRange);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourceCidrIp", permissions[dep1].sourceCidrIp);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Ipv6SourceCidrIp", permissions[dep1].ipv6SourceCidrIp);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourcePortRange", permissions[dep1].sourcePortRange);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestGroupOwnerAccount", permissions[dep1].destGroupOwnerAccount);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".DestGroupOwnerId", permissions[dep1].destGroupOwnerId);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".NicType", permissions[dep1].nicType);
-    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Description", permissions[dep1].description);
-  }
-}
-
 std::string RevokeSecurityGroupEgressRequest::getPolicy() const {
   return policy_;
 }
@@ -129,15 +201,6 @@ std::string RevokeSecurityGroupEgressRequest::getPolicy() const {
 void RevokeSecurityGroupEgressRequest::setPolicy(const std::string &policy) {
   policy_ = policy;
   setParameter(std::string("Policy"), policy);
-}
-
-std::string RevokeSecurityGroupEgressRequest::getIpv6DestCidrIp() const {
-  return ipv6DestCidrIp_;
-}
-
-void RevokeSecurityGroupEgressRequest::setIpv6DestCidrIp(const std::string &ipv6DestCidrIp) {
-  ipv6DestCidrIp_ = ipv6DestCidrIp;
-  setParameter(std::string("Ipv6DestCidrIp"), ipv6DestCidrIp);
 }
 
 std::string RevokeSecurityGroupEgressRequest::getIpv6SourceCidrIp() const {
@@ -149,15 +212,6 @@ void RevokeSecurityGroupEgressRequest::setIpv6SourceCidrIp(const std::string &ip
   setParameter(std::string("Ipv6SourceCidrIp"), ipv6SourceCidrIp);
 }
 
-std::string RevokeSecurityGroupEgressRequest::getPortRange() const {
-  return portRange_;
-}
-
-void RevokeSecurityGroupEgressRequest::setPortRange(const std::string &portRange) {
-  portRange_ = portRange;
-  setParameter(std::string("PortRange"), portRange);
-}
-
 std::string RevokeSecurityGroupEgressRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -165,15 +219,6 @@ std::string RevokeSecurityGroupEgressRequest::getResourceOwnerAccount() const {
 void RevokeSecurityGroupEgressRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string RevokeSecurityGroupEgressRequest::getIpProtocol() const {
-  return ipProtocol_;
-}
-
-void RevokeSecurityGroupEgressRequest::setIpProtocol(const std::string &ipProtocol) {
-  ipProtocol_ = ipProtocol;
-  setParameter(std::string("IpProtocol"), ipProtocol);
 }
 
 std::string RevokeSecurityGroupEgressRequest::getOwnerAccount() const {
@@ -185,15 +230,6 @@ void RevokeSecurityGroupEgressRequest::setOwnerAccount(const std::string &ownerA
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string RevokeSecurityGroupEgressRequest::getSourceCidrIp() const {
-  return sourceCidrIp_;
-}
-
-void RevokeSecurityGroupEgressRequest::setSourceCidrIp(const std::string &sourceCidrIp) {
-  sourceCidrIp_ = sourceCidrIp;
-  setParameter(std::string("SourceCidrIp"), sourceCidrIp);
-}
-
 std::string RevokeSecurityGroupEgressRequest::getDestGroupId() const {
   return destGroupId_;
 }
@@ -201,24 +237,6 @@ std::string RevokeSecurityGroupEgressRequest::getDestGroupId() const {
 void RevokeSecurityGroupEgressRequest::setDestGroupId(const std::string &destGroupId) {
   destGroupId_ = destGroupId;
   setParameter(std::string("DestGroupId"), destGroupId);
-}
-
-long RevokeSecurityGroupEgressRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void RevokeSecurityGroupEgressRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string RevokeSecurityGroupEgressRequest::getPriority() const {
-  return priority_;
-}
-
-void RevokeSecurityGroupEgressRequest::setPriority(const std::string &priority) {
-  priority_ = priority;
-  setParameter(std::string("Priority"), priority);
 }
 
 std::string RevokeSecurityGroupEgressRequest::getDestGroupOwnerAccount() const {
@@ -230,15 +248,6 @@ void RevokeSecurityGroupEgressRequest::setDestGroupOwnerAccount(const std::strin
   setParameter(std::string("DestGroupOwnerAccount"), destGroupOwnerAccount);
 }
 
-std::string RevokeSecurityGroupEgressRequest::getDestCidrIp() const {
-  return destCidrIp_;
-}
-
-void RevokeSecurityGroupEgressRequest::setDestCidrIp(const std::string &destCidrIp) {
-  destCidrIp_ = destCidrIp;
-  setParameter(std::string("DestCidrIp"), destCidrIp);
-}
-
 long RevokeSecurityGroupEgressRequest::getDestGroupOwnerId() const {
   return destGroupOwnerId_;
 }
@@ -246,13 +255,5 @@ long RevokeSecurityGroupEgressRequest::getDestGroupOwnerId() const {
 void RevokeSecurityGroupEgressRequest::setDestGroupOwnerId(long destGroupOwnerId) {
   destGroupOwnerId_ = destGroupOwnerId;
   setParameter(std::string("DestGroupOwnerId"), std::to_string(destGroupOwnerId));
-}
-
-std::vector<std::string> RevokeSecurityGroupEgressRequest::getSecurityGroupRuleId() const {
-  return securityGroupRuleId_;
-}
-
-void RevokeSecurityGroupEgressRequest::setSecurityGroupRuleId(const std::vector<std::string> &securityGroupRuleId) {
-  securityGroupRuleId_ = securityGroupRuleId;
 }
 

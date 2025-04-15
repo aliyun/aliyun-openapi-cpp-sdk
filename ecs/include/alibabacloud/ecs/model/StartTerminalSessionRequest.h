@@ -38,6 +38,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getTargetServer() const;
 	void setTargetServer(const std::string &targetServer);
+	std::string getConnectionType() const;
+	void setConnectionType(const std::string &connectionType);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -56,6 +58,7 @@ private:
 	std::string commandLine_;
 	std::string regionId_;
 	std::string targetServer_;
+	std::string connectionType_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

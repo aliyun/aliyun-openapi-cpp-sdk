@@ -30,14 +30,14 @@ class ALIBABACLOUD_ECS_EXPORT DeleteDiagnosticReportsRequest : public RpcService
 public:
 	DeleteDiagnosticReportsRequest();
 	~DeleteDiagnosticReportsRequest();
-	std::vector<std::string> getReportIds() const;
-	void setReportIds(const std::vector<std::string> &reportIds);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<std::string> getReportIds() const;
+	void setReportIds(const std::vector<std::string> &reportIds);
 
 private:
-	std::vector<std::string> reportIds_;
 	std::string regionId_;
+	std::vector<std::string> reportIds_;
 };
 } // namespace Model
 } // namespace Ecs

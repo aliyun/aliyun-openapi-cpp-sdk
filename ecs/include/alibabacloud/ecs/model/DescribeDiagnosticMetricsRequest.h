@@ -32,20 +32,20 @@ public:
 	~DescribeDiagnosticMetricsRequest();
 	std::vector<std::string> getMetricIds() const;
 	void setMetricIds(const std::vector<std::string> &metricIds);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
 
 private:
 	std::vector<std::string> metricIds_;
-	std::string resourceType_;
 	std::string regionId_;
 	std::string nextToken_;
+	std::string resourceType_;
 	int maxResults_;
 };
 } // namespace Model

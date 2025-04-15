@@ -34,6 +34,15 @@ void DeleteInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool DeleteInstanceRequest::getForceStop() const {
+  return forceStop_;
+}
+
+void DeleteInstanceRequest::setForceStop(bool forceStop) {
+  forceStop_ = forceStop;
+  setParameter(std::string("ForceStop"), forceStop ? "true" : "false");
+}
+
 bool DeleteInstanceRequest::getTerminateSubscription() const {
   return terminateSubscription_;
 }

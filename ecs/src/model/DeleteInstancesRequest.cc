@@ -43,6 +43,15 @@ void DeleteInstancesRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+bool DeleteInstancesRequest::getForceStop() const {
+  return forceStop_;
+}
+
+void DeleteInstancesRequest::setForceStop(bool forceStop) {
+  forceStop_ = forceStop;
+  setParameter(std::string("ForceStop"), forceStop ? "true" : "false");
+}
+
 std::string DeleteInstancesRequest::getRegionId() const {
   return regionId_;
 }

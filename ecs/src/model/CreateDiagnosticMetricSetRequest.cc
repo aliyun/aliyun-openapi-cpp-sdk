@@ -51,15 +51,6 @@ void CreateDiagnosticMetricSetRequest::setMetricSetName(const std::string &metri
   setParameter(std::string("MetricSetName"), metricSetName);
 }
 
-std::string CreateDiagnosticMetricSetRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void CreateDiagnosticMetricSetRequest::setResourceType(const std::string &resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), resourceType);
-}
-
 std::string CreateDiagnosticMetricSetRequest::getRegionId() const {
   return regionId_;
 }
@@ -67,5 +58,14 @@ std::string CreateDiagnosticMetricSetRequest::getRegionId() const {
 void CreateDiagnosticMetricSetRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string CreateDiagnosticMetricSetRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void CreateDiagnosticMetricSetRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 

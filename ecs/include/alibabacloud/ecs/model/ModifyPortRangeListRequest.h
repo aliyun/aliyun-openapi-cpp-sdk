@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_CREATEDEMANDREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_CREATEDEMANDREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYPORTRANGELISTREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYPORTRANGELISTREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,62 +26,54 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT CreateDemandRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT ModifyPortRangeListRequest : public RpcServiceRequest {
 public:
-	CreateDemandRequest();
-	~CreateDemandRequest();
+	struct AddEntry {
+		std::string portRange;
+		std::string description;
+	};
+	struct RemoveEntry {
+		std::string portRange;
+	};
+	ModifyPortRangeListRequest();
+	~ModifyPortRangeListRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getStartTime() const;
-	void setStartTime(const std::string &startTime);
-	std::string getDemandDescription() const;
-	void setDemandDescription(const std::string &demandDescription);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getInstanceType() const;
-	void setInstanceType(const std::string &instanceType);
-	std::string getInstanceChargeType() const;
-	void setInstanceChargeType(const std::string &instanceChargeType);
-	std::string getDemandName() const;
-	void setDemandName(const std::string &demandName);
-	int getAmount() const;
-	void setAmount(int amount);
-	int getPeriod() const;
-	void setPeriod(int period);
+	std::vector<AddEntry> getAddEntry() const;
+	void setAddEntry(const std::vector<AddEntry> &addEntry);
+	std::string getPortRangeListId() const;
+	void setPortRangeListId(const std::string &portRangeListId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getPeriodUnit() const;
-	void setPeriodUnit(const std::string &periodUnit);
-	std::string getZoneId() const;
-	void setZoneId(const std::string &zoneId);
+	std::string getPortRangeListName() const;
+	void setPortRangeListName(const std::string &portRangeListName);
+	std::vector<RemoveEntry> getRemoveEntry() const;
+	void setRemoveEntry(const std::vector<RemoveEntry> &removeEntry);
 
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
-	std::string startTime_;
-	std::string demandDescription_;
+	std::string description_;
 	std::string regionId_;
-	std::string instanceType_;
-	std::string instanceChargeType_;
-	std::string demandName_;
-	int amount_;
-	int period_;
+	std::vector<AddEntry> addEntry_;
+	std::string portRangeListId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
-	std::string endTime_;
 	long ownerId_;
-	std::string periodUnit_;
-	std::string zoneId_;
+	std::string portRangeListName_;
+	std::vector<RemoveEntry> removeEntry_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_CREATEDEMANDREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYPORTRANGELISTREQUEST_H_

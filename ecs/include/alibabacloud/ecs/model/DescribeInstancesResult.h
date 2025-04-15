@@ -72,6 +72,9 @@ namespace AlibabaCloud
 					struct CpuOptions
 					{
 						std::string topologyType;
+						std::string turboMode;
+						bool enableVISST;
+						bool enableVRDT;
 						int threadsPerCore;
 						std::string numa;
 						int coreCount;
@@ -174,6 +177,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string autoReleaseTime;
 					std::string description;
+					bool enableNVS;
 					long localStorageCapacity;
 					std::string instanceTypeFamily;
 					DedicatedInstanceAttribute dedicatedInstanceAttribute;

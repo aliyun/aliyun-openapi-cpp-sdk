@@ -36,17 +36,17 @@ public:
 	void setDescription(const std::string &description);
 	std::string getMetricSetName() const;
 	void setMetricSetName(const std::string &metricSetName);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 
 private:
 	std::vector<std::string> metricIds_;
 	std::string description_;
 	std::string metricSetName_;
-	std::string resourceType_;
 	std::string regionId_;
+	std::string resourceType_;
 };
 } // namespace Model
 } // namespace Ecs

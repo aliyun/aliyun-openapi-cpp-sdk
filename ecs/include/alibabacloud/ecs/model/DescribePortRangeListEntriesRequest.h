@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DELETEINSTANCESREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DELETEINSTANCESREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTENTRIESREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTENTRIESREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,47 +26,32 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT DeleteInstancesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT DescribePortRangeListEntriesRequest : public RpcServiceRequest {
 public:
-	DeleteInstancesRequest();
-	~DeleteInstancesRequest();
+	DescribePortRangeListEntriesRequest();
+	~DescribePortRangeListEntriesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getClientToken() const;
-	void setClientToken(const std::string &clientToken);
-	bool getForceStop() const;
-	void setForceStop(bool forceStop);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	bool getTerminateSubscription() const;
-	void setTerminateSubscription(bool terminateSubscription);
-	bool getDryRun() const;
-	void setDryRun(bool dryRun);
+	std::string getPortRangeListId() const;
+	void setPortRangeListId(const std::string &portRangeListId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::vector<std::string> getInstanceId() const;
-	void setInstanceId(const std::vector<std::string> &instanceId);
-	bool getForce() const;
-	void setForce(bool force);
 
 private:
 	long resourceOwnerId_;
-	std::string clientToken_;
-	bool forceStop_;
 	std::string regionId_;
-	bool terminateSubscription_;
-	bool dryRun_;
+	std::string portRangeListId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::vector<std::string> instanceId_;
-	bool force_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_DELETEINSTANCESREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTENTRIESREQUEST_H_

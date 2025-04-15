@@ -61,42 +61,6 @@ void AuthorizeSecurityGroupRequest::setSourcePortRange(const std::string &source
   setParameter(std::string("SourcePortRange"), sourcePortRange);
 }
 
-std::string AuthorizeSecurityGroupRequest::getClientToken() const {
-  return clientToken_;
-}
-
-void AuthorizeSecurityGroupRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
-}
-
-std::string AuthorizeSecurityGroupRequest::getSecurityGroupId() const {
-  return securityGroupId_;
-}
-
-void AuthorizeSecurityGroupRequest::setSecurityGroupId(const std::string &securityGroupId) {
-  securityGroupId_ = securityGroupId;
-  setParameter(std::string("SecurityGroupId"), securityGroupId);
-}
-
-std::string AuthorizeSecurityGroupRequest::getDescription() const {
-  return description_;
-}
-
-void AuthorizeSecurityGroupRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
-}
-
-long AuthorizeSecurityGroupRequest::getSourceGroupOwnerId() const {
-  return sourceGroupOwnerId_;
-}
-
-void AuthorizeSecurityGroupRequest::setSourceGroupOwnerId(long sourceGroupOwnerId) {
-  sourceGroupOwnerId_ = sourceGroupOwnerId;
-  setParameter(std::string("SourceGroupOwnerId"), std::to_string(sourceGroupOwnerId));
-}
-
 std::string AuthorizeSecurityGroupRequest::getSourceGroupOwnerAccount() const {
   return sourceGroupOwnerAccount_;
 }
@@ -104,15 +68,6 @@ std::string AuthorizeSecurityGroupRequest::getSourceGroupOwnerAccount() const {
 void AuthorizeSecurityGroupRequest::setSourceGroupOwnerAccount(const std::string &sourceGroupOwnerAccount) {
   sourceGroupOwnerAccount_ = sourceGroupOwnerAccount;
   setParameter(std::string("SourceGroupOwnerAccount"), sourceGroupOwnerAccount);
-}
-
-std::string AuthorizeSecurityGroupRequest::getRegionId() const {
-  return regionId_;
-}
-
-void AuthorizeSecurityGroupRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 std::vector<AuthorizeSecurityGroupRequest::Permissions> AuthorizeSecurityGroupRequest::getPermissions() const {
@@ -137,25 +92,8 @@ void AuthorizeSecurityGroupRequest::setPermissions(const std::vector<AuthorizeSe
     setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".SourceGroupOwnerId", std::to_string(permissions[dep1].sourceGroupOwnerId));
     setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".NicType", permissions[dep1].nicType);
     setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".Description", permissions[dep1].description);
+    setParameter(std::string("Permissions") + "." + std::to_string(dep1 + 1) + ".PortRangeListId", permissions[dep1].portRangeListId);
   }
-}
-
-std::string AuthorizeSecurityGroupRequest::getPolicy() const {
-  return policy_;
-}
-
-void AuthorizeSecurityGroupRequest::setPolicy(const std::string &policy) {
-  policy_ = policy;
-  setParameter(std::string("Policy"), policy);
-}
-
-std::string AuthorizeSecurityGroupRequest::getIpv6SourceCidrIp() const {
-  return ipv6SourceCidrIp_;
-}
-
-void AuthorizeSecurityGroupRequest::setIpv6SourceCidrIp(const std::string &ipv6SourceCidrIp) {
-  ipv6SourceCidrIp_ = ipv6SourceCidrIp;
-  setParameter(std::string("Ipv6SourceCidrIp"), ipv6SourceCidrIp);
 }
 
 std::string AuthorizeSecurityGroupRequest::getIpv6DestCidrIp() const {
@@ -176,15 +114,6 @@ void AuthorizeSecurityGroupRequest::setPortRange(const std::string &portRange) {
   setParameter(std::string("PortRange"), portRange);
 }
 
-std::string AuthorizeSecurityGroupRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void AuthorizeSecurityGroupRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string AuthorizeSecurityGroupRequest::getIpProtocol() const {
   return ipProtocol_;
 }
@@ -192,15 +121,6 @@ std::string AuthorizeSecurityGroupRequest::getIpProtocol() const {
 void AuthorizeSecurityGroupRequest::setIpProtocol(const std::string &ipProtocol) {
   ipProtocol_ = ipProtocol;
   setParameter(std::string("IpProtocol"), ipProtocol);
-}
-
-std::string AuthorizeSecurityGroupRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void AuthorizeSecurityGroupRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
 std::string AuthorizeSecurityGroupRequest::getSourceCidrIp() const {
@@ -246,5 +166,86 @@ std::string AuthorizeSecurityGroupRequest::getSourceGroupId() const {
 void AuthorizeSecurityGroupRequest::setSourceGroupId(const std::string &sourceGroupId) {
   sourceGroupId_ = sourceGroupId;
   setParameter(std::string("SourceGroupId"), sourceGroupId);
+}
+
+std::string AuthorizeSecurityGroupRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void AuthorizeSecurityGroupRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string AuthorizeSecurityGroupRequest::getSecurityGroupId() const {
+  return securityGroupId_;
+}
+
+void AuthorizeSecurityGroupRequest::setSecurityGroupId(const std::string &securityGroupId) {
+  securityGroupId_ = securityGroupId;
+  setParameter(std::string("SecurityGroupId"), securityGroupId);
+}
+
+std::string AuthorizeSecurityGroupRequest::getDescription() const {
+  return description_;
+}
+
+void AuthorizeSecurityGroupRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
+long AuthorizeSecurityGroupRequest::getSourceGroupOwnerId() const {
+  return sourceGroupOwnerId_;
+}
+
+void AuthorizeSecurityGroupRequest::setSourceGroupOwnerId(long sourceGroupOwnerId) {
+  sourceGroupOwnerId_ = sourceGroupOwnerId;
+  setParameter(std::string("SourceGroupOwnerId"), std::to_string(sourceGroupOwnerId));
+}
+
+std::string AuthorizeSecurityGroupRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AuthorizeSecurityGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string AuthorizeSecurityGroupRequest::getPolicy() const {
+  return policy_;
+}
+
+void AuthorizeSecurityGroupRequest::setPolicy(const std::string &policy) {
+  policy_ = policy;
+  setParameter(std::string("Policy"), policy);
+}
+
+std::string AuthorizeSecurityGroupRequest::getIpv6SourceCidrIp() const {
+  return ipv6SourceCidrIp_;
+}
+
+void AuthorizeSecurityGroupRequest::setIpv6SourceCidrIp(const std::string &ipv6SourceCidrIp) {
+  ipv6SourceCidrIp_ = ipv6SourceCidrIp;
+  setParameter(std::string("Ipv6SourceCidrIp"), ipv6SourceCidrIp);
+}
+
+std::string AuthorizeSecurityGroupRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void AuthorizeSecurityGroupRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string AuthorizeSecurityGroupRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void AuthorizeSecurityGroupRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 

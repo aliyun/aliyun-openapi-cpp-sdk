@@ -39,6 +39,11 @@ public:
 	struct ImageOptions {
 		bool loginAsNonRoot;
 	};
+	struct CpuOptions {
+		std::string turboMode;
+		bool enableVISST;
+		bool enableVRDT;
+	};
 	struct SystemTag {
 		std::string key;
 		std::string value;
@@ -58,6 +63,7 @@ public:
 	};
 	struct NetworkOptions {
 		bool enableJumboFrame;
+		bool enableNetworkEncryption;
 	};
 	struct Tag {
 		std::string key;
@@ -116,6 +122,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getPrivatePoolOptionsMatchCriteria() const;
 	void setPrivatePoolOptionsMatchCriteria(const std::string &privatePoolOptionsMatchCriteria);
+	bool getEnableNVS() const;
+	void setEnableNVS(bool enableNVS);
 	std::string getHostName() const;
 	void setHostName(const std::string &hostName);
 	std::string getPassword() const;
@@ -142,6 +150,8 @@ public:
 	void setSpotStrategy(const std::string &spotStrategy);
 	std::string getPrivateIpAddress() const;
 	void setPrivateIpAddress(const std::string &privateIpAddress);
+	CpuOptions getCpuOptions() const;
+	void setCpuOptions(const CpuOptions &cpuOptions);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
 	bool getAutoRenew() const;
@@ -300,6 +310,7 @@ private:
 	bool deletionProtection_;
 	std::string resourceGroupId_;
 	std::string privatePoolOptionsMatchCriteria_;
+	bool enableNVS_;
 	std::string hostName_;
 	std::string password_;
 	SystemDisk systemDisk_;
@@ -313,6 +324,7 @@ private:
 	long ownerId_;
 	std::string spotStrategy_;
 	std::string privateIpAddress_;
+	CpuOptions cpuOptions_;
 	std::string periodUnit_;
 	bool autoRenew_;
 	std::string internetChargeType_;

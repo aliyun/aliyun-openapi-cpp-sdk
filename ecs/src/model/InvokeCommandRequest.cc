@@ -34,6 +34,109 @@ void InvokeCommandRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string InvokeCommandRequest::getCommandId() const {
+  return commandId_;
+}
+
+void InvokeCommandRequest::setCommandId(const std::string &commandId) {
+  commandId_ = commandId;
+  setParameter(std::string("CommandId"), commandId);
+}
+
+std::string InvokeCommandRequest::getFrequency() const {
+  return frequency_;
+}
+
+void InvokeCommandRequest::setFrequency(const std::string &frequency) {
+  frequency_ = frequency;
+  setParameter(std::string("Frequency"), frequency);
+}
+
+std::string InvokeCommandRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void InvokeCommandRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string InvokeCommandRequest::getRepeatMode() const {
+  return repeatMode_;
+}
+
+void InvokeCommandRequest::setRepeatMode(const std::string &repeatMode) {
+  repeatMode_ = repeatMode;
+  setParameter(std::string("RepeatMode"), repeatMode);
+}
+
+std::vector<InvokeCommandRequest::Tag> InvokeCommandRequest::getTag() const {
+  return tag_;
+}
+
+void InvokeCommandRequest::setTag(const std::vector<InvokeCommandRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
+bool InvokeCommandRequest::getTimed() const {
+  return timed_;
+}
+
+void InvokeCommandRequest::setTimed(bool timed) {
+  timed_ = timed;
+  setParameter(std::string("Timed"), timed ? "true" : "false");
+}
+
+long InvokeCommandRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void InvokeCommandRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::vector<std::string> InvokeCommandRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void InvokeCommandRequest::setInstanceId(const std::vector<std::string> &instanceId) {
+  instanceId_ = instanceId;
+}
+
+std::string InvokeCommandRequest::getContainerId() const {
+  return containerId_;
+}
+
+void InvokeCommandRequest::setContainerId(const std::string &containerId) {
+  containerId_ = containerId;
+  setParameter(std::string("ContainerId"), containerId);
+}
+
+std::map<std::string, std::string> InvokeCommandRequest::getParameters() const {
+  return parameters_;
+}
+
+void InvokeCommandRequest::setParameters(std::map<std::string, std::string> parameters) {
+  parameters_ = parameters;
+  setParameter(std::string("Parameters"), parameters);
+}
+
+std::string InvokeCommandRequest::getLauncher() const {
+  return launcher_;
+}
+
+void InvokeCommandRequest::setLauncher(const std::string &launcher) {
+  launcher_ = launcher;
+  setParameter(std::string("Launcher"), launcher);
+}
+
 std::string InvokeCommandRequest::getContainerName() const {
   return containerName_;
 }
@@ -67,15 +170,6 @@ void InvokeCommandRequest::setSystemTag(const std::vector<InvokeCommandRequest::
   }
 }
 
-std::string InvokeCommandRequest::getCommandId() const {
-  return commandId_;
-}
-
-void InvokeCommandRequest::setCommandId(const std::string &commandId) {
-  commandId_ = commandId;
-  setParameter(std::string("CommandId"), commandId);
-}
-
 long InvokeCommandRequest::getTimeout() const {
   return timeout_;
 }
@@ -85,24 +179,6 @@ void InvokeCommandRequest::setTimeout(long timeout) {
   setParameter(std::string("Timeout"), std::to_string(timeout));
 }
 
-std::string InvokeCommandRequest::getFrequency() const {
-  return frequency_;
-}
-
-void InvokeCommandRequest::setFrequency(const std::string &frequency) {
-  frequency_ = frequency;
-  setParameter(std::string("Frequency"), frequency);
-}
-
-std::string InvokeCommandRequest::getResourceGroupId() const {
-  return resourceGroupId_;
-}
-
-void InvokeCommandRequest::setResourceGroupId(const std::string &resourceGroupId) {
-  resourceGroupId_ = resourceGroupId;
-  setParameter(std::string("ResourceGroupId"), resourceGroupId);
-}
-
 std::string InvokeCommandRequest::getRegionId() const {
   return regionId_;
 }
@@ -110,15 +186,6 @@ std::string InvokeCommandRequest::getRegionId() const {
 void InvokeCommandRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
-}
-
-std::string InvokeCommandRequest::getRepeatMode() const {
-  return repeatMode_;
-}
-
-void InvokeCommandRequest::setRepeatMode(const std::string &repeatMode) {
-  repeatMode_ = repeatMode;
-  setParameter(std::string("RepeatMode"), repeatMode);
 }
 
 std::string InvokeCommandRequest::getWindowsPasswordName() const {
@@ -144,29 +211,6 @@ void InvokeCommandRequest::setResourceTag(const std::vector<InvokeCommandRequest
   }
 }
 
-std::vector<InvokeCommandRequest::Tag> InvokeCommandRequest::getTag() const {
-  return tag_;
-}
-
-void InvokeCommandRequest::setTag(const std::vector<InvokeCommandRequest::Tag> &tag) {
-  tag_ = tag;
-  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
-  auto tagObj = tag.at(dep1);
-  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
-    setParameter(tagObjStr + ".Key", tagObj.key);
-    setParameter(tagObjStr + ".Value", tagObj.value);
-  }
-}
-
-bool InvokeCommandRequest::getTimed() const {
-  return timed_;
-}
-
-void InvokeCommandRequest::setTimed(bool timed) {
-  timed_ = timed;
-  setParameter(std::string("Timed"), timed ? "true" : "false");
-}
-
 std::string InvokeCommandRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -185,15 +229,6 @@ void InvokeCommandRequest::setOwnerAccount(const std::string &ownerAccount) {
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long InvokeCommandRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void InvokeCommandRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string InvokeCommandRequest::getTerminationMode() const {
   return terminationMode_;
 }
@@ -203,32 +238,6 @@ void InvokeCommandRequest::setTerminationMode(const std::string &terminationMode
   setParameter(std::string("TerminationMode"), terminationMode);
 }
 
-std::vector<std::string> InvokeCommandRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void InvokeCommandRequest::setInstanceId(const std::vector<std::string> &instanceId) {
-  instanceId_ = instanceId;
-}
-
-std::string InvokeCommandRequest::getContainerId() const {
-  return containerId_;
-}
-
-void InvokeCommandRequest::setContainerId(const std::string &containerId) {
-  containerId_ = containerId;
-  setParameter(std::string("ContainerId"), containerId);
-}
-
-std::map<std::string, std::string> InvokeCommandRequest::getParameters() const {
-  return parameters_;
-}
-
-void InvokeCommandRequest::setParameters(std::map<std::string, std::string> parameters) {
-  parameters_ = parameters;
-  setParameter(std::string("Parameters"), parameters);
-}
-
 std::string InvokeCommandRequest::getUsername() const {
   return username_;
 }
@@ -236,14 +245,5 @@ std::string InvokeCommandRequest::getUsername() const {
 void InvokeCommandRequest::setUsername(const std::string &username) {
   username_ = username;
   setParameter(std::string("Username"), username);
-}
-
-std::string InvokeCommandRequest::getLauncher() const {
-  return launcher_;
-}
-
-void InvokeCommandRequest::setLauncher(const std::string &launcher) {
-  launcher_ = launcher;
-  setParameter(std::string("Launcher"), launcher);
 }
 

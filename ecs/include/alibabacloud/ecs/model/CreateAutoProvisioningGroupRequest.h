@@ -42,6 +42,7 @@ public:
 		std::string encryptAlgorithm;
 		long provisionedIops;
 		bool burstingEnabled;
+		std::string autoSnapshotPolicyId;
 	};
 	struct Tag {
 		std::string key;
@@ -67,6 +68,12 @@ public:
 		std::string periodUnit;
 		bool autoRenew;
 		int autoRenewPeriod;
+		int spotDuration;
+		std::string spotInterruptionBehavior;
+		struct ImageOptions {
+			bool loginAsNonRoot;
+		};
+		ImageOptions imageOptions;
 	};
 	struct LaunchConfigurationArn {
 		std::string rolearn;
@@ -79,6 +86,7 @@ public:
 		std::string encryptAlgorithm;
 		long provisionedIops;
 		bool burstingEnabled;
+		std::string autoSnapshotPolicyId;
 	};
 	struct ResourcePoolOptions {
 		std::string strategy;

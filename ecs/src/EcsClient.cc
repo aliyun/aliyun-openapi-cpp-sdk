@@ -1311,42 +1311,6 @@ EcsClient::CreateDedicatedHostClusterOutcomeCallable EcsClient::createDedicatedH
 	return task->get_future();
 }
 
-EcsClient::CreateDemandOutcome EcsClient::createDemand(const CreateDemandRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDemandOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDemandOutcome(CreateDemandResult(outcome.result()));
-	else
-		return CreateDemandOutcome(outcome.error());
-}
-
-void EcsClient::createDemandAsync(const CreateDemandRequest& request, const CreateDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDemand(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::CreateDemandOutcomeCallable EcsClient::createDemandCallable(const CreateDemandRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDemandOutcome()>>(
-			[this, request]()
-			{
-			return this->createDemand(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::CreateDeploymentSetOutcome EcsClient::createDeploymentSet(const CreateDeploymentSetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2025,6 +1989,42 @@ EcsClient::CreatePhysicalConnectionOutcomeCallable EcsClient::createPhysicalConn
 			[this, request]()
 			{
 			return this->createPhysicalConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::CreatePortRangeListOutcome EcsClient::createPortRangeList(const CreatePortRangeListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePortRangeListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePortRangeListOutcome(CreatePortRangeListResult(outcome.result()));
+	else
+		return CreatePortRangeListOutcome(outcome.error());
+}
+
+void EcsClient::createPortRangeListAsync(const CreatePortRangeListRequest& request, const CreatePortRangeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPortRangeList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreatePortRangeListOutcomeCallable EcsClient::createPortRangeListCallable(const CreatePortRangeListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePortRangeListOutcome()>>(
+			[this, request]()
+			{
+			return this->createPortRangeList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2715,42 +2715,6 @@ EcsClient::DeleteDedicatedHostClusterOutcomeCallable EcsClient::deleteDedicatedH
 	return task->get_future();
 }
 
-EcsClient::DeleteDemandOutcome EcsClient::deleteDemand(const DeleteDemandRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteDemandOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteDemandOutcome(DeleteDemandResult(outcome.result()));
-	else
-		return DeleteDemandOutcome(outcome.error());
-}
-
-void EcsClient::deleteDemandAsync(const DeleteDemandRequest& request, const DeleteDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteDemand(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::DeleteDemandOutcomeCallable EcsClient::deleteDemandCallable(const DeleteDemandRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteDemandOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteDemand(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::DeleteDeploymentSetOutcome EcsClient::deleteDeploymentSet(const DeleteDeploymentSetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3429,6 +3393,42 @@ EcsClient::DeletePhysicalConnectionOutcomeCallable EcsClient::deletePhysicalConn
 			[this, request]()
 			{
 			return this->deletePhysicalConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DeletePortRangeListOutcome EcsClient::deletePortRangeList(const DeletePortRangeListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePortRangeListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePortRangeListOutcome(DeletePortRangeListResult(outcome.result()));
+	else
+		return DeletePortRangeListOutcome(outcome.error());
+}
+
+void EcsClient::deletePortRangeListAsync(const DeletePortRangeListRequest& request, const DeletePortRangeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePortRangeList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DeletePortRangeListOutcomeCallable EcsClient::deletePortRangeListCallable(const DeletePortRangeListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePortRangeListOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePortRangeList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4581,42 +4581,6 @@ EcsClient::DescribeDedicatedHostsOutcomeCallable EcsClient::describeDedicatedHos
 			[this, request]()
 			{
 			return this->describeDedicatedHosts(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::DescribeDemandsOutcome EcsClient::describeDemands(const DescribeDemandsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDemandsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDemandsOutcome(DescribeDemandsResult(outcome.result()));
-	else
-		return DescribeDemandsOutcome(outcome.error());
-}
-
-void EcsClient::describeDemandsAsync(const DescribeDemandsRequest& request, const DescribeDemandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDemands(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::DescribeDemandsOutcomeCallable EcsClient::describeDemandsCallable(const DescribeDemandsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDemandsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDemands(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6597,6 +6561,114 @@ EcsClient::DescribePhysicalConnectionsOutcomeCallable EcsClient::describePhysica
 			[this, request]()
 			{
 			return this->describePhysicalConnections(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribePortRangeListAssociationsOutcome EcsClient::describePortRangeListAssociations(const DescribePortRangeListAssociationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePortRangeListAssociationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePortRangeListAssociationsOutcome(DescribePortRangeListAssociationsResult(outcome.result()));
+	else
+		return DescribePortRangeListAssociationsOutcome(outcome.error());
+}
+
+void EcsClient::describePortRangeListAssociationsAsync(const DescribePortRangeListAssociationsRequest& request, const DescribePortRangeListAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePortRangeListAssociations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribePortRangeListAssociationsOutcomeCallable EcsClient::describePortRangeListAssociationsCallable(const DescribePortRangeListAssociationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePortRangeListAssociationsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePortRangeListAssociations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribePortRangeListEntriesOutcome EcsClient::describePortRangeListEntries(const DescribePortRangeListEntriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePortRangeListEntriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePortRangeListEntriesOutcome(DescribePortRangeListEntriesResult(outcome.result()));
+	else
+		return DescribePortRangeListEntriesOutcome(outcome.error());
+}
+
+void EcsClient::describePortRangeListEntriesAsync(const DescribePortRangeListEntriesRequest& request, const DescribePortRangeListEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePortRangeListEntries(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribePortRangeListEntriesOutcomeCallable EcsClient::describePortRangeListEntriesCallable(const DescribePortRangeListEntriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePortRangeListEntriesOutcome()>>(
+			[this, request]()
+			{
+			return this->describePortRangeListEntries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribePortRangeListsOutcome EcsClient::describePortRangeLists(const DescribePortRangeListsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePortRangeListsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePortRangeListsOutcome(DescribePortRangeListsResult(outcome.result()));
+	else
+		return DescribePortRangeListsOutcome(outcome.error());
+}
+
+void EcsClient::describePortRangeListsAsync(const DescribePortRangeListsRequest& request, const DescribePortRangeListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePortRangeLists(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribePortRangeListsOutcomeCallable EcsClient::describePortRangeListsCallable(const DescribePortRangeListsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePortRangeListsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePortRangeLists(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9339,42 +9411,6 @@ EcsClient::ModifyDedicatedHostsChargeTypeOutcomeCallable EcsClient::modifyDedica
 	return task->get_future();
 }
 
-EcsClient::ModifyDemandOutcome EcsClient::modifyDemand(const ModifyDemandRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDemandOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDemandOutcome(ModifyDemandResult(outcome.result()));
-	else
-		return ModifyDemandOutcome(outcome.error());
-}
-
-void EcsClient::modifyDemandAsync(const ModifyDemandRequest& request, const ModifyDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDemand(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::ModifyDemandOutcomeCallable EcsClient::modifyDemandCallable(const ModifyDemandRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDemandOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDemand(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::ModifyDeploymentSetAttributeOutcome EcsClient::modifyDeploymentSetAttribute(const ModifyDeploymentSetAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10557,6 +10593,42 @@ EcsClient::ModifyPhysicalConnectionAttributeOutcomeCallable EcsClient::modifyPhy
 			[this, request]()
 			{
 			return this->modifyPhysicalConnectionAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyPortRangeListOutcome EcsClient::modifyPortRangeList(const ModifyPortRangeListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyPortRangeListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyPortRangeListOutcome(ModifyPortRangeListResult(outcome.result()));
+	else
+		return ModifyPortRangeListOutcome(outcome.error());
+}
+
+void EcsClient::modifyPortRangeListAsync(const ModifyPortRangeListRequest& request, const ModifyPortRangeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyPortRangeList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyPortRangeListOutcomeCallable EcsClient::modifyPortRangeListCallable(const ModifyPortRangeListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyPortRangeListOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyPortRangeList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

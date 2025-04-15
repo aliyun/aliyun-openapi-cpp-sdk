@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/CreateDemandResult.h>
+#include <alibabacloud/ecs/model/ModifyPortRangeListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-CreateDemandResult::CreateDemandResult() :
+ModifyPortRangeListResult::ModifyPortRangeListResult() :
 	ServiceResult()
 {}
 
-CreateDemandResult::CreateDemandResult(const std::string &payload) :
+ModifyPortRangeListResult::ModifyPortRangeListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateDemandResult::~CreateDemandResult()
+ModifyPortRangeListResult::~ModifyPortRangeListResult()
 {}
 
-void CreateDemandResult::parse(const std::string &payload)
+void ModifyPortRangeListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DemandId"].isNull())
-		demandId_ = value["DemandId"].asString();
 
-}
-
-std::string CreateDemandResult::getDemandId()const
-{
-	return demandId_;
 }
 

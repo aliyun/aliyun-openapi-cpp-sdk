@@ -14,58 +14,67 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/EnableDiskEncryptionByDefaultRequest.h>
+#include <alibabacloud/ecs/model/DeletePortRangeListRequest.h>
 
-using AlibabaCloud::Ecs::Model::EnableDiskEncryptionByDefaultRequest;
+using AlibabaCloud::Ecs::Model::DeletePortRangeListRequest;
 
-EnableDiskEncryptionByDefaultRequest::EnableDiskEncryptionByDefaultRequest()
-    : RpcServiceRequest("ecs", "2014-05-26", "EnableDiskEncryptionByDefault") {
+DeletePortRangeListRequest::DeletePortRangeListRequest()
+    : RpcServiceRequest("ecs", "2014-05-26", "DeletePortRangeList") {
   setMethod(HttpRequest::Method::Post);
 }
 
-EnableDiskEncryptionByDefaultRequest::~EnableDiskEncryptionByDefaultRequest() {}
+DeletePortRangeListRequest::~DeletePortRangeListRequest() {}
 
-long EnableDiskEncryptionByDefaultRequest::getResourceOwnerId() const {
+long DeletePortRangeListRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
 
-void EnableDiskEncryptionByDefaultRequest::setResourceOwnerId(long resourceOwnerId) {
+void DeletePortRangeListRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string EnableDiskEncryptionByDefaultRequest::getRegionId() const {
+std::string DeletePortRangeListRequest::getRegionId() const {
   return regionId_;
 }
 
-void EnableDiskEncryptionByDefaultRequest::setRegionId(const std::string &regionId) {
+void DeletePortRangeListRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string EnableDiskEncryptionByDefaultRequest::getResourceOwnerAccount() const {
+std::string DeletePortRangeListRequest::getPortRangeListId() const {
+  return portRangeListId_;
+}
+
+void DeletePortRangeListRequest::setPortRangeListId(const std::string &portRangeListId) {
+  portRangeListId_ = portRangeListId;
+  setParameter(std::string("PortRangeListId"), portRangeListId);
+}
+
+std::string DeletePortRangeListRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
 
-void EnableDiskEncryptionByDefaultRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+void DeletePortRangeListRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string EnableDiskEncryptionByDefaultRequest::getOwnerAccount() const {
+std::string DeletePortRangeListRequest::getOwnerAccount() const {
   return ownerAccount_;
 }
 
-void EnableDiskEncryptionByDefaultRequest::setOwnerAccount(const std::string &ownerAccount) {
+void DeletePortRangeListRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long EnableDiskEncryptionByDefaultRequest::getOwnerId() const {
+long DeletePortRangeListRequest::getOwnerId() const {
   return ownerId_;
 }
 
-void EnableDiskEncryptionByDefaultRequest::setOwnerId(long ownerId) {
+void DeletePortRangeListRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }

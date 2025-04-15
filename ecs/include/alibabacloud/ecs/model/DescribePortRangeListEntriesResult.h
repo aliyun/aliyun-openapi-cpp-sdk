@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_CREATEDEMANDRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_CREATEDEMANDRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTENTRIESRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTENTRIESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT CreateDemandResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT DescribePortRangeListEntriesResult : public ServiceResult
 			{
 			public:
+				struct Entry
+				{
+					std::string portRange;
+					std::string description;
+				};
 
 
-				CreateDemandResult();
-				explicit CreateDemandResult(const std::string &payload);
-				~CreateDemandResult();
-				std::string getDemandId()const;
+				DescribePortRangeListEntriesResult();
+				explicit DescribePortRangeListEntriesResult(const std::string &payload);
+				~DescribePortRangeListEntriesResult();
+				std::vector<Entry> getEntries()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string demandId_;
+				std::vector<Entry> entries_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_CREATEDEMANDRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEPORTRANGELISTENTRIESRESULT_H_

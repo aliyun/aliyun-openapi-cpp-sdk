@@ -34,24 +34,6 @@ void CreateElasticityAssuranceRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CreateElasticityAssuranceRequest::getClientToken() const {
-  return clientToken_;
-}
-
-void CreateElasticityAssuranceRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
-}
-
-std::string CreateElasticityAssuranceRequest::getDescription() const {
-  return description_;
-}
-
-void CreateElasticityAssuranceRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
-}
-
 std::string CreateElasticityAssuranceRequest::getStartTime() const {
   return startTime_;
 }
@@ -59,15 +41,6 @@ std::string CreateElasticityAssuranceRequest::getStartTime() const {
 void CreateElasticityAssuranceRequest::setStartTime(const std::string &startTime) {
   startTime_ = startTime;
   setParameter(std::string("StartTime"), startTime);
-}
-
-std::string CreateElasticityAssuranceRequest::getPlatform() const {
-  return platform_;
-}
-
-void CreateElasticityAssuranceRequest::setPlatform(const std::string &platform) {
-  platform_ = platform;
-  setParameter(std::string("Platform"), platform);
 }
 
 std::string CreateElasticityAssuranceRequest::getResourceGroupId() const {
@@ -88,23 +61,6 @@ void CreateElasticityAssuranceRequest::setPrivatePoolOptionsMatchCriteria(const 
   setParameter(std::string("PrivatePoolOptions.MatchCriteria"), privatePoolOptionsMatchCriteria);
 }
 
-std::string CreateElasticityAssuranceRequest::getRegionId() const {
-  return regionId_;
-}
-
-void CreateElasticityAssuranceRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::vector<std::string> CreateElasticityAssuranceRequest::getInstanceType() const {
-  return instanceType_;
-}
-
-void CreateElasticityAssuranceRequest::setInstanceType(const std::vector<std::string> &instanceType) {
-  instanceType_ = instanceType;
-}
-
 std::vector<CreateElasticityAssuranceRequest::Tag> CreateElasticityAssuranceRequest::getTag() const {
   return tag_;
 }
@@ -117,15 +73,6 @@ void CreateElasticityAssuranceRequest::setTag(const std::vector<CreateElasticity
     setParameter(tagObjStr + ".Key", tagObj.key);
     setParameter(tagObjStr + ".Value", tagObj.value);
   }
-}
-
-std::string CreateElasticityAssuranceRequest::getInstanceChargeType() const {
-  return instanceChargeType_;
-}
-
-void CreateElasticityAssuranceRequest::setInstanceChargeType(const std::string &instanceChargeType) {
-  instanceChargeType_ = instanceChargeType;
-  setParameter(std::string("InstanceChargeType"), instanceChargeType);
 }
 
 int CreateElasticityAssuranceRequest::getAutoRenewPeriod() const {
@@ -146,33 +93,6 @@ void CreateElasticityAssuranceRequest::setPeriod(int period) {
   setParameter(std::string("Period"), std::to_string(period));
 }
 
-std::string CreateElasticityAssuranceRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void CreateElasticityAssuranceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string CreateElasticityAssuranceRequest::getPrivatePoolOptionsName() const {
-  return privatePoolOptionsName_;
-}
-
-void CreateElasticityAssuranceRequest::setPrivatePoolOptionsName(const std::string &privatePoolOptionsName) {
-  privatePoolOptionsName_ = privatePoolOptionsName;
-  setParameter(std::string("PrivatePoolOptions.Name"), privatePoolOptionsName);
-}
-
-std::string CreateElasticityAssuranceRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void CreateElasticityAssuranceRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
 std::string CreateElasticityAssuranceRequest::getAssuranceTimes() const {
   return assuranceTimes_;
 }
@@ -189,15 +109,6 @@ long CreateElasticityAssuranceRequest::getOwnerId() const {
 void CreateElasticityAssuranceRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string CreateElasticityAssuranceRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void CreateElasticityAssuranceRequest::setResourceType(const std::string &resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), resourceType);
 }
 
 int CreateElasticityAssuranceRequest::getInstanceCpuCoreCount() const {
@@ -235,6 +146,113 @@ void CreateElasticityAssuranceRequest::setZoneId(const std::vector<std::string> 
   zoneId_ = zoneId;
 }
 
+std::string CreateElasticityAssuranceRequest::getPackageType() const {
+  return packageType_;
+}
+
+void CreateElasticityAssuranceRequest::setPackageType(const std::string &packageType) {
+  packageType_ = packageType;
+  setParameter(std::string("PackageType"), packageType);
+}
+
+int CreateElasticityAssuranceRequest::getInstanceAmount() const {
+  return instanceAmount_;
+}
+
+void CreateElasticityAssuranceRequest::setInstanceAmount(int instanceAmount) {
+  instanceAmount_ = instanceAmount;
+  setParameter(std::string("InstanceAmount"), std::to_string(instanceAmount));
+}
+
+std::string CreateElasticityAssuranceRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CreateElasticityAssuranceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string CreateElasticityAssuranceRequest::getDescription() const {
+  return description_;
+}
+
+void CreateElasticityAssuranceRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
+std::string CreateElasticityAssuranceRequest::getPlatform() const {
+  return platform_;
+}
+
+void CreateElasticityAssuranceRequest::setPlatform(const std::string &platform) {
+  platform_ = platform;
+  setParameter(std::string("Platform"), platform);
+}
+
+std::string CreateElasticityAssuranceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateElasticityAssuranceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::vector<std::string> CreateElasticityAssuranceRequest::getInstanceType() const {
+  return instanceType_;
+}
+
+void CreateElasticityAssuranceRequest::setInstanceType(const std::vector<std::string> &instanceType) {
+  instanceType_ = instanceType;
+}
+
+std::string CreateElasticityAssuranceRequest::getInstanceChargeType() const {
+  return instanceChargeType_;
+}
+
+void CreateElasticityAssuranceRequest::setInstanceChargeType(const std::string &instanceChargeType) {
+  instanceChargeType_ = instanceChargeType;
+  setParameter(std::string("InstanceChargeType"), instanceChargeType);
+}
+
+std::string CreateElasticityAssuranceRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void CreateElasticityAssuranceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string CreateElasticityAssuranceRequest::getPrivatePoolOptionsName() const {
+  return privatePoolOptionsName_;
+}
+
+void CreateElasticityAssuranceRequest::setPrivatePoolOptionsName(const std::string &privatePoolOptionsName) {
+  privatePoolOptionsName_ = privatePoolOptionsName;
+  setParameter(std::string("PrivatePoolOptions.Name"), privatePoolOptionsName);
+}
+
+std::string CreateElasticityAssuranceRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void CreateElasticityAssuranceRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string CreateElasticityAssuranceRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void CreateElasticityAssuranceRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
+}
+
 std::vector<CreateElasticityAssuranceRequest::RecurrenceRules> CreateElasticityAssuranceRequest::getRecurrenceRules() const {
   return recurrenceRules_;
 }
@@ -258,23 +276,5 @@ std::string CreateElasticityAssuranceRequest::getChargeType() const {
 void CreateElasticityAssuranceRequest::setChargeType(const std::string &chargeType) {
   chargeType_ = chargeType;
   setParameter(std::string("ChargeType"), chargeType);
-}
-
-std::string CreateElasticityAssuranceRequest::getPackageType() const {
-  return packageType_;
-}
-
-void CreateElasticityAssuranceRequest::setPackageType(const std::string &packageType) {
-  packageType_ = packageType;
-  setParameter(std::string("PackageType"), packageType);
-}
-
-int CreateElasticityAssuranceRequest::getInstanceAmount() const {
-  return instanceAmount_;
-}
-
-void CreateElasticityAssuranceRequest::setInstanceAmount(int instanceAmount) {
-  instanceAmount_ = instanceAmount;
-  setParameter(std::string("InstanceAmount"), std::to_string(instanceAmount));
 }
 

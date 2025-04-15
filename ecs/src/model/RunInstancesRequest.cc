@@ -79,6 +79,15 @@ void RunInstancesRequest::setPrivatePoolOptionsMatchCriteria(const std::string &
   setParameter(std::string("PrivatePoolOptions.MatchCriteria"), privatePoolOptionsMatchCriteria);
 }
 
+bool RunInstancesRequest::getEnableNVS() const {
+  return enableNVS_;
+}
+
+void RunInstancesRequest::setEnableNVS(bool enableNVS) {
+  enableNVS_ = enableNVS;
+  setParameter(std::string("EnableNVS"), enableNVS ? "true" : "false");
+}
+
 std::string RunInstancesRequest::getHostName() const {
   return hostName_;
 }
@@ -199,6 +208,17 @@ std::string RunInstancesRequest::getPrivateIpAddress() const {
 void RunInstancesRequest::setPrivateIpAddress(const std::string &privateIpAddress) {
   privateIpAddress_ = privateIpAddress;
   setParameter(std::string("PrivateIpAddress"), privateIpAddress);
+}
+
+RunInstancesRequest::CpuOptions RunInstancesRequest::getCpuOptions() const {
+  return cpuOptions_;
+}
+
+void RunInstancesRequest::setCpuOptions(const RunInstancesRequest::CpuOptions &cpuOptions) {
+  cpuOptions_ = cpuOptions;
+  setParameter(std::string("CpuOptions") + ".TurboMode", cpuOptions.turboMode);
+  setParameter(std::string("CpuOptions") + ".EnableVISST", cpuOptions.enableVISST ? "true" : "false");
+  setParameter(std::string("CpuOptions") + ".EnableVRDT", cpuOptions.enableVRDT ? "true" : "false");
 }
 
 std::string RunInstancesRequest::getPeriodUnit() const {
@@ -430,6 +450,7 @@ RunInstancesRequest::NetworkOptions RunInstancesRequest::getNetworkOptions() con
 void RunInstancesRequest::setNetworkOptions(const RunInstancesRequest::NetworkOptions &networkOptions) {
   networkOptions_ = networkOptions;
   setParameter(std::string("NetworkOptions") + ".EnableJumboFrame", networkOptions.enableJumboFrame ? "true" : "false");
+  setParameter(std::string("NetworkOptions") + ".EnableNetworkEncryption", networkOptions.enableNetworkEncryption ? "true" : "false");
 }
 
 std::string RunInstancesRequest::getSystemDiskSize() const {
