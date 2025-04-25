@@ -43,40 +43,56 @@ void DescribeScalingInstancesResult::parse(const std::string &payload)
 	for (auto valueScalingInstancesScalingInstance : allScalingInstancesNode)
 	{
 		ScalingInstance scalingInstancesObject;
-		if(!valueScalingInstancesScalingInstance["InstanceId"].isNull())
-			scalingInstancesObject.instanceId = valueScalingInstancesScalingInstance["InstanceId"].asString();
-		if(!valueScalingInstancesScalingInstance["ScalingConfigurationId"].isNull())
-			scalingInstancesObject.scalingConfigurationId = valueScalingInstancesScalingInstance["ScalingConfigurationId"].asString();
-		if(!valueScalingInstancesScalingInstance["ScalingGroupId"].isNull())
-			scalingInstancesObject.scalingGroupId = valueScalingInstancesScalingInstance["ScalingGroupId"].asString();
-		if(!valueScalingInstancesScalingInstance["HealthStatus"].isNull())
-			scalingInstancesObject.healthStatus = valueScalingInstancesScalingInstance["HealthStatus"].asString();
-		if(!valueScalingInstancesScalingInstance["LoadBalancerWeight"].isNull())
-			scalingInstancesObject.loadBalancerWeight = std::stoi(valueScalingInstancesScalingInstance["LoadBalancerWeight"].asString());
-		if(!valueScalingInstancesScalingInstance["LifecycleState"].isNull())
-			scalingInstancesObject.lifecycleState = valueScalingInstancesScalingInstance["LifecycleState"].asString();
 		if(!valueScalingInstancesScalingInstance["CreationTime"].isNull())
 			scalingInstancesObject.creationTime = valueScalingInstancesScalingInstance["CreationTime"].asString();
-		if(!valueScalingInstancesScalingInstance["CreationType"].isNull())
-			scalingInstancesObject.creationType = valueScalingInstancesScalingInstance["CreationType"].asString();
+		if(!valueScalingInstancesScalingInstance["LoadBalancerWeight"].isNull())
+			scalingInstancesObject.loadBalancerWeight = std::stoi(valueScalingInstancesScalingInstance["LoadBalancerWeight"].asString());
 		if(!valueScalingInstancesScalingInstance["LaunchTemplateId"].isNull())
 			scalingInstancesObject.launchTemplateId = valueScalingInstancesScalingInstance["LaunchTemplateId"].asString();
+		if(!valueScalingInstancesScalingInstance["InstanceId"].isNull())
+			scalingInstancesObject.instanceId = valueScalingInstancesScalingInstance["InstanceId"].asString();
+		if(!valueScalingInstancesScalingInstance["SpotStrategy"].isNull())
+			scalingInstancesObject.spotStrategy = valueScalingInstancesScalingInstance["SpotStrategy"].asString();
 		if(!valueScalingInstancesScalingInstance["LaunchTemplateVersion"].isNull())
 			scalingInstancesObject.launchTemplateVersion = valueScalingInstancesScalingInstance["LaunchTemplateVersion"].asString();
+		if(!valueScalingInstancesScalingInstance["HealthStatus"].isNull())
+			scalingInstancesObject.healthStatus = valueScalingInstancesScalingInstance["HealthStatus"].asString();
+		if(!valueScalingInstancesScalingInstance["ScalingGroupId"].isNull())
+			scalingInstancesObject.scalingGroupId = valueScalingInstancesScalingInstance["ScalingGroupId"].asString();
 		if(!valueScalingInstancesScalingInstance["WarmupState"].isNull())
 			scalingInstancesObject.warmupState = valueScalingInstancesScalingInstance["WarmupState"].asString();
+		if(!valueScalingInstancesScalingInstance["LifecycleState"].isNull())
+			scalingInstancesObject.lifecycleState = valueScalingInstancesScalingInstance["LifecycleState"].asString();
+		if(!valueScalingInstancesScalingInstance["CreationType"].isNull())
+			scalingInstancesObject.creationType = valueScalingInstancesScalingInstance["CreationType"].asString();
+		if(!valueScalingInstancesScalingInstance["ZoneId"].isNull())
+			scalingInstancesObject.zoneId = valueScalingInstancesScalingInstance["ZoneId"].asString();
+		if(!valueScalingInstancesScalingInstance["ScalingConfigurationId"].isNull())
+			scalingInstancesObject.scalingConfigurationId = valueScalingInstancesScalingInstance["ScalingConfigurationId"].asString();
 		if(!valueScalingInstancesScalingInstance["Entrusted"].isNull())
 			scalingInstancesObject.entrusted = valueScalingInstancesScalingInstance["Entrusted"].asString() == "true";
+		if(!valueScalingInstancesScalingInstance["WeightedCapacity"].isNull())
+			scalingInstancesObject.weightedCapacity = std::stoi(valueScalingInstancesScalingInstance["WeightedCapacity"].asString());
 		if(!valueScalingInstancesScalingInstance["CreatedTime"].isNull())
 			scalingInstancesObject.createdTime = valueScalingInstancesScalingInstance["CreatedTime"].asString();
+		if(!valueScalingInstancesScalingInstance["ScalingActivityId"].isNull())
+			scalingInstancesObject.scalingActivityId = valueScalingInstancesScalingInstance["ScalingActivityId"].asString();
+		if(!valueScalingInstancesScalingInstance["InstanceType"].isNull())
+			scalingInstancesObject.instanceType = valueScalingInstancesScalingInstance["InstanceType"].asString();
+		if(!valueScalingInstancesScalingInstance["ScalingInstanceId"].isNull())
+			scalingInstancesObject.scalingInstanceId = valueScalingInstancesScalingInstance["ScalingInstanceId"].asString();
+		if(!valueScalingInstancesScalingInstance["PrivateIpAddress"].isNull())
+			scalingInstancesObject.privateIpAddress = valueScalingInstancesScalingInstance["PrivateIpAddress"].asString();
 		scalingInstances_.push_back(scalingInstancesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalSpotCount"].isNull())
+		totalSpotCount_ = std::stoi(value["TotalSpotCount"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -98,5 +114,10 @@ int DescribeScalingInstancesResult::getPageNumber()const
 std::vector<DescribeScalingInstancesResult::ScalingInstance> DescribeScalingInstancesResult::getScalingInstances()const
 {
 	return scalingInstances_;
+}
+
+int DescribeScalingInstancesResult::getTotalSpotCount()const
+{
+	return totalSpotCount_;
 }
 

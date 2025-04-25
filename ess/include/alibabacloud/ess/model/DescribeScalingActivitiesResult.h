@@ -34,19 +34,48 @@ namespace AlibabaCloud
 			public:
 				struct ScalingActivity
 				{
+					struct LifecycleHookContext
+					{
+						std::vector<std::string> ignoredLifecycleHookIds;
+						bool disableLifecycleHook;
+					};
+					struct ErrorMessagesItem
+					{
+						std::string description;
+						std::string message;
+						std::vector<std::string> failedInstanceIds;
+						std::string code;
+					};
 					int scalingInstanceNumber;
-					int progress;
 					std::string description;
 					std::string endTime;
+					std::string triggerSourceType;
+					std::string activityMetadata;
+					std::string autoCreatedCapacity;
+					std::string statusCode;
+					LifecycleHookContext lifecycleHookContext;
+					std::vector<std::string> stoppedInstances;
+					std::string cause;
+					std::string totalCapacity;
+					std::vector<std::string> destroyedInstances;
+					std::string instanceRefreshTaskId;
+					int progress;
 					std::string attachedCapacity;
 					std::string scalingActivityId;
 					std::string scalingGroupId;
 					std::string startTime;
-					std::string statusCode;
-					std::string autoCreatedCapacity;
+					int destroyedCapacity;
+					std::string triggerSourceId;
+					std::vector<std::string> startedInstances;
 					std::string statusMessage;
-					std::string cause;
-					std::string totalCapacity;
+					std::vector<ScalingActivity::ErrorMessagesItem> errorMessages;
+					int startedCapacity;
+					int createdCapacity;
+					std::vector<std::string> createdInstances;
+					int stoppedCapacity;
+					std::string errorCode;
+					std::string errorMessage;
+					std::string detail;
 				};
 
 

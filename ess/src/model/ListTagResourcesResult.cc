@@ -43,14 +43,16 @@ void ListTagResourcesResult::parse(const std::string &payload)
 	for (auto valueTagResourcesTagResource : allTagResourcesNode)
 	{
 		TagResource tagResourcesObject;
+		if(!valueTagResourcesTagResource["TagValue"].isNull())
+			tagResourcesObject.tagValue = valueTagResourcesTagResource["TagValue"].asString();
 		if(!valueTagResourcesTagResource["ResourceType"].isNull())
 			tagResourcesObject.resourceType = valueTagResourcesTagResource["ResourceType"].asString();
 		if(!valueTagResourcesTagResource["ResourceId"].isNull())
 			tagResourcesObject.resourceId = valueTagResourcesTagResource["ResourceId"].asString();
 		if(!valueTagResourcesTagResource["TagKey"].isNull())
 			tagResourcesObject.tagKey = valueTagResourcesTagResource["TagKey"].asString();
-		if(!valueTagResourcesTagResource["TagValue"].isNull())
-			tagResourcesObject.tagValue = valueTagResourcesTagResource["TagValue"].asString();
+		if(!valueTagResourcesTagResource["Propagate"].isNull())
+			tagResourcesObject.propagate = valueTagResourcesTagResource["Propagate"].asString() == "true";
 		tagResources_.push_back(tagResourcesObject);
 	}
 	if(!value["NextToken"].isNull())

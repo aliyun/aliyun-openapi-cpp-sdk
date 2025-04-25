@@ -39,20 +39,46 @@ namespace AlibabaCloud
 						std::string dimensionValue;
 						std::string dimensionKey;
 					};
+					struct Expression
+					{
+						std::string metricName;
+						std::string comparisonOperator;
+						int period;
+						std::string statistics;
+						float threshold;
+					};
+					struct HybridMetric
+					{
+						struct Dimension2
+						{
+							std::string dimensionValue;
+							std::string dimensionKey;
+						};
+						std::string metricName;
+						std::string statistic;
+						std::string expression;
+						std::vector<HybridMetric::Dimension2> dimensions1;
+						std::string id;
+					};
 					std::string comparisonOperator;
 					std::string description;
+					std::string promQL;
 					std::string scalingGroupId;
 					std::string metricType;
 					std::vector<Alarm::Dimension> dimensions;
-					int period;
 					int evaluationCount;
+					int period;
+					std::vector<Alarm::HybridMetric> hybridMetrics;
 					std::string statistics;
-					std::string name;
 					std::string effective;
+					std::string name;
 					std::vector<std::string> alarmActions;
 					std::string metricName;
+					std::string expressionsLogicOperator;
 					std::string state;
+					std::string hybridMonitorNamespace;
 					bool enable;
+					std::vector<Alarm::Expression> expressions;
 					std::string alarmTaskId;
 					float threshold;
 				};

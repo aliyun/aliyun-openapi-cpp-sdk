@@ -43,10 +43,12 @@ void DescribeNotificationConfigurationsResult::parse(const std::string &payload)
 	for (auto valueNotificationConfigurationModelsNotificationConfigurationModel : allNotificationConfigurationModelsNode)
 	{
 		NotificationConfigurationModel notificationConfigurationModelsObject;
-		if(!valueNotificationConfigurationModelsNotificationConfigurationModel["ScalingGroupId"].isNull())
-			notificationConfigurationModelsObject.scalingGroupId = valueNotificationConfigurationModelsNotificationConfigurationModel["ScalingGroupId"].asString();
 		if(!valueNotificationConfigurationModelsNotificationConfigurationModel["NotificationArn"].isNull())
 			notificationConfigurationModelsObject.notificationArn = valueNotificationConfigurationModelsNotificationConfigurationModel["NotificationArn"].asString();
+		if(!valueNotificationConfigurationModelsNotificationConfigurationModel["ScalingGroupId"].isNull())
+			notificationConfigurationModelsObject.scalingGroupId = valueNotificationConfigurationModelsNotificationConfigurationModel["ScalingGroupId"].asString();
+		if(!valueNotificationConfigurationModelsNotificationConfigurationModel["TimeZone"].isNull())
+			notificationConfigurationModelsObject.timeZone = valueNotificationConfigurationModelsNotificationConfigurationModel["TimeZone"].asString();
 		auto allNotificationTypes = value["NotificationTypes"]["NotificationType"];
 		for (auto value : allNotificationTypes)
 			notificationConfigurationModelsObject.notificationTypes.push_back(value.asString());

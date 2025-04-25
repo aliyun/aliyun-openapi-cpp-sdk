@@ -34,6 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct ScalingGroup
 				{
+					struct CapacityOptions
+					{
+						int onDemandBaseCapacity;
+						bool compensateWithOnDemand;
+						int onDemandPercentageAboveBaseCapacity;
+						bool spotAutoReplaceOnDemand;
+						std::string priceComparisonMode;
+					};
 					struct VServerGroup
 					{
 						struct VServerGroupAttribute
@@ -45,46 +53,107 @@ namespace AlibabaCloud
 						std::string loadBalancerId;
 						std::vector<VServerGroup::VServerGroupAttribute> vServerGroupAttributes;
 					};
+					struct LaunchTemplateOverride
+					{
+						int weightedCapacity;
+						float spotPriceLimit;
+						std::string instanceType;
+					};
+					struct AlbServerGroup
+					{
+						std::string albServerGroupId;
+						int port;
+						int weight;
+					};
+					struct ServerGroup
+					{
+						std::string type;
+						int port;
+						std::string serverGroupId;
+						int weight;
+					};
+					struct LoadBalancerConfig
+					{
+						std::string loadBalancerId;
+						int weight;
+					};
+					struct Tag
+					{
+						std::string tagKey;
+						bool propagate;
+						std::string tagValue;
+					};
+					struct DBInstance
+					{
+						std::string type;
+						std::string dBInstanceId;
+						std::vector<std::string> securityGroupIds;
+					};
 					bool spotInstanceRemedy;
+					std::string resourceGroupId;
+					std::vector<ScalingGroup::ServerGroup> serverGroups;
 					std::string activeScalingConfigurationId;
-					bool compensateWithOnDemand;
-					int onDemandPercentageAboveBaseCapacity;
 					int desiredCapacity;
-					std::string lifecycleState;
-					std::string modificationTime;
+					std::vector<ScalingGroup::AlbServerGroup> albServerGroups;
 					int onDemandBaseCapacity;
 					std::vector<std::string> removalPolicies;
-					int pendingWaitCapacity;
-					int totalCapacity;
-					int removingWaitCapacity;
-					int protectedCapacity;
-					int standbyCapacity;
-					std::string scalingPolicy;
+					std::vector<ScalingGroup::LaunchTemplateOverride> launchTemplateOverrides;
+					std::vector<ScalingGroup::Tag> tags;
 					std::vector<std::string> suspendedProcesses;
 					int removingCapacity;
 					std::vector<std::string> vSwitchIds;
-					int pendingCapacity;
 					std::string scalingGroupId;
+					int pendingCapacity;
 					std::string vSwitchId;
 					std::vector<std::string> loadBalancerIds;
 					int spotInstancePools;
-					bool groupDeletionProtection;
 					std::string launchTemplateId;
-					int maxSize;
+					std::string customPolicyARN;
+					std::vector<ScalingGroup::LoadBalancerConfig> loadBalancerConfigs;
+					int spotCapacity;
 					std::string scalingGroupName;
-					int activeCapacity;
-					int minSize;
-					int defaultCooldown;
 					bool scaleOutAmountCheck;
+					int defaultCooldown;
 					std::string vpcId;
-					std::string launchTemplateVersion;
+					std::string groupType;
 					std::string creationTime;
+					std::string launchTemplateVersion;
 					std::string multiAZPolicy;
 					int stoppedCapacity;
-					std::vector<ScalingGroup::VServerGroup> vServerGroups;
-					std::string regionId;
+					std::string currentHostName;
+					CapacityOptions capacityOptions;
 					std::vector<std::string> dBInstanceIds;
 					std::string healthCheckType;
+					bool compensateWithOnDemand;
+					int onDemandPercentageAboveBaseCapacity;
+					std::string modificationTime;
+					std::string lifecycleState;
+					int totalInstanceCount;
+					std::vector<std::string> healthCheckTypes;
+					std::string allocationStrategy;
+					bool weighted;
+					int initCapacity;
+					int pendingWaitCapacity;
+					int totalCapacity;
+					int removingWaitCapacity;
+					bool isElasticStrengthInAlarm;
+					std::string spotAllocationStrategy;
+					int protectedCapacity;
+					int standbyCapacity;
+					std::string scalingPolicy;
+					bool groupDeletionProtection;
+					int maxSize;
+					bool enableDesiredCapacity;
+					int minSize;
+					int activeCapacity;
+					bool azBalance;
+					bool systemSuspended;
+					std::string monitorGroupId;
+					std::vector<ScalingGroup::VServerGroup> vServerGroups;
+					std::string regionId;
+					std::vector<ScalingGroup::DBInstance> dBInstances;
+					int maxInstanceLifetime;
+					int stopInstanceTimeout;
 				};
 
 

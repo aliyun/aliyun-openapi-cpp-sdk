@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						};
 						std::string metricName;
 						std::string comparisonOperator;
+						std::string metricType;
 						std::vector<Alarm::Dimension> dimensions;
 						int evaluationCount;
 						std::string alarmTaskName;
@@ -56,30 +57,52 @@ namespace AlibabaCloud
 						float metricIntervalLowerBound;
 						int scalingAdjustment;
 					};
-					float targetValue;
+					struct AlarmDimension
+					{
+						std::string dimensionValue;
+						std::string dimensionKey;
+					};
+					struct HybridMetric
+					{
+						struct Dimension2
+						{
+							std::string dimensionValue;
+							std::string dimensionKey;
+						};
+						std::string metricName;
+						std::string statistic;
+						std::string expression;
+						std::vector<HybridMetric::Dimension2> dimensions1;
+						std::string id;
+					};
 					std::vector<ScalingRule::StepAdjustment> stepAdjustments;
-					std::string scalingGroupId;
 					int cooldown;
 					std::string predictiveValueBehavior;
+					std::string metricType;
+					std::vector<ScalingRule::HybridMetric> hybridMetrics;
+					std::string scalingRuleAri;
+					std::string metricName;
+					std::string scalingRuleName;
+					int scaleOutEvaluationCount;
+					int initialMaxSize;
+					std::string scalingRuleType;
+					int estimatedInstanceWarmup;
+					int predictiveTaskBufferTime;
+					int predictiveValueBuffer;
+					float targetValue;
+					std::string scalingGroupId;
 					std::vector<ScalingRule::Alarm> alarms;
 					std::string scalingRuleId;
 					int minAdjustmentMagnitude;
 					bool disableScaleIn;
 					int maxSize;
 					std::string adjustmentType;
-					std::string scalingRuleAri;
 					int minSize;
-					std::string metricName;
-					std::string scalingRuleName;
+					std::vector<ScalingRule::AlarmDimension> alarmDimensions;
 					int adjustmentValue;
-					int scaleOutEvaluationCount;
-					int initialMaxSize;
-					std::string scalingRuleType;
-					int estimatedInstanceWarmup;
-					int scaleInEvaluationCount;
+					std::string hybridMonitorNamespace;
 					std::string predictiveScalingMode;
-					int predictiveValueBuffer;
-					int predictiveTaskBufferTime;
+					int scaleInEvaluationCount;
 				};
 
 

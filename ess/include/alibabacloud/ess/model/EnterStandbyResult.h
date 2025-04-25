@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				EnterStandbyResult();
 				explicit EnterStandbyResult(const std::string &payload);
 				~EnterStandbyResult();
+				std::string getScalingActivityId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string scalingActivityId_;
 
 			};
 		}

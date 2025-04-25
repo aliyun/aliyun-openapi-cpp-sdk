@@ -45,8 +45,8 @@ namespace AlibabaCloud
 					int launchExpirationTime;
 					int minValue;
 					std::string scheduledAction;
-					std::string recurrenceEndTime;
 					std::string recurrenceValue;
+					std::string recurrenceEndTime;
 					bool taskEnabled;
 				};
 

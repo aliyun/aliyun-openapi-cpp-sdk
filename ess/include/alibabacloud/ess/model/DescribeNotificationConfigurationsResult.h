@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct NotificationConfigurationModel
 				{
+					std::string timeZone;
 					std::string notificationArn;
 					std::string scalingGroupId;
 					std::vector<std::string> notificationTypes;

@@ -39,6 +39,13 @@ void EnterStandbyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ScalingActivityId"].isNull())
+		scalingActivityId_ = value["ScalingActivityId"].asString();
 
+}
+
+std::string EnterStandbyResult::getScalingActivityId()const
+{
+	return scalingActivityId_;
 }
 

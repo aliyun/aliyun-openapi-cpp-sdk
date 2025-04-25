@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,113 +18,117 @@
 
 using AlibabaCloud::Ess::Model::DetachInstancesRequest;
 
-DetachInstancesRequest::DetachInstancesRequest() :
-	RpcServiceRequest("ess", "2014-08-28", "DetachInstances")
-{
-	setMethod(HttpRequest::Method::Post);
+DetachInstancesRequest::DetachInstancesRequest()
+    : RpcServiceRequest("ess", "2014-08-28", "DetachInstances") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DetachInstancesRequest::~DetachInstancesRequest()
-{}
+DetachInstancesRequest::~DetachInstancesRequest() {}
 
-long DetachInstancesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DetachInstancesRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DetachInstancesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DetachInstancesRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DetachInstancesRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
+std::string DetachInstancesRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DetachInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+void DetachInstancesRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string DetachInstancesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DetachInstancesRequest::getScalingGroupId() const {
+  return scalingGroupId_;
 }
 
-void DetachInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DetachInstancesRequest::setScalingGroupId(const std::string &scalingGroupId) {
+  scalingGroupId_ = scalingGroupId;
+  setParameter(std::string("ScalingGroupId"), scalingGroupId);
 }
 
-bool DetachInstancesRequest::getDecreaseDesiredCapacity()const
-{
-	return decreaseDesiredCapacity_;
+std::string DetachInstancesRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DetachInstancesRequest::setDecreaseDesiredCapacity(bool decreaseDesiredCapacity)
-{
-	decreaseDesiredCapacity_ = decreaseDesiredCapacity;
-	setParameter("DecreaseDesiredCapacity", decreaseDesiredCapacity ? "true" : "false");
+void DetachInstancesRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DetachInstancesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+bool DetachInstancesRequest::getDecreaseDesiredCapacity() const {
+  return decreaseDesiredCapacity_;
 }
 
-void DetachInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DetachInstancesRequest::setDecreaseDesiredCapacity(bool decreaseDesiredCapacity) {
+  decreaseDesiredCapacity_ = decreaseDesiredCapacity;
+  setParameter(std::string("DecreaseDesiredCapacity"), decreaseDesiredCapacity ? "true" : "false");
 }
 
-std::string DetachInstancesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+bool DetachInstancesRequest::getIgnoreInvalidInstance() const {
+  return ignoreInvalidInstance_;
 }
 
-void DetachInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DetachInstancesRequest::setIgnoreInvalidInstance(bool ignoreInvalidInstance) {
+  ignoreInvalidInstance_ = ignoreInvalidInstance;
+  setParameter(std::string("IgnoreInvalidInstance"), ignoreInvalidInstance ? "true" : "false");
 }
 
-long DetachInstancesRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DetachInstancesRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DetachInstancesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DetachInstancesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::vector<std::string> DetachInstancesRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string DetachInstancesRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DetachInstancesRequest::setInstanceId(const std::vector<std::string>& instanceId)
-{
-	instanceId_ = instanceId;
-	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
-		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
-	}
+void DetachInstancesRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string DetachInstancesRequest::getDetachOption()const
-{
-	return detachOption_;
+long DetachInstancesRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DetachInstancesRequest::setDetachOption(const std::string& detachOption)
-{
-	detachOption_ = detachOption;
-	setParameter("DetachOption", detachOption);
+void DetachInstancesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DetachInstancesRequest::getDetachOption() const {
+  return detachOption_;
+}
+
+void DetachInstancesRequest::setDetachOption(const std::string &detachOption) {
+  detachOption_ = detachOption;
+  setParameter(std::string("DetachOption"), detachOption);
+}
+
+std::vector<std::string> DetachInstancesRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DetachInstancesRequest::setInstanceId(const std::vector<std::string> &instanceId) {
+  instanceId_ = instanceId;
+}
+
+bool DetachInstancesRequest::getLifecycleHook() const {
+  return lifecycleHook_;
+}
+
+void DetachInstancesRequest::setLifecycleHook(bool lifecycleHook) {
+  lifecycleHook_ = lifecycleHook;
+  setParameter(std::string("LifecycleHook"), lifecycleHook ? "true" : "false");
 }
 

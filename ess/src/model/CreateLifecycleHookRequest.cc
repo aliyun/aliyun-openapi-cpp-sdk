@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,133 +18,109 @@
 
 using AlibabaCloud::Ess::Model::CreateLifecycleHookRequest;
 
-CreateLifecycleHookRequest::CreateLifecycleHookRequest() :
-	RpcServiceRequest("ess", "2014-08-28", "CreateLifecycleHook")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateLifecycleHookRequest::CreateLifecycleHookRequest()
+    : RpcServiceRequest("ess", "2014-08-28", "CreateLifecycleHook") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateLifecycleHookRequest::~CreateLifecycleHookRequest()
-{}
+CreateLifecycleHookRequest::~CreateLifecycleHookRequest() {}
 
-std::string CreateLifecycleHookRequest::getDefaultResult()const
-{
-	return defaultResult_;
+std::string CreateLifecycleHookRequest::getDefaultResult() const {
+  return defaultResult_;
 }
 
-void CreateLifecycleHookRequest::setDefaultResult(const std::string& defaultResult)
-{
-	defaultResult_ = defaultResult;
-	setParameter("DefaultResult", defaultResult);
+void CreateLifecycleHookRequest::setDefaultResult(const std::string &defaultResult) {
+  defaultResult_ = defaultResult;
+  setParameter(std::string("DefaultResult"), defaultResult);
 }
 
-int CreateLifecycleHookRequest::getHeartbeatTimeout()const
-{
-	return heartbeatTimeout_;
+int CreateLifecycleHookRequest::getHeartbeatTimeout() const {
+  return heartbeatTimeout_;
 }
 
-void CreateLifecycleHookRequest::setHeartbeatTimeout(int heartbeatTimeout)
-{
-	heartbeatTimeout_ = heartbeatTimeout;
-	setParameter("HeartbeatTimeout", std::to_string(heartbeatTimeout));
+void CreateLifecycleHookRequest::setHeartbeatTimeout(int heartbeatTimeout) {
+  heartbeatTimeout_ = heartbeatTimeout;
+  setParameter(std::string("HeartbeatTimeout"), std::to_string(heartbeatTimeout));
 }
 
-std::string CreateLifecycleHookRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
+std::string CreateLifecycleHookRequest::getScalingGroupId() const {
+  return scalingGroupId_;
 }
 
-void CreateLifecycleHookRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+void CreateLifecycleHookRequest::setScalingGroupId(const std::string &scalingGroupId) {
+  scalingGroupId_ = scalingGroupId;
+  setParameter(std::string("ScalingGroupId"), scalingGroupId);
 }
 
-std::string CreateLifecycleHookRequest::getLifecycleTransition()const
-{
-	return lifecycleTransition_;
+std::string CreateLifecycleHookRequest::getLifecycleTransition() const {
+  return lifecycleTransition_;
 }
 
-void CreateLifecycleHookRequest::setLifecycleTransition(const std::string& lifecycleTransition)
-{
-	lifecycleTransition_ = lifecycleTransition;
-	setParameter("LifecycleTransition", lifecycleTransition);
+void CreateLifecycleHookRequest::setLifecycleTransition(const std::string &lifecycleTransition) {
+  lifecycleTransition_ = lifecycleTransition;
+  setParameter(std::string("LifecycleTransition"), lifecycleTransition);
 }
 
-std::string CreateLifecycleHookRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string CreateLifecycleHookRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void CreateLifecycleHookRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void CreateLifecycleHookRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string CreateLifecycleHookRequest::getLifecycleHookName()const
-{
-	return lifecycleHookName_;
+std::string CreateLifecycleHookRequest::getLifecycleHookName() const {
+  return lifecycleHookName_;
 }
 
-void CreateLifecycleHookRequest::setLifecycleHookName(const std::string& lifecycleHookName)
-{
-	lifecycleHookName_ = lifecycleHookName;
-	setParameter("LifecycleHookName", lifecycleHookName);
+void CreateLifecycleHookRequest::setLifecycleHookName(const std::string &lifecycleHookName) {
+  lifecycleHookName_ = lifecycleHookName;
+  setParameter(std::string("LifecycleHookName"), lifecycleHookName);
 }
 
-std::string CreateLifecycleHookRequest::getNotificationArn()const
-{
-	return notificationArn_;
+std::string CreateLifecycleHookRequest::getNotificationArn() const {
+  return notificationArn_;
 }
 
-void CreateLifecycleHookRequest::setNotificationArn(const std::string& notificationArn)
-{
-	notificationArn_ = notificationArn;
-	setParameter("NotificationArn", notificationArn);
+void CreateLifecycleHookRequest::setNotificationArn(const std::string &notificationArn) {
+  notificationArn_ = notificationArn;
+  setParameter(std::string("NotificationArn"), notificationArn);
 }
 
-std::string CreateLifecycleHookRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string CreateLifecycleHookRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void CreateLifecycleHookRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void CreateLifecycleHookRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string CreateLifecycleHookRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string CreateLifecycleHookRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void CreateLifecycleHookRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void CreateLifecycleHookRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string CreateLifecycleHookRequest::getNotificationMetadata()const
-{
-	return notificationMetadata_;
+std::string CreateLifecycleHookRequest::getNotificationMetadata() const {
+  return notificationMetadata_;
 }
 
-void CreateLifecycleHookRequest::setNotificationMetadata(const std::string& notificationMetadata)
-{
-	notificationMetadata_ = notificationMetadata;
-	setParameter("NotificationMetadata", notificationMetadata);
+void CreateLifecycleHookRequest::setNotificationMetadata(const std::string &notificationMetadata) {
+  notificationMetadata_ = notificationMetadata;
+  setParameter(std::string("NotificationMetadata"), notificationMetadata);
 }
 
-long CreateLifecycleHookRequest::getOwnerId()const
-{
-	return ownerId_;
+long CreateLifecycleHookRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void CreateLifecycleHookRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void CreateLifecycleHookRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

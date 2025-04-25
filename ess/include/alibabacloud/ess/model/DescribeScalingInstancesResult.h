@@ -36,17 +36,24 @@ namespace AlibabaCloud
 				{
 					int loadBalancerWeight;
 					std::string createdTime;
+					std::string privateIpAddress;
+					std::string zoneId;
 					std::string instanceId;
+					std::string scalingActivityId;
 					std::string scalingGroupId;
 					std::string healthStatus;
-					std::string lifecycleState;
 					std::string launchTemplateId;
+					std::string lifecycleState;
+					std::string scalingInstanceId;
 					std::string creationType;
+					int weightedCapacity;
 					std::string warmupState;
 					std::string creationTime;
 					std::string launchTemplateVersion;
 					bool entrusted;
 					std::string scalingConfigurationId;
+					std::string instanceType;
+					std::string spotStrategy;
 				};
 
 
@@ -57,6 +64,7 @@ namespace AlibabaCloud
 				int getPageSize()const;
 				int getPageNumber()const;
 				std::vector<ScalingInstance> getScalingInstances()const;
+				int getTotalSpotCount()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -65,6 +73,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				int pageNumber_;
 				std::vector<ScalingInstance> scalingInstances_;
+				int totalSpotCount_;
 
 			};
 		}

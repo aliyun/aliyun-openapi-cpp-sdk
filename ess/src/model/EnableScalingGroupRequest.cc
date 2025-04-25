@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,551 +18,130 @@
 
 using AlibabaCloud::Ess::Model::EnableScalingGroupRequest;
 
-EnableScalingGroupRequest::EnableScalingGroupRequest() :
-	RpcServiceRequest("ess", "2014-08-28", "EnableScalingGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+EnableScalingGroupRequest::EnableScalingGroupRequest()
+    : RpcServiceRequest("ess", "2014-08-28", "EnableScalingGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-EnableScalingGroupRequest::~EnableScalingGroupRequest()
-{}
+EnableScalingGroupRequest::~EnableScalingGroupRequest() {}
 
-int EnableScalingGroupRequest::getLoadBalancerWeight6()const
-{
-	return loadBalancerWeight6_;
+long EnableScalingGroupRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight6(int loadBalancerWeight6)
-{
-	loadBalancerWeight6_ = loadBalancerWeight6;
-	setParameter("LoadBalancerWeight6", std::to_string(loadBalancerWeight6));
+void EnableScalingGroupRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int EnableScalingGroupRequest::getLoadBalancerWeight11()const
-{
-	return loadBalancerWeight11_;
+std::string EnableScalingGroupRequest::getScalingGroupId() const {
+  return scalingGroupId_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight11(int loadBalancerWeight11)
-{
-	loadBalancerWeight11_ = loadBalancerWeight11;
-	setParameter("LoadBalancerWeight11", std::to_string(loadBalancerWeight11));
+void EnableScalingGroupRequest::setScalingGroupId(const std::string &scalingGroupId) {
+  scalingGroupId_ = scalingGroupId;
+  setParameter(std::string("ScalingGroupId"), scalingGroupId);
 }
 
-int EnableScalingGroupRequest::getLoadBalancerWeight7()const
-{
-	return loadBalancerWeight7_;
+std::string EnableScalingGroupRequest::getActiveScalingConfigurationId() const {
+  return activeScalingConfigurationId_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight7(int loadBalancerWeight7)
-{
-	loadBalancerWeight7_ = loadBalancerWeight7;
-	setParameter("LoadBalancerWeight7", std::to_string(loadBalancerWeight7));
+void EnableScalingGroupRequest::setActiveScalingConfigurationId(const std::string &activeScalingConfigurationId) {
+  activeScalingConfigurationId_ = activeScalingConfigurationId;
+  setParameter(std::string("ActiveScalingConfigurationId"), activeScalingConfigurationId);
 }
 
-int EnableScalingGroupRequest::getLoadBalancerWeight12()const
-{
-	return loadBalancerWeight12_;
+std::string EnableScalingGroupRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight12(int loadBalancerWeight12)
-{
-	loadBalancerWeight12_ = loadBalancerWeight12;
-	setParameter("LoadBalancerWeight12", std::to_string(loadBalancerWeight12));
+void EnableScalingGroupRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-long EnableScalingGroupRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+std::string EnableScalingGroupRequest::getRegionId() const {
+  return regionId_;
 }
 
-void EnableScalingGroupRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void EnableScalingGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-int EnableScalingGroupRequest::getLoadBalancerWeight8()const
-{
-	return loadBalancerWeight8_;
+std::string EnableScalingGroupRequest::getLaunchTemplateId() const {
+  return launchTemplateId_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight8(int loadBalancerWeight8)
-{
-	loadBalancerWeight8_ = loadBalancerWeight8;
-	setParameter("LoadBalancerWeight8", std::to_string(loadBalancerWeight8));
+void EnableScalingGroupRequest::setLaunchTemplateId(const std::string &launchTemplateId) {
+  launchTemplateId_ = launchTemplateId;
+  setParameter(std::string("LaunchTemplateId"), launchTemplateId);
 }
 
-int EnableScalingGroupRequest::getLoadBalancerWeight9()const
-{
-	return loadBalancerWeight9_;
+std::string EnableScalingGroupRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight9(int loadBalancerWeight9)
-{
-	loadBalancerWeight9_ = loadBalancerWeight9;
-	setParameter("LoadBalancerWeight9", std::to_string(loadBalancerWeight9));
+void EnableScalingGroupRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-int EnableScalingGroupRequest::getLoadBalancerWeight10()const
-{
-	return loadBalancerWeight10_;
+std::vector<EnableScalingGroupRequest::LaunchTemplateOverride> EnableScalingGroupRequest::getLaunchTemplateOverride() const {
+  return launchTemplateOverride_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight10(int loadBalancerWeight10)
-{
-	loadBalancerWeight10_ = loadBalancerWeight10;
-	setParameter("LoadBalancerWeight10", std::to_string(loadBalancerWeight10));
+void EnableScalingGroupRequest::setLaunchTemplateOverride(const std::vector<EnableScalingGroupRequest::LaunchTemplateOverride> &launchTemplateOverride) {
+  launchTemplateOverride_ = launchTemplateOverride;
+  for(int dep1 = 0; dep1 != launchTemplateOverride.size(); dep1++) {
+  auto launchTemplateOverrideObj = launchTemplateOverride.at(dep1);
+  std::string launchTemplateOverrideObjStr = std::string("LaunchTemplateOverride") + "." + std::to_string(dep1 + 1);
+    setParameter(launchTemplateOverrideObjStr + ".WeightedCapacity", std::to_string(launchTemplateOverrideObj.weightedCapacity));
+    setParameter(launchTemplateOverrideObjStr + ".InstanceType", launchTemplateOverrideObj.instanceType);
+  }
 }
 
-int EnableScalingGroupRequest::getLoadBalancerWeight2()const
-{
-	return loadBalancerWeight2_;
+std::string EnableScalingGroupRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight2(int loadBalancerWeight2)
-{
-	loadBalancerWeight2_ = loadBalancerWeight2;
-	setParameter("LoadBalancerWeight2", std::to_string(loadBalancerWeight2));
+void EnableScalingGroupRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-int EnableScalingGroupRequest::getLoadBalancerWeight15()const
-{
-	return loadBalancerWeight15_;
+long EnableScalingGroupRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight15(int loadBalancerWeight15)
-{
-	loadBalancerWeight15_ = loadBalancerWeight15;
-	setParameter("LoadBalancerWeight15", std::to_string(loadBalancerWeight15));
+void EnableScalingGroupRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-int EnableScalingGroupRequest::getLoadBalancerWeight3()const
-{
-	return loadBalancerWeight3_;
+std::string EnableScalingGroupRequest::getLaunchTemplateVersion() const {
+  return launchTemplateVersion_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight3(int loadBalancerWeight3)
-{
-	loadBalancerWeight3_ = loadBalancerWeight3;
-	setParameter("LoadBalancerWeight3", std::to_string(loadBalancerWeight3));
+void EnableScalingGroupRequest::setLaunchTemplateVersion(const std::string &launchTemplateVersion) {
+  launchTemplateVersion_ = launchTemplateVersion;
+  setParameter(std::string("LaunchTemplateVersion"), launchTemplateVersion);
 }
 
-int EnableScalingGroupRequest::getLoadBalancerWeight16()const
-{
-	return loadBalancerWeight16_;
+std::vector<std::string> EnableScalingGroupRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight16(int loadBalancerWeight16)
-{
-	loadBalancerWeight16_ = loadBalancerWeight16;
-	setParameter("LoadBalancerWeight16", std::to_string(loadBalancerWeight16));
+void EnableScalingGroupRequest::setInstanceId(const std::vector<std::string> &instanceId) {
+  instanceId_ = instanceId;
 }
 
-int EnableScalingGroupRequest::getLoadBalancerWeight4()const
-{
-	return loadBalancerWeight4_;
+std::vector<int> EnableScalingGroupRequest::getLoadBalancerWeight() const {
+  return loadBalancerWeight_;
 }
 
-void EnableScalingGroupRequest::setLoadBalancerWeight4(int loadBalancerWeight4)
-{
-	loadBalancerWeight4_ = loadBalancerWeight4;
-	setParameter("LoadBalancerWeight4", std::to_string(loadBalancerWeight4));
-}
-
-int EnableScalingGroupRequest::getLoadBalancerWeight13()const
-{
-	return loadBalancerWeight13_;
-}
-
-void EnableScalingGroupRequest::setLoadBalancerWeight13(int loadBalancerWeight13)
-{
-	loadBalancerWeight13_ = loadBalancerWeight13;
-	setParameter("LoadBalancerWeight13", std::to_string(loadBalancerWeight13));
-}
-
-int EnableScalingGroupRequest::getLoadBalancerWeight5()const
-{
-	return loadBalancerWeight5_;
-}
-
-void EnableScalingGroupRequest::setLoadBalancerWeight5(int loadBalancerWeight5)
-{
-	loadBalancerWeight5_ = loadBalancerWeight5;
-	setParameter("LoadBalancerWeight5", std::to_string(loadBalancerWeight5));
-}
-
-int EnableScalingGroupRequest::getLoadBalancerWeight14()const
-{
-	return loadBalancerWeight14_;
-}
-
-void EnableScalingGroupRequest::setLoadBalancerWeight14(int loadBalancerWeight14)
-{
-	loadBalancerWeight14_ = loadBalancerWeight14;
-	setParameter("LoadBalancerWeight14", std::to_string(loadBalancerWeight14));
-}
-
-std::string EnableScalingGroupRequest::getActiveScalingConfigurationId()const
-{
-	return activeScalingConfigurationId_;
-}
-
-void EnableScalingGroupRequest::setActiveScalingConfigurationId(const std::string& activeScalingConfigurationId)
-{
-	activeScalingConfigurationId_ = activeScalingConfigurationId;
-	setParameter("ActiveScalingConfigurationId", activeScalingConfigurationId);
-}
-
-int EnableScalingGroupRequest::getLoadBalancerWeight1()const
-{
-	return loadBalancerWeight1_;
-}
-
-void EnableScalingGroupRequest::setLoadBalancerWeight1(int loadBalancerWeight1)
-{
-	loadBalancerWeight1_ = loadBalancerWeight1;
-	setParameter("LoadBalancerWeight1", std::to_string(loadBalancerWeight1));
-}
-
-std::string EnableScalingGroupRequest::getInstanceId1()const
-{
-	return instanceId1_;
-}
-
-void EnableScalingGroupRequest::setInstanceId1(const std::string& instanceId1)
-{
-	instanceId1_ = instanceId1;
-	setParameter("InstanceId1", instanceId1);
-}
-
-int EnableScalingGroupRequest::getLoadBalancerWeight20()const
-{
-	return loadBalancerWeight20_;
-}
-
-void EnableScalingGroupRequest::setLoadBalancerWeight20(int loadBalancerWeight20)
-{
-	loadBalancerWeight20_ = loadBalancerWeight20;
-	setParameter("LoadBalancerWeight20", std::to_string(loadBalancerWeight20));
-}
-
-std::string EnableScalingGroupRequest::getInstanceId3()const
-{
-	return instanceId3_;
-}
-
-void EnableScalingGroupRequest::setInstanceId3(const std::string& instanceId3)
-{
-	instanceId3_ = instanceId3;
-	setParameter("InstanceId3", instanceId3);
-}
-
-std::string EnableScalingGroupRequest::getLaunchTemplateId()const
-{
-	return launchTemplateId_;
-}
-
-void EnableScalingGroupRequest::setLaunchTemplateId(const std::string& launchTemplateId)
-{
-	launchTemplateId_ = launchTemplateId;
-	setParameter("LaunchTemplateId", launchTemplateId);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId2()const
-{
-	return instanceId2_;
-}
-
-void EnableScalingGroupRequest::setInstanceId2(const std::string& instanceId2)
-{
-	instanceId2_ = instanceId2;
-	setParameter("InstanceId2", instanceId2);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId5()const
-{
-	return instanceId5_;
-}
-
-void EnableScalingGroupRequest::setInstanceId5(const std::string& instanceId5)
-{
-	instanceId5_ = instanceId5;
-	setParameter("InstanceId5", instanceId5);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId4()const
-{
-	return instanceId4_;
-}
-
-void EnableScalingGroupRequest::setInstanceId4(const std::string& instanceId4)
-{
-	instanceId4_ = instanceId4;
-	setParameter("InstanceId4", instanceId4);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId7()const
-{
-	return instanceId7_;
-}
-
-void EnableScalingGroupRequest::setInstanceId7(const std::string& instanceId7)
-{
-	instanceId7_ = instanceId7;
-	setParameter("InstanceId7", instanceId7);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId6()const
-{
-	return instanceId6_;
-}
-
-void EnableScalingGroupRequest::setInstanceId6(const std::string& instanceId6)
-{
-	instanceId6_ = instanceId6;
-	setParameter("InstanceId6", instanceId6);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId9()const
-{
-	return instanceId9_;
-}
-
-void EnableScalingGroupRequest::setInstanceId9(const std::string& instanceId9)
-{
-	instanceId9_ = instanceId9;
-	setParameter("InstanceId9", instanceId9);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId8()const
-{
-	return instanceId8_;
-}
-
-void EnableScalingGroupRequest::setInstanceId8(const std::string& instanceId8)
-{
-	instanceId8_ = instanceId8;
-	setParameter("InstanceId8", instanceId8);
-}
-
-long EnableScalingGroupRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void EnableScalingGroupRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-int EnableScalingGroupRequest::getLoadBalancerWeight19()const
-{
-	return loadBalancerWeight19_;
-}
-
-void EnableScalingGroupRequest::setLoadBalancerWeight19(int loadBalancerWeight19)
-{
-	loadBalancerWeight19_ = loadBalancerWeight19;
-	setParameter("LoadBalancerWeight19", std::to_string(loadBalancerWeight19));
-}
-
-int EnableScalingGroupRequest::getLoadBalancerWeight17()const
-{
-	return loadBalancerWeight17_;
-}
-
-void EnableScalingGroupRequest::setLoadBalancerWeight17(int loadBalancerWeight17)
-{
-	loadBalancerWeight17_ = loadBalancerWeight17;
-	setParameter("LoadBalancerWeight17", std::to_string(loadBalancerWeight17));
-}
-
-int EnableScalingGroupRequest::getLoadBalancerWeight18()const
-{
-	return loadBalancerWeight18_;
-}
-
-void EnableScalingGroupRequest::setLoadBalancerWeight18(int loadBalancerWeight18)
-{
-	loadBalancerWeight18_ = loadBalancerWeight18;
-	setParameter("LoadBalancerWeight18", std::to_string(loadBalancerWeight18));
-}
-
-std::string EnableScalingGroupRequest::getInstanceId10()const
-{
-	return instanceId10_;
-}
-
-void EnableScalingGroupRequest::setInstanceId10(const std::string& instanceId10)
-{
-	instanceId10_ = instanceId10;
-	setParameter("InstanceId10", instanceId10);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId12()const
-{
-	return instanceId12_;
-}
-
-void EnableScalingGroupRequest::setInstanceId12(const std::string& instanceId12)
-{
-	instanceId12_ = instanceId12;
-	setParameter("InstanceId12", instanceId12);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId11()const
-{
-	return instanceId11_;
-}
-
-void EnableScalingGroupRequest::setInstanceId11(const std::string& instanceId11)
-{
-	instanceId11_ = instanceId11;
-	setParameter("InstanceId11", instanceId11);
-}
-
-std::string EnableScalingGroupRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
-}
-
-void EnableScalingGroupRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
-}
-
-std::string EnableScalingGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void EnableScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId20()const
-{
-	return instanceId20_;
-}
-
-void EnableScalingGroupRequest::setInstanceId20(const std::string& instanceId20)
-{
-	instanceId20_ = instanceId20;
-	setParameter("InstanceId20", instanceId20);
-}
-
-std::string EnableScalingGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void EnableScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string EnableScalingGroupRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void EnableScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
-}
-
-std::string EnableScalingGroupRequest::getLaunchTemplateVersion()const
-{
-	return launchTemplateVersion_;
-}
-
-void EnableScalingGroupRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
-{
-	launchTemplateVersion_ = launchTemplateVersion;
-	setParameter("LaunchTemplateVersion", launchTemplateVersion);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId18()const
-{
-	return instanceId18_;
-}
-
-void EnableScalingGroupRequest::setInstanceId18(const std::string& instanceId18)
-{
-	instanceId18_ = instanceId18;
-	setParameter("InstanceId18", instanceId18);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId17()const
-{
-	return instanceId17_;
-}
-
-void EnableScalingGroupRequest::setInstanceId17(const std::string& instanceId17)
-{
-	instanceId17_ = instanceId17;
-	setParameter("InstanceId17", instanceId17);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId19()const
-{
-	return instanceId19_;
-}
-
-void EnableScalingGroupRequest::setInstanceId19(const std::string& instanceId19)
-{
-	instanceId19_ = instanceId19;
-	setParameter("InstanceId19", instanceId19);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId14()const
-{
-	return instanceId14_;
-}
-
-void EnableScalingGroupRequest::setInstanceId14(const std::string& instanceId14)
-{
-	instanceId14_ = instanceId14;
-	setParameter("InstanceId14", instanceId14);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId13()const
-{
-	return instanceId13_;
-}
-
-void EnableScalingGroupRequest::setInstanceId13(const std::string& instanceId13)
-{
-	instanceId13_ = instanceId13;
-	setParameter("InstanceId13", instanceId13);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId16()const
-{
-	return instanceId16_;
-}
-
-void EnableScalingGroupRequest::setInstanceId16(const std::string& instanceId16)
-{
-	instanceId16_ = instanceId16;
-	setParameter("InstanceId16", instanceId16);
-}
-
-std::string EnableScalingGroupRequest::getInstanceId15()const
-{
-	return instanceId15_;
-}
-
-void EnableScalingGroupRequest::setInstanceId15(const std::string& instanceId15)
-{
-	instanceId15_ = instanceId15;
-	setParameter("InstanceId15", instanceId15);
+void EnableScalingGroupRequest::setLoadBalancerWeight(const std::vector<int> &loadBalancerWeight) {
+  loadBalancerWeight_ = loadBalancerWeight;
 }
 

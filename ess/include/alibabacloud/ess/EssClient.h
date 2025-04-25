@@ -22,18 +22,26 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "EssExport.h"
+#include "model/AttachAlbServerGroupsRequest.h"
+#include "model/AttachAlbServerGroupsResult.h"
 #include "model/AttachDBInstancesRequest.h"
 #include "model/AttachDBInstancesResult.h"
 #include "model/AttachInstancesRequest.h"
 #include "model/AttachInstancesResult.h"
 #include "model/AttachLoadBalancersRequest.h"
 #include "model/AttachLoadBalancersResult.h"
+#include "model/AttachServerGroupsRequest.h"
+#include "model/AttachServerGroupsResult.h"
 #include "model/AttachVServerGroupsRequest.h"
 #include "model/AttachVServerGroupsResult.h"
+#include "model/ChangeResourceGroupRequest.h"
+#include "model/ChangeResourceGroupResult.h"
 #include "model/CompleteLifecycleActionRequest.h"
 #include "model/CompleteLifecycleActionResult.h"
 #include "model/CreateAlarmRequest.h"
 #include "model/CreateAlarmResult.h"
+#include "model/CreateEciScalingConfigurationRequest.h"
+#include "model/CreateEciScalingConfigurationResult.h"
 #include "model/CreateLifecycleHookRequest.h"
 #include "model/CreateLifecycleHookResult.h"
 #include "model/CreateNotificationConfigurationRequest.h"
@@ -50,6 +58,8 @@
 #include "model/DeactivateScalingConfigurationResult.h"
 #include "model/DeleteAlarmRequest.h"
 #include "model/DeleteAlarmResult.h"
+#include "model/DeleteEciScalingConfigurationRequest.h"
+#include "model/DeleteEciScalingConfigurationResult.h"
 #include "model/DeleteLifecycleHookRequest.h"
 #include "model/DeleteLifecycleHookResult.h"
 #include "model/DeleteNotificationConfigurationRequest.h"
@@ -64,6 +74,10 @@
 #include "model/DeleteScheduledTaskResult.h"
 #include "model/DescribeAlarmsRequest.h"
 #include "model/DescribeAlarmsResult.h"
+#include "model/DescribeEciScalingConfigurationsRequest.h"
+#include "model/DescribeEciScalingConfigurationsResult.h"
+#include "model/DescribeElasticStrengthRequest.h"
+#include "model/DescribeElasticStrengthResult.h"
 #include "model/DescribeLifecycleActionsRequest.h"
 #include "model/DescribeLifecycleActionsResult.h"
 #include "model/DescribeLifecycleHooksRequest.h"
@@ -74,6 +88,8 @@
 #include "model/DescribeNotificationConfigurationsResult.h"
 #include "model/DescribeNotificationTypesRequest.h"
 #include "model/DescribeNotificationTypesResult.h"
+#include "model/DescribePatternTypesRequest.h"
+#include "model/DescribePatternTypesResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeScalingActivitiesRequest.h"
@@ -90,12 +106,16 @@
 #include "model/DescribeScalingRulesResult.h"
 #include "model/DescribeScheduledTasksRequest.h"
 #include "model/DescribeScheduledTasksResult.h"
+#include "model/DetachAlbServerGroupsRequest.h"
+#include "model/DetachAlbServerGroupsResult.h"
 #include "model/DetachDBInstancesRequest.h"
 #include "model/DetachDBInstancesResult.h"
 #include "model/DetachInstancesRequest.h"
 #include "model/DetachInstancesResult.h"
 #include "model/DetachLoadBalancersRequest.h"
 #include "model/DetachLoadBalancersResult.h"
+#include "model/DetachServerGroupsRequest.h"
+#include "model/DetachServerGroupsResult.h"
 #include "model/DetachVServerGroupsRequest.h"
 #include "model/DetachVServerGroupsResult.h"
 #include "model/DisableAlarmRequest.h"
@@ -120,6 +140,10 @@
 #include "model/ListTagValuesResult.h"
 #include "model/ModifyAlarmRequest.h"
 #include "model/ModifyAlarmResult.h"
+#include "model/ModifyEciScalingConfigurationRequest.h"
+#include "model/ModifyEciScalingConfigurationResult.h"
+#include "model/ModifyInstanceAttributeRequest.h"
+#include "model/ModifyInstanceAttributeResult.h"
 #include "model/ModifyLifecycleHookRequest.h"
 #include "model/ModifyLifecycleHookResult.h"
 #include "model/ModifyNotificationConfigurationRequest.h"
@@ -140,6 +164,8 @@
 #include "model/RemoveInstancesResult.h"
 #include "model/ResumeProcessesRequest.h"
 #include "model/ResumeProcessesResult.h"
+#include "model/ScaleWithAdjustmentRequest.h"
+#include "model/ScaleWithAdjustmentResult.h"
 #include "model/SetGroupDeletionProtectionRequest.h"
 #include "model/SetGroupDeletionProtectionResult.h"
 #include "model/SetInstanceHealthRequest.h"
@@ -165,6 +191,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_ESS_EXPORT EssClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AttachAlbServerGroupsResult> AttachAlbServerGroupsOutcome;
+			typedef std::future<AttachAlbServerGroupsOutcome> AttachAlbServerGroupsOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::AttachAlbServerGroupsRequest&, const AttachAlbServerGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachAlbServerGroupsAsyncHandler;
 			typedef Outcome<Error, Model::AttachDBInstancesResult> AttachDBInstancesOutcome;
 			typedef std::future<AttachDBInstancesOutcome> AttachDBInstancesOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::AttachDBInstancesRequest&, const AttachDBInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachDBInstancesAsyncHandler;
@@ -174,15 +203,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachLoadBalancersResult> AttachLoadBalancersOutcome;
 			typedef std::future<AttachLoadBalancersOutcome> AttachLoadBalancersOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::AttachLoadBalancersRequest&, const AttachLoadBalancersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachLoadBalancersAsyncHandler;
+			typedef Outcome<Error, Model::AttachServerGroupsResult> AttachServerGroupsOutcome;
+			typedef std::future<AttachServerGroupsOutcome> AttachServerGroupsOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::AttachServerGroupsRequest&, const AttachServerGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachServerGroupsAsyncHandler;
 			typedef Outcome<Error, Model::AttachVServerGroupsResult> AttachVServerGroupsOutcome;
 			typedef std::future<AttachVServerGroupsOutcome> AttachVServerGroupsOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::AttachVServerGroupsRequest&, const AttachVServerGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachVServerGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ChangeResourceGroupResult> ChangeResourceGroupOutcome;
+			typedef std::future<ChangeResourceGroupOutcome> ChangeResourceGroupOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::ChangeResourceGroupRequest&, const ChangeResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::CompleteLifecycleActionResult> CompleteLifecycleActionOutcome;
 			typedef std::future<CompleteLifecycleActionOutcome> CompleteLifecycleActionOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::CompleteLifecycleActionRequest&, const CompleteLifecycleActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompleteLifecycleActionAsyncHandler;
 			typedef Outcome<Error, Model::CreateAlarmResult> CreateAlarmOutcome;
 			typedef std::future<CreateAlarmOutcome> CreateAlarmOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::CreateAlarmRequest&, const CreateAlarmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmAsyncHandler;
+			typedef Outcome<Error, Model::CreateEciScalingConfigurationResult> CreateEciScalingConfigurationOutcome;
+			typedef std::future<CreateEciScalingConfigurationOutcome> CreateEciScalingConfigurationOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::CreateEciScalingConfigurationRequest&, const CreateEciScalingConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEciScalingConfigurationAsyncHandler;
 			typedef Outcome<Error, Model::CreateLifecycleHookResult> CreateLifecycleHookOutcome;
 			typedef std::future<CreateLifecycleHookOutcome> CreateLifecycleHookOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::CreateLifecycleHookRequest&, const CreateLifecycleHookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLifecycleHookAsyncHandler;
@@ -207,6 +245,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteAlarmResult> DeleteAlarmOutcome;
 			typedef std::future<DeleteAlarmOutcome> DeleteAlarmOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DeleteAlarmRequest&, const DeleteAlarmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmAsyncHandler;
+			typedef Outcome<Error, Model::DeleteEciScalingConfigurationResult> DeleteEciScalingConfigurationOutcome;
+			typedef std::future<DeleteEciScalingConfigurationOutcome> DeleteEciScalingConfigurationOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::DeleteEciScalingConfigurationRequest&, const DeleteEciScalingConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEciScalingConfigurationAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLifecycleHookResult> DeleteLifecycleHookOutcome;
 			typedef std::future<DeleteLifecycleHookOutcome> DeleteLifecycleHookOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DeleteLifecycleHookRequest&, const DeleteLifecycleHookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLifecycleHookAsyncHandler;
@@ -228,6 +269,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAlarmsResult> DescribeAlarmsOutcome;
 			typedef std::future<DescribeAlarmsOutcome> DescribeAlarmsOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DescribeAlarmsRequest&, const DescribeAlarmsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEciScalingConfigurationsResult> DescribeEciScalingConfigurationsOutcome;
+			typedef std::future<DescribeEciScalingConfigurationsOutcome> DescribeEciScalingConfigurationsOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::DescribeEciScalingConfigurationsRequest&, const DescribeEciScalingConfigurationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEciScalingConfigurationsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeElasticStrengthResult> DescribeElasticStrengthOutcome;
+			typedef std::future<DescribeElasticStrengthOutcome> DescribeElasticStrengthOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::DescribeElasticStrengthRequest&, const DescribeElasticStrengthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticStrengthAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLifecycleActionsResult> DescribeLifecycleActionsOutcome;
 			typedef std::future<DescribeLifecycleActionsOutcome> DescribeLifecycleActionsOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DescribeLifecycleActionsRequest&, const DescribeLifecycleActionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLifecycleActionsAsyncHandler;
@@ -243,6 +290,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeNotificationTypesResult> DescribeNotificationTypesOutcome;
 			typedef std::future<DescribeNotificationTypesOutcome> DescribeNotificationTypesOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DescribeNotificationTypesRequest&, const DescribeNotificationTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotificationTypesAsyncHandler;
+			typedef Outcome<Error, Model::DescribePatternTypesResult> DescribePatternTypesOutcome;
+			typedef std::future<DescribePatternTypesOutcome> DescribePatternTypesOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::DescribePatternTypesRequest&, const DescribePatternTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePatternTypesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -267,6 +317,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeScheduledTasksResult> DescribeScheduledTasksOutcome;
 			typedef std::future<DescribeScheduledTasksOutcome> DescribeScheduledTasksOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DescribeScheduledTasksRequest&, const DescribeScheduledTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledTasksAsyncHandler;
+			typedef Outcome<Error, Model::DetachAlbServerGroupsResult> DetachAlbServerGroupsOutcome;
+			typedef std::future<DetachAlbServerGroupsOutcome> DetachAlbServerGroupsOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::DetachAlbServerGroupsRequest&, const DetachAlbServerGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachAlbServerGroupsAsyncHandler;
 			typedef Outcome<Error, Model::DetachDBInstancesResult> DetachDBInstancesOutcome;
 			typedef std::future<DetachDBInstancesOutcome> DetachDBInstancesOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DetachDBInstancesRequest&, const DetachDBInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachDBInstancesAsyncHandler;
@@ -276,6 +329,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachLoadBalancersResult> DetachLoadBalancersOutcome;
 			typedef std::future<DetachLoadBalancersOutcome> DetachLoadBalancersOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DetachLoadBalancersRequest&, const DetachLoadBalancersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachLoadBalancersAsyncHandler;
+			typedef Outcome<Error, Model::DetachServerGroupsResult> DetachServerGroupsOutcome;
+			typedef std::future<DetachServerGroupsOutcome> DetachServerGroupsOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::DetachServerGroupsRequest&, const DetachServerGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachServerGroupsAsyncHandler;
 			typedef Outcome<Error, Model::DetachVServerGroupsResult> DetachVServerGroupsOutcome;
 			typedef std::future<DetachVServerGroupsOutcome> DetachVServerGroupsOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::DetachVServerGroupsRequest&, const DetachVServerGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachVServerGroupsAsyncHandler;
@@ -312,6 +368,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyAlarmResult> ModifyAlarmOutcome;
 			typedef std::future<ModifyAlarmOutcome> ModifyAlarmOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::ModifyAlarmRequest&, const ModifyAlarmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmAsyncHandler;
+			typedef Outcome<Error, Model::ModifyEciScalingConfigurationResult> ModifyEciScalingConfigurationOutcome;
+			typedef std::future<ModifyEciScalingConfigurationOutcome> ModifyEciScalingConfigurationOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::ModifyEciScalingConfigurationRequest&, const ModifyEciScalingConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEciScalingConfigurationAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstanceAttributeResult> ModifyInstanceAttributeOutcome;
+			typedef std::future<ModifyInstanceAttributeOutcome> ModifyInstanceAttributeOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::ModifyInstanceAttributeRequest&, const ModifyInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAttributeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyLifecycleHookResult> ModifyLifecycleHookOutcome;
 			typedef std::future<ModifyLifecycleHookOutcome> ModifyLifecycleHookOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::ModifyLifecycleHookRequest&, const ModifyLifecycleHookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLifecycleHookAsyncHandler;
@@ -342,6 +404,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResumeProcessesResult> ResumeProcessesOutcome;
 			typedef std::future<ResumeProcessesOutcome> ResumeProcessesOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::ResumeProcessesRequest&, const ResumeProcessesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeProcessesAsyncHandler;
+			typedef Outcome<Error, Model::ScaleWithAdjustmentResult> ScaleWithAdjustmentOutcome;
+			typedef std::future<ScaleWithAdjustmentOutcome> ScaleWithAdjustmentOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::ScaleWithAdjustmentRequest&, const ScaleWithAdjustmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScaleWithAdjustmentAsyncHandler;
 			typedef Outcome<Error, Model::SetGroupDeletionProtectionResult> SetGroupDeletionProtectionOutcome;
 			typedef std::future<SetGroupDeletionProtectionOutcome> SetGroupDeletionProtectionOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::SetGroupDeletionProtectionRequest&, const SetGroupDeletionProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGroupDeletionProtectionAsyncHandler;
@@ -371,6 +436,9 @@ namespace AlibabaCloud
 			EssClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			EssClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~EssClient();
+			AttachAlbServerGroupsOutcome attachAlbServerGroups(const Model::AttachAlbServerGroupsRequest &request)const;
+			void attachAlbServerGroupsAsync(const Model::AttachAlbServerGroupsRequest& request, const AttachAlbServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachAlbServerGroupsOutcomeCallable attachAlbServerGroupsCallable(const Model::AttachAlbServerGroupsRequest& request) const;
 			AttachDBInstancesOutcome attachDBInstances(const Model::AttachDBInstancesRequest &request)const;
 			void attachDBInstancesAsync(const Model::AttachDBInstancesRequest& request, const AttachDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachDBInstancesOutcomeCallable attachDBInstancesCallable(const Model::AttachDBInstancesRequest& request) const;
@@ -380,15 +448,24 @@ namespace AlibabaCloud
 			AttachLoadBalancersOutcome attachLoadBalancers(const Model::AttachLoadBalancersRequest &request)const;
 			void attachLoadBalancersAsync(const Model::AttachLoadBalancersRequest& request, const AttachLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachLoadBalancersOutcomeCallable attachLoadBalancersCallable(const Model::AttachLoadBalancersRequest& request) const;
+			AttachServerGroupsOutcome attachServerGroups(const Model::AttachServerGroupsRequest &request)const;
+			void attachServerGroupsAsync(const Model::AttachServerGroupsRequest& request, const AttachServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachServerGroupsOutcomeCallable attachServerGroupsCallable(const Model::AttachServerGroupsRequest& request) const;
 			AttachVServerGroupsOutcome attachVServerGroups(const Model::AttachVServerGroupsRequest &request)const;
 			void attachVServerGroupsAsync(const Model::AttachVServerGroupsRequest& request, const AttachVServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachVServerGroupsOutcomeCallable attachVServerGroupsCallable(const Model::AttachVServerGroupsRequest& request) const;
+			ChangeResourceGroupOutcome changeResourceGroup(const Model::ChangeResourceGroupRequest &request)const;
+			void changeResourceGroupAsync(const Model::ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeResourceGroupOutcomeCallable changeResourceGroupCallable(const Model::ChangeResourceGroupRequest& request) const;
 			CompleteLifecycleActionOutcome completeLifecycleAction(const Model::CompleteLifecycleActionRequest &request)const;
 			void completeLifecycleActionAsync(const Model::CompleteLifecycleActionRequest& request, const CompleteLifecycleActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CompleteLifecycleActionOutcomeCallable completeLifecycleActionCallable(const Model::CompleteLifecycleActionRequest& request) const;
 			CreateAlarmOutcome createAlarm(const Model::CreateAlarmRequest &request)const;
 			void createAlarmAsync(const Model::CreateAlarmRequest& request, const CreateAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAlarmOutcomeCallable createAlarmCallable(const Model::CreateAlarmRequest& request) const;
+			CreateEciScalingConfigurationOutcome createEciScalingConfiguration(const Model::CreateEciScalingConfigurationRequest &request)const;
+			void createEciScalingConfigurationAsync(const Model::CreateEciScalingConfigurationRequest& request, const CreateEciScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateEciScalingConfigurationOutcomeCallable createEciScalingConfigurationCallable(const Model::CreateEciScalingConfigurationRequest& request) const;
 			CreateLifecycleHookOutcome createLifecycleHook(const Model::CreateLifecycleHookRequest &request)const;
 			void createLifecycleHookAsync(const Model::CreateLifecycleHookRequest& request, const CreateLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLifecycleHookOutcomeCallable createLifecycleHookCallable(const Model::CreateLifecycleHookRequest& request) const;
@@ -413,6 +490,9 @@ namespace AlibabaCloud
 			DeleteAlarmOutcome deleteAlarm(const Model::DeleteAlarmRequest &request)const;
 			void deleteAlarmAsync(const Model::DeleteAlarmRequest& request, const DeleteAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAlarmOutcomeCallable deleteAlarmCallable(const Model::DeleteAlarmRequest& request) const;
+			DeleteEciScalingConfigurationOutcome deleteEciScalingConfiguration(const Model::DeleteEciScalingConfigurationRequest &request)const;
+			void deleteEciScalingConfigurationAsync(const Model::DeleteEciScalingConfigurationRequest& request, const DeleteEciScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteEciScalingConfigurationOutcomeCallable deleteEciScalingConfigurationCallable(const Model::DeleteEciScalingConfigurationRequest& request) const;
 			DeleteLifecycleHookOutcome deleteLifecycleHook(const Model::DeleteLifecycleHookRequest &request)const;
 			void deleteLifecycleHookAsync(const Model::DeleteLifecycleHookRequest& request, const DeleteLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLifecycleHookOutcomeCallable deleteLifecycleHookCallable(const Model::DeleteLifecycleHookRequest& request) const;
@@ -434,6 +514,12 @@ namespace AlibabaCloud
 			DescribeAlarmsOutcome describeAlarms(const Model::DescribeAlarmsRequest &request)const;
 			void describeAlarmsAsync(const Model::DescribeAlarmsRequest& request, const DescribeAlarmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAlarmsOutcomeCallable describeAlarmsCallable(const Model::DescribeAlarmsRequest& request) const;
+			DescribeEciScalingConfigurationsOutcome describeEciScalingConfigurations(const Model::DescribeEciScalingConfigurationsRequest &request)const;
+			void describeEciScalingConfigurationsAsync(const Model::DescribeEciScalingConfigurationsRequest& request, const DescribeEciScalingConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEciScalingConfigurationsOutcomeCallable describeEciScalingConfigurationsCallable(const Model::DescribeEciScalingConfigurationsRequest& request) const;
+			DescribeElasticStrengthOutcome describeElasticStrength(const Model::DescribeElasticStrengthRequest &request)const;
+			void describeElasticStrengthAsync(const Model::DescribeElasticStrengthRequest& request, const DescribeElasticStrengthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeElasticStrengthOutcomeCallable describeElasticStrengthCallable(const Model::DescribeElasticStrengthRequest& request) const;
 			DescribeLifecycleActionsOutcome describeLifecycleActions(const Model::DescribeLifecycleActionsRequest &request)const;
 			void describeLifecycleActionsAsync(const Model::DescribeLifecycleActionsRequest& request, const DescribeLifecycleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLifecycleActionsOutcomeCallable describeLifecycleActionsCallable(const Model::DescribeLifecycleActionsRequest& request) const;
@@ -449,6 +535,9 @@ namespace AlibabaCloud
 			DescribeNotificationTypesOutcome describeNotificationTypes(const Model::DescribeNotificationTypesRequest &request)const;
 			void describeNotificationTypesAsync(const Model::DescribeNotificationTypesRequest& request, const DescribeNotificationTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNotificationTypesOutcomeCallable describeNotificationTypesCallable(const Model::DescribeNotificationTypesRequest& request) const;
+			DescribePatternTypesOutcome describePatternTypes(const Model::DescribePatternTypesRequest &request)const;
+			void describePatternTypesAsync(const Model::DescribePatternTypesRequest& request, const DescribePatternTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePatternTypesOutcomeCallable describePatternTypesCallable(const Model::DescribePatternTypesRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
@@ -473,6 +562,9 @@ namespace AlibabaCloud
 			DescribeScheduledTasksOutcome describeScheduledTasks(const Model::DescribeScheduledTasksRequest &request)const;
 			void describeScheduledTasksAsync(const Model::DescribeScheduledTasksRequest& request, const DescribeScheduledTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScheduledTasksOutcomeCallable describeScheduledTasksCallable(const Model::DescribeScheduledTasksRequest& request) const;
+			DetachAlbServerGroupsOutcome detachAlbServerGroups(const Model::DetachAlbServerGroupsRequest &request)const;
+			void detachAlbServerGroupsAsync(const Model::DetachAlbServerGroupsRequest& request, const DetachAlbServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachAlbServerGroupsOutcomeCallable detachAlbServerGroupsCallable(const Model::DetachAlbServerGroupsRequest& request) const;
 			DetachDBInstancesOutcome detachDBInstances(const Model::DetachDBInstancesRequest &request)const;
 			void detachDBInstancesAsync(const Model::DetachDBInstancesRequest& request, const DetachDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachDBInstancesOutcomeCallable detachDBInstancesCallable(const Model::DetachDBInstancesRequest& request) const;
@@ -482,6 +574,9 @@ namespace AlibabaCloud
 			DetachLoadBalancersOutcome detachLoadBalancers(const Model::DetachLoadBalancersRequest &request)const;
 			void detachLoadBalancersAsync(const Model::DetachLoadBalancersRequest& request, const DetachLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachLoadBalancersOutcomeCallable detachLoadBalancersCallable(const Model::DetachLoadBalancersRequest& request) const;
+			DetachServerGroupsOutcome detachServerGroups(const Model::DetachServerGroupsRequest &request)const;
+			void detachServerGroupsAsync(const Model::DetachServerGroupsRequest& request, const DetachServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachServerGroupsOutcomeCallable detachServerGroupsCallable(const Model::DetachServerGroupsRequest& request) const;
 			DetachVServerGroupsOutcome detachVServerGroups(const Model::DetachVServerGroupsRequest &request)const;
 			void detachVServerGroupsAsync(const Model::DetachVServerGroupsRequest& request, const DetachVServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachVServerGroupsOutcomeCallable detachVServerGroupsCallable(const Model::DetachVServerGroupsRequest& request) const;
@@ -518,6 +613,12 @@ namespace AlibabaCloud
 			ModifyAlarmOutcome modifyAlarm(const Model::ModifyAlarmRequest &request)const;
 			void modifyAlarmAsync(const Model::ModifyAlarmRequest& request, const ModifyAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAlarmOutcomeCallable modifyAlarmCallable(const Model::ModifyAlarmRequest& request) const;
+			ModifyEciScalingConfigurationOutcome modifyEciScalingConfiguration(const Model::ModifyEciScalingConfigurationRequest &request)const;
+			void modifyEciScalingConfigurationAsync(const Model::ModifyEciScalingConfigurationRequest& request, const ModifyEciScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyEciScalingConfigurationOutcomeCallable modifyEciScalingConfigurationCallable(const Model::ModifyEciScalingConfigurationRequest& request) const;
+			ModifyInstanceAttributeOutcome modifyInstanceAttribute(const Model::ModifyInstanceAttributeRequest &request)const;
+			void modifyInstanceAttributeAsync(const Model::ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstanceAttributeOutcomeCallable modifyInstanceAttributeCallable(const Model::ModifyInstanceAttributeRequest& request) const;
 			ModifyLifecycleHookOutcome modifyLifecycleHook(const Model::ModifyLifecycleHookRequest &request)const;
 			void modifyLifecycleHookAsync(const Model::ModifyLifecycleHookRequest& request, const ModifyLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLifecycleHookOutcomeCallable modifyLifecycleHookCallable(const Model::ModifyLifecycleHookRequest& request) const;
@@ -548,6 +649,9 @@ namespace AlibabaCloud
 			ResumeProcessesOutcome resumeProcesses(const Model::ResumeProcessesRequest &request)const;
 			void resumeProcessesAsync(const Model::ResumeProcessesRequest& request, const ResumeProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResumeProcessesOutcomeCallable resumeProcessesCallable(const Model::ResumeProcessesRequest& request) const;
+			ScaleWithAdjustmentOutcome scaleWithAdjustment(const Model::ScaleWithAdjustmentRequest &request)const;
+			void scaleWithAdjustmentAsync(const Model::ScaleWithAdjustmentRequest& request, const ScaleWithAdjustmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ScaleWithAdjustmentOutcomeCallable scaleWithAdjustmentCallable(const Model::ScaleWithAdjustmentRequest& request) const;
 			SetGroupDeletionProtectionOutcome setGroupDeletionProtection(const Model::SetGroupDeletionProtectionRequest &request)const;
 			void setGroupDeletionProtectionAsync(const Model::SetGroupDeletionProtectionRequest& request, const SetGroupDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetGroupDeletionProtectionOutcomeCallable setGroupDeletionProtectionCallable(const Model::SetGroupDeletionProtectionRequest& request) const;

@@ -43,16 +43,16 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	for (auto valueRegionsRegion : allRegionsNode)
 	{
 		Region regionsObject;
-		if(!valueRegionsRegion["RegionId"].isNull())
-			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
 		if(!valueRegionsRegion["ClassicUnavailable"].isNull())
 			regionsObject.classicUnavailable = valueRegionsRegion["ClassicUnavailable"].asString() == "true";
-		if(!valueRegionsRegion["VpcUnavailable"].isNull())
-			regionsObject.vpcUnavailable = valueRegionsRegion["VpcUnavailable"].asString() == "true";
 		if(!valueRegionsRegion["RegionEndpoint"].isNull())
 			regionsObject.regionEndpoint = valueRegionsRegion["RegionEndpoint"].asString();
 		if(!valueRegionsRegion["LocalName"].isNull())
 			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
+		if(!valueRegionsRegion["VpcUnavailable"].isNull())
+			regionsObject.vpcUnavailable = valueRegionsRegion["VpcUnavailable"].asString() == "true";
+		if(!valueRegionsRegion["RegionId"].isNull())
+			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
 		regions_.push_back(regionsObject);
 	}
 

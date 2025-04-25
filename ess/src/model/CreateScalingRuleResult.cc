@@ -39,10 +39,10 @@ void CreateScalingRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ScalingRuleId"].isNull())
-		scalingRuleId_ = value["ScalingRuleId"].asString();
 	if(!value["ScalingRuleAri"].isNull())
 		scalingRuleAri_ = value["ScalingRuleAri"].asString();
+	if(!value["ScalingRuleId"].isNull())
+		scalingRuleId_ = value["ScalingRuleId"].asString();
 
 }
 

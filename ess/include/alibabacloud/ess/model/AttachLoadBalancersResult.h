@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				AttachLoadBalancersResult();
 				explicit AttachLoadBalancersResult(const std::string &payload);
 				~AttachLoadBalancersResult();
+				std::string getScalingActivityId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string scalingActivityId_;
 
 			};
 		}

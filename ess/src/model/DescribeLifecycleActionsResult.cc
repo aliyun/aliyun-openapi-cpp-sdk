@@ -43,14 +43,14 @@ void DescribeLifecycleActionsResult::parse(const std::string &payload)
 	for (auto valueLifecycleActionsLifecycleAction : allLifecycleActionsNode)
 	{
 		LifecycleAction lifecycleActionsObject;
+		if(!valueLifecycleActionsLifecycleAction["LifecycleHookId"].isNull())
+			lifecycleActionsObject.lifecycleHookId = valueLifecycleActionsLifecycleAction["LifecycleHookId"].asString();
 		if(!valueLifecycleActionsLifecycleAction["LifecycleActionToken"].isNull())
 			lifecycleActionsObject.lifecycleActionToken = valueLifecycleActionsLifecycleAction["LifecycleActionToken"].asString();
 		if(!valueLifecycleActionsLifecycleAction["LifecycleActionStatus"].isNull())
 			lifecycleActionsObject.lifecycleActionStatus = valueLifecycleActionsLifecycleAction["LifecycleActionStatus"].asString();
 		if(!valueLifecycleActionsLifecycleAction["LifecycleActionResult"].isNull())
 			lifecycleActionsObject.lifecycleActionResult = valueLifecycleActionsLifecycleAction["LifecycleActionResult"].asString();
-		if(!valueLifecycleActionsLifecycleAction["LifecycleHookId"].isNull())
-			lifecycleActionsObject.lifecycleHookId = valueLifecycleActionsLifecycleAction["LifecycleHookId"].asString();
 		auto allInstanceIds = value["InstanceIds"]["InstanceId"];
 		for (auto value : allInstanceIds)
 			lifecycleActionsObject.instanceIds.push_back(value.asString());
@@ -58,10 +58,10 @@ void DescribeLifecycleActionsResult::parse(const std::string &payload)
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

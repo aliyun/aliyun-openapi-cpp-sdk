@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,271 +18,277 @@
 
 using AlibabaCloud::Ess::Model::ModifyScalingRuleRequest;
 
-ModifyScalingRuleRequest::ModifyScalingRuleRequest() :
-	RpcServiceRequest("ess", "2014-08-28", "ModifyScalingRule")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyScalingRuleRequest::ModifyScalingRuleRequest()
+    : RpcServiceRequest("ess", "2014-08-28", "ModifyScalingRule") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyScalingRuleRequest::~ModifyScalingRuleRequest()
-{}
+ModifyScalingRuleRequest::~ModifyScalingRuleRequest() {}
 
-long ModifyScalingRuleRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+std::string ModifyScalingRuleRequest::getMetricType() const {
+  return metricType_;
 }
 
-void ModifyScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyScalingRuleRequest::setMetricType(const std::string &metricType) {
+  metricType_ = metricType;
+  setParameter(std::string("MetricType"), metricType);
 }
 
-std::vector<ModifyScalingRuleRequest::StepAdjustment> ModifyScalingRuleRequest::getStepAdjustment()const
-{
-	return stepAdjustment_;
+long ModifyScalingRuleRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyScalingRuleRequest::setStepAdjustment(const std::vector<StepAdjustment>& stepAdjustment)
-{
-	stepAdjustment_ = stepAdjustment;
-	for(int dep1 = 0; dep1!= stepAdjustment.size(); dep1++) {
-		auto stepAdjustmentObj = stepAdjustment.at(dep1);
-		std::string stepAdjustmentObjStr = "StepAdjustment." + std::to_string(dep1 + 1);
-		setParameter(stepAdjustmentObjStr + ".MetricIntervalLowerBound", std::to_string(stepAdjustmentObj.metricIntervalLowerBound));
-		setParameter(stepAdjustmentObjStr + ".MetricIntervalUpperBound", std::to_string(stepAdjustmentObj.metricIntervalUpperBound));
-		setParameter(stepAdjustmentObjStr + ".ScalingAdjustment", std::to_string(stepAdjustmentObj.scalingAdjustment));
-	}
+void ModifyScalingRuleRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-bool ModifyScalingRuleRequest::getDisableScaleIn()const
-{
-	return disableScaleIn_;
+std::vector<ModifyScalingRuleRequest::AlarmDimension> ModifyScalingRuleRequest::getAlarmDimension() const {
+  return alarmDimension_;
 }
 
-void ModifyScalingRuleRequest::setDisableScaleIn(bool disableScaleIn)
-{
-	disableScaleIn_ = disableScaleIn;
-	setParameter("DisableScaleIn", disableScaleIn ? "true" : "false");
+void ModifyScalingRuleRequest::setAlarmDimension(const std::vector<ModifyScalingRuleRequest::AlarmDimension> &alarmDimension) {
+  alarmDimension_ = alarmDimension;
+  for(int dep1 = 0; dep1 != alarmDimension.size(); dep1++) {
+  auto alarmDimensionObj = alarmDimension.at(dep1);
+  std::string alarmDimensionObjStr = std::string("AlarmDimension") + "." + std::to_string(dep1 + 1);
+    setParameter(alarmDimensionObjStr + ".DimensionValue", alarmDimensionObj.dimensionValue);
+    setParameter(alarmDimensionObjStr + ".DimensionKey", alarmDimensionObj.dimensionKey);
+  }
 }
 
-std::string ModifyScalingRuleRequest::getScalingRuleId()const
-{
-	return scalingRuleId_;
+std::vector<ModifyScalingRuleRequest::StepAdjustment> ModifyScalingRuleRequest::getStepAdjustment() const {
+  return stepAdjustment_;
 }
 
-void ModifyScalingRuleRequest::setScalingRuleId(const std::string& scalingRuleId)
-{
-	scalingRuleId_ = scalingRuleId;
-	setParameter("ScalingRuleId", scalingRuleId);
+void ModifyScalingRuleRequest::setStepAdjustment(const std::vector<ModifyScalingRuleRequest::StepAdjustment> &stepAdjustment) {
+  stepAdjustment_ = stepAdjustment;
+  for(int dep1 = 0; dep1 != stepAdjustment.size(); dep1++) {
+  auto stepAdjustmentObj = stepAdjustment.at(dep1);
+  std::string stepAdjustmentObjStr = std::string("StepAdjustment") + "." + std::to_string(dep1 + 1);
+    setParameter(stepAdjustmentObjStr + ".MetricIntervalUpperBound", std::to_string(stepAdjustmentObj.metricIntervalUpperBound));
+    setParameter(stepAdjustmentObjStr + ".MetricIntervalLowerBound", std::to_string(stepAdjustmentObj.metricIntervalLowerBound));
+    setParameter(stepAdjustmentObjStr + ".ScalingAdjustment", std::to_string(stepAdjustmentObj.scalingAdjustment));
+  }
 }
 
-int ModifyScalingRuleRequest::getInitialMaxSize()const
-{
-	return initialMaxSize_;
+bool ModifyScalingRuleRequest::getDisableScaleIn() const {
+  return disableScaleIn_;
 }
 
-void ModifyScalingRuleRequest::setInitialMaxSize(int initialMaxSize)
-{
-	initialMaxSize_ = initialMaxSize;
-	setParameter("InitialMaxSize", std::to_string(initialMaxSize));
+void ModifyScalingRuleRequest::setDisableScaleIn(bool disableScaleIn) {
+  disableScaleIn_ = disableScaleIn;
+  setParameter(std::string("DisableScaleIn"), disableScaleIn ? "true" : "false");
 }
 
-std::string ModifyScalingRuleRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyScalingRuleRequest::getScalingRuleId() const {
+  return scalingRuleId_;
 }
 
-void ModifyScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyScalingRuleRequest::setScalingRuleId(const std::string &scalingRuleId) {
+  scalingRuleId_ = scalingRuleId;
+  setParameter(std::string("ScalingRuleId"), scalingRuleId);
 }
 
-std::string ModifyScalingRuleRequest::getScalingRuleName()const
-{
-	return scalingRuleName_;
+int ModifyScalingRuleRequest::getInitialMaxSize() const {
+  return initialMaxSize_;
 }
 
-void ModifyScalingRuleRequest::setScalingRuleName(const std::string& scalingRuleName)
-{
-	scalingRuleName_ = scalingRuleName;
-	setParameter("ScalingRuleName", scalingRuleName);
+void ModifyScalingRuleRequest::setInitialMaxSize(int initialMaxSize) {
+  initialMaxSize_ = initialMaxSize;
+  setParameter(std::string("InitialMaxSize"), std::to_string(initialMaxSize));
 }
 
-int ModifyScalingRuleRequest::getCooldown()const
-{
-	return cooldown_;
+std::string ModifyScalingRuleRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyScalingRuleRequest::setCooldown(int cooldown)
-{
-	cooldown_ = cooldown;
-	setParameter("Cooldown", std::to_string(cooldown));
+void ModifyScalingRuleRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyScalingRuleRequest::getPredictiveValueBehavior()const
-{
-	return predictiveValueBehavior_;
+std::string ModifyScalingRuleRequest::getScalingRuleName() const {
+  return scalingRuleName_;
 }
 
-void ModifyScalingRuleRequest::setPredictiveValueBehavior(const std::string& predictiveValueBehavior)
-{
-	predictiveValueBehavior_ = predictiveValueBehavior;
-	setParameter("PredictiveValueBehavior", predictiveValueBehavior);
+void ModifyScalingRuleRequest::setScalingRuleName(const std::string &scalingRuleName) {
+  scalingRuleName_ = scalingRuleName;
+  setParameter(std::string("ScalingRuleName"), scalingRuleName);
 }
 
-int ModifyScalingRuleRequest::getScaleInEvaluationCount()const
-{
-	return scaleInEvaluationCount_;
+std::string ModifyScalingRuleRequest::getHybridMonitorNamespace() const {
+  return hybridMonitorNamespace_;
 }
 
-void ModifyScalingRuleRequest::setScaleInEvaluationCount(int scaleInEvaluationCount)
-{
-	scaleInEvaluationCount_ = scaleInEvaluationCount;
-	setParameter("ScaleInEvaluationCount", std::to_string(scaleInEvaluationCount));
+void ModifyScalingRuleRequest::setHybridMonitorNamespace(const std::string &hybridMonitorNamespace) {
+  hybridMonitorNamespace_ = hybridMonitorNamespace;
+  setParameter(std::string("HybridMonitorNamespace"), hybridMonitorNamespace);
 }
 
-std::string ModifyScalingRuleRequest::getMetricName()const
-{
-	return metricName_;
+int ModifyScalingRuleRequest::getCooldown() const {
+  return cooldown_;
 }
 
-void ModifyScalingRuleRequest::setMetricName(const std::string& metricName)
-{
-	metricName_ = metricName;
-	setParameter("MetricName", metricName);
+void ModifyScalingRuleRequest::setCooldown(int cooldown) {
+  cooldown_ = cooldown;
+  setParameter(std::string("Cooldown"), std::to_string(cooldown));
 }
 
-std::string ModifyScalingRuleRequest::getPredictiveScalingMode()const
-{
-	return predictiveScalingMode_;
+std::string ModifyScalingRuleRequest::getPredictiveValueBehavior() const {
+  return predictiveValueBehavior_;
 }
 
-void ModifyScalingRuleRequest::setPredictiveScalingMode(const std::string& predictiveScalingMode)
-{
-	predictiveScalingMode_ = predictiveScalingMode;
-	setParameter("PredictiveScalingMode", predictiveScalingMode);
+void ModifyScalingRuleRequest::setPredictiveValueBehavior(const std::string &predictiveValueBehavior) {
+  predictiveValueBehavior_ = predictiveValueBehavior;
+  setParameter(std::string("PredictiveValueBehavior"), predictiveValueBehavior);
 }
 
-std::string ModifyScalingRuleRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+int ModifyScalingRuleRequest::getScaleInEvaluationCount() const {
+  return scaleInEvaluationCount_;
 }
 
-void ModifyScalingRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyScalingRuleRequest::setScaleInEvaluationCount(int scaleInEvaluationCount) {
+  scaleInEvaluationCount_ = scaleInEvaluationCount;
+  setParameter(std::string("ScaleInEvaluationCount"), std::to_string(scaleInEvaluationCount));
 }
 
-int ModifyScalingRuleRequest::getAdjustmentValue()const
-{
-	return adjustmentValue_;
+std::string ModifyScalingRuleRequest::getMetricName() const {
+  return metricName_;
 }
 
-void ModifyScalingRuleRequest::setAdjustmentValue(int adjustmentValue)
-{
-	adjustmentValue_ = adjustmentValue;
-	setParameter("AdjustmentValue", std::to_string(adjustmentValue));
+void ModifyScalingRuleRequest::setMetricName(const std::string &metricName) {
+  metricName_ = metricName;
+  setParameter(std::string("MetricName"), metricName);
 }
 
-int ModifyScalingRuleRequest::getEstimatedInstanceWarmup()const
-{
-	return estimatedInstanceWarmup_;
+std::string ModifyScalingRuleRequest::getPredictiveScalingMode() const {
+  return predictiveScalingMode_;
 }
 
-void ModifyScalingRuleRequest::setEstimatedInstanceWarmup(int estimatedInstanceWarmup)
-{
-	estimatedInstanceWarmup_ = estimatedInstanceWarmup;
-	setParameter("EstimatedInstanceWarmup", std::to_string(estimatedInstanceWarmup));
+void ModifyScalingRuleRequest::setPredictiveScalingMode(const std::string &predictiveScalingMode) {
+  predictiveScalingMode_ = predictiveScalingMode;
+  setParameter(std::string("PredictiveScalingMode"), predictiveScalingMode);
 }
 
-std::string ModifyScalingRuleRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ModifyScalingRuleRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyScalingRuleRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ModifyScalingRuleRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-int ModifyScalingRuleRequest::getPredictiveTaskBufferTime()const
-{
-	return predictiveTaskBufferTime_;
+int ModifyScalingRuleRequest::getAdjustmentValue() const {
+  return adjustmentValue_;
 }
 
-void ModifyScalingRuleRequest::setPredictiveTaskBufferTime(int predictiveTaskBufferTime)
-{
-	predictiveTaskBufferTime_ = predictiveTaskBufferTime;
-	setParameter("PredictiveTaskBufferTime", std::to_string(predictiveTaskBufferTime));
+void ModifyScalingRuleRequest::setAdjustmentValue(int adjustmentValue) {
+  adjustmentValue_ = adjustmentValue;
+  setParameter(std::string("AdjustmentValue"), std::to_string(adjustmentValue));
 }
 
-std::string ModifyScalingRuleRequest::getAdjustmentType()const
-{
-	return adjustmentType_;
+int ModifyScalingRuleRequest::getEstimatedInstanceWarmup() const {
+  return estimatedInstanceWarmup_;
 }
 
-void ModifyScalingRuleRequest::setAdjustmentType(const std::string& adjustmentType)
-{
-	adjustmentType_ = adjustmentType;
-	setParameter("AdjustmentType", adjustmentType);
+void ModifyScalingRuleRequest::setEstimatedInstanceWarmup(int estimatedInstanceWarmup) {
+  estimatedInstanceWarmup_ = estimatedInstanceWarmup;
+  setParameter(std::string("EstimatedInstanceWarmup"), std::to_string(estimatedInstanceWarmup));
 }
 
-long ModifyScalingRuleRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string ModifyScalingRuleRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ModifyScalingRuleRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyScalingRuleRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-int ModifyScalingRuleRequest::getPredictiveValueBuffer()const
-{
-	return predictiveValueBuffer_;
+int ModifyScalingRuleRequest::getPredictiveTaskBufferTime() const {
+  return predictiveTaskBufferTime_;
 }
 
-void ModifyScalingRuleRequest::setPredictiveValueBuffer(int predictiveValueBuffer)
-{
-	predictiveValueBuffer_ = predictiveValueBuffer;
-	setParameter("PredictiveValueBuffer", std::to_string(predictiveValueBuffer));
+void ModifyScalingRuleRequest::setPredictiveTaskBufferTime(int predictiveTaskBufferTime) {
+  predictiveTaskBufferTime_ = predictiveTaskBufferTime;
+  setParameter(std::string("PredictiveTaskBufferTime"), std::to_string(predictiveTaskBufferTime));
 }
 
-int ModifyScalingRuleRequest::getScaleOutEvaluationCount()const
-{
-	return scaleOutEvaluationCount_;
+std::string ModifyScalingRuleRequest::getAdjustmentType() const {
+  return adjustmentType_;
 }
 
-void ModifyScalingRuleRequest::setScaleOutEvaluationCount(int scaleOutEvaluationCount)
-{
-	scaleOutEvaluationCount_ = scaleOutEvaluationCount;
-	setParameter("ScaleOutEvaluationCount", std::to_string(scaleOutEvaluationCount));
+void ModifyScalingRuleRequest::setAdjustmentType(const std::string &adjustmentType) {
+  adjustmentType_ = adjustmentType;
+  setParameter(std::string("AdjustmentType"), adjustmentType);
 }
 
-int ModifyScalingRuleRequest::getMinAdjustmentMagnitude()const
-{
-	return minAdjustmentMagnitude_;
+long ModifyScalingRuleRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyScalingRuleRequest::setMinAdjustmentMagnitude(int minAdjustmentMagnitude)
-{
-	minAdjustmentMagnitude_ = minAdjustmentMagnitude;
-	setParameter("MinAdjustmentMagnitude", std::to_string(minAdjustmentMagnitude));
+void ModifyScalingRuleRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-float ModifyScalingRuleRequest::getTargetValue()const
-{
-	return targetValue_;
+int ModifyScalingRuleRequest::getPredictiveValueBuffer() const {
+  return predictiveValueBuffer_;
 }
 
-void ModifyScalingRuleRequest::setTargetValue(float targetValue)
-{
-	targetValue_ = targetValue;
-	setParameter("TargetValue", std::to_string(targetValue));
+void ModifyScalingRuleRequest::setPredictiveValueBuffer(int predictiveValueBuffer) {
+  predictiveValueBuffer_ = predictiveValueBuffer;
+  setParameter(std::string("PredictiveValueBuffer"), std::to_string(predictiveValueBuffer));
+}
+
+std::vector<ModifyScalingRuleRequest::HybridMetrics> ModifyScalingRuleRequest::getHybridMetrics() const {
+  return hybridMetrics_;
+}
+
+void ModifyScalingRuleRequest::setHybridMetrics(const std::vector<ModifyScalingRuleRequest::HybridMetrics> &hybridMetrics) {
+  hybridMetrics_ = hybridMetrics;
+  for(int dep1 = 0; dep1 != hybridMetrics.size(); dep1++) {
+  auto hybridMetricsObj = hybridMetrics.at(dep1);
+  std::string hybridMetricsObjStr = std::string("HybridMetrics") + "." + std::to_string(dep1 + 1);
+    setParameter(hybridMetricsObjStr + ".Statistic", hybridMetricsObj.statistic);
+    setParameter(hybridMetricsObjStr + ".Expression", hybridMetricsObj.expression);
+    setParameter(hybridMetricsObjStr + ".Id", hybridMetricsObj.id);
+    setParameter(hybridMetricsObjStr + ".MetricName", hybridMetricsObj.metricName);
+    for(int dep2 = 0; dep2 != hybridMetricsObj.dimensions.size(); dep2++) {
+    auto dimensionsObj = hybridMetricsObj.dimensions.at(dep2);
+    std::string dimensionsObjStr = hybridMetricsObjStr + ".Dimensions" + "." + std::to_string(dep2 + 1);
+      setParameter(dimensionsObjStr + ".DimensionValue", dimensionsObj.dimensionValue);
+      setParameter(dimensionsObjStr + ".DimensionKey", dimensionsObj.dimensionKey);
+    }
+  }
+}
+
+int ModifyScalingRuleRequest::getScaleOutEvaluationCount() const {
+  return scaleOutEvaluationCount_;
+}
+
+void ModifyScalingRuleRequest::setScaleOutEvaluationCount(int scaleOutEvaluationCount) {
+  scaleOutEvaluationCount_ = scaleOutEvaluationCount;
+  setParameter(std::string("ScaleOutEvaluationCount"), std::to_string(scaleOutEvaluationCount));
+}
+
+int ModifyScalingRuleRequest::getMinAdjustmentMagnitude() const {
+  return minAdjustmentMagnitude_;
+}
+
+void ModifyScalingRuleRequest::setMinAdjustmentMagnitude(int minAdjustmentMagnitude) {
+  minAdjustmentMagnitude_ = minAdjustmentMagnitude;
+  setParameter(std::string("MinAdjustmentMagnitude"), std::to_string(minAdjustmentMagnitude));
+}
+
+float ModifyScalingRuleRequest::getTargetValue() const {
+  return targetValue_;
+}
+
+void ModifyScalingRuleRequest::setTargetValue(float targetValue) {
+  targetValue_ = targetValue;
+  setParameter(std::string("TargetValue"), std::to_string(targetValue));
 }
 

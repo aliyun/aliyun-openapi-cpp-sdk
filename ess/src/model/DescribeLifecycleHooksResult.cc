@@ -43,30 +43,32 @@ void DescribeLifecycleHooksResult::parse(const std::string &payload)
 	for (auto valueLifecycleHooksLifecycleHook : allLifecycleHooksNode)
 	{
 		LifecycleHook lifecycleHooksObject;
-		if(!valueLifecycleHooksLifecycleHook["ScalingGroupId"].isNull())
-			lifecycleHooksObject.scalingGroupId = valueLifecycleHooksLifecycleHook["ScalingGroupId"].asString();
+		if(!valueLifecycleHooksLifecycleHook["DefaultResult"].isNull())
+			lifecycleHooksObject.defaultResult = valueLifecycleHooksLifecycleHook["DefaultResult"].asString();
 		if(!valueLifecycleHooksLifecycleHook["LifecycleHookId"].isNull())
 			lifecycleHooksObject.lifecycleHookId = valueLifecycleHooksLifecycleHook["LifecycleHookId"].asString();
 		if(!valueLifecycleHooksLifecycleHook["LifecycleHookName"].isNull())
 			lifecycleHooksObject.lifecycleHookName = valueLifecycleHooksLifecycleHook["LifecycleHookName"].asString();
-		if(!valueLifecycleHooksLifecycleHook["DefaultResult"].isNull())
-			lifecycleHooksObject.defaultResult = valueLifecycleHooksLifecycleHook["DefaultResult"].asString();
-		if(!valueLifecycleHooksLifecycleHook["HeartbeatTimeout"].isNull())
-			lifecycleHooksObject.heartbeatTimeout = std::stoi(valueLifecycleHooksLifecycleHook["HeartbeatTimeout"].asString());
 		if(!valueLifecycleHooksLifecycleHook["LifecycleTransition"].isNull())
 			lifecycleHooksObject.lifecycleTransition = valueLifecycleHooksLifecycleHook["LifecycleTransition"].asString();
 		if(!valueLifecycleHooksLifecycleHook["NotificationMetadata"].isNull())
 			lifecycleHooksObject.notificationMetadata = valueLifecycleHooksLifecycleHook["NotificationMetadata"].asString();
 		if(!valueLifecycleHooksLifecycleHook["NotificationArn"].isNull())
 			lifecycleHooksObject.notificationArn = valueLifecycleHooksLifecycleHook["NotificationArn"].asString();
+		if(!valueLifecycleHooksLifecycleHook["HeartbeatTimeout"].isNull())
+			lifecycleHooksObject.heartbeatTimeout = std::stoi(valueLifecycleHooksLifecycleHook["HeartbeatTimeout"].asString());
+		if(!valueLifecycleHooksLifecycleHook["ScalingGroupId"].isNull())
+			lifecycleHooksObject.scalingGroupId = valueLifecycleHooksLifecycleHook["ScalingGroupId"].asString();
+		if(!valueLifecycleHooksLifecycleHook["LifecycleHookStatus"].isNull())
+			lifecycleHooksObject.lifecycleHookStatus = valueLifecycleHooksLifecycleHook["LifecycleHookStatus"].asString();
 		lifecycleHooks_.push_back(lifecycleHooksObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

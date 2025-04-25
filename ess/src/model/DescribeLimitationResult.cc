@@ -39,41 +39,35 @@ void DescribeLimitationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["MaxNumberOfScalingGroups"].isNull())
-		maxNumberOfScalingGroups_ = std::stoi(value["MaxNumberOfScalingGroups"].asString());
-	if(!value["MaxNumberOfScalingConfigurations"].isNull())
-		maxNumberOfScalingConfigurations_ = std::stoi(value["MaxNumberOfScalingConfigurations"].asString());
-	if(!value["MaxNumberOfScalingRules"].isNull())
-		maxNumberOfScalingRules_ = std::stoi(value["MaxNumberOfScalingRules"].asString());
 	if(!value["MaxNumberOfScheduledTasks"].isNull())
 		maxNumberOfScheduledTasks_ = std::stoi(value["MaxNumberOfScheduledTasks"].asString());
-	if(!value["MaxNumberOfScalingInstances"].isNull())
-		maxNumberOfScalingInstances_ = std::stoi(value["MaxNumberOfScalingInstances"].asString());
-	if(!value["MaxNumberOfDBInstances"].isNull())
-		maxNumberOfDBInstances_ = std::stoi(value["MaxNumberOfDBInstances"].asString());
 	if(!value["MaxNumberOfLoadBalancers"].isNull())
 		maxNumberOfLoadBalancers_ = std::stoi(value["MaxNumberOfLoadBalancers"].asString());
-	if(!value["MaxNumberOfMinSize"].isNull())
-		maxNumberOfMinSize_ = std::stoi(value["MaxNumberOfMinSize"].asString());
 	if(!value["MaxNumberOfMaxSize"].isNull())
 		maxNumberOfMaxSize_ = std::stoi(value["MaxNumberOfMaxSize"].asString());
-	if(!value["MaxNumberOfVServerGroups"].isNull())
-		maxNumberOfVServerGroups_ = std::stoi(value["MaxNumberOfVServerGroups"].asString());
+	if(!value["MaxNumberOfAlbServerGroup"].isNull())
+		maxNumberOfAlbServerGroup_ = std::stoi(value["MaxNumberOfAlbServerGroup"].asString());
+	if(!value["MaxNumberOfNlbServerGroup"].isNull())
+		maxNumberOfNlbServerGroup_ = std::stoi(value["MaxNumberOfNlbServerGroup"].asString());
+	if(!value["MaxNumberOfDBInstances"].isNull())
+		maxNumberOfDBInstances_ = std::stoi(value["MaxNumberOfDBInstances"].asString());
+	if(!value["MaxNumberOfScalingConfigurations"].isNull())
+		maxNumberOfScalingConfigurations_ = std::stoi(value["MaxNumberOfScalingConfigurations"].asString());
+	if(!value["MaxNumberOfMinSize"].isNull())
+		maxNumberOfMinSize_ = std::stoi(value["MaxNumberOfMinSize"].asString());
 	if(!value["MaxNumberOfLifecycleHooks"].isNull())
 		maxNumberOfLifecycleHooks_ = std::stoi(value["MaxNumberOfLifecycleHooks"].asString());
+	if(!value["MaxNumberOfScalingInstances"].isNull())
+		maxNumberOfScalingInstances_ = std::stoi(value["MaxNumberOfScalingInstances"].asString());
+	if(!value["MaxNumberOfScalingGroups"].isNull())
+		maxNumberOfScalingGroups_ = std::stoi(value["MaxNumberOfScalingGroups"].asString());
 	if(!value["MaxNumberOfNotificationConfigurations"].isNull())
 		maxNumberOfNotificationConfigurations_ = std::stoi(value["MaxNumberOfNotificationConfigurations"].asString());
+	if(!value["MaxNumberOfVServerGroups"].isNull())
+		maxNumberOfVServerGroups_ = std::stoi(value["MaxNumberOfVServerGroups"].asString());
+	if(!value["MaxNumberOfScalingRules"].isNull())
+		maxNumberOfScalingRules_ = std::stoi(value["MaxNumberOfScalingRules"].asString());
 
-}
-
-int DescribeLimitationResult::getMaxNumberOfLifecycleHooks()const
-{
-	return maxNumberOfLifecycleHooks_;
-}
-
-int DescribeLimitationResult::getMaxNumberOfScalingRules()const
-{
-	return maxNumberOfScalingRules_;
 }
 
 int DescribeLimitationResult::getMaxNumberOfScalingInstances()const
@@ -96,6 +90,11 @@ int DescribeLimitationResult::getMaxNumberOfLoadBalancers()const
 	return maxNumberOfLoadBalancers_;
 }
 
+int DescribeLimitationResult::getMaxNumberOfAlbServerGroup()const
+{
+	return maxNumberOfAlbServerGroup_;
+}
+
 int DescribeLimitationResult::getMaxNumberOfMinSize()const
 {
 	return maxNumberOfMinSize_;
@@ -111,9 +110,9 @@ int DescribeLimitationResult::getMaxNumberOfNotificationConfigurations()const
 	return maxNumberOfNotificationConfigurations_;
 }
 
-int DescribeLimitationResult::getMaxNumberOfScalingConfigurations()const
+int DescribeLimitationResult::getMaxNumberOfMaxSize()const
 {
-	return maxNumberOfScalingConfigurations_;
+	return maxNumberOfMaxSize_;
 }
 
 int DescribeLimitationResult::getMaxNumberOfDBInstances()const
@@ -121,8 +120,23 @@ int DescribeLimitationResult::getMaxNumberOfDBInstances()const
 	return maxNumberOfDBInstances_;
 }
 
-int DescribeLimitationResult::getMaxNumberOfMaxSize()const
+int DescribeLimitationResult::getMaxNumberOfLifecycleHooks()const
 {
-	return maxNumberOfMaxSize_;
+	return maxNumberOfLifecycleHooks_;
+}
+
+int DescribeLimitationResult::getMaxNumberOfScalingRules()const
+{
+	return maxNumberOfScalingRules_;
+}
+
+int DescribeLimitationResult::getMaxNumberOfNlbServerGroup()const
+{
+	return maxNumberOfNlbServerGroup_;
+}
+
+int DescribeLimitationResult::getMaxNumberOfScalingConfigurations()const
+{
+	return maxNumberOfScalingConfigurations_;
 }
 

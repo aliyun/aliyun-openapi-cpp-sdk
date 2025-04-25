@@ -43,42 +43,42 @@ void DescribeScheduledTasksResult::parse(const std::string &payload)
 	for (auto valueScheduledTasksScheduledTask : allScheduledTasksNode)
 	{
 		ScheduledTask scheduledTasksObject;
-		if(!valueScheduledTasksScheduledTask["ScheduledTaskId"].isNull())
-			scheduledTasksObject.scheduledTaskId = valueScheduledTasksScheduledTask["ScheduledTaskId"].asString();
+		if(!valueScheduledTasksScheduledTask["TaskEnabled"].isNull())
+			scheduledTasksObject.taskEnabled = valueScheduledTasksScheduledTask["TaskEnabled"].asString() == "true";
+		if(!valueScheduledTasksScheduledTask["RecurrenceValue"].isNull())
+			scheduledTasksObject.recurrenceValue = valueScheduledTasksScheduledTask["RecurrenceValue"].asString();
+		if(!valueScheduledTasksScheduledTask["RecurrenceType"].isNull())
+			scheduledTasksObject.recurrenceType = valueScheduledTasksScheduledTask["RecurrenceType"].asString();
+		if(!valueScheduledTasksScheduledTask["MaxValue"].isNull())
+			scheduledTasksObject.maxValue = std::stoi(valueScheduledTasksScheduledTask["MaxValue"].asString());
 		if(!valueScheduledTasksScheduledTask["ScheduledTaskName"].isNull())
 			scheduledTasksObject.scheduledTaskName = valueScheduledTasksScheduledTask["ScheduledTaskName"].asString();
+		if(!valueScheduledTasksScheduledTask["RecurrenceEndTime"].isNull())
+			scheduledTasksObject.recurrenceEndTime = valueScheduledTasksScheduledTask["RecurrenceEndTime"].asString();
+		if(!valueScheduledTasksScheduledTask["DesiredCapacity"].isNull())
+			scheduledTasksObject.desiredCapacity = std::stoi(valueScheduledTasksScheduledTask["DesiredCapacity"].asString());
+		if(!valueScheduledTasksScheduledTask["ScheduledTaskId"].isNull())
+			scheduledTasksObject.scheduledTaskId = valueScheduledTasksScheduledTask["ScheduledTaskId"].asString();
+		if(!valueScheduledTasksScheduledTask["MinValue"].isNull())
+			scheduledTasksObject.minValue = std::stoi(valueScheduledTasksScheduledTask["MinValue"].asString());
+		if(!valueScheduledTasksScheduledTask["ScalingGroupId"].isNull())
+			scheduledTasksObject.scalingGroupId = valueScheduledTasksScheduledTask["ScalingGroupId"].asString();
+		if(!valueScheduledTasksScheduledTask["LaunchExpirationTime"].isNull())
+			scheduledTasksObject.launchExpirationTime = std::stoi(valueScheduledTasksScheduledTask["LaunchExpirationTime"].asString());
 		if(!valueScheduledTasksScheduledTask["Description"].isNull())
 			scheduledTasksObject.description = valueScheduledTasksScheduledTask["Description"].asString();
 		if(!valueScheduledTasksScheduledTask["ScheduledAction"].isNull())
 			scheduledTasksObject.scheduledAction = valueScheduledTasksScheduledTask["ScheduledAction"].asString();
-		if(!valueScheduledTasksScheduledTask["RecurrenceEndTime"].isNull())
-			scheduledTasksObject.recurrenceEndTime = valueScheduledTasksScheduledTask["RecurrenceEndTime"].asString();
 		if(!valueScheduledTasksScheduledTask["LaunchTime"].isNull())
 			scheduledTasksObject.launchTime = valueScheduledTasksScheduledTask["LaunchTime"].asString();
-		if(!valueScheduledTasksScheduledTask["RecurrenceType"].isNull())
-			scheduledTasksObject.recurrenceType = valueScheduledTasksScheduledTask["RecurrenceType"].asString();
-		if(!valueScheduledTasksScheduledTask["RecurrenceValue"].isNull())
-			scheduledTasksObject.recurrenceValue = valueScheduledTasksScheduledTask["RecurrenceValue"].asString();
-		if(!valueScheduledTasksScheduledTask["LaunchExpirationTime"].isNull())
-			scheduledTasksObject.launchExpirationTime = std::stoi(valueScheduledTasksScheduledTask["LaunchExpirationTime"].asString());
-		if(!valueScheduledTasksScheduledTask["TaskEnabled"].isNull())
-			scheduledTasksObject.taskEnabled = valueScheduledTasksScheduledTask["TaskEnabled"].asString() == "true";
-		if(!valueScheduledTasksScheduledTask["MaxValue"].isNull())
-			scheduledTasksObject.maxValue = std::stoi(valueScheduledTasksScheduledTask["MaxValue"].asString());
-		if(!valueScheduledTasksScheduledTask["MinValue"].isNull())
-			scheduledTasksObject.minValue = std::stoi(valueScheduledTasksScheduledTask["MinValue"].asString());
-		if(!valueScheduledTasksScheduledTask["DesiredCapacity"].isNull())
-			scheduledTasksObject.desiredCapacity = std::stoi(valueScheduledTasksScheduledTask["DesiredCapacity"].asString());
-		if(!valueScheduledTasksScheduledTask["ScalingGroupId"].isNull())
-			scheduledTasksObject.scalingGroupId = valueScheduledTasksScheduledTask["ScalingGroupId"].asString();
 		scheduledTasks_.push_back(scheduledTasksObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

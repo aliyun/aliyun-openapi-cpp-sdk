@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Ess::Model::DisableScalingGroupRequest;
 
-DisableScalingGroupRequest::DisableScalingGroupRequest() :
-	RpcServiceRequest("ess", "2014-08-28", "DisableScalingGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+DisableScalingGroupRequest::DisableScalingGroupRequest()
+    : RpcServiceRequest("ess", "2014-08-28", "DisableScalingGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DisableScalingGroupRequest::~DisableScalingGroupRequest()
-{}
+DisableScalingGroupRequest::~DisableScalingGroupRequest() {}
 
-long DisableScalingGroupRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DisableScalingGroupRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DisableScalingGroupRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DisableScalingGroupRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DisableScalingGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DisableScalingGroupRequest::getScalingGroupId() const {
+  return scalingGroupId_;
 }
 
-void DisableScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DisableScalingGroupRequest::setScalingGroupId(const std::string &scalingGroupId) {
+  scalingGroupId_ = scalingGroupId;
+  setParameter(std::string("ScalingGroupId"), scalingGroupId);
 }
 
-std::string DisableScalingGroupRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
+std::string DisableScalingGroupRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DisableScalingGroupRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
+void DisableScalingGroupRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DisableScalingGroupRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DisableScalingGroupRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DisableScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DisableScalingGroupRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long DisableScalingGroupRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DisableScalingGroupRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DisableScalingGroupRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DisableScalingGroupRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string DisableScalingGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+long DisableScalingGroupRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DisableScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DisableScalingGroupRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
