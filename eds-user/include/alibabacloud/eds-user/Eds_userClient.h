@@ -34,8 +34,12 @@
 #include "model/CreateOrgResult.h"
 #include "model/CreatePropertyRequest.h"
 #include "model/CreatePropertyResult.h"
+#include "model/CreateResourceGroupRequest.h"
+#include "model/CreateResourceGroupResult.h"
 #include "model/CreateUsersRequest.h"
 #include "model/CreateUsersResult.h"
+#include "model/DeleteResourceGroupRequest.h"
+#include "model/DeleteResourceGroupResult.h"
 #include "model/DeleteUserPropertyValueRequest.h"
 #include "model/DeleteUserPropertyValueResult.h"
 #include "model/DescribeMfaDevicesRequest.h"
@@ -44,6 +48,8 @@
 #include "model/DescribeOrgByLayerResult.h"
 #include "model/DescribeOrgsRequest.h"
 #include "model/DescribeOrgsResult.h"
+#include "model/DescribeResourceGroupsRequest.h"
+#include "model/DescribeResourceGroupsResult.h"
 #include "model/DescribeUsersRequest.h"
 #include "model/DescribeUsersResult.h"
 #include "model/FilterUsersRequest.h"
@@ -115,9 +121,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePropertyResult> CreatePropertyOutcome;
 			typedef std::future<CreatePropertyOutcome> CreatePropertyOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::CreatePropertyRequest&, const CreatePropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePropertyAsyncHandler;
+			typedef Outcome<Error, Model::CreateResourceGroupResult> CreateResourceGroupOutcome;
+			typedef std::future<CreateResourceGroupOutcome> CreateResourceGroupOutcomeCallable;
+			typedef std::function<void(const Eds_userClient*, const Model::CreateResourceGroupRequest&, const CreateResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateUsersResult> CreateUsersOutcome;
 			typedef std::future<CreateUsersOutcome> CreateUsersOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::CreateUsersRequest&, const CreateUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUsersAsyncHandler;
+			typedef Outcome<Error, Model::DeleteResourceGroupResult> DeleteResourceGroupOutcome;
+			typedef std::future<DeleteResourceGroupOutcome> DeleteResourceGroupOutcomeCallable;
+			typedef std::function<void(const Eds_userClient*, const Model::DeleteResourceGroupRequest&, const DeleteResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUserPropertyValueResult> DeleteUserPropertyValueOutcome;
 			typedef std::future<DeleteUserPropertyValueOutcome> DeleteUserPropertyValueOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::DeleteUserPropertyValueRequest&, const DeleteUserPropertyValueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserPropertyValueAsyncHandler;
@@ -130,6 +142,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeOrgsResult> DescribeOrgsOutcome;
 			typedef std::future<DescribeOrgsOutcome> DescribeOrgsOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::DescribeOrgsRequest&, const DescribeOrgsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrgsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeResourceGroupsResult> DescribeResourceGroupsOutcome;
+			typedef std::future<DescribeResourceGroupsOutcome> DescribeResourceGroupsOutcomeCallable;
+			typedef std::function<void(const Eds_userClient*, const Model::DescribeResourceGroupsRequest&, const DescribeResourceGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGroupsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUsersResult> DescribeUsersOutcome;
 			typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::DescribeUsersRequest&, const DescribeUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersAsyncHandler;
@@ -219,9 +234,15 @@ namespace AlibabaCloud
 			CreatePropertyOutcome createProperty(const Model::CreatePropertyRequest &request)const;
 			void createPropertyAsync(const Model::CreatePropertyRequest& request, const CreatePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePropertyOutcomeCallable createPropertyCallable(const Model::CreatePropertyRequest& request) const;
+			CreateResourceGroupOutcome createResourceGroup(const Model::CreateResourceGroupRequest &request)const;
+			void createResourceGroupAsync(const Model::CreateResourceGroupRequest& request, const CreateResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateResourceGroupOutcomeCallable createResourceGroupCallable(const Model::CreateResourceGroupRequest& request) const;
 			CreateUsersOutcome createUsers(const Model::CreateUsersRequest &request)const;
 			void createUsersAsync(const Model::CreateUsersRequest& request, const CreateUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUsersOutcomeCallable createUsersCallable(const Model::CreateUsersRequest& request) const;
+			DeleteResourceGroupOutcome deleteResourceGroup(const Model::DeleteResourceGroupRequest &request)const;
+			void deleteResourceGroupAsync(const Model::DeleteResourceGroupRequest& request, const DeleteResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteResourceGroupOutcomeCallable deleteResourceGroupCallable(const Model::DeleteResourceGroupRequest& request) const;
 			DeleteUserPropertyValueOutcome deleteUserPropertyValue(const Model::DeleteUserPropertyValueRequest &request)const;
 			void deleteUserPropertyValueAsync(const Model::DeleteUserPropertyValueRequest& request, const DeleteUserPropertyValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserPropertyValueOutcomeCallable deleteUserPropertyValueCallable(const Model::DeleteUserPropertyValueRequest& request) const;
@@ -234,6 +255,9 @@ namespace AlibabaCloud
 			DescribeOrgsOutcome describeOrgs(const Model::DescribeOrgsRequest &request)const;
 			void describeOrgsAsync(const Model::DescribeOrgsRequest& request, const DescribeOrgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOrgsOutcomeCallable describeOrgsCallable(const Model::DescribeOrgsRequest& request) const;
+			DescribeResourceGroupsOutcome describeResourceGroups(const Model::DescribeResourceGroupsRequest &request)const;
+			void describeResourceGroupsAsync(const Model::DescribeResourceGroupsRequest& request, const DescribeResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeResourceGroupsOutcomeCallable describeResourceGroupsCallable(const Model::DescribeResourceGroupsRequest& request) const;
 			DescribeUsersOutcome describeUsers(const Model::DescribeUsersRequest &request)const;
 			void describeUsersAsync(const Model::DescribeUsersRequest& request, const DescribeUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUsersOutcomeCallable describeUsersCallable(const Model::DescribeUsersRequest& request) const;

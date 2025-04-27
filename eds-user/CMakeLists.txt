@@ -33,8 +33,12 @@ set(eds-user_public_header_model
 	include/alibabacloud/eds-user/model/CreateOrgResult.h
 	include/alibabacloud/eds-user/model/CreatePropertyRequest.h
 	include/alibabacloud/eds-user/model/CreatePropertyResult.h
+	include/alibabacloud/eds-user/model/CreateResourceGroupRequest.h
+	include/alibabacloud/eds-user/model/CreateResourceGroupResult.h
 	include/alibabacloud/eds-user/model/CreateUsersRequest.h
 	include/alibabacloud/eds-user/model/CreateUsersResult.h
+	include/alibabacloud/eds-user/model/DeleteResourceGroupRequest.h
+	include/alibabacloud/eds-user/model/DeleteResourceGroupResult.h
 	include/alibabacloud/eds-user/model/DeleteUserPropertyValueRequest.h
 	include/alibabacloud/eds-user/model/DeleteUserPropertyValueResult.h
 	include/alibabacloud/eds-user/model/DescribeMfaDevicesRequest.h
@@ -43,6 +47,8 @@ set(eds-user_public_header_model
 	include/alibabacloud/eds-user/model/DescribeOrgByLayerResult.h
 	include/alibabacloud/eds-user/model/DescribeOrgsRequest.h
 	include/alibabacloud/eds-user/model/DescribeOrgsResult.h
+	include/alibabacloud/eds-user/model/DescribeResourceGroupsRequest.h
+	include/alibabacloud/eds-user/model/DescribeResourceGroupsResult.h
 	include/alibabacloud/eds-user/model/DescribeUsersRequest.h
 	include/alibabacloud/eds-user/model/DescribeUsersResult.h
 	include/alibabacloud/eds-user/model/FilterUsersRequest.h
@@ -102,8 +108,12 @@ set(eds-user_src
 	src/model/CreateOrgResult.cc
 	src/model/CreatePropertyRequest.cc
 	src/model/CreatePropertyResult.cc
+	src/model/CreateResourceGroupRequest.cc
+	src/model/CreateResourceGroupResult.cc
 	src/model/CreateUsersRequest.cc
 	src/model/CreateUsersResult.cc
+	src/model/DeleteResourceGroupRequest.cc
+	src/model/DeleteResourceGroupResult.cc
 	src/model/DeleteUserPropertyValueRequest.cc
 	src/model/DeleteUserPropertyValueResult.cc
 	src/model/DescribeMfaDevicesRequest.cc
@@ -112,6 +122,8 @@ set(eds-user_src
 	src/model/DescribeOrgByLayerResult.cc
 	src/model/DescribeOrgsRequest.cc
 	src/model/DescribeOrgsResult.cc
+	src/model/DescribeResourceGroupsRequest.cc
+	src/model/DescribeResourceGroupsResult.cc
 	src/model/DescribeUsersRequest.cc
 	src/model/DescribeUsersResult.cc
 	src/model/FilterUsersRequest.cc

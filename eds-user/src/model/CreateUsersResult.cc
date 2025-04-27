@@ -72,7 +72,14 @@ void CreateUsersResult::parse(const std::string &payload)
 			failedUsersItemObject.errorMessage = createResultNodeFailedUsersfailedUsersItem["ErrorMessage"].asString();
 		createResult_.failedUsers.push_back(failedUsersItemObject);
 	}
+	if(!value["AllSucceed"].isNull())
+		allSucceed_ = value["AllSucceed"].asString() == "true";
 
+}
+
+bool CreateUsersResult::getAllSucceed()const
+{
+	return allSucceed_;
 }
 
 CreateUsersResult::CreateResult CreateUsersResult::getCreateResult()const

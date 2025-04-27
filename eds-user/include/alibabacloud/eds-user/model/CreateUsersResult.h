@@ -58,11 +58,13 @@ namespace AlibabaCloud
 				CreateUsersResult();
 				explicit CreateUsersResult(const std::string &payload);
 				~CreateUsersResult();
+				bool getAllSucceed()const;
 				CreateResult getCreateResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool allSucceed_;
 				CreateResult createResult_;
 
 			};

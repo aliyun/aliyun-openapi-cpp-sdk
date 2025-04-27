@@ -267,6 +267,42 @@ Eds_userClient::CreatePropertyOutcomeCallable Eds_userClient::createPropertyCall
 	return task->get_future();
 }
 
+Eds_userClient::CreateResourceGroupOutcome Eds_userClient::createResourceGroup(const CreateResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateResourceGroupOutcome(CreateResourceGroupResult(outcome.result()));
+	else
+		return CreateResourceGroupOutcome(outcome.error());
+}
+
+void Eds_userClient::createResourceGroupAsync(const CreateResourceGroupRequest& request, const CreateResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Eds_userClient::CreateResourceGroupOutcomeCallable Eds_userClient::createResourceGroupCallable(const CreateResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Eds_userClient::CreateUsersOutcome Eds_userClient::createUsers(const CreateUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +333,42 @@ Eds_userClient::CreateUsersOutcomeCallable Eds_userClient::createUsersCallable(c
 			[this, request]()
 			{
 			return this->createUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Eds_userClient::DeleteResourceGroupOutcome Eds_userClient::deleteResourceGroup(const DeleteResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteResourceGroupOutcome(DeleteResourceGroupResult(outcome.result()));
+	else
+		return DeleteResourceGroupOutcome(outcome.error());
+}
+
+void Eds_userClient::deleteResourceGroupAsync(const DeleteResourceGroupRequest& request, const DeleteResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Eds_userClient::DeleteResourceGroupOutcomeCallable Eds_userClient::deleteResourceGroupCallable(const DeleteResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteResourceGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -441,6 +513,42 @@ Eds_userClient::DescribeOrgsOutcomeCallable Eds_userClient::describeOrgsCallable
 			[this, request]()
 			{
 			return this->describeOrgs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Eds_userClient::DescribeResourceGroupsOutcome Eds_userClient::describeResourceGroups(const DescribeResourceGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeResourceGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeResourceGroupsOutcome(DescribeResourceGroupsResult(outcome.result()));
+	else
+		return DescribeResourceGroupsOutcome(outcome.error());
+}
+
+void Eds_userClient::describeResourceGroupsAsync(const DescribeResourceGroupsRequest& request, const DescribeResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeResourceGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Eds_userClient::DescribeResourceGroupsOutcomeCallable Eds_userClient::describeResourceGroupsCallable(const DescribeResourceGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeResourceGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeResourceGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
