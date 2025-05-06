@@ -1,0 +1,96 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_ITAG_MODEL_PAGEVIEWFLOWJOBRESULT_H_
+#define ALIBABACLOUD_ITAG_MODEL_PAGEVIEWFLOWJOBRESULT_H_
+
+#include <string>
+#include <vector>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/itag/ItagExport.h>
+
+namespace AlibabaCloud
+{
+	namespace Itag
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_ITAG_EXPORT PageViewFlowJobResult : public ServiceResult
+			{
+			public:
+				struct Result
+				{
+					struct ITagFlowJobStatResponse
+					{
+						struct Creator
+						{
+							std::string userName;
+							std::string accountNo;
+							std::string userId;
+							std::string accountType;
+						};
+						struct Modifier
+						{
+							std::string userName;
+							std::string accountNo;
+							std::string userId;
+							std::string accountType;
+						};
+						std::string flowId;
+						std::string gmtCreate;
+						std::string runInstId;
+						std::string state;
+						std::string runMsg;
+						std::string runRet;
+						std::string gmtModified;
+						Creator creator;
+						Modifier modifier;
+						std::string logView;
+					};
+					long pageNum;
+					long pageSize;
+					long totalPage;
+					long total;
+					std::vector<ITagFlowJobStatResponse> list;
+				};
+
+
+				PageViewFlowJobResult();
+				explicit PageViewFlowJobResult(const std::string &payload);
+				~PageViewFlowJobResult();
+				std::string getMsg()const;
+				bool getSucc()const;
+				std::string getErrorCode()const;
+				std::string getErrInfo()const;
+				std::string getCode()const;
+				Result getResult()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string msg_;
+				bool succ_;
+				std::string errorCode_;
+				std::string errInfo_;
+				std::string code_;
+				Result result_;
+
+			};
+		}
+	}
+}
+#endif // !ALIBABACLOUD_ITAG_MODEL_PAGEVIEWFLOWJOBRESULT_H_
