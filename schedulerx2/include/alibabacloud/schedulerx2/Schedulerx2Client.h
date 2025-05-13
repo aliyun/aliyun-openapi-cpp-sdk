@@ -44,6 +44,8 @@
 #include "model/DeleteAppGroupResult.h"
 #include "model/DeleteJobRequest.h"
 #include "model/DeleteJobResult.h"
+#include "model/DeleteNamespaceRequest.h"
+#include "model/DeleteNamespaceResult.h"
 #include "model/DeleteRouteStrategyRequest.h"
 #include "model/DeleteRouteStrategyResult.h"
 #include "model/DeleteWorkflowRequest.h"
@@ -86,12 +88,16 @@
 #include "model/GrantPermissionResult.h"
 #include "model/ListGroupsRequest.h"
 #include "model/ListGroupsResult.h"
+#include "model/ListJobScriptHistoryRequest.h"
+#include "model/ListJobScriptHistoryResult.h"
 #include "model/ListJobsRequest.h"
 #include "model/ListJobsResult.h"
 #include "model/ListNamespacesRequest.h"
 #include "model/ListNamespacesResult.h"
 #include "model/ListWorkflowInstanceRequest.h"
 #include "model/ListWorkflowInstanceResult.h"
+#include "model/ReadSchedulerxDesignateDetailRequest.h"
+#include "model/ReadSchedulerxDesignateDetailResult.h"
 #include "model/RerunJobRequest.h"
 #include "model/RerunJobResult.h"
 #include "model/RetryJobInstanceRequest.h"
@@ -108,6 +114,10 @@
 #include "model/UpdateAppGroupResult.h"
 #include "model/UpdateJobRequest.h"
 #include "model/UpdateJobResult.h"
+#include "model/UpdateJobScriptRequest.h"
+#include "model/UpdateJobScriptResult.h"
+#include "model/UpdateNamespaceRequest.h"
+#include "model/UpdateNamespaceResult.h"
 #include "model/UpdateWorkflowRequest.h"
 #include "model/UpdateWorkflowResult.h"
 #include "model/UpdateWorkflowDagRequest.h"
@@ -154,6 +164,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteJobResult> DeleteJobOutcome;
 			typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::DeleteJobRequest&, const DeleteJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobAsyncHandler;
+			typedef Outcome<Error, Model::DeleteNamespaceResult> DeleteNamespaceOutcome;
+			typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::DeleteNamespaceRequest&, const DeleteNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespaceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRouteStrategyResult> DeleteRouteStrategyOutcome;
 			typedef std::future<DeleteRouteStrategyOutcome> DeleteRouteStrategyOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::DeleteRouteStrategyRequest&, const DeleteRouteStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteStrategyAsyncHandler;
@@ -217,6 +230,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListGroupsResult> ListGroupsOutcome;
 			typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::ListGroupsRequest&, const ListGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ListJobScriptHistoryResult> ListJobScriptHistoryOutcome;
+			typedef std::future<ListJobScriptHistoryOutcome> ListJobScriptHistoryOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::ListJobScriptHistoryRequest&, const ListJobScriptHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListJobScriptHistoryAsyncHandler;
 			typedef Outcome<Error, Model::ListJobsResult> ListJobsOutcome;
 			typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::ListJobsRequest&, const ListJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListJobsAsyncHandler;
@@ -226,6 +242,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListWorkflowInstanceResult> ListWorkflowInstanceOutcome;
 			typedef std::future<ListWorkflowInstanceOutcome> ListWorkflowInstanceOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::ListWorkflowInstanceRequest&, const ListWorkflowInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkflowInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ReadSchedulerxDesignateDetailResult> ReadSchedulerxDesignateDetailOutcome;
+			typedef std::future<ReadSchedulerxDesignateDetailOutcome> ReadSchedulerxDesignateDetailOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::ReadSchedulerxDesignateDetailRequest&, const ReadSchedulerxDesignateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReadSchedulerxDesignateDetailAsyncHandler;
 			typedef Outcome<Error, Model::RerunJobResult> RerunJobOutcome;
 			typedef std::future<RerunJobOutcome> RerunJobOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::RerunJobRequest&, const RerunJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RerunJobAsyncHandler;
@@ -250,6 +269,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateJobResult> UpdateJobOutcome;
 			typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::UpdateJobRequest&, const UpdateJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateJobAsyncHandler;
+			typedef Outcome<Error, Model::UpdateJobScriptResult> UpdateJobScriptOutcome;
+			typedef std::future<UpdateJobScriptOutcome> UpdateJobScriptOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::UpdateJobScriptRequest&, const UpdateJobScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateJobScriptAsyncHandler;
+			typedef Outcome<Error, Model::UpdateNamespaceResult> UpdateNamespaceOutcome;
+			typedef std::future<UpdateNamespaceOutcome> UpdateNamespaceOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::UpdateNamespaceRequest&, const UpdateNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNamespaceAsyncHandler;
 			typedef Outcome<Error, Model::UpdateWorkflowResult> UpdateWorkflowOutcome;
 			typedef std::future<UpdateWorkflowOutcome> UpdateWorkflowOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::UpdateWorkflowRequest&, const UpdateWorkflowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowAsyncHandler;
@@ -294,6 +319,9 @@ namespace AlibabaCloud
 			DeleteJobOutcome deleteJob(const Model::DeleteJobRequest &request)const;
 			void deleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteJobOutcomeCallable deleteJobCallable(const Model::DeleteJobRequest& request) const;
+			DeleteNamespaceOutcome deleteNamespace(const Model::DeleteNamespaceRequest &request)const;
+			void deleteNamespaceAsync(const Model::DeleteNamespaceRequest& request, const DeleteNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteNamespaceOutcomeCallable deleteNamespaceCallable(const Model::DeleteNamespaceRequest& request) const;
 			DeleteRouteStrategyOutcome deleteRouteStrategy(const Model::DeleteRouteStrategyRequest &request)const;
 			void deleteRouteStrategyAsync(const Model::DeleteRouteStrategyRequest& request, const DeleteRouteStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRouteStrategyOutcomeCallable deleteRouteStrategyCallable(const Model::DeleteRouteStrategyRequest& request) const;
@@ -357,6 +385,9 @@ namespace AlibabaCloud
 			ListGroupsOutcome listGroups(const Model::ListGroupsRequest &request)const;
 			void listGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListGroupsOutcomeCallable listGroupsCallable(const Model::ListGroupsRequest& request) const;
+			ListJobScriptHistoryOutcome listJobScriptHistory(const Model::ListJobScriptHistoryRequest &request)const;
+			void listJobScriptHistoryAsync(const Model::ListJobScriptHistoryRequest& request, const ListJobScriptHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListJobScriptHistoryOutcomeCallable listJobScriptHistoryCallable(const Model::ListJobScriptHistoryRequest& request) const;
 			ListJobsOutcome listJobs(const Model::ListJobsRequest &request)const;
 			void listJobsAsync(const Model::ListJobsRequest& request, const ListJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListJobsOutcomeCallable listJobsCallable(const Model::ListJobsRequest& request) const;
@@ -366,6 +397,9 @@ namespace AlibabaCloud
 			ListWorkflowInstanceOutcome listWorkflowInstance(const Model::ListWorkflowInstanceRequest &request)const;
 			void listWorkflowInstanceAsync(const Model::ListWorkflowInstanceRequest& request, const ListWorkflowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListWorkflowInstanceOutcomeCallable listWorkflowInstanceCallable(const Model::ListWorkflowInstanceRequest& request) const;
+			ReadSchedulerxDesignateDetailOutcome readSchedulerxDesignateDetail(const Model::ReadSchedulerxDesignateDetailRequest &request)const;
+			void readSchedulerxDesignateDetailAsync(const Model::ReadSchedulerxDesignateDetailRequest& request, const ReadSchedulerxDesignateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReadSchedulerxDesignateDetailOutcomeCallable readSchedulerxDesignateDetailCallable(const Model::ReadSchedulerxDesignateDetailRequest& request) const;
 			RerunJobOutcome rerunJob(const Model::RerunJobRequest &request)const;
 			void rerunJobAsync(const Model::RerunJobRequest& request, const RerunJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RerunJobOutcomeCallable rerunJobCallable(const Model::RerunJobRequest& request) const;
@@ -390,6 +424,12 @@ namespace AlibabaCloud
 			UpdateJobOutcome updateJob(const Model::UpdateJobRequest &request)const;
 			void updateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateJobOutcomeCallable updateJobCallable(const Model::UpdateJobRequest& request) const;
+			UpdateJobScriptOutcome updateJobScript(const Model::UpdateJobScriptRequest &request)const;
+			void updateJobScriptAsync(const Model::UpdateJobScriptRequest& request, const UpdateJobScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateJobScriptOutcomeCallable updateJobScriptCallable(const Model::UpdateJobScriptRequest& request) const;
+			UpdateNamespaceOutcome updateNamespace(const Model::UpdateNamespaceRequest &request)const;
+			void updateNamespaceAsync(const Model::UpdateNamespaceRequest& request, const UpdateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateNamespaceOutcomeCallable updateNamespaceCallable(const Model::UpdateNamespaceRequest& request) const;
 			UpdateWorkflowOutcome updateWorkflow(const Model::UpdateWorkflowRequest &request)const;
 			void updateWorkflowAsync(const Model::UpdateWorkflowRequest& request, const UpdateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateWorkflowOutcomeCallable updateWorkflowCallable(const Model::UpdateWorkflowRequest& request) const;

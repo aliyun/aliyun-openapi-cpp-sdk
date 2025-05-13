@@ -106,6 +106,15 @@ void UpdateJobRequest::setDispatcherSize(int dispatcherSize) {
   setBodyParameter(std::string("DispatcherSize"), std::to_string(dispatcherSize));
 }
 
+int UpdateJobRequest::getPriority() const {
+  return priority_;
+}
+
+void UpdateJobRequest::setPriority(int priority) {
+  priority_ = priority;
+  setParameter(std::string("Priority"), std::to_string(priority));
+}
+
 int UpdateJobRequest::getTaskAttemptInterval() const {
   return taskAttemptInterval_;
 }

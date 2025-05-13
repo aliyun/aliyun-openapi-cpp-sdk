@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_GRANTPERMISSIONREQUEST_H_
-#define ALIBABACLOUD_SCHEDULERX2_MODEL_GRANTPERMISSIONREQUEST_H_
+#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_DELETENAMESPACEREQUEST_H_
+#define ALIBABACLOUD_SCHEDULERX2_MODEL_DELETENAMESPACEREQUEST_H_
 
 #include <alibabacloud/schedulerx2/Schedulerx2Export.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,23 @@
 namespace AlibabaCloud {
 namespace Schedulerx2 {
 namespace Model {
-class ALIBABACLOUD_SCHEDULERX2_EXPORT GrantPermissionRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SCHEDULERX2_EXPORT DeleteNamespaceRequest : public RpcServiceRequest {
 public:
-	GrantPermissionRequest();
-	~GrantPermissionRequest();
+	DeleteNamespaceRequest();
+	~DeleteNamespaceRequest();
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
-	bool getGrantOption() const;
-	void setGrantOption(bool grantOption);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
-	std::string getUserName() const;
-	void setUserName(const std::string &userName);
 
 private:
 	std::string namespaceSource_;
-	std::string userId_;
-	bool grantOption_;
 	std::string regionId_;
-	std::string groupId_;
 	std::string _namespace_;
-	std::string userName_;
 };
 } // namespace Model
 } // namespace Schedulerx2
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_GRANTPERMISSIONREQUEST_H_
+#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_DELETENAMESPACEREQUEST_H_

@@ -70,6 +70,10 @@ void GetAppGroupResult::parse(const std::string &payload)
 		data_.xattrs = dataNode["Xattrs"].asString();
 	if(!dataNode["AppVersion"].isNull())
 		data_.appVersion = dataNode["AppVersion"].asString();
+	if(!dataNode["Namespace"].isNull())
+		data_._namespace = dataNode["Namespace"].asString();
+	if(!dataNode["MonitorContactsJson"].isNull())
+		data_.monitorContactsJson = dataNode["MonitorContactsJson"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_GRANTPERMISSIONREQUEST_H_
-#define ALIBABACLOUD_SCHEDULERX2_MODEL_GRANTPERMISSIONREQUEST_H_
+#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_UPDATEJOBSCRIPTREQUEST_H_
+#define ALIBABACLOUD_SCHEDULERX2_MODEL_UPDATEJOBSCRIPTREQUEST_H_
 
 #include <alibabacloud/schedulerx2/Schedulerx2Export.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,35 @@
 namespace AlibabaCloud {
 namespace Schedulerx2 {
 namespace Model {
-class ALIBABACLOUD_SCHEDULERX2_EXPORT GrantPermissionRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SCHEDULERX2_EXPORT UpdateJobScriptRequest : public RpcServiceRequest {
 public:
-	GrantPermissionRequest();
-	~GrantPermissionRequest();
+	UpdateJobScriptRequest();
+	~UpdateJobScriptRequest();
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
-	bool getGrantOption() const;
-	void setGrantOption(bool grantOption);
+	long getJobId() const;
+	void setJobId(long jobId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
-	std::string getUserName() const;
-	void setUserName(const std::string &userName);
+	std::string getScriptContent() const;
+	void setScriptContent(const std::string &scriptContent);
+	std::string getVersionDescription() const;
+	void setVersionDescription(const std::string &versionDescription);
 
 private:
 	std::string namespaceSource_;
-	std::string userId_;
-	bool grantOption_;
+	long jobId_;
 	std::string regionId_;
 	std::string groupId_;
 	std::string _namespace_;
-	std::string userName_;
+	std::string scriptContent_;
+	std::string versionDescription_;
 };
 } // namespace Model
 } // namespace Schedulerx2
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_GRANTPERMISSIONREQUEST_H_
+#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_UPDATEJOBSCRIPTREQUEST_H_

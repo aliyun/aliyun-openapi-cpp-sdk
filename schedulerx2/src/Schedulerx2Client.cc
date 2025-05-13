@@ -447,6 +447,42 @@ Schedulerx2Client::DeleteJobOutcomeCallable Schedulerx2Client::deleteJobCallable
 	return task->get_future();
 }
 
+Schedulerx2Client::DeleteNamespaceOutcome Schedulerx2Client::deleteNamespace(const DeleteNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNamespaceOutcome(DeleteNamespaceResult(outcome.result()));
+	else
+		return DeleteNamespaceOutcome(outcome.error());
+}
+
+void Schedulerx2Client::deleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::DeleteNamespaceOutcomeCallable Schedulerx2Client::deleteNamespaceCallable(const DeleteNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Schedulerx2Client::DeleteRouteStrategyOutcome Schedulerx2Client::deleteRouteStrategy(const DeleteRouteStrategyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1203,6 +1239,42 @@ Schedulerx2Client::ListGroupsOutcomeCallable Schedulerx2Client::listGroupsCallab
 	return task->get_future();
 }
 
+Schedulerx2Client::ListJobScriptHistoryOutcome Schedulerx2Client::listJobScriptHistory(const ListJobScriptHistoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListJobScriptHistoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListJobScriptHistoryOutcome(ListJobScriptHistoryResult(outcome.result()));
+	else
+		return ListJobScriptHistoryOutcome(outcome.error());
+}
+
+void Schedulerx2Client::listJobScriptHistoryAsync(const ListJobScriptHistoryRequest& request, const ListJobScriptHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listJobScriptHistory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::ListJobScriptHistoryOutcomeCallable Schedulerx2Client::listJobScriptHistoryCallable(const ListJobScriptHistoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListJobScriptHistoryOutcome()>>(
+			[this, request]()
+			{
+			return this->listJobScriptHistory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Schedulerx2Client::ListJobsOutcome Schedulerx2Client::listJobs(const ListJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1305,6 +1377,42 @@ Schedulerx2Client::ListWorkflowInstanceOutcomeCallable Schedulerx2Client::listWo
 			[this, request]()
 			{
 			return this->listWorkflowInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::ReadSchedulerxDesignateDetailOutcome Schedulerx2Client::readSchedulerxDesignateDetail(const ReadSchedulerxDesignateDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReadSchedulerxDesignateDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReadSchedulerxDesignateDetailOutcome(ReadSchedulerxDesignateDetailResult(outcome.result()));
+	else
+		return ReadSchedulerxDesignateDetailOutcome(outcome.error());
+}
+
+void Schedulerx2Client::readSchedulerxDesignateDetailAsync(const ReadSchedulerxDesignateDetailRequest& request, const ReadSchedulerxDesignateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, readSchedulerxDesignateDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::ReadSchedulerxDesignateDetailOutcomeCallable Schedulerx2Client::readSchedulerxDesignateDetailCallable(const ReadSchedulerxDesignateDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReadSchedulerxDesignateDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->readSchedulerxDesignateDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1593,6 +1701,78 @@ Schedulerx2Client::UpdateJobOutcomeCallable Schedulerx2Client::updateJobCallable
 			[this, request]()
 			{
 			return this->updateJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::UpdateJobScriptOutcome Schedulerx2Client::updateJobScript(const UpdateJobScriptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateJobScriptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateJobScriptOutcome(UpdateJobScriptResult(outcome.result()));
+	else
+		return UpdateJobScriptOutcome(outcome.error());
+}
+
+void Schedulerx2Client::updateJobScriptAsync(const UpdateJobScriptRequest& request, const UpdateJobScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateJobScript(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::UpdateJobScriptOutcomeCallable Schedulerx2Client::updateJobScriptCallable(const UpdateJobScriptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateJobScriptOutcome()>>(
+			[this, request]()
+			{
+			return this->updateJobScript(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::UpdateNamespaceOutcome Schedulerx2Client::updateNamespace(const UpdateNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNamespaceOutcome(UpdateNamespaceResult(outcome.result()));
+	else
+		return UpdateNamespaceOutcome(outcome.error());
+}
+
+void Schedulerx2Client::updateNamespaceAsync(const UpdateNamespaceRequest& request, const UpdateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::UpdateNamespaceOutcomeCallable Schedulerx2Client::updateNamespaceCallable(const UpdateNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNamespace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

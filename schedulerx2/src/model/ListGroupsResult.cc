@@ -58,6 +58,8 @@ void ListGroupsResult::parse(const std::string &payload)
 			appGroupObject.xattrs = dataNodeAppGroupsAppGroup["Xattrs"].asString();
 		if(!dataNodeAppGroupsAppGroup["AppVersion"].isNull())
 			appGroupObject.appVersion = std::stoi(dataNodeAppGroupsAppGroup["AppVersion"].asString());
+		if(!dataNodeAppGroupsAppGroup["Namespace"].isNull())
+			appGroupObject._namespace = dataNodeAppGroupsAppGroup["Namespace"].asString();
 		data_.appGroups.push_back(appGroupObject);
 	}
 	if(!value["Code"].isNull())

@@ -52,6 +52,8 @@ public:
 	void setTaskMaxAttempt(int taskMaxAttempt);
 	int getDispatcherSize() const;
 	void setDispatcherSize(int dispatcherSize);
+	int getPriority() const;
+	void setPriority(int priority);
 	std::string getJobType() const;
 	void setJobType(const std::string &jobType);
 	int getTaskAttemptInterval() const;
@@ -120,6 +122,7 @@ private:
 	int dataOffset_;
 	int taskMaxAttempt_;
 	int dispatcherSize_;
+	int priority_;
 	std::string jobType_;
 	int taskAttemptInterval_;
 	std::string executeMode_;

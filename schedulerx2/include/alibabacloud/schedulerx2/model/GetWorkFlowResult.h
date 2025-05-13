@@ -38,10 +38,13 @@ namespace AlibabaCloud
 					{
 						std::string status;
 						std::string description;
+						std::string maxConcurrency;
 						std::string timeExpression;
+						std::string _namespace;
 						long workflowId;
 						std::string name;
 						std::string timeType;
+						std::string groupId;
 					};
 					struct WorkFlowNodeInfo
 					{

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_GETAPPGROUPRESULT_H_
-#define ALIBABACLOUD_SCHEDULERX2_MODEL_GETAPPGROUPRESULT_H_
+#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_LISTJOBSCRIPTHISTORYRESULT_H_
+#define ALIBABACLOUD_SCHEDULERX2_MODEL_LISTJOBSCRIPTHISTORYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCHEDULERX2_EXPORT GetAppGroupResult : public ServiceResult
+			class ALIBABACLOUD_SCHEDULERX2_EXPORT ListJobScriptHistoryResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					std::string description;
-					int curJobs;
-					int maxConcurrency;
-					std::string _namespace;
-					std::string monitorContactsJson;
-					std::string appName;
-					std::string groupId;
-					std::string appVersion;
-					std::string monitorConfigJson;
-					int readyInstanceNum;
-					long appGroupId;
-					std::string appKey;
-					std::string metricsThresholdJson;
-					int runningInstanceNum;
-					std::string xattrs;
-					int maxJobs;
-					std::string alarmJson;
+					struct JobScriptHistoryInfo
+					{
+						std::string scriptContent;
+						std::string createTime;
+						std::string versionesDescription;
+						std::string creator;
+					};
+					std::vector<JobScriptHistoryInfo> jobScriptHistoryInfos;
 				};
 
 
-				GetAppGroupResult();
-				explicit GetAppGroupResult(const std::string &payload);
-				~GetAppGroupResult();
+				ListJobScriptHistoryResult();
+				explicit ListJobScriptHistoryResult(const std::string &payload);
+				~ListJobScriptHistoryResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getCode()const;
@@ -74,4 +65,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_GETAPPGROUPRESULT_H_
+#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_LISTJOBSCRIPTHISTORYRESULT_H_

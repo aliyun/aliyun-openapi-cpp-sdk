@@ -36,6 +36,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getAlarmJson() const;
 	void setAlarmJson(const std::string &alarmJson);
+	std::string getMonitorContactsJson() const;
+	void setMonitorContactsJson(const std::string &monitorContactsJson);
 	long getAppGroupId() const;
 	void setAppGroupId(long appGroupId);
 	int getMaxJobs() const;
@@ -46,6 +48,8 @@ public:
 	void setGroupId(const std::string &groupId);
 	int getAppVersion() const;
 	void setAppVersion(int appVersion);
+	std::string getMonitorConfigJson() const;
+	void setMonitorConfigJson(const std::string &monitorConfigJson);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
 	std::string getXattrs() const;
@@ -57,11 +61,13 @@ private:
 	std::string description_;
 	std::string regionId_;
 	std::string alarmJson_;
+	std::string monitorContactsJson_;
 	long appGroupId_;
 	int maxJobs_;
 	std::string metricsThresholdJson_;
 	std::string groupId_;
 	int appVersion_;
+	std::string monitorConfigJson_;
 	std::string _namespace_;
 	std::string xattrs_;
 	int maxConcurrency_;

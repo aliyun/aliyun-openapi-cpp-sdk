@@ -97,6 +97,15 @@ void CreateJobRequest::setDispatcherSize(int dispatcherSize) {
   setBodyParameter(std::string("DispatcherSize"), std::to_string(dispatcherSize));
 }
 
+int CreateJobRequest::getPriority() const {
+  return priority_;
+}
+
+void CreateJobRequest::setPriority(int priority) {
+  priority_ = priority;
+  setParameter(std::string("Priority"), std::to_string(priority));
+}
+
 std::string CreateJobRequest::getJobType() const {
   return jobType_;
 }

@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string description;
 						long appGroupId;
 						std::string appKey;
+						std::string _namespace;
 						std::string xattrs;
 						std::string appName;
 						std::string groupId;

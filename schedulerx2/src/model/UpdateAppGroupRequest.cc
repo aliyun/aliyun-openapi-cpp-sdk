@@ -52,6 +52,15 @@ void UpdateAppGroupRequest::setAlarmJson(const std::string &alarmJson) {
   setParameter(std::string("AlarmJson"), alarmJson);
 }
 
+std::string UpdateAppGroupRequest::getMonitorContactsJson() const {
+  return monitorContactsJson_;
+}
+
+void UpdateAppGroupRequest::setMonitorContactsJson(const std::string &monitorContactsJson) {
+  monitorContactsJson_ = monitorContactsJson;
+  setParameter(std::string("MonitorContactsJson"), monitorContactsJson);
+}
+
 long UpdateAppGroupRequest::getAppGroupId() const {
   return appGroupId_;
 }
@@ -95,6 +104,15 @@ int UpdateAppGroupRequest::getAppVersion() const {
 void UpdateAppGroupRequest::setAppVersion(int appVersion) {
   appVersion_ = appVersion;
   setParameter(std::string("AppVersion"), std::to_string(appVersion));
+}
+
+std::string UpdateAppGroupRequest::getMonitorConfigJson() const {
+  return monitorConfigJson_;
+}
+
+void UpdateAppGroupRequest::setMonitorConfigJson(const std::string &monitorConfigJson) {
+  monitorConfigJson_ = monitorConfigJson;
+  setParameter(std::string("MonitorConfigJson"), monitorConfigJson);
 }
 
 std::string UpdateAppGroupRequest::get_Namespace() const {

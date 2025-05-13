@@ -43,6 +43,8 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/DeleteAppGroupResult.h
 	include/alibabacloud/schedulerx2/model/DeleteJobRequest.h
 	include/alibabacloud/schedulerx2/model/DeleteJobResult.h
+	include/alibabacloud/schedulerx2/model/DeleteNamespaceRequest.h
+	include/alibabacloud/schedulerx2/model/DeleteNamespaceResult.h
 	include/alibabacloud/schedulerx2/model/DeleteRouteStrategyRequest.h
 	include/alibabacloud/schedulerx2/model/DeleteRouteStrategyResult.h
 	include/alibabacloud/schedulerx2/model/DeleteWorkflowRequest.h
@@ -85,12 +87,16 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/GrantPermissionResult.h
 	include/alibabacloud/schedulerx2/model/ListGroupsRequest.h
 	include/alibabacloud/schedulerx2/model/ListGroupsResult.h
+	include/alibabacloud/schedulerx2/model/ListJobScriptHistoryRequest.h
+	include/alibabacloud/schedulerx2/model/ListJobScriptHistoryResult.h
 	include/alibabacloud/schedulerx2/model/ListJobsRequest.h
 	include/alibabacloud/schedulerx2/model/ListJobsResult.h
 	include/alibabacloud/schedulerx2/model/ListNamespacesRequest.h
 	include/alibabacloud/schedulerx2/model/ListNamespacesResult.h
 	include/alibabacloud/schedulerx2/model/ListWorkflowInstanceRequest.h
 	include/alibabacloud/schedulerx2/model/ListWorkflowInstanceResult.h
+	include/alibabacloud/schedulerx2/model/ReadSchedulerxDesignateDetailRequest.h
+	include/alibabacloud/schedulerx2/model/ReadSchedulerxDesignateDetailResult.h
 	include/alibabacloud/schedulerx2/model/RerunJobRequest.h
 	include/alibabacloud/schedulerx2/model/RerunJobResult.h
 	include/alibabacloud/schedulerx2/model/RetryJobInstanceRequest.h
@@ -107,6 +113,10 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/UpdateAppGroupResult.h
 	include/alibabacloud/schedulerx2/model/UpdateJobRequest.h
 	include/alibabacloud/schedulerx2/model/UpdateJobResult.h
+	include/alibabacloud/schedulerx2/model/UpdateJobScriptRequest.h
+	include/alibabacloud/schedulerx2/model/UpdateJobScriptResult.h
+	include/alibabacloud/schedulerx2/model/UpdateNamespaceRequest.h
+	include/alibabacloud/schedulerx2/model/UpdateNamespaceResult.h
 	include/alibabacloud/schedulerx2/model/UpdateWorkflowRequest.h
 	include/alibabacloud/schedulerx2/model/UpdateWorkflowResult.h
 	include/alibabacloud/schedulerx2/model/UpdateWorkflowDagRequest.h
@@ -136,6 +146,8 @@ set(schedulerx2_src
 	src/model/DeleteAppGroupResult.cc
 	src/model/DeleteJobRequest.cc
 	src/model/DeleteJobResult.cc
+	src/model/DeleteNamespaceRequest.cc
+	src/model/DeleteNamespaceResult.cc
 	src/model/DeleteRouteStrategyRequest.cc
 	src/model/DeleteRouteStrategyResult.cc
 	src/model/DeleteWorkflowRequest.cc
@@ -178,12 +190,16 @@ set(schedulerx2_src
 	src/model/GrantPermissionResult.cc
 	src/model/ListGroupsRequest.cc
 	src/model/ListGroupsResult.cc
+	src/model/ListJobScriptHistoryRequest.cc
+	src/model/ListJobScriptHistoryResult.cc
 	src/model/ListJobsRequest.cc
 	src/model/ListJobsResult.cc
 	src/model/ListNamespacesRequest.cc
 	src/model/ListNamespacesResult.cc
 	src/model/ListWorkflowInstanceRequest.cc
 	src/model/ListWorkflowInstanceResult.cc
+	src/model/ReadSchedulerxDesignateDetailRequest.cc
+	src/model/ReadSchedulerxDesignateDetailResult.cc
 	src/model/RerunJobRequest.cc
 	src/model/RerunJobResult.cc
 	src/model/RetryJobInstanceRequest.cc
@@ -200,6 +216,10 @@ set(schedulerx2_src
 	src/model/UpdateAppGroupResult.cc
 	src/model/UpdateJobRequest.cc
 	src/model/UpdateJobResult.cc
+	src/model/UpdateJobScriptRequest.cc
+	src/model/UpdateJobScriptResult.cc
+	src/model/UpdateNamespaceRequest.cc
+	src/model/UpdateNamespaceResult.cc
 	src/model/UpdateWorkflowRequest.cc
 	src/model/UpdateWorkflowResult.cc
 	src/model/UpdateWorkflowDagRequest.cc

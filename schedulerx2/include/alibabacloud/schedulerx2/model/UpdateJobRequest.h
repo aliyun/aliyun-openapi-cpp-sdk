@@ -54,6 +54,8 @@ public:
 	void setDataOffset(int dataOffset);
 	int getDispatcherSize() const;
 	void setDispatcherSize(int dispatcherSize);
+	int getPriority() const;
+	void setPriority(int priority);
 	int getTaskAttemptInterval() const;
 	void setTaskAttemptInterval(int taskAttemptInterval);
 	std::string getExecuteMode() const;
@@ -123,6 +125,7 @@ private:
 	int taskMaxAttempt_;
 	int dataOffset_;
 	int dispatcherSize_;
+	int priority_;
 	int taskAttemptInterval_;
 	std::string executeMode_;
 	std::string timeExpression_;

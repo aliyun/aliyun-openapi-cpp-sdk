@@ -34,15 +34,6 @@ void GrantPermissionRequest::setNamespaceSource(const std::string &namespaceSour
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string GrantPermissionRequest::getGroupId() const {
-  return groupId_;
-}
-
-void GrantPermissionRequest::setGroupId(const std::string &groupId) {
-  groupId_ = groupId;
-  setParameter(std::string("GroupId"), groupId);
-}
-
 std::string GrantPermissionRequest::getUserId() const {
   return userId_;
 }
@@ -68,6 +59,15 @@ std::string GrantPermissionRequest::getRegionId() const {
 void GrantPermissionRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string GrantPermissionRequest::getGroupId() const {
+  return groupId_;
+}
+
+void GrantPermissionRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
 std::string GrantPermissionRequest::get_Namespace() const {

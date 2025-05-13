@@ -53,6 +53,12 @@ void GetWorkFlowResult::parse(const std::string &payload)
 		data_.workFlowInfo.timeType = workFlowInfoNode["TimeType"].asString();
 	if(!workFlowInfoNode["TimeExpression"].isNull())
 		data_.workFlowInfo.timeExpression = workFlowInfoNode["TimeExpression"].asString();
+	if(!workFlowInfoNode["GroupId"].isNull())
+		data_.workFlowInfo.groupId = workFlowInfoNode["GroupId"].asString();
+	if(!workFlowInfoNode["Namespace"].isNull())
+		data_.workFlowInfo._namespace = workFlowInfoNode["Namespace"].asString();
+	if(!workFlowInfoNode["MaxConcurrency"].isNull())
+		data_.workFlowInfo.maxConcurrency = workFlowInfoNode["MaxConcurrency"].asString();
 	auto workFlowNodeInfoNode = dataNode["WorkFlowNodeInfo"];
 	auto allNodesNode = workFlowNodeInfoNode["Nodes"]["Node"];
 	for (auto workFlowNodeInfoNodeNodesNode : allNodesNode)
