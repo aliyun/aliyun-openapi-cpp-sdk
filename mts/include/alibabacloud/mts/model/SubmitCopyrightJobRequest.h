@@ -34,8 +34,8 @@ public:
 	void setVisibleMessage(const std::string &visibleMessage);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	std::string getStartTime() const;
-	void setStartTime(const std::string &startTime);
+	long getStartTime() const;
+	void setStartTime(long startTime);
 	std::string getOutput() const;
 	void setOutput(const std::string &output);
 	std::string getUserData() const;
@@ -50,15 +50,15 @@ public:
 	void setUrl(const std::string &url);
 	std::string getInput() const;
 	void setInput(const std::string &input);
-	std::string getTotalTime() const;
-	void setTotalTime(const std::string &totalTime);
+	long getTotalTime() const;
+	void setTotalTime(long totalTime);
 	std::string getCallBack() const;
 	void setCallBack(const std::string &callBack);
 
 private:
 	std::string visibleMessage_;
 	std::string description_;
-	std::string startTime_;
+	long startTime_;
 	std::string output_;
 	std::string userData_;
 	long level_;
@@ -66,7 +66,7 @@ private:
 	std::string params_;
 	std::string url_;
 	std::string input_;
-	std::string totalTime_;
+	long totalTime_;
 	std::string callBack_;
 };
 } // namespace Model

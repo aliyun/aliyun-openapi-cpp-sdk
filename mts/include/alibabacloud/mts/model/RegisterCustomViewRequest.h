@@ -32,6 +32,8 @@ public:
 	~RegisterCustomViewRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getLabelPrompt() const;
+	void setLabelPrompt(const std::string &labelPrompt);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getAlgorithm() const;
@@ -51,6 +53,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string labelPrompt_;
 	std::string accessKeyId_;
 	std::string algorithm_;
 	std::string customGroupId_;

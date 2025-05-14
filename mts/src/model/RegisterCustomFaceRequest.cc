@@ -61,6 +61,15 @@ void RegisterCustomFaceRequest::setCategoryId(const std::string &categoryId) {
   setParameter(std::string("CategoryId"), categoryId);
 }
 
+std::string RegisterCustomFaceRequest::getPersonName() const {
+  return personName_;
+}
+
+void RegisterCustomFaceRequest::setPersonName(const std::string &personName) {
+  personName_ = personName;
+  setParameter(std::string("PersonName"), personName);
+}
+
 std::string RegisterCustomFaceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

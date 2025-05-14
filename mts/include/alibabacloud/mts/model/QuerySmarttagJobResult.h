@@ -43,6 +43,7 @@ namespace AlibabaCloud
 				explicit QuerySmarttagJobResult(const std::string &payload);
 				~QuerySmarttagJobResult();
 				std::string getJobStatus()const;
+				std::string getMessage()const;
 				std::vector<Result> getResults()const;
 				std::string getUserData()const;
 
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string jobStatus_;
+				std::string message_;
 				std::vector<Result> results_;
 				std::string userData_;
 

@@ -25,13 +25,13 @@ SubmitTraceAbJobRequest::SubmitTraceAbJobRequest()
 
 SubmitTraceAbJobRequest::~SubmitTraceAbJobRequest() {}
 
-std::string SubmitTraceAbJobRequest::getStartTime() const {
+long SubmitTraceAbJobRequest::getStartTime() const {
   return startTime_;
 }
 
-void SubmitTraceAbJobRequest::setStartTime(const std::string &startTime) {
+void SubmitTraceAbJobRequest::setStartTime(long startTime) {
   startTime_ = startTime;
-  setParameter(std::string("StartTime"), startTime);
+  setParameter(std::string("StartTime"), std::to_string(startTime));
 }
 
 std::string SubmitTraceAbJobRequest::getOutput() const {
@@ -88,13 +88,13 @@ void SubmitTraceAbJobRequest::setInput(const std::string &input) {
   setParameter(std::string("Input"), input);
 }
 
-std::string SubmitTraceAbJobRequest::getTotalTime() const {
+long SubmitTraceAbJobRequest::getTotalTime() const {
   return totalTime_;
 }
 
-void SubmitTraceAbJobRequest::setTotalTime(const std::string &totalTime) {
+void SubmitTraceAbJobRequest::setTotalTime(long totalTime) {
   totalTime_ = totalTime;
-  setParameter(std::string("TotalTime"), totalTime);
+  setParameter(std::string("TotalTime"), std::to_string(totalTime));
 }
 
 std::string SubmitTraceAbJobRequest::getCallBack() const {

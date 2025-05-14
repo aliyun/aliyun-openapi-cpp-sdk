@@ -43,13 +43,13 @@ void SubmitCopyrightJobRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
-std::string SubmitCopyrightJobRequest::getStartTime() const {
+long SubmitCopyrightJobRequest::getStartTime() const {
   return startTime_;
 }
 
-void SubmitCopyrightJobRequest::setStartTime(const std::string &startTime) {
+void SubmitCopyrightJobRequest::setStartTime(long startTime) {
   startTime_ = startTime;
-  setParameter(std::string("StartTime"), startTime);
+  setParameter(std::string("StartTime"), std::to_string(startTime));
 }
 
 std::string SubmitCopyrightJobRequest::getOutput() const {
@@ -115,13 +115,13 @@ void SubmitCopyrightJobRequest::setInput(const std::string &input) {
   setParameter(std::string("Input"), input);
 }
 
-std::string SubmitCopyrightJobRequest::getTotalTime() const {
+long SubmitCopyrightJobRequest::getTotalTime() const {
   return totalTime_;
 }
 
-void SubmitCopyrightJobRequest::setTotalTime(const std::string &totalTime) {
+void SubmitCopyrightJobRequest::setTotalTime(long totalTime) {
   totalTime_ = totalTime;
-  setParameter(std::string("TotalTime"), totalTime);
+  setParameter(std::string("TotalTime"), std::to_string(totalTime));
 }
 
 std::string SubmitCopyrightJobRequest::getCallBack() const {

@@ -79,6 +79,15 @@ void UpdateSmarttagTemplateRequest::setScene(const std::string &scene) {
   setParameter(std::string("Scene"), scene);
 }
 
+std::string UpdateSmarttagTemplateRequest::getTemplateConfig() const {
+  return templateConfig_;
+}
+
+void UpdateSmarttagTemplateRequest::setTemplateConfig(const std::string &templateConfig) {
+  templateConfig_ = templateConfig;
+  setParameter(std::string("TemplateConfig"), templateConfig);
+}
+
 std::string UpdateSmarttagTemplateRequest::getFaceCustomParamsConfig() const {
   return faceCustomParamsConfig_;
 }

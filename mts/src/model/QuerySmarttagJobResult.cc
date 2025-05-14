@@ -43,14 +43,16 @@ void QuerySmarttagJobResult::parse(const std::string &payload)
 	for (auto valueResultsResult : allResultsNode)
 	{
 		Result resultsObject;
-		if(!valueResultsResult["Type"].isNull())
-			resultsObject.type = valueResultsResult["Type"].asString();
 		if(!valueResultsResult["Data"].isNull())
 			resultsObject.data = valueResultsResult["Data"].asString();
+		if(!valueResultsResult["Type"].isNull())
+			resultsObject.type = valueResultsResult["Type"].asString();
 		results_.push_back(resultsObject);
 	}
 	if(!value["JobStatus"].isNull())
 		jobStatus_ = value["JobStatus"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["UserData"].isNull())
 		userData_ = value["UserData"].asString();
 
@@ -59,6 +61,11 @@ void QuerySmarttagJobResult::parse(const std::string &payload)
 std::string QuerySmarttagJobResult::getJobStatus()const
 {
 	return jobStatus_;
+}
+
+std::string QuerySmarttagJobResult::getMessage()const
+{
+	return message_;
 }
 
 std::vector<QuerySmarttagJobResult::Result> QuerySmarttagJobResult::getResults()const

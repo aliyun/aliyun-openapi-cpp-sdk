@@ -61,6 +61,15 @@ void AddSmarttagTemplateRequest::setLabelVersion(const std::string &labelVersion
   setParameter(std::string("LabelVersion"), labelVersion);
 }
 
+std::string AddSmarttagTemplateRequest::getLabelCustomParamsConfig() const {
+  return labelCustomParamsConfig_;
+}
+
+void AddSmarttagTemplateRequest::setLabelCustomParamsConfig(const std::string &labelCustomParamsConfig) {
+  labelCustomParamsConfig_ = labelCustomParamsConfig;
+  setParameter(std::string("LabelCustomParamsConfig"), labelCustomParamsConfig);
+}
+
 std::string AddSmarttagTemplateRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -77,6 +86,15 @@ std::string AddSmarttagTemplateRequest::getScene() const {
 void AddSmarttagTemplateRequest::setScene(const std::string &scene) {
   scene_ = scene;
   setParameter(std::string("Scene"), scene);
+}
+
+std::string AddSmarttagTemplateRequest::getTemplateConfig() const {
+  return templateConfig_;
+}
+
+void AddSmarttagTemplateRequest::setTemplateConfig(const std::string &templateConfig) {
+  templateConfig_ = templateConfig;
+  setParameter(std::string("TemplateConfig"), templateConfig);
 }
 
 std::string AddSmarttagTemplateRequest::getFaceCustomParamsConfig() const {
@@ -149,6 +167,15 @@ std::string AddSmarttagTemplateRequest::getOwnerAccount() const {
 void AddSmarttagTemplateRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string AddSmarttagTemplateRequest::getLabelCustomCategoryIds() const {
+  return labelCustomCategoryIds_;
+}
+
+void AddSmarttagTemplateRequest::setLabelCustomCategoryIds(const std::string &labelCustomCategoryIds) {
+  labelCustomCategoryIds_ = labelCustomCategoryIds;
+  setParameter(std::string("LabelCustomCategoryIds"), labelCustomCategoryIds);
 }
 
 std::string AddSmarttagTemplateRequest::getObjectGroupIds() const {

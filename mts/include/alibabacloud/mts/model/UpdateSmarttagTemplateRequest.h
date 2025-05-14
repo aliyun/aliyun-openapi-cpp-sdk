@@ -42,6 +42,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getScene() const;
 	void setScene(const std::string &scene);
+	std::string getTemplateConfig() const;
+	void setTemplateConfig(const std::string &templateConfig);
 	std::string getFaceCustomParamsConfig() const;
 	void setFaceCustomParamsConfig(const std::string &faceCustomParamsConfig);
 	std::string getTemplateName() const;
@@ -76,6 +78,7 @@ private:
 	std::string labelVersion_;
 	std::string accessKeyId_;
 	std::string scene_;
+	std::string templateConfig_;
 	std::string faceCustomParamsConfig_;
 	std::string templateName_;
 	bool isDefault_;

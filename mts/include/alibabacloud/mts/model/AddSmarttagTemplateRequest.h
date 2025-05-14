@@ -38,10 +38,14 @@ public:
 	void setIndustry(const std::string &industry);
 	std::string getLabelVersion() const;
 	void setLabelVersion(const std::string &labelVersion);
+	std::string getLabelCustomParamsConfig() const;
+	void setLabelCustomParamsConfig(const std::string &labelCustomParamsConfig);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getScene() const;
 	void setScene(const std::string &scene);
+	std::string getTemplateConfig() const;
+	void setTemplateConfig(const std::string &templateConfig);
 	std::string getFaceCustomParamsConfig() const;
 	void setFaceCustomParamsConfig(const std::string &faceCustomParamsConfig);
 	std::string getTemplateName() const;
@@ -58,6 +62,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getLabelCustomCategoryIds() const;
+	void setLabelCustomCategoryIds(const std::string &labelCustomCategoryIds);
 	std::string getObjectGroupIds() const;
 	void setObjectGroupIds(const std::string &objectGroupIds);
 	long getOwnerId() const;
@@ -72,8 +78,10 @@ private:
 	std::string knowledgeConfig_;
 	std::string industry_;
 	std::string labelVersion_;
+	std::string labelCustomParamsConfig_;
 	std::string accessKeyId_;
 	std::string scene_;
+	std::string templateConfig_;
 	std::string faceCustomParamsConfig_;
 	std::string templateName_;
 	bool isDefault_;
@@ -82,6 +90,7 @@ private:
 	std::string landmarkGroupIds_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::string labelCustomCategoryIds_;
 	std::string objectGroupIds_;
 	long ownerId_;
 	std::string analyseTypes_;

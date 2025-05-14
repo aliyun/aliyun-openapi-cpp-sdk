@@ -34,6 +34,15 @@ void RegisterCustomViewRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string RegisterCustomViewRequest::getLabelPrompt() const {
+  return labelPrompt_;
+}
+
+void RegisterCustomViewRequest::setLabelPrompt(const std::string &labelPrompt) {
+  labelPrompt_ = labelPrompt;
+  setParameter(std::string("LabelPrompt"), labelPrompt);
+}
+
 std::string RegisterCustomViewRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

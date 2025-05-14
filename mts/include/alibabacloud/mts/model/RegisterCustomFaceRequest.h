@@ -38,6 +38,8 @@ public:
 	void setPersonId(const std::string &personId);
 	std::string getCategoryId() const;
 	void setCategoryId(const std::string &categoryId);
+	std::string getPersonName() const;
+	void setPersonName(const std::string &personName);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -52,6 +54,7 @@ private:
 	std::string accessKeyId_;
 	std::string personId_;
 	std::string categoryId_;
+	std::string personName_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
