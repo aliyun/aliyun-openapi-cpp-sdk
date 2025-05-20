@@ -49,6 +49,8 @@ set(mseap_public_header_model
 	include/alibabacloud/mseap/model/PushRpaTaskResult.h
 	include/alibabacloud/mseap/model/PushRpaTaskDetailRequest.h
 	include/alibabacloud/mseap/model/PushRpaTaskDetailResult.h
+	include/alibabacloud/mseap/model/SendNotificationForPartnerRequest.h
+	include/alibabacloud/mseap/model/SendNotificationForPartnerResult.h
 	include/alibabacloud/mseap/model/SetRedisValueRequest.h
 	include/alibabacloud/mseap/model/SetRedisValueResult.h
 	include/alibabacloud/mseap/model/UpdateAgreementStatusRequest.h
@@ -84,6 +86,8 @@ set(mseap_src
 	src/model/PushRpaTaskResult.cc
 	src/model/PushRpaTaskDetailRequest.cc
 	src/model/PushRpaTaskDetailResult.cc
+	src/model/SendNotificationForPartnerRequest.cc
+	src/model/SendNotificationForPartnerResult.cc
 	src/model/SetRedisValueRequest.cc
 	src/model/SetRedisValueResult.cc
 	src/model/UpdateAgreementStatusRequest.cc

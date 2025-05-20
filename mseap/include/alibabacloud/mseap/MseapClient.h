@@ -50,6 +50,8 @@
 #include "model/PushRpaTaskResult.h"
 #include "model/PushRpaTaskDetailRequest.h"
 #include "model/PushRpaTaskDetailResult.h"
+#include "model/SendNotificationForPartnerRequest.h"
+#include "model/SendNotificationForPartnerResult.h"
 #include "model/SetRedisValueRequest.h"
 #include "model/SetRedisValueResult.h"
 #include "model/UpdateAgreementStatusRequest.h"
@@ -105,6 +107,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PushRpaTaskDetailResult> PushRpaTaskDetailOutcome;
 			typedef std::future<PushRpaTaskDetailOutcome> PushRpaTaskDetailOutcomeCallable;
 			typedef std::function<void(const MseapClient*, const Model::PushRpaTaskDetailRequest&, const PushRpaTaskDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PushRpaTaskDetailAsyncHandler;
+			typedef Outcome<Error, Model::SendNotificationForPartnerResult> SendNotificationForPartnerOutcome;
+			typedef std::future<SendNotificationForPartnerOutcome> SendNotificationForPartnerOutcomeCallable;
+			typedef std::function<void(const MseapClient*, const Model::SendNotificationForPartnerRequest&, const SendNotificationForPartnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendNotificationForPartnerAsyncHandler;
 			typedef Outcome<Error, Model::SetRedisValueResult> SetRedisValueOutcome;
 			typedef std::future<SetRedisValueOutcome> SetRedisValueOutcomeCallable;
 			typedef std::function<void(const MseapClient*, const Model::SetRedisValueRequest&, const SetRedisValueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetRedisValueAsyncHandler;
@@ -158,6 +163,9 @@ namespace AlibabaCloud
 			PushRpaTaskDetailOutcome pushRpaTaskDetail(const Model::PushRpaTaskDetailRequest &request)const;
 			void pushRpaTaskDetailAsync(const Model::PushRpaTaskDetailRequest& request, const PushRpaTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PushRpaTaskDetailOutcomeCallable pushRpaTaskDetailCallable(const Model::PushRpaTaskDetailRequest& request) const;
+			SendNotificationForPartnerOutcome sendNotificationForPartner(const Model::SendNotificationForPartnerRequest &request)const;
+			void sendNotificationForPartnerAsync(const Model::SendNotificationForPartnerRequest& request, const SendNotificationForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SendNotificationForPartnerOutcomeCallable sendNotificationForPartnerCallable(const Model::SendNotificationForPartnerRequest& request) const;
 			SetRedisValueOutcome setRedisValue(const Model::SetRedisValueRequest &request)const;
 			void setRedisValueAsync(const Model::SetRedisValueRequest& request, const SetRedisValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetRedisValueOutcomeCallable setRedisValueCallable(const Model::SetRedisValueRequest& request) const;

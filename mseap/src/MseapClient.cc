@@ -555,6 +555,42 @@ MseapClient::PushRpaTaskDetailOutcomeCallable MseapClient::pushRpaTaskDetailCall
 	return task->get_future();
 }
 
+MseapClient::SendNotificationForPartnerOutcome MseapClient::sendNotificationForPartner(const SendNotificationForPartnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendNotificationForPartnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendNotificationForPartnerOutcome(SendNotificationForPartnerResult(outcome.result()));
+	else
+		return SendNotificationForPartnerOutcome(outcome.error());
+}
+
+void MseapClient::sendNotificationForPartnerAsync(const SendNotificationForPartnerRequest& request, const SendNotificationForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendNotificationForPartner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseapClient::SendNotificationForPartnerOutcomeCallable MseapClient::sendNotificationForPartnerCallable(const SendNotificationForPartnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendNotificationForPartnerOutcome()>>(
+			[this, request]()
+			{
+			return this->sendNotificationForPartner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseapClient::SetRedisValueOutcome MseapClient::setRedisValue(const SetRedisValueRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
