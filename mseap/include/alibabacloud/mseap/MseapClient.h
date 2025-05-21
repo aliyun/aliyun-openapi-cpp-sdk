@@ -34,6 +34,8 @@
 #include "model/GetNodeByFlowIdResult.h"
 #include "model/GetNodeByTemplateIdRequest.h"
 #include "model/GetNodeByTemplateIdResult.h"
+#include "model/GetPlatformUserInfoForPartnerRequest.h"
+#include "model/GetPlatformUserInfoForPartnerResult.h"
 #include "model/GetProxyByTypeRequest.h"
 #include "model/GetProxyByTypeResult.h"
 #include "model/GetRedisValueRequest.h"
@@ -83,6 +85,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetNodeByTemplateIdResult> GetNodeByTemplateIdOutcome;
 			typedef std::future<GetNodeByTemplateIdOutcome> GetNodeByTemplateIdOutcomeCallable;
 			typedef std::function<void(const MseapClient*, const Model::GetNodeByTemplateIdRequest&, const GetNodeByTemplateIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNodeByTemplateIdAsyncHandler;
+			typedef Outcome<Error, Model::GetPlatformUserInfoForPartnerResult> GetPlatformUserInfoForPartnerOutcome;
+			typedef std::future<GetPlatformUserInfoForPartnerOutcome> GetPlatformUserInfoForPartnerOutcomeCallable;
+			typedef std::function<void(const MseapClient*, const Model::GetPlatformUserInfoForPartnerRequest&, const GetPlatformUserInfoForPartnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPlatformUserInfoForPartnerAsyncHandler;
 			typedef Outcome<Error, Model::GetProxyByTypeResult> GetProxyByTypeOutcome;
 			typedef std::future<GetProxyByTypeOutcome> GetProxyByTypeOutcomeCallable;
 			typedef std::function<void(const MseapClient*, const Model::GetProxyByTypeRequest&, const GetProxyByTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProxyByTypeAsyncHandler;
@@ -139,6 +144,9 @@ namespace AlibabaCloud
 			GetNodeByTemplateIdOutcome getNodeByTemplateId(const Model::GetNodeByTemplateIdRequest &request)const;
 			void getNodeByTemplateIdAsync(const Model::GetNodeByTemplateIdRequest& request, const GetNodeByTemplateIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetNodeByTemplateIdOutcomeCallable getNodeByTemplateIdCallable(const Model::GetNodeByTemplateIdRequest& request) const;
+			GetPlatformUserInfoForPartnerOutcome getPlatformUserInfoForPartner(const Model::GetPlatformUserInfoForPartnerRequest &request)const;
+			void getPlatformUserInfoForPartnerAsync(const Model::GetPlatformUserInfoForPartnerRequest& request, const GetPlatformUserInfoForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPlatformUserInfoForPartnerOutcomeCallable getPlatformUserInfoForPartnerCallable(const Model::GetPlatformUserInfoForPartnerRequest& request) const;
 			GetProxyByTypeOutcome getProxyByType(const Model::GetProxyByTypeRequest &request)const;
 			void getProxyByTypeAsync(const Model::GetProxyByTypeRequest& request, const GetProxyByTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetProxyByTypeOutcomeCallable getProxyByTypeCallable(const Model::GetProxyByTypeRequest& request) const;

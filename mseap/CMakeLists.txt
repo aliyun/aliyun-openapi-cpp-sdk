@@ -33,6 +33,8 @@ set(mseap_public_header_model
 	include/alibabacloud/mseap/model/GetNodeByFlowIdResult.h
 	include/alibabacloud/mseap/model/GetNodeByTemplateIdRequest.h
 	include/alibabacloud/mseap/model/GetNodeByTemplateIdResult.h
+	include/alibabacloud/mseap/model/GetPlatformUserInfoForPartnerRequest.h
+	include/alibabacloud/mseap/model/GetPlatformUserInfoForPartnerResult.h
 	include/alibabacloud/mseap/model/GetProxyByTypeRequest.h
 	include/alibabacloud/mseap/model/GetProxyByTypeResult.h
 	include/alibabacloud/mseap/model/GetRedisValueRequest.h
@@ -70,6 +72,8 @@ set(mseap_src
 	src/model/GetNodeByFlowIdResult.cc
 	src/model/GetNodeByTemplateIdRequest.cc
 	src/model/GetNodeByTemplateIdResult.cc
+	src/model/GetPlatformUserInfoForPartnerRequest.cc
+	src/model/GetPlatformUserInfoForPartnerResult.cc
 	src/model/GetProxyByTypeRequest.cc
 	src/model/GetProxyByTypeResult.cc
 	src/model/GetRedisValueRequest.cc

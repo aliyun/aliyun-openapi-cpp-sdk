@@ -267,6 +267,42 @@ MseapClient::GetNodeByTemplateIdOutcomeCallable MseapClient::getNodeByTemplateId
 	return task->get_future();
 }
 
+MseapClient::GetPlatformUserInfoForPartnerOutcome MseapClient::getPlatformUserInfoForPartner(const GetPlatformUserInfoForPartnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPlatformUserInfoForPartnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPlatformUserInfoForPartnerOutcome(GetPlatformUserInfoForPartnerResult(outcome.result()));
+	else
+		return GetPlatformUserInfoForPartnerOutcome(outcome.error());
+}
+
+void MseapClient::getPlatformUserInfoForPartnerAsync(const GetPlatformUserInfoForPartnerRequest& request, const GetPlatformUserInfoForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPlatformUserInfoForPartner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseapClient::GetPlatformUserInfoForPartnerOutcomeCallable MseapClient::getPlatformUserInfoForPartnerCallable(const GetPlatformUserInfoForPartnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPlatformUserInfoForPartnerOutcome()>>(
+			[this, request]()
+			{
+			return this->getPlatformUserInfoForPartner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseapClient::GetProxyByTypeOutcome MseapClient::getProxyByType(const GetProxyByTypeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
