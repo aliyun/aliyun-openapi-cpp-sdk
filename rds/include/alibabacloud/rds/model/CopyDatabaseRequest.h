@@ -30,6 +30,8 @@ class ALIBABACLOUD_RDS_EXPORT CopyDatabaseRequest : public RpcServiceRequest {
 public:
 	CopyDatabaseRequest();
 	~CopyDatabaseRequest();
+	std::string getDBInstanceName() const;
+	void setDBInstanceName(const std::string &dBInstanceName);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
@@ -38,18 +40,28 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getReserveAccount() const;
+	void setReserveAccount(int reserveAccount);
+	std::string getSrcDBName() const;
+	void setSrcDBName(const std::string &srcDBName);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getDstDBName() const;
+	void setDstDBName(const std::string &dstDBName);
 
 private:
+	std::string dBInstanceName_;
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	int reserveAccount_;
+	std::string srcDBName_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
+	std::string dstDBName_;
 };
 } // namespace Model
 } // namespace Rds

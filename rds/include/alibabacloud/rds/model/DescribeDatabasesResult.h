@@ -42,8 +42,8 @@ namespace AlibabaCloud
 					};
 					std::string connLimit;
 					std::string characterSetName;
-					std::string resourceGroupId;
 					int pageSize;
+					std::string resourceGroupId;
 					std::vector<std::string> runtimeInfo;
 					std::string tablespace;
 					std::string dBDescription;

@@ -43,68 +43,68 @@ void DescribeMarketingActivityResult::parse(const std::string &payload)
 	for (auto valueItemsItemsItem : allItemsNode)
 	{
 		ItemsItem itemsObject;
-		if(!valueItemsItemsItem["InstanceId"].isNull())
-			itemsObject.instanceId = valueItemsItemsItem["InstanceId"].asString();
-		if(!valueItemsItemsItem["InstanceName"].isNull())
-			itemsObject.instanceName = valueItemsItemsItem["InstanceName"].asString();
-		if(!valueItemsItemsItem["ClassCode"].isNull())
-			itemsObject.classCode = valueItemsItemsItem["ClassCode"].asString();
-		if(!valueItemsItemsItem["DiskSize"].isNull())
-			itemsObject.diskSize = std::stoi(valueItemsItemsItem["DiskSize"].asString());
-		if(!valueItemsItemsItem["Memory"].isNull())
-			itemsObject.memory = std::stol(valueItemsItemsItem["Memory"].asString());
-		if(!valueItemsItemsItem["Cpu"].isNull())
-			itemsObject.cpu = valueItemsItemsItem["Cpu"].asString();
 		if(!valueItemsItemsItem["Category"].isNull())
 			itemsObject.category = valueItemsItemsItem["Category"].asString();
-		if(!valueItemsItemsItem["StorageType"].isNull())
-			itemsObject.storageType = valueItemsItemsItem["StorageType"].asString();
-		if(!valueItemsItemsItem["ClassGroup"].isNull())
-			itemsObject.classGroup = valueItemsItemsItem["ClassGroup"].asString();
-		if(!valueItemsItemsItem["MaxIombps"].isNull())
-			itemsObject.maxIombps = std::stoi(valueItemsItemsItem["MaxIombps"].asString());
-		if(!valueItemsItemsItem["MaxIops"].isNull())
-			itemsObject.maxIops = std::stoi(valueItemsItemsItem["MaxIops"].asString());
-		if(!valueItemsItemsItem["MaxConnections"].isNull())
-			itemsObject.maxConnections = std::stoi(valueItemsItemsItem["MaxConnections"].asString());
-		if(!valueItemsItemsItem["UpgradeClassCode"].isNull())
-			itemsObject.upgradeClassCode = valueItemsItemsItem["UpgradeClassCode"].asString();
-		if(!valueItemsItemsItem["UpgradeDiskSize"].isNull())
-			itemsObject.upgradeDiskSize = std::stoi(valueItemsItemsItem["UpgradeDiskSize"].asString());
-		if(!valueItemsItemsItem["UpgradeMemory"].isNull())
-			itemsObject.upgradeMemory = std::stol(valueItemsItemsItem["UpgradeMemory"].asString());
-		if(!valueItemsItemsItem["UpgradeCpu"].isNull())
-			itemsObject.upgradeCpu = valueItemsItemsItem["UpgradeCpu"].asString();
-		if(!valueItemsItemsItem["UpgradeCategory"].isNull())
-			itemsObject.upgradeCategory = valueItemsItemsItem["UpgradeCategory"].asString();
-		if(!valueItemsItemsItem["UpgradeStorageType"].isNull())
-			itemsObject.upgradeStorageType = valueItemsItemsItem["UpgradeStorageType"].asString();
-		if(!valueItemsItemsItem["UpgradeClassGroup"].isNull())
-			itemsObject.upgradeClassGroup = valueItemsItemsItem["UpgradeClassGroup"].asString();
-		if(!valueItemsItemsItem["UpgradeMaxIombps"].isNull())
-			itemsObject.upgradeMaxIombps = std::stoi(valueItemsItemsItem["UpgradeMaxIombps"].asString());
-		if(!valueItemsItemsItem["UpgradeMaxIops"].isNull())
-			itemsObject.upgradeMaxIops = std::stoi(valueItemsItemsItem["UpgradeMaxIops"].asString());
-		if(!valueItemsItemsItem["UpgradeMaxConnections"].isNull())
-			itemsObject.upgradeMaxConnections = std::stoi(valueItemsItemsItem["UpgradeMaxConnections"].asString());
-		if(!valueItemsItemsItem["UpgradeDescContent"].isNull())
-			itemsObject.upgradeDescContent = valueItemsItemsItem["UpgradeDescContent"].asString();
-		if(!valueItemsItemsItem["UpgradeReferencePrice"].isNull())
-			itemsObject.upgradeReferencePrice = valueItemsItemsItem["UpgradeReferencePrice"].asString();
 		if(!valueItemsItemsItem["ChargeType"].isNull())
 			itemsObject.chargeType = valueItemsItemsItem["ChargeType"].asString();
+		if(!valueItemsItemsItem["ClassCode"].isNull())
+			itemsObject.classCode = valueItemsItemsItem["ClassCode"].asString();
+		if(!valueItemsItemsItem["ClassGroup"].isNull())
+			itemsObject.classGroup = valueItemsItemsItem["ClassGroup"].asString();
+		if(!valueItemsItemsItem["Cpu"].isNull())
+			itemsObject.cpu = valueItemsItemsItem["Cpu"].asString();
+		if(!valueItemsItemsItem["DiskSize"].isNull())
+			itemsObject.diskSize = std::stoi(valueItemsItemsItem["DiskSize"].asString());
 		if(!valueItemsItemsItem["Engine"].isNull())
 			itemsObject.engine = valueItemsItemsItem["Engine"].asString();
 		if(!valueItemsItemsItem["EngineVersion"].isNull())
 			itemsObject.engineVersion = valueItemsItemsItem["EngineVersion"].asString();
+		if(!valueItemsItemsItem["InstanceId"].isNull())
+			itemsObject.instanceId = valueItemsItemsItem["InstanceId"].asString();
+		if(!valueItemsItemsItem["InstanceName"].isNull())
+			itemsObject.instanceName = valueItemsItemsItem["InstanceName"].asString();
+		if(!valueItemsItemsItem["MaxConnections"].isNull())
+			itemsObject.maxConnections = std::stoi(valueItemsItemsItem["MaxConnections"].asString());
+		if(!valueItemsItemsItem["MaxIombps"].isNull())
+			itemsObject.maxIombps = std::stoi(valueItemsItemsItem["MaxIombps"].asString());
+		if(!valueItemsItemsItem["MaxIops"].isNull())
+			itemsObject.maxIops = std::stoi(valueItemsItemsItem["MaxIops"].asString());
+		if(!valueItemsItemsItem["Memory"].isNull())
+			itemsObject.memory = std::stol(valueItemsItemsItem["Memory"].asString());
+		if(!valueItemsItemsItem["StorageType"].isNull())
+			itemsObject.storageType = valueItemsItemsItem["StorageType"].asString();
+		if(!valueItemsItemsItem["UpgradeCategory"].isNull())
+			itemsObject.upgradeCategory = valueItemsItemsItem["UpgradeCategory"].asString();
+		if(!valueItemsItemsItem["UpgradeClassCode"].isNull())
+			itemsObject.upgradeClassCode = valueItemsItemsItem["UpgradeClassCode"].asString();
+		if(!valueItemsItemsItem["UpgradeClassGroup"].isNull())
+			itemsObject.upgradeClassGroup = valueItemsItemsItem["UpgradeClassGroup"].asString();
+		if(!valueItemsItemsItem["UpgradeCpu"].isNull())
+			itemsObject.upgradeCpu = valueItemsItemsItem["UpgradeCpu"].asString();
+		if(!valueItemsItemsItem["UpgradeDescContent"].isNull())
+			itemsObject.upgradeDescContent = valueItemsItemsItem["UpgradeDescContent"].asString();
+		if(!valueItemsItemsItem["UpgradeDiskSize"].isNull())
+			itemsObject.upgradeDiskSize = std::stoi(valueItemsItemsItem["UpgradeDiskSize"].asString());
+		if(!valueItemsItemsItem["UpgradeMaxConnections"].isNull())
+			itemsObject.upgradeMaxConnections = std::stoi(valueItemsItemsItem["UpgradeMaxConnections"].asString());
+		if(!valueItemsItemsItem["UpgradeMaxIombps"].isNull())
+			itemsObject.upgradeMaxIombps = std::stoi(valueItemsItemsItem["UpgradeMaxIombps"].asString());
+		if(!valueItemsItemsItem["UpgradeMaxIops"].isNull())
+			itemsObject.upgradeMaxIops = std::stoi(valueItemsItemsItem["UpgradeMaxIops"].asString());
+		if(!valueItemsItemsItem["UpgradeMemory"].isNull())
+			itemsObject.upgradeMemory = std::stol(valueItemsItemsItem["UpgradeMemory"].asString());
+		if(!valueItemsItemsItem["UpgradeReferencePrice"].isNull())
+			itemsObject.upgradeReferencePrice = valueItemsItemsItem["UpgradeReferencePrice"].asString();
+		if(!valueItemsItemsItem["UpgradeStorageType"].isNull())
+			itemsObject.upgradeStorageType = valueItemsItemsItem["UpgradeStorageType"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["AliUid"].isNull())
 		aliUid_ = std::stol(value["AliUid"].asString());
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
 	if(!value["Bid"].isNull())
 		bid_ = value["Bid"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 

@@ -43,40 +43,40 @@ void DescribeDBMiniEngineVersionsResult::parse(const std::string &payload)
 	for (auto valueMinorVersionItemsMinorVersionItemsItem : allMinorVersionItemsNode)
 	{
 		MinorVersionItemsItem minorVersionItemsObject;
-		if(!valueMinorVersionItemsMinorVersionItemsItem["ReleaseNote"].isNull())
-			minorVersionItemsObject.releaseNote = valueMinorVersionItemsMinorVersionItemsItem["ReleaseNote"].asString();
-		if(!valueMinorVersionItemsMinorVersionItemsItem["NodeType"].isNull())
-			minorVersionItemsObject.nodeType = valueMinorVersionItemsMinorVersionItemsItem["NodeType"].asString();
-		if(!valueMinorVersionItemsMinorVersionItemsItem["IsHotfixVersion"].isNull())
-			minorVersionItemsObject.isHotfixVersion = valueMinorVersionItemsMinorVersionItemsItem["IsHotfixVersion"].asString() == "true";
+		if(!valueMinorVersionItemsMinorVersionItemsItem["CommunityMinorVersion"].isNull())
+			minorVersionItemsObject.communityMinorVersion = valueMinorVersionItemsMinorVersionItemsItem["CommunityMinorVersion"].asString();
 		if(!valueMinorVersionItemsMinorVersionItemsItem["Engine"].isNull())
 			minorVersionItemsObject.engine = valueMinorVersionItemsMinorVersionItemsItem["Engine"].asString();
+		if(!valueMinorVersionItemsMinorVersionItemsItem["EngineVersion"].isNull())
+			minorVersionItemsObject.engineVersion = valueMinorVersionItemsMinorVersionItemsItem["EngineVersion"].asString();
+		if(!valueMinorVersionItemsMinorVersionItemsItem["ExpireDate"].isNull())
+			minorVersionItemsObject.expireDate = valueMinorVersionItemsMinorVersionItemsItem["ExpireDate"].asString();
+		if(!valueMinorVersionItemsMinorVersionItemsItem["ExpireStatus"].isNull())
+			minorVersionItemsObject.expireStatus = valueMinorVersionItemsMinorVersionItemsItem["ExpireStatus"].asString();
+		if(!valueMinorVersionItemsMinorVersionItemsItem["IsHotfixVersion"].isNull())
+			minorVersionItemsObject.isHotfixVersion = valueMinorVersionItemsMinorVersionItemsItem["IsHotfixVersion"].asString() == "true";
+		if(!valueMinorVersionItemsMinorVersionItemsItem["MinorVersion"].isNull())
+			minorVersionItemsObject.minorVersion = valueMinorVersionItemsMinorVersionItemsItem["MinorVersion"].asString();
+		if(!valueMinorVersionItemsMinorVersionItemsItem["NodeType"].isNull())
+			minorVersionItemsObject.nodeType = valueMinorVersionItemsMinorVersionItemsItem["NodeType"].asString();
+		if(!valueMinorVersionItemsMinorVersionItemsItem["ReleaseNote"].isNull())
+			minorVersionItemsObject.releaseNote = valueMinorVersionItemsMinorVersionItemsItem["ReleaseNote"].asString();
 		if(!valueMinorVersionItemsMinorVersionItemsItem["ReleaseType"].isNull())
 			minorVersionItemsObject.releaseType = valueMinorVersionItemsMinorVersionItemsItem["ReleaseType"].asString();
 		if(!valueMinorVersionItemsMinorVersionItemsItem["StatusDesc"].isNull())
 			minorVersionItemsObject.statusDesc = valueMinorVersionItemsMinorVersionItemsItem["StatusDesc"].asString();
-		if(!valueMinorVersionItemsMinorVersionItemsItem["EngineVersion"].isNull())
-			minorVersionItemsObject.engineVersion = valueMinorVersionItemsMinorVersionItemsItem["EngineVersion"].asString();
-		if(!valueMinorVersionItemsMinorVersionItemsItem["MinorVersion"].isNull())
-			minorVersionItemsObject.minorVersion = valueMinorVersionItemsMinorVersionItemsItem["MinorVersion"].asString();
-		if(!valueMinorVersionItemsMinorVersionItemsItem["CommunityMinorVersion"].isNull())
-			minorVersionItemsObject.communityMinorVersion = valueMinorVersionItemsMinorVersionItemsItem["CommunityMinorVersion"].asString();
 		if(!valueMinorVersionItemsMinorVersionItemsItem["Tag"].isNull())
 			minorVersionItemsObject.tag = valueMinorVersionItemsMinorVersionItemsItem["Tag"].asString();
-		if(!valueMinorVersionItemsMinorVersionItemsItem["ExpireStatus"].isNull())
-			minorVersionItemsObject.expireStatus = valueMinorVersionItemsMinorVersionItemsItem["ExpireStatus"].asString();
-		if(!valueMinorVersionItemsMinorVersionItemsItem["ExpireDate"].isNull())
-			minorVersionItemsObject.expireDate = valueMinorVersionItemsMinorVersionItemsItem["ExpireDate"].asString();
 		minorVersionItems_.push_back(minorVersionItemsObject);
 	}
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumbers"].isNull())
-		pageNumbers_ = std::stoi(value["PageNumbers"].asString());
 	if(!value["MaxRecordsPerPage"].isNull())
 		maxRecordsPerPage_ = std::stoi(value["MaxRecordsPerPage"].asString());
+	if(!value["PageNumbers"].isNull())
+		pageNumbers_ = std::stoi(value["PageNumbers"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

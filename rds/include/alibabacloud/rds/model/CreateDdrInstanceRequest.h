@@ -52,6 +52,8 @@ public:
 	void setPeriod(const std::string &period);
 	std::string getBackupSetId() const;
 	void setBackupSetId(const std::string &backupSetId);
+	std::string getEncryptionKey() const;
+	void setEncryptionKey(const std::string &encryptionKey);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getDBInstanceClass() const;
@@ -64,6 +66,8 @@ public:
 	void setPrivateIpAddress(const std::string &privateIpAddress);
 	std::string getBinlogName() const;
 	void setBinlogName(const std::string &binlogName);
+	std::string getRoleARN() const;
+	void setRoleARN(const std::string &roleARN);
 	std::string getTunnelId() const;
 	void setTunnelId(const std::string &tunnelId);
 	std::string getZoneId() const;
@@ -123,12 +127,14 @@ private:
 	std::string backupSetRegion_;
 	std::string period_;
 	std::string backupSetId_;
+	std::string encryptionKey_;
 	long ownerId_;
 	std::string dBInstanceClass_;
 	std::string securityIPList_;
 	std::string vSwitchId_;
 	std::string privateIpAddress_;
 	std::string binlogName_;
+	std::string roleARN_;
 	std::string tunnelId_;
 	std::string zoneId_;
 	std::string instanceNetworkType_;

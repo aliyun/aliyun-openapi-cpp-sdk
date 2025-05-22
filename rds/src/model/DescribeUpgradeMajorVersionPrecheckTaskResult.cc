@@ -57,6 +57,14 @@ void DescribeUpgradeMajorVersionPrecheckTaskResult::parse(const std::string &pay
 			itemsObject.detail = valueItemsTasks["Detail"].asString();
 		if(!valueItemsTasks["CheckTime"].isNull())
 			itemsObject.checkTime = valueItemsTasks["CheckTime"].asString();
+		if(!valueItemsTasks["RecommendDiskSize"].isNull())
+			itemsObject.recommendDiskSize = std::stoi(valueItemsTasks["RecommendDiskSize"].asString());
+		if(!valueItemsTasks["RecommendLeastMemSize"].isNull())
+			itemsObject.recommendLeastMemSize = std::stoi(valueItemsTasks["RecommendLeastMemSize"].asString());
+		if(!valueItemsTasks["RecommendMemSize"].isNull())
+			itemsObject.recommendMemSize = std::stoi(valueItemsTasks["RecommendMemSize"].asString());
+		if(!valueItemsTasks["UpgradeMode"].isNull())
+			itemsObject.upgradeMode = valueItemsTasks["UpgradeMode"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

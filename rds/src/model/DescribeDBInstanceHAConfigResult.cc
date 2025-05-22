@@ -43,20 +43,20 @@ void DescribeDBInstanceHAConfigResult::parse(const std::string &payload)
 	for (auto valueHostInstanceInfosNodeInfo : allHostInstanceInfosNode)
 	{
 		NodeInfo hostInstanceInfosObject;
-		if(!valueHostInstanceInfosNodeInfo["LogSyncTime"].isNull())
-			hostInstanceInfosObject.logSyncTime = valueHostInstanceInfosNodeInfo["LogSyncTime"].asString();
-		if(!valueHostInstanceInfosNodeInfo["NodeType"].isNull())
-			hostInstanceInfosObject.nodeType = valueHostInstanceInfosNodeInfo["NodeType"].asString();
-		if(!valueHostInstanceInfosNodeInfo["ZoneId"].isNull())
-			hostInstanceInfosObject.zoneId = valueHostInstanceInfosNodeInfo["ZoneId"].asString();
-		if(!valueHostInstanceInfosNodeInfo["SyncStatus"].isNull())
-			hostInstanceInfosObject.syncStatus = valueHostInstanceInfosNodeInfo["SyncStatus"].asString();
 		if(!valueHostInstanceInfosNodeInfo["DataSyncTime"].isNull())
 			hostInstanceInfosObject.dataSyncTime = valueHostInstanceInfosNodeInfo["DataSyncTime"].asString();
+		if(!valueHostInstanceInfosNodeInfo["LogSyncTime"].isNull())
+			hostInstanceInfosObject.logSyncTime = valueHostInstanceInfosNodeInfo["LogSyncTime"].asString();
 		if(!valueHostInstanceInfosNodeInfo["NodeId"].isNull())
 			hostInstanceInfosObject.nodeId = valueHostInstanceInfosNodeInfo["NodeId"].asString();
+		if(!valueHostInstanceInfosNodeInfo["NodeType"].isNull())
+			hostInstanceInfosObject.nodeType = valueHostInstanceInfosNodeInfo["NodeType"].asString();
 		if(!valueHostInstanceInfosNodeInfo["RegionId"].isNull())
 			hostInstanceInfosObject.regionId = valueHostInstanceInfosNodeInfo["RegionId"].asString();
+		if(!valueHostInstanceInfosNodeInfo["SyncStatus"].isNull())
+			hostInstanceInfosObject.syncStatus = valueHostInstanceInfosNodeInfo["SyncStatus"].asString();
+		if(!valueHostInstanceInfosNodeInfo["ZoneId"].isNull())
+			hostInstanceInfosObject.zoneId = valueHostInstanceInfosNodeInfo["ZoneId"].asString();
 		hostInstanceInfos_.push_back(hostInstanceInfosObject);
 	}
 	if(!value["DBInstanceId"].isNull())

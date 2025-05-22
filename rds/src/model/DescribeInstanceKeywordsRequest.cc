@@ -34,33 +34,6 @@ void DescribeInstanceKeywordsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeInstanceKeywordsRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeInstanceKeywordsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string DescribeInstanceKeywordsRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void DescribeInstanceKeywordsRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long DescribeInstanceKeywordsRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeInstanceKeywordsRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string DescribeInstanceKeywordsRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,5 +59,32 @@ std::string DescribeInstanceKeywordsRequest::getKey() const {
 void DescribeInstanceKeywordsRequest::setKey(const std::string &key) {
   key_ = key;
   setParameter(std::string("Key"), key);
+}
+
+std::string DescribeInstanceKeywordsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeInstanceKeywordsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string DescribeInstanceKeywordsRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void DescribeInstanceKeywordsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long DescribeInstanceKeywordsRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeInstanceKeywordsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

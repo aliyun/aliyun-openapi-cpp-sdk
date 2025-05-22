@@ -34,10 +34,10 @@ public:
 		std::string zoneIDSlave2;
 		std::string engineVersion;
 		std::string dbInstanceClass;
-		std::string vSwitchID;
 		std::string securityIPList;
-		std::string regionID;
+		std::string vSwitchID;
 		std::string engine;
+		std::string regionID;
 		std::string dtsInstanceClass;
 		std::string vpcID;
 		std::string zoneID;

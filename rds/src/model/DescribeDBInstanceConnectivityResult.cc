@@ -39,14 +39,14 @@ void DescribeDBInstanceConnectivityResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DbInstanceName"].isNull())
-		dbInstanceName_ = value["DbInstanceName"].asString();
-	if(!value["ConnCheckResult"].isNull())
-		connCheckResult_ = value["ConnCheckResult"].asString();
 	if(!value["ConnCheckErrorCode"].isNull())
 		connCheckErrorCode_ = value["ConnCheckErrorCode"].asString();
 	if(!value["ConnCheckErrorMessage"].isNull())
 		connCheckErrorMessage_ = value["ConnCheckErrorMessage"].asString();
+	if(!value["ConnCheckResult"].isNull())
+		connCheckResult_ = value["ConnCheckResult"].asString();
+	if(!value["DbInstanceName"].isNull())
+		dbInstanceName_ = value["DbInstanceName"].asString();
 
 }
 

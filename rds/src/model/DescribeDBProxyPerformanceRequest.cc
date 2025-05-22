@@ -79,6 +79,15 @@ void DescribeDBProxyPerformanceRequest::setDBInstanceId(const std::string &dBIns
   setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
+std::string DescribeDBProxyPerformanceRequest::getDimension() const {
+  return dimension_;
+}
+
+void DescribeDBProxyPerformanceRequest::setDimension(const std::string &dimension) {
+  dimension_ = dimension;
+  setParameter(std::string("Dimension"), dimension);
+}
+
 std::string DescribeDBProxyPerformanceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -67,6 +67,18 @@ void DescribeUpgradeMajorVersionTasksResult::parse(const std::string &payload)
 			itemsObject.switchTime = valueItemsTasks["SwitchTime"].asString();
 		if(!valueItemsTasks["Detail"].isNull())
 			itemsObject.detail = valueItemsTasks["Detail"].asString();
+		if(!valueItemsTasks["SwitchEndTime"].isNull())
+			itemsObject.switchEndTime = valueItemsTasks["SwitchEndTime"].asString();
+		if(!valueItemsTasks["totalLogicRepLatencyMB"].isNull())
+			itemsObject.totalLogicRepLatencyMB = std::stoi(valueItemsTasks["totalLogicRepLatencyMB"].asString());
+		if(!valueItemsTasks["totalLogicRepDelayTime"].isNull())
+			itemsObject.totalLogicRepDelayTime = std::stoi(valueItemsTasks["totalLogicRepDelayTime"].asString());
+		if(!valueItemsTasks["zeroDownTimeConnectionString"].isNull())
+			itemsObject.zeroDownTimeConnectionString = valueItemsTasks["zeroDownTimeConnectionString"].asString();
+		if(!valueItemsTasks["zeroDownTimePort"].isNull())
+			itemsObject.zeroDownTimePort = std::stoi(valueItemsTasks["zeroDownTimePort"].asString());
+		if(!valueItemsTasks["cutOver"].isNull())
+			itemsObject.cutOver = valueItemsTasks["cutOver"].asString() == "true";
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

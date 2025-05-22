@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string logSyncTime;
 					std::string nodeType;
-					std::string syncStatus;
 					std::string nodeId;
+					std::string syncStatus;
 					std::string regionId;
 				};
 

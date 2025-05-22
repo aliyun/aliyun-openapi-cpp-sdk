@@ -43,6 +43,15 @@ void TransformDBInstancePayTypeRequest::setClientToken(const std::string &client
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+bool TransformDBInstancePayTypeRequest::getAutoUseCoupon() const {
+  return autoUseCoupon_;
+}
+
+void TransformDBInstancePayTypeRequest::setAutoUseCoupon(bool autoUseCoupon) {
+  autoUseCoupon_ = autoUseCoupon;
+  setParameter(std::string("AutoUseCoupon"), autoUseCoupon ? "true" : "false");
+}
+
 std::string TransformDBInstancePayTypeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -140,6 +149,15 @@ std::string TransformDBInstancePayTypeRequest::getAutoRenew() const {
 void TransformDBInstancePayTypeRequest::setAutoRenew(const std::string &autoRenew) {
   autoRenew_ = autoRenew;
   setParameter(std::string("AutoRenew"), autoRenew);
+}
+
+std::string TransformDBInstancePayTypeRequest::getPromotionCode() const {
+  return promotionCode_;
+}
+
+void TransformDBInstancePayTypeRequest::setPromotionCode(const std::string &promotionCode) {
+  promotionCode_ = promotionCode;
+  setParameter(std::string("PromotionCode"), promotionCode);
 }
 
 std::string TransformDBInstancePayTypeRequest::getPayType() const {

@@ -38,21 +38,21 @@ public:
 	void setConnectionString(const std::string &connectionString);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getDBInstanceEndpointId() const;
-	void setDBInstanceEndpointId(const std::string &dBInstanceEndpointId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getDBInstanceEndpointId() const;
+	void setDBInstanceEndpointId(const std::string &dBInstanceEndpointId);
 
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string connectionString_;
 	std::string accessKeyId_;
-	std::string dBInstanceEndpointId_;
 	std::string regionId_;
 	std::string dBInstanceId_;
+	std::string dBInstanceEndpointId_;
 };
 } // namespace Model
 } // namespace Rds

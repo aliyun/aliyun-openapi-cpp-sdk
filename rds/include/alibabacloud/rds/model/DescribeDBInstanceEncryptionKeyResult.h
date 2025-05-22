@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string origin;
 					std::string description;
-					std::string keyType;
 					std::string encryptionKeyStatus;
+					std::string keyType;
 					std::string materialExpireTime;
 					std::string aliasName;
 					std::string keyUsage;

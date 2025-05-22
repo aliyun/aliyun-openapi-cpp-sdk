@@ -70,6 +70,15 @@ void UpgradeDBInstanceMajorVersionPrecheckRequest::setResourceOwnerAccount(const
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+std::string UpgradeDBInstanceMajorVersionPrecheckRequest::getUpgradeMode() const {
+  return upgradeMode_;
+}
+
+void UpgradeDBInstanceMajorVersionPrecheckRequest::setUpgradeMode(const std::string &upgradeMode) {
+  upgradeMode_ = upgradeMode;
+  setParameter(std::string("UpgradeMode"), upgradeMode);
+}
+
 std::string UpgradeDBInstanceMajorVersionPrecheckRequest::getOwnerAccount() const {
   return ownerAccount_;
 }

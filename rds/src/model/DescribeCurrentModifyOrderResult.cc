@@ -43,24 +43,24 @@ void DescribeCurrentModifyOrderResult::parse(const std::string &payload)
 	for (auto valueModifyOrderModifyOrderItem : allModifyOrderNode)
 	{
 		ModifyOrderItem modifyOrderObject;
-		if(!valueModifyOrderModifyOrderItem["DbInstanceId"].isNull())
-			modifyOrderObject.dbInstanceId = valueModifyOrderModifyOrderItem["DbInstanceId"].asString();
-		if(!valueModifyOrderModifyOrderItem["TargetDBInstanceClass"].isNull())
-			modifyOrderObject.targetDBInstanceClass = valueModifyOrderModifyOrderItem["TargetDBInstanceClass"].asString();
-		if(!valueModifyOrderModifyOrderItem["Storage"].isNull())
-			modifyOrderObject.storage = valueModifyOrderModifyOrderItem["Storage"].asString();
-		if(!valueModifyOrderModifyOrderItem["MemoryClass"].isNull())
-			modifyOrderObject.memoryClass = valueModifyOrderModifyOrderItem["MemoryClass"].asString();
-		if(!valueModifyOrderModifyOrderItem["Cpu"].isNull())
-			modifyOrderObject.cpu = valueModifyOrderModifyOrderItem["Cpu"].asString();
 		if(!valueModifyOrderModifyOrderItem["ClassGroup"].isNull())
 			modifyOrderObject.classGroup = valueModifyOrderModifyOrderItem["ClassGroup"].asString();
+		if(!valueModifyOrderModifyOrderItem["Cpu"].isNull())
+			modifyOrderObject.cpu = valueModifyOrderModifyOrderItem["Cpu"].asString();
+		if(!valueModifyOrderModifyOrderItem["DbInstanceId"].isNull())
+			modifyOrderObject.dbInstanceId = valueModifyOrderModifyOrderItem["DbInstanceId"].asString();
 		if(!valueModifyOrderModifyOrderItem["EffectiveTime"].isNull())
 			modifyOrderObject.effectiveTime = valueModifyOrderModifyOrderItem["EffectiveTime"].asString();
-		if(!valueModifyOrderModifyOrderItem["Status"].isNull())
-			modifyOrderObject.status = valueModifyOrderModifyOrderItem["Status"].asString();
 		if(!valueModifyOrderModifyOrderItem["Mark"].isNull())
 			modifyOrderObject.mark = valueModifyOrderModifyOrderItem["Mark"].asString();
+		if(!valueModifyOrderModifyOrderItem["MemoryClass"].isNull())
+			modifyOrderObject.memoryClass = valueModifyOrderModifyOrderItem["MemoryClass"].asString();
+		if(!valueModifyOrderModifyOrderItem["Status"].isNull())
+			modifyOrderObject.status = valueModifyOrderModifyOrderItem["Status"].asString();
+		if(!valueModifyOrderModifyOrderItem["Storage"].isNull())
+			modifyOrderObject.storage = valueModifyOrderModifyOrderItem["Storage"].asString();
+		if(!valueModifyOrderModifyOrderItem["TargetDBInstanceClass"].isNull())
+			modifyOrderObject.targetDBInstanceClass = valueModifyOrderModifyOrderItem["TargetDBInstanceClass"].asString();
 		modifyOrder_.push_back(modifyOrderObject);
 	}
 

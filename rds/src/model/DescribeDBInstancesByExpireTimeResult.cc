@@ -43,18 +43,18 @@ void DescribeDBInstancesByExpireTimeResult::parse(const std::string &payload)
 	for (auto valueItemsDBInstanceExpireTime : allItemsNode)
 	{
 		DBInstanceExpireTime itemsObject;
-		if(!valueItemsDBInstanceExpireTime["ExpireTime"].isNull())
-			itemsObject.expireTime = valueItemsDBInstanceExpireTime["ExpireTime"].asString();
-		if(!valueItemsDBInstanceExpireTime["PayType"].isNull())
-			itemsObject.payType = valueItemsDBInstanceExpireTime["PayType"].asString();
+		if(!valueItemsDBInstanceExpireTime["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = valueItemsDBInstanceExpireTime["DBInstanceDescription"].asString();
 		if(!valueItemsDBInstanceExpireTime["DBInstanceId"].isNull())
 			itemsObject.dBInstanceId = valueItemsDBInstanceExpireTime["DBInstanceId"].asString();
 		if(!valueItemsDBInstanceExpireTime["DBInstanceStatus"].isNull())
 			itemsObject.dBInstanceStatus = valueItemsDBInstanceExpireTime["DBInstanceStatus"].asString();
-		if(!valueItemsDBInstanceExpireTime["DBInstanceDescription"].isNull())
-			itemsObject.dBInstanceDescription = valueItemsDBInstanceExpireTime["DBInstanceDescription"].asString();
+		if(!valueItemsDBInstanceExpireTime["ExpireTime"].isNull())
+			itemsObject.expireTime = valueItemsDBInstanceExpireTime["ExpireTime"].asString();
 		if(!valueItemsDBInstanceExpireTime["LockMode"].isNull())
 			itemsObject.lockMode = valueItemsDBInstanceExpireTime["LockMode"].asString();
+		if(!valueItemsDBInstanceExpireTime["PayType"].isNull())
+			itemsObject.payType = valueItemsDBInstanceExpireTime["PayType"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

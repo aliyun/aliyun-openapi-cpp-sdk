@@ -42,11 +42,11 @@ namespace AlibabaCloud
 					long upgradeMemory;
 					int maxIombps;
 					int diskSize;
-					std::string upgradeClassCode;
 					std::string engine;
+					std::string upgradeClassCode;
 					int upgradeMaxIops;
-					std::string storageType;
 					std::string engineVersion;
+					std::string storageType;
 					int maxConnections;
 					std::string upgradeCpu;
 					std::string instanceId;
@@ -57,8 +57,8 @@ namespace AlibabaCloud
 					std::string classCode;
 					int upgradeMaxIombps;
 					int upgradeMaxConnections;
-					std::string classGroup;
 					std::string chargeType;
+					std::string classGroup;
 					std::string upgradeClassGroup;
 					std::string upgradeDescContent;
 				};

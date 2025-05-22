@@ -43,25 +43,37 @@ void DescribeDBProxyResult::parse(const std::string &payload)
 	for (auto valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem : allDBProxyConnectStringItemsNode)
 	{
 		DBProxyConnectStringItemsItem dBProxyConnectStringItemsObject;
-		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetWorkType"].isNull())
-			dBProxyConnectStringItemsObject.dBProxyConnectStringNetWorkType = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetWorkType"].asString();
-		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetType"].isNull())
-			dBProxyConnectStringItemsObject.dBProxyConnectStringNetType = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetType"].asString();
-		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVpcInstanceId"].isNull())
-			dBProxyConnectStringItemsObject.dBProxyVpcInstanceId = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVpcInstanceId"].asString();
-		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyEndpointName"].isNull())
-			dBProxyConnectStringItemsObject.dBProxyEndpointName = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyEndpointName"].asString();
-		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyEndpointId"].isNull())
-			dBProxyConnectStringItemsObject.dBProxyEndpointId = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyEndpointId"].asString();
-		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringPort"].isNull())
-			dBProxyConnectStringItemsObject.dBProxyConnectStringPort = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringPort"].asString();
 		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectString"].isNull())
 			dBProxyConnectStringItemsObject.dBProxyConnectString = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectString"].asString();
+		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetType"].isNull())
+			dBProxyConnectStringItemsObject.dBProxyConnectStringNetType = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetType"].asString();
+		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetWorkType"].isNull())
+			dBProxyConnectStringItemsObject.dBProxyConnectStringNetWorkType = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetWorkType"].asString();
+		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringPort"].isNull())
+			dBProxyConnectStringItemsObject.dBProxyConnectStringPort = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringPort"].asString();
+		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyEndpointId"].isNull())
+			dBProxyConnectStringItemsObject.dBProxyEndpointId = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyEndpointId"].asString();
+		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyEndpointName"].isNull())
+			dBProxyConnectStringItemsObject.dBProxyEndpointName = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyEndpointName"].asString();
 		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVpcId"].isNull())
 			dBProxyConnectStringItemsObject.dBProxyVpcId = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVpcId"].asString();
+		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVpcInstanceId"].isNull())
+			dBProxyConnectStringItemsObject.dBProxyVpcInstanceId = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVpcInstanceId"].asString();
 		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVswitchId"].isNull())
 			dBProxyConnectStringItemsObject.dBProxyVswitchId = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVswitchId"].asString();
 		dBProxyConnectStringItems_.push_back(dBProxyConnectStringItemsObject);
+	}
+	auto allDBProxyNodesNode = value["DBProxyNodes"]["DBProxyNodesItem"];
+	for (auto valueDBProxyNodesDBProxyNodesItem : allDBProxyNodesNode)
+	{
+		DBProxyNodesItem dBProxyNodesObject;
+		if(!valueDBProxyNodesDBProxyNodesItem["cpuCores"].isNull())
+			dBProxyNodesObject.cpuCores = valueDBProxyNodesDBProxyNodesItem["cpuCores"].asString();
+		if(!valueDBProxyNodesDBProxyNodesItem["nodeId"].isNull())
+			dBProxyNodesObject.nodeId = valueDBProxyNodesDBProxyNodesItem["nodeId"].asString();
+		if(!valueDBProxyNodesDBProxyNodesItem["zoneId"].isNull())
+			dBProxyNodesObject.zoneId = valueDBProxyNodesDBProxyNodesItem["zoneId"].asString();
+		dBProxyNodes_.push_back(dBProxyNodesObject);
 	}
 	auto allDbProxyEndpointItemsNode = value["DbProxyEndpointItems"]["DbProxyEndpointItemsItem"];
 	for (auto valueDbProxyEndpointItemsDbProxyEndpointItemsItem : allDbProxyEndpointItemsNode)
@@ -80,28 +92,30 @@ void DescribeDBProxyResult::parse(const std::string &payload)
 	auto allDBProxyAVZones = value["DBProxyAVZones"]["DBProxyAVZones"];
 	for (const auto &item : allDBProxyAVZones)
 		dBProxyAVZones_.push_back(item.asString());
-	if(!value["DBProxyInstanceLatestMinorVersion"].isNull())
-		dBProxyInstanceLatestMinorVersion_ = value["DBProxyInstanceLatestMinorVersion"].asString();
-	if(!value["DBProxyInstanceCurrentMinorVersion"].isNull())
-		dBProxyInstanceCurrentMinorVersion_ = value["DBProxyInstanceCurrentMinorVersion"].asString();
-	if(!value["DBProxyInstanceNum"].isNull())
-		dBProxyInstanceNum_ = std::stoi(value["DBProxyInstanceNum"].asString());
-	if(!value["DBProxyInstanceType"].isNull())
-		dBProxyInstanceType_ = value["DBProxyInstanceType"].asString();
-	if(!value["DBProxyPersistentConnectionStatus"].isNull())
-		dBProxyPersistentConnectionStatus_ = value["DBProxyPersistentConnectionStatus"].asString();
-	if(!value["DBProxyInstanceStatus"].isNull())
-		dBProxyInstanceStatus_ = value["DBProxyInstanceStatus"].asString();
-	if(!value["DBProxyServiceStatus"].isNull())
-		dBProxyServiceStatus_ = value["DBProxyServiceStatus"].asString();
-	if(!value["DBProxyInstanceName"].isNull())
-		dBProxyInstanceName_ = value["DBProxyInstanceName"].asString();
-	if(!value["DBProxyInstanceSize"].isNull())
-		dBProxyInstanceSize_ = value["DBProxyInstanceSize"].asString();
-	if(!value["DBProxyEngineType"].isNull())
-		dBProxyEngineType_ = value["DBProxyEngineType"].asString();
 	if(!value["AccountName"].isNull())
 		accountName_ = value["AccountName"].asString();
+	if(!value["DBProxyEngineType"].isNull())
+		dBProxyEngineType_ = value["DBProxyEngineType"].asString();
+	if(!value["DBProxyInstanceCurrentMinorVersion"].isNull())
+		dBProxyInstanceCurrentMinorVersion_ = value["DBProxyInstanceCurrentMinorVersion"].asString();
+	if(!value["DBProxyInstanceLatestMinorVersion"].isNull())
+		dBProxyInstanceLatestMinorVersion_ = value["DBProxyInstanceLatestMinorVersion"].asString();
+	if(!value["DBProxyInstanceName"].isNull())
+		dBProxyInstanceName_ = value["DBProxyInstanceName"].asString();
+	if(!value["DBProxyInstanceNum"].isNull())
+		dBProxyInstanceNum_ = std::stoi(value["DBProxyInstanceNum"].asString());
+	if(!value["DBProxyInstanceSize"].isNull())
+		dBProxyInstanceSize_ = value["DBProxyInstanceSize"].asString();
+	if(!value["DBProxyInstanceStatus"].isNull())
+		dBProxyInstanceStatus_ = value["DBProxyInstanceStatus"].asString();
+	if(!value["DBProxyInstanceType"].isNull())
+		dBProxyInstanceType_ = value["DBProxyInstanceType"].asString();
+	if(!value["DBProxyKindCode"].isNull())
+		dBProxyKindCode_ = value["DBProxyKindCode"].asString();
+	if(!value["DBProxyPersistentConnectionStatus"].isNull())
+		dBProxyPersistentConnectionStatus_ = value["DBProxyPersistentConnectionStatus"].asString();
+	if(!value["DBProxyServiceStatus"].isNull())
+		dBProxyServiceStatus_ = value["DBProxyServiceStatus"].asString();
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
 
@@ -172,9 +186,19 @@ std::vector<DescribeDBProxyResult::DBProxyConnectStringItemsItem> DescribeDBProx
 	return dBProxyConnectStringItems_;
 }
 
+std::vector<DescribeDBProxyResult::DBProxyNodesItem> DescribeDBProxyResult::getDBProxyNodes()const
+{
+	return dBProxyNodes_;
+}
+
 std::string DescribeDBProxyResult::getDBProxyInstanceType()const
 {
 	return dBProxyInstanceType_;
+}
+
+std::string DescribeDBProxyResult::getDBProxyKindCode()const
+{
+	return dBProxyKindCode_;
 }
 
 std::string DescribeDBProxyResult::getAccountName()const

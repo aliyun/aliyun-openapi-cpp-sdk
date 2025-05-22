@@ -34,24 +34,6 @@ void ModifyHADiagnoseConfigRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifyHADiagnoseConfigRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void ModifyHADiagnoseConfigRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long ModifyHADiagnoseConfigRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ModifyHADiagnoseConfigRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string ModifyHADiagnoseConfigRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,5 +68,23 @@ std::string ModifyHADiagnoseConfigRequest::getTcpConnectionType() const {
 void ModifyHADiagnoseConfigRequest::setTcpConnectionType(const std::string &tcpConnectionType) {
   tcpConnectionType_ = tcpConnectionType;
   setParameter(std::string("TcpConnectionType"), tcpConnectionType);
+}
+
+std::string ModifyHADiagnoseConfigRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void ModifyHADiagnoseConfigRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long ModifyHADiagnoseConfigRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ModifyHADiagnoseConfigRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

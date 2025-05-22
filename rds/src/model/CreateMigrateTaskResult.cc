@@ -39,12 +39,12 @@ void CreateMigrateTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBName"].isNull())
-		dBName_ = value["DBName"].asString();
 	if(!value["BackupMode"].isNull())
 		backupMode_ = value["BackupMode"].asString();
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["DBName"].isNull())
+		dBName_ = value["DBName"].asString();
 	if(!value["MigrateTaskId"].isNull())
 		migrateTaskId_ = value["MigrateTaskId"].asString();
 	if(!value["TaskId"].isNull())

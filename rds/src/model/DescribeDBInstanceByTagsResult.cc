@@ -49,10 +49,10 @@ void DescribeDBInstanceByTagsResult::parse(const std::string &payload)
 		for (auto valueItemsDBInstanceTagTagsTag : allTagsNode)
 		{
 			DBInstanceTag::Tag tagsObject;
-			if(!valueItemsDBInstanceTagTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = valueItemsDBInstanceTagTagsTag["TagValue"].asString();
 			if(!valueItemsDBInstanceTagTagsTag["TagKey"].isNull())
 				tagsObject.tagKey = valueItemsDBInstanceTagTagsTag["TagKey"].asString();
+			if(!valueItemsDBInstanceTagTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueItemsDBInstanceTagTagsTag["TagValue"].asString();
 			itemsObject.tags.push_back(tagsObject);
 		}
 		items_.push_back(itemsObject);

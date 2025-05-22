@@ -44,6 +44,7 @@ namespace AlibabaCloud
 				~DescribeDBInstanceTDEResult();
 				std::string getTDEStatus()const;
 				std::vector<Database> getDatabases()const;
+				std::string getEncryptionKey()const;
 				std::string getTDEMode()const;
 
 			protected:
@@ -51,6 +52,7 @@ namespace AlibabaCloud
 			private:
 				std::string tDEStatus_;
 				std::vector<Database> databases_;
+				std::string encryptionKey_;
 				std::string tDEMode_;
 
 			};

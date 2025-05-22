@@ -34,15 +34,6 @@ void ModifyAccountMaskingPrivilegeRequest::setDBInstanceName(const std::string &
   setParameter(std::string("DBInstanceName"), dBInstanceName);
 }
 
-std::string ModifyAccountMaskingPrivilegeRequest::getExpireTime() const {
-  return expireTime_;
-}
-
-void ModifyAccountMaskingPrivilegeRequest::setExpireTime(const std::string &expireTime) {
-  expireTime_ = expireTime;
-  setParameter(std::string("ExpireTime"), expireTime);
-}
-
 long ModifyAccountMaskingPrivilegeRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
@@ -50,15 +41,6 @@ long ModifyAccountMaskingPrivilegeRequest::getResourceOwnerId() const {
 void ModifyAccountMaskingPrivilegeRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
-}
-
-std::string ModifyAccountMaskingPrivilegeRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void ModifyAccountMaskingPrivilegeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
 std::string ModifyAccountMaskingPrivilegeRequest::getPrivilege() const {
@@ -70,6 +52,33 @@ void ModifyAccountMaskingPrivilegeRequest::setPrivilege(const std::string &privi
   setParameter(std::string("Privilege"), privilege);
 }
 
+std::string ModifyAccountMaskingPrivilegeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyAccountMaskingPrivilegeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ModifyAccountMaskingPrivilegeRequest::getExpireTime() const {
+  return expireTime_;
+}
+
+void ModifyAccountMaskingPrivilegeRequest::setExpireTime(const std::string &expireTime) {
+  expireTime_ = expireTime;
+  setParameter(std::string("ExpireTime"), expireTime);
+}
+
+std::string ModifyAccountMaskingPrivilegeRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void ModifyAccountMaskingPrivilegeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
 std::string ModifyAccountMaskingPrivilegeRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -79,13 +88,13 @@ void ModifyAccountMaskingPrivilegeRequest::setOwnerId(const std::string &ownerId
   setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string ModifyAccountMaskingPrivilegeRequest::getRegionId() const {
-  return regionId_;
+std::string ModifyAccountMaskingPrivilegeRequest::getDBName() const {
+  return dBName_;
 }
 
-void ModifyAccountMaskingPrivilegeRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void ModifyAccountMaskingPrivilegeRequest::setDBName(const std::string &dBName) {
+  dBName_ = dBName;
+  setParameter(std::string("DBName"), dBName);
 }
 
 std::string ModifyAccountMaskingPrivilegeRequest::getUserName() const {

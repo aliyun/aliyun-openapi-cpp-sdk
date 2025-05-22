@@ -47,11 +47,11 @@ namespace AlibabaCloud
 					std::string openPermission;
 					std::string hostType;
 					std::string hostMem;
-					std::string memoryUsed;
 					std::string hostStatus;
+					std::string memoryUsed;
 					std::string cpuUsed;
-					std::string hostName;
 					std::string engine;
+					std::string hostName;
 					std::string allocationStatus;
 					std::string memAllocationRatio;
 					std::string zoneId;

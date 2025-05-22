@@ -37,8 +37,12 @@ namespace AlibabaCloud
 					std::string checkTime;
 					std::string sourceMajorVersion;
 					int taskId;
+					int recommendLeastMemSize;
+					int recommendMemSize;
 					std::string effectiveTime;
 					std::string targetMajorVersion;
+					int recommendDiskSize;
+					std::string upgradeMode;
 					std::string detail;
 					std::string result;
 				};

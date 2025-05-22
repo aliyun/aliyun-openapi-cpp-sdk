@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string backupMethod;
 					std::string backupExtractionStatus;
 					std::string backupIntranetDownloadURL;
-					long backupSize;
 					std::string backupMode;
+					long backupSize;
 					std::string backupId;
 					int isAvail;
 					std::string slaveStatus;
@@ -48,14 +48,14 @@ namespace AlibabaCloud
 					std::string backupDownloadURL;
 					std::string dBInstanceId;
 					std::string backupEndTime;
-					long consistentTime;
 					std::string backupStartTime;
+					long consistentTime;
 					std::string backupType;
-					std::string metaStatus;
 					std::string dBInstanceComment;
+					std::string metaStatus;
 					std::string backupScale;
-					std::string backupStatus;
 					std::string backupLocation;
+					std::string backupStatus;
 					long totalBackupSize;
 				};
 

@@ -34,24 +34,6 @@ void ModifyDBInstanceDelayedReplicationTimeRequest::setResourceOwnerId(long reso
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifyDBInstanceDelayedReplicationTimeRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void ModifyDBInstanceDelayedReplicationTimeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long ModifyDBInstanceDelayedReplicationTimeRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ModifyDBInstanceDelayedReplicationTimeRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string ModifyDBInstanceDelayedReplicationTimeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -59,15 +41,6 @@ std::string ModifyDBInstanceDelayedReplicationTimeRequest::getAccessKeyId() cons
 void ModifyDBInstanceDelayedReplicationTimeRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string ModifyDBInstanceDelayedReplicationTimeRequest::getReadSQLReplicationTime() const {
-  return readSQLReplicationTime_;
-}
-
-void ModifyDBInstanceDelayedReplicationTimeRequest::setReadSQLReplicationTime(const std::string &readSQLReplicationTime) {
-  readSQLReplicationTime_ = readSQLReplicationTime;
-  setParameter(std::string("ReadSQLReplicationTime"), readSQLReplicationTime);
 }
 
 std::string ModifyDBInstanceDelayedReplicationTimeRequest::getRegionId() const {
@@ -86,5 +59,32 @@ std::string ModifyDBInstanceDelayedReplicationTimeRequest::getDBInstanceId() con
 void ModifyDBInstanceDelayedReplicationTimeRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string ModifyDBInstanceDelayedReplicationTimeRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void ModifyDBInstanceDelayedReplicationTimeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long ModifyDBInstanceDelayedReplicationTimeRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ModifyDBInstanceDelayedReplicationTimeRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ModifyDBInstanceDelayedReplicationTimeRequest::getReadSQLReplicationTime() const {
+  return readSQLReplicationTime_;
+}
+
+void ModifyDBInstanceDelayedReplicationTimeRequest::setReadSQLReplicationTime(const std::string &readSQLReplicationTime) {
+  readSQLReplicationTime_ = readSQLReplicationTime;
+  setParameter(std::string("ReadSQLReplicationTime"), readSQLReplicationTime);
 }
 

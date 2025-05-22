@@ -70,6 +70,15 @@ void ImportUserBackupFileRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string ImportUserBackupFileRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void ImportUserBackupFileRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
 int ImportUserBackupFileRequest::getRetention() const {
   return retention_;
 }

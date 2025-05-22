@@ -43,12 +43,12 @@ void DescribeCollationTimeZonesResult::parse(const std::string &payload)
 	for (auto valueCollationTimeZonesCollationTimeZone : allCollationTimeZonesNode)
 	{
 		CollationTimeZone collationTimeZonesObject;
-		if(!valueCollationTimeZonesCollationTimeZone["TimeZone"].isNull())
-			collationTimeZonesObject.timeZone = valueCollationTimeZonesCollationTimeZone["TimeZone"].asString();
-		if(!valueCollationTimeZonesCollationTimeZone["StandardTimeOffset"].isNull())
-			collationTimeZonesObject.standardTimeOffset = valueCollationTimeZonesCollationTimeZone["StandardTimeOffset"].asString();
 		if(!valueCollationTimeZonesCollationTimeZone["Description"].isNull())
 			collationTimeZonesObject.description = valueCollationTimeZonesCollationTimeZone["Description"].asString();
+		if(!valueCollationTimeZonesCollationTimeZone["StandardTimeOffset"].isNull())
+			collationTimeZonesObject.standardTimeOffset = valueCollationTimeZonesCollationTimeZone["StandardTimeOffset"].asString();
+		if(!valueCollationTimeZonesCollationTimeZone["TimeZone"].isNull())
+			collationTimeZonesObject.timeZone = valueCollationTimeZonesCollationTimeZone["TimeZone"].asString();
 		collationTimeZones_.push_back(collationTimeZonesObject);
 	}
 

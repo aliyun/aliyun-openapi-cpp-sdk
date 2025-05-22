@@ -45,22 +45,22 @@ void DescribeSecretsResult::parse(const std::string &payload)
 		SecretsItem secretsObject;
 		if(!valueSecretsSecretsItem["AccountId"].isNull())
 			secretsObject.accountId = valueSecretsSecretsItem["AccountId"].asString();
-		if(!valueSecretsSecretsItem["SecretName"].isNull())
-			secretsObject.secretName = valueSecretsSecretsItem["SecretName"].asString();
+		if(!valueSecretsSecretsItem["Description"].isNull())
+			secretsObject.description = valueSecretsSecretsItem["Description"].asString();
 		if(!valueSecretsSecretsItem["RegionId"].isNull())
 			secretsObject.regionId = valueSecretsSecretsItem["RegionId"].asString();
 		if(!valueSecretsSecretsItem["SecretArn"].isNull())
 			secretsObject.secretArn = valueSecretsSecretsItem["SecretArn"].asString();
-		if(!valueSecretsSecretsItem["Description"].isNull())
-			secretsObject.description = valueSecretsSecretsItem["Description"].asString();
+		if(!valueSecretsSecretsItem["SecretName"].isNull())
+			secretsObject.secretName = valueSecretsSecretsItem["SecretName"].asString();
 		if(!valueSecretsSecretsItem["Username"].isNull())
 			secretsObject.username = valueSecretsSecretsItem["Username"].asString();
 		secrets_.push_back(secretsObject);
 	}
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stol(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
 
 }
 

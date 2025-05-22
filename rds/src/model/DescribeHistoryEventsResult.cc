@@ -58,10 +58,6 @@ void DescribeHistoryEventsResult::parse(const std::string &payload)
 		if(!valueItemsItemsItem["Type"].isNull())
 			itemsObject.type = valueItemsItemsItem["Type"].asString();
 		auto dataNode = value["Data"];
-		if(!dataNode["EventType"].isNull())
-			itemsObject.data.eventType = dataNode["EventType"].asString();
-		if(!dataNode["EventId"].isNull())
-			itemsObject.data.eventId = dataNode["EventId"].asString();
 		if(!dataNode["CmsProduct"].isNull())
 			itemsObject.data.cmsProduct = dataNode["CmsProduct"].asString();
 		if(!dataNode["DbType"].isNull())
@@ -78,6 +74,8 @@ void DescribeHistoryEventsResult::parse(const std::string &payload)
 			itemsObject.data.eventCode = dataNode["EventCode"].asString();
 		if(!dataNode["EventDetail"].isNull())
 			itemsObject.data.eventDetail = dataNode["EventDetail"].asString();
+		if(!dataNode["EventId"].isNull())
+			itemsObject.data.eventId = dataNode["EventId"].asString();
 		if(!dataNode["EventImpact"].isNull())
 			itemsObject.data.eventImpact = dataNode["EventImpact"].asString();
 		if(!dataNode["EventLevel"].isNull())
@@ -86,6 +84,8 @@ void DescribeHistoryEventsResult::parse(const std::string &payload)
 			itemsObject.data.eventReason = dataNode["EventReason"].asString();
 		if(!dataNode["EventStatus"].isNull())
 			itemsObject.data.eventStatus = dataNode["EventStatus"].asString();
+		if(!dataNode["EventType"].isNull())
+			itemsObject.data.eventType = dataNode["EventType"].asString();
 		if(!dataNode["GmtCreated"].isNull())
 			itemsObject.data.gmtCreated = dataNode["GmtCreated"].asString();
 		if(!dataNode["GmtModified"].isNull())

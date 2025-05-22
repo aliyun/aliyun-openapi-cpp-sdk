@@ -40,6 +40,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getDBInstanceId() const;
+	void setDBInstanceId(const std::string &dBInstanceId);
 	int getRetention() const;
 	void setRetention(int retention);
 	std::string getResourceOwnerAccount() const;
@@ -63,6 +65,7 @@ private:
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::string dBInstanceId_;
 	int retention_;
 	std::string resourceOwnerAccount_;
 	std::string backupFile_;

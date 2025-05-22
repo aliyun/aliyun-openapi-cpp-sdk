@@ -178,6 +178,15 @@ void CreateReadOnlyDBInstanceRequest::setPort(const std::string &port) {
   setParameter(std::string("Port"), port);
 }
 
+std::string CreateReadOnlyDBInstanceRequest::getPromotionCode() const {
+  return promotionCode_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setPromotionCode(const std::string &promotionCode) {
+  promotionCode_ = promotionCode;
+  setParameter(std::string("PromotionCode"), promotionCode);
+}
+
 std::string CreateReadOnlyDBInstanceRequest::getZoneId() const {
   return zoneId_;
 }
@@ -212,6 +221,15 @@ std::string CreateReadOnlyDBInstanceRequest::getInstructionSetArch() const {
 void CreateReadOnlyDBInstanceRequest::setInstructionSetArch(const std::string &instructionSetArch) {
   instructionSetArch_ = instructionSetArch;
   setParameter(std::string("InstructionSetArch"), instructionSetArch);
+}
+
+bool CreateReadOnlyDBInstanceRequest::getAutoUseCoupon() const {
+  return autoUseCoupon_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setAutoUseCoupon(bool autoUseCoupon) {
+  autoUseCoupon_ = autoUseCoupon;
+  setParameter(std::string("AutoUseCoupon"), autoUseCoupon ? "true" : "false");
 }
 
 std::string CreateReadOnlyDBInstanceRequest::getIoAccelerationEnabled() const {

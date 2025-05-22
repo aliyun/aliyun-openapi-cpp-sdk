@@ -39,10 +39,10 @@ void StartDBInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = std::stoi(value["TaskId"].asString());
 	if(!value["MigrationId"].isNull())
 		migrationId_ = std::stoi(value["MigrationId"].asString());
+	if(!value["TaskId"].isNull())
+		taskId_ = std::stoi(value["TaskId"].asString());
 
 }
 

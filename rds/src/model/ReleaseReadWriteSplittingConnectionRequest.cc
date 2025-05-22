@@ -34,33 +34,6 @@ void ReleaseReadWriteSplittingConnectionRequest::setResourceOwnerId(long resourc
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ReleaseReadWriteSplittingConnectionRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void ReleaseReadWriteSplittingConnectionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string ReleaseReadWriteSplittingConnectionRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void ReleaseReadWriteSplittingConnectionRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long ReleaseReadWriteSplittingConnectionRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ReleaseReadWriteSplittingConnectionRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string ReleaseReadWriteSplittingConnectionRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,5 +59,32 @@ std::string ReleaseReadWriteSplittingConnectionRequest::getDBInstanceId() const 
 void ReleaseReadWriteSplittingConnectionRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string ReleaseReadWriteSplittingConnectionRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void ReleaseReadWriteSplittingConnectionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string ReleaseReadWriteSplittingConnectionRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void ReleaseReadWriteSplittingConnectionRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long ReleaseReadWriteSplittingConnectionRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ReleaseReadWriteSplittingConnectionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

@@ -34,33 +34,6 @@ void DescribeDBInstanceHAConfigRequest::setResourceOwnerId(long resourceOwnerId)
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBInstanceHAConfigRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeDBInstanceHAConfigRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string DescribeDBInstanceHAConfigRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void DescribeDBInstanceHAConfigRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long DescribeDBInstanceHAConfigRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeDBInstanceHAConfigRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string DescribeDBInstanceHAConfigRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,5 +59,32 @@ std::string DescribeDBInstanceHAConfigRequest::getDBInstanceId() const {
 void DescribeDBInstanceHAConfigRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DescribeDBInstanceHAConfigRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeDBInstanceHAConfigRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string DescribeDBInstanceHAConfigRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void DescribeDBInstanceHAConfigRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long DescribeDBInstanceHAConfigRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeDBInstanceHAConfigRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

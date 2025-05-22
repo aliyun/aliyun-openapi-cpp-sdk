@@ -43,52 +43,52 @@ void DescribeCustinsResourceInfoResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["MaxIopsIncreaseRatio"].isNull())
-			dataObject.maxIopsIncreaseRatio = valueDataDataItem["MaxIopsIncreaseRatio"].asString();
-		if(!valueDataDataItem["MaxConnIncreaseRatioValue"].isNull())
-			dataObject.maxConnIncreaseRatioValue = valueDataDataItem["MaxConnIncreaseRatioValue"].asString();
-		if(!valueDataDataItem["MemoryAdjustDeadline"].isNull())
-			dataObject.memoryAdjustDeadline = valueDataDataItem["MemoryAdjustDeadline"].asString();
-		if(!valueDataDataItem["MemAdjustableMaxValue"].isNull())
-			dataObject.memAdjustableMaxValue = valueDataDataItem["MemAdjustableMaxValue"].asString();
-		if(!valueDataDataItem["IopsAdjustableMaxValue"].isNull())
-			dataObject.iopsAdjustableMaxValue = valueDataDataItem["IopsAdjustableMaxValue"].asString();
-		if(!valueDataDataItem["CpuIncreaseRatio"].isNull())
-			dataObject.cpuIncreaseRatio = valueDataDataItem["CpuIncreaseRatio"].asString();
-		if(!valueDataDataItem["MaxIopsIncreaseRatioValue"].isNull())
-			dataObject.maxIopsIncreaseRatioValue = valueDataDataItem["MaxIopsIncreaseRatioValue"].asString();
-		if(!valueDataDataItem["OriginMaxConn"].isNull())
-			dataObject.originMaxConn = valueDataDataItem["OriginMaxConn"].asString();
-		if(!valueDataDataItem["MemoryIncreaseRatioValue"].isNull())
-			dataObject.memoryIncreaseRatioValue = valueDataDataItem["MemoryIncreaseRatioValue"].asString();
-		if(!valueDataDataItem["MaxConnIncreaseRatio"].isNull())
-			dataObject.maxConnIncreaseRatio = valueDataDataItem["MaxConnIncreaseRatio"].asString();
-		if(!valueDataDataItem["CpuIncreaseRatioValue"].isNull())
-			dataObject.cpuIncreaseRatioValue = valueDataDataItem["CpuIncreaseRatioValue"].asString();
-		if(!valueDataDataItem["OriginMaxIops"].isNull())
-			dataObject.originMaxIops = valueDataDataItem["OriginMaxIops"].asString();
-		if(!valueDataDataItem["MaxConnAdjustableMaxValue"].isNull())
-			dataObject.maxConnAdjustableMaxValue = valueDataDataItem["MaxConnAdjustableMaxValue"].asString();
-		if(!valueDataDataItem["MaxConnAdjustDeadline"].isNull())
-			dataObject.maxConnAdjustDeadline = valueDataDataItem["MaxConnAdjustDeadline"].asString();
-		if(!valueDataDataItem["MaxIopsAdjustDeadline"].isNull())
-			dataObject.maxIopsAdjustDeadline = valueDataDataItem["MaxIopsAdjustDeadline"].asString();
-		if(!valueDataDataItem["OriginMemory"].isNull())
-			dataObject.originMemory = valueDataDataItem["OriginMemory"].asString();
-		if(!valueDataDataItem["MemAdjustableMaxRatio"].isNull())
-			dataObject.memAdjustableMaxRatio = valueDataDataItem["MemAdjustableMaxRatio"].asString();
-		if(!valueDataDataItem["CpuAdjustableMaxValue"].isNull())
-			dataObject.cpuAdjustableMaxValue = valueDataDataItem["CpuAdjustableMaxValue"].asString();
-		if(!valueDataDataItem["CpuAdjustableMaxRatio"].isNull())
-			dataObject.cpuAdjustableMaxRatio = valueDataDataItem["CpuAdjustableMaxRatio"].asString();
 		if(!valueDataDataItem["CpuAdjustDeadline"].isNull())
 			dataObject.cpuAdjustDeadline = valueDataDataItem["CpuAdjustDeadline"].asString();
-		if(!valueDataDataItem["MemoryIncreaseRatio"].isNull())
-			dataObject.memoryIncreaseRatio = valueDataDataItem["MemoryIncreaseRatio"].asString();
-		if(!valueDataDataItem["OriginCpu"].isNull())
-			dataObject.originCpu = valueDataDataItem["OriginCpu"].asString();
+		if(!valueDataDataItem["CpuAdjustableMaxRatio"].isNull())
+			dataObject.cpuAdjustableMaxRatio = valueDataDataItem["CpuAdjustableMaxRatio"].asString();
+		if(!valueDataDataItem["CpuAdjustableMaxValue"].isNull())
+			dataObject.cpuAdjustableMaxValue = valueDataDataItem["CpuAdjustableMaxValue"].asString();
+		if(!valueDataDataItem["CpuIncreaseRatio"].isNull())
+			dataObject.cpuIncreaseRatio = valueDataDataItem["CpuIncreaseRatio"].asString();
+		if(!valueDataDataItem["CpuIncreaseRatioValue"].isNull())
+			dataObject.cpuIncreaseRatioValue = valueDataDataItem["CpuIncreaseRatioValue"].asString();
 		if(!valueDataDataItem["DBInstanceId"].isNull())
 			dataObject.dBInstanceId = valueDataDataItem["DBInstanceId"].asString();
+		if(!valueDataDataItem["IopsAdjustableMaxValue"].isNull())
+			dataObject.iopsAdjustableMaxValue = valueDataDataItem["IopsAdjustableMaxValue"].asString();
+		if(!valueDataDataItem["MaxConnAdjustDeadline"].isNull())
+			dataObject.maxConnAdjustDeadline = valueDataDataItem["MaxConnAdjustDeadline"].asString();
+		if(!valueDataDataItem["MaxConnAdjustableMaxValue"].isNull())
+			dataObject.maxConnAdjustableMaxValue = valueDataDataItem["MaxConnAdjustableMaxValue"].asString();
+		if(!valueDataDataItem["MaxConnIncreaseRatio"].isNull())
+			dataObject.maxConnIncreaseRatio = valueDataDataItem["MaxConnIncreaseRatio"].asString();
+		if(!valueDataDataItem["MaxConnIncreaseRatioValue"].isNull())
+			dataObject.maxConnIncreaseRatioValue = valueDataDataItem["MaxConnIncreaseRatioValue"].asString();
+		if(!valueDataDataItem["MaxIopsAdjustDeadline"].isNull())
+			dataObject.maxIopsAdjustDeadline = valueDataDataItem["MaxIopsAdjustDeadline"].asString();
+		if(!valueDataDataItem["MaxIopsIncreaseRatio"].isNull())
+			dataObject.maxIopsIncreaseRatio = valueDataDataItem["MaxIopsIncreaseRatio"].asString();
+		if(!valueDataDataItem["MaxIopsIncreaseRatioValue"].isNull())
+			dataObject.maxIopsIncreaseRatioValue = valueDataDataItem["MaxIopsIncreaseRatioValue"].asString();
+		if(!valueDataDataItem["MemAdjustableMaxRatio"].isNull())
+			dataObject.memAdjustableMaxRatio = valueDataDataItem["MemAdjustableMaxRatio"].asString();
+		if(!valueDataDataItem["MemAdjustableMaxValue"].isNull())
+			dataObject.memAdjustableMaxValue = valueDataDataItem["MemAdjustableMaxValue"].asString();
+		if(!valueDataDataItem["MemoryAdjustDeadline"].isNull())
+			dataObject.memoryAdjustDeadline = valueDataDataItem["MemoryAdjustDeadline"].asString();
+		if(!valueDataDataItem["MemoryIncreaseRatio"].isNull())
+			dataObject.memoryIncreaseRatio = valueDataDataItem["MemoryIncreaseRatio"].asString();
+		if(!valueDataDataItem["MemoryIncreaseRatioValue"].isNull())
+			dataObject.memoryIncreaseRatioValue = valueDataDataItem["MemoryIncreaseRatioValue"].asString();
+		if(!valueDataDataItem["OriginCpu"].isNull())
+			dataObject.originCpu = valueDataDataItem["OriginCpu"].asString();
+		if(!valueDataDataItem["OriginMaxConn"].isNull())
+			dataObject.originMaxConn = valueDataDataItem["OriginMaxConn"].asString();
+		if(!valueDataDataItem["OriginMaxIops"].isNull())
+			dataObject.originMaxIops = valueDataDataItem["OriginMaxIops"].asString();
+		if(!valueDataDataItem["OriginMemory"].isNull())
+			dataObject.originMemory = valueDataDataItem["OriginMemory"].asString();
 		data_.push_back(dataObject);
 	}
 

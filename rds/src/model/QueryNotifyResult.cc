@@ -40,40 +40,40 @@ void QueryNotifyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["PageNumber"].isNull())
 		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalRecordCount"].isNull())
 		data_.totalRecordCount = std::stoi(dataNode["TotalRecordCount"].asString());
 	auto allNotifyItemListNode = dataNode["NotifyItemList"]["NotifyItemListItem"];
 	for (auto dataNodeNotifyItemListNotifyItemListItem : allNotifyItemListNode)
 	{
 		Data::NotifyItemListItem notifyItemListItemObject;
-		if(!dataNodeNotifyItemListNotifyItemListItem["Id"].isNull())
-			notifyItemListItemObject.id = std::stol(dataNodeNotifyItemListNotifyItemListItem["Id"].asString());
-		if(!dataNodeNotifyItemListNotifyItemListItem["GmtCreated"].isNull())
-			notifyItemListItemObject.gmtCreated = dataNodeNotifyItemListNotifyItemListItem["GmtCreated"].asString();
-		if(!dataNodeNotifyItemListNotifyItemListItem["GmtModified"].isNull())
-			notifyItemListItemObject.gmtModified = dataNodeNotifyItemListNotifyItemListItem["GmtModified"].asString();
 		if(!dataNodeNotifyItemListNotifyItemListItem["AliUid"].isNull())
 			notifyItemListItemObject.aliUid = std::stol(dataNodeNotifyItemListNotifyItemListItem["AliUid"].asString());
-		if(!dataNodeNotifyItemListNotifyItemListItem["IdempotentId"].isNull())
-			notifyItemListItemObject.idempotentId = dataNodeNotifyItemListNotifyItemListItem["IdempotentId"].asString();
-		if(!dataNodeNotifyItemListNotifyItemListItem["IdempotentCount"].isNull())
-			notifyItemListItemObject.idempotentCount = dataNodeNotifyItemListNotifyItemListItem["IdempotentCount"].asString();
-		if(!dataNodeNotifyItemListNotifyItemListItem["Type"].isNull())
-			notifyItemListItemObject.type = dataNodeNotifyItemListNotifyItemListItem["Type"].asString();
-		if(!dataNodeNotifyItemListNotifyItemListItem["Level"].isNull())
-			notifyItemListItemObject.level = dataNodeNotifyItemListNotifyItemListItem["Level"].asString();
-		if(!dataNodeNotifyItemListNotifyItemListItem["TemplateName"].isNull())
-			notifyItemListItemObject.templateName = dataNodeNotifyItemListNotifyItemListItem["TemplateName"].asString();
-		if(!dataNodeNotifyItemListNotifyItemListItem["NotifyElement"].isNull())
-			notifyItemListItemObject.notifyElement = dataNodeNotifyItemListNotifyItemListItem["NotifyElement"].asString();
 		if(!dataNodeNotifyItemListNotifyItemListItem["ConfirmFlag"].isNull())
 			notifyItemListItemObject.confirmFlag = dataNodeNotifyItemListNotifyItemListItem["ConfirmFlag"].asString() == "true";
 		if(!dataNodeNotifyItemListNotifyItemListItem["Confirmor"].isNull())
 			notifyItemListItemObject.confirmor = std::stol(dataNodeNotifyItemListNotifyItemListItem["Confirmor"].asString());
+		if(!dataNodeNotifyItemListNotifyItemListItem["GmtCreated"].isNull())
+			notifyItemListItemObject.gmtCreated = dataNodeNotifyItemListNotifyItemListItem["GmtCreated"].asString();
+		if(!dataNodeNotifyItemListNotifyItemListItem["GmtModified"].isNull())
+			notifyItemListItemObject.gmtModified = dataNodeNotifyItemListNotifyItemListItem["GmtModified"].asString();
+		if(!dataNodeNotifyItemListNotifyItemListItem["Id"].isNull())
+			notifyItemListItemObject.id = std::stol(dataNodeNotifyItemListNotifyItemListItem["Id"].asString());
+		if(!dataNodeNotifyItemListNotifyItemListItem["IdempotentCount"].isNull())
+			notifyItemListItemObject.idempotentCount = dataNodeNotifyItemListNotifyItemListItem["IdempotentCount"].asString();
+		if(!dataNodeNotifyItemListNotifyItemListItem["IdempotentId"].isNull())
+			notifyItemListItemObject.idempotentId = dataNodeNotifyItemListNotifyItemListItem["IdempotentId"].asString();
+		if(!dataNodeNotifyItemListNotifyItemListItem["Level"].isNull())
+			notifyItemListItemObject.level = dataNodeNotifyItemListNotifyItemListItem["Level"].asString();
+		if(!dataNodeNotifyItemListNotifyItemListItem["NotifyElement"].isNull())
+			notifyItemListItemObject.notifyElement = dataNodeNotifyItemListNotifyItemListItem["NotifyElement"].asString();
+		if(!dataNodeNotifyItemListNotifyItemListItem["TemplateName"].isNull())
+			notifyItemListItemObject.templateName = dataNodeNotifyItemListNotifyItemListItem["TemplateName"].asString();
+		if(!dataNodeNotifyItemListNotifyItemListItem["Type"].isNull())
+			notifyItemListItemObject.type = dataNodeNotifyItemListNotifyItemListItem["Type"].asString();
 		data_.notifyItemList.push_back(notifyItemListItemObject);
 	}
 

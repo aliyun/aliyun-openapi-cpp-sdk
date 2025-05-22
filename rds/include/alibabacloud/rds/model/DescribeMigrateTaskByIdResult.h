@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				std::string getDescription()const;
 				std::string getEndTime()const;
 				std::string getMigrateTaskId()const;
-				std::string getCreateTime()const;
 				std::string getBackupMode()const;
+				std::string getCreateTime()const;
 				std::string getIsDBReplaced()const;
 				std::string getDBName()const;
 				std::string getDBInstanceName()const;
@@ -54,8 +54,8 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string endTime_;
 				std::string migrateTaskId_;
-				std::string createTime_;
 				std::string backupMode_;
+				std::string createTime_;
 				std::string isDBReplaced_;
 				std::string dBName_;
 				std::string dBInstanceName_;

@@ -34,33 +34,6 @@ void DescribeBackupDatabaseRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeBackupDatabaseRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeBackupDatabaseRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string DescribeBackupDatabaseRequest::getBackupId() const {
-  return backupId_;
-}
-
-void DescribeBackupDatabaseRequest::setBackupId(const std::string &backupId) {
-  backupId_ = backupId;
-  setParameter(std::string("BackupId"), backupId);
-}
-
-long DescribeBackupDatabaseRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeBackupDatabaseRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string DescribeBackupDatabaseRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,5 +59,32 @@ std::string DescribeBackupDatabaseRequest::getDBInstanceId() const {
 void DescribeBackupDatabaseRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DescribeBackupDatabaseRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeBackupDatabaseRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string DescribeBackupDatabaseRequest::getBackupId() const {
+  return backupId_;
+}
+
+void DescribeBackupDatabaseRequest::setBackupId(const std::string &backupId) {
+  backupId_ = backupId;
+  setParameter(std::string("BackupId"), backupId);
+}
+
+long DescribeBackupDatabaseRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeBackupDatabaseRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

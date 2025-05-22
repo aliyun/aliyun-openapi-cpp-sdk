@@ -25,15 +25,6 @@ UntagResourcesRequest::UntagResourcesRequest()
 
 UntagResourcesRequest::~UntagResourcesRequest() {}
 
-bool UntagResourcesRequest::getAll() const {
-  return all_;
-}
-
-void UntagResourcesRequest::setAll(bool all) {
-  all_ = all;
-  setParameter(std::string("All"), all ? "true" : "false");
-}
-
 long UntagResourcesRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
@@ -41,6 +32,33 @@ long UntagResourcesRequest::getResourceOwnerId() const {
 void UntagResourcesRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
+std::string UntagResourcesRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void UntagResourcesRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string UntagResourcesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UntagResourcesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+bool UntagResourcesRequest::getAll() const {
+  return all_;
+}
+
+void UntagResourcesRequest::setAll(bool all) {
+  all_ = all;
+  setParameter(std::string("All"), all ? "true" : "false");
 }
 
 std::vector<std::string> UntagResourcesRequest::getResourceId() const {
@@ -76,24 +94,6 @@ std::string UntagResourcesRequest::getResourceType() const {
 void UntagResourcesRequest::setResourceType(const std::string &resourceType) {
   resourceType_ = resourceType;
   setParameter(std::string("ResourceType"), resourceType);
-}
-
-std::string UntagResourcesRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void UntagResourcesRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string UntagResourcesRequest::getRegionId() const {
-  return regionId_;
-}
-
-void UntagResourcesRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 std::vector<std::string> UntagResourcesRequest::getTagKey() const {

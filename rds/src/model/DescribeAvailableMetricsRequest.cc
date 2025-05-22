@@ -43,24 +43,6 @@ void DescribeAvailableMetricsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAvailableMetricsRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeAvailableMetricsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long DescribeAvailableMetricsRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeAvailableMetricsRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string DescribeAvailableMetricsRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,5 +68,23 @@ std::string DescribeAvailableMetricsRequest::getRegionId() const {
 void DescribeAvailableMetricsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeAvailableMetricsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeAvailableMetricsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long DescribeAvailableMetricsRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeAvailableMetricsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

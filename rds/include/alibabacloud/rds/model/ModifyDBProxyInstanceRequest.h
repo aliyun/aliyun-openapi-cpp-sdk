@@ -28,6 +28,16 @@ namespace Rds {
 namespace Model {
 class ALIBABACLOUD_RDS_EXPORT ModifyDBProxyInstanceRequest : public RpcServiceRequest {
 public:
+	struct MigrateAZ {
+		std::string destVpcId;
+		std::string dbProxyEndpointId;
+		std::string destVSwitchId;
+	};
+	struct DBProxyNodes {
+		std::string cpuCores;
+		std::string zoneId;
+		std::string nodeCounts;
+	};
 	ModifyDBProxyInstanceRequest();
 	~ModifyDBProxyInstanceRequest();
 	long getResourceOwnerId() const;
@@ -36,12 +46,16 @@ public:
 	void setVSwitchIds(const std::string &vSwitchIds);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::vector<MigrateAZ> getMigrateAZ() const;
+	void setMigrateAZ(const std::vector<MigrateAZ> &migrateAZ);
 	std::string getEffectiveTime() const;
 	void setEffectiveTime(const std::string &effectiveTime);
 	std::string getEffectiveSpecificTime() const;
 	void setEffectiveSpecificTime(const std::string &effectiveSpecificTime);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<DBProxyNodes> getDBProxyNodes() const;
+	void setDBProxyNodes(const std::vector<DBProxyNodes> &dBProxyNodes);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
@@ -59,9 +73,11 @@ private:
 	long resourceOwnerId_;
 	std::string vSwitchIds_;
 	std::string accessKeyId_;
+	std::vector<MigrateAZ> migrateAZ_;
 	std::string effectiveTime_;
 	std::string effectiveSpecificTime_;
 	std::string regionId_;
+	std::vector<DBProxyNodes> dBProxyNodes_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string dBProxyEngineType_;

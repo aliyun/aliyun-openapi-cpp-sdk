@@ -39,18 +39,18 @@ void DescribeDBInstancePromoteActivityResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceName"].isNull())
-		dBInstanceName_ = value["DBInstanceName"].asString();
 	if(!value["AliUid"].isNull())
 		aliUid_ = value["AliUid"].asString();
-	if(!value["DBType"].isNull())
-		dBType_ = value["DBType"].asString();
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["IsActivity"].isNull())
-		isActivity_ = value["IsActivity"].asString();
 	if(!value["Bid"].isNull())
 		bid_ = value["Bid"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["DBType"].isNull())
+		dBType_ = value["DBType"].asString();
+	if(!value["IsActivity"].isNull())
+		isActivity_ = value["IsActivity"].asString();
 
 }
 
@@ -64,23 +64,23 @@ std::string DescribeDBInstancePromoteActivityResult::getDBType()const
 	return dBType_;
 }
 
-std::string DescribeDBInstancePromoteActivityResult::getIsActivity()const
-{
-	return isActivity_;
-}
-
 std::string DescribeDBInstancePromoteActivityResult::getBid()const
 {
 	return bid_;
 }
 
-std::string DescribeDBInstancePromoteActivityResult::getDBInstanceName()const
+std::string DescribeDBInstancePromoteActivityResult::getIsActivity()const
 {
-	return dBInstanceName_;
+	return isActivity_;
 }
 
 std::string DescribeDBInstancePromoteActivityResult::getAliUid()const
 {
 	return aliUid_;
+}
+
+std::string DescribeDBInstancePromoteActivityResult::getDBInstanceName()const
+{
+	return dBInstanceName_;
 }
 

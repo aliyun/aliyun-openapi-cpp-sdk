@@ -35,9 +35,9 @@ namespace AlibabaCloud
 				struct DedicatedHostGroupsItem
 				{
 					int diskAllocationRatio;
-					int instanceNumber;
-					float diskUsedAmount;
 					std::string allocationPolicy;
+					float diskUsedAmount;
+					int instanceNumber;
 					std::string dedicatedHostGroupId;
 					std::string hostReplacePolicy;
 					std::string bastionInstanceId;

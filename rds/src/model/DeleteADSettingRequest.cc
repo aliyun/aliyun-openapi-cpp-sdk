@@ -34,15 +34,6 @@ void DeleteADSettingRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DeleteADSettingRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DeleteADSettingRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string DeleteADSettingRequest::getClientToken() const {
   return clientToken_;
 }
@@ -50,15 +41,6 @@ std::string DeleteADSettingRequest::getClientToken() const {
 void DeleteADSettingRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
   setParameter(std::string("ClientToken"), clientToken);
-}
-
-long DeleteADSettingRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DeleteADSettingRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 std::string DeleteADSettingRequest::getAccessKeyId() const {
@@ -86,5 +68,23 @@ std::string DeleteADSettingRequest::getDBInstanceId() const {
 void DeleteADSettingRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DeleteADSettingRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DeleteADSettingRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long DeleteADSettingRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DeleteADSettingRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

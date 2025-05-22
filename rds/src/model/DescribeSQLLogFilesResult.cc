@@ -45,14 +45,14 @@ void DescribeSQLLogFilesResult::parse(const std::string &payload)
 		LogFile itemsObject;
 		if(!valueItemsLogFile["FileID"].isNull())
 			itemsObject.fileID = valueItemsLogFile["FileID"].asString();
-		if(!valueItemsLogFile["LogStartTime"].isNull())
-			itemsObject.logStartTime = valueItemsLogFile["LogStartTime"].asString();
-		if(!valueItemsLogFile["LogSize"].isNull())
-			itemsObject.logSize = valueItemsLogFile["LogSize"].asString();
 		if(!valueItemsLogFile["LogDownloadURL"].isNull())
 			itemsObject.logDownloadURL = valueItemsLogFile["LogDownloadURL"].asString();
 		if(!valueItemsLogFile["LogEndTime"].isNull())
 			itemsObject.logEndTime = valueItemsLogFile["LogEndTime"].asString();
+		if(!valueItemsLogFile["LogSize"].isNull())
+			itemsObject.logSize = valueItemsLogFile["LogSize"].asString();
+		if(!valueItemsLogFile["LogStartTime"].isNull())
+			itemsObject.logStartTime = valueItemsLogFile["LogStartTime"].asString();
 		if(!valueItemsLogFile["LogStatus"].isNull())
 			itemsObject.logStatus = valueItemsLogFile["LogStatus"].asString();
 		items_.push_back(itemsObject);

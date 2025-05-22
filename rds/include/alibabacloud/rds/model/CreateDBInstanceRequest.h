@@ -54,6 +54,8 @@ public:
 	void setConnectionString(const std::string &connectionString);
 	bool getAutoCreateProxy() const;
 	void setAutoCreateProxy(bool autoCreateProxy);
+	std::string getOptimizedWrites() const;
+	void setOptimizedWrites(const std::string &optimizedWrites);
 	std::string getEngineVersion() const;
 	void setEngineVersion(const std::string &engineVersion);
 	bool getDeletionProtection() const;
@@ -96,6 +98,8 @@ public:
 	void setPort(const std::string &port);
 	std::string getRoleARN() const;
 	void setRoleARN(const std::string &roleARN);
+	std::string getPromotionCode() const;
+	void setPromotionCode(const std::string &promotionCode);
 	std::string getTunnelId() const;
 	void setTunnelId(const std::string &tunnelId);
 	std::string getZoneId() const;
@@ -114,6 +118,8 @@ public:
 	void setZoneIdSlave1(const std::string &zoneIdSlave1);
 	std::string getZoneIdSlave2() const;
 	void setZoneIdSlave2(const std::string &zoneIdSlave2);
+	bool getAutoUseCoupon() const;
+	void setAutoUseCoupon(bool autoUseCoupon);
 	std::string getDBIsIgnoreCase() const;
 	void setDBIsIgnoreCase(const std::string &dBIsIgnoreCase);
 	std::string getIoAccelerationEnabled() const;
@@ -175,6 +181,7 @@ private:
 	std::string systemDBCharset_;
 	std::string connectionString_;
 	bool autoCreateProxy_;
+	std::string optimizedWrites_;
 	std::string engineVersion_;
 	bool deletionProtection_;
 	std::string resourceGroupId_;
@@ -196,6 +203,7 @@ private:
 	std::string autoRenew_;
 	std::string port_;
 	std::string roleARN_;
+	std::string promotionCode_;
 	std::string tunnelId_;
 	std::string zoneId_;
 	std::string storageAutoScale_;
@@ -205,6 +213,7 @@ private:
 	std::string targetDedicatedHostIdForSlave_;
 	std::string zoneIdSlave1_;
 	std::string zoneIdSlave2_;
+	bool autoUseCoupon_;
 	std::string dBIsIgnoreCase_;
 	std::string ioAccelerationEnabled_;
 	bool coldDataEnabled_;

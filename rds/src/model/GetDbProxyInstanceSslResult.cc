@@ -43,6 +43,8 @@ void GetDbProxyInstanceSslResult::parse(const std::string &payload)
 	for (auto valueDbProxyCertListItemsDbProxyCertListItemsItem : allDbProxyCertListItemsNode)
 	{
 		DbProxyCertListItemsItem dbProxyCertListItemsObject;
+		if(!valueDbProxyCertListItemsDbProxyCertListItemsItem["CertCommonName"].isNull())
+			dbProxyCertListItemsObject.certCommonName = valueDbProxyCertListItemsDbProxyCertListItemsItem["CertCommonName"].asString();
 		if(!valueDbProxyCertListItemsDbProxyCertListItemsItem["DbInstanceName"].isNull())
 			dbProxyCertListItemsObject.dbInstanceName = valueDbProxyCertListItemsDbProxyCertListItemsItem["DbInstanceName"].asString();
 		if(!valueDbProxyCertListItemsDbProxyCertListItemsItem["EndpointName"].isNull())
@@ -51,8 +53,6 @@ void GetDbProxyInstanceSslResult::parse(const std::string &payload)
 			dbProxyCertListItemsObject.endpointType = valueDbProxyCertListItemsDbProxyCertListItemsItem["EndpointType"].asString();
 		if(!valueDbProxyCertListItemsDbProxyCertListItemsItem["SslExpiredTime"].isNull())
 			dbProxyCertListItemsObject.sslExpiredTime = valueDbProxyCertListItemsDbProxyCertListItemsItem["SslExpiredTime"].asString();
-		if(!valueDbProxyCertListItemsDbProxyCertListItemsItem["CertCommonName"].isNull())
-			dbProxyCertListItemsObject.certCommonName = valueDbProxyCertListItemsDbProxyCertListItemsItem["CertCommonName"].asString();
 		dbProxyCertListItems_.push_back(dbProxyCertListItemsObject);
 	}
 

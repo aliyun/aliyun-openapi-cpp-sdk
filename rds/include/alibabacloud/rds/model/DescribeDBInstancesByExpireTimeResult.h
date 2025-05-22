@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string dBInstanceStatus;
 					std::string dBInstanceId;
-					std::string payType;
 					std::string lockMode;
+					std::string payType;
 					std::string expireTime;
 					std::string dBInstanceDescription;
 				};

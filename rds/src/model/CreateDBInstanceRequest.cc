@@ -88,6 +88,15 @@ void CreateDBInstanceRequest::setAutoCreateProxy(bool autoCreateProxy) {
   setParameter(std::string("AutoCreateProxy"), autoCreateProxy ? "true" : "false");
 }
 
+std::string CreateDBInstanceRequest::getOptimizedWrites() const {
+  return optimizedWrites_;
+}
+
+void CreateDBInstanceRequest::setOptimizedWrites(const std::string &optimizedWrites) {
+  optimizedWrites_ = optimizedWrites;
+  setParameter(std::string("OptimizedWrites"), optimizedWrites);
+}
+
 std::string CreateDBInstanceRequest::getEngineVersion() const {
   return engineVersion_;
 }
@@ -282,6 +291,15 @@ void CreateDBInstanceRequest::setRoleARN(const std::string &roleARN) {
   setParameter(std::string("RoleARN"), roleARN);
 }
 
+std::string CreateDBInstanceRequest::getPromotionCode() const {
+  return promotionCode_;
+}
+
+void CreateDBInstanceRequest::setPromotionCode(const std::string &promotionCode) {
+  promotionCode_ = promotionCode;
+  setParameter(std::string("PromotionCode"), promotionCode);
+}
+
 std::string CreateDBInstanceRequest::getTunnelId() const {
   return tunnelId_;
 }
@@ -361,6 +379,15 @@ std::string CreateDBInstanceRequest::getZoneIdSlave2() const {
 void CreateDBInstanceRequest::setZoneIdSlave2(const std::string &zoneIdSlave2) {
   zoneIdSlave2_ = zoneIdSlave2;
   setParameter(std::string("ZoneIdSlave2"), zoneIdSlave2);
+}
+
+bool CreateDBInstanceRequest::getAutoUseCoupon() const {
+  return autoUseCoupon_;
+}
+
+void CreateDBInstanceRequest::setAutoUseCoupon(bool autoUseCoupon) {
+  autoUseCoupon_ = autoUseCoupon;
+  setParameter(std::string("AutoUseCoupon"), autoUseCoupon ? "true" : "false");
 }
 
 std::string CreateDBInstanceRequest::getDBIsIgnoreCase() const {

@@ -49,10 +49,12 @@ void DescribeDBInstanceTDEResult::parse(const std::string &payload)
 			databasesObject.tDEStatus = valueDatabasesDatabase["TDEStatus"].asString();
 		databases_.push_back(databasesObject);
 	}
-	if(!value["TDEStatus"].isNull())
-		tDEStatus_ = value["TDEStatus"].asString();
 	if(!value["TDEMode"].isNull())
 		tDEMode_ = value["TDEMode"].asString();
+	if(!value["TDEStatus"].isNull())
+		tDEStatus_ = value["TDEStatus"].asString();
+	if(!value["EncryptionKey"].isNull())
+		encryptionKey_ = value["EncryptionKey"].asString();
 
 }
 
@@ -64,6 +66,11 @@ std::string DescribeDBInstanceTDEResult::getTDEStatus()const
 std::vector<DescribeDBInstanceTDEResult::Database> DescribeDBInstanceTDEResult::getDatabases()const
 {
 	return databases_;
+}
+
+std::string DescribeDBInstanceTDEResult::getEncryptionKey()const
+{
+	return encryptionKey_;
 }
 
 std::string DescribeDBInstanceTDEResult::getTDEMode()const

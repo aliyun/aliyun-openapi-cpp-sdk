@@ -21,6 +21,8 @@ set(rds_public_header
 	include/alibabacloud/rds/RdsExport.h )
 
 set(rds_public_header_model 
+	include/alibabacloud/rds/model/AcceptRCInquiredSystemEventRequest.h
+	include/alibabacloud/rds/model/AcceptRCInquiredSystemEventResult.h
 	include/alibabacloud/rds/model/ActivateMigrationTargetInstanceRequest.h
 	include/alibabacloud/rds/model/ActivateMigrationTargetInstanceResult.h
 	include/alibabacloud/rds/model/AddTagsToResourceRequest.h
@@ -29,10 +31,20 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/AllocateInstancePublicConnectionResult.h
 	include/alibabacloud/rds/model/AllocateReadWriteSplittingConnectionRequest.h
 	include/alibabacloud/rds/model/AllocateReadWriteSplittingConnectionResult.h
+	include/alibabacloud/rds/model/AssociateEipAddressWithRCInstanceRequest.h
+	include/alibabacloud/rds/model/AssociateEipAddressWithRCInstanceResult.h
+	include/alibabacloud/rds/model/AttachRCDiskRequest.h
+	include/alibabacloud/rds/model/AttachRCDiskResult.h
+	include/alibabacloud/rds/model/AttachRCInstancesRequest.h
+	include/alibabacloud/rds/model/AttachRCInstancesResult.h
 	include/alibabacloud/rds/model/AttachWhitelistTemplateToInstanceRequest.h
 	include/alibabacloud/rds/model/AttachWhitelistTemplateToInstanceResult.h
+	include/alibabacloud/rds/model/AuthorizeRCSecurityGroupPermissionRequest.h
+	include/alibabacloud/rds/model/AuthorizeRCSecurityGroupPermissionResult.h
 	include/alibabacloud/rds/model/CalculateDBInstanceWeightRequest.h
 	include/alibabacloud/rds/model/CalculateDBInstanceWeightResult.h
+	include/alibabacloud/rds/model/CancelActiveOperationTasksRequest.h
+	include/alibabacloud/rds/model/CancelActiveOperationTasksResult.h
 	include/alibabacloud/rds/model/CheckAccountNameAvailableRequest.h
 	include/alibabacloud/rds/model/CheckAccountNameAvailableResult.h
 	include/alibabacloud/rds/model/CheckCloudResourceAuthorizedRequest.h
@@ -99,8 +111,18 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CreateParameterGroupResult.h
 	include/alibabacloud/rds/model/CreatePostgresExtensionsRequest.h
 	include/alibabacloud/rds/model/CreatePostgresExtensionsResult.h
+	include/alibabacloud/rds/model/CreateRCDeploymentSetRequest.h
+	include/alibabacloud/rds/model/CreateRCDeploymentSetResult.h
+	include/alibabacloud/rds/model/CreateRCDiskRequest.h
+	include/alibabacloud/rds/model/CreateRCDiskResult.h
+	include/alibabacloud/rds/model/CreateRCNodePoolRequest.h
+	include/alibabacloud/rds/model/CreateRCNodePoolResult.h
+	include/alibabacloud/rds/model/CreateRCSnapshotRequest.h
+	include/alibabacloud/rds/model/CreateRCSnapshotResult.h
 	include/alibabacloud/rds/model/CreateReadOnlyDBInstanceRequest.h
 	include/alibabacloud/rds/model/CreateReadOnlyDBInstanceResult.h
+	include/alibabacloud/rds/model/CreateReplicationLinkRequest.h
+	include/alibabacloud/rds/model/CreateReplicationLinkResult.h
 	include/alibabacloud/rds/model/CreateSecretRequest.h
 	include/alibabacloud/rds/model/CreateSecretResult.h
 	include/alibabacloud/rds/model/CreateServiceLinkedRoleRequest.h
@@ -139,6 +161,22 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DeleteParameterGroupResult.h
 	include/alibabacloud/rds/model/DeletePostgresExtensionsRequest.h
 	include/alibabacloud/rds/model/DeletePostgresExtensionsResult.h
+	include/alibabacloud/rds/model/DeleteRCClusterNodesRequest.h
+	include/alibabacloud/rds/model/DeleteRCClusterNodesResult.h
+	include/alibabacloud/rds/model/DeleteRCDeploymentSetRequest.h
+	include/alibabacloud/rds/model/DeleteRCDeploymentSetResult.h
+	include/alibabacloud/rds/model/DeleteRCDiskRequest.h
+	include/alibabacloud/rds/model/DeleteRCDiskResult.h
+	include/alibabacloud/rds/model/DeleteRCInstanceRequest.h
+	include/alibabacloud/rds/model/DeleteRCInstanceResult.h
+	include/alibabacloud/rds/model/DeleteRCInstancesRequest.h
+	include/alibabacloud/rds/model/DeleteRCInstancesResult.h
+	include/alibabacloud/rds/model/DeleteRCNodePoolRequest.h
+	include/alibabacloud/rds/model/DeleteRCNodePoolResult.h
+	include/alibabacloud/rds/model/DeleteRCSnapshotRequest.h
+	include/alibabacloud/rds/model/DeleteRCSnapshotResult.h
+	include/alibabacloud/rds/model/DeleteReplicationLinkRequest.h
+	include/alibabacloud/rds/model/DeleteReplicationLinkResult.h
 	include/alibabacloud/rds/model/DeleteSecretRequest.h
 	include/alibabacloud/rds/model/DeleteSecretResult.h
 	include/alibabacloud/rds/model/DeleteSlotRequest.h
@@ -235,6 +273,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeDBInstancePromoteActivityResult.h
 	include/alibabacloud/rds/model/DescribeDBInstanceProxyConfigurationRequest.h
 	include/alibabacloud/rds/model/DescribeDBInstanceProxyConfigurationResult.h
+	include/alibabacloud/rds/model/DescribeDBInstanceReplicationRequest.h
+	include/alibabacloud/rds/model/DescribeDBInstanceReplicationResult.h
 	include/alibabacloud/rds/model/DescribeDBInstanceSSLRequest.h
 	include/alibabacloud/rds/model/DescribeDBInstanceSSLResult.h
 	include/alibabacloud/rds/model/DescribeDBInstanceSecurityGroupRuleRequest.h
@@ -339,6 +379,44 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribePriceResult.h
 	include/alibabacloud/rds/model/DescribeQuickSaleConfigRequest.h
 	include/alibabacloud/rds/model/DescribeQuickSaleConfigResult.h
+	include/alibabacloud/rds/model/DescribeRCClusterConfigRequest.h
+	include/alibabacloud/rds/model/DescribeRCClusterConfigResult.h
+	include/alibabacloud/rds/model/DescribeRCClusterNodesRequest.h
+	include/alibabacloud/rds/model/DescribeRCClusterNodesResult.h
+	include/alibabacloud/rds/model/DescribeRCClustersRequest.h
+	include/alibabacloud/rds/model/DescribeRCClustersResult.h
+	include/alibabacloud/rds/model/DescribeRCDeploymentSetsRequest.h
+	include/alibabacloud/rds/model/DescribeRCDeploymentSetsResult.h
+	include/alibabacloud/rds/model/DescribeRCDisksRequest.h
+	include/alibabacloud/rds/model/DescribeRCDisksResult.h
+	include/alibabacloud/rds/model/DescribeRCImageListRequest.h
+	include/alibabacloud/rds/model/DescribeRCImageListResult.h
+	include/alibabacloud/rds/model/DescribeRCInstanceAttributeRequest.h
+	include/alibabacloud/rds/model/DescribeRCInstanceAttributeResult.h
+	include/alibabacloud/rds/model/DescribeRCInstanceDdosCountRequest.h
+	include/alibabacloud/rds/model/DescribeRCInstanceDdosCountResult.h
+	include/alibabacloud/rds/model/DescribeRCInstanceHistoryEventsRequest.h
+	include/alibabacloud/rds/model/DescribeRCInstanceHistoryEventsResult.h
+	include/alibabacloud/rds/model/DescribeRCInstanceIpAddressRequest.h
+	include/alibabacloud/rds/model/DescribeRCInstanceIpAddressResult.h
+	include/alibabacloud/rds/model/DescribeRCInstanceTypeFamiliesRequest.h
+	include/alibabacloud/rds/model/DescribeRCInstanceTypeFamiliesResult.h
+	include/alibabacloud/rds/model/DescribeRCInstanceTypesRequest.h
+	include/alibabacloud/rds/model/DescribeRCInstanceTypesResult.h
+	include/alibabacloud/rds/model/DescribeRCInstanceVncUrlRequest.h
+	include/alibabacloud/rds/model/DescribeRCInstanceVncUrlResult.h
+	include/alibabacloud/rds/model/DescribeRCInstancesRequest.h
+	include/alibabacloud/rds/model/DescribeRCInstancesResult.h
+	include/alibabacloud/rds/model/DescribeRCMetricListRequest.h
+	include/alibabacloud/rds/model/DescribeRCMetricListResult.h
+	include/alibabacloud/rds/model/DescribeRCNodePoolRequest.h
+	include/alibabacloud/rds/model/DescribeRCNodePoolResult.h
+	include/alibabacloud/rds/model/DescribeRCSecurityGroupListRequest.h
+	include/alibabacloud/rds/model/DescribeRCSecurityGroupListResult.h
+	include/alibabacloud/rds/model/DescribeRCSecurityGroupPermissionRequest.h
+	include/alibabacloud/rds/model/DescribeRCSecurityGroupPermissionResult.h
+	include/alibabacloud/rds/model/DescribeRCSnapshotsRequest.h
+	include/alibabacloud/rds/model/DescribeRCSnapshotsResult.h
 	include/alibabacloud/rds/model/DescribeRdsResourceSettingsRequest.h
 	include/alibabacloud/rds/model/DescribeRdsResourceSettingsResult.h
 	include/alibabacloud/rds/model/DescribeReadDBInstanceDelayRequest.h
@@ -349,6 +427,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeRegionsResult.h
 	include/alibabacloud/rds/model/DescribeRenewalPriceRequest.h
 	include/alibabacloud/rds/model/DescribeRenewalPriceResult.h
+	include/alibabacloud/rds/model/DescribeReplicationLinkLogsRequest.h
+	include/alibabacloud/rds/model/DescribeReplicationLinkLogsResult.h
 	include/alibabacloud/rds/model/DescribeResourceDetailsRequest.h
 	include/alibabacloud/rds/model/DescribeResourceDetailsResult.h
 	include/alibabacloud/rds/model/DescribeResourceUsageRequest.h
@@ -393,6 +473,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DestroyDBInstanceResult.h
 	include/alibabacloud/rds/model/DetachGadInstanceMemberRequest.h
 	include/alibabacloud/rds/model/DetachGadInstanceMemberResult.h
+	include/alibabacloud/rds/model/DetachRCDiskRequest.h
+	include/alibabacloud/rds/model/DetachRCDiskResult.h
 	include/alibabacloud/rds/model/DetachWhitelistTemplateToInstanceRequest.h
 	include/alibabacloud/rds/model/DetachWhitelistTemplateToInstanceResult.h
 	include/alibabacloud/rds/model/EvaluateLocalExtendDiskRequest.h
@@ -419,16 +501,22 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/MigrateConnectionToOtherZoneResult.h
 	include/alibabacloud/rds/model/MigrateDBInstanceRequest.h
 	include/alibabacloud/rds/model/MigrateDBInstanceResult.h
+	include/alibabacloud/rds/model/MigrateDBNodesRequest.h
+	include/alibabacloud/rds/model/MigrateDBNodesResult.h
 	include/alibabacloud/rds/model/MigrateSecurityIPModeRequest.h
 	include/alibabacloud/rds/model/MigrateSecurityIPModeResult.h
 	include/alibabacloud/rds/model/MigrateToOtherZoneRequest.h
 	include/alibabacloud/rds/model/MigrateToOtherZoneResult.h
 	include/alibabacloud/rds/model/ModifyADInfoRequest.h
 	include/alibabacloud/rds/model/ModifyADInfoResult.h
+	include/alibabacloud/rds/model/ModifyAccountCheckPolicyRequest.h
+	include/alibabacloud/rds/model/ModifyAccountCheckPolicyResult.h
 	include/alibabacloud/rds/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/rds/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/rds/model/ModifyAccountMaskingPrivilegeRequest.h
 	include/alibabacloud/rds/model/ModifyAccountMaskingPrivilegeResult.h
+	include/alibabacloud/rds/model/ModifyAccountSecurityPolicyRequest.h
+	include/alibabacloud/rds/model/ModifyAccountSecurityPolicyResult.h
 	include/alibabacloud/rds/model/ModifyActionEventPolicyRequest.h
 	include/alibabacloud/rds/model/ModifyActionEventPolicyResult.h
 	include/alibabacloud/rds/model/ModifyActiveOperationTasksRequest.h
@@ -471,6 +559,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyDBInstanceNetworkTypeResult.h
 	include/alibabacloud/rds/model/ModifyDBInstancePayTypeRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstancePayTypeResult.h
+	include/alibabacloud/rds/model/ModifyDBInstanceReplicationSwitchRequest.h
+	include/alibabacloud/rds/model/ModifyDBInstanceReplicationSwitchResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceSSLRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceSSLResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceSecurityGroupRuleRequest.h
@@ -515,6 +605,22 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyParameterResult.h
 	include/alibabacloud/rds/model/ModifyParameterGroupRequest.h
 	include/alibabacloud/rds/model/ModifyParameterGroupResult.h
+	include/alibabacloud/rds/model/ModifyRCDiskSpecRequest.h
+	include/alibabacloud/rds/model/ModifyRCDiskSpecResult.h
+	include/alibabacloud/rds/model/ModifyRCInstanceRequest.h
+	include/alibabacloud/rds/model/ModifyRCInstanceResult.h
+	include/alibabacloud/rds/model/ModifyRCInstanceAttributeRequest.h
+	include/alibabacloud/rds/model/ModifyRCInstanceAttributeResult.h
+	include/alibabacloud/rds/model/ModifyRCInstanceChargeTypeRequest.h
+	include/alibabacloud/rds/model/ModifyRCInstanceChargeTypeResult.h
+	include/alibabacloud/rds/model/ModifyRCInstanceDescriptionRequest.h
+	include/alibabacloud/rds/model/ModifyRCInstanceDescriptionResult.h
+	include/alibabacloud/rds/model/ModifyRCInstanceKeyPairRequest.h
+	include/alibabacloud/rds/model/ModifyRCInstanceKeyPairResult.h
+	include/alibabacloud/rds/model/ModifyRCInstanceNetworkSpecRequest.h
+	include/alibabacloud/rds/model/ModifyRCInstanceNetworkSpecResult.h
+	include/alibabacloud/rds/model/ModifyRCSecurityGroupPermissionRequest.h
+	include/alibabacloud/rds/model/ModifyRCSecurityGroupPermissionResult.h
 	include/alibabacloud/rds/model/ModifyReadWriteSplittingConnectionRequest.h
 	include/alibabacloud/rds/model/ModifyReadWriteSplittingConnectionResult.h
 	include/alibabacloud/rds/model/ModifyReadonlyInstanceDelayReplicationTimeRequest.h
@@ -541,8 +647,14 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/QueryNotifyResult.h
 	include/alibabacloud/rds/model/QueryRecommendByCodeRequest.h
 	include/alibabacloud/rds/model/QueryRecommendByCodeResult.h
+	include/alibabacloud/rds/model/RebootRCInstanceRequest.h
+	include/alibabacloud/rds/model/RebootRCInstanceResult.h
+	include/alibabacloud/rds/model/RebootRCInstancesRequest.h
+	include/alibabacloud/rds/model/RebootRCInstancesResult.h
 	include/alibabacloud/rds/model/RebuildDBInstanceRequest.h
 	include/alibabacloud/rds/model/RebuildDBInstanceResult.h
+	include/alibabacloud/rds/model/RebuildReplicationLinkRequest.h
+	include/alibabacloud/rds/model/RebuildReplicationLinkResult.h
 	include/alibabacloud/rds/model/ReceiveDBInstanceRequest.h
 	include/alibabacloud/rds/model/ReceiveDBInstanceResult.h
 	include/alibabacloud/rds/model/RecoveryDBInstanceRequest.h
@@ -557,10 +669,16 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/RemoveTagsFromResourceResult.h
 	include/alibabacloud/rds/model/RenewInstanceRequest.h
 	include/alibabacloud/rds/model/RenewInstanceResult.h
+	include/alibabacloud/rds/model/RenewRCInstanceRequest.h
+	include/alibabacloud/rds/model/RenewRCInstanceResult.h
+	include/alibabacloud/rds/model/ReplaceRCInstanceSystemDiskRequest.h
+	include/alibabacloud/rds/model/ReplaceRCInstanceSystemDiskResult.h
 	include/alibabacloud/rds/model/ResetAccountRequest.h
 	include/alibabacloud/rds/model/ResetAccountResult.h
 	include/alibabacloud/rds/model/ResetAccountPasswordRequest.h
 	include/alibabacloud/rds/model/ResetAccountPasswordResult.h
+	include/alibabacloud/rds/model/ResizeRCInstanceDiskRequest.h
+	include/alibabacloud/rds/model/ResizeRCInstanceDiskResult.h
 	include/alibabacloud/rds/model/RestartDBInstanceRequest.h
 	include/alibabacloud/rds/model/RestartDBInstanceResult.h
 	include/alibabacloud/rds/model/RestoreDdrTableRequest.h
@@ -571,22 +689,44 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/RevokeAccountPrivilegeResult.h
 	include/alibabacloud/rds/model/RevokeOperatorPermissionRequest.h
 	include/alibabacloud/rds/model/RevokeOperatorPermissionResult.h
+	include/alibabacloud/rds/model/RevokeRCSecurityGroupPermissionRequest.h
+	include/alibabacloud/rds/model/RevokeRCSecurityGroupPermissionResult.h
+	include/alibabacloud/rds/model/RunRCInstancesRequest.h
+	include/alibabacloud/rds/model/RunRCInstancesResult.h
 	include/alibabacloud/rds/model/StartDBInstanceRequest.h
 	include/alibabacloud/rds/model/StartDBInstanceResult.h
+	include/alibabacloud/rds/model/StartRCInstanceRequest.h
+	include/alibabacloud/rds/model/StartRCInstanceResult.h
+	include/alibabacloud/rds/model/StartRCInstancesRequest.h
+	include/alibabacloud/rds/model/StartRCInstancesResult.h
 	include/alibabacloud/rds/model/StopDBInstanceRequest.h
 	include/alibabacloud/rds/model/StopDBInstanceResult.h
+	include/alibabacloud/rds/model/StopRCInstanceRequest.h
+	include/alibabacloud/rds/model/StopRCInstanceResult.h
+	include/alibabacloud/rds/model/StopRCInstancesRequest.h
+	include/alibabacloud/rds/model/StopRCInstancesResult.h
 	include/alibabacloud/rds/model/SwitchDBInstanceHARequest.h
 	include/alibabacloud/rds/model/SwitchDBInstanceHAResult.h
 	include/alibabacloud/rds/model/SwitchDBInstanceNetTypeRequest.h
 	include/alibabacloud/rds/model/SwitchDBInstanceNetTypeResult.h
 	include/alibabacloud/rds/model/SwitchDBInstanceVpcRequest.h
 	include/alibabacloud/rds/model/SwitchDBInstanceVpcResult.h
+	include/alibabacloud/rds/model/SwitchOverMajorVersionUpgradeRequest.h
+	include/alibabacloud/rds/model/SwitchOverMajorVersionUpgradeResult.h
+	include/alibabacloud/rds/model/SwitchReplicationLinkRequest.h
+	include/alibabacloud/rds/model/SwitchReplicationLinkResult.h
+	include/alibabacloud/rds/model/SyncRCKeyPairRequest.h
+	include/alibabacloud/rds/model/SyncRCKeyPairResult.h
+	include/alibabacloud/rds/model/SyncRCSecurityGroupRequest.h
+	include/alibabacloud/rds/model/SyncRCSecurityGroupResult.h
 	include/alibabacloud/rds/model/TagResourcesRequest.h
 	include/alibabacloud/rds/model/TagResourcesResult.h
 	include/alibabacloud/rds/model/TerminateMigrateTaskRequest.h
 	include/alibabacloud/rds/model/TerminateMigrateTaskResult.h
 	include/alibabacloud/rds/model/TransformDBInstancePayTypeRequest.h
 	include/alibabacloud/rds/model/TransformDBInstancePayTypeResult.h
+	include/alibabacloud/rds/model/UnassociateEipAddressWithRCInstanceRequest.h
+	include/alibabacloud/rds/model/UnassociateEipAddressWithRCInstanceResult.h
 	include/alibabacloud/rds/model/UnlockAccountRequest.h
 	include/alibabacloud/rds/model/UnlockAccountResult.h
 	include/alibabacloud/rds/model/UntagResourcesRequest.h
@@ -608,6 +748,8 @@ set(rds_public_header_model
 
 set(rds_src 
 	src/RdsClient.cc
+	src/model/AcceptRCInquiredSystemEventRequest.cc
+	src/model/AcceptRCInquiredSystemEventResult.cc
 	src/model/ActivateMigrationTargetInstanceRequest.cc
 	src/model/ActivateMigrationTargetInstanceResult.cc
 	src/model/AddTagsToResourceRequest.cc
@@ -616,10 +758,20 @@ set(rds_src
 	src/model/AllocateInstancePublicConnectionResult.cc
 	src/model/AllocateReadWriteSplittingConnectionRequest.cc
 	src/model/AllocateReadWriteSplittingConnectionResult.cc
+	src/model/AssociateEipAddressWithRCInstanceRequest.cc
+	src/model/AssociateEipAddressWithRCInstanceResult.cc
+	src/model/AttachRCDiskRequest.cc
+	src/model/AttachRCDiskResult.cc
+	src/model/AttachRCInstancesRequest.cc
+	src/model/AttachRCInstancesResult.cc
 	src/model/AttachWhitelistTemplateToInstanceRequest.cc
 	src/model/AttachWhitelistTemplateToInstanceResult.cc
+	src/model/AuthorizeRCSecurityGroupPermissionRequest.cc
+	src/model/AuthorizeRCSecurityGroupPermissionResult.cc
 	src/model/CalculateDBInstanceWeightRequest.cc
 	src/model/CalculateDBInstanceWeightResult.cc
+	src/model/CancelActiveOperationTasksRequest.cc
+	src/model/CancelActiveOperationTasksResult.cc
 	src/model/CheckAccountNameAvailableRequest.cc
 	src/model/CheckAccountNameAvailableResult.cc
 	src/model/CheckCloudResourceAuthorizedRequest.cc
@@ -686,8 +838,18 @@ set(rds_src
 	src/model/CreateParameterGroupResult.cc
 	src/model/CreatePostgresExtensionsRequest.cc
 	src/model/CreatePostgresExtensionsResult.cc
+	src/model/CreateRCDeploymentSetRequest.cc
+	src/model/CreateRCDeploymentSetResult.cc
+	src/model/CreateRCDiskRequest.cc
+	src/model/CreateRCDiskResult.cc
+	src/model/CreateRCNodePoolRequest.cc
+	src/model/CreateRCNodePoolResult.cc
+	src/model/CreateRCSnapshotRequest.cc
+	src/model/CreateRCSnapshotResult.cc
 	src/model/CreateReadOnlyDBInstanceRequest.cc
 	src/model/CreateReadOnlyDBInstanceResult.cc
+	src/model/CreateReplicationLinkRequest.cc
+	src/model/CreateReplicationLinkResult.cc
 	src/model/CreateSecretRequest.cc
 	src/model/CreateSecretResult.cc
 	src/model/CreateServiceLinkedRoleRequest.cc
@@ -726,6 +888,22 @@ set(rds_src
 	src/model/DeleteParameterGroupResult.cc
 	src/model/DeletePostgresExtensionsRequest.cc
 	src/model/DeletePostgresExtensionsResult.cc
+	src/model/DeleteRCClusterNodesRequest.cc
+	src/model/DeleteRCClusterNodesResult.cc
+	src/model/DeleteRCDeploymentSetRequest.cc
+	src/model/DeleteRCDeploymentSetResult.cc
+	src/model/DeleteRCDiskRequest.cc
+	src/model/DeleteRCDiskResult.cc
+	src/model/DeleteRCInstanceRequest.cc
+	src/model/DeleteRCInstanceResult.cc
+	src/model/DeleteRCInstancesRequest.cc
+	src/model/DeleteRCInstancesResult.cc
+	src/model/DeleteRCNodePoolRequest.cc
+	src/model/DeleteRCNodePoolResult.cc
+	src/model/DeleteRCSnapshotRequest.cc
+	src/model/DeleteRCSnapshotResult.cc
+	src/model/DeleteReplicationLinkRequest.cc
+	src/model/DeleteReplicationLinkResult.cc
 	src/model/DeleteSecretRequest.cc
 	src/model/DeleteSecretResult.cc
 	src/model/DeleteSlotRequest.cc
@@ -822,6 +1000,8 @@ set(rds_src
 	src/model/DescribeDBInstancePromoteActivityResult.cc
 	src/model/DescribeDBInstanceProxyConfigurationRequest.cc
 	src/model/DescribeDBInstanceProxyConfigurationResult.cc
+	src/model/DescribeDBInstanceReplicationRequest.cc
+	src/model/DescribeDBInstanceReplicationResult.cc
 	src/model/DescribeDBInstanceSSLRequest.cc
 	src/model/DescribeDBInstanceSSLResult.cc
 	src/model/DescribeDBInstanceSecurityGroupRuleRequest.cc
@@ -926,6 +1106,44 @@ set(rds_src
 	src/model/DescribePriceResult.cc
 	src/model/DescribeQuickSaleConfigRequest.cc
 	src/model/DescribeQuickSaleConfigResult.cc
+	src/model/DescribeRCClusterConfigRequest.cc
+	src/model/DescribeRCClusterConfigResult.cc
+	src/model/DescribeRCClusterNodesRequest.cc
+	src/model/DescribeRCClusterNodesResult.cc
+	src/model/DescribeRCClustersRequest.cc
+	src/model/DescribeRCClustersResult.cc
+	src/model/DescribeRCDeploymentSetsRequest.cc
+	src/model/DescribeRCDeploymentSetsResult.cc
+	src/model/DescribeRCDisksRequest.cc
+	src/model/DescribeRCDisksResult.cc
+	src/model/DescribeRCImageListRequest.cc
+	src/model/DescribeRCImageListResult.cc
+	src/model/DescribeRCInstanceAttributeRequest.cc
+	src/model/DescribeRCInstanceAttributeResult.cc
+	src/model/DescribeRCInstanceDdosCountRequest.cc
+	src/model/DescribeRCInstanceDdosCountResult.cc
+	src/model/DescribeRCInstanceHistoryEventsRequest.cc
+	src/model/DescribeRCInstanceHistoryEventsResult.cc
+	src/model/DescribeRCInstanceIpAddressRequest.cc
+	src/model/DescribeRCInstanceIpAddressResult.cc
+	src/model/DescribeRCInstanceTypeFamiliesRequest.cc
+	src/model/DescribeRCInstanceTypeFamiliesResult.cc
+	src/model/DescribeRCInstanceTypesRequest.cc
+	src/model/DescribeRCInstanceTypesResult.cc
+	src/model/DescribeRCInstanceVncUrlRequest.cc
+	src/model/DescribeRCInstanceVncUrlResult.cc
+	src/model/DescribeRCInstancesRequest.cc
+	src/model/DescribeRCInstancesResult.cc
+	src/model/DescribeRCMetricListRequest.cc
+	src/model/DescribeRCMetricListResult.cc
+	src/model/DescribeRCNodePoolRequest.cc
+	src/model/DescribeRCNodePoolResult.cc
+	src/model/DescribeRCSecurityGroupListRequest.cc
+	src/model/DescribeRCSecurityGroupListResult.cc
+	src/model/DescribeRCSecurityGroupPermissionRequest.cc
+	src/model/DescribeRCSecurityGroupPermissionResult.cc
+	src/model/DescribeRCSnapshotsRequest.cc
+	src/model/DescribeRCSnapshotsResult.cc
 	src/model/DescribeRdsResourceSettingsRequest.cc
 	src/model/DescribeRdsResourceSettingsResult.cc
 	src/model/DescribeReadDBInstanceDelayRequest.cc
@@ -936,6 +1154,8 @@ set(rds_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeRenewalPriceRequest.cc
 	src/model/DescribeRenewalPriceResult.cc
+	src/model/DescribeReplicationLinkLogsRequest.cc
+	src/model/DescribeReplicationLinkLogsResult.cc
 	src/model/DescribeResourceDetailsRequest.cc
 	src/model/DescribeResourceDetailsResult.cc
 	src/model/DescribeResourceUsageRequest.cc
@@ -980,6 +1200,8 @@ set(rds_src
 	src/model/DestroyDBInstanceResult.cc
 	src/model/DetachGadInstanceMemberRequest.cc
 	src/model/DetachGadInstanceMemberResult.cc
+	src/model/DetachRCDiskRequest.cc
+	src/model/DetachRCDiskResult.cc
 	src/model/DetachWhitelistTemplateToInstanceRequest.cc
 	src/model/DetachWhitelistTemplateToInstanceResult.cc
 	src/model/EvaluateLocalExtendDiskRequest.cc
@@ -1006,16 +1228,22 @@ set(rds_src
 	src/model/MigrateConnectionToOtherZoneResult.cc
 	src/model/MigrateDBInstanceRequest.cc
 	src/model/MigrateDBInstanceResult.cc
+	src/model/MigrateDBNodesRequest.cc
+	src/model/MigrateDBNodesResult.cc
 	src/model/MigrateSecurityIPModeRequest.cc
 	src/model/MigrateSecurityIPModeResult.cc
 	src/model/MigrateToOtherZoneRequest.cc
 	src/model/MigrateToOtherZoneResult.cc
 	src/model/ModifyADInfoRequest.cc
 	src/model/ModifyADInfoResult.cc
+	src/model/ModifyAccountCheckPolicyRequest.cc
+	src/model/ModifyAccountCheckPolicyResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAccountMaskingPrivilegeRequest.cc
 	src/model/ModifyAccountMaskingPrivilegeResult.cc
+	src/model/ModifyAccountSecurityPolicyRequest.cc
+	src/model/ModifyAccountSecurityPolicyResult.cc
 	src/model/ModifyActionEventPolicyRequest.cc
 	src/model/ModifyActionEventPolicyResult.cc
 	src/model/ModifyActiveOperationTasksRequest.cc
@@ -1058,6 +1286,8 @@ set(rds_src
 	src/model/ModifyDBInstanceNetworkTypeResult.cc
 	src/model/ModifyDBInstancePayTypeRequest.cc
 	src/model/ModifyDBInstancePayTypeResult.cc
+	src/model/ModifyDBInstanceReplicationSwitchRequest.cc
+	src/model/ModifyDBInstanceReplicationSwitchResult.cc
 	src/model/ModifyDBInstanceSSLRequest.cc
 	src/model/ModifyDBInstanceSSLResult.cc
 	src/model/ModifyDBInstanceSecurityGroupRuleRequest.cc
@@ -1102,6 +1332,22 @@ set(rds_src
 	src/model/ModifyParameterResult.cc
 	src/model/ModifyParameterGroupRequest.cc
 	src/model/ModifyParameterGroupResult.cc
+	src/model/ModifyRCDiskSpecRequest.cc
+	src/model/ModifyRCDiskSpecResult.cc
+	src/model/ModifyRCInstanceRequest.cc
+	src/model/ModifyRCInstanceResult.cc
+	src/model/ModifyRCInstanceAttributeRequest.cc
+	src/model/ModifyRCInstanceAttributeResult.cc
+	src/model/ModifyRCInstanceChargeTypeRequest.cc
+	src/model/ModifyRCInstanceChargeTypeResult.cc
+	src/model/ModifyRCInstanceDescriptionRequest.cc
+	src/model/ModifyRCInstanceDescriptionResult.cc
+	src/model/ModifyRCInstanceKeyPairRequest.cc
+	src/model/ModifyRCInstanceKeyPairResult.cc
+	src/model/ModifyRCInstanceNetworkSpecRequest.cc
+	src/model/ModifyRCInstanceNetworkSpecResult.cc
+	src/model/ModifyRCSecurityGroupPermissionRequest.cc
+	src/model/ModifyRCSecurityGroupPermissionResult.cc
 	src/model/ModifyReadWriteSplittingConnectionRequest.cc
 	src/model/ModifyReadWriteSplittingConnectionResult.cc
 	src/model/ModifyReadonlyInstanceDelayReplicationTimeRequest.cc
@@ -1128,8 +1374,14 @@ set(rds_src
 	src/model/QueryNotifyResult.cc
 	src/model/QueryRecommendByCodeRequest.cc
 	src/model/QueryRecommendByCodeResult.cc
+	src/model/RebootRCInstanceRequest.cc
+	src/model/RebootRCInstanceResult.cc
+	src/model/RebootRCInstancesRequest.cc
+	src/model/RebootRCInstancesResult.cc
 	src/model/RebuildDBInstanceRequest.cc
 	src/model/RebuildDBInstanceResult.cc
+	src/model/RebuildReplicationLinkRequest.cc
+	src/model/RebuildReplicationLinkResult.cc
 	src/model/ReceiveDBInstanceRequest.cc
 	src/model/ReceiveDBInstanceResult.cc
 	src/model/RecoveryDBInstanceRequest.cc
@@ -1144,10 +1396,16 @@ set(rds_src
 	src/model/RemoveTagsFromResourceResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
+	src/model/RenewRCInstanceRequest.cc
+	src/model/RenewRCInstanceResult.cc
+	src/model/ReplaceRCInstanceSystemDiskRequest.cc
+	src/model/ReplaceRCInstanceSystemDiskResult.cc
 	src/model/ResetAccountRequest.cc
 	src/model/ResetAccountResult.cc
 	src/model/ResetAccountPasswordRequest.cc
 	src/model/ResetAccountPasswordResult.cc
+	src/model/ResizeRCInstanceDiskRequest.cc
+	src/model/ResizeRCInstanceDiskResult.cc
 	src/model/RestartDBInstanceRequest.cc
 	src/model/RestartDBInstanceResult.cc
 	src/model/RestoreDdrTableRequest.cc
@@ -1158,22 +1416,44 @@ set(rds_src
 	src/model/RevokeAccountPrivilegeResult.cc
 	src/model/RevokeOperatorPermissionRequest.cc
 	src/model/RevokeOperatorPermissionResult.cc
+	src/model/RevokeRCSecurityGroupPermissionRequest.cc
+	src/model/RevokeRCSecurityGroupPermissionResult.cc
+	src/model/RunRCInstancesRequest.cc
+	src/model/RunRCInstancesResult.cc
 	src/model/StartDBInstanceRequest.cc
 	src/model/StartDBInstanceResult.cc
+	src/model/StartRCInstanceRequest.cc
+	src/model/StartRCInstanceResult.cc
+	src/model/StartRCInstancesRequest.cc
+	src/model/StartRCInstancesResult.cc
 	src/model/StopDBInstanceRequest.cc
 	src/model/StopDBInstanceResult.cc
+	src/model/StopRCInstanceRequest.cc
+	src/model/StopRCInstanceResult.cc
+	src/model/StopRCInstancesRequest.cc
+	src/model/StopRCInstancesResult.cc
 	src/model/SwitchDBInstanceHARequest.cc
 	src/model/SwitchDBInstanceHAResult.cc
 	src/model/SwitchDBInstanceNetTypeRequest.cc
 	src/model/SwitchDBInstanceNetTypeResult.cc
 	src/model/SwitchDBInstanceVpcRequest.cc
 	src/model/SwitchDBInstanceVpcResult.cc
+	src/model/SwitchOverMajorVersionUpgradeRequest.cc
+	src/model/SwitchOverMajorVersionUpgradeResult.cc
+	src/model/SwitchReplicationLinkRequest.cc
+	src/model/SwitchReplicationLinkResult.cc
+	src/model/SyncRCKeyPairRequest.cc
+	src/model/SyncRCKeyPairResult.cc
+	src/model/SyncRCSecurityGroupRequest.cc
+	src/model/SyncRCSecurityGroupResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/TerminateMigrateTaskRequest.cc
 	src/model/TerminateMigrateTaskResult.cc
 	src/model/TransformDBInstancePayTypeRequest.cc
 	src/model/TransformDBInstancePayTypeResult.cc
+	src/model/UnassociateEipAddressWithRCInstanceRequest.cc
+	src/model/UnassociateEipAddressWithRCInstanceResult.cc
 	src/model/UnlockAccountRequest.cc
 	src/model/UnlockAccountResult.cc
 	src/model/UntagResourcesRequest.cc

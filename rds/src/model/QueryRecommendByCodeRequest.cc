@@ -25,13 +25,13 @@ QueryRecommendByCodeRequest::QueryRecommendByCodeRequest()
 
 QueryRecommendByCodeRequest::~QueryRecommendByCodeRequest() {}
 
-std::string QueryRecommendByCodeRequest::getResourceOwnerId() const {
+long QueryRecommendByCodeRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
 
-void QueryRecommendByCodeRequest::setResourceOwnerId(const std::string &resourceOwnerId) {
+void QueryRecommendByCodeRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), resourceOwnerId);
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
 std::string QueryRecommendByCodeRequest::getCode() const {

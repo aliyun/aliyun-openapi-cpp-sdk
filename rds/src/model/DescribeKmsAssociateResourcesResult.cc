@@ -47,10 +47,10 @@ void DescribeKmsAssociateResourcesResult::parse(const std::string &payload)
 			associateDBInstancesObject.dBInstanceName = valueAssociateDBInstancesDBInstance["DBInstanceName"].asString();
 		if(!valueAssociateDBInstancesDBInstance["Engine"].isNull())
 			associateDBInstancesObject.engine = valueAssociateDBInstancesDBInstance["Engine"].asString();
-		if(!valueAssociateDBInstancesDBInstance["Status"].isNull())
-			associateDBInstancesObject.status = valueAssociateDBInstancesDBInstance["Status"].asString();
 		if(!valueAssociateDBInstancesDBInstance["KeyUsedBy"].isNull())
 			associateDBInstancesObject.keyUsedBy = valueAssociateDBInstancesDBInstance["KeyUsedBy"].asString();
+		if(!valueAssociateDBInstancesDBInstance["Status"].isNull())
+			associateDBInstancesObject.status = valueAssociateDBInstancesDBInstance["Status"].asString();
 		associateDBInstances_.push_back(associateDBInstancesObject);
 	}
 	if(!value["AssociateStatus"].isNull())

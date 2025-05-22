@@ -41,16 +41,18 @@ namespace AlibabaCloud
 						std::string accountPrivilegeDetail;
 					};
 					std::string accountDescription;
-					std::string accountStatus;
 					std::string createDB;
+					bool checkPolicy;
+					std::string accountType;
+					std::string bypassRLS;
+					std::string validUntil;
+					std::string accountStatus;
+					std::string passwordExpireTime;
 					std::string privExceeded;
 					std::string dBInstanceId;
 					std::string replication;
-					std::string accountType;
-					std::string bypassRLS;
 					std::vector<DBInstanceAccount::DatabasePrivilege> databasePrivileges;
 					std::string accountName;
-					std::string validUntil;
 					std::string createRole;
 				};
 
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 				explicit DescribeAccountsResult(const std::string &payload);
 				~DescribeAccountsResult();
 				int getTotalRecordCount()const;
+				std::string getResourceGroupId()const;
 				int getPageNumber()const;
 				std::string getSystemAdminAccountStatus()const;
 				std::vector<DBInstanceAccount> getAccounts()const;
@@ -68,6 +71,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int totalRecordCount_;
+				std::string resourceGroupId_;
 				int pageNumber_;
 				std::string systemAdminAccountStatus_;
 				std::vector<DBInstanceAccount> accounts_;

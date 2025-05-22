@@ -43,26 +43,30 @@ void ListClassesResult::parse(const std::string &payload)
 	for (auto valueItemsClassList : allItemsNode)
 	{
 		ClassList itemsObject;
-		if(!valueItemsClassList["MaxIOPS"].isNull())
-			itemsObject.maxIOPS = valueItemsClassList["MaxIOPS"].asString();
-		if(!valueItemsClassList["Cpu"].isNull())
-			itemsObject.cpu = valueItemsClassList["Cpu"].asString();
-		if(!valueItemsClassList["ReferencePrice"].isNull())
-			itemsObject.referencePrice = valueItemsClassList["ReferencePrice"].asString();
-		if(!valueItemsClassList["MaxConnections"].isNull())
-			itemsObject.maxConnections = valueItemsClassList["MaxConnections"].asString();
-		if(!valueItemsClassList["MemoryClass"].isNull())
-			itemsObject.memoryClass = valueItemsClassList["MemoryClass"].asString();
 		if(!valueItemsClassList["ClassCode"].isNull())
 			itemsObject.classCode = valueItemsClassList["ClassCode"].asString();
 		if(!valueItemsClassList["ClassGroup"].isNull())
 			itemsObject.classGroup = valueItemsClassList["ClassGroup"].asString();
-		if(!valueItemsClassList["MaxIOMBPS"].isNull())
-			itemsObject.maxIOMBPS = valueItemsClassList["MaxIOMBPS"].asString();
+		if(!valueItemsClassList["Cpu"].isNull())
+			itemsObject.cpu = valueItemsClassList["Cpu"].asString();
 		if(!valueItemsClassList["EncryptedMemory"].isNull())
 			itemsObject.encryptedMemory = valueItemsClassList["EncryptedMemory"].asString();
 		if(!valueItemsClassList["InstructionSetArch"].isNull())
 			itemsObject.instructionSetArch = valueItemsClassList["InstructionSetArch"].asString();
+		if(!valueItemsClassList["MaxConnections"].isNull())
+			itemsObject.maxConnections = valueItemsClassList["MaxConnections"].asString();
+		if(!valueItemsClassList["MaxIOMBPS"].isNull())
+			itemsObject.maxIOMBPS = valueItemsClassList["MaxIOMBPS"].asString();
+		if(!valueItemsClassList["MaxIOPS"].isNull())
+			itemsObject.maxIOPS = valueItemsClassList["MaxIOPS"].asString();
+		if(!valueItemsClassList["MemoryClass"].isNull())
+			itemsObject.memoryClass = valueItemsClassList["MemoryClass"].asString();
+		if(!valueItemsClassList["ReferencePrice"].isNull())
+			itemsObject.referencePrice = valueItemsClassList["ReferencePrice"].asString();
+		if(!valueItemsClassList["category"].isNull())
+			itemsObject.category = valueItemsClassList["category"].asString();
+		if(!valueItemsClassList["storageType"].isNull())
+			itemsObject.storageType = valueItemsClassList["storageType"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["RegionId"].isNull())

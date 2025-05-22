@@ -39,9 +39,9 @@ namespace AlibabaCloud
 					std::string engineVersion;
 					std::string expireDate;
 					bool isHotfixVersion;
-					std::string releaseNote;
-					std::string nodeType;
 					std::string expireStatus;
+					std::string nodeType;
+					std::string releaseNote;
 					std::string minorVersion;
 					std::string tag;
 					std::string engine;

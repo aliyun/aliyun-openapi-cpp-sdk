@@ -43,46 +43,46 @@ void DescribeDBInstanceEncryptionKeyResult::parse(const std::string &payload)
 	for (auto valueEncryptionKeyListEncryptionKeyInfo : allEncryptionKeyListNode)
 	{
 		EncryptionKeyInfo encryptionKeyListObject;
-		if(!valueEncryptionKeyListEncryptionKeyInfo["KeyType"].isNull())
-			encryptionKeyListObject.keyType = valueEncryptionKeyListEncryptionKeyInfo["KeyType"].asString();
-		if(!valueEncryptionKeyListEncryptionKeyInfo["EncryptionKey"].isNull())
-			encryptionKeyListObject.encryptionKey = valueEncryptionKeyListEncryptionKeyInfo["EncryptionKey"].asString();
-		if(!valueEncryptionKeyListEncryptionKeyInfo["Description"].isNull())
-			encryptionKeyListObject.description = valueEncryptionKeyListEncryptionKeyInfo["Description"].asString();
-		if(!valueEncryptionKeyListEncryptionKeyInfo["KeyUsage"].isNull())
-			encryptionKeyListObject.keyUsage = valueEncryptionKeyListEncryptionKeyInfo["KeyUsage"].asString();
-		if(!valueEncryptionKeyListEncryptionKeyInfo["DeleteDate"].isNull())
-			encryptionKeyListObject.deleteDate = valueEncryptionKeyListEncryptionKeyInfo["DeleteDate"].asString();
-		if(!valueEncryptionKeyListEncryptionKeyInfo["Creator"].isNull())
-			encryptionKeyListObject.creator = valueEncryptionKeyListEncryptionKeyInfo["Creator"].asString();
-		if(!valueEncryptionKeyListEncryptionKeyInfo["EncryptionKeyStatus"].isNull())
-			encryptionKeyListObject.encryptionKeyStatus = valueEncryptionKeyListEncryptionKeyInfo["EncryptionKeyStatus"].asString();
-		if(!valueEncryptionKeyListEncryptionKeyInfo["Origin"].isNull())
-			encryptionKeyListObject.origin = valueEncryptionKeyListEncryptionKeyInfo["Origin"].asString();
-		if(!valueEncryptionKeyListEncryptionKeyInfo["MaterialExpireTime"].isNull())
-			encryptionKeyListObject.materialExpireTime = valueEncryptionKeyListEncryptionKeyInfo["MaterialExpireTime"].asString();
 		if(!valueEncryptionKeyListEncryptionKeyInfo["AliasName"].isNull())
 			encryptionKeyListObject.aliasName = valueEncryptionKeyListEncryptionKeyInfo["AliasName"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["Creator"].isNull())
+			encryptionKeyListObject.creator = valueEncryptionKeyListEncryptionKeyInfo["Creator"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["DeleteDate"].isNull())
+			encryptionKeyListObject.deleteDate = valueEncryptionKeyListEncryptionKeyInfo["DeleteDate"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["Description"].isNull())
+			encryptionKeyListObject.description = valueEncryptionKeyListEncryptionKeyInfo["Description"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["EncryptionKey"].isNull())
+			encryptionKeyListObject.encryptionKey = valueEncryptionKeyListEncryptionKeyInfo["EncryptionKey"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["EncryptionKeyStatus"].isNull())
+			encryptionKeyListObject.encryptionKeyStatus = valueEncryptionKeyListEncryptionKeyInfo["EncryptionKeyStatus"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["KeyType"].isNull())
+			encryptionKeyListObject.keyType = valueEncryptionKeyListEncryptionKeyInfo["KeyType"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["KeyUsage"].isNull())
+			encryptionKeyListObject.keyUsage = valueEncryptionKeyListEncryptionKeyInfo["KeyUsage"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["MaterialExpireTime"].isNull())
+			encryptionKeyListObject.materialExpireTime = valueEncryptionKeyListEncryptionKeyInfo["MaterialExpireTime"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["Origin"].isNull())
+			encryptionKeyListObject.origin = valueEncryptionKeyListEncryptionKeyInfo["Origin"].asString();
 		if(!valueEncryptionKeyListEncryptionKeyInfo["UsedBy"].isNull())
 			encryptionKeyListObject.usedBy = valueEncryptionKeyListEncryptionKeyInfo["UsedBy"].asString();
 		encryptionKeyList_.push_back(encryptionKeyListObject);
 	}
+	if(!value["Creator"].isNull())
+		creator_ = value["Creator"].asString();
 	if(!value["DeleteDate"].isNull())
 		deleteDate_ = value["DeleteDate"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
-	if(!value["Origin"].isNull())
-		origin_ = value["Origin"].asString();
-	if(!value["MaterialExpireTime"].isNull())
-		materialExpireTime_ = value["MaterialExpireTime"].asString();
+	if(!value["EncryptionKey"].isNull())
+		encryptionKey_ = value["EncryptionKey"].asString();
 	if(!value["EncryptionKeyStatus"].isNull())
 		encryptionKeyStatus_ = value["EncryptionKeyStatus"].asString();
 	if(!value["KeyUsage"].isNull())
 		keyUsage_ = value["KeyUsage"].asString();
-	if(!value["EncryptionKey"].isNull())
-		encryptionKey_ = value["EncryptionKey"].asString();
-	if(!value["Creator"].isNull())
-		creator_ = value["Creator"].asString();
+	if(!value["MaterialExpireTime"].isNull())
+		materialExpireTime_ = value["MaterialExpireTime"].asString();
+	if(!value["Origin"].isNull())
+		origin_ = value["Origin"].asString();
 
 }
 

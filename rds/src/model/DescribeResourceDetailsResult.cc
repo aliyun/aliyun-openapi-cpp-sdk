@@ -47,30 +47,30 @@ void DescribeResourceDetailsResult::parse(const std::string &payload)
 			rdsEcsSecurityGroupRelObject.securityGroupName = valueRdsEcsSecurityGroupRelRdsEcsSecurityGroupRelItem["SecurityGroupName"].asString();
 		rdsEcsSecurityGroupRel_.push_back(rdsEcsSecurityGroupRelObject);
 	}
-	if(!value["Region"].isNull())
-		region_ = value["Region"].asString();
-	if(!value["InstanceStorageType"].isNull())
-		instanceStorageType_ = value["InstanceStorageType"].asString();
-	if(!value["DbInstanceStorage"].isNull())
-		dbInstanceStorage_ = std::stol(value["DbInstanceStorage"].asString());
-	if(!value["DiskUsed"].isNull())
-		diskUsed_ = std::stol(value["DiskUsed"].asString());
-	if(!value["BackupSize"].isNull())
-		backupSize_ = std::stol(value["BackupSize"].asString());
-	if(!value["VpcId"].isNull())
-		vpcId_ = value["VpcId"].asString();
-	if(!value["VSwitchId"].isNull())
-		vSwitchId_ = value["VSwitchId"].asString();
-	if(!value["SecurityIPList"].isNull())
-		securityIPList_ = value["SecurityIPList"].asString();
-	if(!value["DbProxyInstanceName"].isNull())
-		dbProxyInstanceName_ = value["DbProxyInstanceName"].asString();
-	if(!value["ResourceGroupId"].isNull())
-		resourceGroupId_ = value["ResourceGroupId"].asString();
-	if(!value["BackupLogSize"].isNull())
-		backupLogSize_ = std::stol(value["BackupLogSize"].asString());
 	if(!value["BackupDataSize"].isNull())
 		backupDataSize_ = std::stol(value["BackupDataSize"].asString());
+	if(!value["BackupLogSize"].isNull())
+		backupLogSize_ = std::stol(value["BackupLogSize"].asString());
+	if(!value["BackupSize"].isNull())
+		backupSize_ = std::stol(value["BackupSize"].asString());
+	if(!value["DbInstanceStorage"].isNull())
+		dbInstanceStorage_ = std::stol(value["DbInstanceStorage"].asString());
+	if(!value["DbProxyInstanceName"].isNull())
+		dbProxyInstanceName_ = value["DbProxyInstanceName"].asString();
+	if(!value["DiskUsed"].isNull())
+		diskUsed_ = std::stol(value["DiskUsed"].asString());
+	if(!value["InstanceStorageType"].isNull())
+		instanceStorageType_ = value["InstanceStorageType"].asString();
+	if(!value["Region"].isNull())
+		region_ = value["Region"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["SecurityIPList"].isNull())
+		securityIPList_ = value["SecurityIPList"].asString();
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["VpcId"].isNull())
+		vpcId_ = value["VpcId"].asString();
 
 }
 

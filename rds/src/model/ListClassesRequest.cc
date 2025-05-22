@@ -61,6 +61,15 @@ void ListClassesRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string ListClassesRequest::getEngine() const {
+  return engine_;
+}
+
+void ListClassesRequest::setEngine(const std::string &engine) {
+  engine_ = engine;
+  setParameter(std::string("Engine"), engine);
+}
+
 std::string ListClassesRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

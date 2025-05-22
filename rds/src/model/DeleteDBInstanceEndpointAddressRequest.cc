@@ -61,15 +61,6 @@ void DeleteDBInstanceEndpointAddressRequest::setAccessKeyId(const std::string &a
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DeleteDBInstanceEndpointAddressRequest::getDBInstanceEndpointId() const {
-  return dBInstanceEndpointId_;
-}
-
-void DeleteDBInstanceEndpointAddressRequest::setDBInstanceEndpointId(const std::string &dBInstanceEndpointId) {
-  dBInstanceEndpointId_ = dBInstanceEndpointId;
-  setBodyParameter(std::string("DBInstanceEndpointId"), dBInstanceEndpointId);
-}
-
 std::string DeleteDBInstanceEndpointAddressRequest::getRegionId() const {
   return regionId_;
 }
@@ -86,5 +77,14 @@ std::string DeleteDBInstanceEndpointAddressRequest::getDBInstanceId() const {
 void DeleteDBInstanceEndpointAddressRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DeleteDBInstanceEndpointAddressRequest::getDBInstanceEndpointId() const {
+  return dBInstanceEndpointId_;
+}
+
+void DeleteDBInstanceEndpointAddressRequest::setDBInstanceEndpointId(const std::string &dBInstanceEndpointId) {
+  dBInstanceEndpointId_ = dBInstanceEndpointId;
+  setBodyParameter(std::string("DBInstanceEndpointId"), dBInstanceEndpointId);
 }
 

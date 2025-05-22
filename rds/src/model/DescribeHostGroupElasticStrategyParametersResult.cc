@@ -41,12 +41,12 @@ void DescribeHostGroupElasticStrategyParametersResult::parse(const std::string &
 	setRequestId(value["RequestId"].asString());
 	if(!value["CpuShar"].isNull())
 		cpuShar_ = std::stoi(value["CpuShar"].asString());
+	if(!value["CpuZoom"].isNull())
+		cpuZoom_ = std::stoi(value["CpuZoom"].asString());
 	if(!value["IopsZoom"].isNull())
 		iopsZoom_ = std::stoi(value["IopsZoom"].asString());
 	if(!value["MaxConnZoom"].isNull())
 		maxConnZoom_ = std::stoi(value["MaxConnZoom"].asString());
-	if(!value["CpuZoom"].isNull())
-		cpuZoom_ = std::stoi(value["CpuZoom"].asString());
 	if(!value["MemoryZoom"].isNull())
 		memoryZoom_ = std::stoi(value["MemoryZoom"].asString());
 

@@ -41,10 +41,10 @@ void ModifyDBInstanceDelayedReplicationTimeResult::parse(const std::string &payl
 	setRequestId(value["RequestId"].asString());
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
 	if(!value["ReadSQLReplicationTime"].isNull())
 		readSQLReplicationTime_ = value["ReadSQLReplicationTime"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
 }
 

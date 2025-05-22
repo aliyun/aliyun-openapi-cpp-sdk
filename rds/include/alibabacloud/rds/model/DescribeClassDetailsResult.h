@@ -38,8 +38,8 @@ namespace AlibabaCloud
 				explicit DescribeClassDetailsResult(const std::string &payload);
 				~DescribeClassDetailsResult();
 				std::string getMaxIOMBPS()const;
-				std::string getClassCode()const;
 				std::string getCategory()const;
+				std::string getClassCode()const;
 				std::string getMaxConnections()const;
 				std::string getClassGroup()const;
 				std::string getCpu()const;
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string maxIOMBPS_;
-				std::string classCode_;
 				std::string category_;
+				std::string classCode_;
 				std::string maxConnections_;
 				std::string classGroup_;
 				std::string cpu_;

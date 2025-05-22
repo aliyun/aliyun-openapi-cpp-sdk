@@ -75,10 +75,10 @@ void CreateGadInstanceMemberRequest::setUnitNode(const std::vector<CreateGadInst
     setParameter(unitNodeObjStr + ".ZoneIDSlave2", unitNodeObj.zoneIDSlave2);
     setParameter(unitNodeObjStr + ".EngineVersion", unitNodeObj.engineVersion);
     setParameter(unitNodeObjStr + ".DbInstanceClass", unitNodeObj.dbInstanceClass);
-    setParameter(unitNodeObjStr + ".VSwitchID", unitNodeObj.vSwitchID);
     setParameter(unitNodeObjStr + ".SecurityIPList", unitNodeObj.securityIPList);
-    setParameter(unitNodeObjStr + ".RegionID", unitNodeObj.regionID);
+    setParameter(unitNodeObjStr + ".VSwitchID", unitNodeObj.vSwitchID);
     setParameter(unitNodeObjStr + ".Engine", unitNodeObj.engine);
+    setParameter(unitNodeObjStr + ".RegionID", unitNodeObj.regionID);
     setParameter(unitNodeObjStr + ".DtsInstanceClass", unitNodeObj.dtsInstanceClass);
     setParameter(unitNodeObjStr + ".VpcID", unitNodeObj.vpcID);
     setParameter(unitNodeObjStr + ".ZoneID", unitNodeObj.zoneID);

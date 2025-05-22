@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string storage;
-					std::string targetDBInstanceClass;
 					std::string effectiveTime;
+					std::string targetDBInstanceClass;
 					std::string classGroup;
 					std::string cpu;
 					std::string mark;

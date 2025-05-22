@@ -44,24 +44,24 @@ void DescribeMaskingRulesResult::parse(const std::string &payload)
 	for (auto dataNodeRulesencDBInfo : allRulesNode)
 	{
 		Data::EncDBInfo encDBInfoObject;
-		if(!dataNodeRulesencDBInfo["RuleName"].isNull())
-			encDBInfoObject.ruleName = dataNodeRulesencDBInfo["RuleName"].asString();
-		if(!dataNodeRulesencDBInfo["Enabled"].isNull())
-			encDBInfoObject.enabled = dataNodeRulesencDBInfo["Enabled"].asString();
 		if(!dataNodeRulesencDBInfo["DefaultAlgo"].isNull())
 			encDBInfoObject.defaultAlgo = dataNodeRulesencDBInfo["DefaultAlgo"].asString();
+		if(!dataNodeRulesencDBInfo["Enabled"].isNull())
+			encDBInfoObject.enabled = dataNodeRulesencDBInfo["Enabled"].asString();
 		if(!dataNodeRulesencDBInfo["MaskingAlgo"].isNull())
 			encDBInfoObject.maskingAlgo = dataNodeRulesencDBInfo["MaskingAlgo"].asString();
+		if(!dataNodeRulesencDBInfo["RuleName"].isNull())
+			encDBInfoObject.ruleName = dataNodeRulesencDBInfo["RuleName"].asString();
 		auto ruleConfigNode = value["RuleConfig"];
+			auto allColumns = ruleConfigNode["Columns"]["columns"];
+			for (auto value : allColumns)
+				encDBInfoObject.ruleConfig.columns.push_back(value.asString());
 			auto allDatabases = ruleConfigNode["Databases"]["databases"];
 			for (auto value : allDatabases)
 				encDBInfoObject.ruleConfig.databases.push_back(value.asString());
 			auto allTables = ruleConfigNode["Tables"]["tables"];
 			for (auto value : allTables)
 				encDBInfoObject.ruleConfig.tables.push_back(value.asString());
-			auto allColumns = ruleConfigNode["Columns"]["columns"];
-			for (auto value : allColumns)
-				encDBInfoObject.ruleConfig.columns.push_back(value.asString());
 		data_.rules.push_back(encDBInfoObject);
 	}
 

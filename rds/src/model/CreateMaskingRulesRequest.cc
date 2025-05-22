@@ -114,3 +114,12 @@ void CreateMaskingRulesRequest::setRuleConfig(const CreateMaskingRulesRequest::R
   }
 }
 
+std::string CreateMaskingRulesRequest::getDBName() const {
+  return dBName_;
+}
+
+void CreateMaskingRulesRequest::setDBName(const std::string &dBName) {
+  dBName_ = dBName;
+  setParameter(std::string("DBName"), dBName);
+}
+

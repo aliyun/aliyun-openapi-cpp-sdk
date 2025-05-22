@@ -52,6 +52,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getAccountPassword() const;
 	void setAccountPassword(const std::string &accountPassword);
+	bool getCheckPolicy() const;
+	void setCheckPolicy(bool checkPolicy);
 
 private:
 	long resourceOwnerId_;
@@ -65,6 +67,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string accountPassword_;
+	bool checkPolicy_;
 };
 } // namespace Model
 } // namespace Rds

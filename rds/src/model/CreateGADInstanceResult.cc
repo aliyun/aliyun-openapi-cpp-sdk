@@ -40,10 +40,10 @@ void CreateGADInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["GadInstanceName"].isNull())
-		result_.gadInstanceName = resultNode["GadInstanceName"].asString();
 	if(!resultNode["CreateMemberCount"].isNull())
 		result_.createMemberCount = resultNode["CreateMemberCount"].asString();
+	if(!resultNode["GadInstanceName"].isNull())
+		result_.gadInstanceName = resultNode["GadInstanceName"].asString();
 	if(!resultNode["TaskID"].isNull())
 		result_.taskID = resultNode["TaskID"].asString();
 

@@ -36,8 +36,10 @@ namespace AlibabaCloud
 				{
 					std::string maxIOMBPS;
 					std::string classCode;
-					std::string maxConnections;
+					std::string category;
+					std::string storageType;
 					std::string encryptedMemory;
+					std::string maxConnections;
 					std::string classGroup;
 					std::string cpu;
 					std::string instructionSetArch;

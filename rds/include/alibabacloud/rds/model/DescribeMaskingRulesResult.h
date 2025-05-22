@@ -39,14 +39,14 @@ namespace AlibabaCloud
 						struct RuleConfig
 						{
 							std::vector<std::string> databases;
-							std::vector<std::string> tables;
 							std::vector<std::string> columns;
+							std::vector<std::string> tables;
 						};
 						std::string defaultAlgo;
 						std::string enabled;
 						RuleConfig ruleConfig;
-						std::string ruleName;
 						std::string maskingAlgo;
+						std::string ruleName;
 					};
 					std::vector<EncDBInfo> rules;
 				};

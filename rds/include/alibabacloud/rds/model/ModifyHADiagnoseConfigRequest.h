@@ -32,10 +32,6 @@ public:
 	~ModifyHADiagnoseConfigRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getRegionId() const;
@@ -44,15 +40,19 @@ public:
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getTcpConnectionType() const;
 	void setTcpConnectionType(const std::string &tcpConnectionType);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
 	long resourceOwnerId_;
-	std::string resourceOwnerAccount_;
-	long ownerId_;
 	std::string accessKeyId_;
 	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string tcpConnectionType_;
+	std::string resourceOwnerAccount_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Rds

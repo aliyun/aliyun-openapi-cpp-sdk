@@ -54,8 +54,8 @@ namespace AlibabaCloud
 					std::string backupExtractionStatus;
 					std::string engineVersion;
 					std::string backupInitiator;
-					std::string storageClass;
 					std::string backupIntranetDownloadURL;
+					std::string storageClass;
 					long backupSize;
 					int isAvail;
 					std::string slaveStatus;
@@ -63,14 +63,14 @@ namespace AlibabaCloud
 					std::vector<Backup::BackupDownloadLinkByDBItem> backupDownloadLinkByDB;
 					std::string storeStatus;
 					std::string backupDownloadURL;
-					std::string copyOnlyBackup;
 					std::string backupEndTime;
-					long consistentTime;
+					std::string copyOnlyBackup;
 					std::string backupStartTime;
+					long consistentTime;
 					std::string metaStatus;
 					std::string backupScale;
-					std::string backupStatus;
 					std::string backupLocation;
+					std::string backupStatus;
 				};
 
 
@@ -78,8 +78,8 @@ namespace AlibabaCloud
 				explicit DescribeBackupsResult(const std::string &payload);
 				~DescribeBackupsResult();
 				std::string getTotalRecordCount()const;
-				long getTotalEcsSnapshotSize()const;
 				std::string getPageRecordCount()const;
+				long getTotalEcsSnapshotSize()const;
 				std::string getPageNumber()const;
 				std::vector<Backup> getItems()const;
 				long getTotalBackupSize()const;
@@ -88,8 +88,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string totalRecordCount_;
-				long totalEcsSnapshotSize_;
 				std::string pageRecordCount_;
+				long totalEcsSnapshotSize_;
 				std::string pageNumber_;
 				std::vector<Backup> items_;
 				long totalBackupSize_;

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Item
 				{
 					std::string backupMethod;
-					std::string engineVersion;
 					std::string category;
+					std::string engineVersion;
 					int instanceId;
 					std::string crossBackupDownloadLink;
 					std::string crossBackupRegion;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 					std::string hasBackupTableMeta;
 					std::vector<std::string> restoreRegions;
 					std::string backupEndTime;
-					std::string consistentTime;
 					std::string backupStartTime;
+					std::string consistentTime;
 					std::string backupType;
 					int crossBackupId;
 					std::string engine;

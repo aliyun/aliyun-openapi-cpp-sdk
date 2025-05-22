@@ -44,10 +44,10 @@ namespace AlibabaCloud
 					std::string memoryAdjustDeadline;
 					std::string memoryIncreaseRatioValue;
 					std::string cpuAdjustDeadline;
-					std::string maxIopsIncreaseRatio;
-					std::string originMaxConn;
 					std::string maxIopsAdjustDeadline;
+					std::string maxIopsIncreaseRatio;
 					std::string originCpu;
+					std::string originMaxConn;
 					std::string cpuAdjustableMaxRatio;
 					std::string dBInstanceId;
 					std::string maxConnAdjustDeadline;
@@ -55,8 +55,8 @@ namespace AlibabaCloud
 					std::string cpuAdjustableMaxValue;
 					std::string memAdjustableMaxValue;
 					std::string originMaxIops;
-					std::string maxIopsIncreaseRatioValue;
 					std::string maxConnIncreaseRatio;
+					std::string maxIopsIncreaseRatioValue;
 				};
 
 

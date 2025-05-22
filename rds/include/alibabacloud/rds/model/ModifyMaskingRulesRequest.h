@@ -58,6 +58,8 @@ public:
 	void setDefaultAlgo(const std::string &defaultAlgo);
 	RuleConfig getRuleConfig() const;
 	void setRuleConfig(const RuleConfig &ruleConfig);
+	std::string getDBName() const;
+	void setDBName(const std::string &dBName);
 
 private:
 	std::string dBInstanceName_;
@@ -70,6 +72,7 @@ private:
 	std::string ownerId_;
 	std::string defaultAlgo_;
 	RuleConfig ruleConfig_;
+	std::string dBName_;
 };
 } // namespace Model
 } // namespace Rds

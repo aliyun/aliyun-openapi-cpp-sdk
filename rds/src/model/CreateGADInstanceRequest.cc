@@ -100,15 +100,15 @@ void CreateGADInstanceRequest::setUnitNode(const std::vector<CreateGADInstanceRe
     setParameter(unitNodeObjStr + ".DbInstanceClass", unitNodeObj.dbInstanceClass);
     setParameter(unitNodeObjStr + ".SecurityIPList", unitNodeObj.securityIPList);
     setParameter(unitNodeObjStr + ".VSwitchID", unitNodeObj.vSwitchID);
-    setParameter(unitNodeObjStr + ".RegionID", unitNodeObj.regionID);
     setParameter(unitNodeObjStr + ".Engine", unitNodeObj.engine);
+    setParameter(unitNodeObjStr + ".RegionID", unitNodeObj.regionID);
     setParameter(unitNodeObjStr + ".DtsInstanceClass", unitNodeObj.dtsInstanceClass);
     setParameter(unitNodeObjStr + ".VpcID", unitNodeObj.vpcID);
     setParameter(unitNodeObjStr + ".ZoneID", unitNodeObj.zoneID);
     setParameter(unitNodeObjStr + ".DBInstanceDescription", unitNodeObj.dBInstanceDescription);
     setParameter(unitNodeObjStr + ".DBInstanceStorageType", unitNodeObj.dBInstanceStorageType);
-    setParameter(unitNodeObjStr + ".PayType", unitNodeObj.payType);
     setParameter(unitNodeObjStr + ".DtsConflict", unitNodeObj.dtsConflict);
+    setParameter(unitNodeObjStr + ".PayType", unitNodeObj.payType);
   }
 }
 

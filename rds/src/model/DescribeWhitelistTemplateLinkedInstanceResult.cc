@@ -45,14 +45,14 @@ void DescribeWhitelistTemplateLinkedInstanceResult::parse(const std::string &pay
 		auto allInsName = dataNode["InsName"]["InsName"];
 		for (auto value : allInsName)
 			data_.insName.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

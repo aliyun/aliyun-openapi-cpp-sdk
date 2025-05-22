@@ -124,6 +124,15 @@ void MigrateToOtherZoneRequest::setSwitchTime(const std::string &switchTime) {
   setParameter(std::string("SwitchTime"), switchTime);
 }
 
+std::string MigrateToOtherZoneRequest::getDBInstanceStorageType() const {
+  return dBInstanceStorageType_;
+}
+
+void MigrateToOtherZoneRequest::setDBInstanceStorageType(const std::string &dBInstanceStorageType) {
+  dBInstanceStorageType_ = dBInstanceStorageType;
+  setParameter(std::string("DBInstanceStorageType"), dBInstanceStorageType);
+}
+
 std::string MigrateToOtherZoneRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

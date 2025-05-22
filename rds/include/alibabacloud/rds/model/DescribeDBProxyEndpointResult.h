@@ -32,6 +32,12 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_RDS_EXPORT DescribeDBProxyEndpointResult : public ServiceResult
 			{
 			public:
+				struct DBProxyNodesItem
+				{
+					std::string zoneId;
+					std::string cpuCores;
+					std::string nodeId;
+				};
 				struct EndpointConnectItemsItem
 				{
 					std::string dbProxyEndpointNetType;
@@ -43,34 +49,46 @@ namespace AlibabaCloud
 				DescribeDBProxyEndpointResult();
 				explicit DescribeDBProxyEndpointResult(const std::string &payload);
 				~DescribeDBProxyEndpointResult();
-				std::string getReadOnlyInstanceDistributionType()const;
+				std::string getDbProxyEndpointVswitchId()const;
 				std::string getDbProxyEndpointReadWriteMode()const;
-				std::string getDBProxyConnectString()const;
+				std::string getDbProxyEndpointZoneId()const;
 				std::string getDBProxyEndpointId()const;
 				std::string getDbProxyEndpointAliases()const;
-				std::string getDBProxyFeatures()const;
 				std::string getReadOnlyInstanceWeight()const;
 				std::string getReadOnlyInstanceMaxDelayTime()const;
 				std::string getDBProxyConnectStringNetType()const;
-				std::vector<EndpointConnectItemsItem> getEndpointConnectItems()const;
-				std::string getDBProxyConnectStringPort()const;
+				std::string getDbProxyEndpointVpcId()const;
 				std::string getDBProxyEngineType()const;
+				std::string getDBProxyEndpointMinSlaveCount()const;
+				std::string getReadOnlyInstanceDistributionType()const;
+				std::string getDBProxyConnectString()const;
+				std::string getDBProxyFeatures()const;
+				std::vector<DBProxyNodesItem> getDBProxyNodes()const;
+				std::vector<EndpointConnectItemsItem> getEndpointConnectItems()const;
+				std::string getCausalConsistReadTimeout()const;
+				std::string getDBProxyConnectStringPort()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string readOnlyInstanceDistributionType_;
+				std::string dbProxyEndpointVswitchId_;
 				std::string dbProxyEndpointReadWriteMode_;
-				std::string dBProxyConnectString_;
+				std::string dbProxyEndpointZoneId_;
 				std::string dBProxyEndpointId_;
 				std::string dbProxyEndpointAliases_;
-				std::string dBProxyFeatures_;
 				std::string readOnlyInstanceWeight_;
 				std::string readOnlyInstanceMaxDelayTime_;
 				std::string dBProxyConnectStringNetType_;
-				std::vector<EndpointConnectItemsItem> endpointConnectItems_;
-				std::string dBProxyConnectStringPort_;
+				std::string dbProxyEndpointVpcId_;
 				std::string dBProxyEngineType_;
+				std::string dBProxyEndpointMinSlaveCount_;
+				std::string readOnlyInstanceDistributionType_;
+				std::string dBProxyConnectString_;
+				std::string dBProxyFeatures_;
+				std::vector<DBProxyNodesItem> dBProxyNodes_;
+				std::vector<EndpointConnectItemsItem> endpointConnectItems_;
+				std::string causalConsistReadTimeout_;
+				std::string dBProxyConnectStringPort_;
 
 			};
 		}

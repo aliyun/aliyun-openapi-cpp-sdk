@@ -32,29 +32,32 @@ public:
 	~ModifyAccountMaskingPrivilegeRequest();
 	std::string getDBInstanceName() const;
 	void setDBInstanceName(const std::string &dBInstanceName);
-	std::string getExpireTime() const;
-	void setExpireTime(const std::string &expireTime);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getPrivilege() const;
 	void setPrivilege(const std::string &privilege);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getExpireTime() const;
+	void setExpireTime(const std::string &expireTime);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
+	std::string getDBName() const;
+	void setDBName(const std::string &dBName);
 	std::string getUserName() const;
 	void setUserName(const std::string &userName);
 
 private:
 	std::string dBInstanceName_;
-	std::string expireTime_;
 	long resourceOwnerId_;
-	std::string resourceOwnerAccount_;
 	std::string privilege_;
-	std::string ownerId_;
 	std::string regionId_;
+	std::string expireTime_;
+	std::string resourceOwnerAccount_;
+	std::string ownerId_;
+	std::string dBName_;
 	std::string userName_;
 };
 } // namespace Model

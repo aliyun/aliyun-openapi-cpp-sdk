@@ -39,12 +39,12 @@ void ModifyTaskInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorTaskId"].isNull())
 		errorTaskId_ = value["ErrorTaskId"].asString();
 	if(!value["SuccessCount"].isNull())
 		successCount_ = value["SuccessCount"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 
 }
 

@@ -41,18 +41,18 @@ void ModifyBackupPolicyResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["CompressType"].isNull())
 		compressType_ = value["CompressType"].asString();
-	if(!value["LocalLogRetentionSpace"].isNull())
-		localLogRetentionSpace_ = value["LocalLogRetentionSpace"].asString();
-	if(!value["LogBackupLocalRetentionNumber"].isNull())
-		logBackupLocalRetentionNumber_ = std::stoi(value["LogBackupLocalRetentionNumber"].asString());
 	if(!value["DBInstanceID"].isNull())
 		dBInstanceID_ = value["DBInstanceID"].asString();
 	if(!value["EnableBackupLog"].isNull())
 		enableBackupLog_ = value["EnableBackupLog"].asString();
-	if(!value["LocalLogRetentionHours"].isNull())
-		localLogRetentionHours_ = std::stoi(value["LocalLogRetentionHours"].asString());
 	if(!value["HighSpaceUsageProtection"].isNull())
 		highSpaceUsageProtection_ = value["HighSpaceUsageProtection"].asString();
+	if(!value["LocalLogRetentionHours"].isNull())
+		localLogRetentionHours_ = std::stoi(value["LocalLogRetentionHours"].asString());
+	if(!value["LocalLogRetentionSpace"].isNull())
+		localLogRetentionSpace_ = value["LocalLogRetentionSpace"].asString();
+	if(!value["LogBackupLocalRetentionNumber"].isNull())
+		logBackupLocalRetentionNumber_ = std::stoi(value["LogBackupLocalRetentionNumber"].asString());
 
 }
 
@@ -71,14 +71,14 @@ std::string ModifyBackupPolicyResult::getEnableBackupLog()const
 	return enableBackupLog_;
 }
 
-std::string ModifyBackupPolicyResult::getLocalLogRetentionSpace()const
-{
-	return localLogRetentionSpace_;
-}
-
 int ModifyBackupPolicyResult::getLocalLogRetentionHours()const
 {
 	return localLogRetentionHours_;
+}
+
+std::string ModifyBackupPolicyResult::getLocalLogRetentionSpace()const
+{
+	return localLogRetentionSpace_;
 }
 
 std::string ModifyBackupPolicyResult::getHighSpaceUsageProtection()const

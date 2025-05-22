@@ -43,32 +43,32 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 	for (auto valueDatabasesDatabase : allDatabasesNode)
 	{
 		Database databasesObject;
-		if(!valueDatabasesDatabase["DBDescription"].isNull())
-			databasesObject.dBDescription = valueDatabasesDatabase["DBDescription"].asString();
-		if(!valueDatabasesDatabase["DBStatus"].isNull())
-			databasesObject.dBStatus = valueDatabasesDatabase["DBStatus"].asString();
-		if(!valueDatabasesDatabase["DBName"].isNull())
-			databasesObject.dBName = valueDatabasesDatabase["DBName"].asString();
-		if(!valueDatabasesDatabase["DBInstanceId"].isNull())
-			databasesObject.dBInstanceId = valueDatabasesDatabase["DBInstanceId"].asString();
-		if(!valueDatabasesDatabase["Engine"].isNull())
-			databasesObject.engine = valueDatabasesDatabase["Engine"].asString();
 		if(!valueDatabasesDatabase["CharacterSetName"].isNull())
 			databasesObject.characterSetName = valueDatabasesDatabase["CharacterSetName"].asString();
 		if(!valueDatabasesDatabase["Collate"].isNull())
 			databasesObject.collate = valueDatabasesDatabase["Collate"].asString();
-		if(!valueDatabasesDatabase["Ctype"].isNull())
-			databasesObject.ctype = valueDatabasesDatabase["Ctype"].asString();
 		if(!valueDatabasesDatabase["ConnLimit"].isNull())
 			databasesObject.connLimit = valueDatabasesDatabase["ConnLimit"].asString();
-		if(!valueDatabasesDatabase["Tablespace"].isNull())
-			databasesObject.tablespace = valueDatabasesDatabase["Tablespace"].asString();
-		if(!valueDatabasesDatabase["ResourceGroupId"].isNull())
-			databasesObject.resourceGroupId = valueDatabasesDatabase["ResourceGroupId"].asString();
+		if(!valueDatabasesDatabase["Ctype"].isNull())
+			databasesObject.ctype = valueDatabasesDatabase["Ctype"].asString();
+		if(!valueDatabasesDatabase["DBDescription"].isNull())
+			databasesObject.dBDescription = valueDatabasesDatabase["DBDescription"].asString();
+		if(!valueDatabasesDatabase["DBInstanceId"].isNull())
+			databasesObject.dBInstanceId = valueDatabasesDatabase["DBInstanceId"].asString();
+		if(!valueDatabasesDatabase["DBName"].isNull())
+			databasesObject.dBName = valueDatabasesDatabase["DBName"].asString();
+		if(!valueDatabasesDatabase["DBStatus"].isNull())
+			databasesObject.dBStatus = valueDatabasesDatabase["DBStatus"].asString();
+		if(!valueDatabasesDatabase["Engine"].isNull())
+			databasesObject.engine = valueDatabasesDatabase["Engine"].asString();
 		if(!valueDatabasesDatabase["PageNumber"].isNull())
 			databasesObject.pageNumber = std::stoi(valueDatabasesDatabase["PageNumber"].asString());
 		if(!valueDatabasesDatabase["PageSize"].isNull())
 			databasesObject.pageSize = std::stoi(valueDatabasesDatabase["PageSize"].asString());
+		if(!valueDatabasesDatabase["ResourceGroupId"].isNull())
+			databasesObject.resourceGroupId = valueDatabasesDatabase["ResourceGroupId"].asString();
+		if(!valueDatabasesDatabase["Tablespace"].isNull())
+			databasesObject.tablespace = valueDatabasesDatabase["Tablespace"].asString();
 		if(!valueDatabasesDatabase["TotalCount"].isNull())
 			databasesObject.totalCount = std::stoi(valueDatabasesDatabase["TotalCount"].asString());
 		auto allAccountsNode = valueDatabasesDatabase["Accounts"]["AccountPrivilegeInfo"];
@@ -83,15 +83,15 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 				accountsObject.accountPrivilegeDetail = valueDatabasesDatabaseAccountsAccountPrivilegeInfo["AccountPrivilegeDetail"].asString();
 			databasesObject.accounts.push_back(accountsObject);
 		}
+		auto allAdvancedInfo = value["AdvancedInfo"]["AdvancedDbProperty"];
+		for (auto value : allAdvancedInfo)
+			databasesObject.advancedInfo.push_back(value.asString());
 		auto allBasicInfo = value["BasicInfo"]["BasicDbProperty"];
 		for (auto value : allBasicInfo)
 			databasesObject.basicInfo.push_back(value.asString());
 		auto allRuntimeInfo = value["RuntimeInfo"]["RuntimeDbProperty"];
 		for (auto value : allRuntimeInfo)
 			databasesObject.runtimeInfo.push_back(value.asString());
-		auto allAdvancedInfo = value["AdvancedInfo"]["AdvancedDbProperty"];
-		for (auto value : allAdvancedInfo)
-			databasesObject.advancedInfo.push_back(value.asString());
 		databases_.push_back(databasesObject);
 	}
 

@@ -35,11 +35,11 @@ namespace AlibabaCloud
 				struct Metrics
 				{
 					std::string description;
-					std::string metricsKey;
 					std::string groupKeyType;
+					std::string metricsKey;
 					std::string groupKey;
-					std::string method;
 					std::string dimension;
+					std::string method;
 					std::string unit;
 					int sortRule;
 					std::string dbType;

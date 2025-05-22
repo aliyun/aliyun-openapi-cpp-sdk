@@ -43,10 +43,10 @@ void DescribeTagsResult::parse(const std::string &payload)
 	for (auto valueItemsTagInfos : allItemsNode)
 	{
 		TagInfos itemsObject;
-		if(!valueItemsTagInfos["TagValue"].isNull())
-			itemsObject.tagValue = valueItemsTagInfos["TagValue"].asString();
 		if(!valueItemsTagInfos["TagKey"].isNull())
 			itemsObject.tagKey = valueItemsTagInfos["TagKey"].asString();
+		if(!valueItemsTagInfos["TagValue"].isNull())
+			itemsObject.tagValue = valueItemsTagInfos["TagValue"].asString();
 		auto allDBInstanceIds = value["DBInstanceIds"]["DBInstanceIds"];
 		for (auto value : allDBInstanceIds)
 			itemsObject.dBInstanceIds.push_back(value.asString());

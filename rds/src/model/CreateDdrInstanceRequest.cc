@@ -124,6 +124,15 @@ void CreateDdrInstanceRequest::setBackupSetId(const std::string &backupSetId) {
   setParameter(std::string("BackupSetId"), backupSetId);
 }
 
+std::string CreateDdrInstanceRequest::getEncryptionKey() const {
+  return encryptionKey_;
+}
+
+void CreateDdrInstanceRequest::setEncryptionKey(const std::string &encryptionKey) {
+  encryptionKey_ = encryptionKey;
+  setParameter(std::string("EncryptionKey"), encryptionKey);
+}
+
 long CreateDdrInstanceRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -176,6 +185,15 @@ std::string CreateDdrInstanceRequest::getBinlogName() const {
 void CreateDdrInstanceRequest::setBinlogName(const std::string &binlogName) {
   binlogName_ = binlogName;
   setParameter(std::string("BinlogName"), binlogName);
+}
+
+std::string CreateDdrInstanceRequest::getRoleARN() const {
+  return roleARN_;
+}
+
+void CreateDdrInstanceRequest::setRoleARN(const std::string &roleARN) {
+  roleARN_ = roleARN;
+  setParameter(std::string("RoleARN"), roleARN);
 }
 
 std::string CreateDdrInstanceRequest::getTunnelId() const {

@@ -64,6 +64,8 @@ public:
 	void setAutoRenew(const std::string &autoRenew);
 	std::string getPort() const;
 	void setPort(const std::string &port);
+	std::string getPromotionCode() const;
+	void setPromotionCode(const std::string &promotionCode);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 	std::string getInstanceNetworkType() const;
@@ -72,6 +74,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getInstructionSetArch() const;
 	void setInstructionSetArch(const std::string &instructionSetArch);
+	bool getAutoUseCoupon() const;
+	void setAutoUseCoupon(bool autoUseCoupon);
 	std::string getIoAccelerationEnabled() const;
 	void setIoAccelerationEnabled(const std::string &ioAccelerationEnabled);
 	std::string getAccessKeyId() const;
@@ -123,10 +127,12 @@ private:
 	std::string privateIpAddress_;
 	std::string autoRenew_;
 	std::string port_;
+	std::string promotionCode_;
 	std::string zoneId_;
 	std::string instanceNetworkType_;
 	std::string clientToken_;
 	std::string instructionSetArch_;
+	bool autoUseCoupon_;
 	std::string ioAccelerationEnabled_;
 	std::string accessKeyId_;
 	std::string regionId_;

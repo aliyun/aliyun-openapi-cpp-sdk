@@ -43,17 +43,17 @@ namespace AlibabaCloud
 					std::string product;
 					std::string actionInfo;
 					std::string reasonCode;
+					std::string callerUid;
 					std::string dbType;
 					std::string taskDetail;
-					std::string callerUid;
 					std::string instanceName;
 					std::string uid;
 					std::string callerSource;
 					std::string currentStepName;
 					std::string taskType;
 					std::string regionId;
-					int remainTime;
 					std::string instanceType;
+					int remainTime;
 				};
 
 

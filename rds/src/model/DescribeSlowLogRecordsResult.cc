@@ -43,72 +43,72 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 	for (auto valueItemsSQLSlowRecord : allItemsNode)
 	{
 		SQLSlowRecord itemsObject;
-		if(!valueItemsSQLSlowRecord["HostAddress"].isNull())
-			itemsObject.hostAddress = valueItemsSQLSlowRecord["HostAddress"].asString();
-		if(!valueItemsSQLSlowRecord["RowsAffectedCount"].isNull())
-			itemsObject.rowsAffectedCount = std::stol(valueItemsSQLSlowRecord["RowsAffectedCount"].asString());
-		if(!valueItemsSQLSlowRecord["QueryTimes"].isNull())
-			itemsObject.queryTimes = std::stol(valueItemsSQLSlowRecord["QueryTimes"].asString());
-		if(!valueItemsSQLSlowRecord["SQLText"].isNull())
-			itemsObject.sQLText = valueItemsSQLSlowRecord["SQLText"].asString();
-		if(!valueItemsSQLSlowRecord["CpuTime"].isNull())
-			itemsObject.cpuTime = std::stol(valueItemsSQLSlowRecord["CpuTime"].asString());
-		if(!valueItemsSQLSlowRecord["QueryTimeMS"].isNull())
-			itemsObject.queryTimeMS = std::stol(valueItemsSQLSlowRecord["QueryTimeMS"].asString());
 		if(!valueItemsSQLSlowRecord["ApplicationName"].isNull())
 			itemsObject.applicationName = valueItemsSQLSlowRecord["ApplicationName"].asString();
-		if(!valueItemsSQLSlowRecord["LockTimes"].isNull())
-			itemsObject.lockTimes = std::stol(valueItemsSQLSlowRecord["LockTimes"].asString());
-		if(!valueItemsSQLSlowRecord["ExecutionStartTime"].isNull())
-			itemsObject.executionStartTime = valueItemsSQLSlowRecord["ExecutionStartTime"].asString();
-		if(!valueItemsSQLSlowRecord["LogicalIORead"].isNull())
-			itemsObject.logicalIORead = std::stol(valueItemsSQLSlowRecord["LogicalIORead"].asString());
-		if(!valueItemsSQLSlowRecord["WriteIOCount"].isNull())
-			itemsObject.writeIOCount = std::stol(valueItemsSQLSlowRecord["WriteIOCount"].asString());
-		if(!valueItemsSQLSlowRecord["PhysicalIORead"].isNull())
-			itemsObject.physicalIORead = std::stol(valueItemsSQLSlowRecord["PhysicalIORead"].asString());
-		if(!valueItemsSQLSlowRecord["ReturnRowCounts"].isNull())
-			itemsObject.returnRowCounts = std::stol(valueItemsSQLSlowRecord["ReturnRowCounts"].asString());
-		if(!valueItemsSQLSlowRecord["ParseRowCounts"].isNull())
-			itemsObject.parseRowCounts = std::stol(valueItemsSQLSlowRecord["ParseRowCounts"].asString());
-		if(!valueItemsSQLSlowRecord["DBName"].isNull())
-			itemsObject.dBName = valueItemsSQLSlowRecord["DBName"].asString();
 		if(!valueItemsSQLSlowRecord["ClientHostName"].isNull())
 			itemsObject.clientHostName = valueItemsSQLSlowRecord["ClientHostName"].asString();
-		if(!valueItemsSQLSlowRecord["UserName"].isNull())
-			itemsObject.userName = valueItemsSQLSlowRecord["UserName"].asString();
+		if(!valueItemsSQLSlowRecord["CpuTime"].isNull())
+			itemsObject.cpuTime = std::stol(valueItemsSQLSlowRecord["CpuTime"].asString());
+		if(!valueItemsSQLSlowRecord["DBName"].isNull())
+			itemsObject.dBName = valueItemsSQLSlowRecord["DBName"].asString();
+		if(!valueItemsSQLSlowRecord["ExecutionStartTime"].isNull())
+			itemsObject.executionStartTime = valueItemsSQLSlowRecord["ExecutionStartTime"].asString();
+		if(!valueItemsSQLSlowRecord["HostAddress"].isNull())
+			itemsObject.hostAddress = valueItemsSQLSlowRecord["HostAddress"].asString();
 		if(!valueItemsSQLSlowRecord["LastRowsAffectedCount"].isNull())
 			itemsObject.lastRowsAffectedCount = std::stol(valueItemsSQLSlowRecord["LastRowsAffectedCount"].asString());
+		if(!valueItemsSQLSlowRecord["LockTimes"].isNull())
+			itemsObject.lockTimes = std::stol(valueItemsSQLSlowRecord["LockTimes"].asString());
+		if(!valueItemsSQLSlowRecord["LogicalIORead"].isNull())
+			itemsObject.logicalIORead = std::stol(valueItemsSQLSlowRecord["LogicalIORead"].asString());
+		if(!valueItemsSQLSlowRecord["ParseRowCounts"].isNull())
+			itemsObject.parseRowCounts = std::stol(valueItemsSQLSlowRecord["ParseRowCounts"].asString());
+		if(!valueItemsSQLSlowRecord["PhysicalIORead"].isNull())
+			itemsObject.physicalIORead = std::stol(valueItemsSQLSlowRecord["PhysicalIORead"].asString());
+		if(!valueItemsSQLSlowRecord["QueryTimeMS"].isNull())
+			itemsObject.queryTimeMS = std::stol(valueItemsSQLSlowRecord["QueryTimeMS"].asString());
+		if(!valueItemsSQLSlowRecord["QueryTimes"].isNull())
+			itemsObject.queryTimes = std::stol(valueItemsSQLSlowRecord["QueryTimes"].asString());
+		if(!valueItemsSQLSlowRecord["ReturnRowCounts"].isNull())
+			itemsObject.returnRowCounts = std::stol(valueItemsSQLSlowRecord["ReturnRowCounts"].asString());
+		if(!valueItemsSQLSlowRecord["RowsAffectedCount"].isNull())
+			itemsObject.rowsAffectedCount = std::stol(valueItemsSQLSlowRecord["RowsAffectedCount"].asString());
 		if(!valueItemsSQLSlowRecord["SQLHash"].isNull())
 			itemsObject.sQLHash = valueItemsSQLSlowRecord["SQLHash"].asString();
+		if(!valueItemsSQLSlowRecord["SQLText"].isNull())
+			itemsObject.sQLText = valueItemsSQLSlowRecord["SQLText"].asString();
+		if(!valueItemsSQLSlowRecord["UserName"].isNull())
+			itemsObject.userName = valueItemsSQLSlowRecord["UserName"].asString();
+		if(!valueItemsSQLSlowRecord["WriteIOCount"].isNull())
+			itemsObject.writeIOCount = std::stol(valueItemsSQLSlowRecord["WriteIOCount"].asString());
 		items_.push_back(itemsObject);
 	}
-	if(!value["RowsAffectedCount"].isNull())
-		rowsAffectedCount_ = std::stol(value["RowsAffectedCount"].asString());
-	if(!value["PageRecordCount"].isNull())
-		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
-	if(!value["WritesIOCount"].isNull())
-		writesIOCount_ = std::stol(value["WritesIOCount"].asString());
-	if(!value["SQLHash"].isNull())
-		sQLHash_ = value["SQLHash"].asString();
-	if(!value["LogicalIORead"].isNull())
-		logicalIORead_ = std::stol(value["LogicalIORead"].asString());
-	if(!value["PhysicalIORead"].isNull())
-		physicalIORead_ = std::stol(value["PhysicalIORead"].asString());
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["CPUTime"].isNull())
+		cPUTime_ = std::stol(value["CPUTime"].asString());
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
 	if(!value["Engine"].isNull())
 		engine_ = value["Engine"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["CPUTime"].isNull())
-		cPUTime_ = std::stol(value["CPUTime"].asString());
-	if(!value["UserName"].isNull())
-		userName_ = value["UserName"].asString();
 	if(!value["LastRowsAffectedCount"].isNull())
 		lastRowsAffectedCount_ = std::stol(value["LastRowsAffectedCount"].asString());
+	if(!value["LogicalIORead"].isNull())
+		logicalIORead_ = std::stol(value["LogicalIORead"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["PhysicalIORead"].isNull())
+		physicalIORead_ = std::stol(value["PhysicalIORead"].asString());
+	if(!value["RowsAffectedCount"].isNull())
+		rowsAffectedCount_ = std::stol(value["RowsAffectedCount"].asString());
+	if(!value["SQLHash"].isNull())
+		sQLHash_ = value["SQLHash"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["UserName"].isNull())
+		userName_ = value["UserName"].asString();
+	if(!value["WritesIOCount"].isNull())
+		writesIOCount_ = std::stol(value["WritesIOCount"].asString());
 
 }
 

@@ -39,24 +39,24 @@ void DescribeMigrateTaskByIdResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
-	if(!value["DBInstanceName"].isNull())
-		dBInstanceName_ = value["DBInstanceName"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
-	if(!value["DBName"].isNull())
-		dBName_ = value["DBName"].asString();
 	if(!value["BackupMode"].isNull())
 		backupMode_ = value["BackupMode"].asString();
-	if(!value["MigrateTaskId"].isNull())
-		migrateTaskId_ = value["MigrateTaskId"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["DBName"].isNull())
+		dBName_ = value["DBName"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 	if(!value["IsDBReplaced"].isNull())
 		isDBReplaced_ = value["IsDBReplaced"].asString();
+	if(!value["MigrateTaskId"].isNull())
+		migrateTaskId_ = value["MigrateTaskId"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 
 }
 
@@ -80,14 +80,14 @@ std::string DescribeMigrateTaskByIdResult::getMigrateTaskId()const
 	return migrateTaskId_;
 }
 
-std::string DescribeMigrateTaskByIdResult::getCreateTime()const
-{
-	return createTime_;
-}
-
 std::string DescribeMigrateTaskByIdResult::getBackupMode()const
 {
 	return backupMode_;
+}
+
+std::string DescribeMigrateTaskByIdResult::getCreateTime()const
+{
+	return createTime_;
 }
 
 std::string DescribeMigrateTaskByIdResult::getIsDBReplaced()const

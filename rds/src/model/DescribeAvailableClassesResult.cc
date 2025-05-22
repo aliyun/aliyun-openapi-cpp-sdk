@@ -43,17 +43,17 @@ void DescribeAvailableClassesResult::parse(const std::string &payload)
 	for (auto valueDBInstanceClassesDBInstanceClass : allDBInstanceClassesNode)
 	{
 		DBInstanceClass dBInstanceClassesObject;
-		if(!valueDBInstanceClassesDBInstanceClass["StorageRange"].isNull())
-			dBInstanceClassesObject.storageRange = valueDBInstanceClassesDBInstanceClass["StorageRange"].asString();
 		if(!valueDBInstanceClassesDBInstanceClass["DBInstanceClass"].isNull())
 			dBInstanceClassesObject.dBInstanceClass = valueDBInstanceClassesDBInstanceClass["DBInstanceClass"].asString();
+		if(!valueDBInstanceClassesDBInstanceClass["StorageRange"].isNull())
+			dBInstanceClassesObject.storageRange = valueDBInstanceClassesDBInstanceClass["StorageRange"].asString();
 		auto dBInstanceStorageRangeNode = value["DBInstanceStorageRange"];
-		if(!dBInstanceStorageRangeNode["Step"].isNull())
-			dBInstanceClassesObject.dBInstanceStorageRange.step = std::stoi(dBInstanceStorageRangeNode["Step"].asString());
-		if(!dBInstanceStorageRangeNode["MinValue"].isNull())
-			dBInstanceClassesObject.dBInstanceStorageRange.minValue = std::stoi(dBInstanceStorageRangeNode["MinValue"].asString());
 		if(!dBInstanceStorageRangeNode["MaxValue"].isNull())
 			dBInstanceClassesObject.dBInstanceStorageRange.maxValue = std::stoi(dBInstanceStorageRangeNode["MaxValue"].asString());
+		if(!dBInstanceStorageRangeNode["MinValue"].isNull())
+			dBInstanceClassesObject.dBInstanceStorageRange.minValue = std::stoi(dBInstanceStorageRangeNode["MinValue"].asString());
+		if(!dBInstanceStorageRangeNode["Step"].isNull())
+			dBInstanceClassesObject.dBInstanceStorageRange.step = std::stoi(dBInstanceStorageRangeNode["Step"].asString());
 		dBInstanceClasses_.push_back(dBInstanceClassesObject);
 	}
 

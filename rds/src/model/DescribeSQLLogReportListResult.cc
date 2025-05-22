@@ -49,12 +49,12 @@ void DescribeSQLLogReportListResult::parse(const std::string &payload)
 		for (auto valueItemsItemLatencyTopNItemsLatencyTopNItem : allLatencyTopNItemsNode)
 		{
 			Item::LatencyTopNItem latencyTopNItemsObject;
-			if(!valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLText"].isNull())
-				latencyTopNItemsObject.sQLText = valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLText"].asString();
-			if(!valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLExecuteTimes"].isNull())
-				latencyTopNItemsObject.sQLExecuteTimes = std::stol(valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLExecuteTimes"].asString());
 			if(!valueItemsItemLatencyTopNItemsLatencyTopNItem["AvgLatency"].isNull())
 				latencyTopNItemsObject.avgLatency = std::stol(valueItemsItemLatencyTopNItemsLatencyTopNItem["AvgLatency"].asString());
+			if(!valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLExecuteTimes"].isNull())
+				latencyTopNItemsObject.sQLExecuteTimes = std::stol(valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLExecuteTimes"].asString());
+			if(!valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLText"].isNull())
+				latencyTopNItemsObject.sQLText = valueItemsItemLatencyTopNItemsLatencyTopNItem["SQLText"].asString();
 			itemsObject.latencyTopNItems.push_back(latencyTopNItemsObject);
 		}
 		auto allQPSTopNItemsNode = valueItemsItem["QPSTopNItems"]["QPSTopNItem"];

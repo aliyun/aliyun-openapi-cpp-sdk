@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct RdsInstanceResourceSetting
 				{
-					std::string startDate;
 					std::string poppedUpButtonUrl;
+					std::string startDate;
 					std::string isTop;
 					std::string poppedUpButtonType;
 					std::string resourceNiche;

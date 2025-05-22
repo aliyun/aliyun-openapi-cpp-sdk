@@ -43,6 +43,15 @@ void RenewInstanceRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+bool RenewInstanceRequest::getAutoUseCoupon() const {
+  return autoUseCoupon_;
+}
+
+void RenewInstanceRequest::setAutoUseCoupon(bool autoUseCoupon) {
+  autoUseCoupon_ = autoUseCoupon;
+  setParameter(std::string("AutoUseCoupon"), autoUseCoupon ? "true" : "false");
+}
+
 std::string RenewInstanceRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -122,5 +131,14 @@ std::string RenewInstanceRequest::getAutoRenew() const {
 void RenewInstanceRequest::setAutoRenew(const std::string &autoRenew) {
   autoRenew_ = autoRenew;
   setParameter(std::string("AutoRenew"), autoRenew);
+}
+
+std::string RenewInstanceRequest::getPromotionCode() const {
+  return promotionCode_;
+}
+
+void RenewInstanceRequest::setPromotionCode(const std::string &promotionCode) {
+  promotionCode_ = promotionCode;
+  setParameter(std::string("PromotionCode"), promotionCode);
 }
 

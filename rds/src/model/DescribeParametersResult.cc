@@ -55,6 +55,8 @@ void DescribeParametersResult::parse(const std::string &payload)
 	for (auto valueRunningParametersDBInstanceParameter : allRunningParametersNode)
 	{
 		DBInstanceParameter1 runningParametersObject;
+		if(!valueRunningParametersDBInstanceParameter["ParameterDefaultValue"].isNull())
+			runningParametersObject.parameterDefaultValue = valueRunningParametersDBInstanceParameter["ParameterDefaultValue"].asString();
 		if(!valueRunningParametersDBInstanceParameter["ParameterDescription"].isNull())
 			runningParametersObject.parameterDescription = valueRunningParametersDBInstanceParameter["ParameterDescription"].asString();
 		if(!valueRunningParametersDBInstanceParameter["ParameterName"].isNull())
@@ -63,19 +65,17 @@ void DescribeParametersResult::parse(const std::string &payload)
 			runningParametersObject.parameterValue = valueRunningParametersDBInstanceParameter["ParameterValue"].asString();
 		if(!valueRunningParametersDBInstanceParameter["ParameterValueRange"].isNull())
 			runningParametersObject.parameterValueRange = valueRunningParametersDBInstanceParameter["ParameterValueRange"].asString();
-		if(!valueRunningParametersDBInstanceParameter["ParameterDefaultValue"].isNull())
-			runningParametersObject.parameterDefaultValue = valueRunningParametersDBInstanceParameter["ParameterDefaultValue"].asString();
 		runningParameters_.push_back(runningParametersObject);
 	}
 	auto paramGroupInfoNode = value["ParamGroupInfo"];
-	if(!paramGroupInfoNode["ParameterGroupName"].isNull())
-		paramGroupInfo_.parameterGroupName = paramGroupInfoNode["ParameterGroupName"].asString();
-	if(!paramGroupInfoNode["ParameterGroupDesc"].isNull())
-		paramGroupInfo_.parameterGroupDesc = paramGroupInfoNode["ParameterGroupDesc"].asString();
-	if(!paramGroupInfoNode["ParameterGroupType"].isNull())
-		paramGroupInfo_.parameterGroupType = paramGroupInfoNode["ParameterGroupType"].asString();
 	if(!paramGroupInfoNode["ParamGroupId"].isNull())
 		paramGroupInfo_.paramGroupId = paramGroupInfoNode["ParamGroupId"].asString();
+	if(!paramGroupInfoNode["ParameterGroupDesc"].isNull())
+		paramGroupInfo_.parameterGroupDesc = paramGroupInfoNode["ParameterGroupDesc"].asString();
+	if(!paramGroupInfoNode["ParameterGroupName"].isNull())
+		paramGroupInfo_.parameterGroupName = paramGroupInfoNode["ParameterGroupName"].asString();
+	if(!paramGroupInfoNode["ParameterGroupType"].isNull())
+		paramGroupInfo_.parameterGroupType = paramGroupInfoNode["ParameterGroupType"].asString();
 	if(!value["Engine"].isNull())
 		engine_ = value["Engine"].asString();
 	if(!value["EngineVersion"].isNull())

@@ -34,33 +34,6 @@ void TerminateMigrateTaskRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string TerminateMigrateTaskRequest::getMigrateTaskId() const {
-  return migrateTaskId_;
-}
-
-void TerminateMigrateTaskRequest::setMigrateTaskId(const std::string &migrateTaskId) {
-  migrateTaskId_ = migrateTaskId;
-  setParameter(std::string("MigrateTaskId"), migrateTaskId);
-}
-
-std::string TerminateMigrateTaskRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void TerminateMigrateTaskRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long TerminateMigrateTaskRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void TerminateMigrateTaskRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string TerminateMigrateTaskRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,5 +59,32 @@ std::string TerminateMigrateTaskRequest::getDBInstanceId() const {
 void TerminateMigrateTaskRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string TerminateMigrateTaskRequest::getMigrateTaskId() const {
+  return migrateTaskId_;
+}
+
+void TerminateMigrateTaskRequest::setMigrateTaskId(const std::string &migrateTaskId) {
+  migrateTaskId_ = migrateTaskId;
+  setParameter(std::string("MigrateTaskId"), migrateTaskId);
+}
+
+std::string TerminateMigrateTaskRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void TerminateMigrateTaskRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long TerminateMigrateTaskRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void TerminateMigrateTaskRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

@@ -32,27 +32,27 @@ public:
 	~ModifyDBInstanceDelayedReplicationTimeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getReadSQLReplicationTime() const;
-	void setReadSQLReplicationTime(const std::string &readSQLReplicationTime);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getReadSQLReplicationTime() const;
+	void setReadSQLReplicationTime(const std::string &readSQLReplicationTime);
 
 private:
 	long resourceOwnerId_;
-	std::string resourceOwnerAccount_;
-	long ownerId_;
 	std::string accessKeyId_;
-	std::string readSQLReplicationTime_;
 	std::string regionId_;
 	std::string dBInstanceId_;
+	std::string resourceOwnerAccount_;
+	long ownerId_;
+	std::string readSQLReplicationTime_;
 };
 } // namespace Model
 } // namespace Rds

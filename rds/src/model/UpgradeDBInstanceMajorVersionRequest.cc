@@ -43,6 +43,105 @@ void UpgradeDBInstanceMajorVersionRequest::setDBInstanceStorage(int dBInstanceSt
   setParameter(std::string("DBInstanceStorage"), std::to_string(dBInstanceStorage));
 }
 
+std::string UpgradeDBInstanceMajorVersionRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string UpgradeDBInstanceMajorVersionRequest::getDBInstanceDescription() const {
+  return dBInstanceDescription_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setDBInstanceDescription(const std::string &dBInstanceDescription) {
+  dBInstanceDescription_ = dBInstanceDescription;
+  setParameter(std::string("DBInstanceDescription"), dBInstanceDescription);
+}
+
+std::string UpgradeDBInstanceMajorVersionRequest::getPeriod() const {
+  return period_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setPeriod(const std::string &period) {
+  period_ = period;
+  setParameter(std::string("Period"), period);
+}
+
+std::string UpgradeDBInstanceMajorVersionRequest::getUpgradeMode() const {
+  return upgradeMode_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setUpgradeMode(const std::string &upgradeMode) {
+  upgradeMode_ = upgradeMode;
+  setParameter(std::string("UpgradeMode"), upgradeMode);
+}
+
+long UpgradeDBInstanceMajorVersionRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string UpgradeDBInstanceMajorVersionRequest::getDBInstanceClass() const {
+  return dBInstanceClass_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setDBInstanceClass(const std::string &dBInstanceClass) {
+  dBInstanceClass_ = dBInstanceClass;
+  setParameter(std::string("DBInstanceClass"), dBInstanceClass);
+}
+
+std::string UpgradeDBInstanceMajorVersionRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
+}
+
+std::string UpgradeDBInstanceMajorVersionRequest::getPrivateIpAddress() const {
+  return privateIpAddress_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setPrivateIpAddress(const std::string &privateIpAddress) {
+  privateIpAddress_ = privateIpAddress;
+  setParameter(std::string("PrivateIpAddress"), privateIpAddress);
+}
+
+std::string UpgradeDBInstanceMajorVersionRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
+}
+
+std::string UpgradeDBInstanceMajorVersionRequest::getInstanceNetworkType() const {
+  return instanceNetworkType_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setInstanceNetworkType(const std::string &instanceNetworkType) {
+  instanceNetworkType_ = instanceNetworkType;
+  setParameter(std::string("InstanceNetworkType"), instanceNetworkType);
+}
+
+std::string UpgradeDBInstanceMajorVersionRequest::getTargetMajorVersion() const {
+  return targetMajorVersion_;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::setTargetMajorVersion(const std::string &targetMajorVersion) {
+  targetMajorVersion_ = targetMajorVersion;
+  setParameter(std::string("TargetMajorVersion"), targetMajorVersion);
+}
+
 std::string UpgradeDBInstanceMajorVersionRequest::getClientToken() const {
   return clientToken_;
 }
@@ -97,15 +196,6 @@ void UpgradeDBInstanceMajorVersionRequest::setSwitchOver(const std::string &swit
   setParameter(std::string("SwitchOver"), switchOver);
 }
 
-std::string UpgradeDBInstanceMajorVersionRequest::getResourceGroupId() const {
-  return resourceGroupId_;
-}
-
-void UpgradeDBInstanceMajorVersionRequest::setResourceGroupId(const std::string &resourceGroupId) {
-  resourceGroupId_ = resourceGroupId;
-  setParameter(std::string("ResourceGroupId"), resourceGroupId);
-}
-
 std::string UpgradeDBInstanceMajorVersionRequest::getRegionId() const {
   return regionId_;
 }
@@ -122,15 +212,6 @@ std::string UpgradeDBInstanceMajorVersionRequest::getCollectStatMode() const {
 void UpgradeDBInstanceMajorVersionRequest::setCollectStatMode(const std::string &collectStatMode) {
   collectStatMode_ = collectStatMode;
   setParameter(std::string("CollectStatMode"), collectStatMode);
-}
-
-std::string UpgradeDBInstanceMajorVersionRequest::getDBInstanceDescription() const {
-  return dBInstanceDescription_;
-}
-
-void UpgradeDBInstanceMajorVersionRequest::setDBInstanceDescription(const std::string &dBInstanceDescription) {
-  dBInstanceDescription_ = dBInstanceDescription;
-  setParameter(std::string("DBInstanceDescription"), dBInstanceDescription);
 }
 
 std::string UpgradeDBInstanceMajorVersionRequest::getSwitchTime() const {
@@ -160,15 +241,6 @@ void UpgradeDBInstanceMajorVersionRequest::setDBInstanceStorageType(const std::s
   setParameter(std::string("DBInstanceStorageType"), dBInstanceStorageType);
 }
 
-std::string UpgradeDBInstanceMajorVersionRequest::getPeriod() const {
-  return period_;
-}
-
-void UpgradeDBInstanceMajorVersionRequest::setPeriod(const std::string &period) {
-  period_ = period;
-  setParameter(std::string("Period"), period);
-}
-
 std::string UpgradeDBInstanceMajorVersionRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -187,15 +259,6 @@ void UpgradeDBInstanceMajorVersionRequest::setOwnerAccount(const std::string &ow
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long UpgradeDBInstanceMajorVersionRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void UpgradeDBInstanceMajorVersionRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string UpgradeDBInstanceMajorVersionRequest::getUsedTime() const {
   return usedTime_;
 }
@@ -203,33 +266,6 @@ std::string UpgradeDBInstanceMajorVersionRequest::getUsedTime() const {
 void UpgradeDBInstanceMajorVersionRequest::setUsedTime(const std::string &usedTime) {
   usedTime_ = usedTime;
   setParameter(std::string("UsedTime"), usedTime);
-}
-
-std::string UpgradeDBInstanceMajorVersionRequest::getDBInstanceClass() const {
-  return dBInstanceClass_;
-}
-
-void UpgradeDBInstanceMajorVersionRequest::setDBInstanceClass(const std::string &dBInstanceClass) {
-  dBInstanceClass_ = dBInstanceClass;
-  setParameter(std::string("DBInstanceClass"), dBInstanceClass);
-}
-
-std::string UpgradeDBInstanceMajorVersionRequest::getVSwitchId() const {
-  return vSwitchId_;
-}
-
-void UpgradeDBInstanceMajorVersionRequest::setVSwitchId(const std::string &vSwitchId) {
-  vSwitchId_ = vSwitchId;
-  setParameter(std::string("VSwitchId"), vSwitchId);
-}
-
-std::string UpgradeDBInstanceMajorVersionRequest::getPrivateIpAddress() const {
-  return privateIpAddress_;
-}
-
-void UpgradeDBInstanceMajorVersionRequest::setPrivateIpAddress(const std::string &privateIpAddress) {
-  privateIpAddress_ = privateIpAddress;
-  setParameter(std::string("PrivateIpAddress"), privateIpAddress);
 }
 
 std::string UpgradeDBInstanceMajorVersionRequest::getVPCId() const {
@@ -241,15 +277,6 @@ void UpgradeDBInstanceMajorVersionRequest::setVPCId(const std::string &vPCId) {
   setParameter(std::string("VPCId"), vPCId);
 }
 
-std::string UpgradeDBInstanceMajorVersionRequest::getZoneId() const {
-  return zoneId_;
-}
-
-void UpgradeDBInstanceMajorVersionRequest::setZoneId(const std::string &zoneId) {
-  zoneId_ = zoneId;
-  setParameter(std::string("ZoneId"), zoneId);
-}
-
 std::string UpgradeDBInstanceMajorVersionRequest::getPayType() const {
   return payType_;
 }
@@ -257,23 +284,5 @@ std::string UpgradeDBInstanceMajorVersionRequest::getPayType() const {
 void UpgradeDBInstanceMajorVersionRequest::setPayType(const std::string &payType) {
   payType_ = payType;
   setParameter(std::string("PayType"), payType);
-}
-
-std::string UpgradeDBInstanceMajorVersionRequest::getInstanceNetworkType() const {
-  return instanceNetworkType_;
-}
-
-void UpgradeDBInstanceMajorVersionRequest::setInstanceNetworkType(const std::string &instanceNetworkType) {
-  instanceNetworkType_ = instanceNetworkType;
-  setParameter(std::string("InstanceNetworkType"), instanceNetworkType);
-}
-
-std::string UpgradeDBInstanceMajorVersionRequest::getTargetMajorVersion() const {
-  return targetMajorVersion_;
-}
-
-void UpgradeDBInstanceMajorVersionRequest::setTargetMajorVersion(const std::string &targetMajorVersion) {
-  targetMajorVersion_ = targetMajorVersion;
-  setParameter(std::string("TargetMajorVersion"), targetMajorVersion);
 }
 

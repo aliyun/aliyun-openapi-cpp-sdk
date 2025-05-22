@@ -35,16 +35,22 @@ namespace AlibabaCloud
 				struct Tasks
 				{
 					std::string sourceInsName;
-					std::string sourceMajorVersion;
 					int taskId;
 					std::string endTime;
-					std::string collectStatMode;
 					std::string targetMajorVersion;
+					bool cutOver;
 					std::string targetInsName;
 					std::string startTime;
 					std::string upgradeMode;
-					std::string detail;
 					std::string result;
+					int zeroDownTimePort;
+					std::string sourceMajorVersion;
+					std::string collectStatMode;
+					std::string switchEndTime;
+					int totalLogicRepDelayTime;
+					std::string zeroDownTimeConnectionString;
+					int totalLogicRepLatencyMB;
+					std::string detail;
 					std::string switchTime;
 				};
 

@@ -48,41 +48,41 @@ void DescribeDBInstanceEndpointsResult::parse(const std::string &payload)
 	for (auto dataNodeDBInstanceEndpointsDBInstanceEndpoint : allDBInstanceEndpointsNode)
 	{
 		Data::DBInstanceEndpoint dBInstanceEndpointObject;
+		if(!dataNodeDBInstanceEndpointsDBInstanceEndpoint["EndpointDescription"].isNull())
+			dBInstanceEndpointObject.endpointDescription = dataNodeDBInstanceEndpointsDBInstanceEndpoint["EndpointDescription"].asString();
 		if(!dataNodeDBInstanceEndpointsDBInstanceEndpoint["EndpointId"].isNull())
 			dBInstanceEndpointObject.endpointId = dataNodeDBInstanceEndpointsDBInstanceEndpoint["EndpointId"].asString();
 		if(!dataNodeDBInstanceEndpointsDBInstanceEndpoint["EndpointType"].isNull())
 			dBInstanceEndpointObject.endpointType = dataNodeDBInstanceEndpointsDBInstanceEndpoint["EndpointType"].asString();
-		if(!dataNodeDBInstanceEndpointsDBInstanceEndpoint["EndpointDescription"].isNull())
-			dBInstanceEndpointObject.endpointDescription = dataNodeDBInstanceEndpointsDBInstanceEndpoint["EndpointDescription"].asString();
-		auto allNodeItemsNode = dataNodeDBInstanceEndpointsDBInstanceEndpoint["NodeItems"]["NodeItem"];
-		for (auto dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem : allNodeItemsNode)
-		{
-			Data::DBInstanceEndpoint::NodeItem nodeItemsObject;
-			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["NodeId"].isNull())
-				nodeItemsObject.nodeId = dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["NodeId"].asString();
-			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["DBInstanceId"].isNull())
-				nodeItemsObject.dBInstanceId = dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["DBInstanceId"].asString();
-			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["Weight"].isNull())
-				nodeItemsObject.weight = std::stoi(dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["Weight"].asString());
-			dBInstanceEndpointObject.nodeItems.push_back(nodeItemsObject);
-		}
 		auto allAddressItemsNode = dataNodeDBInstanceEndpointsDBInstanceEndpoint["AddressItems"]["AddressItem"];
 		for (auto dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem : allAddressItemsNode)
 		{
 			Data::DBInstanceEndpoint::AddressItem addressItemsObject;
-			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["VpcId"].isNull())
-				addressItemsObject.vpcId = dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["VpcId"].asString();
-			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["VSwitchId"].isNull())
-				addressItemsObject.vSwitchId = dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["VSwitchId"].asString();
-			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["IpType"].isNull())
-				addressItemsObject.ipType = dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["IpType"].asString();
-			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["Port"].isNull())
-				addressItemsObject.port = dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["Port"].asString();
 			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["ConnectionString"].isNull())
 				addressItemsObject.connectionString = dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["ConnectionString"].asString();
 			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["IpAddress"].isNull())
 				addressItemsObject.ipAddress = dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["IpAddress"].asString();
+			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["IpType"].isNull())
+				addressItemsObject.ipType = dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["IpType"].asString();
+			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["Port"].isNull())
+				addressItemsObject.port = dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["Port"].asString();
+			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["VSwitchId"].isNull())
+				addressItemsObject.vSwitchId = dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["VSwitchId"].asString();
+			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["VpcId"].isNull())
+				addressItemsObject.vpcId = dataNodeDBInstanceEndpointsDBInstanceEndpointAddressItemsAddressItem["VpcId"].asString();
 			dBInstanceEndpointObject.addressItems.push_back(addressItemsObject);
+		}
+		auto allNodeItemsNode = dataNodeDBInstanceEndpointsDBInstanceEndpoint["NodeItems"]["NodeItem"];
+		for (auto dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem : allNodeItemsNode)
+		{
+			Data::DBInstanceEndpoint::NodeItem nodeItemsObject;
+			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["DBInstanceId"].isNull())
+				nodeItemsObject.dBInstanceId = dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["DBInstanceId"].asString();
+			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["NodeId"].isNull())
+				nodeItemsObject.nodeId = dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["NodeId"].asString();
+			if(!dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["Weight"].isNull())
+				nodeItemsObject.weight = std::stoi(dataNodeDBInstanceEndpointsDBInstanceEndpointNodeItemsNodeItem["Weight"].asString());
+			dBInstanceEndpointObject.nodeItems.push_back(nodeItemsObject);
 		}
 		data_.dBInstanceEndpoints.push_back(dBInstanceEndpointObject);
 	}

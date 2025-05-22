@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "RdsExport.h"
+#include "model/AcceptRCInquiredSystemEventRequest.h"
+#include "model/AcceptRCInquiredSystemEventResult.h"
 #include "model/ActivateMigrationTargetInstanceRequest.h"
 #include "model/ActivateMigrationTargetInstanceResult.h"
 #include "model/AddTagsToResourceRequest.h"
@@ -30,10 +32,20 @@
 #include "model/AllocateInstancePublicConnectionResult.h"
 #include "model/AllocateReadWriteSplittingConnectionRequest.h"
 #include "model/AllocateReadWriteSplittingConnectionResult.h"
+#include "model/AssociateEipAddressWithRCInstanceRequest.h"
+#include "model/AssociateEipAddressWithRCInstanceResult.h"
+#include "model/AttachRCDiskRequest.h"
+#include "model/AttachRCDiskResult.h"
+#include "model/AttachRCInstancesRequest.h"
+#include "model/AttachRCInstancesResult.h"
 #include "model/AttachWhitelistTemplateToInstanceRequest.h"
 #include "model/AttachWhitelistTemplateToInstanceResult.h"
+#include "model/AuthorizeRCSecurityGroupPermissionRequest.h"
+#include "model/AuthorizeRCSecurityGroupPermissionResult.h"
 #include "model/CalculateDBInstanceWeightRequest.h"
 #include "model/CalculateDBInstanceWeightResult.h"
+#include "model/CancelActiveOperationTasksRequest.h"
+#include "model/CancelActiveOperationTasksResult.h"
 #include "model/CheckAccountNameAvailableRequest.h"
 #include "model/CheckAccountNameAvailableResult.h"
 #include "model/CheckCloudResourceAuthorizedRequest.h"
@@ -100,8 +112,18 @@
 #include "model/CreateParameterGroupResult.h"
 #include "model/CreatePostgresExtensionsRequest.h"
 #include "model/CreatePostgresExtensionsResult.h"
+#include "model/CreateRCDeploymentSetRequest.h"
+#include "model/CreateRCDeploymentSetResult.h"
+#include "model/CreateRCDiskRequest.h"
+#include "model/CreateRCDiskResult.h"
+#include "model/CreateRCNodePoolRequest.h"
+#include "model/CreateRCNodePoolResult.h"
+#include "model/CreateRCSnapshotRequest.h"
+#include "model/CreateRCSnapshotResult.h"
 #include "model/CreateReadOnlyDBInstanceRequest.h"
 #include "model/CreateReadOnlyDBInstanceResult.h"
+#include "model/CreateReplicationLinkRequest.h"
+#include "model/CreateReplicationLinkResult.h"
 #include "model/CreateSecretRequest.h"
 #include "model/CreateSecretResult.h"
 #include "model/CreateServiceLinkedRoleRequest.h"
@@ -140,6 +162,22 @@
 #include "model/DeleteParameterGroupResult.h"
 #include "model/DeletePostgresExtensionsRequest.h"
 #include "model/DeletePostgresExtensionsResult.h"
+#include "model/DeleteRCClusterNodesRequest.h"
+#include "model/DeleteRCClusterNodesResult.h"
+#include "model/DeleteRCDeploymentSetRequest.h"
+#include "model/DeleteRCDeploymentSetResult.h"
+#include "model/DeleteRCDiskRequest.h"
+#include "model/DeleteRCDiskResult.h"
+#include "model/DeleteRCInstanceRequest.h"
+#include "model/DeleteRCInstanceResult.h"
+#include "model/DeleteRCInstancesRequest.h"
+#include "model/DeleteRCInstancesResult.h"
+#include "model/DeleteRCNodePoolRequest.h"
+#include "model/DeleteRCNodePoolResult.h"
+#include "model/DeleteRCSnapshotRequest.h"
+#include "model/DeleteRCSnapshotResult.h"
+#include "model/DeleteReplicationLinkRequest.h"
+#include "model/DeleteReplicationLinkResult.h"
 #include "model/DeleteSecretRequest.h"
 #include "model/DeleteSecretResult.h"
 #include "model/DeleteSlotRequest.h"
@@ -236,6 +274,8 @@
 #include "model/DescribeDBInstancePromoteActivityResult.h"
 #include "model/DescribeDBInstanceProxyConfigurationRequest.h"
 #include "model/DescribeDBInstanceProxyConfigurationResult.h"
+#include "model/DescribeDBInstanceReplicationRequest.h"
+#include "model/DescribeDBInstanceReplicationResult.h"
 #include "model/DescribeDBInstanceSSLRequest.h"
 #include "model/DescribeDBInstanceSSLResult.h"
 #include "model/DescribeDBInstanceSecurityGroupRuleRequest.h"
@@ -340,6 +380,44 @@
 #include "model/DescribePriceResult.h"
 #include "model/DescribeQuickSaleConfigRequest.h"
 #include "model/DescribeQuickSaleConfigResult.h"
+#include "model/DescribeRCClusterConfigRequest.h"
+#include "model/DescribeRCClusterConfigResult.h"
+#include "model/DescribeRCClusterNodesRequest.h"
+#include "model/DescribeRCClusterNodesResult.h"
+#include "model/DescribeRCClustersRequest.h"
+#include "model/DescribeRCClustersResult.h"
+#include "model/DescribeRCDeploymentSetsRequest.h"
+#include "model/DescribeRCDeploymentSetsResult.h"
+#include "model/DescribeRCDisksRequest.h"
+#include "model/DescribeRCDisksResult.h"
+#include "model/DescribeRCImageListRequest.h"
+#include "model/DescribeRCImageListResult.h"
+#include "model/DescribeRCInstanceAttributeRequest.h"
+#include "model/DescribeRCInstanceAttributeResult.h"
+#include "model/DescribeRCInstanceDdosCountRequest.h"
+#include "model/DescribeRCInstanceDdosCountResult.h"
+#include "model/DescribeRCInstanceHistoryEventsRequest.h"
+#include "model/DescribeRCInstanceHistoryEventsResult.h"
+#include "model/DescribeRCInstanceIpAddressRequest.h"
+#include "model/DescribeRCInstanceIpAddressResult.h"
+#include "model/DescribeRCInstanceTypeFamiliesRequest.h"
+#include "model/DescribeRCInstanceTypeFamiliesResult.h"
+#include "model/DescribeRCInstanceTypesRequest.h"
+#include "model/DescribeRCInstanceTypesResult.h"
+#include "model/DescribeRCInstanceVncUrlRequest.h"
+#include "model/DescribeRCInstanceVncUrlResult.h"
+#include "model/DescribeRCInstancesRequest.h"
+#include "model/DescribeRCInstancesResult.h"
+#include "model/DescribeRCMetricListRequest.h"
+#include "model/DescribeRCMetricListResult.h"
+#include "model/DescribeRCNodePoolRequest.h"
+#include "model/DescribeRCNodePoolResult.h"
+#include "model/DescribeRCSecurityGroupListRequest.h"
+#include "model/DescribeRCSecurityGroupListResult.h"
+#include "model/DescribeRCSecurityGroupPermissionRequest.h"
+#include "model/DescribeRCSecurityGroupPermissionResult.h"
+#include "model/DescribeRCSnapshotsRequest.h"
+#include "model/DescribeRCSnapshotsResult.h"
 #include "model/DescribeRdsResourceSettingsRequest.h"
 #include "model/DescribeRdsResourceSettingsResult.h"
 #include "model/DescribeReadDBInstanceDelayRequest.h"
@@ -350,6 +428,8 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeRenewalPriceRequest.h"
 #include "model/DescribeRenewalPriceResult.h"
+#include "model/DescribeReplicationLinkLogsRequest.h"
+#include "model/DescribeReplicationLinkLogsResult.h"
 #include "model/DescribeResourceDetailsRequest.h"
 #include "model/DescribeResourceDetailsResult.h"
 #include "model/DescribeResourceUsageRequest.h"
@@ -394,6 +474,8 @@
 #include "model/DestroyDBInstanceResult.h"
 #include "model/DetachGadInstanceMemberRequest.h"
 #include "model/DetachGadInstanceMemberResult.h"
+#include "model/DetachRCDiskRequest.h"
+#include "model/DetachRCDiskResult.h"
 #include "model/DetachWhitelistTemplateToInstanceRequest.h"
 #include "model/DetachWhitelistTemplateToInstanceResult.h"
 #include "model/EvaluateLocalExtendDiskRequest.h"
@@ -420,16 +502,22 @@
 #include "model/MigrateConnectionToOtherZoneResult.h"
 #include "model/MigrateDBInstanceRequest.h"
 #include "model/MigrateDBInstanceResult.h"
+#include "model/MigrateDBNodesRequest.h"
+#include "model/MigrateDBNodesResult.h"
 #include "model/MigrateSecurityIPModeRequest.h"
 #include "model/MigrateSecurityIPModeResult.h"
 #include "model/MigrateToOtherZoneRequest.h"
 #include "model/MigrateToOtherZoneResult.h"
 #include "model/ModifyADInfoRequest.h"
 #include "model/ModifyADInfoResult.h"
+#include "model/ModifyAccountCheckPolicyRequest.h"
+#include "model/ModifyAccountCheckPolicyResult.h"
 #include "model/ModifyAccountDescriptionRequest.h"
 #include "model/ModifyAccountDescriptionResult.h"
 #include "model/ModifyAccountMaskingPrivilegeRequest.h"
 #include "model/ModifyAccountMaskingPrivilegeResult.h"
+#include "model/ModifyAccountSecurityPolicyRequest.h"
+#include "model/ModifyAccountSecurityPolicyResult.h"
 #include "model/ModifyActionEventPolicyRequest.h"
 #include "model/ModifyActionEventPolicyResult.h"
 #include "model/ModifyActiveOperationTasksRequest.h"
@@ -472,6 +560,8 @@
 #include "model/ModifyDBInstanceNetworkTypeResult.h"
 #include "model/ModifyDBInstancePayTypeRequest.h"
 #include "model/ModifyDBInstancePayTypeResult.h"
+#include "model/ModifyDBInstanceReplicationSwitchRequest.h"
+#include "model/ModifyDBInstanceReplicationSwitchResult.h"
 #include "model/ModifyDBInstanceSSLRequest.h"
 #include "model/ModifyDBInstanceSSLResult.h"
 #include "model/ModifyDBInstanceSecurityGroupRuleRequest.h"
@@ -516,6 +606,22 @@
 #include "model/ModifyParameterResult.h"
 #include "model/ModifyParameterGroupRequest.h"
 #include "model/ModifyParameterGroupResult.h"
+#include "model/ModifyRCDiskSpecRequest.h"
+#include "model/ModifyRCDiskSpecResult.h"
+#include "model/ModifyRCInstanceRequest.h"
+#include "model/ModifyRCInstanceResult.h"
+#include "model/ModifyRCInstanceAttributeRequest.h"
+#include "model/ModifyRCInstanceAttributeResult.h"
+#include "model/ModifyRCInstanceChargeTypeRequest.h"
+#include "model/ModifyRCInstanceChargeTypeResult.h"
+#include "model/ModifyRCInstanceDescriptionRequest.h"
+#include "model/ModifyRCInstanceDescriptionResult.h"
+#include "model/ModifyRCInstanceKeyPairRequest.h"
+#include "model/ModifyRCInstanceKeyPairResult.h"
+#include "model/ModifyRCInstanceNetworkSpecRequest.h"
+#include "model/ModifyRCInstanceNetworkSpecResult.h"
+#include "model/ModifyRCSecurityGroupPermissionRequest.h"
+#include "model/ModifyRCSecurityGroupPermissionResult.h"
 #include "model/ModifyReadWriteSplittingConnectionRequest.h"
 #include "model/ModifyReadWriteSplittingConnectionResult.h"
 #include "model/ModifyReadonlyInstanceDelayReplicationTimeRequest.h"
@@ -542,8 +648,14 @@
 #include "model/QueryNotifyResult.h"
 #include "model/QueryRecommendByCodeRequest.h"
 #include "model/QueryRecommendByCodeResult.h"
+#include "model/RebootRCInstanceRequest.h"
+#include "model/RebootRCInstanceResult.h"
+#include "model/RebootRCInstancesRequest.h"
+#include "model/RebootRCInstancesResult.h"
 #include "model/RebuildDBInstanceRequest.h"
 #include "model/RebuildDBInstanceResult.h"
+#include "model/RebuildReplicationLinkRequest.h"
+#include "model/RebuildReplicationLinkResult.h"
 #include "model/ReceiveDBInstanceRequest.h"
 #include "model/ReceiveDBInstanceResult.h"
 #include "model/RecoveryDBInstanceRequest.h"
@@ -558,10 +670,16 @@
 #include "model/RemoveTagsFromResourceResult.h"
 #include "model/RenewInstanceRequest.h"
 #include "model/RenewInstanceResult.h"
+#include "model/RenewRCInstanceRequest.h"
+#include "model/RenewRCInstanceResult.h"
+#include "model/ReplaceRCInstanceSystemDiskRequest.h"
+#include "model/ReplaceRCInstanceSystemDiskResult.h"
 #include "model/ResetAccountRequest.h"
 #include "model/ResetAccountResult.h"
 #include "model/ResetAccountPasswordRequest.h"
 #include "model/ResetAccountPasswordResult.h"
+#include "model/ResizeRCInstanceDiskRequest.h"
+#include "model/ResizeRCInstanceDiskResult.h"
 #include "model/RestartDBInstanceRequest.h"
 #include "model/RestartDBInstanceResult.h"
 #include "model/RestoreDdrTableRequest.h"
@@ -572,22 +690,44 @@
 #include "model/RevokeAccountPrivilegeResult.h"
 #include "model/RevokeOperatorPermissionRequest.h"
 #include "model/RevokeOperatorPermissionResult.h"
+#include "model/RevokeRCSecurityGroupPermissionRequest.h"
+#include "model/RevokeRCSecurityGroupPermissionResult.h"
+#include "model/RunRCInstancesRequest.h"
+#include "model/RunRCInstancesResult.h"
 #include "model/StartDBInstanceRequest.h"
 #include "model/StartDBInstanceResult.h"
+#include "model/StartRCInstanceRequest.h"
+#include "model/StartRCInstanceResult.h"
+#include "model/StartRCInstancesRequest.h"
+#include "model/StartRCInstancesResult.h"
 #include "model/StopDBInstanceRequest.h"
 #include "model/StopDBInstanceResult.h"
+#include "model/StopRCInstanceRequest.h"
+#include "model/StopRCInstanceResult.h"
+#include "model/StopRCInstancesRequest.h"
+#include "model/StopRCInstancesResult.h"
 #include "model/SwitchDBInstanceHARequest.h"
 #include "model/SwitchDBInstanceHAResult.h"
 #include "model/SwitchDBInstanceNetTypeRequest.h"
 #include "model/SwitchDBInstanceNetTypeResult.h"
 #include "model/SwitchDBInstanceVpcRequest.h"
 #include "model/SwitchDBInstanceVpcResult.h"
+#include "model/SwitchOverMajorVersionUpgradeRequest.h"
+#include "model/SwitchOverMajorVersionUpgradeResult.h"
+#include "model/SwitchReplicationLinkRequest.h"
+#include "model/SwitchReplicationLinkResult.h"
+#include "model/SyncRCKeyPairRequest.h"
+#include "model/SyncRCKeyPairResult.h"
+#include "model/SyncRCSecurityGroupRequest.h"
+#include "model/SyncRCSecurityGroupResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
 #include "model/TerminateMigrateTaskRequest.h"
 #include "model/TerminateMigrateTaskResult.h"
 #include "model/TransformDBInstancePayTypeRequest.h"
 #include "model/TransformDBInstancePayTypeResult.h"
+#include "model/UnassociateEipAddressWithRCInstanceRequest.h"
+#include "model/UnassociateEipAddressWithRCInstanceResult.h"
 #include "model/UnlockAccountRequest.h"
 #include "model/UnlockAccountResult.h"
 #include "model/UntagResourcesRequest.h"
@@ -615,6 +755,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_RDS_EXPORT RdsClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AcceptRCInquiredSystemEventResult> AcceptRCInquiredSystemEventOutcome;
+			typedef std::future<AcceptRCInquiredSystemEventOutcome> AcceptRCInquiredSystemEventOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::AcceptRCInquiredSystemEventRequest&, const AcceptRCInquiredSystemEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AcceptRCInquiredSystemEventAsyncHandler;
 			typedef Outcome<Error, Model::ActivateMigrationTargetInstanceResult> ActivateMigrationTargetInstanceOutcome;
 			typedef std::future<ActivateMigrationTargetInstanceOutcome> ActivateMigrationTargetInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ActivateMigrationTargetInstanceRequest&, const ActivateMigrationTargetInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ActivateMigrationTargetInstanceAsyncHandler;
@@ -627,12 +770,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AllocateReadWriteSplittingConnectionResult> AllocateReadWriteSplittingConnectionOutcome;
 			typedef std::future<AllocateReadWriteSplittingConnectionOutcome> AllocateReadWriteSplittingConnectionOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::AllocateReadWriteSplittingConnectionRequest&, const AllocateReadWriteSplittingConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateReadWriteSplittingConnectionAsyncHandler;
+			typedef Outcome<Error, Model::AssociateEipAddressWithRCInstanceResult> AssociateEipAddressWithRCInstanceOutcome;
+			typedef std::future<AssociateEipAddressWithRCInstanceOutcome> AssociateEipAddressWithRCInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::AssociateEipAddressWithRCInstanceRequest&, const AssociateEipAddressWithRCInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateEipAddressWithRCInstanceAsyncHandler;
+			typedef Outcome<Error, Model::AttachRCDiskResult> AttachRCDiskOutcome;
+			typedef std::future<AttachRCDiskOutcome> AttachRCDiskOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::AttachRCDiskRequest&, const AttachRCDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachRCDiskAsyncHandler;
+			typedef Outcome<Error, Model::AttachRCInstancesResult> AttachRCInstancesOutcome;
+			typedef std::future<AttachRCInstancesOutcome> AttachRCInstancesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::AttachRCInstancesRequest&, const AttachRCInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachRCInstancesAsyncHandler;
 			typedef Outcome<Error, Model::AttachWhitelistTemplateToInstanceResult> AttachWhitelistTemplateToInstanceOutcome;
 			typedef std::future<AttachWhitelistTemplateToInstanceOutcome> AttachWhitelistTemplateToInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::AttachWhitelistTemplateToInstanceRequest&, const AttachWhitelistTemplateToInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachWhitelistTemplateToInstanceAsyncHandler;
+			typedef Outcome<Error, Model::AuthorizeRCSecurityGroupPermissionResult> AuthorizeRCSecurityGroupPermissionOutcome;
+			typedef std::future<AuthorizeRCSecurityGroupPermissionOutcome> AuthorizeRCSecurityGroupPermissionOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::AuthorizeRCSecurityGroupPermissionRequest&, const AuthorizeRCSecurityGroupPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AuthorizeRCSecurityGroupPermissionAsyncHandler;
 			typedef Outcome<Error, Model::CalculateDBInstanceWeightResult> CalculateDBInstanceWeightOutcome;
 			typedef std::future<CalculateDBInstanceWeightOutcome> CalculateDBInstanceWeightOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CalculateDBInstanceWeightRequest&, const CalculateDBInstanceWeightOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CalculateDBInstanceWeightAsyncHandler;
+			typedef Outcome<Error, Model::CancelActiveOperationTasksResult> CancelActiveOperationTasksOutcome;
+			typedef std::future<CancelActiveOperationTasksOutcome> CancelActiveOperationTasksOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CancelActiveOperationTasksRequest&, const CancelActiveOperationTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelActiveOperationTasksAsyncHandler;
 			typedef Outcome<Error, Model::CheckAccountNameAvailableResult> CheckAccountNameAvailableOutcome;
 			typedef std::future<CheckAccountNameAvailableOutcome> CheckAccountNameAvailableOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CheckAccountNameAvailableRequest&, const CheckAccountNameAvailableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckAccountNameAvailableAsyncHandler;
@@ -732,9 +890,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePostgresExtensionsResult> CreatePostgresExtensionsOutcome;
 			typedef std::future<CreatePostgresExtensionsOutcome> CreatePostgresExtensionsOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CreatePostgresExtensionsRequest&, const CreatePostgresExtensionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostgresExtensionsAsyncHandler;
+			typedef Outcome<Error, Model::CreateRCDeploymentSetResult> CreateRCDeploymentSetOutcome;
+			typedef std::future<CreateRCDeploymentSetOutcome> CreateRCDeploymentSetOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CreateRCDeploymentSetRequest&, const CreateRCDeploymentSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRCDeploymentSetAsyncHandler;
+			typedef Outcome<Error, Model::CreateRCDiskResult> CreateRCDiskOutcome;
+			typedef std::future<CreateRCDiskOutcome> CreateRCDiskOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CreateRCDiskRequest&, const CreateRCDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRCDiskAsyncHandler;
+			typedef Outcome<Error, Model::CreateRCNodePoolResult> CreateRCNodePoolOutcome;
+			typedef std::future<CreateRCNodePoolOutcome> CreateRCNodePoolOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CreateRCNodePoolRequest&, const CreateRCNodePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRCNodePoolAsyncHandler;
+			typedef Outcome<Error, Model::CreateRCSnapshotResult> CreateRCSnapshotOutcome;
+			typedef std::future<CreateRCSnapshotOutcome> CreateRCSnapshotOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CreateRCSnapshotRequest&, const CreateRCSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRCSnapshotAsyncHandler;
 			typedef Outcome<Error, Model::CreateReadOnlyDBInstanceResult> CreateReadOnlyDBInstanceOutcome;
 			typedef std::future<CreateReadOnlyDBInstanceOutcome> CreateReadOnlyDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CreateReadOnlyDBInstanceRequest&, const CreateReadOnlyDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateReadOnlyDBInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateReplicationLinkResult> CreateReplicationLinkOutcome;
+			typedef std::future<CreateReplicationLinkOutcome> CreateReplicationLinkOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CreateReplicationLinkRequest&, const CreateReplicationLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateReplicationLinkAsyncHandler;
 			typedef Outcome<Error, Model::CreateSecretResult> CreateSecretOutcome;
 			typedef std::future<CreateSecretOutcome> CreateSecretOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CreateSecretRequest&, const CreateSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecretAsyncHandler;
@@ -792,6 +965,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeletePostgresExtensionsResult> DeletePostgresExtensionsOutcome;
 			typedef std::future<DeletePostgresExtensionsOutcome> DeletePostgresExtensionsOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeletePostgresExtensionsRequest&, const DeletePostgresExtensionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePostgresExtensionsAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRCClusterNodesResult> DeleteRCClusterNodesOutcome;
+			typedef std::future<DeleteRCClusterNodesOutcome> DeleteRCClusterNodesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteRCClusterNodesRequest&, const DeleteRCClusterNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRCClusterNodesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRCDeploymentSetResult> DeleteRCDeploymentSetOutcome;
+			typedef std::future<DeleteRCDeploymentSetOutcome> DeleteRCDeploymentSetOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteRCDeploymentSetRequest&, const DeleteRCDeploymentSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRCDeploymentSetAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRCDiskResult> DeleteRCDiskOutcome;
+			typedef std::future<DeleteRCDiskOutcome> DeleteRCDiskOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteRCDiskRequest&, const DeleteRCDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRCDiskAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRCInstanceResult> DeleteRCInstanceOutcome;
+			typedef std::future<DeleteRCInstanceOutcome> DeleteRCInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteRCInstanceRequest&, const DeleteRCInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRCInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRCInstancesResult> DeleteRCInstancesOutcome;
+			typedef std::future<DeleteRCInstancesOutcome> DeleteRCInstancesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteRCInstancesRequest&, const DeleteRCInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRCInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRCNodePoolResult> DeleteRCNodePoolOutcome;
+			typedef std::future<DeleteRCNodePoolOutcome> DeleteRCNodePoolOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteRCNodePoolRequest&, const DeleteRCNodePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRCNodePoolAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRCSnapshotResult> DeleteRCSnapshotOutcome;
+			typedef std::future<DeleteRCSnapshotOutcome> DeleteRCSnapshotOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteRCSnapshotRequest&, const DeleteRCSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRCSnapshotAsyncHandler;
+			typedef Outcome<Error, Model::DeleteReplicationLinkResult> DeleteReplicationLinkOutcome;
+			typedef std::future<DeleteReplicationLinkOutcome> DeleteReplicationLinkOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteReplicationLinkRequest&, const DeleteReplicationLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReplicationLinkAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSecretResult> DeleteSecretOutcome;
 			typedef std::future<DeleteSecretOutcome> DeleteSecretOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteSecretRequest&, const DeleteSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecretAsyncHandler;
@@ -936,6 +1133,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBInstanceProxyConfigurationResult> DescribeDBInstanceProxyConfigurationOutcome;
 			typedef std::future<DescribeDBInstanceProxyConfigurationOutcome> DescribeDBInstanceProxyConfigurationOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeDBInstanceProxyConfigurationRequest&, const DescribeDBInstanceProxyConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceProxyConfigurationAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBInstanceReplicationResult> DescribeDBInstanceReplicationOutcome;
+			typedef std::future<DescribeDBInstanceReplicationOutcome> DescribeDBInstanceReplicationOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeDBInstanceReplicationRequest&, const DescribeDBInstanceReplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceReplicationAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBInstanceSSLResult> DescribeDBInstanceSSLOutcome;
 			typedef std::future<DescribeDBInstanceSSLOutcome> DescribeDBInstanceSSLOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeDBInstanceSSLRequest&, const DescribeDBInstanceSSLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceSSLAsyncHandler;
@@ -1092,6 +1292,63 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeQuickSaleConfigResult> DescribeQuickSaleConfigOutcome;
 			typedef std::future<DescribeQuickSaleConfigOutcome> DescribeQuickSaleConfigOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeQuickSaleConfigRequest&, const DescribeQuickSaleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuickSaleConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCClusterConfigResult> DescribeRCClusterConfigOutcome;
+			typedef std::future<DescribeRCClusterConfigOutcome> DescribeRCClusterConfigOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCClusterConfigRequest&, const DescribeRCClusterConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCClusterConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCClusterNodesResult> DescribeRCClusterNodesOutcome;
+			typedef std::future<DescribeRCClusterNodesOutcome> DescribeRCClusterNodesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCClusterNodesRequest&, const DescribeRCClusterNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCClusterNodesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCClustersResult> DescribeRCClustersOutcome;
+			typedef std::future<DescribeRCClustersOutcome> DescribeRCClustersOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCClustersRequest&, const DescribeRCClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCClustersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCDeploymentSetsResult> DescribeRCDeploymentSetsOutcome;
+			typedef std::future<DescribeRCDeploymentSetsOutcome> DescribeRCDeploymentSetsOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCDeploymentSetsRequest&, const DescribeRCDeploymentSetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCDeploymentSetsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCDisksResult> DescribeRCDisksOutcome;
+			typedef std::future<DescribeRCDisksOutcome> DescribeRCDisksOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCDisksRequest&, const DescribeRCDisksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCDisksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCImageListResult> DescribeRCImageListOutcome;
+			typedef std::future<DescribeRCImageListOutcome> DescribeRCImageListOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCImageListRequest&, const DescribeRCImageListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCImageListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCInstanceAttributeResult> DescribeRCInstanceAttributeOutcome;
+			typedef std::future<DescribeRCInstanceAttributeOutcome> DescribeRCInstanceAttributeOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCInstanceAttributeRequest&, const DescribeRCInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCInstanceAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCInstanceDdosCountResult> DescribeRCInstanceDdosCountOutcome;
+			typedef std::future<DescribeRCInstanceDdosCountOutcome> DescribeRCInstanceDdosCountOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCInstanceDdosCountRequest&, const DescribeRCInstanceDdosCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCInstanceDdosCountAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCInstanceHistoryEventsResult> DescribeRCInstanceHistoryEventsOutcome;
+			typedef std::future<DescribeRCInstanceHistoryEventsOutcome> DescribeRCInstanceHistoryEventsOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCInstanceHistoryEventsRequest&, const DescribeRCInstanceHistoryEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCInstanceHistoryEventsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCInstanceIpAddressResult> DescribeRCInstanceIpAddressOutcome;
+			typedef std::future<DescribeRCInstanceIpAddressOutcome> DescribeRCInstanceIpAddressOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCInstanceIpAddressRequest&, const DescribeRCInstanceIpAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCInstanceIpAddressAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCInstanceTypeFamiliesResult> DescribeRCInstanceTypeFamiliesOutcome;
+			typedef std::future<DescribeRCInstanceTypeFamiliesOutcome> DescribeRCInstanceTypeFamiliesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCInstanceTypeFamiliesRequest&, const DescribeRCInstanceTypeFamiliesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCInstanceTypeFamiliesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCInstanceTypesResult> DescribeRCInstanceTypesOutcome;
+			typedef std::future<DescribeRCInstanceTypesOutcome> DescribeRCInstanceTypesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCInstanceTypesRequest&, const DescribeRCInstanceTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCInstanceTypesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCInstanceVncUrlResult> DescribeRCInstanceVncUrlOutcome;
+			typedef std::future<DescribeRCInstanceVncUrlOutcome> DescribeRCInstanceVncUrlOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCInstanceVncUrlRequest&, const DescribeRCInstanceVncUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCInstanceVncUrlAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCInstancesResult> DescribeRCInstancesOutcome;
+			typedef std::future<DescribeRCInstancesOutcome> DescribeRCInstancesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCInstancesRequest&, const DescribeRCInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCMetricListResult> DescribeRCMetricListOutcome;
+			typedef std::future<DescribeRCMetricListOutcome> DescribeRCMetricListOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCMetricListRequest&, const DescribeRCMetricListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCMetricListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCNodePoolResult> DescribeRCNodePoolOutcome;
+			typedef std::future<DescribeRCNodePoolOutcome> DescribeRCNodePoolOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCNodePoolRequest&, const DescribeRCNodePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCNodePoolAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCSecurityGroupListResult> DescribeRCSecurityGroupListOutcome;
+			typedef std::future<DescribeRCSecurityGroupListOutcome> DescribeRCSecurityGroupListOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCSecurityGroupListRequest&, const DescribeRCSecurityGroupListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCSecurityGroupListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCSecurityGroupPermissionResult> DescribeRCSecurityGroupPermissionOutcome;
+			typedef std::future<DescribeRCSecurityGroupPermissionOutcome> DescribeRCSecurityGroupPermissionOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCSecurityGroupPermissionRequest&, const DescribeRCSecurityGroupPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCSecurityGroupPermissionAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRCSnapshotsResult> DescribeRCSnapshotsOutcome;
+			typedef std::future<DescribeRCSnapshotsOutcome> DescribeRCSnapshotsOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeRCSnapshotsRequest&, const DescribeRCSnapshotsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRCSnapshotsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRdsResourceSettingsResult> DescribeRdsResourceSettingsOutcome;
 			typedef std::future<DescribeRdsResourceSettingsOutcome> DescribeRdsResourceSettingsOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeRdsResourceSettingsRequest&, const DescribeRdsResourceSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRdsResourceSettingsAsyncHandler;
@@ -1107,6 +1364,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRenewalPriceResult> DescribeRenewalPriceOutcome;
 			typedef std::future<DescribeRenewalPriceOutcome> DescribeRenewalPriceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeRenewalPriceRequest&, const DescribeRenewalPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRenewalPriceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeReplicationLinkLogsResult> DescribeReplicationLinkLogsOutcome;
+			typedef std::future<DescribeReplicationLinkLogsOutcome> DescribeReplicationLinkLogsOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeReplicationLinkLogsRequest&, const DescribeReplicationLinkLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationLinkLogsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeResourceDetailsResult> DescribeResourceDetailsOutcome;
 			typedef std::future<DescribeResourceDetailsOutcome> DescribeResourceDetailsOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeResourceDetailsRequest&, const DescribeResourceDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceDetailsAsyncHandler;
@@ -1173,6 +1433,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachGadInstanceMemberResult> DetachGadInstanceMemberOutcome;
 			typedef std::future<DetachGadInstanceMemberOutcome> DetachGadInstanceMemberOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DetachGadInstanceMemberRequest&, const DetachGadInstanceMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachGadInstanceMemberAsyncHandler;
+			typedef Outcome<Error, Model::DetachRCDiskResult> DetachRCDiskOutcome;
+			typedef std::future<DetachRCDiskOutcome> DetachRCDiskOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DetachRCDiskRequest&, const DetachRCDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachRCDiskAsyncHandler;
 			typedef Outcome<Error, Model::DetachWhitelistTemplateToInstanceResult> DetachWhitelistTemplateToInstanceOutcome;
 			typedef std::future<DetachWhitelistTemplateToInstanceOutcome> DetachWhitelistTemplateToInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DetachWhitelistTemplateToInstanceRequest&, const DetachWhitelistTemplateToInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachWhitelistTemplateToInstanceAsyncHandler;
@@ -1212,6 +1475,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::MigrateDBInstanceResult> MigrateDBInstanceOutcome;
 			typedef std::future<MigrateDBInstanceOutcome> MigrateDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::MigrateDBInstanceRequest&, const MigrateDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MigrateDBInstanceAsyncHandler;
+			typedef Outcome<Error, Model::MigrateDBNodesResult> MigrateDBNodesOutcome;
+			typedef std::future<MigrateDBNodesOutcome> MigrateDBNodesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::MigrateDBNodesRequest&, const MigrateDBNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MigrateDBNodesAsyncHandler;
 			typedef Outcome<Error, Model::MigrateSecurityIPModeResult> MigrateSecurityIPModeOutcome;
 			typedef std::future<MigrateSecurityIPModeOutcome> MigrateSecurityIPModeOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::MigrateSecurityIPModeRequest&, const MigrateSecurityIPModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MigrateSecurityIPModeAsyncHandler;
@@ -1221,12 +1487,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyADInfoResult> ModifyADInfoOutcome;
 			typedef std::future<ModifyADInfoOutcome> ModifyADInfoOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyADInfoRequest&, const ModifyADInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyADInfoAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAccountCheckPolicyResult> ModifyAccountCheckPolicyOutcome;
+			typedef std::future<ModifyAccountCheckPolicyOutcome> ModifyAccountCheckPolicyOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyAccountCheckPolicyRequest&, const ModifyAccountCheckPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountCheckPolicyAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAccountDescriptionResult> ModifyAccountDescriptionOutcome;
 			typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyAccountDescriptionRequest&, const ModifyAccountDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAccountMaskingPrivilegeResult> ModifyAccountMaskingPrivilegeOutcome;
 			typedef std::future<ModifyAccountMaskingPrivilegeOutcome> ModifyAccountMaskingPrivilegeOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyAccountMaskingPrivilegeRequest&, const ModifyAccountMaskingPrivilegeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountMaskingPrivilegeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAccountSecurityPolicyResult> ModifyAccountSecurityPolicyOutcome;
+			typedef std::future<ModifyAccountSecurityPolicyOutcome> ModifyAccountSecurityPolicyOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyAccountSecurityPolicyRequest&, const ModifyAccountSecurityPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountSecurityPolicyAsyncHandler;
 			typedef Outcome<Error, Model::ModifyActionEventPolicyResult> ModifyActionEventPolicyOutcome;
 			typedef std::future<ModifyActionEventPolicyOutcome> ModifyActionEventPolicyOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyActionEventPolicyRequest&, const ModifyActionEventPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyActionEventPolicyAsyncHandler;
@@ -1290,6 +1562,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBInstancePayTypeResult> ModifyDBInstancePayTypeOutcome;
 			typedef std::future<ModifyDBInstancePayTypeOutcome> ModifyDBInstancePayTypeOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstancePayTypeRequest&, const ModifyDBInstancePayTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstancePayTypeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBInstanceReplicationSwitchResult> ModifyDBInstanceReplicationSwitchOutcome;
+			typedef std::future<ModifyDBInstanceReplicationSwitchOutcome> ModifyDBInstanceReplicationSwitchOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstanceReplicationSwitchRequest&, const ModifyDBInstanceReplicationSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceReplicationSwitchAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBInstanceSSLResult> ModifyDBInstanceSSLOutcome;
 			typedef std::future<ModifyDBInstanceSSLOutcome> ModifyDBInstanceSSLOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstanceSSLRequest&, const ModifyDBInstanceSSLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSSLAsyncHandler;
@@ -1356,6 +1631,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyParameterGroupResult> ModifyParameterGroupOutcome;
 			typedef std::future<ModifyParameterGroupOutcome> ModifyParameterGroupOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyParameterGroupRequest&, const ModifyParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParameterGroupAsyncHandler;
+			typedef Outcome<Error, Model::ModifyRCDiskSpecResult> ModifyRCDiskSpecOutcome;
+			typedef std::future<ModifyRCDiskSpecOutcome> ModifyRCDiskSpecOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyRCDiskSpecRequest&, const ModifyRCDiskSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRCDiskSpecAsyncHandler;
+			typedef Outcome<Error, Model::ModifyRCInstanceResult> ModifyRCInstanceOutcome;
+			typedef std::future<ModifyRCInstanceOutcome> ModifyRCInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyRCInstanceRequest&, const ModifyRCInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRCInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ModifyRCInstanceAttributeResult> ModifyRCInstanceAttributeOutcome;
+			typedef std::future<ModifyRCInstanceAttributeOutcome> ModifyRCInstanceAttributeOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyRCInstanceAttributeRequest&, const ModifyRCInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRCInstanceAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyRCInstanceChargeTypeResult> ModifyRCInstanceChargeTypeOutcome;
+			typedef std::future<ModifyRCInstanceChargeTypeOutcome> ModifyRCInstanceChargeTypeOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyRCInstanceChargeTypeRequest&, const ModifyRCInstanceChargeTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRCInstanceChargeTypeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyRCInstanceDescriptionResult> ModifyRCInstanceDescriptionOutcome;
+			typedef std::future<ModifyRCInstanceDescriptionOutcome> ModifyRCInstanceDescriptionOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyRCInstanceDescriptionRequest&, const ModifyRCInstanceDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRCInstanceDescriptionAsyncHandler;
+			typedef Outcome<Error, Model::ModifyRCInstanceKeyPairResult> ModifyRCInstanceKeyPairOutcome;
+			typedef std::future<ModifyRCInstanceKeyPairOutcome> ModifyRCInstanceKeyPairOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyRCInstanceKeyPairRequest&, const ModifyRCInstanceKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRCInstanceKeyPairAsyncHandler;
+			typedef Outcome<Error, Model::ModifyRCInstanceNetworkSpecResult> ModifyRCInstanceNetworkSpecOutcome;
+			typedef std::future<ModifyRCInstanceNetworkSpecOutcome> ModifyRCInstanceNetworkSpecOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyRCInstanceNetworkSpecRequest&, const ModifyRCInstanceNetworkSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRCInstanceNetworkSpecAsyncHandler;
+			typedef Outcome<Error, Model::ModifyRCSecurityGroupPermissionResult> ModifyRCSecurityGroupPermissionOutcome;
+			typedef std::future<ModifyRCSecurityGroupPermissionOutcome> ModifyRCSecurityGroupPermissionOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyRCSecurityGroupPermissionRequest&, const ModifyRCSecurityGroupPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRCSecurityGroupPermissionAsyncHandler;
 			typedef Outcome<Error, Model::ModifyReadWriteSplittingConnectionResult> ModifyReadWriteSplittingConnectionOutcome;
 			typedef std::future<ModifyReadWriteSplittingConnectionOutcome> ModifyReadWriteSplittingConnectionOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyReadWriteSplittingConnectionRequest&, const ModifyReadWriteSplittingConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReadWriteSplittingConnectionAsyncHandler;
@@ -1395,9 +1694,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryRecommendByCodeResult> QueryRecommendByCodeOutcome;
 			typedef std::future<QueryRecommendByCodeOutcome> QueryRecommendByCodeOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::QueryRecommendByCodeRequest&, const QueryRecommendByCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRecommendByCodeAsyncHandler;
+			typedef Outcome<Error, Model::RebootRCInstanceResult> RebootRCInstanceOutcome;
+			typedef std::future<RebootRCInstanceOutcome> RebootRCInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::RebootRCInstanceRequest&, const RebootRCInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebootRCInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RebootRCInstancesResult> RebootRCInstancesOutcome;
+			typedef std::future<RebootRCInstancesOutcome> RebootRCInstancesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::RebootRCInstancesRequest&, const RebootRCInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebootRCInstancesAsyncHandler;
 			typedef Outcome<Error, Model::RebuildDBInstanceResult> RebuildDBInstanceOutcome;
 			typedef std::future<RebuildDBInstanceOutcome> RebuildDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::RebuildDBInstanceRequest&, const RebuildDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebuildDBInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RebuildReplicationLinkResult> RebuildReplicationLinkOutcome;
+			typedef std::future<RebuildReplicationLinkOutcome> RebuildReplicationLinkOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::RebuildReplicationLinkRequest&, const RebuildReplicationLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebuildReplicationLinkAsyncHandler;
 			typedef Outcome<Error, Model::ReceiveDBInstanceResult> ReceiveDBInstanceOutcome;
 			typedef std::future<ReceiveDBInstanceOutcome> ReceiveDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ReceiveDBInstanceRequest&, const ReceiveDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReceiveDBInstanceAsyncHandler;
@@ -1419,12 +1727,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RenewInstanceResult> RenewInstanceOutcome;
 			typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::RenewInstanceRequest&, const RenewInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RenewRCInstanceResult> RenewRCInstanceOutcome;
+			typedef std::future<RenewRCInstanceOutcome> RenewRCInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::RenewRCInstanceRequest&, const RenewRCInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewRCInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ReplaceRCInstanceSystemDiskResult> ReplaceRCInstanceSystemDiskOutcome;
+			typedef std::future<ReplaceRCInstanceSystemDiskOutcome> ReplaceRCInstanceSystemDiskOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ReplaceRCInstanceSystemDiskRequest&, const ReplaceRCInstanceSystemDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRCInstanceSystemDiskAsyncHandler;
 			typedef Outcome<Error, Model::ResetAccountResult> ResetAccountOutcome;
 			typedef std::future<ResetAccountOutcome> ResetAccountOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ResetAccountRequest&, const ResetAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountAsyncHandler;
 			typedef Outcome<Error, Model::ResetAccountPasswordResult> ResetAccountPasswordOutcome;
 			typedef std::future<ResetAccountPasswordOutcome> ResetAccountPasswordOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ResetAccountPasswordRequest&, const ResetAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountPasswordAsyncHandler;
+			typedef Outcome<Error, Model::ResizeRCInstanceDiskResult> ResizeRCInstanceDiskOutcome;
+			typedef std::future<ResizeRCInstanceDiskOutcome> ResizeRCInstanceDiskOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ResizeRCInstanceDiskRequest&, const ResizeRCInstanceDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeRCInstanceDiskAsyncHandler;
 			typedef Outcome<Error, Model::RestartDBInstanceResult> RestartDBInstanceOutcome;
 			typedef std::future<RestartDBInstanceOutcome> RestartDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::RestartDBInstanceRequest&, const RestartDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartDBInstanceAsyncHandler;
@@ -1440,12 +1757,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RevokeOperatorPermissionResult> RevokeOperatorPermissionOutcome;
 			typedef std::future<RevokeOperatorPermissionOutcome> RevokeOperatorPermissionOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::RevokeOperatorPermissionRequest&, const RevokeOperatorPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokeOperatorPermissionAsyncHandler;
+			typedef Outcome<Error, Model::RevokeRCSecurityGroupPermissionResult> RevokeRCSecurityGroupPermissionOutcome;
+			typedef std::future<RevokeRCSecurityGroupPermissionOutcome> RevokeRCSecurityGroupPermissionOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::RevokeRCSecurityGroupPermissionRequest&, const RevokeRCSecurityGroupPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokeRCSecurityGroupPermissionAsyncHandler;
+			typedef Outcome<Error, Model::RunRCInstancesResult> RunRCInstancesOutcome;
+			typedef std::future<RunRCInstancesOutcome> RunRCInstancesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::RunRCInstancesRequest&, const RunRCInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunRCInstancesAsyncHandler;
 			typedef Outcome<Error, Model::StartDBInstanceResult> StartDBInstanceOutcome;
 			typedef std::future<StartDBInstanceOutcome> StartDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::StartDBInstanceRequest&, const StartDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartDBInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StartRCInstanceResult> StartRCInstanceOutcome;
+			typedef std::future<StartRCInstanceOutcome> StartRCInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::StartRCInstanceRequest&, const StartRCInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRCInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StartRCInstancesResult> StartRCInstancesOutcome;
+			typedef std::future<StartRCInstancesOutcome> StartRCInstancesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::StartRCInstancesRequest&, const StartRCInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRCInstancesAsyncHandler;
 			typedef Outcome<Error, Model::StopDBInstanceResult> StopDBInstanceOutcome;
 			typedef std::future<StopDBInstanceOutcome> StopDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::StopDBInstanceRequest&, const StopDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopDBInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StopRCInstanceResult> StopRCInstanceOutcome;
+			typedef std::future<StopRCInstanceOutcome> StopRCInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::StopRCInstanceRequest&, const StopRCInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopRCInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StopRCInstancesResult> StopRCInstancesOutcome;
+			typedef std::future<StopRCInstancesOutcome> StopRCInstancesOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::StopRCInstancesRequest&, const StopRCInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopRCInstancesAsyncHandler;
 			typedef Outcome<Error, Model::SwitchDBInstanceHAResult> SwitchDBInstanceHAOutcome;
 			typedef std::future<SwitchDBInstanceHAOutcome> SwitchDBInstanceHAOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::SwitchDBInstanceHARequest&, const SwitchDBInstanceHAOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDBInstanceHAAsyncHandler;
@@ -1455,6 +1790,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SwitchDBInstanceVpcResult> SwitchDBInstanceVpcOutcome;
 			typedef std::future<SwitchDBInstanceVpcOutcome> SwitchDBInstanceVpcOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::SwitchDBInstanceVpcRequest&, const SwitchDBInstanceVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDBInstanceVpcAsyncHandler;
+			typedef Outcome<Error, Model::SwitchOverMajorVersionUpgradeResult> SwitchOverMajorVersionUpgradeOutcome;
+			typedef std::future<SwitchOverMajorVersionUpgradeOutcome> SwitchOverMajorVersionUpgradeOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::SwitchOverMajorVersionUpgradeRequest&, const SwitchOverMajorVersionUpgradeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchOverMajorVersionUpgradeAsyncHandler;
+			typedef Outcome<Error, Model::SwitchReplicationLinkResult> SwitchReplicationLinkOutcome;
+			typedef std::future<SwitchReplicationLinkOutcome> SwitchReplicationLinkOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::SwitchReplicationLinkRequest&, const SwitchReplicationLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchReplicationLinkAsyncHandler;
+			typedef Outcome<Error, Model::SyncRCKeyPairResult> SyncRCKeyPairOutcome;
+			typedef std::future<SyncRCKeyPairOutcome> SyncRCKeyPairOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::SyncRCKeyPairRequest&, const SyncRCKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncRCKeyPairAsyncHandler;
+			typedef Outcome<Error, Model::SyncRCSecurityGroupResult> SyncRCSecurityGroupOutcome;
+			typedef std::future<SyncRCSecurityGroupOutcome> SyncRCSecurityGroupOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::SyncRCSecurityGroupRequest&, const SyncRCSecurityGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncRCSecurityGroupAsyncHandler;
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
@@ -1464,6 +1811,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TransformDBInstancePayTypeResult> TransformDBInstancePayTypeOutcome;
 			typedef std::future<TransformDBInstancePayTypeOutcome> TransformDBInstancePayTypeOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::TransformDBInstancePayTypeRequest&, const TransformDBInstancePayTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransformDBInstancePayTypeAsyncHandler;
+			typedef Outcome<Error, Model::UnassociateEipAddressWithRCInstanceResult> UnassociateEipAddressWithRCInstanceOutcome;
+			typedef std::future<UnassociateEipAddressWithRCInstanceOutcome> UnassociateEipAddressWithRCInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::UnassociateEipAddressWithRCInstanceRequest&, const UnassociateEipAddressWithRCInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateEipAddressWithRCInstanceAsyncHandler;
 			typedef Outcome<Error, Model::UnlockAccountResult> UnlockAccountOutcome;
 			typedef std::future<UnlockAccountOutcome> UnlockAccountOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::UnlockAccountRequest&, const UnlockAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnlockAccountAsyncHandler;
@@ -1496,6 +1846,9 @@ namespace AlibabaCloud
 			RdsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			RdsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~RdsClient();
+			AcceptRCInquiredSystemEventOutcome acceptRCInquiredSystemEvent(const Model::AcceptRCInquiredSystemEventRequest &request)const;
+			void acceptRCInquiredSystemEventAsync(const Model::AcceptRCInquiredSystemEventRequest& request, const AcceptRCInquiredSystemEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AcceptRCInquiredSystemEventOutcomeCallable acceptRCInquiredSystemEventCallable(const Model::AcceptRCInquiredSystemEventRequest& request) const;
 			ActivateMigrationTargetInstanceOutcome activateMigrationTargetInstance(const Model::ActivateMigrationTargetInstanceRequest &request)const;
 			void activateMigrationTargetInstanceAsync(const Model::ActivateMigrationTargetInstanceRequest& request, const ActivateMigrationTargetInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ActivateMigrationTargetInstanceOutcomeCallable activateMigrationTargetInstanceCallable(const Model::ActivateMigrationTargetInstanceRequest& request) const;
@@ -1508,12 +1861,27 @@ namespace AlibabaCloud
 			AllocateReadWriteSplittingConnectionOutcome allocateReadWriteSplittingConnection(const Model::AllocateReadWriteSplittingConnectionRequest &request)const;
 			void allocateReadWriteSplittingConnectionAsync(const Model::AllocateReadWriteSplittingConnectionRequest& request, const AllocateReadWriteSplittingConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocateReadWriteSplittingConnectionOutcomeCallable allocateReadWriteSplittingConnectionCallable(const Model::AllocateReadWriteSplittingConnectionRequest& request) const;
+			AssociateEipAddressWithRCInstanceOutcome associateEipAddressWithRCInstance(const Model::AssociateEipAddressWithRCInstanceRequest &request)const;
+			void associateEipAddressWithRCInstanceAsync(const Model::AssociateEipAddressWithRCInstanceRequest& request, const AssociateEipAddressWithRCInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AssociateEipAddressWithRCInstanceOutcomeCallable associateEipAddressWithRCInstanceCallable(const Model::AssociateEipAddressWithRCInstanceRequest& request) const;
+			AttachRCDiskOutcome attachRCDisk(const Model::AttachRCDiskRequest &request)const;
+			void attachRCDiskAsync(const Model::AttachRCDiskRequest& request, const AttachRCDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachRCDiskOutcomeCallable attachRCDiskCallable(const Model::AttachRCDiskRequest& request) const;
+			AttachRCInstancesOutcome attachRCInstances(const Model::AttachRCInstancesRequest &request)const;
+			void attachRCInstancesAsync(const Model::AttachRCInstancesRequest& request, const AttachRCInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachRCInstancesOutcomeCallable attachRCInstancesCallable(const Model::AttachRCInstancesRequest& request) const;
 			AttachWhitelistTemplateToInstanceOutcome attachWhitelistTemplateToInstance(const Model::AttachWhitelistTemplateToInstanceRequest &request)const;
 			void attachWhitelistTemplateToInstanceAsync(const Model::AttachWhitelistTemplateToInstanceRequest& request, const AttachWhitelistTemplateToInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachWhitelistTemplateToInstanceOutcomeCallable attachWhitelistTemplateToInstanceCallable(const Model::AttachWhitelistTemplateToInstanceRequest& request) const;
+			AuthorizeRCSecurityGroupPermissionOutcome authorizeRCSecurityGroupPermission(const Model::AuthorizeRCSecurityGroupPermissionRequest &request)const;
+			void authorizeRCSecurityGroupPermissionAsync(const Model::AuthorizeRCSecurityGroupPermissionRequest& request, const AuthorizeRCSecurityGroupPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AuthorizeRCSecurityGroupPermissionOutcomeCallable authorizeRCSecurityGroupPermissionCallable(const Model::AuthorizeRCSecurityGroupPermissionRequest& request) const;
 			CalculateDBInstanceWeightOutcome calculateDBInstanceWeight(const Model::CalculateDBInstanceWeightRequest &request)const;
 			void calculateDBInstanceWeightAsync(const Model::CalculateDBInstanceWeightRequest& request, const CalculateDBInstanceWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CalculateDBInstanceWeightOutcomeCallable calculateDBInstanceWeightCallable(const Model::CalculateDBInstanceWeightRequest& request) const;
+			CancelActiveOperationTasksOutcome cancelActiveOperationTasks(const Model::CancelActiveOperationTasksRequest &request)const;
+			void cancelActiveOperationTasksAsync(const Model::CancelActiveOperationTasksRequest& request, const CancelActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelActiveOperationTasksOutcomeCallable cancelActiveOperationTasksCallable(const Model::CancelActiveOperationTasksRequest& request) const;
 			CheckAccountNameAvailableOutcome checkAccountNameAvailable(const Model::CheckAccountNameAvailableRequest &request)const;
 			void checkAccountNameAvailableAsync(const Model::CheckAccountNameAvailableRequest& request, const CheckAccountNameAvailableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckAccountNameAvailableOutcomeCallable checkAccountNameAvailableCallable(const Model::CheckAccountNameAvailableRequest& request) const;
@@ -1613,9 +1981,24 @@ namespace AlibabaCloud
 			CreatePostgresExtensionsOutcome createPostgresExtensions(const Model::CreatePostgresExtensionsRequest &request)const;
 			void createPostgresExtensionsAsync(const Model::CreatePostgresExtensionsRequest& request, const CreatePostgresExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePostgresExtensionsOutcomeCallable createPostgresExtensionsCallable(const Model::CreatePostgresExtensionsRequest& request) const;
+			CreateRCDeploymentSetOutcome createRCDeploymentSet(const Model::CreateRCDeploymentSetRequest &request)const;
+			void createRCDeploymentSetAsync(const Model::CreateRCDeploymentSetRequest& request, const CreateRCDeploymentSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRCDeploymentSetOutcomeCallable createRCDeploymentSetCallable(const Model::CreateRCDeploymentSetRequest& request) const;
+			CreateRCDiskOutcome createRCDisk(const Model::CreateRCDiskRequest &request)const;
+			void createRCDiskAsync(const Model::CreateRCDiskRequest& request, const CreateRCDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRCDiskOutcomeCallable createRCDiskCallable(const Model::CreateRCDiskRequest& request) const;
+			CreateRCNodePoolOutcome createRCNodePool(const Model::CreateRCNodePoolRequest &request)const;
+			void createRCNodePoolAsync(const Model::CreateRCNodePoolRequest& request, const CreateRCNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRCNodePoolOutcomeCallable createRCNodePoolCallable(const Model::CreateRCNodePoolRequest& request) const;
+			CreateRCSnapshotOutcome createRCSnapshot(const Model::CreateRCSnapshotRequest &request)const;
+			void createRCSnapshotAsync(const Model::CreateRCSnapshotRequest& request, const CreateRCSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRCSnapshotOutcomeCallable createRCSnapshotCallable(const Model::CreateRCSnapshotRequest& request) const;
 			CreateReadOnlyDBInstanceOutcome createReadOnlyDBInstance(const Model::CreateReadOnlyDBInstanceRequest &request)const;
 			void createReadOnlyDBInstanceAsync(const Model::CreateReadOnlyDBInstanceRequest& request, const CreateReadOnlyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateReadOnlyDBInstanceOutcomeCallable createReadOnlyDBInstanceCallable(const Model::CreateReadOnlyDBInstanceRequest& request) const;
+			CreateReplicationLinkOutcome createReplicationLink(const Model::CreateReplicationLinkRequest &request)const;
+			void createReplicationLinkAsync(const Model::CreateReplicationLinkRequest& request, const CreateReplicationLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateReplicationLinkOutcomeCallable createReplicationLinkCallable(const Model::CreateReplicationLinkRequest& request) const;
 			CreateSecretOutcome createSecret(const Model::CreateSecretRequest &request)const;
 			void createSecretAsync(const Model::CreateSecretRequest& request, const CreateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSecretOutcomeCallable createSecretCallable(const Model::CreateSecretRequest& request) const;
@@ -1673,6 +2056,30 @@ namespace AlibabaCloud
 			DeletePostgresExtensionsOutcome deletePostgresExtensions(const Model::DeletePostgresExtensionsRequest &request)const;
 			void deletePostgresExtensionsAsync(const Model::DeletePostgresExtensionsRequest& request, const DeletePostgresExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePostgresExtensionsOutcomeCallable deletePostgresExtensionsCallable(const Model::DeletePostgresExtensionsRequest& request) const;
+			DeleteRCClusterNodesOutcome deleteRCClusterNodes(const Model::DeleteRCClusterNodesRequest &request)const;
+			void deleteRCClusterNodesAsync(const Model::DeleteRCClusterNodesRequest& request, const DeleteRCClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRCClusterNodesOutcomeCallable deleteRCClusterNodesCallable(const Model::DeleteRCClusterNodesRequest& request) const;
+			DeleteRCDeploymentSetOutcome deleteRCDeploymentSet(const Model::DeleteRCDeploymentSetRequest &request)const;
+			void deleteRCDeploymentSetAsync(const Model::DeleteRCDeploymentSetRequest& request, const DeleteRCDeploymentSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRCDeploymentSetOutcomeCallable deleteRCDeploymentSetCallable(const Model::DeleteRCDeploymentSetRequest& request) const;
+			DeleteRCDiskOutcome deleteRCDisk(const Model::DeleteRCDiskRequest &request)const;
+			void deleteRCDiskAsync(const Model::DeleteRCDiskRequest& request, const DeleteRCDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRCDiskOutcomeCallable deleteRCDiskCallable(const Model::DeleteRCDiskRequest& request) const;
+			DeleteRCInstanceOutcome deleteRCInstance(const Model::DeleteRCInstanceRequest &request)const;
+			void deleteRCInstanceAsync(const Model::DeleteRCInstanceRequest& request, const DeleteRCInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRCInstanceOutcomeCallable deleteRCInstanceCallable(const Model::DeleteRCInstanceRequest& request) const;
+			DeleteRCInstancesOutcome deleteRCInstances(const Model::DeleteRCInstancesRequest &request)const;
+			void deleteRCInstancesAsync(const Model::DeleteRCInstancesRequest& request, const DeleteRCInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRCInstancesOutcomeCallable deleteRCInstancesCallable(const Model::DeleteRCInstancesRequest& request) const;
+			DeleteRCNodePoolOutcome deleteRCNodePool(const Model::DeleteRCNodePoolRequest &request)const;
+			void deleteRCNodePoolAsync(const Model::DeleteRCNodePoolRequest& request, const DeleteRCNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRCNodePoolOutcomeCallable deleteRCNodePoolCallable(const Model::DeleteRCNodePoolRequest& request) const;
+			DeleteRCSnapshotOutcome deleteRCSnapshot(const Model::DeleteRCSnapshotRequest &request)const;
+			void deleteRCSnapshotAsync(const Model::DeleteRCSnapshotRequest& request, const DeleteRCSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRCSnapshotOutcomeCallable deleteRCSnapshotCallable(const Model::DeleteRCSnapshotRequest& request) const;
+			DeleteReplicationLinkOutcome deleteReplicationLink(const Model::DeleteReplicationLinkRequest &request)const;
+			void deleteReplicationLinkAsync(const Model::DeleteReplicationLinkRequest& request, const DeleteReplicationLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteReplicationLinkOutcomeCallable deleteReplicationLinkCallable(const Model::DeleteReplicationLinkRequest& request) const;
 			DeleteSecretOutcome deleteSecret(const Model::DeleteSecretRequest &request)const;
 			void deleteSecretAsync(const Model::DeleteSecretRequest& request, const DeleteSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSecretOutcomeCallable deleteSecretCallable(const Model::DeleteSecretRequest& request) const;
@@ -1817,6 +2224,9 @@ namespace AlibabaCloud
 			DescribeDBInstanceProxyConfigurationOutcome describeDBInstanceProxyConfiguration(const Model::DescribeDBInstanceProxyConfigurationRequest &request)const;
 			void describeDBInstanceProxyConfigurationAsync(const Model::DescribeDBInstanceProxyConfigurationRequest& request, const DescribeDBInstanceProxyConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceProxyConfigurationOutcomeCallable describeDBInstanceProxyConfigurationCallable(const Model::DescribeDBInstanceProxyConfigurationRequest& request) const;
+			DescribeDBInstanceReplicationOutcome describeDBInstanceReplication(const Model::DescribeDBInstanceReplicationRequest &request)const;
+			void describeDBInstanceReplicationAsync(const Model::DescribeDBInstanceReplicationRequest& request, const DescribeDBInstanceReplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBInstanceReplicationOutcomeCallable describeDBInstanceReplicationCallable(const Model::DescribeDBInstanceReplicationRequest& request) const;
 			DescribeDBInstanceSSLOutcome describeDBInstanceSSL(const Model::DescribeDBInstanceSSLRequest &request)const;
 			void describeDBInstanceSSLAsync(const Model::DescribeDBInstanceSSLRequest& request, const DescribeDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceSSLOutcomeCallable describeDBInstanceSSLCallable(const Model::DescribeDBInstanceSSLRequest& request) const;
@@ -1973,6 +2383,63 @@ namespace AlibabaCloud
 			DescribeQuickSaleConfigOutcome describeQuickSaleConfig(const Model::DescribeQuickSaleConfigRequest &request)const;
 			void describeQuickSaleConfigAsync(const Model::DescribeQuickSaleConfigRequest& request, const DescribeQuickSaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeQuickSaleConfigOutcomeCallable describeQuickSaleConfigCallable(const Model::DescribeQuickSaleConfigRequest& request) const;
+			DescribeRCClusterConfigOutcome describeRCClusterConfig(const Model::DescribeRCClusterConfigRequest &request)const;
+			void describeRCClusterConfigAsync(const Model::DescribeRCClusterConfigRequest& request, const DescribeRCClusterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCClusterConfigOutcomeCallable describeRCClusterConfigCallable(const Model::DescribeRCClusterConfigRequest& request) const;
+			DescribeRCClusterNodesOutcome describeRCClusterNodes(const Model::DescribeRCClusterNodesRequest &request)const;
+			void describeRCClusterNodesAsync(const Model::DescribeRCClusterNodesRequest& request, const DescribeRCClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCClusterNodesOutcomeCallable describeRCClusterNodesCallable(const Model::DescribeRCClusterNodesRequest& request) const;
+			DescribeRCClustersOutcome describeRCClusters(const Model::DescribeRCClustersRequest &request)const;
+			void describeRCClustersAsync(const Model::DescribeRCClustersRequest& request, const DescribeRCClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCClustersOutcomeCallable describeRCClustersCallable(const Model::DescribeRCClustersRequest& request) const;
+			DescribeRCDeploymentSetsOutcome describeRCDeploymentSets(const Model::DescribeRCDeploymentSetsRequest &request)const;
+			void describeRCDeploymentSetsAsync(const Model::DescribeRCDeploymentSetsRequest& request, const DescribeRCDeploymentSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCDeploymentSetsOutcomeCallable describeRCDeploymentSetsCallable(const Model::DescribeRCDeploymentSetsRequest& request) const;
+			DescribeRCDisksOutcome describeRCDisks(const Model::DescribeRCDisksRequest &request)const;
+			void describeRCDisksAsync(const Model::DescribeRCDisksRequest& request, const DescribeRCDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCDisksOutcomeCallable describeRCDisksCallable(const Model::DescribeRCDisksRequest& request) const;
+			DescribeRCImageListOutcome describeRCImageList(const Model::DescribeRCImageListRequest &request)const;
+			void describeRCImageListAsync(const Model::DescribeRCImageListRequest& request, const DescribeRCImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCImageListOutcomeCallable describeRCImageListCallable(const Model::DescribeRCImageListRequest& request) const;
+			DescribeRCInstanceAttributeOutcome describeRCInstanceAttribute(const Model::DescribeRCInstanceAttributeRequest &request)const;
+			void describeRCInstanceAttributeAsync(const Model::DescribeRCInstanceAttributeRequest& request, const DescribeRCInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCInstanceAttributeOutcomeCallable describeRCInstanceAttributeCallable(const Model::DescribeRCInstanceAttributeRequest& request) const;
+			DescribeRCInstanceDdosCountOutcome describeRCInstanceDdosCount(const Model::DescribeRCInstanceDdosCountRequest &request)const;
+			void describeRCInstanceDdosCountAsync(const Model::DescribeRCInstanceDdosCountRequest& request, const DescribeRCInstanceDdosCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCInstanceDdosCountOutcomeCallable describeRCInstanceDdosCountCallable(const Model::DescribeRCInstanceDdosCountRequest& request) const;
+			DescribeRCInstanceHistoryEventsOutcome describeRCInstanceHistoryEvents(const Model::DescribeRCInstanceHistoryEventsRequest &request)const;
+			void describeRCInstanceHistoryEventsAsync(const Model::DescribeRCInstanceHistoryEventsRequest& request, const DescribeRCInstanceHistoryEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCInstanceHistoryEventsOutcomeCallable describeRCInstanceHistoryEventsCallable(const Model::DescribeRCInstanceHistoryEventsRequest& request) const;
+			DescribeRCInstanceIpAddressOutcome describeRCInstanceIpAddress(const Model::DescribeRCInstanceIpAddressRequest &request)const;
+			void describeRCInstanceIpAddressAsync(const Model::DescribeRCInstanceIpAddressRequest& request, const DescribeRCInstanceIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCInstanceIpAddressOutcomeCallable describeRCInstanceIpAddressCallable(const Model::DescribeRCInstanceIpAddressRequest& request) const;
+			DescribeRCInstanceTypeFamiliesOutcome describeRCInstanceTypeFamilies(const Model::DescribeRCInstanceTypeFamiliesRequest &request)const;
+			void describeRCInstanceTypeFamiliesAsync(const Model::DescribeRCInstanceTypeFamiliesRequest& request, const DescribeRCInstanceTypeFamiliesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCInstanceTypeFamiliesOutcomeCallable describeRCInstanceTypeFamiliesCallable(const Model::DescribeRCInstanceTypeFamiliesRequest& request) const;
+			DescribeRCInstanceTypesOutcome describeRCInstanceTypes(const Model::DescribeRCInstanceTypesRequest &request)const;
+			void describeRCInstanceTypesAsync(const Model::DescribeRCInstanceTypesRequest& request, const DescribeRCInstanceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCInstanceTypesOutcomeCallable describeRCInstanceTypesCallable(const Model::DescribeRCInstanceTypesRequest& request) const;
+			DescribeRCInstanceVncUrlOutcome describeRCInstanceVncUrl(const Model::DescribeRCInstanceVncUrlRequest &request)const;
+			void describeRCInstanceVncUrlAsync(const Model::DescribeRCInstanceVncUrlRequest& request, const DescribeRCInstanceVncUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCInstanceVncUrlOutcomeCallable describeRCInstanceVncUrlCallable(const Model::DescribeRCInstanceVncUrlRequest& request) const;
+			DescribeRCInstancesOutcome describeRCInstances(const Model::DescribeRCInstancesRequest &request)const;
+			void describeRCInstancesAsync(const Model::DescribeRCInstancesRequest& request, const DescribeRCInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCInstancesOutcomeCallable describeRCInstancesCallable(const Model::DescribeRCInstancesRequest& request) const;
+			DescribeRCMetricListOutcome describeRCMetricList(const Model::DescribeRCMetricListRequest &request)const;
+			void describeRCMetricListAsync(const Model::DescribeRCMetricListRequest& request, const DescribeRCMetricListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCMetricListOutcomeCallable describeRCMetricListCallable(const Model::DescribeRCMetricListRequest& request) const;
+			DescribeRCNodePoolOutcome describeRCNodePool(const Model::DescribeRCNodePoolRequest &request)const;
+			void describeRCNodePoolAsync(const Model::DescribeRCNodePoolRequest& request, const DescribeRCNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCNodePoolOutcomeCallable describeRCNodePoolCallable(const Model::DescribeRCNodePoolRequest& request) const;
+			DescribeRCSecurityGroupListOutcome describeRCSecurityGroupList(const Model::DescribeRCSecurityGroupListRequest &request)const;
+			void describeRCSecurityGroupListAsync(const Model::DescribeRCSecurityGroupListRequest& request, const DescribeRCSecurityGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCSecurityGroupListOutcomeCallable describeRCSecurityGroupListCallable(const Model::DescribeRCSecurityGroupListRequest& request) const;
+			DescribeRCSecurityGroupPermissionOutcome describeRCSecurityGroupPermission(const Model::DescribeRCSecurityGroupPermissionRequest &request)const;
+			void describeRCSecurityGroupPermissionAsync(const Model::DescribeRCSecurityGroupPermissionRequest& request, const DescribeRCSecurityGroupPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCSecurityGroupPermissionOutcomeCallable describeRCSecurityGroupPermissionCallable(const Model::DescribeRCSecurityGroupPermissionRequest& request) const;
+			DescribeRCSnapshotsOutcome describeRCSnapshots(const Model::DescribeRCSnapshotsRequest &request)const;
+			void describeRCSnapshotsAsync(const Model::DescribeRCSnapshotsRequest& request, const DescribeRCSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRCSnapshotsOutcomeCallable describeRCSnapshotsCallable(const Model::DescribeRCSnapshotsRequest& request) const;
 			DescribeRdsResourceSettingsOutcome describeRdsResourceSettings(const Model::DescribeRdsResourceSettingsRequest &request)const;
 			void describeRdsResourceSettingsAsync(const Model::DescribeRdsResourceSettingsRequest& request, const DescribeRdsResourceSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRdsResourceSettingsOutcomeCallable describeRdsResourceSettingsCallable(const Model::DescribeRdsResourceSettingsRequest& request) const;
@@ -1988,6 +2455,9 @@ namespace AlibabaCloud
 			DescribeRenewalPriceOutcome describeRenewalPrice(const Model::DescribeRenewalPriceRequest &request)const;
 			void describeRenewalPriceAsync(const Model::DescribeRenewalPriceRequest& request, const DescribeRenewalPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRenewalPriceOutcomeCallable describeRenewalPriceCallable(const Model::DescribeRenewalPriceRequest& request) const;
+			DescribeReplicationLinkLogsOutcome describeReplicationLinkLogs(const Model::DescribeReplicationLinkLogsRequest &request)const;
+			void describeReplicationLinkLogsAsync(const Model::DescribeReplicationLinkLogsRequest& request, const DescribeReplicationLinkLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeReplicationLinkLogsOutcomeCallable describeReplicationLinkLogsCallable(const Model::DescribeReplicationLinkLogsRequest& request) const;
 			DescribeResourceDetailsOutcome describeResourceDetails(const Model::DescribeResourceDetailsRequest &request)const;
 			void describeResourceDetailsAsync(const Model::DescribeResourceDetailsRequest& request, const DescribeResourceDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeResourceDetailsOutcomeCallable describeResourceDetailsCallable(const Model::DescribeResourceDetailsRequest& request) const;
@@ -2054,6 +2524,9 @@ namespace AlibabaCloud
 			DetachGadInstanceMemberOutcome detachGadInstanceMember(const Model::DetachGadInstanceMemberRequest &request)const;
 			void detachGadInstanceMemberAsync(const Model::DetachGadInstanceMemberRequest& request, const DetachGadInstanceMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachGadInstanceMemberOutcomeCallable detachGadInstanceMemberCallable(const Model::DetachGadInstanceMemberRequest& request) const;
+			DetachRCDiskOutcome detachRCDisk(const Model::DetachRCDiskRequest &request)const;
+			void detachRCDiskAsync(const Model::DetachRCDiskRequest& request, const DetachRCDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachRCDiskOutcomeCallable detachRCDiskCallable(const Model::DetachRCDiskRequest& request) const;
 			DetachWhitelistTemplateToInstanceOutcome detachWhitelistTemplateToInstance(const Model::DetachWhitelistTemplateToInstanceRequest &request)const;
 			void detachWhitelistTemplateToInstanceAsync(const Model::DetachWhitelistTemplateToInstanceRequest& request, const DetachWhitelistTemplateToInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachWhitelistTemplateToInstanceOutcomeCallable detachWhitelistTemplateToInstanceCallable(const Model::DetachWhitelistTemplateToInstanceRequest& request) const;
@@ -2093,6 +2566,9 @@ namespace AlibabaCloud
 			MigrateDBInstanceOutcome migrateDBInstance(const Model::MigrateDBInstanceRequest &request)const;
 			void migrateDBInstanceAsync(const Model::MigrateDBInstanceRequest& request, const MigrateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MigrateDBInstanceOutcomeCallable migrateDBInstanceCallable(const Model::MigrateDBInstanceRequest& request) const;
+			MigrateDBNodesOutcome migrateDBNodes(const Model::MigrateDBNodesRequest &request)const;
+			void migrateDBNodesAsync(const Model::MigrateDBNodesRequest& request, const MigrateDBNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MigrateDBNodesOutcomeCallable migrateDBNodesCallable(const Model::MigrateDBNodesRequest& request) const;
 			MigrateSecurityIPModeOutcome migrateSecurityIPMode(const Model::MigrateSecurityIPModeRequest &request)const;
 			void migrateSecurityIPModeAsync(const Model::MigrateSecurityIPModeRequest& request, const MigrateSecurityIPModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MigrateSecurityIPModeOutcomeCallable migrateSecurityIPModeCallable(const Model::MigrateSecurityIPModeRequest& request) const;
@@ -2102,12 +2578,18 @@ namespace AlibabaCloud
 			ModifyADInfoOutcome modifyADInfo(const Model::ModifyADInfoRequest &request)const;
 			void modifyADInfoAsync(const Model::ModifyADInfoRequest& request, const ModifyADInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyADInfoOutcomeCallable modifyADInfoCallable(const Model::ModifyADInfoRequest& request) const;
+			ModifyAccountCheckPolicyOutcome modifyAccountCheckPolicy(const Model::ModifyAccountCheckPolicyRequest &request)const;
+			void modifyAccountCheckPolicyAsync(const Model::ModifyAccountCheckPolicyRequest& request, const ModifyAccountCheckPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAccountCheckPolicyOutcomeCallable modifyAccountCheckPolicyCallable(const Model::ModifyAccountCheckPolicyRequest& request) const;
 			ModifyAccountDescriptionOutcome modifyAccountDescription(const Model::ModifyAccountDescriptionRequest &request)const;
 			void modifyAccountDescriptionAsync(const Model::ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccountDescriptionOutcomeCallable modifyAccountDescriptionCallable(const Model::ModifyAccountDescriptionRequest& request) const;
 			ModifyAccountMaskingPrivilegeOutcome modifyAccountMaskingPrivilege(const Model::ModifyAccountMaskingPrivilegeRequest &request)const;
 			void modifyAccountMaskingPrivilegeAsync(const Model::ModifyAccountMaskingPrivilegeRequest& request, const ModifyAccountMaskingPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccountMaskingPrivilegeOutcomeCallable modifyAccountMaskingPrivilegeCallable(const Model::ModifyAccountMaskingPrivilegeRequest& request) const;
+			ModifyAccountSecurityPolicyOutcome modifyAccountSecurityPolicy(const Model::ModifyAccountSecurityPolicyRequest &request)const;
+			void modifyAccountSecurityPolicyAsync(const Model::ModifyAccountSecurityPolicyRequest& request, const ModifyAccountSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAccountSecurityPolicyOutcomeCallable modifyAccountSecurityPolicyCallable(const Model::ModifyAccountSecurityPolicyRequest& request) const;
 			ModifyActionEventPolicyOutcome modifyActionEventPolicy(const Model::ModifyActionEventPolicyRequest &request)const;
 			void modifyActionEventPolicyAsync(const Model::ModifyActionEventPolicyRequest& request, const ModifyActionEventPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyActionEventPolicyOutcomeCallable modifyActionEventPolicyCallable(const Model::ModifyActionEventPolicyRequest& request) const;
@@ -2171,6 +2653,9 @@ namespace AlibabaCloud
 			ModifyDBInstancePayTypeOutcome modifyDBInstancePayType(const Model::ModifyDBInstancePayTypeRequest &request)const;
 			void modifyDBInstancePayTypeAsync(const Model::ModifyDBInstancePayTypeRequest& request, const ModifyDBInstancePayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstancePayTypeOutcomeCallable modifyDBInstancePayTypeCallable(const Model::ModifyDBInstancePayTypeRequest& request) const;
+			ModifyDBInstanceReplicationSwitchOutcome modifyDBInstanceReplicationSwitch(const Model::ModifyDBInstanceReplicationSwitchRequest &request)const;
+			void modifyDBInstanceReplicationSwitchAsync(const Model::ModifyDBInstanceReplicationSwitchRequest& request, const ModifyDBInstanceReplicationSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBInstanceReplicationSwitchOutcomeCallable modifyDBInstanceReplicationSwitchCallable(const Model::ModifyDBInstanceReplicationSwitchRequest& request) const;
 			ModifyDBInstanceSSLOutcome modifyDBInstanceSSL(const Model::ModifyDBInstanceSSLRequest &request)const;
 			void modifyDBInstanceSSLAsync(const Model::ModifyDBInstanceSSLRequest& request, const ModifyDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstanceSSLOutcomeCallable modifyDBInstanceSSLCallable(const Model::ModifyDBInstanceSSLRequest& request) const;
@@ -2237,6 +2722,30 @@ namespace AlibabaCloud
 			ModifyParameterGroupOutcome modifyParameterGroup(const Model::ModifyParameterGroupRequest &request)const;
 			void modifyParameterGroupAsync(const Model::ModifyParameterGroupRequest& request, const ModifyParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyParameterGroupOutcomeCallable modifyParameterGroupCallable(const Model::ModifyParameterGroupRequest& request) const;
+			ModifyRCDiskSpecOutcome modifyRCDiskSpec(const Model::ModifyRCDiskSpecRequest &request)const;
+			void modifyRCDiskSpecAsync(const Model::ModifyRCDiskSpecRequest& request, const ModifyRCDiskSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyRCDiskSpecOutcomeCallable modifyRCDiskSpecCallable(const Model::ModifyRCDiskSpecRequest& request) const;
+			ModifyRCInstanceOutcome modifyRCInstance(const Model::ModifyRCInstanceRequest &request)const;
+			void modifyRCInstanceAsync(const Model::ModifyRCInstanceRequest& request, const ModifyRCInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyRCInstanceOutcomeCallable modifyRCInstanceCallable(const Model::ModifyRCInstanceRequest& request) const;
+			ModifyRCInstanceAttributeOutcome modifyRCInstanceAttribute(const Model::ModifyRCInstanceAttributeRequest &request)const;
+			void modifyRCInstanceAttributeAsync(const Model::ModifyRCInstanceAttributeRequest& request, const ModifyRCInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyRCInstanceAttributeOutcomeCallable modifyRCInstanceAttributeCallable(const Model::ModifyRCInstanceAttributeRequest& request) const;
+			ModifyRCInstanceChargeTypeOutcome modifyRCInstanceChargeType(const Model::ModifyRCInstanceChargeTypeRequest &request)const;
+			void modifyRCInstanceChargeTypeAsync(const Model::ModifyRCInstanceChargeTypeRequest& request, const ModifyRCInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyRCInstanceChargeTypeOutcomeCallable modifyRCInstanceChargeTypeCallable(const Model::ModifyRCInstanceChargeTypeRequest& request) const;
+			ModifyRCInstanceDescriptionOutcome modifyRCInstanceDescription(const Model::ModifyRCInstanceDescriptionRequest &request)const;
+			void modifyRCInstanceDescriptionAsync(const Model::ModifyRCInstanceDescriptionRequest& request, const ModifyRCInstanceDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyRCInstanceDescriptionOutcomeCallable modifyRCInstanceDescriptionCallable(const Model::ModifyRCInstanceDescriptionRequest& request) const;
+			ModifyRCInstanceKeyPairOutcome modifyRCInstanceKeyPair(const Model::ModifyRCInstanceKeyPairRequest &request)const;
+			void modifyRCInstanceKeyPairAsync(const Model::ModifyRCInstanceKeyPairRequest& request, const ModifyRCInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyRCInstanceKeyPairOutcomeCallable modifyRCInstanceKeyPairCallable(const Model::ModifyRCInstanceKeyPairRequest& request) const;
+			ModifyRCInstanceNetworkSpecOutcome modifyRCInstanceNetworkSpec(const Model::ModifyRCInstanceNetworkSpecRequest &request)const;
+			void modifyRCInstanceNetworkSpecAsync(const Model::ModifyRCInstanceNetworkSpecRequest& request, const ModifyRCInstanceNetworkSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyRCInstanceNetworkSpecOutcomeCallable modifyRCInstanceNetworkSpecCallable(const Model::ModifyRCInstanceNetworkSpecRequest& request) const;
+			ModifyRCSecurityGroupPermissionOutcome modifyRCSecurityGroupPermission(const Model::ModifyRCSecurityGroupPermissionRequest &request)const;
+			void modifyRCSecurityGroupPermissionAsync(const Model::ModifyRCSecurityGroupPermissionRequest& request, const ModifyRCSecurityGroupPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyRCSecurityGroupPermissionOutcomeCallable modifyRCSecurityGroupPermissionCallable(const Model::ModifyRCSecurityGroupPermissionRequest& request) const;
 			ModifyReadWriteSplittingConnectionOutcome modifyReadWriteSplittingConnection(const Model::ModifyReadWriteSplittingConnectionRequest &request)const;
 			void modifyReadWriteSplittingConnectionAsync(const Model::ModifyReadWriteSplittingConnectionRequest& request, const ModifyReadWriteSplittingConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyReadWriteSplittingConnectionOutcomeCallable modifyReadWriteSplittingConnectionCallable(const Model::ModifyReadWriteSplittingConnectionRequest& request) const;
@@ -2276,9 +2785,18 @@ namespace AlibabaCloud
 			QueryRecommendByCodeOutcome queryRecommendByCode(const Model::QueryRecommendByCodeRequest &request)const;
 			void queryRecommendByCodeAsync(const Model::QueryRecommendByCodeRequest& request, const QueryRecommendByCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryRecommendByCodeOutcomeCallable queryRecommendByCodeCallable(const Model::QueryRecommendByCodeRequest& request) const;
+			RebootRCInstanceOutcome rebootRCInstance(const Model::RebootRCInstanceRequest &request)const;
+			void rebootRCInstanceAsync(const Model::RebootRCInstanceRequest& request, const RebootRCInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RebootRCInstanceOutcomeCallable rebootRCInstanceCallable(const Model::RebootRCInstanceRequest& request) const;
+			RebootRCInstancesOutcome rebootRCInstances(const Model::RebootRCInstancesRequest &request)const;
+			void rebootRCInstancesAsync(const Model::RebootRCInstancesRequest& request, const RebootRCInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RebootRCInstancesOutcomeCallable rebootRCInstancesCallable(const Model::RebootRCInstancesRequest& request) const;
 			RebuildDBInstanceOutcome rebuildDBInstance(const Model::RebuildDBInstanceRequest &request)const;
 			void rebuildDBInstanceAsync(const Model::RebuildDBInstanceRequest& request, const RebuildDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RebuildDBInstanceOutcomeCallable rebuildDBInstanceCallable(const Model::RebuildDBInstanceRequest& request) const;
+			RebuildReplicationLinkOutcome rebuildReplicationLink(const Model::RebuildReplicationLinkRequest &request)const;
+			void rebuildReplicationLinkAsync(const Model::RebuildReplicationLinkRequest& request, const RebuildReplicationLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RebuildReplicationLinkOutcomeCallable rebuildReplicationLinkCallable(const Model::RebuildReplicationLinkRequest& request) const;
 			ReceiveDBInstanceOutcome receiveDBInstance(const Model::ReceiveDBInstanceRequest &request)const;
 			void receiveDBInstanceAsync(const Model::ReceiveDBInstanceRequest& request, const ReceiveDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReceiveDBInstanceOutcomeCallable receiveDBInstanceCallable(const Model::ReceiveDBInstanceRequest& request) const;
@@ -2300,12 +2818,21 @@ namespace AlibabaCloud
 			RenewInstanceOutcome renewInstance(const Model::RenewInstanceRequest &request)const;
 			void renewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewInstanceOutcomeCallable renewInstanceCallable(const Model::RenewInstanceRequest& request) const;
+			RenewRCInstanceOutcome renewRCInstance(const Model::RenewRCInstanceRequest &request)const;
+			void renewRCInstanceAsync(const Model::RenewRCInstanceRequest& request, const RenewRCInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RenewRCInstanceOutcomeCallable renewRCInstanceCallable(const Model::RenewRCInstanceRequest& request) const;
+			ReplaceRCInstanceSystemDiskOutcome replaceRCInstanceSystemDisk(const Model::ReplaceRCInstanceSystemDiskRequest &request)const;
+			void replaceRCInstanceSystemDiskAsync(const Model::ReplaceRCInstanceSystemDiskRequest& request, const ReplaceRCInstanceSystemDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReplaceRCInstanceSystemDiskOutcomeCallable replaceRCInstanceSystemDiskCallable(const Model::ReplaceRCInstanceSystemDiskRequest& request) const;
 			ResetAccountOutcome resetAccount(const Model::ResetAccountRequest &request)const;
 			void resetAccountAsync(const Model::ResetAccountRequest& request, const ResetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAccountOutcomeCallable resetAccountCallable(const Model::ResetAccountRequest& request) const;
 			ResetAccountPasswordOutcome resetAccountPassword(const Model::ResetAccountPasswordRequest &request)const;
 			void resetAccountPasswordAsync(const Model::ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAccountPasswordOutcomeCallable resetAccountPasswordCallable(const Model::ResetAccountPasswordRequest& request) const;
+			ResizeRCInstanceDiskOutcome resizeRCInstanceDisk(const Model::ResizeRCInstanceDiskRequest &request)const;
+			void resizeRCInstanceDiskAsync(const Model::ResizeRCInstanceDiskRequest& request, const ResizeRCInstanceDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResizeRCInstanceDiskOutcomeCallable resizeRCInstanceDiskCallable(const Model::ResizeRCInstanceDiskRequest& request) const;
 			RestartDBInstanceOutcome restartDBInstance(const Model::RestartDBInstanceRequest &request)const;
 			void restartDBInstanceAsync(const Model::RestartDBInstanceRequest& request, const RestartDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartDBInstanceOutcomeCallable restartDBInstanceCallable(const Model::RestartDBInstanceRequest& request) const;
@@ -2321,12 +2848,30 @@ namespace AlibabaCloud
 			RevokeOperatorPermissionOutcome revokeOperatorPermission(const Model::RevokeOperatorPermissionRequest &request)const;
 			void revokeOperatorPermissionAsync(const Model::RevokeOperatorPermissionRequest& request, const RevokeOperatorPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RevokeOperatorPermissionOutcomeCallable revokeOperatorPermissionCallable(const Model::RevokeOperatorPermissionRequest& request) const;
+			RevokeRCSecurityGroupPermissionOutcome revokeRCSecurityGroupPermission(const Model::RevokeRCSecurityGroupPermissionRequest &request)const;
+			void revokeRCSecurityGroupPermissionAsync(const Model::RevokeRCSecurityGroupPermissionRequest& request, const RevokeRCSecurityGroupPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RevokeRCSecurityGroupPermissionOutcomeCallable revokeRCSecurityGroupPermissionCallable(const Model::RevokeRCSecurityGroupPermissionRequest& request) const;
+			RunRCInstancesOutcome runRCInstances(const Model::RunRCInstancesRequest &request)const;
+			void runRCInstancesAsync(const Model::RunRCInstancesRequest& request, const RunRCInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RunRCInstancesOutcomeCallable runRCInstancesCallable(const Model::RunRCInstancesRequest& request) const;
 			StartDBInstanceOutcome startDBInstance(const Model::StartDBInstanceRequest &request)const;
 			void startDBInstanceAsync(const Model::StartDBInstanceRequest& request, const StartDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartDBInstanceOutcomeCallable startDBInstanceCallable(const Model::StartDBInstanceRequest& request) const;
+			StartRCInstanceOutcome startRCInstance(const Model::StartRCInstanceRequest &request)const;
+			void startRCInstanceAsync(const Model::StartRCInstanceRequest& request, const StartRCInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartRCInstanceOutcomeCallable startRCInstanceCallable(const Model::StartRCInstanceRequest& request) const;
+			StartRCInstancesOutcome startRCInstances(const Model::StartRCInstancesRequest &request)const;
+			void startRCInstancesAsync(const Model::StartRCInstancesRequest& request, const StartRCInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartRCInstancesOutcomeCallable startRCInstancesCallable(const Model::StartRCInstancesRequest& request) const;
 			StopDBInstanceOutcome stopDBInstance(const Model::StopDBInstanceRequest &request)const;
 			void stopDBInstanceAsync(const Model::StopDBInstanceRequest& request, const StopDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopDBInstanceOutcomeCallable stopDBInstanceCallable(const Model::StopDBInstanceRequest& request) const;
+			StopRCInstanceOutcome stopRCInstance(const Model::StopRCInstanceRequest &request)const;
+			void stopRCInstanceAsync(const Model::StopRCInstanceRequest& request, const StopRCInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopRCInstanceOutcomeCallable stopRCInstanceCallable(const Model::StopRCInstanceRequest& request) const;
+			StopRCInstancesOutcome stopRCInstances(const Model::StopRCInstancesRequest &request)const;
+			void stopRCInstancesAsync(const Model::StopRCInstancesRequest& request, const StopRCInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopRCInstancesOutcomeCallable stopRCInstancesCallable(const Model::StopRCInstancesRequest& request) const;
 			SwitchDBInstanceHAOutcome switchDBInstanceHA(const Model::SwitchDBInstanceHARequest &request)const;
 			void switchDBInstanceHAAsync(const Model::SwitchDBInstanceHARequest& request, const SwitchDBInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchDBInstanceHAOutcomeCallable switchDBInstanceHACallable(const Model::SwitchDBInstanceHARequest& request) const;
@@ -2336,6 +2881,18 @@ namespace AlibabaCloud
 			SwitchDBInstanceVpcOutcome switchDBInstanceVpc(const Model::SwitchDBInstanceVpcRequest &request)const;
 			void switchDBInstanceVpcAsync(const Model::SwitchDBInstanceVpcRequest& request, const SwitchDBInstanceVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchDBInstanceVpcOutcomeCallable switchDBInstanceVpcCallable(const Model::SwitchDBInstanceVpcRequest& request) const;
+			SwitchOverMajorVersionUpgradeOutcome switchOverMajorVersionUpgrade(const Model::SwitchOverMajorVersionUpgradeRequest &request)const;
+			void switchOverMajorVersionUpgradeAsync(const Model::SwitchOverMajorVersionUpgradeRequest& request, const SwitchOverMajorVersionUpgradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SwitchOverMajorVersionUpgradeOutcomeCallable switchOverMajorVersionUpgradeCallable(const Model::SwitchOverMajorVersionUpgradeRequest& request) const;
+			SwitchReplicationLinkOutcome switchReplicationLink(const Model::SwitchReplicationLinkRequest &request)const;
+			void switchReplicationLinkAsync(const Model::SwitchReplicationLinkRequest& request, const SwitchReplicationLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SwitchReplicationLinkOutcomeCallable switchReplicationLinkCallable(const Model::SwitchReplicationLinkRequest& request) const;
+			SyncRCKeyPairOutcome syncRCKeyPair(const Model::SyncRCKeyPairRequest &request)const;
+			void syncRCKeyPairAsync(const Model::SyncRCKeyPairRequest& request, const SyncRCKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SyncRCKeyPairOutcomeCallable syncRCKeyPairCallable(const Model::SyncRCKeyPairRequest& request) const;
+			SyncRCSecurityGroupOutcome syncRCSecurityGroup(const Model::SyncRCSecurityGroupRequest &request)const;
+			void syncRCSecurityGroupAsync(const Model::SyncRCSecurityGroupRequest& request, const SyncRCSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SyncRCSecurityGroupOutcomeCallable syncRCSecurityGroupCallable(const Model::SyncRCSecurityGroupRequest& request) const;
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
@@ -2345,6 +2902,9 @@ namespace AlibabaCloud
 			TransformDBInstancePayTypeOutcome transformDBInstancePayType(const Model::TransformDBInstancePayTypeRequest &request)const;
 			void transformDBInstancePayTypeAsync(const Model::TransformDBInstancePayTypeRequest& request, const TransformDBInstancePayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TransformDBInstancePayTypeOutcomeCallable transformDBInstancePayTypeCallable(const Model::TransformDBInstancePayTypeRequest& request) const;
+			UnassociateEipAddressWithRCInstanceOutcome unassociateEipAddressWithRCInstance(const Model::UnassociateEipAddressWithRCInstanceRequest &request)const;
+			void unassociateEipAddressWithRCInstanceAsync(const Model::UnassociateEipAddressWithRCInstanceRequest& request, const UnassociateEipAddressWithRCInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnassociateEipAddressWithRCInstanceOutcomeCallable unassociateEipAddressWithRCInstanceCallable(const Model::UnassociateEipAddressWithRCInstanceRequest& request) const;
 			UnlockAccountOutcome unlockAccount(const Model::UnlockAccountRequest &request)const;
 			void unlockAccountAsync(const Model::UnlockAccountRequest& request, const UnlockAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnlockAccountOutcomeCallable unlockAccountCallable(const Model::UnlockAccountRequest& request) const;

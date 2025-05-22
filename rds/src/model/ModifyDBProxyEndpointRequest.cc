@@ -61,6 +61,24 @@ void ModifyDBProxyEndpointRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string ModifyDBProxyEndpointRequest::getEffectiveTime() const {
+  return effectiveTime_;
+}
+
+void ModifyDBProxyEndpointRequest::setEffectiveTime(const std::string &effectiveTime) {
+  effectiveTime_ = effectiveTime;
+  setParameter(std::string("EffectiveTime"), effectiveTime);
+}
+
+std::string ModifyDBProxyEndpointRequest::getEffectiveSpecificTime() const {
+  return effectiveSpecificTime_;
+}
+
+void ModifyDBProxyEndpointRequest::setEffectiveSpecificTime(const std::string &effectiveSpecificTime) {
+  effectiveSpecificTime_ = effectiveSpecificTime;
+  setParameter(std::string("EffectiveSpecificTime"), effectiveSpecificTime);
+}
+
 std::string ModifyDBProxyEndpointRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }
@@ -97,6 +115,15 @@ void ModifyDBProxyEndpointRequest::setResourceOwnerAccount(const std::string &re
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+std::string ModifyDBProxyEndpointRequest::getDbEndpointMinSlaveCount() const {
+  return dbEndpointMinSlaveCount_;
+}
+
+void ModifyDBProxyEndpointRequest::setDbEndpointMinSlaveCount(const std::string &dbEndpointMinSlaveCount) {
+  dbEndpointMinSlaveCount_ = dbEndpointMinSlaveCount;
+  setParameter(std::string("DbEndpointMinSlaveCount"), dbEndpointMinSlaveCount);
+}
+
 std::string ModifyDBProxyEndpointRequest::getDbEndpointAliases() const {
   return dbEndpointAliases_;
 }
@@ -113,6 +140,15 @@ std::string ModifyDBProxyEndpointRequest::getDBProxyEngineType() const {
 void ModifyDBProxyEndpointRequest::setDBProxyEngineType(const std::string &dBProxyEngineType) {
   dBProxyEngineType_ = dBProxyEngineType;
   setParameter(std::string("DBProxyEngineType"), dBProxyEngineType);
+}
+
+std::string ModifyDBProxyEndpointRequest::getCausalConsistReadTimeout() const {
+  return causalConsistReadTimeout_;
+}
+
+void ModifyDBProxyEndpointRequest::setCausalConsistReadTimeout(const std::string &causalConsistReadTimeout) {
+  causalConsistReadTimeout_ = causalConsistReadTimeout;
+  setParameter(std::string("CausalConsistReadTimeout"), causalConsistReadTimeout);
 }
 
 std::string ModifyDBProxyEndpointRequest::getDbEndpointOperator() const {
@@ -151,6 +187,15 @@ void ModifyDBProxyEndpointRequest::setDbEndpointReadWriteMode(const std::string 
   setParameter(std::string("DbEndpointReadWriteMode"), dbEndpointReadWriteMode);
 }
 
+std::string ModifyDBProxyEndpointRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void ModifyDBProxyEndpointRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
+}
+
 std::string ModifyDBProxyEndpointRequest::getDBProxyEndpointId() const {
   return dBProxyEndpointId_;
 }
@@ -158,6 +203,15 @@ std::string ModifyDBProxyEndpointRequest::getDBProxyEndpointId() const {
 void ModifyDBProxyEndpointRequest::setDBProxyEndpointId(const std::string &dBProxyEndpointId) {
   dBProxyEndpointId_ = dBProxyEndpointId;
   setParameter(std::string("DBProxyEndpointId"), dBProxyEndpointId);
+}
+
+std::string ModifyDBProxyEndpointRequest::getVpcId() const {
+  return vpcId_;
+}
+
+void ModifyDBProxyEndpointRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
 }
 
 std::string ModifyDBProxyEndpointRequest::getReadOnlyInstanceDistributionType() const {

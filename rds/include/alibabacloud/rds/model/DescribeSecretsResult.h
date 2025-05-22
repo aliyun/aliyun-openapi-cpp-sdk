@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct SecretsItem
 				{
-					std::string secretName;
 					std::string secretArn;
+					std::string secretName;
 					std::string accountId;
 					std::string description;
 					std::string username;

@@ -34,33 +34,6 @@ void CalculateDBInstanceWeightRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CalculateDBInstanceWeightRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void CalculateDBInstanceWeightRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string CalculateDBInstanceWeightRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void CalculateDBInstanceWeightRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long CalculateDBInstanceWeightRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void CalculateDBInstanceWeightRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string CalculateDBInstanceWeightRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,5 +59,32 @@ std::string CalculateDBInstanceWeightRequest::getDBInstanceId() const {
 void CalculateDBInstanceWeightRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string CalculateDBInstanceWeightRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void CalculateDBInstanceWeightRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string CalculateDBInstanceWeightRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void CalculateDBInstanceWeightRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long CalculateDBInstanceWeightRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void CalculateDBInstanceWeightRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

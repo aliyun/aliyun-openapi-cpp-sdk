@@ -43,22 +43,22 @@ void DescribeWhitelistTemplateResult::parse(const std::string &payload)
 	auto _templateNode = dataNode["Template"];
 	if(!_templateNode["Id"].isNull())
 		data_._template.id = std::stoi(_templateNode["Id"].asString());
-	if(!_templateNode["UserId"].isNull())
-		data_._template.userId = std::stoi(_templateNode["UserId"].asString());
+	if(!_templateNode["Ips"].isNull())
+		data_._template.ips = _templateNode["Ips"].asString();
 	if(!_templateNode["TemplateId"].isNull())
 		data_._template.templateId = std::stoi(_templateNode["TemplateId"].asString());
 	if(!_templateNode["TemplateName"].isNull())
 		data_._template.templateName = _templateNode["TemplateName"].asString();
-	if(!_templateNode["Ips"].isNull())
-		data_._template.ips = _templateNode["Ips"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!_templateNode["UserId"].isNull())
+		data_._template.userId = std::stoi(_templateNode["UserId"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

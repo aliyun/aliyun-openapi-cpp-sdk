@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				CheckServiceLinkedRoleResult();
 				explicit CheckServiceLinkedRoleResult(const std::string &payload);
 				~CheckServiceLinkedRoleResult();
+				std::string getRequireServiceLinkedRole()const;
 				std::string getHasServiceLinkedRole()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string requireServiceLinkedRole_;
 				std::string hasServiceLinkedRole_;
 
 			};

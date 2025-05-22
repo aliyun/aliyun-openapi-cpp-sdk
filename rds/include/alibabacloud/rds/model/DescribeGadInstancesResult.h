@@ -47,8 +47,8 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string description;
-					std::string gadInstanceName;
 					std::string creationTime;
+					std::string gadInstanceName;
 					std::string service;
 					std::string modificationTime;
 					std::vector<GadInstancesItem::GadInstanceMembersItem> gadInstanceMembers;

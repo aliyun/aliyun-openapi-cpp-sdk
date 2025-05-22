@@ -28,6 +28,11 @@ namespace Rds {
 namespace Model {
 class ALIBABACLOUD_RDS_EXPORT ModifyDBProxyRequest : public RpcServiceRequest {
 public:
+	struct DBProxyNodes {
+		std::string cpuCores;
+		std::string zoneId;
+		std::string nodeCounts;
+	};
 	ModifyDBProxyRequest();
 	~ModifyDBProxyRequest();
 	long getResourceOwnerId() const;
@@ -40,6 +45,8 @@ public:
 	void setAccountName(const std::string &accountName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<DBProxyNodes> getDBProxyNodes() const;
+	void setDBProxyNodes(const std::vector<DBProxyNodes> &dBProxyNodes);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getPersistentConnectionStatus() const;
@@ -71,6 +78,7 @@ private:
 	std::string resourceGroupId_;
 	std::string accountName_;
 	std::string regionId_;
+	std::vector<DBProxyNodes> dBProxyNodes_;
 	std::string dBInstanceId_;
 	std::string persistentConnectionStatus_;
 	std::string resourceOwnerAccount_;

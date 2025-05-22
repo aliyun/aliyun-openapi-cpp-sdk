@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string dBInstanceEndpointId;
 					std::string connectionString;
+					std::string dBInstanceEndpointId;
 					std::string dBInstanceName;
 				};
 

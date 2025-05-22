@@ -45,6 +45,8 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 		VSwitch vSwitchsObject;
 		if(!valueVSwitchsVSwitch["AliUid"].isNull())
 			vSwitchsObject.aliUid = valueVSwitchsVSwitch["AliUid"].asString();
+		if(!valueVSwitchsVSwitch["AvailableIpAddressCount"].isNull())
+			vSwitchsObject.availableIpAddressCount = valueVSwitchsVSwitch["AvailableIpAddressCount"].asString();
 		if(!valueVSwitchsVSwitch["Bid"].isNull())
 			vSwitchsObject.bid = valueVSwitchsVSwitch["Bid"].asString();
 		if(!valueVSwitchsVSwitch["CidrBlock"].isNull())
@@ -67,16 +69,14 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 			vSwitchsObject.vSwitchId = valueVSwitchsVSwitch["VSwitchId"].asString();
 		if(!valueVSwitchsVSwitch["VSwitchName"].isNull())
 			vSwitchsObject.vSwitchName = valueVSwitchsVSwitch["VSwitchName"].asString();
-		if(!valueVSwitchsVSwitch["AvailableIpAddressCount"].isNull())
-			vSwitchsObject.availableIpAddressCount = valueVSwitchsVSwitch["AvailableIpAddressCount"].asString();
 		vSwitchs_.push_back(vSwitchsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

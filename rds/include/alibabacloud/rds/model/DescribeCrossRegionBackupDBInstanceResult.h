@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				struct Item
 				{
 					std::string logBackupEnabled;
-					std::string engineVersion;
 					std::string backupEnabledTime;
+					std::string engineVersion;
 					std::string dBInstanceStatus;
 					std::string logBackupEnabledTime;
 					std::string crossBackupRegion;
 					int retentType;
-					std::string relServiceId;
 					std::string lockMode;
+					std::string relServiceId;
 					int retention;
 					std::string backupEnabled;
 					std::string crossBackupType;
 					std::string dBInstanceId;
 					std::string dBInstanceStatusDesc;
 					std::string relService;
-					std::string engine;
 					std::string dBInstanceDescription;
+					std::string engine;
 				};
 
 

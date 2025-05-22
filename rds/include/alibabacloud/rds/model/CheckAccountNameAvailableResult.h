@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				CheckAccountNameAvailableResult();
 				explicit CheckAccountNameAvailableResult(const std::string &payload);
 				~CheckAccountNameAvailableResult();
+				std::string getResourceGroupId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string resourceGroupId_;
 
 			};
 		}

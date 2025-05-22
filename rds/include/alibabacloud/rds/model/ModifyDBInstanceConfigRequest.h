@@ -36,6 +36,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getSwitchTimeMode() const;
+	void setSwitchTimeMode(const std::string &switchTimeMode);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
@@ -44,6 +46,8 @@ public:
 	void setConfigName(const std::string &configName);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getSwitchTime() const;
+	void setSwitchTime(const std::string &switchTime);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -57,10 +61,12 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string accessKeyId_;
+	std::string switchTimeMode_;
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string configName_;
 	std::string dBInstanceId_;
+	std::string switchTime_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string configValue_;

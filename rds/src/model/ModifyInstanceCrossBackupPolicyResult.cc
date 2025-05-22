@@ -39,34 +39,29 @@ void ModifyInstanceCrossBackupPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["StorageOwner"].isNull())
-		storageOwner_ = value["StorageOwner"].asString();
 	if(!value["BackupEnabled"].isNull())
 		backupEnabled_ = value["BackupEnabled"].asString();
-	if(!value["StorageType"].isNull())
-		storageType_ = value["StorageType"].asString();
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
-	if(!value["LogBackupEnabled"].isNull())
-		logBackupEnabled_ = value["LogBackupEnabled"].asString();
-	if(!value["RetentType"].isNull())
-		retentType_ = std::stoi(value["RetentType"].asString());
-	if(!value["Endpoint"].isNull())
-		endpoint_ = value["Endpoint"].asString();
 	if(!value["CrossBackupRegion"].isNull())
 		crossBackupRegion_ = value["CrossBackupRegion"].asString();
 	if(!value["CrossBackupType"].isNull())
 		crossBackupType_ = value["CrossBackupType"].asString();
-	if(!value["Retention"].isNull())
-		retention_ = std::stoi(value["Retention"].asString());
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["Endpoint"].isNull())
+		endpoint_ = value["Endpoint"].asString();
+	if(!value["LogBackupEnabled"].isNull())
+		logBackupEnabled_ = value["LogBackupEnabled"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["RetentType"].isNull())
+		retentType_ = std::stoi(value["RetentType"].asString());
+	if(!value["Retention"].isNull())
+		retention_ = std::stoi(value["Retention"].asString());
+	if(!value["StorageOwner"].isNull())
+		storageOwner_ = value["StorageOwner"].asString();
+	if(!value["StorageType"].isNull())
+		storageType_ = value["StorageType"].asString();
 
-}
-
-std::string ModifyInstanceCrossBackupPolicyResult::getStorageOwner()const
-{
-	return storageOwner_;
 }
 
 std::string ModifyInstanceCrossBackupPolicyResult::getLogBackupEnabled()const
@@ -74,19 +69,24 @@ std::string ModifyInstanceCrossBackupPolicyResult::getLogBackupEnabled()const
 	return logBackupEnabled_;
 }
 
+std::string ModifyInstanceCrossBackupPolicyResult::getStorageOwner()const
+{
+	return storageOwner_;
+}
+
 std::string ModifyInstanceCrossBackupPolicyResult::getBackupEnabled()const
 {
 	return backupEnabled_;
 }
 
-std::string ModifyInstanceCrossBackupPolicyResult::getStorageType()const
-{
-	return storageType_;
-}
-
 std::string ModifyInstanceCrossBackupPolicyResult::getCrossBackupType()const
 {
 	return crossBackupType_;
+}
+
+std::string ModifyInstanceCrossBackupPolicyResult::getStorageType()const
+{
+	return storageType_;
 }
 
 std::string ModifyInstanceCrossBackupPolicyResult::getEndpoint()const

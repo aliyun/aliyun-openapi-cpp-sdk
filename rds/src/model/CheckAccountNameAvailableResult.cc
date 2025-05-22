@@ -39,6 +39,13 @@ void CheckAccountNameAvailableResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
+}
+
+std::string CheckAccountNameAvailableResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 

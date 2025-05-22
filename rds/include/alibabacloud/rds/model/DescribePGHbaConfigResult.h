@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string type;
 					std::string user;
 					std::string address;
-					std::string mask;
 					std::string database;
+					std::string mask;
 					std::string option;
 					std::string method;
 					int priorityId;

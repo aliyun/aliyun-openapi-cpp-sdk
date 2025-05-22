@@ -41,7 +41,14 @@ void CheckServiceLinkedRoleResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["HasServiceLinkedRole"].isNull())
 		hasServiceLinkedRole_ = value["HasServiceLinkedRole"].asString();
+	if(!value["RequireServiceLinkedRole"].isNull())
+		requireServiceLinkedRole_ = value["RequireServiceLinkedRole"].asString();
 
+}
+
+std::string CheckServiceLinkedRoleResult::getRequireServiceLinkedRole()const
+{
+	return requireServiceLinkedRole_;
 }
 
 std::string CheckServiceLinkedRoleResult::getHasServiceLinkedRole()const

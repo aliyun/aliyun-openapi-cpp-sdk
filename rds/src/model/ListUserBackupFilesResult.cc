@@ -43,46 +43,46 @@ void ListUserBackupFilesResult::parse(const std::string &payload)
 	for (auto valueRecordsRecordsItem : allRecordsNode)
 	{
 		RecordsItem recordsObject;
-		if(!valueRecordsRecordsItem["Status"].isNull())
-			recordsObject.status = valueRecordsRecordsItem["Status"].asString();
-		if(!valueRecordsRecordsItem["CreationTime"].isNull())
-			recordsObject.creationTime = valueRecordsRecordsItem["CreationTime"].asString();
-		if(!valueRecordsRecordsItem["FinishTime"].isNull())
-			recordsObject.finishTime = valueRecordsRecordsItem["FinishTime"].asString();
-		if(!valueRecordsRecordsItem["Comment"].isNull())
-			recordsObject.comment = valueRecordsRecordsItem["Comment"].asString();
-		if(!valueRecordsRecordsItem["OssFilePath"].isNull())
-			recordsObject.ossFilePath = valueRecordsRecordsItem["OssFilePath"].asString();
-		if(!valueRecordsRecordsItem["OssBucket"].isNull())
-			recordsObject.ossBucket = valueRecordsRecordsItem["OssBucket"].asString();
-		if(!valueRecordsRecordsItem["ModificationTime"].isNull())
-			recordsObject.modificationTime = valueRecordsRecordsItem["ModificationTime"].asString();
-		if(!valueRecordsRecordsItem["OssFileSize"].isNull())
-			recordsObject.ossFileSize = std::stol(valueRecordsRecordsItem["OssFileSize"].asString());
-		if(!valueRecordsRecordsItem["OssFileName"].isNull())
-			recordsObject.ossFileName = valueRecordsRecordsItem["OssFileName"].asString();
-		if(!valueRecordsRecordsItem["EngineVersion"].isNull())
-			recordsObject.engineVersion = valueRecordsRecordsItem["EngineVersion"].asString();
 		if(!valueRecordsRecordsItem["BackupId"].isNull())
 			recordsObject.backupId = valueRecordsRecordsItem["BackupId"].asString();
-		if(!valueRecordsRecordsItem["RestoreSize"].isNull())
-			recordsObject.restoreSize = valueRecordsRecordsItem["RestoreSize"].asString();
-		if(!valueRecordsRecordsItem["ZoneId"].isNull())
-			recordsObject.zoneId = valueRecordsRecordsItem["ZoneId"].asString();
-		if(!valueRecordsRecordsItem["Retention"].isNull())
-			recordsObject.retention = std::stoi(valueRecordsRecordsItem["Retention"].asString());
+		if(!valueRecordsRecordsItem["BinlogInfo"].isNull())
+			recordsObject.binlogInfo = valueRecordsRecordsItem["BinlogInfo"].asString();
+		if(!valueRecordsRecordsItem["Comment"].isNull())
+			recordsObject.comment = valueRecordsRecordsItem["Comment"].asString();
+		if(!valueRecordsRecordsItem["CreationTime"].isNull())
+			recordsObject.creationTime = valueRecordsRecordsItem["CreationTime"].asString();
 		if(!valueRecordsRecordsItem["DBInstanceId"].isNull())
 			recordsObject.dBInstanceId = valueRecordsRecordsItem["DBInstanceId"].asString();
 		if(!valueRecordsRecordsItem["Engine"].isNull())
 			recordsObject.engine = valueRecordsRecordsItem["Engine"].asString();
-		if(!valueRecordsRecordsItem["OssUrl"].isNull())
-			recordsObject.ossUrl = valueRecordsRecordsItem["OssUrl"].asString();
+		if(!valueRecordsRecordsItem["EngineVersion"].isNull())
+			recordsObject.engineVersion = valueRecordsRecordsItem["EngineVersion"].asString();
+		if(!valueRecordsRecordsItem["FinishTime"].isNull())
+			recordsObject.finishTime = valueRecordsRecordsItem["FinishTime"].asString();
+		if(!valueRecordsRecordsItem["ModificationTime"].isNull())
+			recordsObject.modificationTime = valueRecordsRecordsItem["ModificationTime"].asString();
+		if(!valueRecordsRecordsItem["OssBucket"].isNull())
+			recordsObject.ossBucket = valueRecordsRecordsItem["OssBucket"].asString();
 		if(!valueRecordsRecordsItem["OssFileMetaData"].isNull())
 			recordsObject.ossFileMetaData = valueRecordsRecordsItem["OssFileMetaData"].asString();
-		if(!valueRecordsRecordsItem["BinlogInfo"].isNull())
-			recordsObject.binlogInfo = valueRecordsRecordsItem["BinlogInfo"].asString();
+		if(!valueRecordsRecordsItem["OssFileName"].isNull())
+			recordsObject.ossFileName = valueRecordsRecordsItem["OssFileName"].asString();
+		if(!valueRecordsRecordsItem["OssFilePath"].isNull())
+			recordsObject.ossFilePath = valueRecordsRecordsItem["OssFilePath"].asString();
+		if(!valueRecordsRecordsItem["OssFileSize"].isNull())
+			recordsObject.ossFileSize = std::stol(valueRecordsRecordsItem["OssFileSize"].asString());
+		if(!valueRecordsRecordsItem["OssUrl"].isNull())
+			recordsObject.ossUrl = valueRecordsRecordsItem["OssUrl"].asString();
 		if(!valueRecordsRecordsItem["Reason"].isNull())
 			recordsObject.reason = valueRecordsRecordsItem["Reason"].asString();
+		if(!valueRecordsRecordsItem["RestoreSize"].isNull())
+			recordsObject.restoreSize = valueRecordsRecordsItem["RestoreSize"].asString();
+		if(!valueRecordsRecordsItem["Retention"].isNull())
+			recordsObject.retention = std::stoi(valueRecordsRecordsItem["Retention"].asString());
+		if(!valueRecordsRecordsItem["Status"].isNull())
+			recordsObject.status = valueRecordsRecordsItem["Status"].asString();
+		if(!valueRecordsRecordsItem["ZoneId"].isNull())
+			recordsObject.zoneId = valueRecordsRecordsItem["ZoneId"].asString();
 		records_.push_back(recordsObject);
 	}
 

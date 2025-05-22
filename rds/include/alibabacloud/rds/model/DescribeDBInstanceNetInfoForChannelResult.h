@@ -34,11 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct DBInstanceNetInfo
 				{
-					struct SecurityIPGroup
-					{
-						std::string securityIPs;
-						std::string securityIPGroupName;
-					};
 					struct DBInstanceWeight
 					{
 						std::string availability;
@@ -46,8 +41,13 @@ namespace AlibabaCloud
 						std::string dBInstanceType;
 						std::string weight;
 					};
-					std::string iPType;
+					struct SecurityIPGroup
+					{
+						std::string securityIPs;
+						std::string securityIPGroupName;
+					};
 					std::string availability;
+					std::string iPType;
 					std::string vPCId;
 					std::string port;
 					std::string vSwitchId;

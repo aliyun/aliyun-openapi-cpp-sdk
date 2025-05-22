@@ -52,6 +52,19 @@ void ModifyDBProxyInstanceRequest::setAccessKeyId(const std::string &accessKeyId
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::vector<ModifyDBProxyInstanceRequest::MigrateAZ> ModifyDBProxyInstanceRequest::getMigrateAZ() const {
+  return migrateAZ_;
+}
+
+void ModifyDBProxyInstanceRequest::setMigrateAZ(const std::vector<ModifyDBProxyInstanceRequest::MigrateAZ> &migrateAZ) {
+  migrateAZ_ = migrateAZ;
+  for(int dep1 = 0; dep1 != migrateAZ.size(); dep1++) {
+    setParameter(std::string("MigrateAZ") + "." + std::to_string(dep1 + 1) + ".destVpcId", migrateAZ[dep1].destVpcId);
+    setParameter(std::string("MigrateAZ") + "." + std::to_string(dep1 + 1) + ".dbProxyEndpointId", migrateAZ[dep1].dbProxyEndpointId);
+    setParameter(std::string("MigrateAZ") + "." + std::to_string(dep1 + 1) + ".destVSwitchId", migrateAZ[dep1].destVSwitchId);
+  }
+}
+
 std::string ModifyDBProxyInstanceRequest::getEffectiveTime() const {
   return effectiveTime_;
 }
@@ -77,6 +90,19 @@ std::string ModifyDBProxyInstanceRequest::getRegionId() const {
 void ModifyDBProxyInstanceRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::vector<ModifyDBProxyInstanceRequest::DBProxyNodes> ModifyDBProxyInstanceRequest::getDBProxyNodes() const {
+  return dBProxyNodes_;
+}
+
+void ModifyDBProxyInstanceRequest::setDBProxyNodes(const std::vector<ModifyDBProxyInstanceRequest::DBProxyNodes> &dBProxyNodes) {
+  dBProxyNodes_ = dBProxyNodes;
+  for(int dep1 = 0; dep1 != dBProxyNodes.size(); dep1++) {
+    setParameter(std::string("DBProxyNodes") + "." + std::to_string(dep1 + 1) + ".cpuCores", dBProxyNodes[dep1].cpuCores);
+    setParameter(std::string("DBProxyNodes") + "." + std::to_string(dep1 + 1) + ".zoneId", dBProxyNodes[dep1].zoneId);
+    setParameter(std::string("DBProxyNodes") + "." + std::to_string(dep1 + 1) + ".nodeCounts", dBProxyNodes[dep1].nodeCounts);
+  }
 }
 
 std::string ModifyDBProxyInstanceRequest::getDBInstanceId() const {

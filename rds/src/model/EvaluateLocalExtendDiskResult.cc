@@ -39,14 +39,14 @@ void EvaluateLocalExtendDiskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
 	if(!value["Available"].isNull())
 		available_ = value["Available"].asString();
-	if(!value["LocalUpgradeDiskLimit"].isNull())
-		localUpgradeDiskLimit_ = std::stol(value["LocalUpgradeDiskLimit"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
 	if(!value["DBInstanceTransType"].isNull())
 		dBInstanceTransType_ = value["DBInstanceTransType"].asString();
+	if(!value["LocalUpgradeDiskLimit"].isNull())
+		localUpgradeDiskLimit_ = std::stol(value["LocalUpgradeDiskLimit"].asString());
 
 }
 

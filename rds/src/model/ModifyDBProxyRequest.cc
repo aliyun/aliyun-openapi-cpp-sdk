@@ -70,6 +70,19 @@ void ModifyDBProxyRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<ModifyDBProxyRequest::DBProxyNodes> ModifyDBProxyRequest::getDBProxyNodes() const {
+  return dBProxyNodes_;
+}
+
+void ModifyDBProxyRequest::setDBProxyNodes(const std::vector<ModifyDBProxyRequest::DBProxyNodes> &dBProxyNodes) {
+  dBProxyNodes_ = dBProxyNodes;
+  for(int dep1 = 0; dep1 != dBProxyNodes.size(); dep1++) {
+    setParameter(std::string("DBProxyNodes") + "." + std::to_string(dep1 + 1) + ".cpuCores", dBProxyNodes[dep1].cpuCores);
+    setParameter(std::string("DBProxyNodes") + "." + std::to_string(dep1 + 1) + ".zoneId", dBProxyNodes[dep1].zoneId);
+    setParameter(std::string("DBProxyNodes") + "." + std::to_string(dep1 + 1) + ".nodeCounts", dBProxyNodes[dep1].nodeCounts);
+  }
+}
+
 std::string ModifyDBProxyRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

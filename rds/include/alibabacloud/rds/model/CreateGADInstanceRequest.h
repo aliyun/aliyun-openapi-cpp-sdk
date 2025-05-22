@@ -40,15 +40,15 @@ public:
 		std::string dbInstanceClass;
 		std::string securityIPList;
 		std::string vSwitchID;
-		std::string regionID;
 		std::string engine;
+		std::string regionID;
 		std::string dtsInstanceClass;
 		std::string vpcID;
 		std::string zoneID;
 		std::string dBInstanceDescription;
 		std::string dBInstanceStorageType;
-		std::string payType;
 		std::string dtsConflict;
+		std::string payType;
 	};
 	CreateGADInstanceRequest();
 	~CreateGADInstanceRequest();

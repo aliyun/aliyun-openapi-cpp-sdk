@@ -39,28 +39,28 @@ void DescribeClassDetailsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Category"].isNull())
+		category_ = value["Category"].asString();
 	if(!value["ClassCode"].isNull())
 		classCode_ = value["ClassCode"].asString();
-	if(!value["MaxIOMBPS"].isNull())
-		maxIOMBPS_ = value["MaxIOMBPS"].asString();
-	if(!value["MaxConnections"].isNull())
-		maxConnections_ = value["MaxConnections"].asString();
 	if(!value["ClassGroup"].isNull())
 		classGroup_ = value["ClassGroup"].asString();
 	if(!value["Cpu"].isNull())
 		cpu_ = value["Cpu"].asString();
-	if(!value["InstructionSetArch"].isNull())
-		instructionSetArch_ = value["InstructionSetArch"].asString();
-	if(!value["MemoryClass"].isNull())
-		memoryClass_ = value["MemoryClass"].asString();
-	if(!value["MaxIOPS"].isNull())
-		maxIOPS_ = value["MaxIOPS"].asString();
-	if(!value["ReferencePrice"].isNull())
-		referencePrice_ = value["ReferencePrice"].asString();
-	if(!value["Category"].isNull())
-		category_ = value["Category"].asString();
 	if(!value["DBInstanceStorageType"].isNull())
 		dBInstanceStorageType_ = value["DBInstanceStorageType"].asString();
+	if(!value["InstructionSetArch"].isNull())
+		instructionSetArch_ = value["InstructionSetArch"].asString();
+	if(!value["MaxConnections"].isNull())
+		maxConnections_ = value["MaxConnections"].asString();
+	if(!value["MaxIOMBPS"].isNull())
+		maxIOMBPS_ = value["MaxIOMBPS"].asString();
+	if(!value["MaxIOPS"].isNull())
+		maxIOPS_ = value["MaxIOPS"].asString();
+	if(!value["MemoryClass"].isNull())
+		memoryClass_ = value["MemoryClass"].asString();
+	if(!value["ReferencePrice"].isNull())
+		referencePrice_ = value["ReferencePrice"].asString();
 
 }
 
@@ -69,14 +69,14 @@ std::string DescribeClassDetailsResult::getMaxIOMBPS()const
 	return maxIOMBPS_;
 }
 
-std::string DescribeClassDetailsResult::getClassCode()const
-{
-	return classCode_;
-}
-
 std::string DescribeClassDetailsResult::getCategory()const
 {
 	return category_;
+}
+
+std::string DescribeClassDetailsResult::getClassCode()const
+{
+	return classCode_;
 }
 
 std::string DescribeClassDetailsResult::getMaxConnections()const

@@ -34,24 +34,6 @@ void DescribeDedicatedHostGroupsRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDedicatedHostGroupsRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeDedicatedHostGroupsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long DescribeDedicatedHostGroupsRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeDedicatedHostGroupsRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string DescribeDedicatedHostGroupsRequest::getImageCategory() const {
   return imageCategory_;
 }
@@ -86,5 +68,23 @@ std::string DescribeDedicatedHostGroupsRequest::getDedicatedHostGroupId() const 
 void DescribeDedicatedHostGroupsRequest::setDedicatedHostGroupId(const std::string &dedicatedHostGroupId) {
   dedicatedHostGroupId_ = dedicatedHostGroupId;
   setParameter(std::string("DedicatedHostGroupId"), dedicatedHostGroupId);
+}
+
+std::string DescribeDedicatedHostGroupsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeDedicatedHostGroupsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long DescribeDedicatedHostGroupsRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeDedicatedHostGroupsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

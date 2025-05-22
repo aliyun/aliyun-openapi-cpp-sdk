@@ -43,32 +43,32 @@ void DescribeAvailableMetricsResult::parse(const std::string &payload)
 	for (auto valueItemsMetrics : allItemsNode)
 	{
 		Metrics itemsObject;
-		if(!valueItemsMetrics["GroupKey"].isNull())
-			itemsObject.groupKey = valueItemsMetrics["GroupKey"].asString();
-		if(!valueItemsMetrics["SortRule"].isNull())
-			itemsObject.sortRule = std::stoi(valueItemsMetrics["SortRule"].asString());
-		if(!valueItemsMetrics["Description"].isNull())
-			itemsObject.description = valueItemsMetrics["Description"].asString();
-		if(!valueItemsMetrics["Unit"].isNull())
-			itemsObject.unit = valueItemsMetrics["Unit"].asString();
 		if(!valueItemsMetrics["DbType"].isNull())
 			itemsObject.dbType = valueItemsMetrics["DbType"].asString();
-		if(!valueItemsMetrics["MetricsKey"].isNull())
-			itemsObject.metricsKey = valueItemsMetrics["MetricsKey"].asString();
-		if(!valueItemsMetrics["GroupKeyType"].isNull())
-			itemsObject.groupKeyType = valueItemsMetrics["GroupKeyType"].asString();
-		if(!valueItemsMetrics["MetricsKeyAlias"].isNull())
-			itemsObject.metricsKeyAlias = valueItemsMetrics["MetricsKeyAlias"].asString();
-		if(!valueItemsMetrics["Method"].isNull())
-			itemsObject.method = valueItemsMetrics["Method"].asString();
+		if(!valueItemsMetrics["Description"].isNull())
+			itemsObject.description = valueItemsMetrics["Description"].asString();
 		if(!valueItemsMetrics["Dimension"].isNull())
 			itemsObject.dimension = valueItemsMetrics["Dimension"].asString();
+		if(!valueItemsMetrics["GroupKey"].isNull())
+			itemsObject.groupKey = valueItemsMetrics["GroupKey"].asString();
+		if(!valueItemsMetrics["GroupKeyType"].isNull())
+			itemsObject.groupKeyType = valueItemsMetrics["GroupKeyType"].asString();
+		if(!valueItemsMetrics["Method"].isNull())
+			itemsObject.method = valueItemsMetrics["Method"].asString();
+		if(!valueItemsMetrics["MetricsKey"].isNull())
+			itemsObject.metricsKey = valueItemsMetrics["MetricsKey"].asString();
+		if(!valueItemsMetrics["MetricsKeyAlias"].isNull())
+			itemsObject.metricsKeyAlias = valueItemsMetrics["MetricsKeyAlias"].asString();
+		if(!valueItemsMetrics["SortRule"].isNull())
+			itemsObject.sortRule = std::stoi(valueItemsMetrics["SortRule"].asString());
+		if(!valueItemsMetrics["Unit"].isNull())
+			itemsObject.unit = valueItemsMetrics["Unit"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["DBInstanceName"].isNull())
 		dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

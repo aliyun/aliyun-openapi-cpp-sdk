@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeResourceUsageResult(const std::string &payload);
 				~DescribeResourceUsageResult();
 				long getPaidBackupSize()const;
+				std::string getBackupEcsSnapshotSize()const;
 				long getBackupSize()const;
 				long getArchiveBackupSize()const;
 				long getColdBackupSize()const;
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				long paidBackupSize_;
+				std::string backupEcsSnapshotSize_;
 				long backupSize_;
 				long archiveBackupSize_;
 				long coldBackupSize_;

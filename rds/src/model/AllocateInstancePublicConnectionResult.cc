@@ -39,20 +39,20 @@ void AllocateInstancePublicConnectionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DbInstanceName"].isNull())
-		dbInstanceName_ = value["DbInstanceName"].asString();
 	if(!value["ConnectionString"].isNull())
 		connectionString_ = value["ConnectionString"].asString();
+	if(!value["DbInstanceName"].isNull())
+		dbInstanceName_ = value["DbInstanceName"].asString();
 
-}
-
-std::string AllocateInstancePublicConnectionResult::getDbInstanceName()const
-{
-	return dbInstanceName_;
 }
 
 std::string AllocateInstancePublicConnectionResult::getConnectionString()const
 {
 	return connectionString_;
+}
+
+std::string AllocateInstancePublicConnectionResult::getDbInstanceName()const
+{
+	return dbInstanceName_;
 }
 

@@ -32,27 +32,27 @@ public:
 	~CreateYouhuiForOrderRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
 	long getPromotionId() const;
 	void setPromotionId(long promotionId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	long getActivityId() const;
 	void setActivityId(long activityId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 
 private:
 	long resourceOwnerId_;
+	std::string accessKeyId_;
+	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerId_;
 	long promotionId_;
-	std::string accessKeyId_;
 	long activityId_;
-	std::string regionId_;
 };
 } // namespace Model
 } // namespace Rds

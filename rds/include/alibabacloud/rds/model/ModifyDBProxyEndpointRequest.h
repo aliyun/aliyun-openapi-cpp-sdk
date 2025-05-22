@@ -38,6 +38,10 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getEffectiveTime() const;
+	void setEffectiveTime(const std::string &effectiveTime);
+	std::string getEffectiveSpecificTime() const;
+	void setEffectiveSpecificTime(const std::string &effectiveSpecificTime);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getReadOnlyInstanceWeight() const;
@@ -46,10 +50,14 @@ public:
 	void setReadOnlyInstanceMaxDelayTime(const std::string &readOnlyInstanceMaxDelayTime);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDbEndpointMinSlaveCount() const;
+	void setDbEndpointMinSlaveCount(const std::string &dbEndpointMinSlaveCount);
 	std::string getDbEndpointAliases() const;
 	void setDbEndpointAliases(const std::string &dbEndpointAliases);
 	std::string getDBProxyEngineType() const;
 	void setDBProxyEngineType(const std::string &dBProxyEngineType);
+	std::string getCausalConsistReadTimeout() const;
+	void setCausalConsistReadTimeout(const std::string &causalConsistReadTimeout);
 	std::string getDbEndpointOperator() const;
 	void setDbEndpointOperator(const std::string &dbEndpointOperator);
 	std::string getDbEndpointType() const;
@@ -58,8 +66,12 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getDbEndpointReadWriteMode() const;
 	void setDbEndpointReadWriteMode(const std::string &dbEndpointReadWriteMode);
+	std::string getVSwitchId() const;
+	void setVSwitchId(const std::string &vSwitchId);
 	std::string getDBProxyEndpointId() const;
 	void setDBProxyEndpointId(const std::string &dBProxyEndpointId);
+	std::string getVpcId() const;
+	void setVpcId(const std::string &vpcId);
 	std::string getReadOnlyInstanceDistributionType() const;
 	void setReadOnlyInstanceDistributionType(const std::string &readOnlyInstanceDistributionType);
 
@@ -68,17 +80,23 @@ private:
 	std::string configDBProxyFeatures_;
 	std::string accessKeyId_;
 	std::string regionId_;
+	std::string effectiveTime_;
+	std::string effectiveSpecificTime_;
 	std::string dBInstanceId_;
 	std::string readOnlyInstanceWeight_;
 	std::string readOnlyInstanceMaxDelayTime_;
 	std::string resourceOwnerAccount_;
+	std::string dbEndpointMinSlaveCount_;
 	std::string dbEndpointAliases_;
 	std::string dBProxyEngineType_;
+	std::string causalConsistReadTimeout_;
 	std::string dbEndpointOperator_;
 	std::string dbEndpointType_;
 	long ownerId_;
 	std::string dbEndpointReadWriteMode_;
+	std::string vSwitchId_;
 	std::string dBProxyEndpointId_;
+	std::string vpcId_;
 	std::string readOnlyInstanceDistributionType_;
 };
 } // namespace Model

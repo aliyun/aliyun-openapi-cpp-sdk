@@ -39,10 +39,10 @@ void CheckCloudResourceAuthorizedResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RoleArn"].isNull())
-		roleArn_ = value["RoleArn"].asString();
 	if(!value["AuthorizationState"].isNull())
 		authorizationState_ = std::stoi(value["AuthorizationState"].asString());
+	if(!value["RoleArn"].isNull())
+		roleArn_ = value["RoleArn"].asString();
 
 }
 

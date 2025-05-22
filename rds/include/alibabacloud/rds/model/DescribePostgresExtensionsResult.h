@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Extension
 				{
 					std::string comment;
+					std::string uid;
 					std::string owner;
 					std::string category;
 					std::string installedVersion;

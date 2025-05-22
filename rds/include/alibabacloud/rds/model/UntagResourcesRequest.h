@@ -30,10 +30,14 @@ class ALIBABACLOUD_RDS_EXPORT UntagResourcesRequest : public RpcServiceRequest {
 public:
 	UntagResourcesRequest();
 	~UntagResourcesRequest();
-	bool getAll() const;
-	void setAll(bool all);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	bool getAll() const;
+	void setAll(bool all);
 	std::vector<std::string> getResourceId() const;
 	void setResourceId(const std::vector<std::string> &resourceId);
 	std::string getResourceOwnerAccount() const;
@@ -42,22 +46,18 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::vector<std::string> getTagKey() const;
 	void setTagKey(const std::vector<std::string> &tagKey);
 
 private:
-	bool all_;
 	long resourceOwnerId_;
+	std::string accessKeyId_;
+	std::string regionId_;
+	bool all_;
 	std::vector<std::string> resourceId_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
 	std::string resourceType_;
-	std::string accessKeyId_;
-	std::string regionId_;
 	std::vector<std::string> tagKey_;
 };
 } // namespace Model

@@ -25,6 +25,15 @@ CopyDatabaseRequest::CopyDatabaseRequest()
 
 CopyDatabaseRequest::~CopyDatabaseRequest() {}
 
+std::string CopyDatabaseRequest::getDBInstanceName() const {
+  return dBInstanceName_;
+}
+
+void CopyDatabaseRequest::setDBInstanceName(const std::string &dBInstanceName) {
+  dBInstanceName_ = dBInstanceName;
+  setParameter(std::string("DBInstanceName"), dBInstanceName);
+}
+
 long CopyDatabaseRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
@@ -61,6 +70,24 @@ void CopyDatabaseRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+int CopyDatabaseRequest::getReserveAccount() const {
+  return reserveAccount_;
+}
+
+void CopyDatabaseRequest::setReserveAccount(int reserveAccount) {
+  reserveAccount_ = reserveAccount;
+  setParameter(std::string("ReserveAccount"), std::to_string(reserveAccount));
+}
+
+std::string CopyDatabaseRequest::getSrcDBName() const {
+  return srcDBName_;
+}
+
+void CopyDatabaseRequest::setSrcDBName(const std::string &srcDBName) {
+  srcDBName_ = srcDBName;
+  setParameter(std::string("SrcDBName"), srcDBName);
+}
+
 std::string CopyDatabaseRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -77,5 +104,14 @@ long CopyDatabaseRequest::getOwnerId() const {
 void CopyDatabaseRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string CopyDatabaseRequest::getDstDBName() const {
+  return dstDBName_;
+}
+
+void CopyDatabaseRequest::setDstDBName(const std::string &dstDBName) {
+  dstDBName_ = dstDBName;
+  setParameter(std::string("DstDBName"), dstDBName);
 }
 

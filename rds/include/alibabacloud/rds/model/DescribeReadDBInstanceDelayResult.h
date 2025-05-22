@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						std::string flushLag;
 						std::string replayLatency;
 						std::string flushLatency;
-						std::string writeLag;
 						std::string sendLatency;
+						std::string writeLag;
 						std::string replayLag;
 						std::string writeLatency;
 						std::string readDBInstanceName;

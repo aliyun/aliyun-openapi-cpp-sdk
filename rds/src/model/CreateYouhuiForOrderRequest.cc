@@ -34,6 +34,24 @@ void CreateYouhuiForOrderRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string CreateYouhuiForOrderRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void CreateYouhuiForOrderRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string CreateYouhuiForOrderRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateYouhuiForOrderRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateYouhuiForOrderRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -61,15 +79,6 @@ void CreateYouhuiForOrderRequest::setPromotionId(long promotionId) {
   setParameter(std::string("PromotionId"), std::to_string(promotionId));
 }
 
-std::string CreateYouhuiForOrderRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void CreateYouhuiForOrderRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 long CreateYouhuiForOrderRequest::getActivityId() const {
   return activityId_;
 }
@@ -77,14 +86,5 @@ long CreateYouhuiForOrderRequest::getActivityId() const {
 void CreateYouhuiForOrderRequest::setActivityId(long activityId) {
   activityId_ = activityId;
   setParameter(std::string("ActivityId"), std::to_string(activityId));
-}
-
-std::string CreateYouhuiForOrderRequest::getRegionId() const {
-  return regionId_;
-}
-
-void CreateYouhuiForOrderRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 

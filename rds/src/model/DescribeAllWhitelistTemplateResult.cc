@@ -40,42 +40,42 @@ void DescribeAllWhitelistTemplateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["TotalRecords"].isNull())
-		data_.totalRecords = std::stoi(dataNode["TotalRecords"].asString());
-	if(!dataNode["MaxRecordsPerPage"].isNull())
-		data_.maxRecordsPerPage = std::stoi(dataNode["MaxRecordsPerPage"].asString());
 	if(!dataNode["CurrPageNumbers"].isNull())
 		data_.currPageNumbers = std::stoi(dataNode["CurrPageNumbers"].asString());
-	if(!dataNode["TotalPageNumbers"].isNull())
-		data_.totalPageNumbers = std::stoi(dataNode["TotalPageNumbers"].asString());
 	if(!dataNode["HasNext"].isNull())
 		data_.hasNext = dataNode["HasNext"].asString() == "true";
 	if(!dataNode["HasPrev"].isNull())
 		data_.hasPrev = dataNode["HasPrev"].asString() == "true";
+	if(!dataNode["MaxRecordsPerPage"].isNull())
+		data_.maxRecordsPerPage = std::stoi(dataNode["MaxRecordsPerPage"].asString());
+	if(!dataNode["TotalPageNumbers"].isNull())
+		data_.totalPageNumbers = std::stoi(dataNode["TotalPageNumbers"].asString());
+	if(!dataNode["TotalRecords"].isNull())
+		data_.totalRecords = std::stoi(dataNode["TotalRecords"].asString());
 	auto allTemplatesNode = dataNode["Templates"]["Template"];
 	for (auto dataNodeTemplatesTemplate : allTemplatesNode)
 	{
 		Data::_Template _templateObject;
 		if(!dataNodeTemplatesTemplate["Id"].isNull())
 			_templateObject.id = std::stoi(dataNodeTemplatesTemplate["Id"].asString());
-		if(!dataNodeTemplatesTemplate["UserId"].isNull())
-			_templateObject.userId = std::stoi(dataNodeTemplatesTemplate["UserId"].asString());
+		if(!dataNodeTemplatesTemplate["Ips"].isNull())
+			_templateObject.ips = dataNodeTemplatesTemplate["Ips"].asString();
 		if(!dataNodeTemplatesTemplate["TemplateId"].isNull())
 			_templateObject.templateId = std::stoi(dataNodeTemplatesTemplate["TemplateId"].asString());
 		if(!dataNodeTemplatesTemplate["TemplateName"].isNull())
 			_templateObject.templateName = dataNodeTemplatesTemplate["TemplateName"].asString();
-		if(!dataNodeTemplatesTemplate["Ips"].isNull())
-			_templateObject.ips = dataNodeTemplatesTemplate["Ips"].asString();
+		if(!dataNodeTemplatesTemplate["UserId"].isNull())
+			_templateObject.userId = std::stoi(dataNodeTemplatesTemplate["UserId"].asString());
 		data_.templates.push_back(_templateObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

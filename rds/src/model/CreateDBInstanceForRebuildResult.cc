@@ -39,14 +39,14 @@ void CreateDBInstanceForRebuildResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
 }
 

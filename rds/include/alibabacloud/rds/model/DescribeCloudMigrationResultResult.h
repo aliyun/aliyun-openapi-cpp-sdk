@@ -39,8 +39,8 @@ namespace AlibabaCloud
 					std::string sourceAccount;
 					std::string gmtModified;
 					std::string gmtCreated;
-					long sourcePort;
 					std::string replicationState;
+					long sourcePort;
 					std::string targetEip;
 					std::string taskName;
 					std::string targetInstanceName;

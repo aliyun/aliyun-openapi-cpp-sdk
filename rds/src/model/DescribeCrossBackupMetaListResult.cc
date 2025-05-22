@@ -43,24 +43,24 @@ void DescribeCrossBackupMetaListResult::parse(const std::string &payload)
 	for (auto valueItemsMeta : allItemsNode)
 	{
 		Meta itemsObject;
-		if(!valueItemsMeta["Tables"].isNull())
-			itemsObject.tables = valueItemsMeta["Tables"].asString();
 		if(!valueItemsMeta["Database"].isNull())
 			itemsObject.database = valueItemsMeta["Database"].asString();
 		if(!valueItemsMeta["Size"].isNull())
 			itemsObject.size = valueItemsMeta["Size"].asString();
+		if(!valueItemsMeta["Tables"].isNull())
+			itemsObject.tables = valueItemsMeta["Tables"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceName"].isNull())
 		dBInstanceName_ = value["DBInstanceName"].asString();
-	if(!value["TotalPageCount"].isNull())
-		totalPageCount_ = std::stoi(value["TotalPageCount"].asString());
-	if(!value["PageRecordCount"].isNull())
-		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalPageCount"].isNull())
+		totalPageCount_ = std::stoi(value["TotalPageCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

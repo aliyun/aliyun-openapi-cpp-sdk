@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	bool getAutoUseCoupon() const;
+	void setAutoUseCoupon(bool autoUseCoupon);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getRegionId() const;
@@ -56,12 +58,15 @@ public:
 	void setUsedTime(int usedTime);
 	std::string getAutoRenew() const;
 	void setAutoRenew(const std::string &autoRenew);
+	std::string getPromotionCode() const;
+	void setPromotionCode(const std::string &promotionCode);
 	std::string getPayType() const;
 	void setPayType(const std::string &payType);
 
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
+	bool autoUseCoupon_;
 	std::string accessKeyId_;
 	std::string regionId_;
 	std::string dBInstanceId_;
@@ -73,6 +78,7 @@ private:
 	long ownerId_;
 	int usedTime_;
 	std::string autoRenew_;
+	std::string promotionCode_;
 	std::string payType_;
 };
 } // namespace Model

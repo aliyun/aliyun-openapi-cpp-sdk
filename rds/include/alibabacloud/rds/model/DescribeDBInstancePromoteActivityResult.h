@@ -39,20 +39,20 @@ namespace AlibabaCloud
 				~DescribeDBInstancePromoteActivityResult();
 				std::string getDBInstanceId()const;
 				std::string getDBType()const;
-				std::string getIsActivity()const;
 				std::string getBid()const;
-				std::string getDBInstanceName()const;
+				std::string getIsActivity()const;
 				std::string getAliUid()const;
+				std::string getDBInstanceName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string dBInstanceId_;
 				std::string dBType_;
-				std::string isActivity_;
 				std::string bid_;
-				std::string dBInstanceName_;
+				std::string isActivity_;
 				std::string aliUid_;
+				std::string dBInstanceName_;
 
 			};
 		}

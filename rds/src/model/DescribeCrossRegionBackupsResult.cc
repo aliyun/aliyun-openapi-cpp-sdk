@@ -43,44 +43,44 @@ void DescribeCrossRegionBackupsResult::parse(const std::string &payload)
 	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!valueItemsItem["ConsistentTime"].isNull())
-			itemsObject.consistentTime = valueItemsItem["ConsistentTime"].asString();
-		if(!valueItemsItem["DBInstanceStorageType"].isNull())
-			itemsObject.dBInstanceStorageType = valueItemsItem["DBInstanceStorageType"].asString();
-		if(!valueItemsItem["CrossBackupId"].isNull())
-			itemsObject.crossBackupId = std::stoi(valueItemsItem["CrossBackupId"].asString());
-		if(!valueItemsItem["BackupType"].isNull())
-			itemsObject.backupType = valueItemsItem["BackupType"].asString();
-		if(!valueItemsItem["BackupStartTime"].isNull())
-			itemsObject.backupStartTime = valueItemsItem["BackupStartTime"].asString();
-		if(!valueItemsItem["CrossBackupSetLocation"].isNull())
-			itemsObject.crossBackupSetLocation = valueItemsItem["CrossBackupSetLocation"].asString();
-		if(!valueItemsItem["InstanceId"].isNull())
-			itemsObject.instanceId = std::stoi(valueItemsItem["InstanceId"].asString());
-		if(!valueItemsItem["CrossBackupDownloadLink"].isNull())
-			itemsObject.crossBackupDownloadLink = valueItemsItem["CrossBackupDownloadLink"].asString();
 		if(!valueItemsItem["BackupEndTime"].isNull())
 			itemsObject.backupEndTime = valueItemsItem["BackupEndTime"].asString();
-		if(!valueItemsItem["EngineVersion"].isNull())
-			itemsObject.engineVersion = valueItemsItem["EngineVersion"].asString();
-		if(!valueItemsItem["BackupSetStatus"].isNull())
-			itemsObject.backupSetStatus = std::stoi(valueItemsItem["BackupSetStatus"].asString());
-		if(!valueItemsItem["CrossBackupSetFile"].isNull())
-			itemsObject.crossBackupSetFile = valueItemsItem["CrossBackupSetFile"].asString();
-		if(!valueItemsItem["BackupSetScale"].isNull())
-			itemsObject.backupSetScale = std::stoi(valueItemsItem["BackupSetScale"].asString());
-		if(!valueItemsItem["CrossBackupSetSize"].isNull())
-			itemsObject.crossBackupSetSize = std::stol(valueItemsItem["CrossBackupSetSize"].asString());
-		if(!valueItemsItem["HasBackupTableMeta"].isNull())
-			itemsObject.hasBackupTableMeta = valueItemsItem["HasBackupTableMeta"].asString();
-		if(!valueItemsItem["CrossBackupRegion"].isNull())
-			itemsObject.crossBackupRegion = valueItemsItem["CrossBackupRegion"].asString();
-		if(!valueItemsItem["Category"].isNull())
-			itemsObject.category = valueItemsItem["Category"].asString();
-		if(!valueItemsItem["Engine"].isNull())
-			itemsObject.engine = valueItemsItem["Engine"].asString();
 		if(!valueItemsItem["BackupMethod"].isNull())
 			itemsObject.backupMethod = valueItemsItem["BackupMethod"].asString();
+		if(!valueItemsItem["BackupSetScale"].isNull())
+			itemsObject.backupSetScale = std::stoi(valueItemsItem["BackupSetScale"].asString());
+		if(!valueItemsItem["BackupSetStatus"].isNull())
+			itemsObject.backupSetStatus = std::stoi(valueItemsItem["BackupSetStatus"].asString());
+		if(!valueItemsItem["BackupStartTime"].isNull())
+			itemsObject.backupStartTime = valueItemsItem["BackupStartTime"].asString();
+		if(!valueItemsItem["BackupType"].isNull())
+			itemsObject.backupType = valueItemsItem["BackupType"].asString();
+		if(!valueItemsItem["Category"].isNull())
+			itemsObject.category = valueItemsItem["Category"].asString();
+		if(!valueItemsItem["ConsistentTime"].isNull())
+			itemsObject.consistentTime = valueItemsItem["ConsistentTime"].asString();
+		if(!valueItemsItem["CrossBackupDownloadLink"].isNull())
+			itemsObject.crossBackupDownloadLink = valueItemsItem["CrossBackupDownloadLink"].asString();
+		if(!valueItemsItem["CrossBackupId"].isNull())
+			itemsObject.crossBackupId = std::stoi(valueItemsItem["CrossBackupId"].asString());
+		if(!valueItemsItem["CrossBackupRegion"].isNull())
+			itemsObject.crossBackupRegion = valueItemsItem["CrossBackupRegion"].asString();
+		if(!valueItemsItem["CrossBackupSetFile"].isNull())
+			itemsObject.crossBackupSetFile = valueItemsItem["CrossBackupSetFile"].asString();
+		if(!valueItemsItem["CrossBackupSetLocation"].isNull())
+			itemsObject.crossBackupSetLocation = valueItemsItem["CrossBackupSetLocation"].asString();
+		if(!valueItemsItem["CrossBackupSetSize"].isNull())
+			itemsObject.crossBackupSetSize = std::stol(valueItemsItem["CrossBackupSetSize"].asString());
+		if(!valueItemsItem["DBInstanceStorageType"].isNull())
+			itemsObject.dBInstanceStorageType = valueItemsItem["DBInstanceStorageType"].asString();
+		if(!valueItemsItem["Engine"].isNull())
+			itemsObject.engine = valueItemsItem["Engine"].asString();
+		if(!valueItemsItem["EngineVersion"].isNull())
+			itemsObject.engineVersion = valueItemsItem["EngineVersion"].asString();
+		if(!valueItemsItem["HasBackupTableMeta"].isNull())
+			itemsObject.hasBackupTableMeta = valueItemsItem["HasBackupTableMeta"].asString();
+		if(!valueItemsItem["InstanceId"].isNull())
+			itemsObject.instanceId = std::stoi(valueItemsItem["InstanceId"].asString());
 		auto allRestoreRegions = value["RestoreRegions"]["RestoreRegion"];
 		for (auto value : allRestoreRegions)
 			itemsObject.restoreRegions.push_back(value.asString());
@@ -88,16 +88,16 @@ void DescribeCrossRegionBackupsResult::parse(const std::string &payload)
 	}
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["PageRecordCount"].isNull())
-		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

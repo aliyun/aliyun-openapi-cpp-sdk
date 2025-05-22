@@ -43,48 +43,48 @@ void DescribeCloudMigrationResultResult::parse(const std::string &payload)
 	for (auto valueItemsTasks : allItemsNode)
 	{
 		Tasks itemsObject;
+		if(!valueItemsTasks["Detail"].isNull())
+			itemsObject.detail = valueItemsTasks["Detail"].asString();
 		if(!valueItemsTasks["GmtCreated"].isNull())
 			itemsObject.gmtCreated = valueItemsTasks["GmtCreated"].asString();
 		if(!valueItemsTasks["GmtModified"].isNull())
 			itemsObject.gmtModified = valueItemsTasks["GmtModified"].asString();
-		if(!valueItemsTasks["TaskId"].isNull())
-			itemsObject.taskId = std::stol(valueItemsTasks["TaskId"].asString());
-		if(!valueItemsTasks["TaskName"].isNull())
-			itemsObject.taskName = valueItemsTasks["TaskName"].asString();
-		if(!valueItemsTasks["Status"].isNull())
-			itemsObject.status = valueItemsTasks["Status"].asString();
 		if(!valueItemsTasks["MigrateStage"].isNull())
 			itemsObject.migrateStage = valueItemsTasks["MigrateStage"].asString();
+		if(!valueItemsTasks["ReplicationInfo"].isNull())
+			itemsObject.replicationInfo = valueItemsTasks["ReplicationInfo"].asString();
+		if(!valueItemsTasks["ReplicationState"].isNull())
+			itemsObject.replicationState = valueItemsTasks["ReplicationState"].asString();
+		if(!valueItemsTasks["SourceAccount"].isNull())
+			itemsObject.sourceAccount = valueItemsTasks["SourceAccount"].asString();
 		if(!valueItemsTasks["SourceCategory"].isNull())
 			itemsObject.sourceCategory = valueItemsTasks["SourceCategory"].asString();
 		if(!valueItemsTasks["SourceIpAddress"].isNull())
 			itemsObject.sourceIpAddress = valueItemsTasks["SourceIpAddress"].asString();
-		if(!valueItemsTasks["SourcePort"].isNull())
-			itemsObject.sourcePort = std::stol(valueItemsTasks["SourcePort"].asString());
-		if(!valueItemsTasks["SourceAccount"].isNull())
-			itemsObject.sourceAccount = valueItemsTasks["SourceAccount"].asString();
 		if(!valueItemsTasks["SourcePassword"].isNull())
 			itemsObject.sourcePassword = valueItemsTasks["SourcePassword"].asString();
+		if(!valueItemsTasks["SourcePort"].isNull())
+			itemsObject.sourcePort = std::stol(valueItemsTasks["SourcePort"].asString());
+		if(!valueItemsTasks["Status"].isNull())
+			itemsObject.status = valueItemsTasks["Status"].asString();
+		if(!valueItemsTasks["SwitchTime"].isNull())
+			itemsObject.switchTime = valueItemsTasks["SwitchTime"].asString();
 		if(!valueItemsTasks["TargetEip"].isNull())
 			itemsObject.targetEip = valueItemsTasks["TargetEip"].asString();
 		if(!valueItemsTasks["TargetInstanceName"].isNull())
 			itemsObject.targetInstanceName = valueItemsTasks["TargetInstanceName"].asString();
-		if(!valueItemsTasks["ReplicationState"].isNull())
-			itemsObject.replicationState = valueItemsTasks["ReplicationState"].asString();
-		if(!valueItemsTasks["ReplicationInfo"].isNull())
-			itemsObject.replicationInfo = valueItemsTasks["ReplicationInfo"].asString();
-		if(!valueItemsTasks["Detail"].isNull())
-			itemsObject.detail = valueItemsTasks["Detail"].asString();
-		if(!valueItemsTasks["SwitchTime"].isNull())
-			itemsObject.switchTime = valueItemsTasks["SwitchTime"].asString();
+		if(!valueItemsTasks["TaskId"].isNull())
+			itemsObject.taskId = std::stol(valueItemsTasks["TaskId"].asString());
+		if(!valueItemsTasks["TaskName"].isNull())
+			itemsObject.taskName = valueItemsTasks["TaskName"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["TotalSize"].isNull())
-		totalSize_ = std::stoi(value["TotalSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["TotalSize"].isNull())
+		totalSize_ = std::stoi(value["TotalSize"].asString());
 
 }
 

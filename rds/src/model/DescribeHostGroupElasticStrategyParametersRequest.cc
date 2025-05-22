@@ -34,24 +34,6 @@ void DescribeHostGroupElasticStrategyParametersRequest::setResourceOwnerId(long 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeHostGroupElasticStrategyParametersRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeHostGroupElasticStrategyParametersRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long DescribeHostGroupElasticStrategyParametersRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeHostGroupElasticStrategyParametersRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string DescribeHostGroupElasticStrategyParametersRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -77,6 +59,24 @@ std::string DescribeHostGroupElasticStrategyParametersRequest::getRegionId() con
 void DescribeHostGroupElasticStrategyParametersRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeHostGroupElasticStrategyParametersRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeHostGroupElasticStrategyParametersRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long DescribeHostGroupElasticStrategyParametersRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeHostGroupElasticStrategyParametersRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 std::string DescribeHostGroupElasticStrategyParametersRequest::getDedicatedHostGroupName() const {

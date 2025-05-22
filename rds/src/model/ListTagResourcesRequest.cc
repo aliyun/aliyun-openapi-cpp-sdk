@@ -34,41 +34,6 @@ void ListTagResourcesRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::vector<std::string> ListTagResourcesRequest::getResourceId() const {
-  return resourceId_;
-}
-
-void ListTagResourcesRequest::setResourceId(const std::vector<std::string> &resourceId) {
-  resourceId_ = resourceId;
-}
-
-std::string ListTagResourcesRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void ListTagResourcesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long ListTagResourcesRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ListTagResourcesRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string ListTagResourcesRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void ListTagResourcesRequest::setResourceType(const std::string &resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), resourceType);
-}
-
 std::string ListTagResourcesRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -108,5 +73,40 @@ void ListTagResourcesRequest::setTag(const std::vector<ListTagResourcesRequest::
     setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
   }
+}
+
+std::vector<std::string> ListTagResourcesRequest::getResourceId() const {
+  return resourceId_;
+}
+
+void ListTagResourcesRequest::setResourceId(const std::vector<std::string> &resourceId) {
+  resourceId_ = resourceId;
+}
+
+std::string ListTagResourcesRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void ListTagResourcesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long ListTagResourcesRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ListTagResourcesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ListTagResourcesRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void ListTagResourcesRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 

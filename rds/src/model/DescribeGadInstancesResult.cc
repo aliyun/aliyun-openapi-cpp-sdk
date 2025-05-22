@@ -43,38 +43,38 @@ void DescribeGadInstancesResult::parse(const std::string &payload)
 	for (auto valueGadInstancesGadInstancesItem : allGadInstancesNode)
 	{
 		GadInstancesItem gadInstancesObject;
-		if(!valueGadInstancesGadInstancesItem["GadInstanceName"].isNull())
-			gadInstancesObject.gadInstanceName = valueGadInstancesGadInstancesItem["GadInstanceName"].asString();
-		if(!valueGadInstancesGadInstancesItem["Description"].isNull())
-			gadInstancesObject.description = valueGadInstancesGadInstancesItem["Description"].asString();
-		if(!valueGadInstancesGadInstancesItem["Status"].isNull())
-			gadInstancesObject.status = valueGadInstancesGadInstancesItem["Status"].asString();
 		if(!valueGadInstancesGadInstancesItem["CreationTime"].isNull())
 			gadInstancesObject.creationTime = valueGadInstancesGadInstancesItem["CreationTime"].asString();
+		if(!valueGadInstancesGadInstancesItem["Description"].isNull())
+			gadInstancesObject.description = valueGadInstancesGadInstancesItem["Description"].asString();
+		if(!valueGadInstancesGadInstancesItem["GadInstanceName"].isNull())
+			gadInstancesObject.gadInstanceName = valueGadInstancesGadInstancesItem["GadInstanceName"].asString();
 		if(!valueGadInstancesGadInstancesItem["ModificationTime"].isNull())
 			gadInstancesObject.modificationTime = valueGadInstancesGadInstancesItem["ModificationTime"].asString();
 		if(!valueGadInstancesGadInstancesItem["Service"].isNull())
 			gadInstancesObject.service = valueGadInstancesGadInstancesItem["Service"].asString();
+		if(!valueGadInstancesGadInstancesItem["Status"].isNull())
+			gadInstancesObject.status = valueGadInstancesGadInstancesItem["Status"].asString();
 		auto allGadInstanceMembersNode = valueGadInstancesGadInstancesItem["GadInstanceMembers"]["GadInstanceMembersItem"];
 		for (auto valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem : allGadInstanceMembersNode)
 		{
 			GadInstancesItem::GadInstanceMembersItem gadInstanceMembersObject;
 			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["DBInstanceID"].isNull())
 				gadInstanceMembersObject.dBInstanceID = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["DBInstanceID"].asString();
+			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["DtsInstance"].isNull())
+				gadInstanceMembersObject.dtsInstance = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["DtsInstance"].asString();
 			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["Engine"].isNull())
 				gadInstanceMembersObject.engine = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["Engine"].asString();
 			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["EngineVersion"].isNull())
 				gadInstanceMembersObject.engineVersion = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["EngineVersion"].asString();
 			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["RegionId"].isNull())
 				gadInstanceMembersObject.regionId = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["RegionId"].asString();
+			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["ResourceGroupId"].isNull())
+				gadInstanceMembersObject.resourceGroupId = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["ResourceGroupId"].asString();
 			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["Role"].isNull())
 				gadInstanceMembersObject.role = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["Role"].asString();
 			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["Status"].isNull())
 				gadInstanceMembersObject.status = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["Status"].asString();
-			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["DtsInstance"].isNull())
-				gadInstanceMembersObject.dtsInstance = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["DtsInstance"].asString();
-			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["ResourceGroupId"].isNull())
-				gadInstanceMembersObject.resourceGroupId = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["ResourceGroupId"].asString();
 			gadInstancesObject.gadInstanceMembers.push_back(gadInstanceMembersObject);
 		}
 		gadInstances_.push_back(gadInstancesObject);

@@ -43,24 +43,6 @@ void DescribeDBInstanceMetricsRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBInstanceMetricsRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeDBInstanceMetricsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long DescribeDBInstanceMetricsRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeDBInstanceMetricsRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string DescribeDBInstanceMetricsRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,5 +68,23 @@ std::string DescribeDBInstanceMetricsRequest::getRegionId() const {
 void DescribeDBInstanceMetricsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeDBInstanceMetricsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeDBInstanceMetricsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long DescribeDBInstanceMetricsRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeDBInstanceMetricsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

@@ -70,6 +70,15 @@ void DeleteMaskingRulesRequest::setOwnerId(const std::string &ownerId) {
   setParameter(std::string("OwnerId"), ownerId);
 }
 
+std::string DeleteMaskingRulesRequest::getDBName() const {
+  return dBName_;
+}
+
+void DeleteMaskingRulesRequest::setDBName(const std::string &dBName) {
+  dBName_ = dBName;
+  setParameter(std::string("DBName"), dBName);
+}
+
 std::string DeleteMaskingRulesRequest::getRegionId() const {
   return regionId_;
 }

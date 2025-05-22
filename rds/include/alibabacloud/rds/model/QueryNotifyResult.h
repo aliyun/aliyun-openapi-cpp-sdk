@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct NotifyItemListItem
 					{
-						std::string type;
 						std::string notifyElement;
+						std::string type;
 						std::string idempotentId;
 						bool confirmFlag;
 						long confirmor;
@@ -45,8 +45,8 @@ namespace AlibabaCloud
 						std::string templateName;
 						std::string idempotentCount;
 						std::string level;
-						long id;
 						std::string gmtCreated;
+						long id;
 						long aliUid;
 					};
 					int totalRecordCount;

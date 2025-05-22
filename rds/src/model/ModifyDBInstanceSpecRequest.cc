@@ -43,13 +43,13 @@ void ModifyDBInstanceSpecRequest::setDBInstanceStorage(int dBInstanceStorage) {
   setParameter(std::string("DBInstanceStorage"), std::to_string(dBInstanceStorage));
 }
 
-std::string ModifyDBInstanceSpecRequest::getClientToken() const {
-  return clientToken_;
+std::string ModifyDBInstanceSpecRequest::getOptimizedWrites() const {
+  return optimizedWrites_;
 }
 
-void ModifyDBInstanceSpecRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
+void ModifyDBInstanceSpecRequest::setOptimizedWrites(const std::string &optimizedWrites) {
+  optimizedWrites_ = optimizedWrites;
+  setParameter(std::string("OptimizedWrites"), optimizedWrites);
 }
 
 std::string ModifyDBInstanceSpecRequest::getEngineVersion() const {
@@ -59,6 +59,90 @@ std::string ModifyDBInstanceSpecRequest::getEngineVersion() const {
 void ModifyDBInstanceSpecRequest::setEngineVersion(const std::string &engineVersion) {
   engineVersion_ = engineVersion;
   setParameter(std::string("EngineVersion"), engineVersion);
+}
+
+std::string ModifyDBInstanceSpecRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyDBInstanceSpecRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+ModifyDBInstanceSpecRequest::ServerlessConfiguration ModifyDBInstanceSpecRequest::getServerlessConfiguration() const {
+  return serverlessConfiguration_;
+}
+
+void ModifyDBInstanceSpecRequest::setServerlessConfiguration(const ModifyDBInstanceSpecRequest::ServerlessConfiguration &serverlessConfiguration) {
+  serverlessConfiguration_ = serverlessConfiguration;
+  setParameter(std::string("ServerlessConfiguration") + ".MinCapacity", std::to_string(serverlessConfiguration.minCapacity));
+  setParameter(std::string("ServerlessConfiguration") + ".MaxCapacity", std::to_string(serverlessConfiguration.maxCapacity));
+  setParameter(std::string("ServerlessConfiguration") + ".AutoPause", serverlessConfiguration.autoPause ? "true" : "false");
+  setParameter(std::string("ServerlessConfiguration") + ".SwitchForce", serverlessConfiguration.switchForce ? "true" : "false");
+}
+
+long ModifyDBInstanceSpecRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ModifyDBInstanceSpecRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ModifyDBInstanceSpecRequest::getDBInstanceClass() const {
+  return dBInstanceClass_;
+}
+
+void ModifyDBInstanceSpecRequest::setDBInstanceClass(const std::string &dBInstanceClass) {
+  dBInstanceClass_ = dBInstanceClass;
+  setParameter(std::string("DBInstanceClass"), dBInstanceClass);
+}
+
+std::string ModifyDBInstanceSpecRequest::getVSwitchId() const {
+  return vSwitchId_;
+}
+
+void ModifyDBInstanceSpecRequest::setVSwitchId(const std::string &vSwitchId) {
+  vSwitchId_ = vSwitchId;
+  setParameter(std::string("VSwitchId"), vSwitchId);
+}
+
+std::string ModifyDBInstanceSpecRequest::getPromotionCode() const {
+  return promotionCode_;
+}
+
+void ModifyDBInstanceSpecRequest::setPromotionCode(const std::string &promotionCode) {
+  promotionCode_ = promotionCode;
+  setParameter(std::string("PromotionCode"), promotionCode);
+}
+
+std::string ModifyDBInstanceSpecRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void ModifyDBInstanceSpecRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
+}
+
+std::string ModifyDBInstanceSpecRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void ModifyDBInstanceSpecRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string ModifyDBInstanceSpecRequest::getZoneIdSlave1() const {
+  return zoneIdSlave1_;
+}
+
+void ModifyDBInstanceSpecRequest::setZoneIdSlave1(const std::string &zoneIdSlave1) {
+  zoneIdSlave1_ = zoneIdSlave1;
+  setParameter(std::string("ZoneIdSlave1"), zoneIdSlave1);
 }
 
 bool ModifyDBInstanceSpecRequest::getAutoUseCoupon() const {
@@ -97,27 +181,6 @@ void ModifyDBInstanceSpecRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyDBInstanceSpecRequest::getResourceGroupId() const {
-  return resourceGroupId_;
-}
-
-void ModifyDBInstanceSpecRequest::setResourceGroupId(const std::string &resourceGroupId) {
-  resourceGroupId_ = resourceGroupId;
-  setParameter(std::string("ResourceGroupId"), resourceGroupId);
-}
-
-ModifyDBInstanceSpecRequest::ServerlessConfiguration ModifyDBInstanceSpecRequest::getServerlessConfiguration() const {
-  return serverlessConfiguration_;
-}
-
-void ModifyDBInstanceSpecRequest::setServerlessConfiguration(const ModifyDBInstanceSpecRequest::ServerlessConfiguration &serverlessConfiguration) {
-  serverlessConfiguration_ = serverlessConfiguration;
-  setParameter(std::string("ServerlessConfiguration") + ".MinCapacity", std::to_string(serverlessConfiguration.minCapacity));
-  setParameter(std::string("ServerlessConfiguration") + ".MaxCapacity", std::to_string(serverlessConfiguration.maxCapacity));
-  setParameter(std::string("ServerlessConfiguration") + ".AutoPause", serverlessConfiguration.autoPause ? "true" : "false");
-  setParameter(std::string("ServerlessConfiguration") + ".SwitchForce", serverlessConfiguration.switchForce ? "true" : "false");
-}
-
 std::string ModifyDBInstanceSpecRequest::getEffectiveTime() const {
   return effectiveTime_;
 }
@@ -143,6 +206,15 @@ std::string ModifyDBInstanceSpecRequest::getRegionId() const {
 void ModifyDBInstanceSpecRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ModifyDBInstanceSpecRequest::getReadOnlyDBInstanceClass() const {
+  return readOnlyDBInstanceClass_;
+}
+
+void ModifyDBInstanceSpecRequest::setReadOnlyDBInstanceClass(const std::string &readOnlyDBInstanceClass) {
+  readOnlyDBInstanceClass_ = readOnlyDBInstanceClass;
+  setParameter(std::string("ReadOnlyDBInstanceClass"), readOnlyDBInstanceClass);
 }
 
 std::string ModifyDBInstanceSpecRequest::getDBInstanceId() const {
@@ -199,6 +271,15 @@ void ModifyDBInstanceSpecRequest::setDirection(const std::string &direction) {
   setParameter(std::string("Direction"), direction);
 }
 
+std::string ModifyDBInstanceSpecRequest::getCompressionMode() const {
+  return compressionMode_;
+}
+
+void ModifyDBInstanceSpecRequest::setCompressionMode(const std::string &compressionMode) {
+  compressionMode_ = compressionMode;
+  setParameter(std::string("CompressionMode"), compressionMode);
+}
+
 std::string ModifyDBInstanceSpecRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -215,15 +296,6 @@ std::string ModifyDBInstanceSpecRequest::getOwnerAccount() const {
 void ModifyDBInstanceSpecRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long ModifyDBInstanceSpecRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ModifyDBInstanceSpecRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 long ModifyDBInstanceSpecRequest::getUsedTime() const {
@@ -253,22 +325,13 @@ void ModifyDBInstanceSpecRequest::setTargetMinorVersion(const std::string &targe
   setParameter(std::string("TargetMinorVersion"), targetMinorVersion);
 }
 
-std::string ModifyDBInstanceSpecRequest::getDBInstanceClass() const {
-  return dBInstanceClass_;
+bool ModifyDBInstanceSpecRequest::getAllowMajorVersionUpgrade() const {
+  return allowMajorVersionUpgrade_;
 }
 
-void ModifyDBInstanceSpecRequest::setDBInstanceClass(const std::string &dBInstanceClass) {
-  dBInstanceClass_ = dBInstanceClass;
-  setParameter(std::string("DBInstanceClass"), dBInstanceClass);
-}
-
-std::string ModifyDBInstanceSpecRequest::getZoneId() const {
-  return zoneId_;
-}
-
-void ModifyDBInstanceSpecRequest::setZoneId(const std::string &zoneId) {
-  zoneId_ = zoneId;
-  setParameter(std::string("ZoneId"), zoneId);
+void ModifyDBInstanceSpecRequest::setAllowMajorVersionUpgrade(bool allowMajorVersionUpgrade) {
+  allowMajorVersionUpgrade_ = allowMajorVersionUpgrade;
+  setParameter(std::string("AllowMajorVersionUpgrade"), allowMajorVersionUpgrade ? "true" : "false");
 }
 
 std::string ModifyDBInstanceSpecRequest::getCategory() const {

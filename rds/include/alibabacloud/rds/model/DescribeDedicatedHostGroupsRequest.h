@@ -32,10 +32,6 @@ public:
 	~DescribeDedicatedHostGroupsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
 	std::string getImageCategory() const;
 	void setImageCategory(const std::string &imageCategory);
 	std::string getAccessKeyId() const;
@@ -44,15 +40,19 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getDedicatedHostGroupId() const;
 	void setDedicatedHostGroupId(const std::string &dedicatedHostGroupId);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
 	long resourceOwnerId_;
-	std::string resourceOwnerAccount_;
-	long ownerId_;
 	std::string imageCategory_;
 	std::string accessKeyId_;
 	std::string regionId_;
 	std::string dedicatedHostGroupId_;
+	std::string resourceOwnerAccount_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Rds

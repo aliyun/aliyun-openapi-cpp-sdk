@@ -106,3 +106,12 @@ void ModifyResourceGroupRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ModifyResourceGroupRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void ModifyResourceGroupRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
+}
+

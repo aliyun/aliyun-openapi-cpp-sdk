@@ -43,60 +43,60 @@ void DescribeActiveOperationTasksResult::parse(const std::string &payload)
 	for (auto valueItemsItemsItem : allItemsNode)
 	{
 		ItemsItem itemsObject;
-		if(!valueItemsItemsItem["Status"].isNull())
-			itemsObject.status = std::stoi(valueItemsItemsItem["Status"].asString());
-		if(!valueItemsItemsItem["ChangeLevelEn"].isNull())
-			itemsObject.changeLevelEn = valueItemsItemsItem["ChangeLevelEn"].asString();
-		if(!valueItemsItemsItem["TaskType"].isNull())
-			itemsObject.taskType = valueItemsItemsItem["TaskType"].asString();
-		if(!valueItemsItemsItem["InsName"].isNull())
-			itemsObject.insName = valueItemsItemsItem["InsName"].asString();
-		if(!valueItemsItemsItem["Region"].isNull())
-			itemsObject.region = valueItemsItemsItem["Region"].asString();
-		if(!valueItemsItemsItem["ImpactZh"].isNull())
-			itemsObject.impactZh = valueItemsItemsItem["ImpactZh"].asString();
-		if(!valueItemsItemsItem["CreatedTime"].isNull())
-			itemsObject.createdTime = valueItemsItemsItem["CreatedTime"].asString();
-		if(!valueItemsItemsItem["SwitchTime"].isNull())
-			itemsObject.switchTime = valueItemsItemsItem["SwitchTime"].asString();
-		if(!valueItemsItemsItem["ChangeLevelZh"].isNull())
-			itemsObject.changeLevelZh = valueItemsItemsItem["ChangeLevelZh"].asString();
-		if(!valueItemsItemsItem["Deadline"].isNull())
-			itemsObject.deadline = valueItemsItemsItem["Deadline"].asString();
-		if(!valueItemsItemsItem["PrepareInterval"].isNull())
-			itemsObject.prepareInterval = valueItemsItemsItem["PrepareInterval"].asString();
-		if(!valueItemsItemsItem["Impact"].isNull())
-			itemsObject.impact = valueItemsItemsItem["Impact"].asString();
-		if(!valueItemsItemsItem["TaskTypeZh"].isNull())
-			itemsObject.taskTypeZh = valueItemsItemsItem["TaskTypeZh"].asString();
-		if(!valueItemsItemsItem["CurrentAVZ"].isNull())
-			itemsObject.currentAVZ = valueItemsItemsItem["CurrentAVZ"].asString();
-		if(!valueItemsItemsItem["AllowChange"].isNull())
-			itemsObject.allowChange = valueItemsItemsItem["AllowChange"].asString();
-		if(!valueItemsItemsItem["DbVersion"].isNull())
-			itemsObject.dbVersion = valueItemsItemsItem["DbVersion"].asString();
-		if(!valueItemsItemsItem["ImpactEn"].isNull())
-			itemsObject.impactEn = valueItemsItemsItem["ImpactEn"].asString();
-		if(!valueItemsItemsItem["InsComment"].isNull())
-			itemsObject.insComment = valueItemsItemsItem["InsComment"].asString();
-		if(!valueItemsItemsItem["StartTime"].isNull())
-			itemsObject.startTime = valueItemsItemsItem["StartTime"].asString();
-		if(!valueItemsItemsItem["ModifiedTime"].isNull())
-			itemsObject.modifiedTime = valueItemsItemsItem["ModifiedTime"].asString();
 		if(!valueItemsItemsItem["AllowCancel"].isNull())
 			itemsObject.allowCancel = valueItemsItemsItem["AllowCancel"].asString();
-		if(!valueItemsItemsItem["DbType"].isNull())
-			itemsObject.dbType = valueItemsItemsItem["DbType"].asString();
+		if(!valueItemsItemsItem["AllowChange"].isNull())
+			itemsObject.allowChange = valueItemsItemsItem["AllowChange"].asString();
 		if(!valueItemsItemsItem["ChangeLevel"].isNull())
 			itemsObject.changeLevel = valueItemsItemsItem["ChangeLevel"].asString();
-		if(!valueItemsItemsItem["TaskTypeEn"].isNull())
-			itemsObject.taskTypeEn = valueItemsItemsItem["TaskTypeEn"].asString();
-		if(!valueItemsItemsItem["ResultInfo"].isNull())
-			itemsObject.resultInfo = valueItemsItemsItem["ResultInfo"].asString();
+		if(!valueItemsItemsItem["ChangeLevelEn"].isNull())
+			itemsObject.changeLevelEn = valueItemsItemsItem["ChangeLevelEn"].asString();
+		if(!valueItemsItemsItem["ChangeLevelZh"].isNull())
+			itemsObject.changeLevelZh = valueItemsItemsItem["ChangeLevelZh"].asString();
+		if(!valueItemsItemsItem["CreatedTime"].isNull())
+			itemsObject.createdTime = valueItemsItemsItem["CreatedTime"].asString();
+		if(!valueItemsItemsItem["CurrentAVZ"].isNull())
+			itemsObject.currentAVZ = valueItemsItemsItem["CurrentAVZ"].asString();
+		if(!valueItemsItemsItem["DbType"].isNull())
+			itemsObject.dbType = valueItemsItemsItem["DbType"].asString();
+		if(!valueItemsItemsItem["DbVersion"].isNull())
+			itemsObject.dbVersion = valueItemsItemsItem["DbVersion"].asString();
+		if(!valueItemsItemsItem["Deadline"].isNull())
+			itemsObject.deadline = valueItemsItemsItem["Deadline"].asString();
 		if(!valueItemsItemsItem["Id"].isNull())
 			itemsObject.id = std::stoi(valueItemsItemsItem["Id"].asString());
+		if(!valueItemsItemsItem["Impact"].isNull())
+			itemsObject.impact = valueItemsItemsItem["Impact"].asString();
+		if(!valueItemsItemsItem["ImpactEn"].isNull())
+			itemsObject.impactEn = valueItemsItemsItem["ImpactEn"].asString();
+		if(!valueItemsItemsItem["ImpactZh"].isNull())
+			itemsObject.impactZh = valueItemsItemsItem["ImpactZh"].asString();
+		if(!valueItemsItemsItem["InsComment"].isNull())
+			itemsObject.insComment = valueItemsItemsItem["InsComment"].asString();
+		if(!valueItemsItemsItem["InsName"].isNull())
+			itemsObject.insName = valueItemsItemsItem["InsName"].asString();
+		if(!valueItemsItemsItem["ModifiedTime"].isNull())
+			itemsObject.modifiedTime = valueItemsItemsItem["ModifiedTime"].asString();
+		if(!valueItemsItemsItem["PrepareInterval"].isNull())
+			itemsObject.prepareInterval = valueItemsItemsItem["PrepareInterval"].asString();
+		if(!valueItemsItemsItem["Region"].isNull())
+			itemsObject.region = valueItemsItemsItem["Region"].asString();
+		if(!valueItemsItemsItem["ResultInfo"].isNull())
+			itemsObject.resultInfo = valueItemsItemsItem["ResultInfo"].asString();
+		if(!valueItemsItemsItem["StartTime"].isNull())
+			itemsObject.startTime = valueItemsItemsItem["StartTime"].asString();
+		if(!valueItemsItemsItem["Status"].isNull())
+			itemsObject.status = std::stoi(valueItemsItemsItem["Status"].asString());
+		if(!valueItemsItemsItem["SwitchTime"].isNull())
+			itemsObject.switchTime = valueItemsItemsItem["SwitchTime"].asString();
 		if(!valueItemsItemsItem["TaskParams"].isNull())
 			itemsObject.taskParams = valueItemsItemsItem["TaskParams"].asString();
+		if(!valueItemsItemsItem["TaskType"].isNull())
+			itemsObject.taskType = valueItemsItemsItem["TaskType"].asString();
+		if(!valueItemsItemsItem["TaskTypeEn"].isNull())
+			itemsObject.taskTypeEn = valueItemsItemsItem["TaskTypeEn"].asString();
+		if(!valueItemsItemsItem["TaskTypeZh"].isNull())
+			itemsObject.taskTypeZh = valueItemsItemsItem["TaskTypeZh"].asString();
 		auto allSubInsNames = value["SubInsNames"]["SubInsNames"];
 		for (auto value : allSubInsNames)
 			itemsObject.subInsNames.push_back(value.asString());

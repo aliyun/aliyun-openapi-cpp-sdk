@@ -43,22 +43,22 @@ void DescribeSlotsResult::parse(const std::string &payload)
 	for (auto valueSlotsSlot : allSlotsNode)
 	{
 		Slot slotsObject;
-		if(!valueSlotsSlot["SlotName"].isNull())
-			slotsObject.slotName = valueSlotsSlot["SlotName"].asString();
-		if(!valueSlotsSlot["Plugin"].isNull())
-			slotsObject.plugin = valueSlotsSlot["Plugin"].asString();
-		if(!valueSlotsSlot["SlotType"].isNull())
-			slotsObject.slotType = valueSlotsSlot["SlotType"].asString();
 		if(!valueSlotsSlot["Database"].isNull())
 			slotsObject.database = valueSlotsSlot["Database"].asString();
-		if(!valueSlotsSlot["Temporary"].isNull())
-			slotsObject.temporary = valueSlotsSlot["Temporary"].asString();
+		if(!valueSlotsSlot["Plugin"].isNull())
+			slotsObject.plugin = valueSlotsSlot["Plugin"].asString();
+		if(!valueSlotsSlot["SlotName"].isNull())
+			slotsObject.slotName = valueSlotsSlot["SlotName"].asString();
 		if(!valueSlotsSlot["SlotStatus"].isNull())
 			slotsObject.slotStatus = valueSlotsSlot["SlotStatus"].asString();
-		if(!valueSlotsSlot["WalDelay"].isNull())
-			slotsObject.walDelay = valueSlotsSlot["WalDelay"].asString();
+		if(!valueSlotsSlot["SlotType"].isNull())
+			slotsObject.slotType = valueSlotsSlot["SlotType"].asString();
 		if(!valueSlotsSlot["SubReplayLag"].isNull())
 			slotsObject.subReplayLag = valueSlotsSlot["SubReplayLag"].asString();
+		if(!valueSlotsSlot["Temporary"].isNull())
+			slotsObject.temporary = valueSlotsSlot["Temporary"].asString();
+		if(!valueSlotsSlot["WalDelay"].isNull())
+			slotsObject.walDelay = valueSlotsSlot["WalDelay"].asString();
 		slots_.push_back(slotsObject);
 	}
 

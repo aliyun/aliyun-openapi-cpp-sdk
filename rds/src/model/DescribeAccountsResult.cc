@@ -43,56 +43,67 @@ void DescribeAccountsResult::parse(const std::string &payload)
 	for (auto valueAccountsDBInstanceAccount : allAccountsNode)
 	{
 		DBInstanceAccount accountsObject;
-		if(!valueAccountsDBInstanceAccount["AccountStatus"].isNull())
-			accountsObject.accountStatus = valueAccountsDBInstanceAccount["AccountStatus"].asString();
 		if(!valueAccountsDBInstanceAccount["AccountDescription"].isNull())
 			accountsObject.accountDescription = valueAccountsDBInstanceAccount["AccountDescription"].asString();
-		if(!valueAccountsDBInstanceAccount["DBInstanceId"].isNull())
-			accountsObject.dBInstanceId = valueAccountsDBInstanceAccount["DBInstanceId"].asString();
-		if(!valueAccountsDBInstanceAccount["PrivExceeded"].isNull())
-			accountsObject.privExceeded = valueAccountsDBInstanceAccount["PrivExceeded"].asString();
-		if(!valueAccountsDBInstanceAccount["AccountType"].isNull())
-			accountsObject.accountType = valueAccountsDBInstanceAccount["AccountType"].asString();
 		if(!valueAccountsDBInstanceAccount["AccountName"].isNull())
 			accountsObject.accountName = valueAccountsDBInstanceAccount["AccountName"].asString();
-		if(!valueAccountsDBInstanceAccount["ValidUntil"].isNull())
-			accountsObject.validUntil = valueAccountsDBInstanceAccount["ValidUntil"].asString();
-		if(!valueAccountsDBInstanceAccount["CreateDB"].isNull())
-			accountsObject.createDB = valueAccountsDBInstanceAccount["CreateDB"].asString();
-		if(!valueAccountsDBInstanceAccount["Replication"].isNull())
-			accountsObject.replication = valueAccountsDBInstanceAccount["Replication"].asString();
-		if(!valueAccountsDBInstanceAccount["CreateRole"].isNull())
-			accountsObject.createRole = valueAccountsDBInstanceAccount["CreateRole"].asString();
+		if(!valueAccountsDBInstanceAccount["AccountStatus"].isNull())
+			accountsObject.accountStatus = valueAccountsDBInstanceAccount["AccountStatus"].asString();
+		if(!valueAccountsDBInstanceAccount["AccountType"].isNull())
+			accountsObject.accountType = valueAccountsDBInstanceAccount["AccountType"].asString();
 		if(!valueAccountsDBInstanceAccount["BypassRLS"].isNull())
 			accountsObject.bypassRLS = valueAccountsDBInstanceAccount["BypassRLS"].asString();
+		if(!valueAccountsDBInstanceAccount["CheckPolicy"].isNull())
+			accountsObject.checkPolicy = valueAccountsDBInstanceAccount["CheckPolicy"].asString() == "true";
+		if(!valueAccountsDBInstanceAccount["CreateDB"].isNull())
+			accountsObject.createDB = valueAccountsDBInstanceAccount["CreateDB"].asString();
+		if(!valueAccountsDBInstanceAccount["CreateRole"].isNull())
+			accountsObject.createRole = valueAccountsDBInstanceAccount["CreateRole"].asString();
+		if(!valueAccountsDBInstanceAccount["DBInstanceId"].isNull())
+			accountsObject.dBInstanceId = valueAccountsDBInstanceAccount["DBInstanceId"].asString();
+		if(!valueAccountsDBInstanceAccount["PasswordExpireTime"].isNull())
+			accountsObject.passwordExpireTime = valueAccountsDBInstanceAccount["PasswordExpireTime"].asString();
+		if(!valueAccountsDBInstanceAccount["PrivExceeded"].isNull())
+			accountsObject.privExceeded = valueAccountsDBInstanceAccount["PrivExceeded"].asString();
+		if(!valueAccountsDBInstanceAccount["Replication"].isNull())
+			accountsObject.replication = valueAccountsDBInstanceAccount["Replication"].asString();
+		if(!valueAccountsDBInstanceAccount["ValidUntil"].isNull())
+			accountsObject.validUntil = valueAccountsDBInstanceAccount["ValidUntil"].asString();
 		auto allDatabasePrivilegesNode = valueAccountsDBInstanceAccount["DatabasePrivileges"]["DatabasePrivilege"];
 		for (auto valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege : allDatabasePrivilegesNode)
 		{
 			DBInstanceAccount::DatabasePrivilege databasePrivilegesObject;
-			if(!valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["DBName"].isNull())
-				databasePrivilegesObject.dBName = valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["DBName"].asString();
 			if(!valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].isNull())
 				databasePrivilegesObject.accountPrivilege = valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].asString();
 			if(!valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilegeDetail"].isNull())
 				databasePrivilegesObject.accountPrivilegeDetail = valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilegeDetail"].asString();
+			if(!valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["DBName"].isNull())
+				databasePrivilegesObject.dBName = valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["DBName"].asString();
 			accountsObject.databasePrivileges.push_back(databasePrivilegesObject);
 		}
 		accounts_.push_back(accountsObject);
 	}
-	if(!value["SystemAdminAccountStatus"].isNull())
-		systemAdminAccountStatus_ = value["SystemAdminAccountStatus"].asString();
-	if(!value["SystemAdminAccountFirstActivationTime"].isNull())
-		systemAdminAccountFirstActivationTime_ = value["SystemAdminAccountFirstActivationTime"].asString();
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["SystemAdminAccountFirstActivationTime"].isNull())
+		systemAdminAccountFirstActivationTime_ = value["SystemAdminAccountFirstActivationTime"].asString();
+	if(!value["SystemAdminAccountStatus"].isNull())
+		systemAdminAccountStatus_ = value["SystemAdminAccountStatus"].asString();
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
 int DescribeAccountsResult::getTotalRecordCount()const
 {
 	return totalRecordCount_;
+}
+
+std::string DescribeAccountsResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 int DescribeAccountsResult::getPageNumber()const

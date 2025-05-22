@@ -39,49 +39,53 @@ void DescribePostgresExtensionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUninstalledExtensionsNode = value["UninstalledExtensions"]["Extension"];
-	for (auto valueUninstalledExtensionsExtension : allUninstalledExtensionsNode)
-	{
-		Extension uninstalledExtensionsObject;
-		if(!valueUninstalledExtensionsExtension["Name"].isNull())
-			uninstalledExtensionsObject.name = valueUninstalledExtensionsExtension["Name"].asString();
-		if(!valueUninstalledExtensionsExtension["DefaultVersion"].isNull())
-			uninstalledExtensionsObject.defaultVersion = valueUninstalledExtensionsExtension["DefaultVersion"].asString();
-		if(!valueUninstalledExtensionsExtension["InstalledVersion"].isNull())
-			uninstalledExtensionsObject.installedVersion = valueUninstalledExtensionsExtension["InstalledVersion"].asString();
-		if(!valueUninstalledExtensionsExtension["Comment"].isNull())
-			uninstalledExtensionsObject.comment = valueUninstalledExtensionsExtension["Comment"].asString();
-		if(!valueUninstalledExtensionsExtension["Owner"].isNull())
-			uninstalledExtensionsObject.owner = valueUninstalledExtensionsExtension["Owner"].asString();
-		if(!valueUninstalledExtensionsExtension["Priority"].isNull())
-			uninstalledExtensionsObject.priority = valueUninstalledExtensionsExtension["Priority"].asString();
-		if(!valueUninstalledExtensionsExtension["Requires"].isNull())
-			uninstalledExtensionsObject.requires = valueUninstalledExtensionsExtension["Requires"].asString();
-		if(!valueUninstalledExtensionsExtension["Category"].isNull())
-			uninstalledExtensionsObject.category = valueUninstalledExtensionsExtension["Category"].asString();
-		uninstalledExtensions_.push_back(uninstalledExtensionsObject);
-	}
 	auto allInstalledExtensionsNode = value["InstalledExtensions"]["Extension"];
 	for (auto valueInstalledExtensionsExtension : allInstalledExtensionsNode)
 	{
 		Extension installedExtensionsObject;
-		if(!valueInstalledExtensionsExtension["Name"].isNull())
-			installedExtensionsObject.name = valueInstalledExtensionsExtension["Name"].asString();
+		if(!valueInstalledExtensionsExtension["Category"].isNull())
+			installedExtensionsObject.category = valueInstalledExtensionsExtension["Category"].asString();
+		if(!valueInstalledExtensionsExtension["Comment"].isNull())
+			installedExtensionsObject.comment = valueInstalledExtensionsExtension["Comment"].asString();
 		if(!valueInstalledExtensionsExtension["DefaultVersion"].isNull())
 			installedExtensionsObject.defaultVersion = valueInstalledExtensionsExtension["DefaultVersion"].asString();
 		if(!valueInstalledExtensionsExtension["InstalledVersion"].isNull())
 			installedExtensionsObject.installedVersion = valueInstalledExtensionsExtension["InstalledVersion"].asString();
-		if(!valueInstalledExtensionsExtension["Comment"].isNull())
-			installedExtensionsObject.comment = valueInstalledExtensionsExtension["Comment"].asString();
+		if(!valueInstalledExtensionsExtension["Name"].isNull())
+			installedExtensionsObject.name = valueInstalledExtensionsExtension["Name"].asString();
 		if(!valueInstalledExtensionsExtension["Owner"].isNull())
 			installedExtensionsObject.owner = valueInstalledExtensionsExtension["Owner"].asString();
 		if(!valueInstalledExtensionsExtension["Priority"].isNull())
 			installedExtensionsObject.priority = valueInstalledExtensionsExtension["Priority"].asString();
 		if(!valueInstalledExtensionsExtension["Requires"].isNull())
 			installedExtensionsObject.requires = valueInstalledExtensionsExtension["Requires"].asString();
-		if(!valueInstalledExtensionsExtension["Category"].isNull())
-			installedExtensionsObject.category = valueInstalledExtensionsExtension["Category"].asString();
+		if(!valueInstalledExtensionsExtension["Uid"].isNull())
+			installedExtensionsObject.uid = valueInstalledExtensionsExtension["Uid"].asString();
 		installedExtensions_.push_back(installedExtensionsObject);
+	}
+	auto allUninstalledExtensionsNode = value["UninstalledExtensions"]["Extension"];
+	for (auto valueUninstalledExtensionsExtension : allUninstalledExtensionsNode)
+	{
+		Extension uninstalledExtensionsObject;
+		if(!valueUninstalledExtensionsExtension["Category"].isNull())
+			uninstalledExtensionsObject.category = valueUninstalledExtensionsExtension["Category"].asString();
+		if(!valueUninstalledExtensionsExtension["Comment"].isNull())
+			uninstalledExtensionsObject.comment = valueUninstalledExtensionsExtension["Comment"].asString();
+		if(!valueUninstalledExtensionsExtension["DefaultVersion"].isNull())
+			uninstalledExtensionsObject.defaultVersion = valueUninstalledExtensionsExtension["DefaultVersion"].asString();
+		if(!valueUninstalledExtensionsExtension["InstalledVersion"].isNull())
+			uninstalledExtensionsObject.installedVersion = valueUninstalledExtensionsExtension["InstalledVersion"].asString();
+		if(!valueUninstalledExtensionsExtension["Name"].isNull())
+			uninstalledExtensionsObject.name = valueUninstalledExtensionsExtension["Name"].asString();
+		if(!valueUninstalledExtensionsExtension["Owner"].isNull())
+			uninstalledExtensionsObject.owner = valueUninstalledExtensionsExtension["Owner"].asString();
+		if(!valueUninstalledExtensionsExtension["Priority"].isNull())
+			uninstalledExtensionsObject.priority = valueUninstalledExtensionsExtension["Priority"].asString();
+		if(!valueUninstalledExtensionsExtension["Requires"].isNull())
+			uninstalledExtensionsObject.requires = valueUninstalledExtensionsExtension["Requires"].asString();
+		if(!valueUninstalledExtensionsExtension["Uid"].isNull())
+			uninstalledExtensionsObject.uid = valueUninstalledExtensionsExtension["Uid"].asString();
+		uninstalledExtensions_.push_back(uninstalledExtensionsObject);
 	}
 	if(!value["Overview"].isNull())
 		overview_ = value["Overview"].asString();

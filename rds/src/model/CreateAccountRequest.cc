@@ -124,3 +124,12 @@ void CreateAccountRequest::setAccountPassword(const std::string &accountPassword
   setParameter(std::string("AccountPassword"), accountPassword);
 }
 
+bool CreateAccountRequest::getCheckPolicy() const {
+  return checkPolicy_;
+}
+
+void CreateAccountRequest::setCheckPolicy(bool checkPolicy) {
+  checkPolicy_ = checkPolicy;
+  setParameter(std::string("CheckPolicy"), checkPolicy ? "true" : "false");
+}
+

@@ -39,12 +39,12 @@ void ModifyEventInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorEventId"].isNull())
 		errorEventId_ = value["ErrorEventId"].asString();
 	if(!value["SuccessCount"].isNull())
 		successCount_ = std::stoi(value["SuccessCount"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["SuccessEventId"].isNull())
 		successEventId_ = value["SuccessEventId"].asString();
 

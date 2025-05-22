@@ -34,13 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct ParameterGroup
 				{
-					std::string parameterGroupId;
 					std::string engineVersion;
+					std::string parameterGroupId;
 					int forceRestart;
 					std::string parameterGroupName;
-					std::string parameterGroupDesc;
 					std::string createTime;
 					int paramCounts;
+					std::string parameterGroupDesc;
 					int parameterGroupType;
 					std::string updateTime;
 					std::string engine;

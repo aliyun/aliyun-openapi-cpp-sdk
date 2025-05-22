@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct ParameterChangeLog
 				{
 					std::string status;
-					std::string newParameterValue;
 					std::string modifyTime;
+					std::string newParameterValue;
 					std::string oldParameterValue;
 					std::string parameterName;
 				};
@@ -46,8 +46,8 @@ namespace AlibabaCloud
 				explicit DescribeModifyParameterLogResult(const std::string &payload);
 				~DescribeModifyParameterLogResult();
 				int getTotalRecordCount()const;
-				int getPageRecordCount()const;
 				std::string getEngineVersion()const;
+				int getPageRecordCount()const;
 				std::string getDBInstanceId()const;
 				int getPageNumber()const;
 				std::vector<ParameterChangeLog> getItems()const;
@@ -57,8 +57,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int totalRecordCount_;
-				int pageRecordCount_;
 				std::string engineVersion_;
+				int pageRecordCount_;
 				std::string dBInstanceId_;
 				int pageNumber_;
 				std::vector<ParameterChangeLog> items_;

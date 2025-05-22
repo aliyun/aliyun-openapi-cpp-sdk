@@ -32,27 +32,27 @@ public:
 	~ModifySecurityGroupConfigurationRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getSecurityGroupId() const;
 	void setSecurityGroupId(const std::string &securityGroupId);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
 	long resourceOwnerId_;
-	std::string resourceOwnerAccount_;
 	std::string securityGroupId_;
-	long ownerId_;
 	std::string accessKeyId_;
 	std::string regionId_;
 	std::string dBInstanceId_;
+	std::string resourceOwnerAccount_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Rds

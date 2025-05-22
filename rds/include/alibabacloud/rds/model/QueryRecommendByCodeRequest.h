@@ -30,8 +30,8 @@ class ALIBABACLOUD_RDS_EXPORT QueryRecommendByCodeRequest : public RpcServiceReq
 public:
 	QueryRecommendByCodeRequest();
 	~QueryRecommendByCodeRequest();
-	std::string getResourceOwnerId() const;
-	void setResourceOwnerId(const std::string &resourceOwnerId);
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getCode() const;
 	void setCode(const std::string &code);
 	std::string getAccessKeyId() const;
@@ -46,7 +46,7 @@ public:
 	void setOwnerId(const std::string &ownerId);
 
 private:
-	std::string resourceOwnerId_;
+	long resourceOwnerId_;
 	std::string code_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;

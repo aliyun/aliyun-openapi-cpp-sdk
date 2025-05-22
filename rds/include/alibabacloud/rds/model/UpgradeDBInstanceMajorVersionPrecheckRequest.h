@@ -40,6 +40,8 @@ public:
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getUpgradeMode() const;
+	void setUpgradeMode(const std::string &upgradeMode);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
@@ -53,6 +55,7 @@ private:
 	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
+	std::string upgradeMode_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string targetMajorVersion_;

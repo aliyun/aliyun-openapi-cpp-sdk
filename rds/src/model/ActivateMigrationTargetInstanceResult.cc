@@ -41,12 +41,12 @@ void ActivateMigrationTargetInstanceResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["DBInstanceName"].isNull())
 		dBInstanceName_ = value["DBInstanceName"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = std::stol(value["TaskId"].asString());
 	if(!value["SourceIpAddress"].isNull())
 		sourceIpAddress_ = value["SourceIpAddress"].asString();
 	if(!value["SourcePort"].isNull())
 		sourcePort_ = std::stol(value["SourcePort"].asString());
+	if(!value["TaskId"].isNull())
+		taskId_ = std::stol(value["TaskId"].asString());
 
 }
 

@@ -43,20 +43,20 @@ void DescribePGHbaConfigResult::parse(const std::string &payload)
 	for (auto valueDefaultHbaItemsHbaItem : allDefaultHbaItemsNode)
 	{
 		HbaItem defaultHbaItemsObject;
-		if(!valueDefaultHbaItemsHbaItem["Type"].isNull())
-			defaultHbaItemsObject.type = valueDefaultHbaItemsHbaItem["Type"].asString();
-		if(!valueDefaultHbaItemsHbaItem["Mask"].isNull())
-			defaultHbaItemsObject.mask = valueDefaultHbaItemsHbaItem["Mask"].asString();
-		if(!valueDefaultHbaItemsHbaItem["Database"].isNull())
-			defaultHbaItemsObject.database = valueDefaultHbaItemsHbaItem["Database"].asString();
-		if(!valueDefaultHbaItemsHbaItem["PriorityId"].isNull())
-			defaultHbaItemsObject.priorityId = std::stoi(valueDefaultHbaItemsHbaItem["PriorityId"].asString());
 		if(!valueDefaultHbaItemsHbaItem["Address"].isNull())
 			defaultHbaItemsObject.address = valueDefaultHbaItemsHbaItem["Address"].asString();
-		if(!valueDefaultHbaItemsHbaItem["Option"].isNull())
-			defaultHbaItemsObject.option = valueDefaultHbaItemsHbaItem["Option"].asString();
+		if(!valueDefaultHbaItemsHbaItem["Database"].isNull())
+			defaultHbaItemsObject.database = valueDefaultHbaItemsHbaItem["Database"].asString();
+		if(!valueDefaultHbaItemsHbaItem["Mask"].isNull())
+			defaultHbaItemsObject.mask = valueDefaultHbaItemsHbaItem["Mask"].asString();
 		if(!valueDefaultHbaItemsHbaItem["Method"].isNull())
 			defaultHbaItemsObject.method = valueDefaultHbaItemsHbaItem["Method"].asString();
+		if(!valueDefaultHbaItemsHbaItem["Option"].isNull())
+			defaultHbaItemsObject.option = valueDefaultHbaItemsHbaItem["Option"].asString();
+		if(!valueDefaultHbaItemsHbaItem["PriorityId"].isNull())
+			defaultHbaItemsObject.priorityId = std::stoi(valueDefaultHbaItemsHbaItem["PriorityId"].asString());
+		if(!valueDefaultHbaItemsHbaItem["Type"].isNull())
+			defaultHbaItemsObject.type = valueDefaultHbaItemsHbaItem["Type"].asString();
 		if(!valueDefaultHbaItemsHbaItem["User"].isNull())
 			defaultHbaItemsObject.user = valueDefaultHbaItemsHbaItem["User"].asString();
 		defaultHbaItems_.push_back(defaultHbaItemsObject);
@@ -65,32 +65,32 @@ void DescribePGHbaConfigResult::parse(const std::string &payload)
 	for (auto valueRunningHbaItemsHbaItem : allRunningHbaItemsNode)
 	{
 		HbaItem runningHbaItemsObject;
-		if(!valueRunningHbaItemsHbaItem["Type"].isNull())
-			runningHbaItemsObject.type = valueRunningHbaItemsHbaItem["Type"].asString();
-		if(!valueRunningHbaItemsHbaItem["Mask"].isNull())
-			runningHbaItemsObject.mask = valueRunningHbaItemsHbaItem["Mask"].asString();
-		if(!valueRunningHbaItemsHbaItem["Database"].isNull())
-			runningHbaItemsObject.database = valueRunningHbaItemsHbaItem["Database"].asString();
-		if(!valueRunningHbaItemsHbaItem["PriorityId"].isNull())
-			runningHbaItemsObject.priorityId = std::stoi(valueRunningHbaItemsHbaItem["PriorityId"].asString());
 		if(!valueRunningHbaItemsHbaItem["Address"].isNull())
 			runningHbaItemsObject.address = valueRunningHbaItemsHbaItem["Address"].asString();
-		if(!valueRunningHbaItemsHbaItem["Option"].isNull())
-			runningHbaItemsObject.option = valueRunningHbaItemsHbaItem["Option"].asString();
+		if(!valueRunningHbaItemsHbaItem["Database"].isNull())
+			runningHbaItemsObject.database = valueRunningHbaItemsHbaItem["Database"].asString();
+		if(!valueRunningHbaItemsHbaItem["Mask"].isNull())
+			runningHbaItemsObject.mask = valueRunningHbaItemsHbaItem["Mask"].asString();
 		if(!valueRunningHbaItemsHbaItem["Method"].isNull())
 			runningHbaItemsObject.method = valueRunningHbaItemsHbaItem["Method"].asString();
+		if(!valueRunningHbaItemsHbaItem["Option"].isNull())
+			runningHbaItemsObject.option = valueRunningHbaItemsHbaItem["Option"].asString();
+		if(!valueRunningHbaItemsHbaItem["PriorityId"].isNull())
+			runningHbaItemsObject.priorityId = std::stoi(valueRunningHbaItemsHbaItem["PriorityId"].asString());
+		if(!valueRunningHbaItemsHbaItem["Type"].isNull())
+			runningHbaItemsObject.type = valueRunningHbaItemsHbaItem["Type"].asString();
 		if(!valueRunningHbaItemsHbaItem["User"].isNull())
 			runningHbaItemsObject.user = valueRunningHbaItemsHbaItem["User"].asString();
 		runningHbaItems_.push_back(runningHbaItemsObject);
 	}
-	if(!value["HbaModifyTime"].isNull())
-		hbaModifyTime_ = value["HbaModifyTime"].asString();
-	if(!value["ModifyStatusReason"].isNull())
-		modifyStatusReason_ = value["ModifyStatusReason"].asString();
-	if(!value["LastModifyStatus"].isNull())
-		lastModifyStatus_ = value["LastModifyStatus"].asString();
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["HbaModifyTime"].isNull())
+		hbaModifyTime_ = value["HbaModifyTime"].asString();
+	if(!value["LastModifyStatus"].isNull())
+		lastModifyStatus_ = value["LastModifyStatus"].asString();
+	if(!value["ModifyStatusReason"].isNull())
+		modifyStatusReason_ = value["ModifyStatusReason"].asString();
 
 }
 

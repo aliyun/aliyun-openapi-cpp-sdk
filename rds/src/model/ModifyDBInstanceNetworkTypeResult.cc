@@ -39,10 +39,10 @@ void ModifyDBInstanceNetworkTypeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
 	if(!value["ConnectionString"].isNull())
 		connectionString_ = value["ConnectionString"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
 }
 

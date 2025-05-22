@@ -40,10 +40,10 @@ void ModifyDBInstanceEndpointAddressResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["DBInstanceName"].isNull())
-		data_.dBInstanceName = dataNode["DBInstanceName"].asString();
 	if(!dataNode["DBInstanceEndpointId"].isNull())
 		data_.dBInstanceEndpointId = dataNode["DBInstanceEndpointId"].asString();
+	if(!dataNode["DBInstanceName"].isNull())
+		data_.dBInstanceName = dataNode["DBInstanceName"].asString();
 
 }
 

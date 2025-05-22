@@ -41,10 +41,10 @@ void CreateDBNodesResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
 	if(!value["NodeIds"].isNull())
 		nodeIds_ = value["NodeIds"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
 
 }
 

@@ -36,20 +36,20 @@ namespace AlibabaCloud
 				{
 					struct DBInstanceEndpoint
 					{
+						struct AddressItem
+						{
+							std::string vpcId;
+							std::string ipType;
+							std::string port;
+							std::string vSwitchId;
+							std::string ipAddress;
+							std::string connectionString;
+						};
 						struct NodeItem
 						{
 							std::string dBInstanceId;
 							std::string nodeId;
 							int weight;
-						};
-						struct AddressItem
-						{
-							std::string vpcId;
-							std::string ipType;
-							std::string vSwitchId;
-							std::string port;
-							std::string ipAddress;
-							std::string connectionString;
 						};
 						std::vector<DBInstanceEndpoint::NodeItem> nodeItems;
 						std::string endpointId;

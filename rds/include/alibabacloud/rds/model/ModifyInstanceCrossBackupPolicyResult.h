@@ -37,11 +37,11 @@ namespace AlibabaCloud
 				ModifyInstanceCrossBackupPolicyResult();
 				explicit ModifyInstanceCrossBackupPolicyResult(const std::string &payload);
 				~ModifyInstanceCrossBackupPolicyResult();
-				std::string getStorageOwner()const;
 				std::string getLogBackupEnabled()const;
+				std::string getStorageOwner()const;
 				std::string getBackupEnabled()const;
-				std::string getStorageType()const;
 				std::string getCrossBackupType()const;
+				std::string getStorageType()const;
 				std::string getEndpoint()const;
 				std::string getDBInstanceId()const;
 				std::string getCrossBackupRegion()const;
@@ -52,11 +52,11 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string storageOwner_;
 				std::string logBackupEnabled_;
+				std::string storageOwner_;
 				std::string backupEnabled_;
-				std::string storageType_;
 				std::string crossBackupType_;
+				std::string storageType_;
 				std::string endpoint_;
 				std::string dBInstanceId_;
 				std::string crossBackupRegion_;

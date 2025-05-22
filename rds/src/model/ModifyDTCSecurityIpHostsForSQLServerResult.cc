@@ -41,21 +41,21 @@ void ModifyDTCSecurityIpHostsForSQLServerResult::parse(const std::string &payloa
 	setRequestId(value["RequestId"].asString());
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
 	if(!value["DTCSetResult"].isNull())
 		dTCSetResult_ = value["DTCSetResult"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
-}
-
-std::string ModifyDTCSecurityIpHostsForSQLServerResult::getTaskId()const
-{
-	return taskId_;
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerResult::getDTCSetResult()const
 {
 	return dTCSetResult_;
+}
+
+std::string ModifyDTCSecurityIpHostsForSQLServerResult::getTaskId()const
+{
+	return taskId_;
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerResult::getDBInstanceId()const

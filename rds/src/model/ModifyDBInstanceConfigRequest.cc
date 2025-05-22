@@ -52,6 +52,15 @@ void ModifyDBInstanceConfigRequest::setAccessKeyId(const std::string &accessKeyI
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBInstanceConfigRequest::getSwitchTimeMode() const {
+  return switchTimeMode_;
+}
+
+void ModifyDBInstanceConfigRequest::setSwitchTimeMode(const std::string &switchTimeMode) {
+  switchTimeMode_ = switchTimeMode;
+  setParameter(std::string("SwitchTimeMode"), switchTimeMode);
+}
+
 std::string ModifyDBInstanceConfigRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
@@ -86,6 +95,15 @@ std::string ModifyDBInstanceConfigRequest::getDBInstanceId() const {
 void ModifyDBInstanceConfigRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string ModifyDBInstanceConfigRequest::getSwitchTime() const {
+  return switchTime_;
+}
+
+void ModifyDBInstanceConfigRequest::setSwitchTime(const std::string &switchTime) {
+  switchTime_ = switchTime;
+  setParameter(std::string("SwitchTime"), switchTime);
 }
 
 std::string ModifyDBInstanceConfigRequest::getResourceOwnerAccount() const {

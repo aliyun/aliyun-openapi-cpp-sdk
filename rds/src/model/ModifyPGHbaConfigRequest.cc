@@ -121,8 +121,8 @@ void ModifyPGHbaConfigRequest::setHbaItem(const std::vector<ModifyPGHbaConfigReq
     setParameter(hbaItemObjStr + ".Type", hbaItemObj.type);
     setParameter(hbaItemObjStr + ".User", hbaItemObj.user);
     setParameter(hbaItemObjStr + ".Mask", hbaItemObj.mask);
-    setParameter(hbaItemObjStr + ".PriorityId", std::to_string(hbaItemObj.priorityId));
     setParameter(hbaItemObjStr + ".Option", hbaItemObj.option);
+    setParameter(hbaItemObjStr + ".PriorityId", std::to_string(hbaItemObj.priorityId));
   }
 }
 

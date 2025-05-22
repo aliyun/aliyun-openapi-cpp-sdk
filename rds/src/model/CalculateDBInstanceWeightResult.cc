@@ -43,18 +43,18 @@ void CalculateDBInstanceWeightResult::parse(const std::string &payload)
 	for (auto valueItemsDBInstanceWeight : allItemsNode)
 	{
 		DBInstanceWeight itemsObject;
-		if(!valueItemsDBInstanceWeight["ReadonlyInstanceSQLDelayedTime"].isNull())
-			itemsObject.readonlyInstanceSQLDelayedTime = valueItemsDBInstanceWeight["ReadonlyInstanceSQLDelayedTime"].asString();
 		if(!valueItemsDBInstanceWeight["Availability"].isNull())
 			itemsObject.availability = valueItemsDBInstanceWeight["Availability"].asString();
-		if(!valueItemsDBInstanceWeight["Weight"].isNull())
-			itemsObject.weight = valueItemsDBInstanceWeight["Weight"].asString();
-		if(!valueItemsDBInstanceWeight["DBInstanceType"].isNull())
-			itemsObject.dBInstanceType = valueItemsDBInstanceWeight["DBInstanceType"].asString();
 		if(!valueItemsDBInstanceWeight["DBInstanceId"].isNull())
 			itemsObject.dBInstanceId = valueItemsDBInstanceWeight["DBInstanceId"].asString();
+		if(!valueItemsDBInstanceWeight["DBInstanceType"].isNull())
+			itemsObject.dBInstanceType = valueItemsDBInstanceWeight["DBInstanceType"].asString();
+		if(!valueItemsDBInstanceWeight["ReadonlyInstanceSQLDelayedTime"].isNull())
+			itemsObject.readonlyInstanceSQLDelayedTime = valueItemsDBInstanceWeight["ReadonlyInstanceSQLDelayedTime"].asString();
 		if(!valueItemsDBInstanceWeight["Role"].isNull())
 			itemsObject.role = valueItemsDBInstanceWeight["Role"].asString();
+		if(!valueItemsDBInstanceWeight["Weight"].isNull())
+			itemsObject.weight = valueItemsDBInstanceWeight["Weight"].asString();
 		items_.push_back(itemsObject);
 	}
 

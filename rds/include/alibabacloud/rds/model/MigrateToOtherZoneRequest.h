@@ -52,6 +52,8 @@ public:
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getSwitchTime() const;
 	void setSwitchTime(const std::string &switchTime);
+	std::string getDBInstanceStorageType() const;
+	void setDBInstanceStorageType(const std::string &dBInstanceStorageType);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -81,6 +83,7 @@ private:
 	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string switchTime_;
+	std::string dBInstanceStorageType_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string eventType;
 					std::string eventTime;
 					std::string resourceName;
-					std::string eventUserType;
 					int eventId;
+					std::string eventUserType;
 					std::string resourceType;
 					std::string eventName;
 					std::string regionId;

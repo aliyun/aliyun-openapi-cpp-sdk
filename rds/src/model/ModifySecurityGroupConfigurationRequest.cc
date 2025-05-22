@@ -34,15 +34,6 @@ void ModifySecurityGroupConfigurationRequest::setResourceOwnerId(long resourceOw
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifySecurityGroupConfigurationRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void ModifySecurityGroupConfigurationRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string ModifySecurityGroupConfigurationRequest::getSecurityGroupId() const {
   return securityGroupId_;
 }
@@ -50,15 +41,6 @@ std::string ModifySecurityGroupConfigurationRequest::getSecurityGroupId() const 
 void ModifySecurityGroupConfigurationRequest::setSecurityGroupId(const std::string &securityGroupId) {
   securityGroupId_ = securityGroupId;
   setParameter(std::string("SecurityGroupId"), securityGroupId);
-}
-
-long ModifySecurityGroupConfigurationRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ModifySecurityGroupConfigurationRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 std::string ModifySecurityGroupConfigurationRequest::getAccessKeyId() const {
@@ -86,5 +68,23 @@ std::string ModifySecurityGroupConfigurationRequest::getDBInstanceId() const {
 void ModifySecurityGroupConfigurationRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string ModifySecurityGroupConfigurationRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void ModifySecurityGroupConfigurationRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long ModifySecurityGroupConfigurationRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ModifySecurityGroupConfigurationRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

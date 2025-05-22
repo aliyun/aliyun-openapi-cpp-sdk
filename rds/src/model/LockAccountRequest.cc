@@ -34,24 +34,6 @@ void LockAccountRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string LockAccountRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void LockAccountRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long LockAccountRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void LockAccountRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string LockAccountRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,5 +68,23 @@ std::string LockAccountRequest::getDBInstanceId() const {
 void LockAccountRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string LockAccountRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void LockAccountRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long LockAccountRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void LockAccountRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

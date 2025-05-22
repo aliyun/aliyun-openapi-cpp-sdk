@@ -43,15 +43,6 @@ void MigrateConnectionToOtherZoneRequest::setConnectionString(const std::string 
   setParameter(std::string("ConnectionString"), connectionString);
 }
 
-long MigrateConnectionToOtherZoneRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void MigrateConnectionToOtherZoneRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string MigrateConnectionToOtherZoneRequest::getRegionId() const {
   return regionId_;
 }
@@ -61,15 +52,6 @@ void MigrateConnectionToOtherZoneRequest::setRegionId(const std::string &regionI
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string MigrateConnectionToOtherZoneRequest::getZoneId() const {
-  return zoneId_;
-}
-
-void MigrateConnectionToOtherZoneRequest::setZoneId(const std::string &zoneId) {
-  zoneId_ = zoneId;
-  setParameter(std::string("ZoneId"), zoneId);
-}
-
 std::string MigrateConnectionToOtherZoneRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }
@@ -77,5 +59,23 @@ std::string MigrateConnectionToOtherZoneRequest::getDBInstanceId() const {
 void MigrateConnectionToOtherZoneRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+long MigrateConnectionToOtherZoneRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void MigrateConnectionToOtherZoneRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string MigrateConnectionToOtherZoneRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void MigrateConnectionToOtherZoneRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
 }
 

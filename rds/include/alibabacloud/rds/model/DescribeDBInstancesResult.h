@@ -38,15 +38,17 @@ namespace AlibabaCloud
 					{
 						std::string dBInstanceId;
 					};
+					std::string blueGreenDeploymentName;
 					int dBInstanceMemory;
+					std::string greenInstanceName;
 					std::string resourceGroupId;
-					std::string destroyTime;
 					std::string dedicatedHostNameForMaster;
+					std::string destroyTime;
 					std::string dBInstanceType;
 					std::string dedicatedHostZoneIdForMaster;
 					bool mutriORsignle;
-					std::string instanceNetworkType;
 					std::string generalGroupName;
+					std::string instanceNetworkType;
 					std::string replicateId;
 					std::string dedicatedHostIdForLog;
 					std::string autoUpgradeMinorVersion;
@@ -61,10 +63,10 @@ namespace AlibabaCloud
 					std::string vSwitchId;
 					std::string dedicatedHostGroupName;
 					int tipsLevel;
-					std::string payType;
+					bool deletionProtection;
 					std::string guardDBInstanceId;
 					std::string lockMode;
-					bool deletionProtection;
+					std::string payType;
 					int switchWeight;
 					int insId;
 					std::string dedicatedHostIdForSlave;
@@ -83,6 +85,7 @@ namespace AlibabaCloud
 					std::string dedicatedHostGroupId;
 					std::string tempDBInstanceId;
 					std::string dBInstanceCPU;
+					std::string blueInstanceName;
 					std::vector<DBInstance::ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 					std::string dedicatedHostNameForSlave;
 					bool burstingEnabled;

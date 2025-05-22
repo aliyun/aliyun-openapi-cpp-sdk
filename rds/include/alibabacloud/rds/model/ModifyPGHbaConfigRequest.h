@@ -35,8 +35,8 @@ public:
 		std::string type;
 		std::string user;
 		std::string mask;
-		int priorityId;
 		std::string option;
+		int priorityId;
 	};
 	ModifyPGHbaConfigRequest();
 	~ModifyPGHbaConfigRequest();

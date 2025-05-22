@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string description;
 					std::string endTime;
 					std::string migrateTaskId;
-					std::string createTime;
 					std::string backupMode;
+					std::string createTime;
 					std::string isDBReplaced;
 					std::string dBName;
 				};

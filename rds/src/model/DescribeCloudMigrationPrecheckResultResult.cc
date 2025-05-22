@@ -43,40 +43,40 @@ void DescribeCloudMigrationPrecheckResultResult::parse(const std::string &payloa
 	for (auto valueItemsmigrateCloudTaskList : allItemsNode)
 	{
 		MigrateCloudTaskList itemsObject;
+		if(!valueItemsmigrateCloudTaskList["Detail"].isNull())
+			itemsObject.detail = valueItemsmigrateCloudTaskList["Detail"].asString();
 		if(!valueItemsmigrateCloudTaskList["GmtCreated"].isNull())
 			itemsObject.gmtCreated = valueItemsmigrateCloudTaskList["GmtCreated"].asString();
 		if(!valueItemsmigrateCloudTaskList["GmtModified"].isNull())
 			itemsObject.gmtModified = valueItemsmigrateCloudTaskList["GmtModified"].asString();
-		if(!valueItemsmigrateCloudTaskList["TaskId"].isNull())
-			itemsObject.taskId = std::stol(valueItemsmigrateCloudTaskList["TaskId"].asString());
-		if(!valueItemsmigrateCloudTaskList["TaskName"].isNull())
-			itemsObject.taskName = valueItemsmigrateCloudTaskList["TaskName"].asString();
-		if(!valueItemsmigrateCloudTaskList["Status"].isNull())
-			itemsObject.status = valueItemsmigrateCloudTaskList["Status"].asString();
+		if(!valueItemsmigrateCloudTaskList["SourceAccount"].isNull())
+			itemsObject.sourceAccount = valueItemsmigrateCloudTaskList["SourceAccount"].asString();
 		if(!valueItemsmigrateCloudTaskList["SourceCategory"].isNull())
 			itemsObject.sourceCategory = valueItemsmigrateCloudTaskList["SourceCategory"].asString();
 		if(!valueItemsmigrateCloudTaskList["SourceIpAddress"].isNull())
 			itemsObject.sourceIpAddress = valueItemsmigrateCloudTaskList["SourceIpAddress"].asString();
-		if(!valueItemsmigrateCloudTaskList["SourcePort"].isNull())
-			itemsObject.sourcePort = std::stol(valueItemsmigrateCloudTaskList["SourcePort"].asString());
-		if(!valueItemsmigrateCloudTaskList["SourceAccount"].isNull())
-			itemsObject.sourceAccount = valueItemsmigrateCloudTaskList["SourceAccount"].asString();
 		if(!valueItemsmigrateCloudTaskList["SourcePassword"].isNull())
 			itemsObject.sourcePassword = valueItemsmigrateCloudTaskList["SourcePassword"].asString();
+		if(!valueItemsmigrateCloudTaskList["SourcePort"].isNull())
+			itemsObject.sourcePort = std::stol(valueItemsmigrateCloudTaskList["SourcePort"].asString());
+		if(!valueItemsmigrateCloudTaskList["Status"].isNull())
+			itemsObject.status = valueItemsmigrateCloudTaskList["Status"].asString();
 		if(!valueItemsmigrateCloudTaskList["TargetEip"].isNull())
 			itemsObject.targetEip = valueItemsmigrateCloudTaskList["TargetEip"].asString();
 		if(!valueItemsmigrateCloudTaskList["TargetInstanceName"].isNull())
 			itemsObject.targetInstanceName = valueItemsmigrateCloudTaskList["TargetInstanceName"].asString();
-		if(!valueItemsmigrateCloudTaskList["Detail"].isNull())
-			itemsObject.detail = valueItemsmigrateCloudTaskList["Detail"].asString();
+		if(!valueItemsmigrateCloudTaskList["TaskId"].isNull())
+			itemsObject.taskId = std::stol(valueItemsmigrateCloudTaskList["TaskId"].asString());
+		if(!valueItemsmigrateCloudTaskList["TaskName"].isNull())
+			itemsObject.taskName = valueItemsmigrateCloudTaskList["TaskName"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["TotalSize"].isNull())
-		totalSize_ = std::stoi(value["TotalSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["TotalSize"].isNull())
+		totalSize_ = std::stoi(value["TotalSize"].asString());
 
 }
 

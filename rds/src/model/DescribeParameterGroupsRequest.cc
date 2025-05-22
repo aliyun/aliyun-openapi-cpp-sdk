@@ -34,15 +34,6 @@ void DescribeParameterGroupsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeParameterGroupsRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeParameterGroupsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 bool DescribeParameterGroupsRequest::getEnableDetail() const {
   return enableDetail_;
 }
@@ -50,15 +41,6 @@ bool DescribeParameterGroupsRequest::getEnableDetail() const {
 void DescribeParameterGroupsRequest::setEnableDetail(bool enableDetail) {
   enableDetail_ = enableDetail;
   setParameter(std::string("EnableDetail"), enableDetail ? "true" : "false");
-}
-
-long DescribeParameterGroupsRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeParameterGroupsRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 std::string DescribeParameterGroupsRequest::getAccessKeyId() const {
@@ -86,5 +68,23 @@ std::string DescribeParameterGroupsRequest::getRegionId() const {
 void DescribeParameterGroupsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeParameterGroupsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeParameterGroupsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+long DescribeParameterGroupsRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeParameterGroupsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

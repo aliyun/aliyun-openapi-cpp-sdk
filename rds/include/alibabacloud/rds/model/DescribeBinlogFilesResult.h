@@ -36,11 +36,11 @@ namespace AlibabaCloud
 				{
 					std::string downloadLink;
 					std::string logBeginTime;
-					std::string linkExpiredTime;
 					std::string checksum;
+					std::string linkExpiredTime;
 					std::string logEndTime;
-					std::string remoteStatus;
 					std::string intranetDownloadLink;
+					std::string remoteStatus;
 					std::string hostInstanceID;
 					std::string logFileName;
 					long fileSize;

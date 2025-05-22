@@ -39,12 +39,12 @@ void DescribeADInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ADStatus"].isNull())
-		aDStatus_ = value["ADStatus"].asString();
 	if(!value["ADDNS"].isNull())
 		aDDNS_ = value["ADDNS"].asString();
 	if(!value["ADServerIpAddress"].isNull())
 		aDServerIpAddress_ = value["ADServerIpAddress"].asString();
+	if(!value["ADStatus"].isNull())
+		aDStatus_ = value["ADStatus"].asString();
 	if(!value["AbnormalReason"].isNull())
 		abnormalReason_ = value["AbnormalReason"].asString();
 	if(!value["UserName"].isNull())

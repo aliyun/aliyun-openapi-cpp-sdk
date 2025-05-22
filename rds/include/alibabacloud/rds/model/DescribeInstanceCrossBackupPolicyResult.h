@@ -38,15 +38,15 @@ namespace AlibabaCloud
 				explicit DescribeInstanceCrossBackupPolicyResult(const std::string &payload);
 				~DescribeInstanceCrossBackupPolicyResult();
 				std::string getLogBackupEnabled()const;
-				std::string getStorageType()const;
-				std::string getEngineVersion()const;
 				std::string getBackupEnabledTime()const;
+				std::string getEngineVersion()const;
+				std::string getStorageType()const;
 				std::string getDBInstanceStatus()const;
 				std::string getLogBackupEnabledTime()const;
 				std::string getCrossBackupRegion()const;
 				int getRetentType()const;
-				std::string getRelServiceId()const;
 				std::string getLockMode()const;
+				std::string getRelServiceId()const;
 				int getRetention()const;
 				std::string getStorageOwner()const;
 				std::string getBackupEnabled()const;
@@ -56,22 +56,22 @@ namespace AlibabaCloud
 				std::string getRegionId()const;
 				std::string getDBInstanceStatusDesc()const;
 				std::string getRelService()const;
-				std::string getEngine()const;
 				std::string getDBInstanceDescription()const;
+				std::string getEngine()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string logBackupEnabled_;
-				std::string storageType_;
-				std::string engineVersion_;
 				std::string backupEnabledTime_;
+				std::string engineVersion_;
+				std::string storageType_;
 				std::string dBInstanceStatus_;
 				std::string logBackupEnabledTime_;
 				std::string crossBackupRegion_;
 				int retentType_;
-				std::string relServiceId_;
 				std::string lockMode_;
+				std::string relServiceId_;
 				int retention_;
 				std::string storageOwner_;
 				std::string backupEnabled_;
@@ -81,8 +81,8 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string dBInstanceStatusDesc_;
 				std::string relService_;
-				std::string engine_;
 				std::string dBInstanceDescription_;
+				std::string engine_;
 
 			};
 		}

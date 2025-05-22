@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string status;
 					std::string regionNo;
 					std::string description;
-					std::string vSwitchId;
 					std::string availableIpAddressCount;
+					std::string vSwitchId;
 					std::string gmtModified;
 					std::string cidrBlock;
 					std::string izNo;
