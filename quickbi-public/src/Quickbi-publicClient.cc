@@ -771,6 +771,42 @@ Quickbi_publicClient::CreateUserGroupOutcomeCallable Quickbi_publicClient::creat
 	return task->get_future();
 }
 
+Quickbi_publicClient::DataInterpretationOutcome Quickbi_publicClient::dataInterpretation(const DataInterpretationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DataInterpretationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DataInterpretationOutcome(DataInterpretationResult(outcome.result()));
+	else
+		return DataInterpretationOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::dataInterpretationAsync(const DataInterpretationRequest& request, const DataInterpretationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, dataInterpretation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::DataInterpretationOutcomeCallable Quickbi_publicClient::dataInterpretationCallable(const DataInterpretationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DataInterpretationOutcome()>>(
+			[this, request]()
+			{
+			return this->dataInterpretation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::DataSetBloodOutcome Quickbi_publicClient::dataSetBlood(const DataSetBloodRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

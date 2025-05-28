@@ -58,6 +58,7 @@ namespace AlibabaCloud
 						std::string refUid;
 						std::string uid;
 						std::string expression;
+						std::string expressionV2;
 						std::string dataType;
 						std::string tableUniqueId;
 						std::string granularity;
@@ -69,6 +70,7 @@ namespace AlibabaCloud
 					{
 						std::string uid;
 						std::string expression;
+						std::string expressionV2;
 						std::string dataType;
 						std::string measureType;
 						std::string tableUniqueId;

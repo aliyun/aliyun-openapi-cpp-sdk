@@ -52,6 +52,15 @@ void SmartqAuthorizeRequest::setLlmCubes(const std::string &llmCubes) {
   setParameter(std::string("LlmCubes"), llmCubes);
 }
 
+std::string SmartqAuthorizeRequest::getCubeIds() const {
+  return cubeIds_;
+}
+
+void SmartqAuthorizeRequest::setCubeIds(const std::string &cubeIds) {
+  cubeIds_ = cubeIds;
+  setParameter(std::string("CubeIds"), cubeIds);
+}
+
 std::string SmartqAuthorizeRequest::getSignType() const {
   return signType_;
 }

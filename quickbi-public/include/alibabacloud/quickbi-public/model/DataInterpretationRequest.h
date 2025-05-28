@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQAUTHORIZEREQUEST_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQAUTHORIZEREQUEST_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_DATAINTERPRETATIONREQUEST_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_DATAINTERPRETATIONREQUEST_H_
 
 #include <alibabacloud/quickbi-public/Quickbi_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,38 +26,35 @@
 namespace AlibabaCloud {
 namespace Quickbi_public {
 namespace Model {
-class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT SmartqAuthorizeRequest : public RpcServiceRequest {
+class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT DataInterpretationRequest : public RpcServiceRequest {
 public:
-	SmartqAuthorizeRequest();
-	~SmartqAuthorizeRequest();
-	std::string getLlmCubeThemes() const;
-	void setLlmCubeThemes(const std::string &llmCubeThemes);
+	DataInterpretationRequest();
+	~DataInterpretationRequest();
+	bool getPromptForceOverride() const;
+	void setPromptForceOverride(bool promptForceOverride);
+	std::string getData() const;
+	void setData(const std::string &data);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getLlmCubes() const;
-	void setLlmCubes(const std::string &llmCubes);
-	std::string getCubeIds() const;
-	void setCubeIds(const std::string &cubeIds);
+	std::string getUserQuestion() const;
+	void setUserQuestion(const std::string &userQuestion);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
-	int getOperationType() const;
-	void setOperationType(int operationType);
-	std::string getExpireDay() const;
-	void setExpireDay(const std::string &expireDay);
-	std::string getUserIds() const;
-	void setUserIds(const std::string &userIds);
+	std::string getUserPrompt() const;
+	void setUserPrompt(const std::string &userPrompt);
+	std::string getModelCode() const;
+	void setModelCode(const std::string &modelCode);
 
 private:
-	std::string llmCubeThemes_;
+	bool promptForceOverride_;
+	std::string data_;
 	std::string accessPoint_;
-	std::string llmCubes_;
-	std::string cubeIds_;
+	std::string userQuestion_;
 	std::string signType_;
-	int operationType_;
-	std::string expireDay_;
-	std::string userIds_;
+	std::string userPrompt_;
+	std::string modelCode_;
 };
 } // namespace Model
 } // namespace Quickbi_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQAUTHORIZEREQUEST_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_DATAINTERPRETATIONREQUEST_H_

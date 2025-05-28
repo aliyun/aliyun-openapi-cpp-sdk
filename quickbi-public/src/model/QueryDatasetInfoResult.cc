@@ -114,6 +114,8 @@ void QueryDatasetInfoResult::parse(const std::string &payload)
 			dimensionListItemObject.tableUniqueId = resultNodeDimensionListDimensionListItem["TableUniqueId"].asString();
 		if(!resultNodeDimensionListDimensionListItem["Uid"].isNull())
 			dimensionListItemObject.uid = resultNodeDimensionListDimensionListItem["Uid"].asString();
+		if(!resultNodeDimensionListDimensionListItem["ExpressionV2"].isNull())
+			dimensionListItemObject.expressionV2 = resultNodeDimensionListDimensionListItem["ExpressionV2"].asString();
 		result_.dimensionList.push_back(dimensionListItemObject);
 	}
 	auto allMeasureListNode = resultNode["MeasureList"]["MeasureListItem"];
@@ -136,6 +138,8 @@ void QueryDatasetInfoResult::parse(const std::string &payload)
 			measureListItemObject.tableUniqueId = resultNodeMeasureListMeasureListItem["TableUniqueId"].asString();
 		if(!resultNodeMeasureListMeasureListItem["Uid"].isNull())
 			measureListItemObject.uid = resultNodeMeasureListMeasureListItem["Uid"].asString();
+		if(!resultNodeMeasureListMeasureListItem["ExpressionV2"].isNull())
+			measureListItemObject.expressionV2 = resultNodeMeasureListMeasureListItem["ExpressionV2"].asString();
 		result_.measureList.push_back(measureListItemObject);
 	}
 	auto directoryNode = resultNode["Directory"];

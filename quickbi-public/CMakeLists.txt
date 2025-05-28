@@ -61,6 +61,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/CreateTicket4CopilotResult.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupRequest.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupResult.h
+	include/alibabacloud/quickbi-public/model/DataInterpretationRequest.h
+	include/alibabacloud/quickbi-public/model/DataInterpretationResult.h
 	include/alibabacloud/quickbi-public/model/DataSetBloodRequest.h
 	include/alibabacloud/quickbi-public/model/DataSetBloodResult.h
 	include/alibabacloud/quickbi-public/model/DataSourceBloodRequest.h
@@ -290,6 +292,8 @@ set(quickbi-public_src
 	src/model/CreateTicket4CopilotResult.cc
 	src/model/CreateUserGroupRequest.cc
 	src/model/CreateUserGroupResult.cc
+	src/model/DataInterpretationRequest.cc
+	src/model/DataInterpretationResult.cc
 	src/model/DataSetBloodRequest.cc
 	src/model/DataSetBloodResult.cc
 	src/model/DataSourceBloodRequest.cc

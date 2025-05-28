@@ -54,6 +54,8 @@ void SmartqQueryAbilityResult::parse(const std::string &payload)
 			metaTypeItemObject.key = resultNodeMetaTypeMetaTypeItem["Key"].asString();
 		if(!resultNodeMetaTypeMetaTypeItem["Value"].isNull())
 			metaTypeItemObject.value = resultNodeMetaTypeMetaTypeItem["Value"].asString();
+		if(!resultNodeMetaTypeMetaTypeItem["Type"].isNull())
+			metaTypeItemObject.type = resultNodeMetaTypeMetaTypeItem["Type"].asString();
 		result_.metaType.push_back(metaTypeItemObject);
 	}
 	auto allValuesNode = resultNode["Values"]["ValuesItem"];

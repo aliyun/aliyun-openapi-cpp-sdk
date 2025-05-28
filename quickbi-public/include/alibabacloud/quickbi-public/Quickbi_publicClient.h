@@ -62,6 +62,8 @@
 #include "model/CreateTicket4CopilotResult.h"
 #include "model/CreateUserGroupRequest.h"
 #include "model/CreateUserGroupResult.h"
+#include "model/DataInterpretationRequest.h"
+#include "model/DataInterpretationResult.h"
 #include "model/DataSetBloodRequest.h"
 #include "model/DataSetBloodResult.h"
 #include "model/DataSourceBloodRequest.h"
@@ -317,6 +319,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateUserGroupResult> CreateUserGroupOutcome;
 			typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateUserGroupRequest&, const CreateUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
+			typedef Outcome<Error, Model::DataInterpretationResult> DataInterpretationOutcome;
+			typedef std::future<DataInterpretationOutcome> DataInterpretationOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::DataInterpretationRequest&, const DataInterpretationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DataInterpretationAsyncHandler;
 			typedef Outcome<Error, Model::DataSetBloodResult> DataSetBloodOutcome;
 			typedef std::future<DataSetBloodOutcome> DataSetBloodOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::DataSetBloodRequest&, const DataSetBloodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DataSetBloodAsyncHandler;
@@ -661,6 +666,9 @@ namespace AlibabaCloud
 			CreateUserGroupOutcome createUserGroup(const Model::CreateUserGroupRequest &request)const;
 			void createUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUserGroupOutcomeCallable createUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
+			DataInterpretationOutcome dataInterpretation(const Model::DataInterpretationRequest &request)const;
+			void dataInterpretationAsync(const Model::DataInterpretationRequest& request, const DataInterpretationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DataInterpretationOutcomeCallable dataInterpretationCallable(const Model::DataInterpretationRequest& request) const;
 			DataSetBloodOutcome dataSetBlood(const Model::DataSetBloodRequest &request)const;
 			void dataSetBloodAsync(const Model::DataSetBloodRequest& request, const DataSetBloodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DataSetBloodOutcomeCallable dataSetBloodCallable(const Model::DataSetBloodRequest& request) const;
