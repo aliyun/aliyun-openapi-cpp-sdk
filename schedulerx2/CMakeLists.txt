@@ -97,6 +97,8 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/ListWorkflowInstanceResult.h
 	include/alibabacloud/schedulerx2/model/ReadSchedulerxDesignateDetailRequest.h
 	include/alibabacloud/schedulerx2/model/ReadSchedulerxDesignateDetailResult.h
+	include/alibabacloud/schedulerx2/model/ReadSchedulerxDesignateInfoRequest.h
+	include/alibabacloud/schedulerx2/model/ReadSchedulerxDesignateInfoResult.h
 	include/alibabacloud/schedulerx2/model/RerunJobRequest.h
 	include/alibabacloud/schedulerx2/model/RerunJobResult.h
 	include/alibabacloud/schedulerx2/model/RetryJobInstanceRequest.h
@@ -200,6 +202,8 @@ set(schedulerx2_src
 	src/model/ListWorkflowInstanceResult.cc
 	src/model/ReadSchedulerxDesignateDetailRequest.cc
 	src/model/ReadSchedulerxDesignateDetailResult.cc
+	src/model/ReadSchedulerxDesignateInfoRequest.cc
+	src/model/ReadSchedulerxDesignateInfoResult.cc
 	src/model/RerunJobRequest.cc
 	src/model/RerunJobResult.cc
 	src/model/RetryJobInstanceRequest.cc

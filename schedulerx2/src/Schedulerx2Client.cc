@@ -1419,6 +1419,42 @@ Schedulerx2Client::ReadSchedulerxDesignateDetailOutcomeCallable Schedulerx2Clien
 	return task->get_future();
 }
 
+Schedulerx2Client::ReadSchedulerxDesignateInfoOutcome Schedulerx2Client::readSchedulerxDesignateInfo(const ReadSchedulerxDesignateInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReadSchedulerxDesignateInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReadSchedulerxDesignateInfoOutcome(ReadSchedulerxDesignateInfoResult(outcome.result()));
+	else
+		return ReadSchedulerxDesignateInfoOutcome(outcome.error());
+}
+
+void Schedulerx2Client::readSchedulerxDesignateInfoAsync(const ReadSchedulerxDesignateInfoRequest& request, const ReadSchedulerxDesignateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, readSchedulerxDesignateInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::ReadSchedulerxDesignateInfoOutcomeCallable Schedulerx2Client::readSchedulerxDesignateInfoCallable(const ReadSchedulerxDesignateInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReadSchedulerxDesignateInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->readSchedulerxDesignateInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Schedulerx2Client::RerunJobOutcome Schedulerx2Client::rerunJob(const RerunJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

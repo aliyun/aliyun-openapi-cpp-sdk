@@ -98,6 +98,8 @@
 #include "model/ListWorkflowInstanceResult.h"
 #include "model/ReadSchedulerxDesignateDetailRequest.h"
 #include "model/ReadSchedulerxDesignateDetailResult.h"
+#include "model/ReadSchedulerxDesignateInfoRequest.h"
+#include "model/ReadSchedulerxDesignateInfoResult.h"
 #include "model/RerunJobRequest.h"
 #include "model/RerunJobResult.h"
 #include "model/RetryJobInstanceRequest.h"
@@ -245,6 +247,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ReadSchedulerxDesignateDetailResult> ReadSchedulerxDesignateDetailOutcome;
 			typedef std::future<ReadSchedulerxDesignateDetailOutcome> ReadSchedulerxDesignateDetailOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::ReadSchedulerxDesignateDetailRequest&, const ReadSchedulerxDesignateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReadSchedulerxDesignateDetailAsyncHandler;
+			typedef Outcome<Error, Model::ReadSchedulerxDesignateInfoResult> ReadSchedulerxDesignateInfoOutcome;
+			typedef std::future<ReadSchedulerxDesignateInfoOutcome> ReadSchedulerxDesignateInfoOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::ReadSchedulerxDesignateInfoRequest&, const ReadSchedulerxDesignateInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReadSchedulerxDesignateInfoAsyncHandler;
 			typedef Outcome<Error, Model::RerunJobResult> RerunJobOutcome;
 			typedef std::future<RerunJobOutcome> RerunJobOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::RerunJobRequest&, const RerunJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RerunJobAsyncHandler;
@@ -400,6 +405,9 @@ namespace AlibabaCloud
 			ReadSchedulerxDesignateDetailOutcome readSchedulerxDesignateDetail(const Model::ReadSchedulerxDesignateDetailRequest &request)const;
 			void readSchedulerxDesignateDetailAsync(const Model::ReadSchedulerxDesignateDetailRequest& request, const ReadSchedulerxDesignateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReadSchedulerxDesignateDetailOutcomeCallable readSchedulerxDesignateDetailCallable(const Model::ReadSchedulerxDesignateDetailRequest& request) const;
+			ReadSchedulerxDesignateInfoOutcome readSchedulerxDesignateInfo(const Model::ReadSchedulerxDesignateInfoRequest &request)const;
+			void readSchedulerxDesignateInfoAsync(const Model::ReadSchedulerxDesignateInfoRequest& request, const ReadSchedulerxDesignateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReadSchedulerxDesignateInfoOutcomeCallable readSchedulerxDesignateInfoCallable(const Model::ReadSchedulerxDesignateInfoRequest& request) const;
 			RerunJobOutcome rerunJob(const Model::RerunJobRequest &request)const;
 			void rerunJobAsync(const Model::RerunJobRequest& request, const RerunJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RerunJobOutcomeCallable rerunJobCallable(const Model::RerunJobRequest& request) const;
