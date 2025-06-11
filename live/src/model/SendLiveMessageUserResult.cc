@@ -39,6 +39,13 @@ void SendLiveMessageUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["MsgTid"].isNull())
+		msgTid_ = value["MsgTid"].asString();
 
+}
+
+std::string SendLiveMessageUserResult::getMsgTid()const
+{
+	return msgTid_;
 }
 

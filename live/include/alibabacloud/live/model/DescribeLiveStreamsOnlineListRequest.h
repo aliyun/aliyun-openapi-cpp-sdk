@@ -36,6 +36,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	std::string getType() const;
+	void setType(const std::string &type);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
 	int getPageSize() const;
@@ -61,6 +63,7 @@ private:
 	std::string onlyStream_;
 	std::string startTime_;
 	int pageNum_;
+	std::string type_;
 	std::string appName_;
 	int pageSize_;
 	bool isGetCurrentRate_;

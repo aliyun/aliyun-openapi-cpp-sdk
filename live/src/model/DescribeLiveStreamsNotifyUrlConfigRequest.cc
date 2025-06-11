@@ -25,6 +25,15 @@ DescribeLiveStreamsNotifyUrlConfigRequest::DescribeLiveStreamsNotifyUrlConfigReq
 
 DescribeLiveStreamsNotifyUrlConfigRequest::~DescribeLiveStreamsNotifyUrlConfigRequest() {}
 
+std::string DescribeLiveStreamsNotifyUrlConfigRequest::getNotifyType() const {
+  return notifyType_;
+}
+
+void DescribeLiveStreamsNotifyUrlConfigRequest::setNotifyType(const std::string &notifyType) {
+  notifyType_ = notifyType;
+  setParameter(std::string("NotifyType"), notifyType);
+}
+
 std::string DescribeLiveStreamsNotifyUrlConfigRequest::getDomainName() const {
   return domainName_;
 }

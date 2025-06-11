@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				SendLiveMessageGroupResult();
 				explicit SendLiveMessageGroupResult(const std::string &payload);
 				~SendLiveMessageGroupResult();
+				std::string getMsgTid()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string msgTid_;
 
 			};
 		}

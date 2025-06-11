@@ -34,10 +34,13 @@ public:
 	void setDomainName(const std::string &domainName);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getSplitType() const;
+	void setSplitType(const std::string &splitType);
 
 private:
 	std::string domainName_;
 	long ownerId_;
+	std::string splitType_;
 };
 } // namespace Model
 } // namespace Live

@@ -76,6 +76,16 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 	auto transcodeConfigNode = value["TranscodeConfig"];
 	if(!transcodeConfigNode["CasterTemplate"].isNull())
 		transcodeConfig_.casterTemplate = transcodeConfigNode["CasterTemplate"].asString();
+	auto customParamsNode = transcodeConfigNode["CustomParams"];
+	auto videoNode = customParamsNode["video"];
+	if(!videoNode["fps"].isNull())
+		transcodeConfig_.customParams.video.fps = std::stoi(videoNode["fps"].asString());
+	if(!videoNode["bitrate"].isNull())
+		transcodeConfig_.customParams.video.bitrate = std::stoi(videoNode["bitrate"].asString());
+	if(!videoNode["width"].isNull())
+		transcodeConfig_.customParams.video.width = std::stoi(videoNode["width"].asString());
+	if(!videoNode["height"].isNull())
+		transcodeConfig_.customParams.video.height = std::stoi(videoNode["height"].asString());
 		auto allLiveTemplateIds = transcodeConfigNode["LiveTemplateIds"]["LocationId"];
 		for (auto value : allLiveTemplateIds)
 			transcodeConfig_.liveTemplateIds.push_back(value.asString());

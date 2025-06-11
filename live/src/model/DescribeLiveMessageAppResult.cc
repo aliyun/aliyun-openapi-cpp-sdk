@@ -63,6 +63,10 @@ void DescribeLiveMessageAppResult::parse(const std::string &payload)
 		modifyTime_ = std::stol(value["ModifyTime"].asString());
 	if(!value["MsgLifeCycle"].isNull())
 		msgLifeCycle_ = std::stoi(value["MsgLifeCycle"].asString());
+	if(!value["StreamSupport"].isNull())
+		streamSupport_ = std::stoi(value["StreamSupport"].asString());
+	if(!value["RichTextSupport"].isNull())
+		richTextSupport_ = std::stoi(value["RichTextSupport"].asString());
 	if(!value["DataCenter"].isNull())
 		dataCenter_ = value["DataCenter"].asString();
 
@@ -71,6 +75,11 @@ void DescribeLiveMessageAppResult::parse(const std::string &payload)
 long DescribeLiveMessageAppResult::getModifyTime()const
 {
 	return modifyTime_;
+}
+
+int DescribeLiveMessageAppResult::getRichTextSupport()const
+{
+	return richTextSupport_;
 }
 
 int DescribeLiveMessageAppResult::getAuditType()const
@@ -91,6 +100,11 @@ int DescribeLiveMessageAppResult::getMsgLifeCycle()const
 std::string DescribeLiveMessageAppResult::getEventCallbackUrl()const
 {
 	return eventCallbackUrl_;
+}
+
+int DescribeLiveMessageAppResult::getStreamSupport()const
+{
+	return streamSupport_;
 }
 
 std::string DescribeLiveMessageAppResult::getAppName()const

@@ -64,6 +64,8 @@ void DescribeLiveMessageGroupResult::parse(const std::string &payload)
 		deletatime_ = std::stol(value["Deletatime"].asString());
 	if(!value["Deletor"].isNull())
 		deletor_ = value["Deletor"].asString();
+	if(!value["SuperLargeGroup"].isNull())
+		superLargeGroup_ = value["SuperLargeGroup"].asString() == "true";
 
 }
 
@@ -72,19 +74,14 @@ std::string DescribeLiveMessageGroupResult::getGroupName()const
 	return groupName_;
 }
 
-std::vector<std::string> DescribeLiveMessageGroupResult::getAdminList()const
-{
-	return adminList_;
-}
-
-bool DescribeLiveMessageGroupResult::get_Delete()const
-{
-	return _delete_;
-}
-
 long DescribeLiveMessageGroupResult::getDeletatime()const
 {
 	return deletatime_;
+}
+
+bool DescribeLiveMessageGroupResult::getSuperLargeGroup()const
+{
+	return superLargeGroup_;
 }
 
 long DescribeLiveMessageGroupResult::getTotalTimes()const
@@ -95,11 +92,6 @@ long DescribeLiveMessageGroupResult::getTotalTimes()const
 std::string DescribeLiveMessageGroupResult::getMsgAmount()const
 {
 	return msgAmount_;
-}
-
-long DescribeLiveMessageGroupResult::getCreatetime()const
-{
-	return createtime_;
 }
 
 std::string DescribeLiveMessageGroupResult::getGroupInfo()const
@@ -120,6 +112,21 @@ long DescribeLiveMessageGroupResult::getOnlineUserCounts()const
 std::string DescribeLiveMessageGroupResult::getGroupId()const
 {
 	return groupId_;
+}
+
+std::vector<std::string> DescribeLiveMessageGroupResult::getAdminList()const
+{
+	return adminList_;
+}
+
+bool DescribeLiveMessageGroupResult::get_Delete()const
+{
+	return _delete_;
+}
+
+long DescribeLiveMessageGroupResult::getCreatetime()const
+{
+	return createtime_;
 }
 
 std::string DescribeLiveMessageGroupResult::getDeletor()const

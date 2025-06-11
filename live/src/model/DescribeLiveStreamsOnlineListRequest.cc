@@ -52,6 +52,15 @@ void DescribeLiveStreamsOnlineListRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
+std::string DescribeLiveStreamsOnlineListRequest::getType() const {
+  return type_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
+}
+
 std::string DescribeLiveStreamsOnlineListRequest::getAppName() const {
   return appName_;
 }

@@ -43,3 +43,12 @@ void DescribeLiveStreamTranscodeStreamNumRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeLiveStreamTranscodeStreamNumRequest::getSplitType() const {
+  return splitType_;
+}
+
+void DescribeLiveStreamTranscodeStreamNumRequest::setSplitType(const std::string &splitType) {
+  splitType_ = splitType;
+  setParameter(std::string("SplitType"), splitType);
+}
+

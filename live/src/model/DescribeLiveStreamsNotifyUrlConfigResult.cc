@@ -40,18 +40,20 @@ void DescribeLiveStreamsNotifyUrlConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto liveStreamsNotifyConfigNode = value["LiveStreamsNotifyConfig"];
-	if(!liveStreamsNotifyConfigNode["NotifyReqAuth"].isNull())
-		liveStreamsNotifyConfig_.notifyReqAuth = liveStreamsNotifyConfigNode["NotifyReqAuth"].asString();
-	if(!liveStreamsNotifyConfigNode["AuthType"].isNull())
-		liveStreamsNotifyConfig_.authType = liveStreamsNotifyConfigNode["AuthType"].asString();
-	if(!liveStreamsNotifyConfigNode["NotifyUrl"].isNull())
-		liveStreamsNotifyConfig_.notifyUrl = liveStreamsNotifyConfigNode["NotifyUrl"].asString();
-	if(!liveStreamsNotifyConfigNode["NotifyAuthKey"].isNull())
-		liveStreamsNotifyConfig_.notifyAuthKey = liveStreamsNotifyConfigNode["NotifyAuthKey"].asString();
-	if(!liveStreamsNotifyConfigNode["AuthKey"].isNull())
-		liveStreamsNotifyConfig_.authKey = liveStreamsNotifyConfigNode["AuthKey"].asString();
 	if(!liveStreamsNotifyConfigNode["DomainName"].isNull())
 		liveStreamsNotifyConfig_.domainName = liveStreamsNotifyConfigNode["DomainName"].asString();
+	if(!liveStreamsNotifyConfigNode["NotifyUrl"].isNull())
+		liveStreamsNotifyConfig_.notifyUrl = liveStreamsNotifyConfigNode["NotifyUrl"].asString();
+	if(!liveStreamsNotifyConfigNode["ExceptionNotifyUrl"].isNull())
+		liveStreamsNotifyConfig_.exceptionNotifyUrl = liveStreamsNotifyConfigNode["ExceptionNotifyUrl"].asString();
+	if(!liveStreamsNotifyConfigNode["NotifyReqAuth"].isNull())
+		liveStreamsNotifyConfig_.notifyReqAuth = liveStreamsNotifyConfigNode["NotifyReqAuth"].asString();
+	if(!liveStreamsNotifyConfigNode["NotifyAuthKey"].isNull())
+		liveStreamsNotifyConfig_.notifyAuthKey = liveStreamsNotifyConfigNode["NotifyAuthKey"].asString();
+	if(!liveStreamsNotifyConfigNode["AuthType"].isNull())
+		liveStreamsNotifyConfig_.authType = liveStreamsNotifyConfigNode["AuthType"].asString();
+	if(!liveStreamsNotifyConfigNode["AuthKey"].isNull())
+		liveStreamsNotifyConfig_.authKey = liveStreamsNotifyConfigNode["AuthKey"].asString();
 
 }
 

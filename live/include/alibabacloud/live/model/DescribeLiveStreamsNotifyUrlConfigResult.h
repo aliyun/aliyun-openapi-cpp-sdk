@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string authKey;
 					std::string notifyAuthKey;
 					std::string authType;
+					std::string exceptionNotifyUrl;
 				};
 
 

@@ -59,6 +59,10 @@ void ListLiveMessageAppsResult::parse(const std::string &payload)
 			appListObject.modifyTime = std::stol(valueAppListApps["ModifyTime"].asString());
 		if(!valueAppListApps["MsgLifeCycle"].isNull())
 			appListObject.msgLifeCycle = std::stoi(valueAppListApps["MsgLifeCycle"].asString());
+		if(!valueAppListApps["StreamSupport"].isNull())
+			appListObject.streamSupport = std::stoi(valueAppListApps["StreamSupport"].asString());
+		if(!valueAppListApps["RichTextSupport"].isNull())
+			appListObject.richTextSupport = std::stoi(valueAppListApps["RichTextSupport"].asString());
 		if(!valueAppListApps["DataCenter"].isNull())
 			appListObject.dataCenter = valueAppListApps["DataCenter"].asString();
 		appList_.push_back(appListObject);

@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string publishUrl;
 					std::string clientAddr;
+					std::string aliInnerErrorFlags;
 					std::string domainName;
 					std::string transcodeId;
 					std::string publishType;
@@ -43,9 +44,11 @@ namespace AlibabaCloud
 					std::string appName;
 					std::string streamName;
 					std::string edgeNodeAddr;
+					std::string playDomain;
 					std::string publishDomain;
 					std::string transcoded;
 					std::string publishTime;
+					std::string pushDomain;
 					std::string stopTime;
 				};
 

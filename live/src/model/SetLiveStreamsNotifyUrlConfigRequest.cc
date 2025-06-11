@@ -52,6 +52,15 @@ void SetLiveStreamsNotifyUrlConfigRequest::setNotifyReqAuth(const std::string &n
   setParameter(std::string("NotifyReqAuth"), notifyReqAuth);
 }
 
+std::string SetLiveStreamsNotifyUrlConfigRequest::getExceptionNotifyUrl() const {
+  return exceptionNotifyUrl_;
+}
+
+void SetLiveStreamsNotifyUrlConfigRequest::setExceptionNotifyUrl(const std::string &exceptionNotifyUrl) {
+  exceptionNotifyUrl_ = exceptionNotifyUrl;
+  setParameter(std::string("ExceptionNotifyUrl"), exceptionNotifyUrl);
+}
+
 std::string SetLiveStreamsNotifyUrlConfigRequest::getNotifyUrl() const {
   return notifyUrl_;
 }
@@ -70,6 +79,15 @@ void SetLiveStreamsNotifyUrlConfigRequest::setNotifyType(const std::string &noti
   setParameter(std::string("NotifyType"), notifyType);
 }
 
+std::string SetLiveStreamsNotifyUrlConfigRequest::getSwitchNotifyUrl() const {
+  return switchNotifyUrl_;
+}
+
+void SetLiveStreamsNotifyUrlConfigRequest::setSwitchNotifyUrl(const std::string &switchNotifyUrl) {
+  switchNotifyUrl_ = switchNotifyUrl;
+  setParameter(std::string("SwitchNotifyUrl"), switchNotifyUrl);
+}
+
 std::string SetLiveStreamsNotifyUrlConfigRequest::getDomainName() const {
   return domainName_;
 }
@@ -86,6 +104,15 @@ long SetLiveStreamsNotifyUrlConfigRequest::getOwnerId() const {
 void SetLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string SetLiveStreamsNotifyUrlConfigRequest::getExceptionNotifyType() const {
+  return exceptionNotifyType_;
+}
+
+void SetLiveStreamsNotifyUrlConfigRequest::setExceptionNotifyType(const std::string &exceptionNotifyType) {
+  exceptionNotifyType_ = exceptionNotifyType;
+  setParameter(std::string("ExceptionNotifyType"), exceptionNotifyType);
 }
 
 std::string SetLiveStreamsNotifyUrlConfigRequest::getNotifyAuthKey() const {

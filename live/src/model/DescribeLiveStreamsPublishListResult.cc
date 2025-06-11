@@ -69,6 +69,12 @@ void DescribeLiveStreamsPublishListResult::parse(const std::string &payload)
 			publishInfoObject.clientAddr = valuePublishInfoLiveStreamPublishInfo["ClientAddr"].asString();
 		if(!valuePublishInfoLiveStreamPublishInfo["StreamUrl"].isNull())
 			publishInfoObject.streamUrl = valuePublishInfoLiveStreamPublishInfo["StreamUrl"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["AliInnerErrorFlags"].isNull())
+			publishInfoObject.aliInnerErrorFlags = valuePublishInfoLiveStreamPublishInfo["AliInnerErrorFlags"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["PlayDomain"].isNull())
+			publishInfoObject.playDomain = valuePublishInfoLiveStreamPublishInfo["PlayDomain"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["PushDomain"].isNull())
+			publishInfoObject.pushDomain = valuePublishInfoLiveStreamPublishInfo["PushDomain"].asString();
 		publishInfo_.push_back(publishInfoObject);
 	}
 	if(!value["TotalPage"].isNull())

@@ -38,32 +38,34 @@ namespace AlibabaCloud
 				explicit DescribeLiveMessageGroupResult(const std::string &payload);
 				~DescribeLiveMessageGroupResult();
 				std::string getGroupName()const;
-				std::vector<std::string> getAdminList()const;
-				bool get_Delete()const;
 				long getDeletatime()const;
+				bool getSuperLargeGroup()const;
 				long getTotalTimes()const;
 				std::string getMsgAmount()const;
-				long getCreatetime()const;
 				std::string getGroupInfo()const;
 				std::string getCreatorId()const;
 				long getOnlineUserCounts()const;
 				std::string getGroupId()const;
+				std::vector<std::string> getAdminList()const;
+				bool get_Delete()const;
+				long getCreatetime()const;
 				std::string getDeletor()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string groupName_;
-				std::vector<std::string> adminList_;
-				bool _delete_;
 				long deletatime_;
+				bool superLargeGroup_;
 				long totalTimes_;
 				std::string msgAmount_;
-				long createtime_;
 				std::string groupInfo_;
 				std::string creatorId_;
 				long onlineUserCounts_;
 				std::string groupId_;
+				std::vector<std::string> adminList_;
+				bool _delete_;
+				long createtime_;
 				std::string deletor_;
 
 			};

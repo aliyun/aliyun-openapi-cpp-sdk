@@ -39,6 +39,16 @@ void DescribeLiveStreamTranscodeStreamNumResult::parse(const std::string &payloa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTranscodeStreamCountDetailsNode = value["TranscodeStreamCountDetails"]["transcode_details"];
+	for (auto valueTranscodeStreamCountDetailstranscode_details : allTranscodeStreamCountDetailsNode)
+	{
+		Transcode_details transcodeStreamCountDetailsObject;
+		if(!valueTranscodeStreamCountDetailstranscode_details["Template"].isNull())
+			transcodeStreamCountDetailsObject._template = valueTranscodeStreamCountDetailstranscode_details["Template"].asString();
+		if(!valueTranscodeStreamCountDetailstranscode_details["Count"].isNull())
+			transcodeStreamCountDetailsObject.count = std::stoi(valueTranscodeStreamCountDetailstranscode_details["Count"].asString());
+		transcodeStreamCountDetails_.push_back(transcodeStreamCountDetailsObject);
+	}
 	if(!value["UntranscodeNumber"].isNull())
 		untranscodeNumber_ = std::stol(value["UntranscodeNumber"].asString());
 	if(!value["LazyTranscodedNumber"].isNull())
@@ -68,5 +78,10 @@ long DescribeLiveStreamTranscodeStreamNumResult::getTranscodedNumber()const
 long DescribeLiveStreamTranscodeStreamNumResult::getTotal()const
 {
 	return total_;
+}
+
+std::vector<DescribeLiveStreamTranscodeStreamNumResult::Transcode_details> DescribeLiveStreamTranscodeStreamNumResult::getTranscodeStreamCountDetails()const
+{
+	return transcodeStreamCountDetails_;
 }
 

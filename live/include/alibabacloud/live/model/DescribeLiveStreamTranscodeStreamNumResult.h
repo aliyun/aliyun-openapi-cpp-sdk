@@ -32,6 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStreamTranscodeStreamNumResult : public ServiceResult
 			{
 			public:
+				struct Transcode_details
+				{
+					std::string _template;
+					int count;
+				};
 
 
 				DescribeLiveStreamTranscodeStreamNumResult();
@@ -41,6 +46,7 @@ namespace AlibabaCloud
 				long getLazyTranscodedNumber()const;
 				long getTranscodedNumber()const;
 				long getTotal()const;
+				std::vector<Transcode_details> getTranscodeStreamCountDetails()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -49,6 +55,7 @@ namespace AlibabaCloud
 				long lazyTranscodedNumber_;
 				long transcodedNumber_;
 				long total_;
+				std::vector<Transcode_details> transcodeStreamCountDetails_;
 
 			};
 		}

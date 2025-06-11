@@ -30,32 +30,38 @@ class ALIBABACLOUD_LIVE_EXPORT SendLiveMessageUserRequest : public RpcServiceReq
 public:
 	SendLiveMessageUserRequest();
 	~SendLiveMessageUserRequest();
+	bool getStorage() const;
+	void setStorage(bool storage);
+	std::string getBody() const;
+	void setBody(const std::string &body);
+	std::string getSenderInfo() const;
+	void setSenderInfo(const std::string &senderInfo);
+	long getMsgType() const;
+	void setMsgType(long msgType);
+	bool getHighReliability() const;
+	void setHighReliability(bool highReliability);
 	std::string getDataCenter() const;
 	void setDataCenter(const std::string &dataCenter);
 	std::string getMsgTid() const;
 	void setMsgTid(const std::string &msgTid);
-	std::string getBody() const;
-	void setBody(const std::string &body);
 	std::string getSenderId() const;
 	void setSenderId(const std::string &senderId);
 	std::string getReceiverId() const;
 	void setReceiverId(const std::string &receiverId);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
-	std::string getSenderInfo() const;
-	void setSenderInfo(const std::string &senderInfo);
-	long getMsgType() const;
-	void setMsgType(long msgType);
 
 private:
+	bool storage_;
+	std::string body_;
+	std::string senderInfo_;
+	long msgType_;
+	bool highReliability_;
 	std::string dataCenter_;
 	std::string msgTid_;
-	std::string body_;
 	std::string senderId_;
 	std::string receiverId_;
 	std::string appId_;
-	std::string senderInfo_;
-	long msgType_;
 };
 } // namespace Model
 } // namespace Live

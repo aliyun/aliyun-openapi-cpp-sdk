@@ -95,6 +95,10 @@ void DescribeLiveStreamsOnlineListResult::parse(const std::string &payload)
 			onlineInfoObject.currFrameRate = std::stoi(valueOnlineInfoLiveStreamOnlineInfo["CurrFrameRate"].asString());
 		if(!valueOnlineInfoLiveStreamOnlineInfo["CurrVideoCodecId"].isNull())
 			onlineInfoObject.currVideoCodecId = std::stoi(valueOnlineInfoLiveStreamOnlineInfo["CurrVideoCodecId"].asString());
+		if(!valueOnlineInfoLiveStreamOnlineInfo["PlayDomain"].isNull())
+			onlineInfoObject.playDomain = valueOnlineInfoLiveStreamOnlineInfo["PlayDomain"].asString();
+		if(!valueOnlineInfoLiveStreamOnlineInfo["PushDomain"].isNull())
+			onlineInfoObject.pushDomain = valueOnlineInfoLiveStreamOnlineInfo["PushDomain"].asString();
 		onlineInfo_.push_back(onlineInfoObject);
 	}
 	if(!value["TotalPage"].isNull())

@@ -25,6 +25,51 @@ SendLiveMessageUserRequest::SendLiveMessageUserRequest()
 
 SendLiveMessageUserRequest::~SendLiveMessageUserRequest() {}
 
+bool SendLiveMessageUserRequest::getStorage() const {
+  return storage_;
+}
+
+void SendLiveMessageUserRequest::setStorage(bool storage) {
+  storage_ = storage;
+  setParameter(std::string("Storage"), storage ? "true" : "false");
+}
+
+std::string SendLiveMessageUserRequest::getBody() const {
+  return body_;
+}
+
+void SendLiveMessageUserRequest::setBody(const std::string &body) {
+  body_ = body;
+  setParameter(std::string("Body"), body);
+}
+
+std::string SendLiveMessageUserRequest::getSenderInfo() const {
+  return senderInfo_;
+}
+
+void SendLiveMessageUserRequest::setSenderInfo(const std::string &senderInfo) {
+  senderInfo_ = senderInfo;
+  setParameter(std::string("SenderInfo"), senderInfo);
+}
+
+long SendLiveMessageUserRequest::getMsgType() const {
+  return msgType_;
+}
+
+void SendLiveMessageUserRequest::setMsgType(long msgType) {
+  msgType_ = msgType;
+  setParameter(std::string("MsgType"), std::to_string(msgType));
+}
+
+bool SendLiveMessageUserRequest::getHighReliability() const {
+  return highReliability_;
+}
+
+void SendLiveMessageUserRequest::setHighReliability(bool highReliability) {
+  highReliability_ = highReliability;
+  setParameter(std::string("HighReliability"), highReliability ? "true" : "false");
+}
+
 std::string SendLiveMessageUserRequest::getDataCenter() const {
   return dataCenter_;
 }
@@ -41,15 +86,6 @@ std::string SendLiveMessageUserRequest::getMsgTid() const {
 void SendLiveMessageUserRequest::setMsgTid(const std::string &msgTid) {
   msgTid_ = msgTid;
   setParameter(std::string("MsgTid"), msgTid);
-}
-
-std::string SendLiveMessageUserRequest::getBody() const {
-  return body_;
-}
-
-void SendLiveMessageUserRequest::setBody(const std::string &body) {
-  body_ = body;
-  setParameter(std::string("Body"), body);
 }
 
 std::string SendLiveMessageUserRequest::getSenderId() const {
@@ -77,23 +113,5 @@ std::string SendLiveMessageUserRequest::getAppId() const {
 void SendLiveMessageUserRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setParameter(std::string("AppId"), appId);
-}
-
-std::string SendLiveMessageUserRequest::getSenderInfo() const {
-  return senderInfo_;
-}
-
-void SendLiveMessageUserRequest::setSenderInfo(const std::string &senderInfo) {
-  senderInfo_ = senderInfo;
-  setParameter(std::string("SenderInfo"), senderInfo);
-}
-
-long SendLiveMessageUserRequest::getMsgType() const {
-  return msgType_;
-}
-
-void SendLiveMessageUserRequest::setMsgType(long msgType) {
-  msgType_ = msgType;
-  setParameter(std::string("MsgType"), std::to_string(msgType));
 }
 

@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					int height;
 					std::string publishTime;
 					int audioCodecId;
+					std::string pushDomain;
 					int width;
 					int videoCodecId;
 					int frameRate;
@@ -58,6 +59,7 @@ namespace AlibabaCloud
 					std::string serverIp;
 					int currHeight;
 					int currVideoCodecId;
+					std::string playDomain;
 					std::string transcoded;
 					int videoDataRate;
 				};

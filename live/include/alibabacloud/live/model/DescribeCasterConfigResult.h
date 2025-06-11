@@ -48,8 +48,20 @@ namespace AlibabaCloud
 				};
 				struct TranscodeConfig
 				{
+					struct CustomParams
+					{
+						struct Video
+						{
+							int fps;
+							int height;
+							int bitrate;
+							int width;
+						};
+						Video video;
+					};
 					std::string casterTemplate;
 					std::vector<std::string> liveTemplateIds;
+					CustomParams customParams;
 				};
 				struct SyncGroup
 				{

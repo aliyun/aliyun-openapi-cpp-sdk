@@ -30,8 +30,12 @@ class ALIBABACLOUD_LIVE_EXPORT CreateLiveMessageAppRequest : public RpcServiceRe
 public:
 	CreateLiveMessageAppRequest();
 	~CreateLiveMessageAppRequest();
+	int getStreamSupport() const;
+	void setStreamSupport(int streamSupport);
 	std::string getDataCenter() const;
 	void setDataCenter(const std::string &dataCenter);
+	int getRichTextSupport() const;
+	void setRichTextSupport(int richTextSupport);
 	int getMsgLifeCycle() const;
 	void setMsgLifeCycle(int msgLifeCycle);
 	std::string getAppName() const;
@@ -44,7 +48,9 @@ public:
 	void setEventCallbackUrl(const std::string &eventCallbackUrl);
 
 private:
+	int streamSupport_;
 	std::string dataCenter_;
+	int richTextSupport_;
 	int msgLifeCycle_;
 	std::string appName_;
 	int auditType_;

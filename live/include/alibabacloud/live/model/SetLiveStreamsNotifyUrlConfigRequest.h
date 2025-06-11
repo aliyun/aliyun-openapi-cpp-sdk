@@ -36,14 +36,20 @@ public:
 	void setAuthType(const std::string &authType);
 	std::string getNotifyReqAuth() const;
 	void setNotifyReqAuth(const std::string &notifyReqAuth);
+	std::string getExceptionNotifyUrl() const;
+	void setExceptionNotifyUrl(const std::string &exceptionNotifyUrl);
 	std::string getNotifyUrl() const;
 	void setNotifyUrl(const std::string &notifyUrl);
 	std::string getNotifyType() const;
 	void setNotifyType(const std::string &notifyType);
+	std::string getSwitchNotifyUrl() const;
+	void setSwitchNotifyUrl(const std::string &switchNotifyUrl);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getExceptionNotifyType() const;
+	void setExceptionNotifyType(const std::string &exceptionNotifyType);
 	std::string getNotifyAuthKey() const;
 	void setNotifyAuthKey(const std::string &notifyAuthKey);
 
@@ -51,10 +57,13 @@ private:
 	std::string authKey_;
 	std::string authType_;
 	std::string notifyReqAuth_;
+	std::string exceptionNotifyUrl_;
 	std::string notifyUrl_;
 	std::string notifyType_;
+	std::string switchNotifyUrl_;
 	std::string domainName_;
 	long ownerId_;
+	std::string exceptionNotifyType_;
 	std::string notifyAuthKey_;
 };
 } // namespace Model

@@ -25,6 +25,15 @@ CreateLiveMessageAppRequest::CreateLiveMessageAppRequest()
 
 CreateLiveMessageAppRequest::~CreateLiveMessageAppRequest() {}
 
+int CreateLiveMessageAppRequest::getStreamSupport() const {
+  return streamSupport_;
+}
+
+void CreateLiveMessageAppRequest::setStreamSupport(int streamSupport) {
+  streamSupport_ = streamSupport;
+  setParameter(std::string("StreamSupport"), std::to_string(streamSupport));
+}
+
 std::string CreateLiveMessageAppRequest::getDataCenter() const {
   return dataCenter_;
 }
@@ -32,6 +41,15 @@ std::string CreateLiveMessageAppRequest::getDataCenter() const {
 void CreateLiveMessageAppRequest::setDataCenter(const std::string &dataCenter) {
   dataCenter_ = dataCenter;
   setParameter(std::string("DataCenter"), dataCenter);
+}
+
+int CreateLiveMessageAppRequest::getRichTextSupport() const {
+  return richTextSupport_;
+}
+
+void CreateLiveMessageAppRequest::setRichTextSupport(int richTextSupport) {
+  richTextSupport_ = richTextSupport;
+  setParameter(std::string("RichTextSupport"), std::to_string(richTextSupport));
 }
 
 int CreateLiveMessageAppRequest::getMsgLifeCycle() const {
