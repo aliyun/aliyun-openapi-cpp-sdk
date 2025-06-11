@@ -203,6 +203,8 @@ void DescribeOasTopSQLListResult::parse(const std::string &payload)
 			dataObject.avgDbTime = valueDataDataItem["AvgDbTime"].asString();
 		if(!valueDataDataItem["SumDbTime"].isNull())
 			dataObject.sumDbTime = valueDataDataItem["SumDbTime"].asString();
+		if(!valueDataDataItem["ObDbId"].isNull())
+			dataObject.obDbId = valueDataDataItem["ObDbId"].asString();
 		auto allSqlListNode = valueDataDataItem["SqlList"]["SqlListItem"];
 		for (auto valueDataDataItemSqlListSqlListItem : allSqlListNode)
 		{
@@ -365,6 +367,11 @@ void DescribeOasTopSQLListResult::parse(const std::string &payload)
 				sqlListObject.sumDbTime = valueDataDataItemSqlListSqlListItem["SumDbTime"].asString();
 			dataObject.sqlList.push_back(sqlListObject);
 		}
+		auto customColumnsNode = value["CustomColumns"];
+		if(!customColumnsNode["Expression"].isNull())
+			dataObject.customColumns.expression = customColumnsNode["Expression"].asString();
+		if(!customColumnsNode["Value"].isNull())
+			dataObject.customColumns.value = customColumnsNode["Value"].asString();
 		data_.push_back(dataObject);
 	}
 

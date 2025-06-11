@@ -44,6 +44,8 @@ void ModifyInstanceSSLResult::parse(const std::string &payload)
 		instanceSSL_.instanceId = instanceSSLNode["InstanceId"].asString();
 	if(!instanceSSLNode["EnableSSL"].isNull())
 		instanceSSL_.enableSSL = instanceSSLNode["EnableSSL"].asString();
+	if(!instanceSSLNode["TenantId"].isNull())
+		instanceSSL_.tenantId = instanceSSLNode["TenantId"].asString();
 
 }
 

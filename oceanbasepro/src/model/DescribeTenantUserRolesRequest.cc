@@ -25,6 +25,15 @@ DescribeTenantUserRolesRequest::DescribeTenantUserRolesRequest()
 
 DescribeTenantUserRolesRequest::~DescribeTenantUserRolesRequest() {}
 
+std::string DescribeTenantUserRolesRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DescribeTenantUserRolesRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setBodyParameter(std::string("InstanceId"), instanceId);
+}
+
 std::string DescribeTenantUserRolesRequest::getTenantId() const {
   return tenantId_;
 }

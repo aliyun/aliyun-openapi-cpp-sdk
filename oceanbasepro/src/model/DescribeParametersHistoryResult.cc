@@ -39,40 +39,35 @@ void DescribeParametersHistoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRespondNode = value["Respond"]["Data"];
-	for (auto valueRespondData : allRespondNode)
+	auto respondNode = value["Respond"];
+	if(!respondNode["TotalCount"].isNull())
+		respond_.totalCount = std::stoi(respondNode["TotalCount"].asString());
+	if(!respondNode["PageNumber"].isNull())
+		respond_.pageNumber = std::stoi(respondNode["PageNumber"].asString());
+	auto allParametersNode = respondNode["Parameters"]["ParametersItem"];
+	for (auto respondNodeParametersParametersItem : allParametersNode)
 	{
-		Data respondObject;
-		if(!valueRespondData["TotalCount"].isNull())
-			respondObject.totalCount = std::stoi(valueRespondData["TotalCount"].asString());
-		if(!valueRespondData["PageNumber"].isNull())
-			respondObject.pageNumber = std::stoi(valueRespondData["PageNumber"].asString());
-		auto allParametersNode = valueRespondData["Parameters"]["ParametersItem"];
-		for (auto valueRespondDataParametersParametersItem : allParametersNode)
-		{
-			Data::ParametersItem parametersObject;
-			if(!valueRespondDataParametersParametersItem["Status"].isNull())
-				parametersObject.status = valueRespondDataParametersParametersItem["Status"].asString();
-			if(!valueRespondDataParametersParametersItem["OldValue"].isNull())
-				parametersObject.oldValue = valueRespondDataParametersParametersItem["OldValue"].asString();
-			if(!valueRespondDataParametersParametersItem["UpdateTime"].isNull())
-				parametersObject.updateTime = valueRespondDataParametersParametersItem["UpdateTime"].asString();
-			if(!valueRespondDataParametersParametersItem["CreateTime"].isNull())
-				parametersObject.createTime = valueRespondDataParametersParametersItem["CreateTime"].asString();
-			if(!valueRespondDataParametersParametersItem["DimensionValue"].isNull())
-				parametersObject.dimensionValue = valueRespondDataParametersParametersItem["DimensionValue"].asString();
-			if(!valueRespondDataParametersParametersItem["Name"].isNull())
-				parametersObject.name = valueRespondDataParametersParametersItem["Name"].asString();
-			if(!valueRespondDataParametersParametersItem["NewValue"].isNull())
-				parametersObject.newValue = valueRespondDataParametersParametersItem["NewValue"].asString();
-			respondObject.parameters.push_back(parametersObject);
-		}
-		respond_.push_back(respondObject);
+		Respond::ParametersItem parametersItemObject;
+		if(!respondNodeParametersParametersItem["Status"].isNull())
+			parametersItemObject.status = respondNodeParametersParametersItem["Status"].asString();
+		if(!respondNodeParametersParametersItem["OldValue"].isNull())
+			parametersItemObject.oldValue = respondNodeParametersParametersItem["OldValue"].asString();
+		if(!respondNodeParametersParametersItem["UpdateTime"].isNull())
+			parametersItemObject.updateTime = respondNodeParametersParametersItem["UpdateTime"].asString();
+		if(!respondNodeParametersParametersItem["CreateTime"].isNull())
+			parametersItemObject.createTime = respondNodeParametersParametersItem["CreateTime"].asString();
+		if(!respondNodeParametersParametersItem["DimensionValue"].isNull())
+			parametersItemObject.dimensionValue = respondNodeParametersParametersItem["DimensionValue"].asString();
+		if(!respondNodeParametersParametersItem["Name"].isNull())
+			parametersItemObject.name = respondNodeParametersParametersItem["Name"].asString();
+		if(!respondNodeParametersParametersItem["NewValue"].isNull())
+			parametersItemObject.newValue = respondNodeParametersParametersItem["NewValue"].asString();
+		respond_.parameters.push_back(parametersItemObject);
 	}
 
 }
 
-std::vector<DescribeParametersHistoryResult::Data> DescribeParametersHistoryResult::getRespond()const
+DescribeParametersHistoryResult::Respond DescribeParametersHistoryResult::getRespond()const
 {
 	return respond_;
 }

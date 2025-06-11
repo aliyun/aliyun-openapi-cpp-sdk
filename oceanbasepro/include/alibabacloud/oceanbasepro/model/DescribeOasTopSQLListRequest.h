@@ -32,6 +32,8 @@ public:
 	~DescribeOasTopSQLListRequest();
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getCustomColumns() const;
+	void setCustomColumns(const std::string &customColumns);
 	std::string getSearchRule() const;
 	void setSearchRule(const std::string &searchRule);
 	bool getMergeDynamicSql() const;
@@ -65,6 +67,7 @@ public:
 
 private:
 	std::string startTime_;
+	std::string customColumns_;
 	std::string searchRule_;
 	bool mergeDynamicSql_;
 	bool dynamicSql_;

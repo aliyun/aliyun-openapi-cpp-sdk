@@ -34,3 +34,12 @@ void DescribeInstanceSSLRequest::setInstanceId(const std::string &instanceId) {
   setBodyParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string DescribeInstanceSSLRequest::getTenantId() const {
+  return tenantId_;
+}
+
+void DescribeInstanceSSLRequest::setTenantId(const std::string &tenantId) {
+  tenantId_ = tenantId;
+  setBodyParameter(std::string("TenantId"), tenantId);
+}
+

@@ -119,6 +119,7 @@ namespace AlibabaCloud
 						std::string proxyClusterId;
 						int intranetPort;
 						long parallelQueryDegree;
+						int internetSqlPort;
 						int internetRpcPort;
 						std::string connectionReplicaType;
 						std::string internetAddressStatus;
@@ -140,7 +141,8 @@ namespace AlibabaCloud
 					{
 						struct TenantZoneReplicasItem
 						{
-							std::string zoneNodes;
+							std::string readOnlyReplicaType;
+							long zoneNodes;
 							int zoneCopyId;
 							std::string logicZoneName;
 							std::string readOnlyCopyId;
@@ -153,6 +155,7 @@ namespace AlibabaCloud
 						std::string region;
 					};
 					std::string deployType;
+					std::string parameterTemplate;
 					ReadOnlyResource readOnlyResource;
 					std::string description;
 					long maxParallelQueryDegree;
@@ -189,6 +192,7 @@ namespace AlibabaCloud
 					std::string timeZone;
 					TenantResource tenantResource;
 					std::string vpcId;
+					std::string tenantMaxConnections;
 				};
 
 

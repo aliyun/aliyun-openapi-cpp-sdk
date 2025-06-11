@@ -52,6 +52,15 @@ void DescribeInstancesRequest::setResourceGroupId(const std::string &resourceGro
   setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+int DescribeInstancesRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeInstancesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
 std::string DescribeInstancesRequest::getInstanceId() const {
   return instanceId_;
 }
@@ -70,12 +79,12 @@ void DescribeInstancesRequest::setInstanceName(const std::string &instanceName) 
   setBodyParameter(std::string("InstanceName"), instanceName);
 }
 
-int DescribeInstancesRequest::getPageSize() const {
-  return pageSize_;
+bool DescribeInstancesRequest::getWithOBCloudInstances() const {
+  return withOBCloudInstances_;
 }
 
-void DescribeInstancesRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+void DescribeInstancesRequest::setWithOBCloudInstances(bool withOBCloudInstances) {
+  withOBCloudInstances_ = withOBCloudInstances;
+  setBodyParameter(std::string("WithOBCloudInstances"), withOBCloudInstances ? "true" : "false");
 }
 

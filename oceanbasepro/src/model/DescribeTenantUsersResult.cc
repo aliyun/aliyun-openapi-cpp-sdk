@@ -55,6 +55,8 @@ void DescribeTenantUsersResult::parse(const std::string &payload)
 			tenantUsersObject.tenantId = valueTenantUsersTenantUsersItem["TenantId"].asString();
 		if(!valueTenantUsersTenantUsersItem["InstanceId"].isNull())
 			tenantUsersObject.instanceId = valueTenantUsersTenantUsersItem["InstanceId"].asString();
+		if(!valueTenantUsersTenantUsersItem["GlobalPermissions"].isNull())
+			tenantUsersObject.globalPermissions = valueTenantUsersTenantUsersItem["GlobalPermissions"].asString();
 		auto allDatabasesNode = valueTenantUsersTenantUsersItem["Databases"]["DatabasesItem"];
 		for (auto valueTenantUsersTenantUsersItemDatabasesDatabasesItem : allDatabasesNode)
 		{

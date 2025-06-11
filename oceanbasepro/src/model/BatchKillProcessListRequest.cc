@@ -34,6 +34,15 @@ void BatchKillProcessListRequest::setSessionList(const std::string &sessionList)
   setBodyParameter(std::string("SessionList"), sessionList);
 }
 
+bool BatchKillProcessListRequest::getByObSessionId() const {
+  return byObSessionId_;
+}
+
+void BatchKillProcessListRequest::setByObSessionId(bool byObSessionId) {
+  byObSessionId_ = byObSessionId;
+  setBodyParameter(std::string("ByObSessionId"), byObSessionId ? "true" : "false");
+}
+
 std::string BatchKillProcessListRequest::getInstanceId() const {
   return instanceId_;
 }

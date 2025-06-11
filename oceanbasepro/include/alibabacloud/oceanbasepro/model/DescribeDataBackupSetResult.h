@@ -75,7 +75,7 @@ namespace AlibabaCloud
 					int dataSize;
 					int dataVersion;
 					std::vector<DataItem::BackupResultsItem> backupResults;
-					int setId;
+					std::string setId;
 				};
 
 

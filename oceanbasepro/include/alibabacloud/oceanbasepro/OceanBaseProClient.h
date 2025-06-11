@@ -38,6 +38,8 @@
 #include "model/CreateLabelResult.h"
 #include "model/CreateMySqlDataSourceRequest.h"
 #include "model/CreateMySqlDataSourceResult.h"
+#include "model/CreateOasOutlineTaskRequest.h"
+#include "model/CreateOasOutlineTaskResult.h"
 #include "model/CreateOceanBaseDataSourceRequest.h"
 #include "model/CreateOceanBaseDataSourceResult.h"
 #include "model/CreateOmsMysqlDataSourceRequest.h"
@@ -104,6 +106,8 @@
 #include "model/DescribeDatabasesResult.h"
 #include "model/DescribeInstanceRequest.h"
 #include "model/DescribeInstanceResult.h"
+#include "model/DescribeInstanceAvailableZonesRequest.h"
+#include "model/DescribeInstanceAvailableZonesResult.h"
 #include "model/DescribeInstanceCreatableZoneRequest.h"
 #include "model/DescribeInstanceCreatableZoneResult.h"
 #include "model/DescribeInstanceSSLRequest.h"
@@ -154,6 +158,8 @@
 #include "model/DescribeProjectStepMetricResult.h"
 #include "model/DescribeProjectStepsRequest.h"
 #include "model/DescribeProjectStepsResult.h"
+#include "model/DescribeProxyServiceRequest.h"
+#include "model/DescribeProxyServiceResult.h"
 #include "model/DescribeRecommendIndexRequest.h"
 #include "model/DescribeRecommendIndexResult.h"
 #include "model/DescribeRestorableTenantsRequest.h"
@@ -178,6 +184,8 @@
 #include "model/DescribeSlowSQLHistoryListResult.h"
 #include "model/DescribeSlowSQLListRequest.h"
 #include "model/DescribeSlowSQLListResult.h"
+#include "model/DescribeSqlAuditStatRequest.h"
+#include "model/DescribeSqlAuditStatResult.h"
 #include "model/DescribeStandbyCreateModeRequest.h"
 #include "model/DescribeStandbyCreateModeResult.h"
 #include "model/DescribeTagValuesRequest.h"
@@ -272,6 +280,8 @@
 #include "model/ReleaseProjectResult.h"
 #include "model/ReleaseWorkerInstanceRequest.h"
 #include "model/ReleaseWorkerInstanceResult.h"
+#include "model/RemoveStandbyInstanceRequest.h"
+#include "model/RemoveStandbyInstanceResult.h"
 #include "model/ResumeProjectRequest.h"
 #include "model/ResumeProjectResult.h"
 #include "model/RetryProjectModifyRecordsRequest.h"
@@ -323,6 +333,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateMySqlDataSourceResult> CreateMySqlDataSourceOutcome;
 			typedef std::future<CreateMySqlDataSourceOutcome> CreateMySqlDataSourceOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::CreateMySqlDataSourceRequest&, const CreateMySqlDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMySqlDataSourceAsyncHandler;
+			typedef Outcome<Error, Model::CreateOasOutlineTaskResult> CreateOasOutlineTaskOutcome;
+			typedef std::future<CreateOasOutlineTaskOutcome> CreateOasOutlineTaskOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::CreateOasOutlineTaskRequest&, const CreateOasOutlineTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOasOutlineTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateOceanBaseDataSourceResult> CreateOceanBaseDataSourceOutcome;
 			typedef std::future<CreateOceanBaseDataSourceOutcome> CreateOceanBaseDataSourceOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::CreateOceanBaseDataSourceRequest&, const CreateOceanBaseDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOceanBaseDataSourceAsyncHandler;
@@ -422,6 +435,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceResult> DescribeInstanceOutcome;
 			typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeInstanceRequest&, const DescribeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceAvailableZonesResult> DescribeInstanceAvailableZonesOutcome;
+			typedef std::future<DescribeInstanceAvailableZonesOutcome> DescribeInstanceAvailableZonesOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeInstanceAvailableZonesRequest&, const DescribeInstanceAvailableZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAvailableZonesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceCreatableZoneResult> DescribeInstanceCreatableZoneOutcome;
 			typedef std::future<DescribeInstanceCreatableZoneOutcome> DescribeInstanceCreatableZoneOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeInstanceCreatableZoneRequest&, const DescribeInstanceCreatableZoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceCreatableZoneAsyncHandler;
@@ -497,6 +513,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeProjectStepsResult> DescribeProjectStepsOutcome;
 			typedef std::future<DescribeProjectStepsOutcome> DescribeProjectStepsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeProjectStepsRequest&, const DescribeProjectStepsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectStepsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeProxyServiceResult> DescribeProxyServiceOutcome;
+			typedef std::future<DescribeProxyServiceOutcome> DescribeProxyServiceOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeProxyServiceRequest&, const DescribeProxyServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxyServiceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRecommendIndexResult> DescribeRecommendIndexOutcome;
 			typedef std::future<DescribeRecommendIndexOutcome> DescribeRecommendIndexOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeRecommendIndexRequest&, const DescribeRecommendIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecommendIndexAsyncHandler;
@@ -533,6 +552,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSlowSQLListResult> DescribeSlowSQLListOutcome;
 			typedef std::future<DescribeSlowSQLListOutcome> DescribeSlowSQLListOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSlowSQLListRequest&, const DescribeSlowSQLListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowSQLListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSqlAuditStatResult> DescribeSqlAuditStatOutcome;
+			typedef std::future<DescribeSqlAuditStatOutcome> DescribeSqlAuditStatOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeSqlAuditStatRequest&, const DescribeSqlAuditStatOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlAuditStatAsyncHandler;
 			typedef Outcome<Error, Model::DescribeStandbyCreateModeResult> DescribeStandbyCreateModeOutcome;
 			typedef std::future<DescribeStandbyCreateModeOutcome> DescribeStandbyCreateModeOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeStandbyCreateModeRequest&, const DescribeStandbyCreateModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStandbyCreateModeAsyncHandler;
@@ -674,6 +696,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ReleaseWorkerInstanceResult> ReleaseWorkerInstanceOutcome;
 			typedef std::future<ReleaseWorkerInstanceOutcome> ReleaseWorkerInstanceOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ReleaseWorkerInstanceRequest&, const ReleaseWorkerInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseWorkerInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RemoveStandbyInstanceResult> RemoveStandbyInstanceOutcome;
+			typedef std::future<RemoveStandbyInstanceOutcome> RemoveStandbyInstanceOutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::RemoveStandbyInstanceRequest&, const RemoveStandbyInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveStandbyInstanceAsyncHandler;
 			typedef Outcome<Error, Model::ResumeProjectResult> ResumeProjectOutcome;
 			typedef std::future<ResumeProjectOutcome> ResumeProjectOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::ResumeProjectRequest&, const ResumeProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeProjectAsyncHandler;
@@ -730,6 +755,9 @@ namespace AlibabaCloud
 			CreateMySqlDataSourceOutcome createMySqlDataSource(const Model::CreateMySqlDataSourceRequest &request)const;
 			void createMySqlDataSourceAsync(const Model::CreateMySqlDataSourceRequest& request, const CreateMySqlDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMySqlDataSourceOutcomeCallable createMySqlDataSourceCallable(const Model::CreateMySqlDataSourceRequest& request) const;
+			CreateOasOutlineTaskOutcome createOasOutlineTask(const Model::CreateOasOutlineTaskRequest &request)const;
+			void createOasOutlineTaskAsync(const Model::CreateOasOutlineTaskRequest& request, const CreateOasOutlineTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateOasOutlineTaskOutcomeCallable createOasOutlineTaskCallable(const Model::CreateOasOutlineTaskRequest& request) const;
 			CreateOceanBaseDataSourceOutcome createOceanBaseDataSource(const Model::CreateOceanBaseDataSourceRequest &request)const;
 			void createOceanBaseDataSourceAsync(const Model::CreateOceanBaseDataSourceRequest& request, const CreateOceanBaseDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateOceanBaseDataSourceOutcomeCallable createOceanBaseDataSourceCallable(const Model::CreateOceanBaseDataSourceRequest& request) const;
@@ -829,6 +857,9 @@ namespace AlibabaCloud
 			DescribeInstanceOutcome describeInstance(const Model::DescribeInstanceRequest &request)const;
 			void describeInstanceAsync(const Model::DescribeInstanceRequest& request, const DescribeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceOutcomeCallable describeInstanceCallable(const Model::DescribeInstanceRequest& request) const;
+			DescribeInstanceAvailableZonesOutcome describeInstanceAvailableZones(const Model::DescribeInstanceAvailableZonesRequest &request)const;
+			void describeInstanceAvailableZonesAsync(const Model::DescribeInstanceAvailableZonesRequest& request, const DescribeInstanceAvailableZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceAvailableZonesOutcomeCallable describeInstanceAvailableZonesCallable(const Model::DescribeInstanceAvailableZonesRequest& request) const;
 			DescribeInstanceCreatableZoneOutcome describeInstanceCreatableZone(const Model::DescribeInstanceCreatableZoneRequest &request)const;
 			void describeInstanceCreatableZoneAsync(const Model::DescribeInstanceCreatableZoneRequest& request, const DescribeInstanceCreatableZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceCreatableZoneOutcomeCallable describeInstanceCreatableZoneCallable(const Model::DescribeInstanceCreatableZoneRequest& request) const;
@@ -904,6 +935,9 @@ namespace AlibabaCloud
 			DescribeProjectStepsOutcome describeProjectSteps(const Model::DescribeProjectStepsRequest &request)const;
 			void describeProjectStepsAsync(const Model::DescribeProjectStepsRequest& request, const DescribeProjectStepsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProjectStepsOutcomeCallable describeProjectStepsCallable(const Model::DescribeProjectStepsRequest& request) const;
+			DescribeProxyServiceOutcome describeProxyService(const Model::DescribeProxyServiceRequest &request)const;
+			void describeProxyServiceAsync(const Model::DescribeProxyServiceRequest& request, const DescribeProxyServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeProxyServiceOutcomeCallable describeProxyServiceCallable(const Model::DescribeProxyServiceRequest& request) const;
 			DescribeRecommendIndexOutcome describeRecommendIndex(const Model::DescribeRecommendIndexRequest &request)const;
 			void describeRecommendIndexAsync(const Model::DescribeRecommendIndexRequest& request, const DescribeRecommendIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecommendIndexOutcomeCallable describeRecommendIndexCallable(const Model::DescribeRecommendIndexRequest& request) const;
@@ -940,6 +974,9 @@ namespace AlibabaCloud
 			DescribeSlowSQLListOutcome describeSlowSQLList(const Model::DescribeSlowSQLListRequest &request)const;
 			void describeSlowSQLListAsync(const Model::DescribeSlowSQLListRequest& request, const DescribeSlowSQLListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowSQLListOutcomeCallable describeSlowSQLListCallable(const Model::DescribeSlowSQLListRequest& request) const;
+			DescribeSqlAuditStatOutcome describeSqlAuditStat(const Model::DescribeSqlAuditStatRequest &request)const;
+			void describeSqlAuditStatAsync(const Model::DescribeSqlAuditStatRequest& request, const DescribeSqlAuditStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSqlAuditStatOutcomeCallable describeSqlAuditStatCallable(const Model::DescribeSqlAuditStatRequest& request) const;
 			DescribeStandbyCreateModeOutcome describeStandbyCreateMode(const Model::DescribeStandbyCreateModeRequest &request)const;
 			void describeStandbyCreateModeAsync(const Model::DescribeStandbyCreateModeRequest& request, const DescribeStandbyCreateModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStandbyCreateModeOutcomeCallable describeStandbyCreateModeCallable(const Model::DescribeStandbyCreateModeRequest& request) const;
@@ -1081,6 +1118,9 @@ namespace AlibabaCloud
 			ReleaseWorkerInstanceOutcome releaseWorkerInstance(const Model::ReleaseWorkerInstanceRequest &request)const;
 			void releaseWorkerInstanceAsync(const Model::ReleaseWorkerInstanceRequest& request, const ReleaseWorkerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseWorkerInstanceOutcomeCallable releaseWorkerInstanceCallable(const Model::ReleaseWorkerInstanceRequest& request) const;
+			RemoveStandbyInstanceOutcome removeStandbyInstance(const Model::RemoveStandbyInstanceRequest &request)const;
+			void removeStandbyInstanceAsync(const Model::RemoveStandbyInstanceRequest& request, const RemoveStandbyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveStandbyInstanceOutcomeCallable removeStandbyInstanceCallable(const Model::RemoveStandbyInstanceRequest& request) const;
 			ResumeProjectOutcome resumeProject(const Model::ResumeProjectRequest &request)const;
 			void resumeProjectAsync(const Model::ResumeProjectRequest& request, const ResumeProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResumeProjectOutcomeCallable resumeProjectCallable(const Model::ResumeProjectRequest& request) const;

@@ -181,6 +181,8 @@ void DescribeOasSQLHistoryListResult::parse(const std::string &payload)
 			dataObject.avgDbTime = valueDataDataItem["AvgDbTime"].asString();
 		if(!valueDataDataItem["SumDbTime"].isNull())
 			dataObject.sumDbTime = valueDataDataItem["SumDbTime"].asString();
+		if(!valueDataDataItem["WaitEvent"].isNull())
+			dataObject.waitEvent = valueDataDataItem["WaitEvent"].asString();
 		data_.push_back(dataObject);
 	}
 

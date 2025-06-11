@@ -32,14 +32,11 @@ public:
 	~DescribeInstanceRequest();
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
-	std::string getMaxConnectionLimit() const;
-	void setMaxConnectionLimit(const std::string &maxConnectionLimit);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
 private:
 	int pageNumber_;
-	std::string maxConnectionLimit_;
 	std::string instanceId_;
 };
 } // namespace Model

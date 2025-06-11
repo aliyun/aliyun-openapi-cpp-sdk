@@ -36,12 +36,12 @@ namespace AlibabaCloud
 				{
 					struct RegionalInstanceSummaryLis
 					{
-						std::string immediatelyExpiredInstancesCount;
-						std::string recentCreatedInstancesCount;
-						std::string expiredInstancesCount;
+						long immediatelyExpiredInstancesCount;
+						long recentCreatedInstancesCount;
+						long expiredInstancesCount;
 						std::string region;
-						std::string runningInstancesCount;
-						std::string totalInstancesCount;
+						long runningInstancesCount;
+						long totalInstancesCount;
 					};
 					long immediatelyExpiredInstancesCount;
 					long tenantInstancesCount;

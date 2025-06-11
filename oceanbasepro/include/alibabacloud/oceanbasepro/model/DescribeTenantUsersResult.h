@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string userName;
 					std::string instanceId;
+					std::string globalPermissions;
 					std::string userType;
 					std::string userStatus;
 				};

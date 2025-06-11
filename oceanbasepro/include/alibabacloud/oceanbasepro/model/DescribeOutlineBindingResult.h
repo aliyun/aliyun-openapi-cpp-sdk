@@ -36,7 +36,9 @@ namespace AlibabaCloud
 				{
 					std::string tableName;
 					int maxConcurrent;
+					std::string sqlText;
 					long outlineId;
+					long sqlTextConcurrentNum;
 					std::string bindPlan;
 					std::string bindIndex;
 				};

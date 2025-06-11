@@ -65,6 +65,7 @@ namespace AlibabaCloud
 						std::string firstLoadTime;
 						double avgRowProcessed;
 						std::string planUnionHash;
+						std::string sqlText;
 						long mergedVersion;
 						bool hitDiagnosis;
 						std::string sqlId;

@@ -52,6 +52,15 @@ void CreateTenantUserRequest::setUserPassword(const std::string &userPassword) {
   setBodyParameter(std::string("UserPassword"), userPassword);
 }
 
+std::string CreateTenantUserRequest::getGlobalPermissions() const {
+  return globalPermissions_;
+}
+
+void CreateTenantUserRequest::setGlobalPermissions(const std::string &globalPermissions) {
+  globalPermissions_ = globalPermissions;
+  setBodyParameter(std::string("GlobalPermissions"), globalPermissions);
+}
+
 std::string CreateTenantUserRequest::getTenantId() const {
   return tenantId_;
 }

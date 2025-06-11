@@ -32,9 +32,12 @@ public:
 	~DescribeInstanceSSLRequest();
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getTenantId() const;
+	void setTenantId(const std::string &tenantId);
 
 private:
 	std::string instanceId_;
+	std::string tenantId_;
 };
 } // namespace Model
 } // namespace OceanBasePro

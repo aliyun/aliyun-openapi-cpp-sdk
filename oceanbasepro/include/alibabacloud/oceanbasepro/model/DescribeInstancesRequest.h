@@ -36,20 +36,23 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getInstanceName() const;
 	void setInstanceName(const std::string &instanceName);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
+	bool getWithOBCloudInstances() const;
+	void setWithOBCloudInstances(bool withOBCloudInstances);
 
 private:
 	std::string searchKey_;
 	int pageNumber_;
 	std::string resourceGroupId_;
+	int pageSize_;
 	std::string instanceId_;
 	std::string instanceName_;
-	int pageSize_;
+	bool withOBCloudInstances_;
 };
 } // namespace Model
 } // namespace OceanBasePro

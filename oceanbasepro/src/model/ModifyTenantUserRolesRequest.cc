@@ -25,6 +25,15 @@ ModifyTenantUserRolesRequest::ModifyTenantUserRolesRequest()
 
 ModifyTenantUserRolesRequest::~ModifyTenantUserRolesRequest() {}
 
+std::string ModifyTenantUserRolesRequest::getUserType() const {
+  return userType_;
+}
+
+void ModifyTenantUserRolesRequest::setUserType(const std::string &userType) {
+  userType_ = userType;
+  setBodyParameter(std::string("UserType"), userType);
+}
+
 std::string ModifyTenantUserRolesRequest::getUserRole() const {
   return userRole_;
 }
@@ -50,6 +59,15 @@ std::string ModifyTenantUserRolesRequest::getModifyType() const {
 void ModifyTenantUserRolesRequest::setModifyType(const std::string &modifyType) {
   modifyType_ = modifyType;
   setBodyParameter(std::string("ModifyType"), modifyType);
+}
+
+std::string ModifyTenantUserRolesRequest::getGlobalPermissions() const {
+  return globalPermissions_;
+}
+
+void ModifyTenantUserRolesRequest::setGlobalPermissions(const std::string &globalPermissions) {
+  globalPermissions_ = globalPermissions;
+  setBodyParameter(std::string("GlobalPermissions"), globalPermissions);
 }
 
 std::string ModifyTenantUserRolesRequest::getTenantId() const {

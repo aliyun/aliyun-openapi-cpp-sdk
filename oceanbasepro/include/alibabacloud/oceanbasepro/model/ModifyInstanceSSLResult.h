@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct InstanceSSL
 				{
 					std::string enableSSL;
+					std::string tenantId;
 					std::string instanceId;
 				};
 

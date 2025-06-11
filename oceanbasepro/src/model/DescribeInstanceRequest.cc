@@ -34,15 +34,6 @@ void DescribeInstanceRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeInstanceRequest::getMaxConnectionLimit() const {
-  return maxConnectionLimit_;
-}
-
-void DescribeInstanceRequest::setMaxConnectionLimit(const std::string &maxConnectionLimit) {
-  maxConnectionLimit_ = maxConnectionLimit;
-  setBodyParameter(std::string("MaxConnectionLimit"), maxConnectionLimit);
-}
-
 std::string DescribeInstanceRequest::getInstanceId() const {
   return instanceId_;
 }

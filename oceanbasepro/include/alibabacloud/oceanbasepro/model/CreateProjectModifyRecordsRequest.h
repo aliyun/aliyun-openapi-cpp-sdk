@@ -55,6 +55,12 @@ public:
 			std::string mappedName;
 			std::string string;
 			std::vector<std::string> filterColumns;
+			struct ObkvPartitionConfig {
+				std::string virtualColumn;
+				std::string partitionType;
+				int partitionSize;
+			};
+			ObkvPartitionConfig obkvPartitionConfig;
 			struct AdbTableSchema {
 				std::string string;
 				std::vector<std::string> primaryKeys;
@@ -117,15 +123,372 @@ public:
 		ViewsItem viewsItem;
 		std::vector<ViewsItem> views;
 	};
+	struct TransferMapping {
+		std::string mode;
+		struct DatabasesItem {
+			std::string mappedName;
+			struct SpecificViewsItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			SpecificViewsItem specificViewsItem;
+			std::vector<SpecificViewsItem> specificViews;
+			struct TablesItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct ObkvPartitionConfig {
+					std::string virtualColumn;
+					std::string partitionType;
+					int partitionSize;
+				};
+				ObkvPartitionConfig obkvPartitionConfig;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			TablesItem tablesItem;
+			std::vector<TablesItem> tables;
+			std::string clusterName;
+			std::string name;
+			std::string tenantName;
+			std::string id;
+			struct SpecificTablesItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			SpecificTablesItem specificTablesItem;
+			std::vector<SpecificTablesItem> specificTables;
+			struct ViewsItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			ViewsItem viewsItem;
+			std::vector<ViewsItem> views;
+		};
+		DatabasesItem databasesItem;
+		std::vector<DatabasesItem> databases;
+		std::string string;
+		std::vector<std::string> tableAndViewBlackList;
+		struct BlackTableRulesItem {
+			struct ObjectMapping {
+				std::string mappedName;
+				std::string name;
+			};
+			ObjectMapping objectMapping;
+			struct SchemaMapping {
+				std::string mappedName;
+				std::string name;
+			};
+			SchemaMapping schemaMapping;
+		};
+		BlackTableRulesItem blackTableRulesItem;
+		std::vector<BlackTableRulesItem> blackTableRules;
+		struct SchemasItem {
+			std::string mappedName;
+			struct SpecificViewsItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			SpecificViewsItem specificViewsItem;
+			std::vector<SpecificViewsItem> specificViews;
+			struct TablesItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct ObkvPartitionConfig {
+					std::string virtualColumn;
+					std::string partitionType;
+					int partitionSize;
+				};
+				ObkvPartitionConfig obkvPartitionConfig;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			TablesItem tablesItem;
+			std::vector<TablesItem> tables;
+			std::string clusterName;
+			std::string name;
+			std::string tenantName;
+			std::string id;
+			struct SpecificTablesItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			SpecificTablesItem specificTablesItem;
+			std::vector<SpecificTablesItem> specificTables;
+			struct ViewsItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			ViewsItem viewsItem;
+			std::vector<ViewsItem> views;
+		};
+		SchemasItem schemasItem;
+		std::vector<SchemasItem> schemas;
+		struct BlackViewRulesItem {
+			struct ObjectMapping {
+				std::string mappedName;
+				std::string name;
+			};
+			ObjectMapping objectMapping;
+			struct SchemaMapping {
+				std::string mappedName;
+				std::string name;
+			};
+			SchemaMapping schemaMapping;
+		};
+		BlackViewRulesItem blackViewRulesItem;
+		std::vector<BlackViewRulesItem> blackViewRules;
+		struct DatabasesBlackItem {
+			std::string mappedName;
+			struct SpecificViewsItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			SpecificViewsItem specificViewsItem;
+			std::vector<SpecificViewsItem> specificViews;
+			struct TablesItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			TablesItem tablesItem;
+			std::vector<TablesItem> tables;
+			std::string clusterName;
+			std::string name;
+			std::string tenantName;
+			std::string id;
+			struct SpecificTablesItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			SpecificTablesItem specificTablesItem;
+			std::vector<SpecificTablesItem> specificTables;
+			struct ViewsItem {
+				std::string mappedName;
+				std::string string;
+				std::vector<std::string> filterColumns;
+				struct AdbTableSchema {
+					std::string string;
+					std::vector<std::string> primaryKeys;
+					std::string partitionStatement;
+					std::string partitionLifeCycle;
+					std::string string;
+					std::vector<std::string> distributedKeys;
+				};
+				AdbTableSchema adbTableSchema;
+				std::string name;
+				std::string whereClause;
+				std::string id;
+				std::string string;
+				std::vector<std::string> shardColumns;
+			};
+			ViewsItem viewsItem;
+			std::vector<ViewsItem> views;
+		};
+		DatabasesBlackItem databasesBlackItem;
+		std::vector<DatabasesBlackItem> databasesBlack;
+		struct WhiteTableRulesItem {
+			struct ObjectMapping {
+				std::string mappedName;
+				std::string name;
+			};
+			ObjectMapping objectMapping;
+			struct SchemaMapping {
+				std::string mappedName;
+				std::string name;
+			};
+			SchemaMapping schemaMapping;
+		};
+		WhiteTableRulesItem whiteTableRulesItem;
+		std::vector<WhiteTableRulesItem> whiteTableRules;
+		struct WhiteViewRulesItem {
+			struct ObjectMapping {
+				std::string mappedName;
+				std::string name;
+			};
+			ObjectMapping objectMapping;
+			struct SchemaMapping {
+				std::string mappedName;
+				std::string name;
+			};
+			SchemaMapping schemaMapping;
+		};
+		WhiteViewRulesItem whiteViewRulesItem;
+		std::vector<WhiteViewRulesItem> whiteViewRules;
+		std::string string;
+		std::vector<std::string> tableAndViewWhiteList;
+	};
 	CreateProjectModifyRecordsRequest();
 	~CreateProjectModifyRecordsRequest();
 	std::vector<Databases> getDatabases() const;
 	void setDatabases(const std::vector<Databases> &databases);
+	TransferMapping getTransferMapping() const;
+	void setTransferMapping(const TransferMapping &transferMapping);
 	std::string getId() const;
 	void setId(const std::string &id);
 
 private:
 	std::vector<Databases> databases_;
+	TransferMapping transferMapping_;
 	std::string id_;
 };
 } // namespace Model

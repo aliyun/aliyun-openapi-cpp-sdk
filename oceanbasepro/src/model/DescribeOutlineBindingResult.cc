@@ -50,6 +50,10 @@ void DescribeOutlineBindingResult::parse(const std::string &payload)
 		outlineBinding_.maxConcurrent = std::stoi(outlineBindingNode["MaxConcurrent"].asString());
 	if(!outlineBindingNode["TableName"].isNull())
 		outlineBinding_.tableName = outlineBindingNode["TableName"].asString();
+	if(!outlineBindingNode["SqlText"].isNull())
+		outlineBinding_.sqlText = outlineBindingNode["SqlText"].asString();
+	if(!outlineBindingNode["SqlTextConcurrentNum"].isNull())
+		outlineBinding_.sqlTextConcurrentNum = std::stol(outlineBindingNode["SqlTextConcurrentNum"].asString());
 
 }
 

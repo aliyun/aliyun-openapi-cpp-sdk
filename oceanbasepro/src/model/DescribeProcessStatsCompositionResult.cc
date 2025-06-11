@@ -82,6 +82,86 @@ void DescribeProcessStatsCompositionResult::parse(const std::string &payload)
 			allProcessListItemObject.traceId = dataNodeAllProcessListAllProcessListItem["TraceId"].asString();
 		if(!dataNodeAllProcessListAllProcessListItem["PlanId"].isNull())
 			allProcessListItemObject.planId = dataNodeAllProcessListAllProcessListItem["PlanId"].asString();
+		if(!dataNodeAllProcessListAllProcessListItem["DynamicSql"].isNull())
+			allProcessListItemObject.dynamicSql = dataNodeAllProcessListAllProcessListItem["DynamicSql"].asString();
+		if(!dataNodeAllProcessListAllProcessListItem["ServerSn"].isNull())
+			allProcessListItemObject.serverSn = dataNodeAllProcessListAllProcessListItem["ServerSn"].asString();
+		auto allProcessSqlListsNode = dataNodeAllProcessListAllProcessListItem["ProcessSqlLists"]["ProcessSqlListsItem"];
+		for (auto dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem : allProcessSqlListsNode)
+		{
+			Data::AllProcessListItem::ProcessSqlListsItem processSqlListsObject;
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["SqlText"].isNull())
+				processSqlListsObject.sqlText = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["SqlText"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["TenantId"].isNull())
+				processSqlListsObject.tenantId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["TenantId"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["Database"].isNull())
+				processSqlListsObject.database = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["Database"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["User"].isNull())
+				processSqlListsObject.user = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["User"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["ExecuteTime"].isNull())
+				processSqlListsObject.executeTime = std::stol(dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["ExecuteTime"].asString());
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["CpuTime"].isNull())
+				processSqlListsObject.cpuTime = std::stol(dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["CpuTime"].asString());
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["ServerIp"].isNull())
+				processSqlListsObject.serverIp = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["ServerIp"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["ClientIp"].isNull())
+				processSqlListsObject.clientIp = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["ClientIp"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["SessionId"].isNull())
+				processSqlListsObject.sessionId = std::stol(dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["SessionId"].asString());
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["ProxySessId"].isNull())
+				processSqlListsObject.proxySessId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["ProxySessId"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["Command"].isNull())
+				processSqlListsObject.command = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["Command"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["Status"].isNull())
+				processSqlListsObject.status = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["Status"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["SqlId"].isNull())
+				processSqlListsObject.sqlId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["SqlId"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["TraceId"].isNull())
+				processSqlListsObject.traceId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["TraceId"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["PlanId"].isNull())
+				processSqlListsObject.planId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["PlanId"].asString();
+			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["DynamicSql"].isNull())
+				processSqlListsObject.dynamicSql = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["DynamicSql"].asString();
+			auto allProcessSqlListNode = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["ProcessSqlList"]["ProcessSqlListItem"];
+			for (auto dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem : allProcessSqlListNode)
+			{
+				Data::AllProcessListItem::ProcessSqlListsItem::ProcessSqlListItem processSqlListObject;
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["SqlText"].isNull())
+					processSqlListObject.sqlText = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["SqlText"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["TenantId"].isNull())
+					processSqlListObject.tenantId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["TenantId"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["Database"].isNull())
+					processSqlListObject.database = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["Database"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["User"].isNull())
+					processSqlListObject.user = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["User"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["ExecuteTime"].isNull())
+					processSqlListObject.executeTime = std::stol(dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["ExecuteTime"].asString());
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["CpuTime"].isNull())
+					processSqlListObject.cpuTime = std::stol(dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["CpuTime"].asString());
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["ServerIp"].isNull())
+					processSqlListObject.serverIp = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["ServerIp"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["ClientIp"].isNull())
+					processSqlListObject.clientIp = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["ClientIp"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["SessionId"].isNull())
+					processSqlListObject.sessionId = std::stol(dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["SessionId"].asString());
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["ProxySessId"].isNull())
+					processSqlListObject.proxySessId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["ProxySessId"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["Command"].isNull())
+					processSqlListObject.command = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["Command"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["Status"].isNull())
+					processSqlListObject.status = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["Status"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["SqlId"].isNull())
+					processSqlListObject.sqlId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["SqlId"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["TraceId"].isNull())
+					processSqlListObject.traceId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["TraceId"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["PlanId"].isNull())
+					processSqlListObject.planId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["PlanId"].asString();
+				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["DynamicSql"].isNull())
+					processSqlListObject.dynamicSql = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["DynamicSql"].asString();
+				processSqlListsObject.processSqlList.push_back(processSqlListObject);
+			}
+			allProcessListItemObject.processSqlLists.push_back(processSqlListsObject);
+		}
 		data_.allProcessList.push_back(allProcessListItemObject);
 	}
 	auto sessionStatisticsNode = dataNode["SessionStatistics"];

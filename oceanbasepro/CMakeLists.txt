@@ -37,6 +37,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/CreateLabelResult.h
 	include/alibabacloud/oceanbasepro/model/CreateMySqlDataSourceRequest.h
 	include/alibabacloud/oceanbasepro/model/CreateMySqlDataSourceResult.h
+	include/alibabacloud/oceanbasepro/model/CreateOasOutlineTaskRequest.h
+	include/alibabacloud/oceanbasepro/model/CreateOasOutlineTaskResult.h
 	include/alibabacloud/oceanbasepro/model/CreateOceanBaseDataSourceRequest.h
 	include/alibabacloud/oceanbasepro/model/CreateOceanBaseDataSourceResult.h
 	include/alibabacloud/oceanbasepro/model/CreateOmsMysqlDataSourceRequest.h
@@ -103,6 +105,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeDatabasesResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceAvailableZonesRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeInstanceAvailableZonesResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceCreatableZoneRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceCreatableZoneResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeInstanceSSLRequest.h
@@ -153,6 +157,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeProjectStepMetricResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeProjectStepsRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeProjectStepsResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeProxyServiceRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeProxyServiceResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeRecommendIndexRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeRecommendIndexResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeRestorableTenantsRequest.h
@@ -177,6 +183,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLHistoryListResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLListRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeSlowSQLListResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeSqlAuditStatRequest.h
+	include/alibabacloud/oceanbasepro/model/DescribeSqlAuditStatResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeStandbyCreateModeRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeStandbyCreateModeResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeTagValuesRequest.h
@@ -271,6 +279,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/ReleaseProjectResult.h
 	include/alibabacloud/oceanbasepro/model/ReleaseWorkerInstanceRequest.h
 	include/alibabacloud/oceanbasepro/model/ReleaseWorkerInstanceResult.h
+	include/alibabacloud/oceanbasepro/model/RemoveStandbyInstanceRequest.h
+	include/alibabacloud/oceanbasepro/model/RemoveStandbyInstanceResult.h
 	include/alibabacloud/oceanbasepro/model/ResumeProjectRequest.h
 	include/alibabacloud/oceanbasepro/model/ResumeProjectResult.h
 	include/alibabacloud/oceanbasepro/model/RetryProjectModifyRecordsRequest.h
@@ -308,6 +318,8 @@ set(oceanbasepro_src
 	src/model/CreateLabelResult.cc
 	src/model/CreateMySqlDataSourceRequest.cc
 	src/model/CreateMySqlDataSourceResult.cc
+	src/model/CreateOasOutlineTaskRequest.cc
+	src/model/CreateOasOutlineTaskResult.cc
 	src/model/CreateOceanBaseDataSourceRequest.cc
 	src/model/CreateOceanBaseDataSourceResult.cc
 	src/model/CreateOmsMysqlDataSourceRequest.cc
@@ -374,6 +386,8 @@ set(oceanbasepro_src
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeInstanceRequest.cc
 	src/model/DescribeInstanceResult.cc
+	src/model/DescribeInstanceAvailableZonesRequest.cc
+	src/model/DescribeInstanceAvailableZonesResult.cc
 	src/model/DescribeInstanceCreatableZoneRequest.cc
 	src/model/DescribeInstanceCreatableZoneResult.cc
 	src/model/DescribeInstanceSSLRequest.cc
@@ -424,6 +438,8 @@ set(oceanbasepro_src
 	src/model/DescribeProjectStepMetricResult.cc
 	src/model/DescribeProjectStepsRequest.cc
 	src/model/DescribeProjectStepsResult.cc
+	src/model/DescribeProxyServiceRequest.cc
+	src/model/DescribeProxyServiceResult.cc
 	src/model/DescribeRecommendIndexRequest.cc
 	src/model/DescribeRecommendIndexResult.cc
 	src/model/DescribeRestorableTenantsRequest.cc
@@ -448,6 +464,8 @@ set(oceanbasepro_src
 	src/model/DescribeSlowSQLHistoryListResult.cc
 	src/model/DescribeSlowSQLListRequest.cc
 	src/model/DescribeSlowSQLListResult.cc
+	src/model/DescribeSqlAuditStatRequest.cc
+	src/model/DescribeSqlAuditStatResult.cc
 	src/model/DescribeStandbyCreateModeRequest.cc
 	src/model/DescribeStandbyCreateModeResult.cc
 	src/model/DescribeTagValuesRequest.cc
@@ -542,6 +560,8 @@ set(oceanbasepro_src
 	src/model/ReleaseProjectResult.cc
 	src/model/ReleaseWorkerInstanceRequest.cc
 	src/model/ReleaseWorkerInstanceResult.cc
+	src/model/RemoveStandbyInstanceRequest.cc
+	src/model/RemoveStandbyInstanceResult.cc
 	src/model/ResumeProjectRequest.cc
 	src/model/ResumeProjectResult.cc
 	src/model/RetryProjectModifyRecordsRequest.cc

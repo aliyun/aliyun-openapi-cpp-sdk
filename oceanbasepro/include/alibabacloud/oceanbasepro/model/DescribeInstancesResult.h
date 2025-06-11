@@ -80,7 +80,23 @@ namespace AlibabaCloud
 						double upperThreshold;
 						bool autoScale;
 					};
+					struct MigrationInfo
+					{
+						struct CheckResult
+						{
+							std::string subModule;
+							std::string codeName;
+							std::string moduleName;
+							std::string level;
+							std::string module;
+							std::string code;
+							std::string subModuleName;
+						};
+						CheckResult checkResult;
+						bool migratable;
+					};
 					std::string deployType;
+					MigrationInfo migrationInfo;
 					std::string resourceGroupId;
 					std::string specType;
 					bool enableUpgradeNodes;
@@ -93,15 +109,17 @@ namespace AlibabaCloud
 					std::string cpuArchitecture;
 					std::string version;
 					std::string commodityCode;
-					std::string diskSize;
+					long diskSize;
 					std::string instanceRole;
 					std::string instanceType;
 					std::string maintainTime;
 					std::string obRpmVersion;
+					std::string replicaMode;
 					std::string instanceId;
 					std::string createTime;
 					Resource resource;
 					std::string instanceClass;
+					bool migratable;
 					std::string payType;
 					std::string instanceName;
 					std::string series;

@@ -69,15 +69,15 @@ void DescribeInstanceSummaryResult::parse(const std::string &payload)
 		if(!instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["Region"].isNull())
 			regionalInstanceSummaryLisObject.region = instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["Region"].asString();
 		if(!instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["TotalInstancesCount"].isNull())
-			regionalInstanceSummaryLisObject.totalInstancesCount = instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["TotalInstancesCount"].asString();
+			regionalInstanceSummaryLisObject.totalInstancesCount = std::stol(instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["TotalInstancesCount"].asString());
 		if(!instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["ImmediatelyExpiredInstancesCount"].isNull())
-			regionalInstanceSummaryLisObject.immediatelyExpiredInstancesCount = instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["ImmediatelyExpiredInstancesCount"].asString();
+			regionalInstanceSummaryLisObject.immediatelyExpiredInstancesCount = std::stol(instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["ImmediatelyExpiredInstancesCount"].asString());
 		if(!instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["RunningInstancesCount"].isNull())
-			regionalInstanceSummaryLisObject.runningInstancesCount = instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["RunningInstancesCount"].asString();
+			regionalInstanceSummaryLisObject.runningInstancesCount = std::stol(instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["RunningInstancesCount"].asString());
 		if(!instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["ExpiredInstancesCount"].isNull())
-			regionalInstanceSummaryLisObject.expiredInstancesCount = instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["ExpiredInstancesCount"].asString();
+			regionalInstanceSummaryLisObject.expiredInstancesCount = std::stol(instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["ExpiredInstancesCount"].asString());
 		if(!instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["RecentCreatedInstancesCount"].isNull())
-			regionalInstanceSummaryLisObject.recentCreatedInstancesCount = instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["RecentCreatedInstancesCount"].asString();
+			regionalInstanceSummaryLisObject.recentCreatedInstancesCount = std::stol(instanceSummaryNodeRegionalInstanceSummaryListRegionalInstanceSummaryLis["RecentCreatedInstancesCount"].asString());
 		instanceSummary_.regionalInstanceSummaryList.push_back(regionalInstanceSummaryLisObject);
 	}
 

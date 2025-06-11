@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeParametersHistoryResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct Respond
 				{
 					struct ParametersItem
 					{
@@ -45,7 +45,7 @@ namespace AlibabaCloud
 						std::string name;
 					};
 					int totalCount;
-					std::vector<Data::ParametersItem> parameters;
+					std::vector<ParametersItem> parameters;
 					int pageNumber;
 				};
 
@@ -53,12 +53,12 @@ namespace AlibabaCloud
 				DescribeParametersHistoryResult();
 				explicit DescribeParametersHistoryResult(const std::string &payload);
 				~DescribeParametersHistoryResult();
-				std::vector<Data> getRespond()const;
+				Respond getRespond()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Data> respond_;
+				Respond respond_;
 
 			};
 		}

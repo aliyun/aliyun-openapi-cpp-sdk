@@ -82,6 +82,8 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 				tenantZonesObject.logicalZone = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["LogicalZone"].asString();
 			if(!instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["ReplicaType"].isNull())
 				tenantZonesObject.replicaType = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["ReplicaType"].asString();
+			if(!instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["ReadOnlyReplicaType"].isNull())
+				tenantZonesObject.readOnlyReplicaType = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["ReadOnlyReplicaType"].asString();
 			auto allUnitsNode = instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItem["Units"]["UnitsItem"];
 			for (auto instanceTopologyNodeTenantsTenantsItemTenantZonesTenantZonesItemUnitsUnitsItem : allUnitsNode)
 			{
@@ -140,6 +142,8 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 				nodesObject.readOnlyCopyId = std::stol(instanceTopologyNodeZonesZonesItemNodesNodesItem["ReadOnlyCopyId"].asString());
 			if(!instanceTopologyNodeZonesZonesItemNodesNodesItem["LogicalZone"].isNull())
 				nodesObject.logicalZone = instanceTopologyNodeZonesZonesItemNodesNodesItem["LogicalZone"].asString();
+			if(!instanceTopologyNodeZonesZonesItemNodesNodesItem["ReadOnlyReplicaType"].isNull())
+				nodesObject.readOnlyReplicaType = instanceTopologyNodeZonesZonesItemNodesNodesItem["ReadOnlyReplicaType"].asString();
 			auto nodeResourceNode = value["NodeResource"];
 			auto cpuNode = nodeResourceNode["Cpu"];
 			if(!cpuNode["UsedCpu"].isNull())
@@ -185,6 +189,10 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 			replicasItemObject.replicaType = instanceTopologyNodeReplicasReplicasItem["ReplicaType"].asString();
 		if(!instanceTopologyNodeReplicasReplicasItem["Status"].isNull())
 			replicasItemObject.status = instanceTopologyNodeReplicasReplicasItem["Status"].asString();
+		if(!instanceTopologyNodeReplicasReplicasItem["ReadOnlyReplicaType"].isNull())
+			replicasItemObject.readOnlyReplicaType = instanceTopologyNodeReplicasReplicasItem["ReadOnlyReplicaType"].asString();
+		if(!instanceTopologyNodeReplicasReplicasItem["OnlineNodeNum"].isNull())
+			replicasItemObject.onlineNodeNum = std::stol(instanceTopologyNodeReplicasReplicasItem["OnlineNodeNum"].asString());
 		auto replicaResourceNode = value["ReplicaResource"];
 		auto memory2Node = replicaResourceNode["Memory"];
 		if(!memory2Node["UsedMemory"].isNull())

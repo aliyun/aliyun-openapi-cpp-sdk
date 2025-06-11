@@ -34,10 +34,13 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	std::string getEnableSSL() const;
 	void setEnableSSL(const std::string &enableSSL);
+	std::string getTenantId() const;
+	void setTenantId(const std::string &tenantId);
 
 private:
 	std::string instanceId_;
 	std::string enableSSL_;
+	std::string tenantId_;
 };
 } // namespace Model
 } // namespace OceanBasePro

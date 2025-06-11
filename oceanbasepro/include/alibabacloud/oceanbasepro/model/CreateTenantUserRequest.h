@@ -36,6 +36,8 @@ public:
 	void setDescription(const std::string &description);
 	std::string getUserPassword() const;
 	void setUserPassword(const std::string &userPassword);
+	std::string getGlobalPermissions() const;
+	void setGlobalPermissions(const std::string &globalPermissions);
 	std::string getTenantId() const;
 	void setTenantId(const std::string &tenantId);
 	std::string getEncryptionType() const;
@@ -51,6 +53,7 @@ private:
 	std::string roles_;
 	std::string description_;
 	std::string userPassword_;
+	std::string globalPermissions_;
 	std::string tenantId_;
 	std::string encryptionType_;
 	std::string userType_;

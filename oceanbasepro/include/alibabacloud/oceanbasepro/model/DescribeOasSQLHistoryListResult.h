@@ -98,6 +98,7 @@ namespace AlibabaCloud
 					double avgScheduleTime;
 					double maxConcurrencyWaitTime;
 					double missPlanPercentage;
+					std::string waitEvent;
 					double retCode4012Count;
 					double avgElapsedTime;
 					double failPercentage;

@@ -58,8 +58,10 @@ UpdateProjectConfigRequest::FullTransferConfig UpdateProjectConfigRequest::getFu
 
 void UpdateProjectConfigRequest::setFullTransferConfig(const UpdateProjectConfigRequest::FullTransferConfig &fullTransferConfig) {
   fullTransferConfig_ = fullTransferConfig;
+  setBodyParameter(std::string("FullTransferConfig") + ".IndexDDLConcurrencyLimit", std::to_string(fullTransferConfig.indexDDLConcurrencyLimit));
   setBodyParameter(std::string("FullTransferConfig") + ".ThrottleRps", std::to_string(fullTransferConfig.throttleRps));
   setBodyParameter(std::string("FullTransferConfig") + ".WriteWorkerNum", std::to_string(fullTransferConfig.writeWorkerNum));
+  setBodyParameter(std::string("FullTransferConfig") + ".MaxConcurrentIndexDDLs", std::to_string(fullTransferConfig.maxConcurrentIndexDDLs));
   setBodyParameter(std::string("FullTransferConfig") + ".ReadWorkerNum", std::to_string(fullTransferConfig.readWorkerNum));
   setBodyParameter(std::string("FullTransferConfig") + ".ThrottleIOPS", std::to_string(fullTransferConfig.throttleIOPS));
 }

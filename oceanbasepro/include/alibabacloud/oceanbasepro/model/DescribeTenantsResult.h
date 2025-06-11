@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string deployType;
 					int unitCpu;
+					std::string parameterTemplate;
 					std::string description;
 					std::string tenantName;
 					int unitNum;

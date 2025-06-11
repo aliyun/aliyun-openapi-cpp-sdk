@@ -66,7 +66,7 @@ void DescribeInstancesResult::parse(const std::string &payload)
 		if(!valueInstancesData["PayType"].isNull())
 			instancesObject.payType = valueInstancesData["PayType"].asString();
 		if(!valueInstancesData["DiskSize"].isNull())
-			instancesObject.diskSize = valueInstancesData["DiskSize"].asString();
+			instancesObject.diskSize = std::stol(valueInstancesData["DiskSize"].asString());
 		if(!valueInstancesData["DiskType"].isNull())
 			instancesObject.diskType = valueInstancesData["DiskType"].asString();
 		if(!valueInstancesData["InstanceId"].isNull())
@@ -101,6 +101,10 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.specType = valueInstancesData["SpecType"].asString();
 		if(!valueInstancesData["ObRpmVersion"].isNull())
 			instancesObject.obRpmVersion = valueInstancesData["ObRpmVersion"].asString();
+		if(!valueInstancesData["ReplicaMode"].isNull())
+			instancesObject.replicaMode = valueInstancesData["ReplicaMode"].asString();
+		if(!valueInstancesData["Migratable"].isNull())
+			instancesObject.migratable = valueInstancesData["Migratable"].asString() == "true";
 		auto resourceNode = value["Resource"];
 		if(!resourceNode["UnitCount"].isNull())
 			instancesObject.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());
@@ -155,6 +159,24 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.dataDiskAutoScaleConfig.scaleStepInMerge = dataDiskAutoScaleConfigNode["ScaleStepInMerge"].asString();
 		if(!dataDiskAutoScaleConfigNode["UpperScaleStrategy"].isNull())
 			instancesObject.dataDiskAutoScaleConfig.upperScaleStrategy = dataDiskAutoScaleConfigNode["UpperScaleStrategy"].asString();
+		auto migrationInfoNode = value["MigrationInfo"];
+		if(!migrationInfoNode["Migratable"].isNull())
+			instancesObject.migrationInfo.migratable = migrationInfoNode["Migratable"].asString() == "true";
+		auto checkResultNode = migrationInfoNode["CheckResult"];
+		if(!checkResultNode["Level"].isNull())
+			instancesObject.migrationInfo.checkResult.level = checkResultNode["Level"].asString();
+		if(!checkResultNode["Code"].isNull())
+			instancesObject.migrationInfo.checkResult.code = checkResultNode["Code"].asString();
+		if(!checkResultNode["CodeName"].isNull())
+			instancesObject.migrationInfo.checkResult.codeName = checkResultNode["CodeName"].asString();
+		if(!checkResultNode["Module"].isNull())
+			instancesObject.migrationInfo.checkResult.module = checkResultNode["Module"].asString();
+		if(!checkResultNode["ModuleName"].isNull())
+			instancesObject.migrationInfo.checkResult.moduleName = checkResultNode["ModuleName"].asString();
+		if(!checkResultNode["SubModule"].isNull())
+			instancesObject.migrationInfo.checkResult.subModule = checkResultNode["SubModule"].asString();
+		if(!checkResultNode["SubModuleName"].isNull())
+			instancesObject.migrationInfo.checkResult.subModuleName = checkResultNode["SubModuleName"].asString();
 		auto allAvailableZones = value["AvailableZones"]["AvailableZones"];
 		for (auto value : allAvailableZones)
 			instancesObject.availableZones.push_back(value.asString());

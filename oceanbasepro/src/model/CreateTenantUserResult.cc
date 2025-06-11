@@ -46,6 +46,8 @@ void CreateTenantUserResult::parse(const std::string &payload)
 		tenantUser_.userStatus = tenantUserNode["UserStatus"].asString();
 	if(!tenantUserNode["UserName"].isNull())
 		tenantUser_.userName = tenantUserNode["UserName"].asString();
+	if(!tenantUserNode["GlobalPermissions"].isNull())
+		tenantUser_.globalPermissions = tenantUserNode["GlobalPermissions"].asString();
 	auto allRolesNode = tenantUserNode["Roles"]["RolesItem"];
 	for (auto tenantUserNodeRolesRolesItem : allRolesNode)
 	{

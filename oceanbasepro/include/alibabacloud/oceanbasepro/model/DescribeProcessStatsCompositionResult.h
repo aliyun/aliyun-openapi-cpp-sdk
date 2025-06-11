@@ -63,17 +63,59 @@ namespace AlibabaCloud
 					};
 					struct AllProcessListItem
 					{
+						struct ProcessSqlListsItem
+						{
+							struct ProcessSqlListItem
+							{
+								std::string status;
+								std::string dynamicSql;
+								std::string user;
+								long executeTime;
+								std::string proxySessId;
+								std::string serverIp;
+								std::string planId;
+								std::string sqlText;
+								long cpuTime;
+								std::string clientIp;
+								std::string sqlId;
+								std::string tenantId;
+								std::string command;
+								std::string database;
+								std::string traceId;
+								long sessionId;
+							};
+							std::string status;
+							std::string dynamicSql;
+							std::string user;
+							long executeTime;
+							std::string proxySessId;
+							std::string serverIp;
+							std::string planId;
+							std::string sqlText;
+							long cpuTime;
+							std::string clientIp;
+							std::string sqlId;
+							std::vector<ProcessSqlListsItem::ProcessSqlListItem> processSqlList;
+							std::string tenantId;
+							std::string command;
+							std::string database;
+							std::string traceId;
+							long sessionId;
+						};
 						std::string status;
+						std::string dynamicSql;
 						std::string user;
 						long executeTime;
 						std::string proxySessId;
 						std::string serverIp;
 						std::string planId;
 						std::string sqlText;
+						std::vector<AllProcessListItem::ProcessSqlListsItem> processSqlLists;
 						long cpuTime;
 						std::string clientIp;
 						std::string sqlId;
 						std::string tenantId;
+						std::string serverSn;
 						std::string command;
 						std::string database;
 						std::string traceId;

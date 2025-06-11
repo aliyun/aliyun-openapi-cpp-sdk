@@ -145,6 +145,8 @@ void DescribeOasSQLPlansResult::parse(const std::string &payload)
 				plansObject.planUnionHash = valueDataDataItemPlansPlansItem["PlanUnionHash"].asString();
 			if(!valueDataDataItemPlansPlansItem["SqlId"].isNull())
 				plansObject.sqlId = valueDataDataItemPlansPlansItem["SqlId"].asString();
+			if(!valueDataDataItemPlansPlansItem["SqlText"].isNull())
+				plansObject.sqlText = valueDataDataItemPlansPlansItem["SqlText"].asString();
 			dataObject.plans.push_back(plansObject);
 		}
 		auto planExplainNode = value["PlanExplain"];

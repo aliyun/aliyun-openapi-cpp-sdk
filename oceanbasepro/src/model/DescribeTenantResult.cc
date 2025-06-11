@@ -104,6 +104,10 @@ void DescribeTenantResult::parse(const std::string &payload)
 		tenant_.version = tenantNode["Version"].asString();
 	if(!tenantNode["OdpVersion"].isNull())
 		tenant_.odpVersion = tenantNode["OdpVersion"].asString();
+	if(!tenantNode["TenantMaxConnections"].isNull())
+		tenant_.tenantMaxConnections = tenantNode["TenantMaxConnections"].asString();
+	if(!tenantNode["ParameterTemplate"].isNull())
+		tenant_.parameterTemplate = tenantNode["ParameterTemplate"].asString();
 	auto allTenantConnectionsNode = tenantNode["TenantConnections"]["TenantConnectionsItem"];
 	for (auto tenantNodeTenantConnectionsTenantConnectionsItem : allTenantConnectionsNode)
 	{
@@ -158,6 +162,8 @@ void DescribeTenantResult::parse(const std::string &payload)
 			tenantConnectionsItemObject.intranetSqlPort = std::stoi(tenantNodeTenantConnectionsTenantConnectionsItem["IntranetSqlPort"].asString());
 		if(!tenantNodeTenantConnectionsTenantConnectionsItem["OdpVersion"].isNull())
 			tenantConnectionsItemObject.odpVersion = tenantNodeTenantConnectionsTenantConnectionsItem["OdpVersion"].asString();
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["InternetSqlPort"].isNull())
+			tenantConnectionsItemObject.internetSqlPort = std::stoi(tenantNodeTenantConnectionsTenantConnectionsItem["InternetSqlPort"].asString());
 		auto allConnectionZones = value["ConnectionZones"]["ConnectionZones"];
 		for (auto value : allConnectionZones)
 			tenantConnectionsItemObject.connectionZones.push_back(value.asString());
@@ -183,7 +189,7 @@ void DescribeTenantResult::parse(const std::string &payload)
 			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneReplicaType"].isNull())
 				tenantZoneReplicasObject.zoneReplicaType = tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneReplicaType"].asString();
 			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneNodes"].isNull())
-				tenantZoneReplicasObject.zoneNodes = tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneNodes"].asString();
+				tenantZoneReplicasObject.zoneNodes = std::stol(tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneNodes"].asString());
 			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["LogicZoneName"].isNull())
 				tenantZoneReplicasObject.logicZoneName = tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["LogicZoneName"].asString();
 			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ZoneCopyId"].isNull())
@@ -192,6 +198,8 @@ void DescribeTenantResult::parse(const std::string &payload)
 				tenantZoneReplicasObject.fullCopyId = std::stoi(tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["FullCopyId"].asString());
 			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ReadOnlyCopyId"].isNull())
 				tenantZoneReplicasObject.readOnlyCopyId = tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ReadOnlyCopyId"].asString();
+			if(!tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ReadOnlyReplicaType"].isNull())
+				tenantZoneReplicasObject.readOnlyReplicaType = tenantNodeTenantZonesTenantZonesItemTenantZoneReplicasTenantZoneReplicasItem["ReadOnlyReplicaType"].asString();
 			tenantZonesItemObject.tenantZoneReplicas.push_back(tenantZoneReplicasObject);
 		}
 		tenant_.tenantZones.push_back(tenantZonesItemObject);

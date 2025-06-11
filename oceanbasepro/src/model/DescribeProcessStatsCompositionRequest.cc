@@ -34,6 +34,15 @@ void DescribeProcessStatsCompositionRequest::setUId(const std::string &uId) {
   setBodyParameter(std::string("UId"), uId);
 }
 
+bool DescribeProcessStatsCompositionRequest::getMergeDynamicSql() const {
+  return mergeDynamicSql_;
+}
+
+void DescribeProcessStatsCompositionRequest::setMergeDynamicSql(bool mergeDynamicSql) {
+  mergeDynamicSql_ = mergeDynamicSql;
+  setBodyParameter(std::string("MergeDynamicSql"), mergeDynamicSql ? "true" : "false");
+}
+
 std::string DescribeProcessStatsCompositionRequest::getSqlText() const {
   return sqlText_;
 }

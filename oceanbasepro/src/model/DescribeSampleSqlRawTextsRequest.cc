@@ -43,6 +43,15 @@ void DescribeSampleSqlRawTextsRequest::setStartTime(const std::string &startTime
   setBodyParameter(std::string("StartTime"), startTime);
 }
 
+bool DescribeSampleSqlRawTextsRequest::getDynamicSql() const {
+  return dynamicSql_;
+}
+
+void DescribeSampleSqlRawTextsRequest::setDynamicSql(bool dynamicSql) {
+  dynamicSql_ = dynamicSql;
+  setBodyParameter(std::string("DynamicSql"), dynamicSql ? "true" : "false");
+}
+
 std::string DescribeSampleSqlRawTextsRequest::getTenantId() const {
   return tenantId_;
 }

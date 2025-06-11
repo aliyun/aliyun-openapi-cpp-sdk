@@ -32,6 +32,8 @@ public:
 	~BatchKillProcessListRequest();
 	std::string getSessionList() const;
 	void setSessionList(const std::string &sessionList);
+	bool getByObSessionId() const;
+	void setByObSessionId(bool byObSessionId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getTenantId() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string sessionList_;
+	bool byObSessionId_;
 	std::string instanceId_;
 	std::string tenantId_;
 };

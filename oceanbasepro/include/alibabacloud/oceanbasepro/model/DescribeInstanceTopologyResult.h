@@ -51,6 +51,7 @@ namespace AlibabaCloud
 								std::string unitStatus;
 								bool manualMigrate;
 							};
+							std::string readOnlyReplicaType;
 							std::string tenantZoneRole;
 							std::string replicaType;
 							bool isPrimaryTenantZone;
@@ -107,6 +108,7 @@ namespace AlibabaCloud
 								Cpu cpu;
 							};
 							NodeResource nodeResource;
+							std::string readOnlyReplicaType;
 							std::string replicaType;
 							std::string nodeId;
 							std::string logicalZone;
@@ -146,11 +148,13 @@ namespace AlibabaCloud
 						};
 						int zoneLogicalId;
 						std::string status;
+						std::string readOnlyReplicaType;
 						ReplicaResource replicaResource;
 						int nodeNum;
 						std::string replicaType;
 						std::string logicalZone;
 						std::string zoneRegionName;
+						long onlineNodeNum;
 						std::string zoneLogicalName;
 					};
 					std::vector<TenantsItem> tenants;

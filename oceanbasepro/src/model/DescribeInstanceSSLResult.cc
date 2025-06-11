@@ -54,6 +54,10 @@ void DescribeInstanceSSLResult::parse(const std::string &payload)
 		instanceSSL_.forceSSLSupport = instanceSSLNode["ForceSSLSupport"].asString() == "true";
 	if(!instanceSSLNode["ForceSSL"].isNull())
 		instanceSSL_.forceSSL = instanceSSLNode["ForceSSL"].asString();
+	if(!instanceSSLNode["AutoUpdate"].isNull())
+		instanceSSL_.autoUpdate = instanceSSLNode["AutoUpdate"].asString();
+	if(!instanceSSLNode["TenantId"].isNull())
+		instanceSSL_.tenantId = instanceSSLNode["TenantId"].asString();
 
 }
 

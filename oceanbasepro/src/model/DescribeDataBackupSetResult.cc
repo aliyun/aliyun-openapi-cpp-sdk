@@ -56,7 +56,7 @@ void DescribeDataBackupSetResult::parse(const std::string &payload)
 		if(!valueDataDataItem["Policy"].isNull())
 			dataObject.policy = valueDataDataItem["Policy"].asString();
 		if(!valueDataDataItem["SetId"].isNull())
-			dataObject.setId = std::stoi(valueDataDataItem["SetId"].asString());
+			dataObject.setId = valueDataDataItem["SetId"].asString();
 		if(!valueDataDataItem["Method"].isNull())
 			dataObject.method = valueDataDataItem["Method"].asString();
 		if(!valueDataDataItem["Checkpoint"].isNull())

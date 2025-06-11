@@ -34,8 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct ZoneListItem
 				{
+					long replicateZoneIndex;
 					bool isInCluster;
 					std::string zone;
+					std::string logicalZoneName;
+					std::string fullCopyId;
 				};
 
 

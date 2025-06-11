@@ -42,8 +42,10 @@ public:
 		int incrSyncThreadCount;
 	};
 	struct FullTransferConfig {
+		int indexDDLConcurrencyLimit;
 		int throttleRps;
 		int writeWorkerNum;
+		int maxConcurrentIndexDDLs;
 		int readWorkerNum;
 		int throttleIOPS;
 	};

@@ -30,21 +30,27 @@ class ALIBABACLOUD_OCEANBASEPRO_EXPORT ModifyTenantUserRolesRequest : public Rpc
 public:
 	ModifyTenantUserRolesRequest();
 	~ModifyTenantUserRolesRequest();
+	std::string getUserType() const;
+	void setUserType(const std::string &userType);
 	std::string getUserRole() const;
 	void setUserRole(const std::string &userRole);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getModifyType() const;
 	void setModifyType(const std::string &modifyType);
+	std::string getGlobalPermissions() const;
+	void setGlobalPermissions(const std::string &globalPermissions);
 	std::string getTenantId() const;
 	void setTenantId(const std::string &tenantId);
 	std::string getUserName() const;
 	void setUserName(const std::string &userName);
 
 private:
+	std::string userType_;
 	std::string userRole_;
 	std::string instanceId_;
 	std::string modifyType_;
+	std::string globalPermissions_;
 	std::string tenantId_;
 	std::string userName_;
 };

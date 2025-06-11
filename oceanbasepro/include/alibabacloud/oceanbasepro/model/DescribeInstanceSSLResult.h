@@ -37,8 +37,10 @@ namespace AlibabaCloud
 					std::string status;
 					std::string forceSSL;
 					std::string enableSSL;
+					std::string tenantId;
 					std::string validPeriod;
 					std::string instanceId;
+					std::string autoUpdate;
 					std::string caUrl;
 					bool forceSSLSupport;
 				};

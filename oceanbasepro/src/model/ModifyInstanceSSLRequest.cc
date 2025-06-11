@@ -43,3 +43,12 @@ void ModifyInstanceSSLRequest::setEnableSSL(const std::string &enableSSL) {
   setBodyParameter(std::string("EnableSSL"), enableSSL);
 }
 
+std::string ModifyInstanceSSLRequest::getTenantId() const {
+  return tenantId_;
+}
+
+void ModifyInstanceSSLRequest::setTenantId(const std::string &tenantId) {
+  tenantId_ = tenantId;
+  setBodyParameter(std::string("TenantId"), tenantId);
+}
+

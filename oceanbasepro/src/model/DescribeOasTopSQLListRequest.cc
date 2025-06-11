@@ -34,6 +34,15 @@ void DescribeOasTopSQLListRequest::setStartTime(const std::string &startTime) {
   setBodyParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeOasTopSQLListRequest::getCustomColumns() const {
+  return customColumns_;
+}
+
+void DescribeOasTopSQLListRequest::setCustomColumns(const std::string &customColumns) {
+  customColumns_ = customColumns;
+  setBodyParameter(std::string("CustomColumns"), customColumns);
+}
+
 std::string DescribeOasTopSQLListRequest::getSearchRule() const {
   return searchRule_;
 }

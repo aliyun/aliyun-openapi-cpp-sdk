@@ -339,6 +339,42 @@ OceanBaseProClient::CreateMySqlDataSourceOutcomeCallable OceanBaseProClient::cre
 	return task->get_future();
 }
 
+OceanBaseProClient::CreateOasOutlineTaskOutcome OceanBaseProClient::createOasOutlineTask(const CreateOasOutlineTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateOasOutlineTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateOasOutlineTaskOutcome(CreateOasOutlineTaskResult(outcome.result()));
+	else
+		return CreateOasOutlineTaskOutcome(outcome.error());
+}
+
+void OceanBaseProClient::createOasOutlineTaskAsync(const CreateOasOutlineTaskRequest& request, const CreateOasOutlineTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createOasOutlineTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::CreateOasOutlineTaskOutcomeCallable OceanBaseProClient::createOasOutlineTaskCallable(const CreateOasOutlineTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateOasOutlineTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createOasOutlineTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::CreateOceanBaseDataSourceOutcome OceanBaseProClient::createOceanBaseDataSource(const CreateOceanBaseDataSourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1527,6 +1563,42 @@ OceanBaseProClient::DescribeInstanceOutcomeCallable OceanBaseProClient::describe
 	return task->get_future();
 }
 
+OceanBaseProClient::DescribeInstanceAvailableZonesOutcome OceanBaseProClient::describeInstanceAvailableZones(const DescribeInstanceAvailableZonesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceAvailableZonesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceAvailableZonesOutcome(DescribeInstanceAvailableZonesResult(outcome.result()));
+	else
+		return DescribeInstanceAvailableZonesOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeInstanceAvailableZonesAsync(const DescribeInstanceAvailableZonesRequest& request, const DescribeInstanceAvailableZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceAvailableZones(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeInstanceAvailableZonesOutcomeCallable OceanBaseProClient::describeInstanceAvailableZonesCallable(const DescribeInstanceAvailableZonesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceAvailableZonesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceAvailableZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DescribeInstanceCreatableZoneOutcome OceanBaseProClient::describeInstanceCreatableZone(const DescribeInstanceCreatableZoneRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2427,6 +2499,42 @@ OceanBaseProClient::DescribeProjectStepsOutcomeCallable OceanBaseProClient::desc
 	return task->get_future();
 }
 
+OceanBaseProClient::DescribeProxyServiceOutcome OceanBaseProClient::describeProxyService(const DescribeProxyServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeProxyServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeProxyServiceOutcome(DescribeProxyServiceResult(outcome.result()));
+	else
+		return DescribeProxyServiceOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeProxyServiceAsync(const DescribeProxyServiceRequest& request, const DescribeProxyServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeProxyService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeProxyServiceOutcomeCallable OceanBaseProClient::describeProxyServiceCallable(const DescribeProxyServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeProxyServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeProxyService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DescribeRecommendIndexOutcome OceanBaseProClient::describeRecommendIndex(const DescribeRecommendIndexRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2853,6 +2961,42 @@ OceanBaseProClient::DescribeSlowSQLListOutcomeCallable OceanBaseProClient::descr
 			[this, request]()
 			{
 			return this->describeSlowSQLList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::DescribeSqlAuditStatOutcome OceanBaseProClient::describeSqlAuditStat(const DescribeSqlAuditStatRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSqlAuditStatOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSqlAuditStatOutcome(DescribeSqlAuditStatResult(outcome.result()));
+	else
+		return DescribeSqlAuditStatOutcome(outcome.error());
+}
+
+void OceanBaseProClient::describeSqlAuditStatAsync(const DescribeSqlAuditStatRequest& request, const DescribeSqlAuditStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSqlAuditStat(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeSqlAuditStatOutcomeCallable OceanBaseProClient::describeSqlAuditStatCallable(const DescribeSqlAuditStatRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSqlAuditStatOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSqlAuditStat(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4545,6 +4689,42 @@ OceanBaseProClient::ReleaseWorkerInstanceOutcomeCallable OceanBaseProClient::rel
 			[this, request]()
 			{
 			return this->releaseWorkerInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OceanBaseProClient::RemoveStandbyInstanceOutcome OceanBaseProClient::removeStandbyInstance(const RemoveStandbyInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveStandbyInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveStandbyInstanceOutcome(RemoveStandbyInstanceResult(outcome.result()));
+	else
+		return RemoveStandbyInstanceOutcome(outcome.error());
+}
+
+void OceanBaseProClient::removeStandbyInstanceAsync(const RemoveStandbyInstanceRequest& request, const RemoveStandbyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeStandbyInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::RemoveStandbyInstanceOutcomeCallable OceanBaseProClient::removeStandbyInstanceCallable(const RemoveStandbyInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveStandbyInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->removeStandbyInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

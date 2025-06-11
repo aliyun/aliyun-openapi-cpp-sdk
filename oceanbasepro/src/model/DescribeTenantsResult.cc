@@ -81,6 +81,8 @@ void DescribeTenantsResult::parse(const std::string &payload)
 			tenantsObject.collation = valueTenantsData["Collation"].asString();
 		if(!valueTenantsData["EnableReadOnlyReplica"].isNull())
 			tenantsObject.enableReadOnlyReplica = valueTenantsData["EnableReadOnlyReplica"].asString() == "true";
+		if(!valueTenantsData["ParameterTemplate"].isNull())
+			tenantsObject.parameterTemplate = valueTenantsData["ParameterTemplate"].asString();
 		tenants_.push_back(tenantsObject);
 	}
 	if(!value["TotalCount"].isNull())

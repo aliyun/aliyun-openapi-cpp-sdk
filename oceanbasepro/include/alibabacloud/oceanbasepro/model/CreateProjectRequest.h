@@ -29,10 +29,14 @@ namespace Model {
 class ALIBABACLOUD_OCEANBASEPRO_EXPORT CreateProjectRequest : public RpcServiceRequest {
 public:
 	struct FullTransferConfig {
+		int indexDDLConcurrencyLimit;
+		std::string hbaseObjMigMode;
 		bool nonePkUkTruncateDstTable;
 		int throttleRps;
 		std::string fullVerifySpeedMode;
 		int writeWorkerNum;
+		std::string hbaseObjCheckMode;
+		int maxConcurrentIndexDDLs;
 		int readWorkerNum;
 		std::string fullTransferSpeedMode;
 		bool allowDestTableNotEmpty;
@@ -67,6 +71,12 @@ public:
 				std::string mappedName;
 				std::string string;
 				std::vector<std::string> filterColumns;
+				struct ObkvPartitionConfig {
+					std::string virtualColumn;
+					std::string partitionType;
+					int partitionSize;
+				};
+				ObkvPartitionConfig obkvPartitionConfig;
 				struct AdbTableSchema {
 					std::string string;
 					std::vector<std::string> primaryKeys;

@@ -47,6 +47,12 @@ void DescribeInstanceCreatableZoneResult::parse(const std::string &payload)
 			zoneListObject.isInCluster = valueZoneListZoneListItem["IsInCluster"].asString() == "true";
 		if(!valueZoneListZoneListItem["Zone"].isNull())
 			zoneListObject.zone = valueZoneListZoneListItem["Zone"].asString();
+		if(!valueZoneListZoneListItem["FullCopyId"].isNull())
+			zoneListObject.fullCopyId = valueZoneListZoneListItem["FullCopyId"].asString();
+		if(!valueZoneListZoneListItem["LogicalZoneName"].isNull())
+			zoneListObject.logicalZoneName = valueZoneListZoneListItem["LogicalZoneName"].asString();
+		if(!valueZoneListZoneListItem["ReplicateZoneIndex"].isNull())
+			zoneListObject.replicateZoneIndex = std::stol(valueZoneListZoneListItem["ReplicateZoneIndex"].asString());
 		zoneList_.push_back(zoneListObject);
 	}
 

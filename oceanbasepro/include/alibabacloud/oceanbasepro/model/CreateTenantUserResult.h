@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string database;
 					};
 					std::string userName;
+					std::string globalPermissions;
 					std::vector<RolesItem> roles;
 					std::string userType;
 					std::string userStatus;

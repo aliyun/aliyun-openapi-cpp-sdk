@@ -34,6 +34,8 @@ public:
 	void setTraceId(const std::string &traceId);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	bool getDynamicSql() const;
+	void setDynamicSql(bool dynamicSql);
 	std::string getTenantId() const;
 	void setTenantId(const std::string &tenantId);
 	std::string getLimit() const;
@@ -50,6 +52,7 @@ public:
 private:
 	std::string traceId_;
 	std::string startTime_;
+	bool dynamicSql_;
 	std::string tenantId_;
 	std::string limit_;
 	std::string sqlId_;

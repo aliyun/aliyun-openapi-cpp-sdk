@@ -32,6 +32,8 @@ public:
 	~DescribeProcessStatsCompositionRequest();
 	std::string getUId() const;
 	void setUId(const std::string &uId);
+	bool getMergeDynamicSql() const;
+	void setMergeDynamicSql(bool mergeDynamicSql);
 	std::string getSqlText() const;
 	void setSqlText(const std::string &sqlText);
 	std::string getClientIp() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	std::string uId_;
+	bool mergeDynamicSql_;
 	std::string sqlText_;
 	std::string clientIp_;
 	std::string tenantId_;

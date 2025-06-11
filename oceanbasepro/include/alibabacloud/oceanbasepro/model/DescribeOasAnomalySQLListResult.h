@@ -40,7 +40,7 @@ namespace AlibabaCloud
 						double executions;
 						double sumDbTime;
 						std::string userName;
-						double lastExecutedTime;
+						std::string lastExecutedTime;
 						float avgRetryCount;
 						double avgGetPlanTime;
 						double cpuTime;

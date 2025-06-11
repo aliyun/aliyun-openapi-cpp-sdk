@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct DataItem
 				{
+					struct CustomColumns
+					{
+						std::string expression;
+						std::string value;
+					};
 					struct SqlListItem
 					{
 						long executions;
@@ -126,6 +131,7 @@ namespace AlibabaCloud
 					double avgUserIoWaitTime;
 					double retryCount;
 					long retCode6002Count;
+					std::string obDbId;
 					double missPlans;
 					long retCode5167Count;
 					std::string sqlType;
@@ -161,6 +167,7 @@ namespace AlibabaCloud
 					double avgBlockIndexCacheHit;
 					double sumElapsedTime;
 					double avgBloomFilterCacheHit;
+					CustomColumns customColumns;
 					double avgReturnRows;
 					double avgPartitionCount;
 					double failCount;

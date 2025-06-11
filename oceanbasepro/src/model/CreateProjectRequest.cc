@@ -76,10 +76,14 @@ CreateProjectRequest::FullTransferConfig CreateProjectRequest::getFullTransferCo
 
 void CreateProjectRequest::setFullTransferConfig(const CreateProjectRequest::FullTransferConfig &fullTransferConfig) {
   fullTransferConfig_ = fullTransferConfig;
+  setBodyParameter(std::string("FullTransferConfig") + ".IndexDDLConcurrencyLimit", std::to_string(fullTransferConfig.indexDDLConcurrencyLimit));
+  setBodyParameter(std::string("FullTransferConfig") + ".HbaseObjMigMode", fullTransferConfig.hbaseObjMigMode);
   setBodyParameter(std::string("FullTransferConfig") + ".NonePkUkTruncateDstTable", fullTransferConfig.nonePkUkTruncateDstTable ? "true" : "false");
   setBodyParameter(std::string("FullTransferConfig") + ".ThrottleRps", std::to_string(fullTransferConfig.throttleRps));
   setBodyParameter(std::string("FullTransferConfig") + ".FullVerifySpeedMode", fullTransferConfig.fullVerifySpeedMode);
   setBodyParameter(std::string("FullTransferConfig") + ".WriteWorkerNum", std::to_string(fullTransferConfig.writeWorkerNum));
+  setBodyParameter(std::string("FullTransferConfig") + ".HbaseObjCheckMode", fullTransferConfig.hbaseObjCheckMode);
+  setBodyParameter(std::string("FullTransferConfig") + ".MaxConcurrentIndexDDLs", std::to_string(fullTransferConfig.maxConcurrentIndexDDLs));
   setBodyParameter(std::string("FullTransferConfig") + ".ReadWorkerNum", std::to_string(fullTransferConfig.readWorkerNum));
   setBodyParameter(std::string("FullTransferConfig") + ".FullTransferSpeedMode", fullTransferConfig.fullTransferSpeedMode);
   setBodyParameter(std::string("FullTransferConfig") + ".AllowDestTableNotEmpty", fullTransferConfig.allowDestTableNotEmpty ? "true" : "false");
@@ -129,6 +133,9 @@ void CreateProjectRequest::setTransferMapping(const CreateProjectRequest::Transf
       for(int dep3 = 0; dep3 != transferMapping.databases[dep1].tables[dep2].filterColumns.size(); dep3++) {
         setBodyParameter(std::string("TransferMapping") + ".Databases." + std::to_string(dep1 + 1) + ".Tables." + std::to_string(dep2 + 1) + ".FilterColumns." + std::to_string(dep3 + 1), transferMapping.databases[dep1].tables[dep2].filterColumns[dep3]);
       }
+      setBodyParameter(std::string("TransferMapping") + ".Databases." + std::to_string(dep1 + 1) + ".Tables." + std::to_string(dep2 + 1) + ".ObkvPartitionConfig.VirtualColumn", transferMapping.databases[dep1].tables[dep2].obkvPartitionConfig.virtualColumn);
+      setBodyParameter(std::string("TransferMapping") + ".Databases." + std::to_string(dep1 + 1) + ".Tables." + std::to_string(dep2 + 1) + ".ObkvPartitionConfig.PartitionType", transferMapping.databases[dep1].tables[dep2].obkvPartitionConfig.partitionType);
+      setBodyParameter(std::string("TransferMapping") + ".Databases." + std::to_string(dep1 + 1) + ".Tables." + std::to_string(dep2 + 1) + ".ObkvPartitionConfig.PartitionSize", std::to_string(transferMapping.databases[dep1].tables[dep2].obkvPartitionConfig.partitionSize));
       for(int dep3 = 0; dep3 != transferMapping.databases[dep1].tables[dep2].adbTableSchema.primaryKeys.size(); dep3++) {
         setBodyParameter(std::string("TransferMapping") + ".Databases." + std::to_string(dep1 + 1) + ".Tables." + std::to_string(dep2 + 1) + ".AdbTableSchema.PrimaryKeys." + std::to_string(dep3 + 1), transferMapping.databases[dep1].tables[dep2].adbTableSchema.primaryKeys[dep3]);
       }
