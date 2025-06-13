@@ -34,6 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct SecurityPreference
 				{
+					struct AccessKeyPreference
+					{
+						bool allowUserToManageAccessKeys;
+					};
+					struct MFAPreference
+					{
+						bool allowUserToManageMFADevices;
+					};
 					struct LoginProfilePreference
 					{
 						int loginSessionDuration;
@@ -41,17 +49,9 @@ namespace AlibabaCloud
 						bool allowUserToChangePassword;
 						bool enableSaveMFATicket;
 					};
-					struct AccessKeyPreference
-					{
-						bool allowUserToManageAccessKeys;
-					};
 					struct PublicKeyPreference
 					{
 						bool allowUserToManagePublicKeys;
-					};
-					struct MFAPreference
-					{
-						bool allowUserToManageMFADevices;
 					};
 					LoginProfilePreference loginProfilePreference;
 					AccessKeyPreference accessKeyPreference;

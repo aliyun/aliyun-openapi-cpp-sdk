@@ -40,14 +40,14 @@ void CreateAccessKeyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto accessKeyNode = value["AccessKey"];
-	if(!accessKeyNode["AccessKeyId"].isNull())
-		accessKey_.accessKeyId = accessKeyNode["AccessKeyId"].asString();
-	if(!accessKeyNode["AccessKeySecret"].isNull())
-		accessKey_.accessKeySecret = accessKeyNode["AccessKeySecret"].asString();
 	if(!accessKeyNode["Status"].isNull())
 		accessKey_.status = accessKeyNode["Status"].asString();
+	if(!accessKeyNode["AccessKeySecret"].isNull())
+		accessKey_.accessKeySecret = accessKeyNode["AccessKeySecret"].asString();
 	if(!accessKeyNode["CreateDate"].isNull())
 		accessKey_.createDate = accessKeyNode["CreateDate"].asString();
+	if(!accessKeyNode["AccessKeyId"].isNull())
+		accessKey_.accessKeyId = accessKeyNode["AccessKeyId"].asString();
 
 }
 

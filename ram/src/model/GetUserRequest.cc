@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,23 +18,19 @@
 
 using AlibabaCloud::Ram::Model::GetUserRequest;
 
-GetUserRequest::GetUserRequest() :
-	RpcServiceRequest("ram", "2015-05-01", "GetUser")
-{
-	setMethod(HttpRequest::Method::Post);
+GetUserRequest::GetUserRequest()
+    : RpcServiceRequest("ram", "2015-05-01", "GetUser") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetUserRequest::~GetUserRequest()
-{}
+GetUserRequest::~GetUserRequest() {}
 
-std::string GetUserRequest::getUserName()const
-{
-	return userName_;
+std::string GetUserRequest::getUserName() const {
+  return userName_;
 }
 
-void GetUserRequest::setUserName(const std::string& userName)
-{
-	userName_ = userName;
-	setParameter("UserName", userName);
+void GetUserRequest::setUserName(const std::string &userName) {
+  userName_ = userName;
+  setParameter(std::string("UserName"), userName);
 }
 

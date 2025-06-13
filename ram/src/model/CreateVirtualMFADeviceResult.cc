@@ -42,10 +42,10 @@ void CreateVirtualMFADeviceResult::parse(const std::string &payload)
 	auto virtualMFADeviceNode = value["VirtualMFADevice"];
 	if(!virtualMFADeviceNode["SerialNumber"].isNull())
 		virtualMFADevice_.serialNumber = virtualMFADeviceNode["SerialNumber"].asString();
-	if(!virtualMFADeviceNode["Base32StringSeed"].isNull())
-		virtualMFADevice_.base32StringSeed = virtualMFADeviceNode["Base32StringSeed"].asString();
 	if(!virtualMFADeviceNode["QRCodePNG"].isNull())
 		virtualMFADevice_.qRCodePNG = virtualMFADeviceNode["QRCodePNG"].asString();
+	if(!virtualMFADeviceNode["Base32StringSeed"].isNull())
+		virtualMFADevice_.base32StringSeed = virtualMFADeviceNode["Base32StringSeed"].asString();
 
 }
 

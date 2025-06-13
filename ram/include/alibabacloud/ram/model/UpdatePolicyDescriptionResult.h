@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RAM_MODEL_LISTPUBLICKEYSRESULT_H_
-#define ALIBABACLOUD_RAM_MODEL_LISTPUBLICKEYSRESULT_H_
+#ifndef ALIBABACLOUD_RAM_MODEL_UPDATEPOLICYDESCRIPTIONRESULT_H_
+#define ALIBABACLOUD_RAM_MODEL_UPDATEPOLICYDESCRIPTIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RAM_EXPORT ListPublicKeysResult : public ServiceResult
+			class ALIBABACLOUD_RAM_EXPORT UpdatePolicyDescriptionResult : public ServiceResult
 			{
 			public:
-				struct PublicKey
+				struct Policy
 				{
-					std::string status;
-					std::string publicKeyId;
+					std::string policyType;
+					std::string updateDate;
+					std::string description;
+					std::string policyName;
+					std::string defaultVersion;
 					std::string createDate;
 				};
 
 
-				ListPublicKeysResult();
-				explicit ListPublicKeysResult(const std::string &payload);
-				~ListPublicKeysResult();
-				std::vector<PublicKey> getPublicKeys()const;
+				UpdatePolicyDescriptionResult();
+				explicit UpdatePolicyDescriptionResult(const std::string &payload);
+				~UpdatePolicyDescriptionResult();
+				Policy getPolicy()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<PublicKey> publicKeys_;
+				Policy policy_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RAM_MODEL_LISTPUBLICKEYSRESULT_H_
+#endif // !ALIBABACLOUD_RAM_MODEL_UPDATEPOLICYDESCRIPTIONRESULT_H_

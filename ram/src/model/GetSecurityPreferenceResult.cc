@@ -40,24 +40,24 @@ void GetSecurityPreferenceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto securityPreferenceNode = value["SecurityPreference"];
+	auto accessKeyPreferenceNode = securityPreferenceNode["AccessKeyPreference"];
+	if(!accessKeyPreferenceNode["AllowUserToManageAccessKeys"].isNull())
+		securityPreference_.accessKeyPreference.allowUserToManageAccessKeys = accessKeyPreferenceNode["AllowUserToManageAccessKeys"].asString() == "true";
+	auto mFAPreferenceNode = securityPreferenceNode["MFAPreference"];
+	if(!mFAPreferenceNode["AllowUserToManageMFADevices"].isNull())
+		securityPreference_.mFAPreference.allowUserToManageMFADevices = mFAPreferenceNode["AllowUserToManageMFADevices"].asString() == "true";
 	auto loginProfilePreferenceNode = securityPreferenceNode["LoginProfilePreference"];
 	if(!loginProfilePreferenceNode["EnableSaveMFATicket"].isNull())
 		securityPreference_.loginProfilePreference.enableSaveMFATicket = loginProfilePreferenceNode["EnableSaveMFATicket"].asString() == "true";
-	if(!loginProfilePreferenceNode["AllowUserToChangePassword"].isNull())
-		securityPreference_.loginProfilePreference.allowUserToChangePassword = loginProfilePreferenceNode["AllowUserToChangePassword"].asString() == "true";
 	if(!loginProfilePreferenceNode["LoginSessionDuration"].isNull())
 		securityPreference_.loginProfilePreference.loginSessionDuration = std::stoi(loginProfilePreferenceNode["LoginSessionDuration"].asString());
 	if(!loginProfilePreferenceNode["LoginNetworkMasks"].isNull())
 		securityPreference_.loginProfilePreference.loginNetworkMasks = loginProfilePreferenceNode["LoginNetworkMasks"].asString();
-	auto accessKeyPreferenceNode = securityPreferenceNode["AccessKeyPreference"];
-	if(!accessKeyPreferenceNode["AllowUserToManageAccessKeys"].isNull())
-		securityPreference_.accessKeyPreference.allowUserToManageAccessKeys = accessKeyPreferenceNode["AllowUserToManageAccessKeys"].asString() == "true";
+	if(!loginProfilePreferenceNode["AllowUserToChangePassword"].isNull())
+		securityPreference_.loginProfilePreference.allowUserToChangePassword = loginProfilePreferenceNode["AllowUserToChangePassword"].asString() == "true";
 	auto publicKeyPreferenceNode = securityPreferenceNode["PublicKeyPreference"];
 	if(!publicKeyPreferenceNode["AllowUserToManagePublicKeys"].isNull())
 		securityPreference_.publicKeyPreference.allowUserToManagePublicKeys = publicKeyPreferenceNode["AllowUserToManagePublicKeys"].asString() == "true";
-	auto mFAPreferenceNode = securityPreferenceNode["MFAPreference"];
-	if(!mFAPreferenceNode["AllowUserToManageMFADevices"].isNull())
-		securityPreference_.mFAPreference.allowUserToManageMFADevices = mFAPreferenceNode["AllowUserToManageMFADevices"].asString() == "true";
 
 }
 

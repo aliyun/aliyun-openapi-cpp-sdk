@@ -34,13 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct Policy
 				{
-					std::string policyType;
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string updateDate;
+					std::string policyType;
 					std::string description;
 					int attachmentCount;
-					std::string policyName;
 					std::string defaultVersion;
+					std::string policyName;
 					std::string createDate;
+					std::vector<Policy::Tag> tags;
 				};
 
 

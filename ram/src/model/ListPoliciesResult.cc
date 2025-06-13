@@ -43,20 +43,30 @@ void ListPoliciesResult::parse(const std::string &payload)
 	for (auto valuePoliciesPolicy : allPoliciesNode)
 	{
 		Policy policiesObject;
-		if(!valuePoliciesPolicy["PolicyName"].isNull())
-			policiesObject.policyName = valuePoliciesPolicy["PolicyName"].asString();
-		if(!valuePoliciesPolicy["PolicyType"].isNull())
-			policiesObject.policyType = valuePoliciesPolicy["PolicyType"].asString();
-		if(!valuePoliciesPolicy["Description"].isNull())
-			policiesObject.description = valuePoliciesPolicy["Description"].asString();
 		if(!valuePoliciesPolicy["DefaultVersion"].isNull())
 			policiesObject.defaultVersion = valuePoliciesPolicy["DefaultVersion"].asString();
-		if(!valuePoliciesPolicy["CreateDate"].isNull())
-			policiesObject.createDate = valuePoliciesPolicy["CreateDate"].asString();
+		if(!valuePoliciesPolicy["Description"].isNull())
+			policiesObject.description = valuePoliciesPolicy["Description"].asString();
 		if(!valuePoliciesPolicy["UpdateDate"].isNull())
 			policiesObject.updateDate = valuePoliciesPolicy["UpdateDate"].asString();
 		if(!valuePoliciesPolicy["AttachmentCount"].isNull())
 			policiesObject.attachmentCount = std::stoi(valuePoliciesPolicy["AttachmentCount"].asString());
+		if(!valuePoliciesPolicy["PolicyName"].isNull())
+			policiesObject.policyName = valuePoliciesPolicy["PolicyName"].asString();
+		if(!valuePoliciesPolicy["CreateDate"].isNull())
+			policiesObject.createDate = valuePoliciesPolicy["CreateDate"].asString();
+		if(!valuePoliciesPolicy["PolicyType"].isNull())
+			policiesObject.policyType = valuePoliciesPolicy["PolicyType"].asString();
+		auto allTagsNode = valuePoliciesPolicy["Tags"]["Tag"];
+		for (auto valuePoliciesPolicyTagsTag : allTagsNode)
+		{
+			Policy::Tag tagsObject;
+			if(!valuePoliciesPolicyTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valuePoliciesPolicyTagsTag["TagKey"].asString();
+			if(!valuePoliciesPolicyTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valuePoliciesPolicyTagsTag["TagValue"].asString();
+			policiesObject.tags.push_back(tagsObject);
+		}
 		policies_.push_back(policiesObject);
 	}
 	if(!value["IsTruncated"].isNull())

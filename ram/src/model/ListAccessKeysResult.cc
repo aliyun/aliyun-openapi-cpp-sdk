@@ -43,10 +43,10 @@ void ListAccessKeysResult::parse(const std::string &payload)
 	for (auto valueAccessKeysAccessKey : allAccessKeysNode)
 	{
 		AccessKey accessKeysObject;
-		if(!valueAccessKeysAccessKey["AccessKeyId"].isNull())
-			accessKeysObject.accessKeyId = valueAccessKeysAccessKey["AccessKeyId"].asString();
 		if(!valueAccessKeysAccessKey["Status"].isNull())
 			accessKeysObject.status = valueAccessKeysAccessKey["Status"].asString();
+		if(!valueAccessKeysAccessKey["AccessKeyId"].isNull())
+			accessKeysObject.accessKeyId = valueAccessKeysAccessKey["AccessKeyId"].asString();
 		if(!valueAccessKeysAccessKey["CreateDate"].isNull())
 			accessKeysObject.createDate = valueAccessKeysAccessKey["CreateDate"].asString();
 		accessKeys_.push_back(accessKeysObject);

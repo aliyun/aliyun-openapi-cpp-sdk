@@ -34,13 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct Role
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string updateDate;
 					long maxSessionDuration;
 					std::string roleName;
 					std::string description;
 					std::string arn;
-					std::string roleId;
 					std::string createDate;
+					std::string roleId;
+					std::vector<Role::Tag> tags;
 				};
 
 

@@ -40,22 +40,22 @@ void GetRoleResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto roleNode = value["Role"];
-	if(!roleNode["RoleId"].isNull())
-		role_.roleId = roleNode["RoleId"].asString();
-	if(!roleNode["RoleName"].isNull())
-		role_.roleName = roleNode["RoleName"].asString();
-	if(!roleNode["Arn"].isNull())
-		role_.arn = roleNode["Arn"].asString();
-	if(!roleNode["Description"].isNull())
-		role_.description = roleNode["Description"].asString();
 	if(!roleNode["AssumeRolePolicyDocument"].isNull())
 		role_.assumeRolePolicyDocument = roleNode["AssumeRolePolicyDocument"].asString();
-	if(!roleNode["CreateDate"].isNull())
-		role_.createDate = roleNode["CreateDate"].asString();
 	if(!roleNode["UpdateDate"].isNull())
 		role_.updateDate = roleNode["UpdateDate"].asString();
+	if(!roleNode["Description"].isNull())
+		role_.description = roleNode["Description"].asString();
 	if(!roleNode["MaxSessionDuration"].isNull())
 		role_.maxSessionDuration = std::stol(roleNode["MaxSessionDuration"].asString());
+	if(!roleNode["RoleName"].isNull())
+		role_.roleName = roleNode["RoleName"].asString();
+	if(!roleNode["CreateDate"].isNull())
+		role_.createDate = roleNode["CreateDate"].asString();
+	if(!roleNode["RoleId"].isNull())
+		role_.roleId = roleNode["RoleId"].asString();
+	if(!roleNode["Arn"].isNull())
+		role_.arn = roleNode["Arn"].asString();
 
 }
 

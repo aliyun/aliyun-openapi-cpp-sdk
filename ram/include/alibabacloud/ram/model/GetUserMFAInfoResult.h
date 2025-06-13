@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct MFADevice
 				{
+					std::string type;
 					std::string serialNumber;
 				};
 

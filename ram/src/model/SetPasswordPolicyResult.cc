@@ -40,22 +40,22 @@ void SetPasswordPolicyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto passwordPolicyNode = value["PasswordPolicy"];
-	if(!passwordPolicyNode["MinimumPasswordLength"].isNull())
-		passwordPolicy_.minimumPasswordLength = std::stoi(passwordPolicyNode["MinimumPasswordLength"].asString());
-	if(!passwordPolicyNode["RequireLowercaseCharacters"].isNull())
-		passwordPolicy_.requireLowercaseCharacters = passwordPolicyNode["RequireLowercaseCharacters"].asString() == "true";
-	if(!passwordPolicyNode["RequireUppercaseCharacters"].isNull())
-		passwordPolicy_.requireUppercaseCharacters = passwordPolicyNode["RequireUppercaseCharacters"].asString() == "true";
 	if(!passwordPolicyNode["RequireNumbers"].isNull())
 		passwordPolicy_.requireNumbers = passwordPolicyNode["RequireNumbers"].asString() == "true";
-	if(!passwordPolicyNode["RequireSymbols"].isNull())
-		passwordPolicy_.requireSymbols = passwordPolicyNode["RequireSymbols"].asString() == "true";
+	if(!passwordPolicyNode["RequireLowercaseCharacters"].isNull())
+		passwordPolicy_.requireLowercaseCharacters = passwordPolicyNode["RequireLowercaseCharacters"].asString() == "true";
 	if(!passwordPolicyNode["HardExpiry"].isNull())
 		passwordPolicy_.hardExpiry = passwordPolicyNode["HardExpiry"].asString() == "true";
-	if(!passwordPolicyNode["MaxPasswordAge"].isNull())
-		passwordPolicy_.maxPasswordAge = std::stoi(passwordPolicyNode["MaxPasswordAge"].asString());
 	if(!passwordPolicyNode["PasswordReusePrevention"].isNull())
 		passwordPolicy_.passwordReusePrevention = std::stoi(passwordPolicyNode["PasswordReusePrevention"].asString());
+	if(!passwordPolicyNode["RequireSymbols"].isNull())
+		passwordPolicy_.requireSymbols = passwordPolicyNode["RequireSymbols"].asString() == "true";
+	if(!passwordPolicyNode["MaxPasswordAge"].isNull())
+		passwordPolicy_.maxPasswordAge = std::stoi(passwordPolicyNode["MaxPasswordAge"].asString());
+	if(!passwordPolicyNode["MinimumPasswordLength"].isNull())
+		passwordPolicy_.minimumPasswordLength = std::stoi(passwordPolicyNode["MinimumPasswordLength"].asString());
+	if(!passwordPolicyNode["RequireUppercaseCharacters"].isNull())
+		passwordPolicy_.requireUppercaseCharacters = passwordPolicyNode["RequireUppercaseCharacters"].asString() == "true";
 	if(!passwordPolicyNode["MaxLoginAttemps"].isNull())
 		passwordPolicy_.maxLoginAttemps = std::stoi(passwordPolicyNode["MaxLoginAttemps"].asString());
 

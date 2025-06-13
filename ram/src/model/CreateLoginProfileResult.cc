@@ -40,14 +40,14 @@ void CreateLoginProfileResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto loginProfileNode = value["LoginProfile"];
-	if(!loginProfileNode["UserName"].isNull())
-		loginProfile_.userName = loginProfileNode["UserName"].asString();
 	if(!loginProfileNode["PasswordResetRequired"].isNull())
 		loginProfile_.passwordResetRequired = loginProfileNode["PasswordResetRequired"].asString() == "true";
-	if(!loginProfileNode["MFABindRequired"].isNull())
-		loginProfile_.mFABindRequired = loginProfileNode["MFABindRequired"].asString() == "true";
 	if(!loginProfileNode["CreateDate"].isNull())
 		loginProfile_.createDate = loginProfileNode["CreateDate"].asString();
+	if(!loginProfileNode["UserName"].isNull())
+		loginProfile_.userName = loginProfileNode["UserName"].asString();
+	if(!loginProfileNode["MFABindRequired"].isNull())
+		loginProfile_.mFABindRequired = loginProfileNode["MFABindRequired"].asString() == "true";
 
 }
 

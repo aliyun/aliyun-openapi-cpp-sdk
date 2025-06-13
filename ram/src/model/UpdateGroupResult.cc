@@ -40,14 +40,16 @@ void UpdateGroupResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto groupNode = value["Group"];
+	if(!groupNode["GroupId"].isNull())
+		group_.groupId = groupNode["GroupId"].asString();
+	if(!groupNode["UpdateDate"].isNull())
+		group_.updateDate = groupNode["UpdateDate"].asString();
 	if(!groupNode["GroupName"].isNull())
 		group_.groupName = groupNode["GroupName"].asString();
 	if(!groupNode["Comments"].isNull())
 		group_.comments = groupNode["Comments"].asString();
 	if(!groupNode["CreateDate"].isNull())
 		group_.createDate = groupNode["CreateDate"].asString();
-	if(!groupNode["UpdateDate"].isNull())
-		group_.updateDate = groupNode["UpdateDate"].asString();
 
 }
 

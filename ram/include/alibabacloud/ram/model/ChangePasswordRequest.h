@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,35 +17,29 @@
 #ifndef ALIBABACLOUD_RAM_MODEL_CHANGEPASSWORDREQUEST_H_
 #define ALIBABACLOUD_RAM_MODEL_CHANGEPASSWORDREQUEST_H_
 
+#include <alibabacloud/ram/RamExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/ram/RamExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Ram
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_RAM_EXPORT ChangePasswordRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Ram {
+namespace Model {
+class ALIBABACLOUD_RAM_EXPORT ChangePasswordRequest : public RpcServiceRequest {
+public:
+	ChangePasswordRequest();
+	~ChangePasswordRequest();
+	std::string getOldPassword() const;
+	void setOldPassword(const std::string &oldPassword);
+	std::string getNewPassword() const;
+	void setNewPassword(const std::string &newPassword);
 
-			public:
-				ChangePasswordRequest();
-				~ChangePasswordRequest();
-
-				std::string getOldPassword()const;
-				void setOldPassword(const std::string& oldPassword);
-				std::string getNewPassword()const;
-				void setNewPassword(const std::string& newPassword);
-
-            private:
-				std::string oldPassword_;
-				std::string newPassword_;
-
-			};
-		}
-	}
-}
+private:
+	std::string oldPassword_;
+	std::string newPassword_;
+};
+} // namespace Model
+} // namespace Ram
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_RAM_MODEL_CHANGEPASSWORDREQUEST_H_

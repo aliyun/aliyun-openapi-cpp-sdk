@@ -43,6 +43,8 @@ void ListGroupsForUserResult::parse(const std::string &payload)
 	for (auto valueGroupsGroup : allGroupsNode)
 	{
 		Group groupsObject;
+		if(!valueGroupsGroup["GroupId"].isNull())
+			groupsObject.groupId = valueGroupsGroup["GroupId"].asString();
 		if(!valueGroupsGroup["GroupName"].isNull())
 			groupsObject.groupName = valueGroupsGroup["GroupName"].asString();
 		if(!valueGroupsGroup["Comments"].isNull())

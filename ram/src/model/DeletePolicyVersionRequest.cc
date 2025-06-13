@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Ram::Model::DeletePolicyVersionRequest;
 
-DeletePolicyVersionRequest::DeletePolicyVersionRequest() :
-	RpcServiceRequest("ram", "2015-05-01", "DeletePolicyVersion")
-{
-	setMethod(HttpRequest::Method::Post);
+DeletePolicyVersionRequest::DeletePolicyVersionRequest()
+    : RpcServiceRequest("ram", "2015-05-01", "DeletePolicyVersion") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeletePolicyVersionRequest::~DeletePolicyVersionRequest()
-{}
+DeletePolicyVersionRequest::~DeletePolicyVersionRequest() {}
 
-std::string DeletePolicyVersionRequest::getVersionId()const
-{
-	return versionId_;
+std::string DeletePolicyVersionRequest::getVersionId() const {
+  return versionId_;
 }
 
-void DeletePolicyVersionRequest::setVersionId(const std::string& versionId)
-{
-	versionId_ = versionId;
-	setParameter("VersionId", versionId);
+void DeletePolicyVersionRequest::setVersionId(const std::string &versionId) {
+  versionId_ = versionId;
+  setParameter(std::string("VersionId"), versionId);
 }
 
-std::string DeletePolicyVersionRequest::getPolicyName()const
-{
-	return policyName_;
+std::string DeletePolicyVersionRequest::getPolicyName() const {
+  return policyName_;
 }
 
-void DeletePolicyVersionRequest::setPolicyName(const std::string& policyName)
-{
-	policyName_ = policyName;
-	setParameter("PolicyName", policyName);
+void DeletePolicyVersionRequest::setPolicyName(const std::string &policyName) {
+  policyName_ = policyName;
+  setParameter(std::string("PolicyName"), policyName);
 }
 

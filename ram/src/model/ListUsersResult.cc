@@ -43,22 +43,22 @@ void ListUsersResult::parse(const std::string &payload)
 	for (auto valueUsersUser : allUsersNode)
 	{
 		User usersObject;
-		if(!valueUsersUser["UserId"].isNull())
-			usersObject.userId = valueUsersUser["UserId"].asString();
-		if(!valueUsersUser["UserName"].isNull())
-			usersObject.userName = valueUsersUser["UserName"].asString();
 		if(!valueUsersUser["DisplayName"].isNull())
 			usersObject.displayName = valueUsersUser["DisplayName"].asString();
-		if(!valueUsersUser["MobilePhone"].isNull())
-			usersObject.mobilePhone = valueUsersUser["MobilePhone"].asString();
 		if(!valueUsersUser["Email"].isNull())
 			usersObject.email = valueUsersUser["Email"].asString();
+		if(!valueUsersUser["UpdateDate"].isNull())
+			usersObject.updateDate = valueUsersUser["UpdateDate"].asString();
+		if(!valueUsersUser["MobilePhone"].isNull())
+			usersObject.mobilePhone = valueUsersUser["MobilePhone"].asString();
+		if(!valueUsersUser["UserId"].isNull())
+			usersObject.userId = valueUsersUser["UserId"].asString();
 		if(!valueUsersUser["Comments"].isNull())
 			usersObject.comments = valueUsersUser["Comments"].asString();
 		if(!valueUsersUser["CreateDate"].isNull())
 			usersObject.createDate = valueUsersUser["CreateDate"].asString();
-		if(!valueUsersUser["UpdateDate"].isNull())
-			usersObject.updateDate = valueUsersUser["UpdateDate"].asString();
+		if(!valueUsersUser["UserName"].isNull())
+			usersObject.userName = valueUsersUser["UserName"].asString();
 		users_.push_back(usersObject);
 	}
 	if(!value["IsTruncated"].isNull())

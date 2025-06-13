@@ -43,14 +43,16 @@ void ListGroupsResult::parse(const std::string &payload)
 	for (auto valueGroupsGroup : allGroupsNode)
 	{
 		Group groupsObject;
+		if(!valueGroupsGroup["GroupId"].isNull())
+			groupsObject.groupId = valueGroupsGroup["GroupId"].asString();
+		if(!valueGroupsGroup["UpdateDate"].isNull())
+			groupsObject.updateDate = valueGroupsGroup["UpdateDate"].asString();
 		if(!valueGroupsGroup["GroupName"].isNull())
 			groupsObject.groupName = valueGroupsGroup["GroupName"].asString();
 		if(!valueGroupsGroup["Comments"].isNull())
 			groupsObject.comments = valueGroupsGroup["Comments"].asString();
 		if(!valueGroupsGroup["CreateDate"].isNull())
 			groupsObject.createDate = valueGroupsGroup["CreateDate"].asString();
-		if(!valueGroupsGroup["UpdateDate"].isNull())
-			groupsObject.updateDate = valueGroupsGroup["UpdateDate"].asString();
 		groups_.push_back(groupsObject);
 	}
 	if(!value["IsTruncated"].isNull())

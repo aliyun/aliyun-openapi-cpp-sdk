@@ -43,16 +43,16 @@ void ListPoliciesForRoleResult::parse(const std::string &payload)
 	for (auto valuePoliciesPolicy : allPoliciesNode)
 	{
 		Policy policiesObject;
-		if(!valuePoliciesPolicy["PolicyName"].isNull())
-			policiesObject.policyName = valuePoliciesPolicy["PolicyName"].asString();
-		if(!valuePoliciesPolicy["PolicyType"].isNull())
-			policiesObject.policyType = valuePoliciesPolicy["PolicyType"].asString();
-		if(!valuePoliciesPolicy["Description"].isNull())
-			policiesObject.description = valuePoliciesPolicy["Description"].asString();
 		if(!valuePoliciesPolicy["DefaultVersion"].isNull())
 			policiesObject.defaultVersion = valuePoliciesPolicy["DefaultVersion"].asString();
+		if(!valuePoliciesPolicy["Description"].isNull())
+			policiesObject.description = valuePoliciesPolicy["Description"].asString();
+		if(!valuePoliciesPolicy["PolicyName"].isNull())
+			policiesObject.policyName = valuePoliciesPolicy["PolicyName"].asString();
 		if(!valuePoliciesPolicy["AttachDate"].isNull())
 			policiesObject.attachDate = valuePoliciesPolicy["AttachDate"].asString();
+		if(!valuePoliciesPolicy["PolicyType"].isNull())
+			policiesObject.policyType = valuePoliciesPolicy["PolicyType"].asString();
 		policies_.push_back(policiesObject);
 	}
 

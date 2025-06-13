@@ -43,12 +43,12 @@ void ListUsersForGroupResult::parse(const std::string &payload)
 	for (auto valueUsersUser : allUsersNode)
 	{
 		User usersObject;
-		if(!valueUsersUser["UserName"].isNull())
-			usersObject.userName = valueUsersUser["UserName"].asString();
 		if(!valueUsersUser["DisplayName"].isNull())
 			usersObject.displayName = valueUsersUser["DisplayName"].asString();
 		if(!valueUsersUser["JoinDate"].isNull())
 			usersObject.joinDate = valueUsersUser["JoinDate"].asString();
+		if(!valueUsersUser["UserName"].isNull())
+			usersObject.userName = valueUsersUser["UserName"].asString();
 		users_.push_back(usersObject);
 	}
 	if(!value["IsTruncated"].isNull())

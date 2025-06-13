@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Ram::Model::ListEntitiesForPolicyRequest;
 
-ListEntitiesForPolicyRequest::ListEntitiesForPolicyRequest() :
-	RpcServiceRequest("ram", "2015-05-01", "ListEntitiesForPolicy")
-{
-	setMethod(HttpRequest::Method::Post);
+ListEntitiesForPolicyRequest::ListEntitiesForPolicyRequest()
+    : RpcServiceRequest("ram", "2015-05-01", "ListEntitiesForPolicy") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListEntitiesForPolicyRequest::~ListEntitiesForPolicyRequest()
-{}
+ListEntitiesForPolicyRequest::~ListEntitiesForPolicyRequest() {}
 
-std::string ListEntitiesForPolicyRequest::getPolicyType()const
-{
-	return policyType_;
+std::string ListEntitiesForPolicyRequest::getPolicyType() const {
+  return policyType_;
 }
 
-void ListEntitiesForPolicyRequest::setPolicyType(const std::string& policyType)
-{
-	policyType_ = policyType;
-	setParameter("PolicyType", policyType);
+void ListEntitiesForPolicyRequest::setPolicyType(const std::string &policyType) {
+  policyType_ = policyType;
+  setParameter(std::string("PolicyType"), policyType);
 }
 
-std::string ListEntitiesForPolicyRequest::getPolicyName()const
-{
-	return policyName_;
+std::string ListEntitiesForPolicyRequest::getPolicyName() const {
+  return policyName_;
 }
 
-void ListEntitiesForPolicyRequest::setPolicyName(const std::string& policyName)
-{
-	policyName_ = policyName;
-	setParameter("PolicyName", policyName);
+void ListEntitiesForPolicyRequest::setPolicyName(const std::string &policyName) {
+  policyName_ = policyName;
+  setParameter(std::string("PolicyName"), policyName);
 }
 

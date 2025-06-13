@@ -48,12 +48,12 @@ void ListVirtualMFADevicesResult::parse(const std::string &payload)
 		if(!valueVirtualMFADevicesVirtualMFADevice["ActivateDate"].isNull())
 			virtualMFADevicesObject.activateDate = valueVirtualMFADevicesVirtualMFADevice["ActivateDate"].asString();
 		auto userNode = value["User"];
+		if(!userNode["DisplayName"].isNull())
+			virtualMFADevicesObject.user.displayName = userNode["DisplayName"].asString();
 		if(!userNode["UserId"].isNull())
 			virtualMFADevicesObject.user.userId = userNode["UserId"].asString();
 		if(!userNode["UserName"].isNull())
 			virtualMFADevicesObject.user.userName = userNode["UserName"].asString();
-		if(!userNode["DisplayName"].isNull())
-			virtualMFADevicesObject.user.displayName = userNode["DisplayName"].asString();
 		virtualMFADevices_.push_back(virtualMFADevicesObject);
 	}
 

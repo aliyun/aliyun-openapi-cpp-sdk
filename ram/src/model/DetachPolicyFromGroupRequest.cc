@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Ram::Model::DetachPolicyFromGroupRequest;
 
-DetachPolicyFromGroupRequest::DetachPolicyFromGroupRequest() :
-	RpcServiceRequest("ram", "2015-05-01", "DetachPolicyFromGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+DetachPolicyFromGroupRequest::DetachPolicyFromGroupRequest()
+    : RpcServiceRequest("ram", "2015-05-01", "DetachPolicyFromGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DetachPolicyFromGroupRequest::~DetachPolicyFromGroupRequest()
-{}
+DetachPolicyFromGroupRequest::~DetachPolicyFromGroupRequest() {}
 
-std::string DetachPolicyFromGroupRequest::getPolicyType()const
-{
-	return policyType_;
+std::string DetachPolicyFromGroupRequest::getPolicyType() const {
+  return policyType_;
 }
 
-void DetachPolicyFromGroupRequest::setPolicyType(const std::string& policyType)
-{
-	policyType_ = policyType;
-	setParameter("PolicyType", policyType);
+void DetachPolicyFromGroupRequest::setPolicyType(const std::string &policyType) {
+  policyType_ = policyType;
+  setParameter(std::string("PolicyType"), policyType);
 }
 
-std::string DetachPolicyFromGroupRequest::getGroupName()const
-{
-	return groupName_;
+std::string DetachPolicyFromGroupRequest::getGroupName() const {
+  return groupName_;
 }
 
-void DetachPolicyFromGroupRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+void DetachPolicyFromGroupRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setParameter(std::string("GroupName"), groupName);
 }
 
-std::string DetachPolicyFromGroupRequest::getPolicyName()const
-{
-	return policyName_;
+std::string DetachPolicyFromGroupRequest::getPolicyName() const {
+  return policyName_;
 }
 
-void DetachPolicyFromGroupRequest::setPolicyName(const std::string& policyName)
-{
-	policyName_ = policyName;
-	setParameter("PolicyName", policyName);
+void DetachPolicyFromGroupRequest::setPolicyName(const std::string &policyName) {
+  policyName_ = policyName;
+  setParameter(std::string("PolicyName"), policyName);
 }
 

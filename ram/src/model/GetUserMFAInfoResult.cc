@@ -42,6 +42,8 @@ void GetUserMFAInfoResult::parse(const std::string &payload)
 	auto mFADeviceNode = value["MFADevice"];
 	if(!mFADeviceNode["SerialNumber"].isNull())
 		mFADevice_.serialNumber = mFADeviceNode["SerialNumber"].asString();
+	if(!mFADeviceNode["Type"].isNull())
+		mFADevice_.type = mFADeviceNode["Type"].asString();
 
 }
 

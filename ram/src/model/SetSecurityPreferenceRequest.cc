@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Ram::Model::SetSecurityPreferenceRequest;
 
-SetSecurityPreferenceRequest::SetSecurityPreferenceRequest() :
-	RpcServiceRequest("ram", "2015-05-01", "SetSecurityPreference")
-{
-	setMethod(HttpRequest::Method::Post);
+SetSecurityPreferenceRequest::SetSecurityPreferenceRequest()
+    : RpcServiceRequest("ram", "2015-05-01", "SetSecurityPreference") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetSecurityPreferenceRequest::~SetSecurityPreferenceRequest()
-{}
+SetSecurityPreferenceRequest::~SetSecurityPreferenceRequest() {}
 
-bool SetSecurityPreferenceRequest::getEnableSaveMFATicket()const
-{
-	return enableSaveMFATicket_;
+bool SetSecurityPreferenceRequest::getEnableSaveMFATicket() const {
+  return enableSaveMFATicket_;
 }
 
-void SetSecurityPreferenceRequest::setEnableSaveMFATicket(bool enableSaveMFATicket)
-{
-	enableSaveMFATicket_ = enableSaveMFATicket;
-	setParameter("EnableSaveMFATicket", enableSaveMFATicket ? "true" : "false");
+void SetSecurityPreferenceRequest::setEnableSaveMFATicket(bool enableSaveMFATicket) {
+  enableSaveMFATicket_ = enableSaveMFATicket;
+  setParameter(std::string("EnableSaveMFATicket"), enableSaveMFATicket ? "true" : "false");
 }
 
-std::string SetSecurityPreferenceRequest::getLoginNetworkMasks()const
-{
-	return loginNetworkMasks_;
+std::string SetSecurityPreferenceRequest::getLoginNetworkMasks() const {
+  return loginNetworkMasks_;
 }
 
-void SetSecurityPreferenceRequest::setLoginNetworkMasks(const std::string& loginNetworkMasks)
-{
-	loginNetworkMasks_ = loginNetworkMasks;
-	setParameter("LoginNetworkMasks", loginNetworkMasks);
+void SetSecurityPreferenceRequest::setLoginNetworkMasks(const std::string &loginNetworkMasks) {
+  loginNetworkMasks_ = loginNetworkMasks;
+  setParameter(std::string("LoginNetworkMasks"), loginNetworkMasks);
 }
 
-bool SetSecurityPreferenceRequest::getAllowUserToChangePassword()const
-{
-	return allowUserToChangePassword_;
+bool SetSecurityPreferenceRequest::getAllowUserToChangePassword() const {
+  return allowUserToChangePassword_;
 }
 
-void SetSecurityPreferenceRequest::setAllowUserToChangePassword(bool allowUserToChangePassword)
-{
-	allowUserToChangePassword_ = allowUserToChangePassword;
-	setParameter("AllowUserToChangePassword", allowUserToChangePassword ? "true" : "false");
+void SetSecurityPreferenceRequest::setAllowUserToChangePassword(bool allowUserToChangePassword) {
+  allowUserToChangePassword_ = allowUserToChangePassword;
+  setParameter(std::string("AllowUserToChangePassword"), allowUserToChangePassword ? "true" : "false");
 }
 
-bool SetSecurityPreferenceRequest::getAllowUserToManagePublicKeys()const
-{
-	return allowUserToManagePublicKeys_;
+bool SetSecurityPreferenceRequest::getAllowUserToManagePublicKeys() const {
+  return allowUserToManagePublicKeys_;
 }
 
-void SetSecurityPreferenceRequest::setAllowUserToManagePublicKeys(bool allowUserToManagePublicKeys)
-{
-	allowUserToManagePublicKeys_ = allowUserToManagePublicKeys;
-	setParameter("AllowUserToManagePublicKeys", allowUserToManagePublicKeys ? "true" : "false");
+void SetSecurityPreferenceRequest::setAllowUserToManagePublicKeys(bool allowUserToManagePublicKeys) {
+  allowUserToManagePublicKeys_ = allowUserToManagePublicKeys;
+  setParameter(std::string("AllowUserToManagePublicKeys"), allowUserToManagePublicKeys ? "true" : "false");
 }
 
-int SetSecurityPreferenceRequest::getLoginSessionDuration()const
-{
-	return loginSessionDuration_;
+int SetSecurityPreferenceRequest::getLoginSessionDuration() const {
+  return loginSessionDuration_;
 }
 
-void SetSecurityPreferenceRequest::setLoginSessionDuration(int loginSessionDuration)
-{
-	loginSessionDuration_ = loginSessionDuration;
-	setParameter("LoginSessionDuration", std::to_string(loginSessionDuration));
+void SetSecurityPreferenceRequest::setLoginSessionDuration(int loginSessionDuration) {
+  loginSessionDuration_ = loginSessionDuration;
+  setParameter(std::string("LoginSessionDuration"), std::to_string(loginSessionDuration));
 }
 
-bool SetSecurityPreferenceRequest::getAllowUserToManageAccessKeys()const
-{
-	return allowUserToManageAccessKeys_;
+bool SetSecurityPreferenceRequest::getAllowUserToManageAccessKeys() const {
+  return allowUserToManageAccessKeys_;
 }
 
-void SetSecurityPreferenceRequest::setAllowUserToManageAccessKeys(bool allowUserToManageAccessKeys)
-{
-	allowUserToManageAccessKeys_ = allowUserToManageAccessKeys;
-	setParameter("AllowUserToManageAccessKeys", allowUserToManageAccessKeys ? "true" : "false");
+void SetSecurityPreferenceRequest::setAllowUserToManageAccessKeys(bool allowUserToManageAccessKeys) {
+  allowUserToManageAccessKeys_ = allowUserToManageAccessKeys;
+  setParameter(std::string("AllowUserToManageAccessKeys"), allowUserToManageAccessKeys ? "true" : "false");
 }
 
-bool SetSecurityPreferenceRequest::getAllowUserToManageMFADevices()const
-{
-	return allowUserToManageMFADevices_;
+bool SetSecurityPreferenceRequest::getAllowUserToManageMFADevices() const {
+  return allowUserToManageMFADevices_;
 }
 
-void SetSecurityPreferenceRequest::setAllowUserToManageMFADevices(bool allowUserToManageMFADevices)
-{
-	allowUserToManageMFADevices_ = allowUserToManageMFADevices;
-	setParameter("AllowUserToManageMFADevices", allowUserToManageMFADevices ? "true" : "false");
+void SetSecurityPreferenceRequest::setAllowUserToManageMFADevices(bool allowUserToManageMFADevices) {
+  allowUserToManageMFADevices_ = allowUserToManageMFADevices;
+  setParameter(std::string("AllowUserToManageMFADevices"), allowUserToManageMFADevices ? "true" : "false");
 }
 

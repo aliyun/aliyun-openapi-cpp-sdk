@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RAM_MODEL_UPLOADPUBLICKEYRESULT_H_
-#define ALIBABACLOUD_RAM_MODEL_UPLOADPUBLICKEYRESULT_H_
+#ifndef ALIBABACLOUD_RAM_MODEL_UNTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_RAM_MODEL_UNTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RAM_EXPORT UploadPublicKeyResult : public ServiceResult
+			class ALIBABACLOUD_RAM_EXPORT UntagResourcesResult : public ServiceResult
 			{
 			public:
-				struct PublicKey
-				{
-					std::string status;
-					std::string publicKeyId;
-					std::string publicKeySpec;
-					std::string createDate;
-				};
 
 
-				UploadPublicKeyResult();
-				explicit UploadPublicKeyResult(const std::string &payload);
-				~UploadPublicKeyResult();
-				PublicKey getPublicKey()const;
+				UntagResourcesResult();
+				explicit UntagResourcesResult(const std::string &payload);
+				~UntagResourcesResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				PublicKey publicKey_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RAM_MODEL_UPLOADPUBLICKEYRESULT_H_
+#endif // !ALIBABACLOUD_RAM_MODEL_UNTAGRESOURCESRESULT_H_

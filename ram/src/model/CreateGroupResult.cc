@@ -40,6 +40,8 @@ void CreateGroupResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto groupNode = value["Group"];
+	if(!groupNode["GroupId"].isNull())
+		group_.groupId = groupNode["GroupId"].asString();
 	if(!groupNode["GroupName"].isNull())
 		group_.groupName = groupNode["GroupName"].asString();
 	if(!groupNode["Comments"].isNull())

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct User
 				{
 					std::string updateDate;
-					std::string userName;
 					std::string email;
+					std::string userName;
 					std::string userId;
 					std::string comments;
 					std::string displayName;

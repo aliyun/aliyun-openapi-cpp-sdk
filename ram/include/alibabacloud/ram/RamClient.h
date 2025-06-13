@@ -52,6 +52,8 @@
 #include "model/CreateUserResult.h"
 #include "model/CreateVirtualMFADeviceRequest.h"
 #include "model/CreateVirtualMFADeviceResult.h"
+#include "model/DecodeDiagnosticMessageRequest.h"
+#include "model/DecodeDiagnosticMessageResult.h"
 #include "model/DeleteAccessKeyRequest.h"
 #include "model/DeleteAccessKeyResult.h"
 #include "model/DeleteGroupRequest.h"
@@ -62,8 +64,6 @@
 #include "model/DeletePolicyResult.h"
 #include "model/DeletePolicyVersionRequest.h"
 #include "model/DeletePolicyVersionResult.h"
-#include "model/DeletePublicKeyRequest.h"
-#include "model/DeletePublicKeyResult.h"
 #include "model/DeleteRoleRequest.h"
 #include "model/DeleteRoleResult.h"
 #include "model/DeleteUserRequest.h"
@@ -90,8 +90,6 @@
 #include "model/GetPolicyResult.h"
 #include "model/GetPolicyVersionRequest.h"
 #include "model/GetPolicyVersionResult.h"
-#include "model/GetPublicKeyRequest.h"
-#include "model/GetPublicKeyResult.h"
 #include "model/GetRoleRequest.h"
 #include "model/GetRoleResult.h"
 #include "model/GetSecurityPreferenceRequest.h"
@@ -118,10 +116,10 @@
 #include "model/ListPoliciesForUserResult.h"
 #include "model/ListPolicyVersionsRequest.h"
 #include "model/ListPolicyVersionsResult.h"
-#include "model/ListPublicKeysRequest.h"
-#include "model/ListPublicKeysResult.h"
 #include "model/ListRolesRequest.h"
 #include "model/ListRolesResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/ListUsersRequest.h"
 #include "model/ListUsersResult.h"
 #include "model/ListUsersForGroupRequest.h"
@@ -138,22 +136,24 @@
 #include "model/SetPasswordPolicyResult.h"
 #include "model/SetSecurityPreferenceRequest.h"
 #include "model/SetSecurityPreferenceResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
 #include "model/UnbindMFADeviceRequest.h"
 #include "model/UnbindMFADeviceResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/UpdateAccessKeyRequest.h"
 #include "model/UpdateAccessKeyResult.h"
 #include "model/UpdateGroupRequest.h"
 #include "model/UpdateGroupResult.h"
 #include "model/UpdateLoginProfileRequest.h"
 #include "model/UpdateLoginProfileResult.h"
-#include "model/UpdatePublicKeyRequest.h"
-#include "model/UpdatePublicKeyResult.h"
+#include "model/UpdatePolicyDescriptionRequest.h"
+#include "model/UpdatePolicyDescriptionResult.h"
 #include "model/UpdateRoleRequest.h"
 #include "model/UpdateRoleResult.h"
 #include "model/UpdateUserRequest.h"
 #include "model/UpdateUserResult.h"
-#include "model/UploadPublicKeyRequest.h"
-#include "model/UploadPublicKeyResult.h"
 
 
 namespace AlibabaCloud
@@ -208,6 +208,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateVirtualMFADeviceResult> CreateVirtualMFADeviceOutcome;
 			typedef std::future<CreateVirtualMFADeviceOutcome> CreateVirtualMFADeviceOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::CreateVirtualMFADeviceRequest&, const CreateVirtualMFADeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVirtualMFADeviceAsyncHandler;
+			typedef Outcome<Error, Model::DecodeDiagnosticMessageResult> DecodeDiagnosticMessageOutcome;
+			typedef std::future<DecodeDiagnosticMessageOutcome> DecodeDiagnosticMessageOutcomeCallable;
+			typedef std::function<void(const RamClient*, const Model::DecodeDiagnosticMessageRequest&, const DecodeDiagnosticMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DecodeDiagnosticMessageAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAccessKeyResult> DeleteAccessKeyOutcome;
 			typedef std::future<DeleteAccessKeyOutcome> DeleteAccessKeyOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::DeleteAccessKeyRequest&, const DeleteAccessKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessKeyAsyncHandler;
@@ -223,9 +226,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeletePolicyVersionResult> DeletePolicyVersionOutcome;
 			typedef std::future<DeletePolicyVersionOutcome> DeletePolicyVersionOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::DeletePolicyVersionRequest&, const DeletePolicyVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyVersionAsyncHandler;
-			typedef Outcome<Error, Model::DeletePublicKeyResult> DeletePublicKeyOutcome;
-			typedef std::future<DeletePublicKeyOutcome> DeletePublicKeyOutcomeCallable;
-			typedef std::function<void(const RamClient*, const Model::DeletePublicKeyRequest&, const DeletePublicKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePublicKeyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRoleResult> DeleteRoleOutcome;
 			typedef std::future<DeleteRoleOutcome> DeleteRoleOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::DeleteRoleRequest&, const DeleteRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleAsyncHandler;
@@ -265,9 +265,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPolicyVersionResult> GetPolicyVersionOutcome;
 			typedef std::future<GetPolicyVersionOutcome> GetPolicyVersionOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::GetPolicyVersionRequest&, const GetPolicyVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPolicyVersionAsyncHandler;
-			typedef Outcome<Error, Model::GetPublicKeyResult> GetPublicKeyOutcome;
-			typedef std::future<GetPublicKeyOutcome> GetPublicKeyOutcomeCallable;
-			typedef std::function<void(const RamClient*, const Model::GetPublicKeyRequest&, const GetPublicKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPublicKeyAsyncHandler;
 			typedef Outcome<Error, Model::GetRoleResult> GetRoleOutcome;
 			typedef std::future<GetRoleOutcome> GetRoleOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::GetRoleRequest&, const GetRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRoleAsyncHandler;
@@ -307,12 +304,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPolicyVersionsResult> ListPolicyVersionsOutcome;
 			typedef std::future<ListPolicyVersionsOutcome> ListPolicyVersionsOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::ListPolicyVersionsRequest&, const ListPolicyVersionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPolicyVersionsAsyncHandler;
-			typedef Outcome<Error, Model::ListPublicKeysResult> ListPublicKeysOutcome;
-			typedef std::future<ListPublicKeysOutcome> ListPublicKeysOutcomeCallable;
-			typedef std::function<void(const RamClient*, const Model::ListPublicKeysRequest&, const ListPublicKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPublicKeysAsyncHandler;
 			typedef Outcome<Error, Model::ListRolesResult> ListRolesOutcome;
 			typedef std::future<ListRolesOutcome> ListRolesOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::ListRolesRequest&, const ListRolesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRolesAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const RamClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
 			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
@@ -337,9 +334,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetSecurityPreferenceResult> SetSecurityPreferenceOutcome;
 			typedef std::future<SetSecurityPreferenceOutcome> SetSecurityPreferenceOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::SetSecurityPreferenceRequest&, const SetSecurityPreferenceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetSecurityPreferenceAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const RamClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UnbindMFADeviceResult> UnbindMFADeviceOutcome;
 			typedef std::future<UnbindMFADeviceOutcome> UnbindMFADeviceOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::UnbindMFADeviceRequest&, const UnbindMFADeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindMFADeviceAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const RamClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAccessKeyResult> UpdateAccessKeyOutcome;
 			typedef std::future<UpdateAccessKeyOutcome> UpdateAccessKeyOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::UpdateAccessKeyRequest&, const UpdateAccessKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAccessKeyAsyncHandler;
@@ -349,18 +352,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateLoginProfileResult> UpdateLoginProfileOutcome;
 			typedef std::future<UpdateLoginProfileOutcome> UpdateLoginProfileOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::UpdateLoginProfileRequest&, const UpdateLoginProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLoginProfileAsyncHandler;
-			typedef Outcome<Error, Model::UpdatePublicKeyResult> UpdatePublicKeyOutcome;
-			typedef std::future<UpdatePublicKeyOutcome> UpdatePublicKeyOutcomeCallable;
-			typedef std::function<void(const RamClient*, const Model::UpdatePublicKeyRequest&, const UpdatePublicKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePublicKeyAsyncHandler;
+			typedef Outcome<Error, Model::UpdatePolicyDescriptionResult> UpdatePolicyDescriptionOutcome;
+			typedef std::future<UpdatePolicyDescriptionOutcome> UpdatePolicyDescriptionOutcomeCallable;
+			typedef std::function<void(const RamClient*, const Model::UpdatePolicyDescriptionRequest&, const UpdatePolicyDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePolicyDescriptionAsyncHandler;
 			typedef Outcome<Error, Model::UpdateRoleResult> UpdateRoleOutcome;
 			typedef std::future<UpdateRoleOutcome> UpdateRoleOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::UpdateRoleRequest&, const UpdateRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRoleAsyncHandler;
 			typedef Outcome<Error, Model::UpdateUserResult> UpdateUserOutcome;
 			typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
 			typedef std::function<void(const RamClient*, const Model::UpdateUserRequest&, const UpdateUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserAsyncHandler;
-			typedef Outcome<Error, Model::UploadPublicKeyResult> UploadPublicKeyOutcome;
-			typedef std::future<UploadPublicKeyOutcome> UploadPublicKeyOutcomeCallable;
-			typedef std::function<void(const RamClient*, const Model::UploadPublicKeyRequest&, const UploadPublicKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadPublicKeyAsyncHandler;
 
 			RamClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			RamClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -411,6 +411,9 @@ namespace AlibabaCloud
 			CreateVirtualMFADeviceOutcome createVirtualMFADevice(const Model::CreateVirtualMFADeviceRequest &request)const;
 			void createVirtualMFADeviceAsync(const Model::CreateVirtualMFADeviceRequest& request, const CreateVirtualMFADeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVirtualMFADeviceOutcomeCallable createVirtualMFADeviceCallable(const Model::CreateVirtualMFADeviceRequest& request) const;
+			DecodeDiagnosticMessageOutcome decodeDiagnosticMessage(const Model::DecodeDiagnosticMessageRequest &request)const;
+			void decodeDiagnosticMessageAsync(const Model::DecodeDiagnosticMessageRequest& request, const DecodeDiagnosticMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DecodeDiagnosticMessageOutcomeCallable decodeDiagnosticMessageCallable(const Model::DecodeDiagnosticMessageRequest& request) const;
 			DeleteAccessKeyOutcome deleteAccessKey(const Model::DeleteAccessKeyRequest &request)const;
 			void deleteAccessKeyAsync(const Model::DeleteAccessKeyRequest& request, const DeleteAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccessKeyOutcomeCallable deleteAccessKeyCallable(const Model::DeleteAccessKeyRequest& request) const;
@@ -426,9 +429,6 @@ namespace AlibabaCloud
 			DeletePolicyVersionOutcome deletePolicyVersion(const Model::DeletePolicyVersionRequest &request)const;
 			void deletePolicyVersionAsync(const Model::DeletePolicyVersionRequest& request, const DeletePolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePolicyVersionOutcomeCallable deletePolicyVersionCallable(const Model::DeletePolicyVersionRequest& request) const;
-			DeletePublicKeyOutcome deletePublicKey(const Model::DeletePublicKeyRequest &request)const;
-			void deletePublicKeyAsync(const Model::DeletePublicKeyRequest& request, const DeletePublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeletePublicKeyOutcomeCallable deletePublicKeyCallable(const Model::DeletePublicKeyRequest& request) const;
 			DeleteRoleOutcome deleteRole(const Model::DeleteRoleRequest &request)const;
 			void deleteRoleAsync(const Model::DeleteRoleRequest& request, const DeleteRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRoleOutcomeCallable deleteRoleCallable(const Model::DeleteRoleRequest& request) const;
@@ -468,9 +468,6 @@ namespace AlibabaCloud
 			GetPolicyVersionOutcome getPolicyVersion(const Model::GetPolicyVersionRequest &request)const;
 			void getPolicyVersionAsync(const Model::GetPolicyVersionRequest& request, const GetPolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPolicyVersionOutcomeCallable getPolicyVersionCallable(const Model::GetPolicyVersionRequest& request) const;
-			GetPublicKeyOutcome getPublicKey(const Model::GetPublicKeyRequest &request)const;
-			void getPublicKeyAsync(const Model::GetPublicKeyRequest& request, const GetPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetPublicKeyOutcomeCallable getPublicKeyCallable(const Model::GetPublicKeyRequest& request) const;
 			GetRoleOutcome getRole(const Model::GetRoleRequest &request)const;
 			void getRoleAsync(const Model::GetRoleRequest& request, const GetRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRoleOutcomeCallable getRoleCallable(const Model::GetRoleRequest& request) const;
@@ -510,12 +507,12 @@ namespace AlibabaCloud
 			ListPolicyVersionsOutcome listPolicyVersions(const Model::ListPolicyVersionsRequest &request)const;
 			void listPolicyVersionsAsync(const Model::ListPolicyVersionsRequest& request, const ListPolicyVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPolicyVersionsOutcomeCallable listPolicyVersionsCallable(const Model::ListPolicyVersionsRequest& request) const;
-			ListPublicKeysOutcome listPublicKeys(const Model::ListPublicKeysRequest &request)const;
-			void listPublicKeysAsync(const Model::ListPublicKeysRequest& request, const ListPublicKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListPublicKeysOutcomeCallable listPublicKeysCallable(const Model::ListPublicKeysRequest& request) const;
 			ListRolesOutcome listRoles(const Model::ListRolesRequest &request)const;
 			void listRolesAsync(const Model::ListRolesRequest& request, const ListRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRolesOutcomeCallable listRolesCallable(const Model::ListRolesRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
 			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;
@@ -540,9 +537,15 @@ namespace AlibabaCloud
 			SetSecurityPreferenceOutcome setSecurityPreference(const Model::SetSecurityPreferenceRequest &request)const;
 			void setSecurityPreferenceAsync(const Model::SetSecurityPreferenceRequest& request, const SetSecurityPreferenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetSecurityPreferenceOutcomeCallable setSecurityPreferenceCallable(const Model::SetSecurityPreferenceRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
 			UnbindMFADeviceOutcome unbindMFADevice(const Model::UnbindMFADeviceRequest &request)const;
 			void unbindMFADeviceAsync(const Model::UnbindMFADeviceRequest& request, const UnbindMFADeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindMFADeviceOutcomeCallable unbindMFADeviceCallable(const Model::UnbindMFADeviceRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UpdateAccessKeyOutcome updateAccessKey(const Model::UpdateAccessKeyRequest &request)const;
 			void updateAccessKeyAsync(const Model::UpdateAccessKeyRequest& request, const UpdateAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAccessKeyOutcomeCallable updateAccessKeyCallable(const Model::UpdateAccessKeyRequest& request) const;
@@ -552,18 +555,15 @@ namespace AlibabaCloud
 			UpdateLoginProfileOutcome updateLoginProfile(const Model::UpdateLoginProfileRequest &request)const;
 			void updateLoginProfileAsync(const Model::UpdateLoginProfileRequest& request, const UpdateLoginProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLoginProfileOutcomeCallable updateLoginProfileCallable(const Model::UpdateLoginProfileRequest& request) const;
-			UpdatePublicKeyOutcome updatePublicKey(const Model::UpdatePublicKeyRequest &request)const;
-			void updatePublicKeyAsync(const Model::UpdatePublicKeyRequest& request, const UpdatePublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdatePublicKeyOutcomeCallable updatePublicKeyCallable(const Model::UpdatePublicKeyRequest& request) const;
+			UpdatePolicyDescriptionOutcome updatePolicyDescription(const Model::UpdatePolicyDescriptionRequest &request)const;
+			void updatePolicyDescriptionAsync(const Model::UpdatePolicyDescriptionRequest& request, const UpdatePolicyDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdatePolicyDescriptionOutcomeCallable updatePolicyDescriptionCallable(const Model::UpdatePolicyDescriptionRequest& request) const;
 			UpdateRoleOutcome updateRole(const Model::UpdateRoleRequest &request)const;
 			void updateRoleAsync(const Model::UpdateRoleRequest& request, const UpdateRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRoleOutcomeCallable updateRoleCallable(const Model::UpdateRoleRequest& request) const;
 			UpdateUserOutcome updateUser(const Model::UpdateUserRequest &request)const;
 			void updateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateUserOutcomeCallable updateUserCallable(const Model::UpdateUserRequest& request) const;
-			UploadPublicKeyOutcome uploadPublicKey(const Model::UploadPublicKeyRequest &request)const;
-			void uploadPublicKeyAsync(const Model::UploadPublicKeyRequest& request, const UploadPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UploadPublicKeyOutcomeCallable uploadPublicKeyCallable(const Model::UploadPublicKeyRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

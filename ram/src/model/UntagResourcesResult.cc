@@ -14,46 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ram/model/GetPublicKeyResult.h>
+#include <alibabacloud/ram/model/UntagResourcesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ram;
 using namespace AlibabaCloud::Ram::Model;
 
-GetPublicKeyResult::GetPublicKeyResult() :
+UntagResourcesResult::UntagResourcesResult() :
 	ServiceResult()
 {}
 
-GetPublicKeyResult::GetPublicKeyResult(const std::string &payload) :
+UntagResourcesResult::UntagResourcesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetPublicKeyResult::~GetPublicKeyResult()
+UntagResourcesResult::~UntagResourcesResult()
 {}
 
-void GetPublicKeyResult::parse(const std::string &payload)
+void UntagResourcesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
-
 	setRequestId(value["RequestId"].asString());
-	auto publicKeyNode = value["PublicKey"];
-	if(!publicKeyNode["PublicKeyId"].isNull())
-		publicKey_.publicKeyId = publicKeyNode["PublicKeyId"].asString();
-	if(!publicKeyNode["PublicKeySpec"].isNull())
-		publicKey_.publicKeySpec = publicKeyNode["PublicKeySpec"].asString();
-	if(!publicKeyNode["Status"].isNull())
-		publicKey_.status = publicKeyNode["Status"].asString();
-	if(!publicKeyNode["CreateDate"].isNull())
-		publicKey_.createDate = publicKeyNode["CreateDate"].asString();
 
-}
-
-GetPublicKeyResult::PublicKey GetPublicKeyResult::getPublicKey()const
-{
-	return publicKey_;
 }
 

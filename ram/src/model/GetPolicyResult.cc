@@ -40,29 +40,29 @@ void GetPolicyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto policyNode = value["Policy"];
-	if(!policyNode["PolicyName"].isNull())
-		policy_.policyName = policyNode["PolicyName"].asString();
-	if(!policyNode["PolicyType"].isNull())
-		policy_.policyType = policyNode["PolicyType"].asString();
-	if(!policyNode["Description"].isNull())
-		policy_.description = policyNode["Description"].asString();
 	if(!policyNode["DefaultVersion"].isNull())
 		policy_.defaultVersion = policyNode["DefaultVersion"].asString();
-	if(!policyNode["PolicyDocument"].isNull())
-		policy_.policyDocument = policyNode["PolicyDocument"].asString();
-	if(!policyNode["CreateDate"].isNull())
-		policy_.createDate = policyNode["CreateDate"].asString();
 	if(!policyNode["UpdateDate"].isNull())
 		policy_.updateDate = policyNode["UpdateDate"].asString();
+	if(!policyNode["Description"].isNull())
+		policy_.description = policyNode["Description"].asString();
+	if(!policyNode["PolicyDocument"].isNull())
+		policy_.policyDocument = policyNode["PolicyDocument"].asString();
 	if(!policyNode["AttachmentCount"].isNull())
 		policy_.attachmentCount = std::stoi(policyNode["AttachmentCount"].asString());
+	if(!policyNode["PolicyName"].isNull())
+		policy_.policyName = policyNode["PolicyName"].asString();
+	if(!policyNode["CreateDate"].isNull())
+		policy_.createDate = policyNode["CreateDate"].asString();
+	if(!policyNode["PolicyType"].isNull())
+		policy_.policyType = policyNode["PolicyType"].asString();
 	auto defaultPolicyVersionNode = value["DefaultPolicyVersion"];
-	if(!defaultPolicyVersionNode["VersionId"].isNull())
-		defaultPolicyVersion_.versionId = defaultPolicyVersionNode["VersionId"].asString();
 	if(!defaultPolicyVersionNode["IsDefaultVersion"].isNull())
 		defaultPolicyVersion_.isDefaultVersion = defaultPolicyVersionNode["IsDefaultVersion"].asString() == "true";
 	if(!defaultPolicyVersionNode["PolicyDocument"].isNull())
 		defaultPolicyVersion_.policyDocument = defaultPolicyVersionNode["PolicyDocument"].asString();
+	if(!defaultPolicyVersionNode["VersionId"].isNull())
+		defaultPolicyVersion_.versionId = defaultPolicyVersionNode["VersionId"].asString();
 	if(!defaultPolicyVersionNode["CreateDate"].isNull())
 		defaultPolicyVersion_.createDate = defaultPolicyVersionNode["CreateDate"].asString();
 

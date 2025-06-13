@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RAM_MODEL_GETPUBLICKEYREQUEST_H_
-#define ALIBABACLOUD_RAM_MODEL_GETPUBLICKEYREQUEST_H_
+#ifndef ALIBABACLOUD_RAM_MODEL_TAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_RAM_MODEL_TAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/ram/RamExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RAM_EXPORT GetPublicKeyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RAM_EXPORT TagResourcesResult : public ServiceResult
 			{
-
 			public:
-				GetPublicKeyRequest();
-				~GetPublicKeyRequest();
 
-				std::string getUserPublicKeyId()const;
-				void setUserPublicKeyId(const std::string& userPublicKeyId);
-				std::string getUserName()const;
-				void setUserName(const std::string& userName);
 
-            private:
-				std::string userPublicKeyId_;
-				std::string userName_;
+				TagResourcesResult();
+				explicit TagResourcesResult(const std::string &payload);
+				~TagResourcesResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RAM_MODEL_GETPUBLICKEYREQUEST_H_
+#endif // !ALIBABACLOUD_RAM_MODEL_TAGRESOURCESRESULT_H_

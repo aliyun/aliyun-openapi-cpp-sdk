@@ -38,13 +38,6 @@ namespace AlibabaCloud
 					std::string attachDate;
 					std::string comments;
 				};
-				struct User
-				{
-					std::string userName;
-					std::string attachDate;
-					std::string userId;
-					std::string displayName;
-				};
 				struct Role
 				{
 					std::string roleName;
@@ -52,6 +45,13 @@ namespace AlibabaCloud
 					std::string attachDate;
 					std::string arn;
 					std::string roleId;
+				};
+				struct User
+				{
+					std::string userName;
+					std::string attachDate;
+					std::string userId;
+					std::string displayName;
 				};
 
 

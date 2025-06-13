@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					int minimumPasswordLength;
 					bool requireLowercaseCharacters;
 					bool requireNumbers;
-					int maxPasswordAge;
 					int passwordReusePrevention;
+					int maxPasswordAge;
 					int maxLoginAttemps;
 					bool hardExpiry;
 					bool requireUppercaseCharacters;

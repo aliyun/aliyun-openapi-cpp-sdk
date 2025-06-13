@@ -14,25 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ram/model/ListPublicKeysRequest.h>
+#include <alibabacloud/ram/model/TagResourcesResult.h>
+#include <json/json.h>
 
-using AlibabaCloud::Ram::Model::ListPublicKeysRequest;
+using namespace AlibabaCloud::Ram;
+using namespace AlibabaCloud::Ram::Model;
 
-ListPublicKeysRequest::ListPublicKeysRequest() :
-	RpcServiceRequest("ram", "2015-05-01", "ListPublicKeys")
+TagResourcesResult::TagResourcesResult() :
+	ServiceResult()
 {}
 
-ListPublicKeysRequest::~ListPublicKeysRequest()
-{}
-
-std::string ListPublicKeysRequest::getUserName()const
+TagResourcesResult::TagResourcesResult(const std::string &payload) :
+	ServiceResult()
 {
-	return userName_;
+	parse(payload);
 }
 
-void ListPublicKeysRequest::setUserName(const std::string& userName)
+TagResourcesResult::~TagResourcesResult()
+{}
+
+void TagResourcesResult::parse(const std::string &payload)
 {
-	userName_ = userName;
-	setParameter("UserName", userName);
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+	setRequestId(value["RequestId"].asString());
+
 }
 

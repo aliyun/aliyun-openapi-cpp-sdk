@@ -43,20 +43,30 @@ void ListRolesResult::parse(const std::string &payload)
 	for (auto valueRolesRole : allRolesNode)
 	{
 		Role rolesObject;
-		if(!valueRolesRole["RoleId"].isNull())
-			rolesObject.roleId = valueRolesRole["RoleId"].asString();
-		if(!valueRolesRole["RoleName"].isNull())
-			rolesObject.roleName = valueRolesRole["RoleName"].asString();
-		if(!valueRolesRole["Arn"].isNull())
-			rolesObject.arn = valueRolesRole["Arn"].asString();
 		if(!valueRolesRole["Description"].isNull())
 			rolesObject.description = valueRolesRole["Description"].asString();
-		if(!valueRolesRole["CreateDate"].isNull())
-			rolesObject.createDate = valueRolesRole["CreateDate"].asString();
 		if(!valueRolesRole["UpdateDate"].isNull())
 			rolesObject.updateDate = valueRolesRole["UpdateDate"].asString();
 		if(!valueRolesRole["MaxSessionDuration"].isNull())
 			rolesObject.maxSessionDuration = std::stol(valueRolesRole["MaxSessionDuration"].asString());
+		if(!valueRolesRole["RoleName"].isNull())
+			rolesObject.roleName = valueRolesRole["RoleName"].asString();
+		if(!valueRolesRole["CreateDate"].isNull())
+			rolesObject.createDate = valueRolesRole["CreateDate"].asString();
+		if(!valueRolesRole["RoleId"].isNull())
+			rolesObject.roleId = valueRolesRole["RoleId"].asString();
+		if(!valueRolesRole["Arn"].isNull())
+			rolesObject.arn = valueRolesRole["Arn"].asString();
+		auto allTagsNode = valueRolesRole["Tags"]["Tag"];
+		for (auto valueRolesRoleTagsTag : allTagsNode)
+		{
+			Role::Tag tagsObject;
+			if(!valueRolesRoleTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueRolesRoleTagsTag["TagKey"].asString();
+			if(!valueRolesRoleTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueRolesRoleTagsTag["TagValue"].asString();
+			rolesObject.tags.push_back(tagsObject);
+		}
 		roles_.push_back(rolesObject);
 	}
 	if(!value["IsTruncated"].isNull())

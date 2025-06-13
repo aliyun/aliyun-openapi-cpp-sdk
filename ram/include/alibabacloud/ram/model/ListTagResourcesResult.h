@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RAM_MODEL_GETPUBLICKEYRESULT_H_
-#define ALIBABACLOUD_RAM_MODEL_GETPUBLICKEYRESULT_H_
+#ifndef ALIBABACLOUD_RAM_MODEL_LISTTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_RAM_MODEL_LISTTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RAM_EXPORT GetPublicKeyResult : public ServiceResult
+			class ALIBABACLOUD_RAM_EXPORT ListTagResourcesResult : public ServiceResult
 			{
 			public:
-				struct PublicKey
+				struct TagResourcesItem
 				{
-					std::string status;
-					std::string publicKeyId;
-					std::string publicKeySpec;
-					std::string createDate;
+					std::string resourceName;
+					std::string tagKey;
+					std::string resourceType;
+					std::string tagValue;
 				};
 
 
-				GetPublicKeyResult();
-				explicit GetPublicKeyResult(const std::string &payload);
-				~GetPublicKeyResult();
-				PublicKey getPublicKey()const;
+				ListTagResourcesResult();
+				explicit ListTagResourcesResult(const std::string &payload);
+				~ListTagResourcesResult();
+				std::string getNextToken()const;
+				std::vector<TagResourcesItem> getTagResources()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				PublicKey publicKey_;
+				std::string nextToken_;
+				std::vector<TagResourcesItem> tagResources_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RAM_MODEL_GETPUBLICKEYRESULT_H_
+#endif // !ALIBABACLOUD_RAM_MODEL_LISTTAGRESOURCESRESULT_H_

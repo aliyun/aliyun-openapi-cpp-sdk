@@ -43,12 +43,12 @@ void ListPolicyVersionsResult::parse(const std::string &payload)
 	for (auto valuePolicyVersionsPolicyVersion : allPolicyVersionsNode)
 	{
 		PolicyVersion policyVersionsObject;
-		if(!valuePolicyVersionsPolicyVersion["VersionId"].isNull())
-			policyVersionsObject.versionId = valuePolicyVersionsPolicyVersion["VersionId"].asString();
 		if(!valuePolicyVersionsPolicyVersion["IsDefaultVersion"].isNull())
 			policyVersionsObject.isDefaultVersion = valuePolicyVersionsPolicyVersion["IsDefaultVersion"].asString() == "true";
 		if(!valuePolicyVersionsPolicyVersion["PolicyDocument"].isNull())
 			policyVersionsObject.policyDocument = valuePolicyVersionsPolicyVersion["PolicyDocument"].asString();
+		if(!valuePolicyVersionsPolicyVersion["VersionId"].isNull())
+			policyVersionsObject.versionId = valuePolicyVersionsPolicyVersion["VersionId"].asString();
 		if(!valuePolicyVersionsPolicyVersion["CreateDate"].isNull())
 			policyVersionsObject.createDate = valuePolicyVersionsPolicyVersion["CreateDate"].asString();
 		policyVersions_.push_back(policyVersionsObject);

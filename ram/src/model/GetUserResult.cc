@@ -40,24 +40,24 @@ void GetUserResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto userNode = value["User"];
-	if(!userNode["UserId"].isNull())
-		user_.userId = userNode["UserId"].asString();
-	if(!userNode["UserName"].isNull())
-		user_.userName = userNode["UserName"].asString();
 	if(!userNode["DisplayName"].isNull())
 		user_.displayName = userNode["DisplayName"].asString();
-	if(!userNode["MobilePhone"].isNull())
-		user_.mobilePhone = userNode["MobilePhone"].asString();
 	if(!userNode["Email"].isNull())
 		user_.email = userNode["Email"].asString();
-	if(!userNode["Comments"].isNull())
-		user_.comments = userNode["Comments"].asString();
-	if(!userNode["CreateDate"].isNull())
-		user_.createDate = userNode["CreateDate"].asString();
 	if(!userNode["UpdateDate"].isNull())
 		user_.updateDate = userNode["UpdateDate"].asString();
+	if(!userNode["MobilePhone"].isNull())
+		user_.mobilePhone = userNode["MobilePhone"].asString();
+	if(!userNode["UserId"].isNull())
+		user_.userId = userNode["UserId"].asString();
+	if(!userNode["Comments"].isNull())
+		user_.comments = userNode["Comments"].asString();
 	if(!userNode["LastLoginDate"].isNull())
 		user_.lastLoginDate = userNode["LastLoginDate"].asString();
+	if(!userNode["CreateDate"].isNull())
+		user_.createDate = userNode["CreateDate"].asString();
+	if(!userNode["UserName"].isNull())
+		user_.userName = userNode["UserName"].asString();
 
 }
 
