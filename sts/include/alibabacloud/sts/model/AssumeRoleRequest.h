@@ -32,6 +32,8 @@ public:
 	~AssumeRoleRequest();
 	std::string getExternalId() const;
 	void setExternalId(const std::string &externalId);
+	std::string getSourceIdentity() const;
+	void setSourceIdentity(const std::string &sourceIdentity);
 	std::string getRoleSessionName() const;
 	void setRoleSessionName(const std::string &roleSessionName);
 	std::string getPolicy() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string externalId_;
+	std::string sourceIdentity_;
 	std::string roleSessionName_;
 	std::string policy_;
 	std::string roleArn_;

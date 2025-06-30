@@ -53,7 +53,14 @@ void AssumeRoleResult::parse(const std::string &payload)
 		credentials_.accessKeySecret = credentialsNode["AccessKeySecret"].asString();
 	if(!credentialsNode["AccessKeyId"].isNull())
 		credentials_.accessKeyId = credentialsNode["AccessKeyId"].asString();
+	if(!value["SourceIdentity"].isNull())
+		sourceIdentity_ = value["SourceIdentity"].asString();
 
+}
+
+std::string AssumeRoleResult::getSourceIdentity()const
+{
+	return sourceIdentity_;
 }
 
 AssumeRoleResult::AssumedRoleUser AssumeRoleResult::getAssumedRoleUser()const

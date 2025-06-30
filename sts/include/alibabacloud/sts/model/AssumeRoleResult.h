@@ -49,12 +49,14 @@ namespace AlibabaCloud
 				AssumeRoleResult();
 				explicit AssumeRoleResult(const std::string &payload);
 				~AssumeRoleResult();
+				std::string getSourceIdentity()const;
 				AssumedRoleUser getAssumedRoleUser()const;
 				Credentials getCredentials()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string sourceIdentity_;
 				AssumedRoleUser assumedRoleUser_;
 				Credentials credentials_;
 

@@ -58,6 +58,7 @@ namespace AlibabaCloud
 				AssumeRoleWithOIDCResult();
 				explicit AssumeRoleWithOIDCResult(const std::string &payload);
 				~AssumeRoleWithOIDCResult();
+				std::string getSourceIdentity()const;
 				OIDCTokenInfo getOIDCTokenInfo()const;
 				AssumedRoleUser getAssumedRoleUser()const;
 				Credentials getCredentials()const;
@@ -65,6 +66,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string sourceIdentity_;
 				OIDCTokenInfo oIDCTokenInfo_;
 				AssumedRoleUser assumedRoleUser_;
 				Credentials credentials_;

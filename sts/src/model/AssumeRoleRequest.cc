@@ -34,6 +34,15 @@ void AssumeRoleRequest::setExternalId(const std::string &externalId) {
   setParameter(std::string("ExternalId"), externalId);
 }
 
+std::string AssumeRoleRequest::getSourceIdentity() const {
+  return sourceIdentity_;
+}
+
+void AssumeRoleRequest::setSourceIdentity(const std::string &sourceIdentity) {
+  sourceIdentity_ = sourceIdentity;
+  setParameter(std::string("SourceIdentity"), sourceIdentity);
+}
+
 std::string AssumeRoleRequest::getRoleSessionName() const {
   return roleSessionName_;
 }

@@ -56,6 +56,7 @@ namespace AlibabaCloud
 				AssumeRoleWithSAMLResult();
 				explicit AssumeRoleWithSAMLResult(const std::string &payload);
 				~AssumeRoleWithSAMLResult();
+				std::string getSourceIdentity()const;
 				SAMLAssertionInfo getSAMLAssertionInfo()const;
 				AssumedRoleUser getAssumedRoleUser()const;
 				Credentials getCredentials()const;
@@ -63,6 +64,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string sourceIdentity_;
 				SAMLAssertionInfo sAMLAssertionInfo_;
 				AssumedRoleUser assumedRoleUser_;
 				Credentials credentials_;

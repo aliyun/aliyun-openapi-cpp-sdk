@@ -66,7 +66,14 @@ void AssumeRoleWithOIDCResult::parse(const std::string &payload)
 		credentials_.accessKeySecret = credentialsNode["AccessKeySecret"].asString();
 	if(!credentialsNode["AccessKeyId"].isNull())
 		credentials_.accessKeyId = credentialsNode["AccessKeyId"].asString();
+	if(!value["SourceIdentity"].isNull())
+		sourceIdentity_ = value["SourceIdentity"].asString();
 
+}
+
+std::string AssumeRoleWithOIDCResult::getSourceIdentity()const
+{
+	return sourceIdentity_;
 }
 
 AssumeRoleWithOIDCResult::OIDCTokenInfo AssumeRoleWithOIDCResult::getOIDCTokenInfo()const

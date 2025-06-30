@@ -62,7 +62,14 @@ void AssumeRoleWithSAMLResult::parse(const std::string &payload)
 		credentials_.accessKeySecret = credentialsNode["AccessKeySecret"].asString();
 	if(!credentialsNode["AccessKeyId"].isNull())
 		credentials_.accessKeyId = credentialsNode["AccessKeyId"].asString();
+	if(!value["SourceIdentity"].isNull())
+		sourceIdentity_ = value["SourceIdentity"].asString();
 
+}
+
+std::string AssumeRoleWithSAMLResult::getSourceIdentity()const
+{
+	return sourceIdentity_;
 }
 
 AssumeRoleWithSAMLResult::SAMLAssertionInfo AssumeRoleWithSAMLResult::getSAMLAssertionInfo()const
