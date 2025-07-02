@@ -29,6 +29,8 @@ set(eds-user_public_header_model
 	include/alibabacloud/eds-user/model/CheckUsedPropertyResult.h
 	include/alibabacloud/eds-user/model/CheckUsedPropertyValueRequest.h
 	include/alibabacloud/eds-user/model/CheckUsedPropertyValueResult.h
+	include/alibabacloud/eds-user/model/CreateGroupRequest.h
+	include/alibabacloud/eds-user/model/CreateGroupResult.h
 	include/alibabacloud/eds-user/model/CreateOrgRequest.h
 	include/alibabacloud/eds-user/model/CreateOrgResult.h
 	include/alibabacloud/eds-user/model/CreatePropertyRequest.h
@@ -41,6 +43,10 @@ set(eds-user_public_header_model
 	include/alibabacloud/eds-user/model/DeleteResourceGroupResult.h
 	include/alibabacloud/eds-user/model/DeleteUserPropertyValueRequest.h
 	include/alibabacloud/eds-user/model/DeleteUserPropertyValueResult.h
+	include/alibabacloud/eds-user/model/DescribeGroupUserRequest.h
+	include/alibabacloud/eds-user/model/DescribeGroupUserResult.h
+	include/alibabacloud/eds-user/model/DescribeGroupsRequest.h
+	include/alibabacloud/eds-user/model/DescribeGroupsResult.h
 	include/alibabacloud/eds-user/model/DescribeMfaDevicesRequest.h
 	include/alibabacloud/eds-user/model/DescribeMfaDevicesResult.h
 	include/alibabacloud/eds-user/model/DescribeOrgByLayerRequest.h
@@ -65,14 +71,20 @@ set(eds-user_public_header_model
 	include/alibabacloud/eds-user/model/LockMfaDeviceResult.h
 	include/alibabacloud/eds-user/model/LockUsersRequest.h
 	include/alibabacloud/eds-user/model/LockUsersResult.h
+	include/alibabacloud/eds-user/model/ModifyGroupRequest.h
+	include/alibabacloud/eds-user/model/ModifyGroupResult.h
 	include/alibabacloud/eds-user/model/ModifyOrgRequest.h
 	include/alibabacloud/eds-user/model/ModifyOrgResult.h
 	include/alibabacloud/eds-user/model/ModifyUserRequest.h
 	include/alibabacloud/eds-user/model/ModifyUserResult.h
 	include/alibabacloud/eds-user/model/MoveOrgRequest.h
 	include/alibabacloud/eds-user/model/MoveOrgResult.h
+	include/alibabacloud/eds-user/model/MoveUserOrgRequest.h
+	include/alibabacloud/eds-user/model/MoveUserOrgResult.h
 	include/alibabacloud/eds-user/model/QuerySyncStatusByAliUidRequest.h
 	include/alibabacloud/eds-user/model/QuerySyncStatusByAliUidResult.h
+	include/alibabacloud/eds-user/model/RemoveGroupRequest.h
+	include/alibabacloud/eds-user/model/RemoveGroupResult.h
 	include/alibabacloud/eds-user/model/RemoveMfaDeviceRequest.h
 	include/alibabacloud/eds-user/model/RemoveMfaDeviceResult.h
 	include/alibabacloud/eds-user/model/RemoveOrgRequest.h
@@ -92,7 +104,11 @@ set(eds-user_public_header_model
 	include/alibabacloud/eds-user/model/UnlockUsersRequest.h
 	include/alibabacloud/eds-user/model/UnlockUsersResult.h
 	include/alibabacloud/eds-user/model/UpdatePropertyRequest.h
-	include/alibabacloud/eds-user/model/UpdatePropertyResult.h )
+	include/alibabacloud/eds-user/model/UpdatePropertyResult.h
+	include/alibabacloud/eds-user/model/UserBatchJoinGroupRequest.h
+	include/alibabacloud/eds-user/model/UserBatchJoinGroupResult.h
+	include/alibabacloud/eds-user/model/UserBatchQuitGroupRequest.h
+	include/alibabacloud/eds-user/model/UserBatchQuitGroupResult.h )
 
 set(eds-user_src 
 	src/Eds-userClient.cc
@@ -104,6 +120,8 @@ set(eds-user_src
 	src/model/CheckUsedPropertyResult.cc
 	src/model/CheckUsedPropertyValueRequest.cc
 	src/model/CheckUsedPropertyValueResult.cc
+	src/model/CreateGroupRequest.cc
+	src/model/CreateGroupResult.cc
 	src/model/CreateOrgRequest.cc
 	src/model/CreateOrgResult.cc
 	src/model/CreatePropertyRequest.cc
@@ -116,6 +134,10 @@ set(eds-user_src
 	src/model/DeleteResourceGroupResult.cc
 	src/model/DeleteUserPropertyValueRequest.cc
 	src/model/DeleteUserPropertyValueResult.cc
+	src/model/DescribeGroupUserRequest.cc
+	src/model/DescribeGroupUserResult.cc
+	src/model/DescribeGroupsRequest.cc
+	src/model/DescribeGroupsResult.cc
 	src/model/DescribeMfaDevicesRequest.cc
 	src/model/DescribeMfaDevicesResult.cc
 	src/model/DescribeOrgByLayerRequest.cc
@@ -140,14 +162,20 @@ set(eds-user_src
 	src/model/LockMfaDeviceResult.cc
 	src/model/LockUsersRequest.cc
 	src/model/LockUsersResult.cc
+	src/model/ModifyGroupRequest.cc
+	src/model/ModifyGroupResult.cc
 	src/model/ModifyOrgRequest.cc
 	src/model/ModifyOrgResult.cc
 	src/model/ModifyUserRequest.cc
 	src/model/ModifyUserResult.cc
 	src/model/MoveOrgRequest.cc
 	src/model/MoveOrgResult.cc
+	src/model/MoveUserOrgRequest.cc
+	src/model/MoveUserOrgResult.cc
 	src/model/QuerySyncStatusByAliUidRequest.cc
 	src/model/QuerySyncStatusByAliUidResult.cc
+	src/model/RemoveGroupRequest.cc
+	src/model/RemoveGroupResult.cc
 	src/model/RemoveMfaDeviceRequest.cc
 	src/model/RemoveMfaDeviceResult.cc
 	src/model/RemoveOrgRequest.cc
@@ -167,7 +195,11 @@ set(eds-user_src
 	src/model/UnlockUsersRequest.cc
 	src/model/UnlockUsersResult.cc
 	src/model/UpdatePropertyRequest.cc
-	src/model/UpdatePropertyResult.cc )
+	src/model/UpdatePropertyResult.cc
+	src/model/UserBatchJoinGroupRequest.cc
+	src/model/UserBatchJoinGroupResult.cc
+	src/model/UserBatchQuitGroupRequest.cc
+	src/model/UserBatchQuitGroupResult.cc )
 
 add_library(eds-user ${LIB_TYPE}
 	${eds-user_public_header}

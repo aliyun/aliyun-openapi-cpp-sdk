@@ -30,6 +30,8 @@
 #include "model/CheckUsedPropertyResult.h"
 #include "model/CheckUsedPropertyValueRequest.h"
 #include "model/CheckUsedPropertyValueResult.h"
+#include "model/CreateGroupRequest.h"
+#include "model/CreateGroupResult.h"
 #include "model/CreateOrgRequest.h"
 #include "model/CreateOrgResult.h"
 #include "model/CreatePropertyRequest.h"
@@ -42,6 +44,10 @@
 #include "model/DeleteResourceGroupResult.h"
 #include "model/DeleteUserPropertyValueRequest.h"
 #include "model/DeleteUserPropertyValueResult.h"
+#include "model/DescribeGroupUserRequest.h"
+#include "model/DescribeGroupUserResult.h"
+#include "model/DescribeGroupsRequest.h"
+#include "model/DescribeGroupsResult.h"
 #include "model/DescribeMfaDevicesRequest.h"
 #include "model/DescribeMfaDevicesResult.h"
 #include "model/DescribeOrgByLayerRequest.h"
@@ -66,14 +72,20 @@
 #include "model/LockMfaDeviceResult.h"
 #include "model/LockUsersRequest.h"
 #include "model/LockUsersResult.h"
+#include "model/ModifyGroupRequest.h"
+#include "model/ModifyGroupResult.h"
 #include "model/ModifyOrgRequest.h"
 #include "model/ModifyOrgResult.h"
 #include "model/ModifyUserRequest.h"
 #include "model/ModifyUserResult.h"
 #include "model/MoveOrgRequest.h"
 #include "model/MoveOrgResult.h"
+#include "model/MoveUserOrgRequest.h"
+#include "model/MoveUserOrgResult.h"
 #include "model/QuerySyncStatusByAliUidRequest.h"
 #include "model/QuerySyncStatusByAliUidResult.h"
+#include "model/RemoveGroupRequest.h"
+#include "model/RemoveGroupResult.h"
 #include "model/RemoveMfaDeviceRequest.h"
 #include "model/RemoveMfaDeviceResult.h"
 #include "model/RemoveOrgRequest.h"
@@ -94,6 +106,10 @@
 #include "model/UnlockUsersResult.h"
 #include "model/UpdatePropertyRequest.h"
 #include "model/UpdatePropertyResult.h"
+#include "model/UserBatchJoinGroupRequest.h"
+#include "model/UserBatchJoinGroupResult.h"
+#include "model/UserBatchQuitGroupRequest.h"
+#include "model/UserBatchQuitGroupResult.h"
 
 
 namespace AlibabaCloud
@@ -115,6 +131,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckUsedPropertyValueResult> CheckUsedPropertyValueOutcome;
 			typedef std::future<CheckUsedPropertyValueOutcome> CheckUsedPropertyValueOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::CheckUsedPropertyValueRequest&, const CheckUsedPropertyValueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckUsedPropertyValueAsyncHandler;
+			typedef Outcome<Error, Model::CreateGroupResult> CreateGroupOutcome;
+			typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
+			typedef std::function<void(const Eds_userClient*, const Model::CreateGroupRequest&, const CreateGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateOrgResult> CreateOrgOutcome;
 			typedef std::future<CreateOrgOutcome> CreateOrgOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::CreateOrgRequest&, const CreateOrgOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrgAsyncHandler;
@@ -133,6 +152,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteUserPropertyValueResult> DeleteUserPropertyValueOutcome;
 			typedef std::future<DeleteUserPropertyValueOutcome> DeleteUserPropertyValueOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::DeleteUserPropertyValueRequest&, const DeleteUserPropertyValueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserPropertyValueAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGroupUserResult> DescribeGroupUserOutcome;
+			typedef std::future<DescribeGroupUserOutcome> DescribeGroupUserOutcomeCallable;
+			typedef std::function<void(const Eds_userClient*, const Model::DescribeGroupUserRequest&, const DescribeGroupUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupUserAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGroupsResult> DescribeGroupsOutcome;
+			typedef std::future<DescribeGroupsOutcome> DescribeGroupsOutcomeCallable;
+			typedef std::function<void(const Eds_userClient*, const Model::DescribeGroupsRequest&, const DescribeGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMfaDevicesResult> DescribeMfaDevicesOutcome;
 			typedef std::future<DescribeMfaDevicesOutcome> DescribeMfaDevicesOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::DescribeMfaDevicesRequest&, const DescribeMfaDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMfaDevicesAsyncHandler;
@@ -169,6 +194,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::LockUsersResult> LockUsersOutcome;
 			typedef std::future<LockUsersOutcome> LockUsersOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::LockUsersRequest&, const LockUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LockUsersAsyncHandler;
+			typedef Outcome<Error, Model::ModifyGroupResult> ModifyGroupOutcome;
+			typedef std::future<ModifyGroupOutcome> ModifyGroupOutcomeCallable;
+			typedef std::function<void(const Eds_userClient*, const Model::ModifyGroupRequest&, const ModifyGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGroupAsyncHandler;
 			typedef Outcome<Error, Model::ModifyOrgResult> ModifyOrgOutcome;
 			typedef std::future<ModifyOrgOutcome> ModifyOrgOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::ModifyOrgRequest&, const ModifyOrgOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOrgAsyncHandler;
@@ -178,9 +206,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::MoveOrgResult> MoveOrgOutcome;
 			typedef std::future<MoveOrgOutcome> MoveOrgOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::MoveOrgRequest&, const MoveOrgOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveOrgAsyncHandler;
+			typedef Outcome<Error, Model::MoveUserOrgResult> MoveUserOrgOutcome;
+			typedef std::future<MoveUserOrgOutcome> MoveUserOrgOutcomeCallable;
+			typedef std::function<void(const Eds_userClient*, const Model::MoveUserOrgRequest&, const MoveUserOrgOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveUserOrgAsyncHandler;
 			typedef Outcome<Error, Model::QuerySyncStatusByAliUidResult> QuerySyncStatusByAliUidOutcome;
 			typedef std::future<QuerySyncStatusByAliUidOutcome> QuerySyncStatusByAliUidOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::QuerySyncStatusByAliUidRequest&, const QuerySyncStatusByAliUidOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySyncStatusByAliUidAsyncHandler;
+			typedef Outcome<Error, Model::RemoveGroupResult> RemoveGroupOutcome;
+			typedef std::future<RemoveGroupOutcome> RemoveGroupOutcomeCallable;
+			typedef std::function<void(const Eds_userClient*, const Model::RemoveGroupRequest&, const RemoveGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveGroupAsyncHandler;
 			typedef Outcome<Error, Model::RemoveMfaDeviceResult> RemoveMfaDeviceOutcome;
 			typedef std::future<RemoveMfaDeviceOutcome> RemoveMfaDeviceOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::RemoveMfaDeviceRequest&, const RemoveMfaDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveMfaDeviceAsyncHandler;
@@ -211,6 +245,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdatePropertyResult> UpdatePropertyOutcome;
 			typedef std::future<UpdatePropertyOutcome> UpdatePropertyOutcomeCallable;
 			typedef std::function<void(const Eds_userClient*, const Model::UpdatePropertyRequest&, const UpdatePropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePropertyAsyncHandler;
+			typedef Outcome<Error, Model::UserBatchJoinGroupResult> UserBatchJoinGroupOutcome;
+			typedef std::future<UserBatchJoinGroupOutcome> UserBatchJoinGroupOutcomeCallable;
+			typedef std::function<void(const Eds_userClient*, const Model::UserBatchJoinGroupRequest&, const UserBatchJoinGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UserBatchJoinGroupAsyncHandler;
+			typedef Outcome<Error, Model::UserBatchQuitGroupResult> UserBatchQuitGroupOutcome;
+			typedef std::future<UserBatchQuitGroupOutcome> UserBatchQuitGroupOutcomeCallable;
+			typedef std::function<void(const Eds_userClient*, const Model::UserBatchQuitGroupRequest&, const UserBatchQuitGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UserBatchQuitGroupAsyncHandler;
 
 			Eds_userClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			Eds_userClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -228,6 +268,9 @@ namespace AlibabaCloud
 			CheckUsedPropertyValueOutcome checkUsedPropertyValue(const Model::CheckUsedPropertyValueRequest &request)const;
 			void checkUsedPropertyValueAsync(const Model::CheckUsedPropertyValueRequest& request, const CheckUsedPropertyValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckUsedPropertyValueOutcomeCallable checkUsedPropertyValueCallable(const Model::CheckUsedPropertyValueRequest& request) const;
+			CreateGroupOutcome createGroup(const Model::CreateGroupRequest &request)const;
+			void createGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateGroupOutcomeCallable createGroupCallable(const Model::CreateGroupRequest& request) const;
 			CreateOrgOutcome createOrg(const Model::CreateOrgRequest &request)const;
 			void createOrgAsync(const Model::CreateOrgRequest& request, const CreateOrgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateOrgOutcomeCallable createOrgCallable(const Model::CreateOrgRequest& request) const;
@@ -246,6 +289,12 @@ namespace AlibabaCloud
 			DeleteUserPropertyValueOutcome deleteUserPropertyValue(const Model::DeleteUserPropertyValueRequest &request)const;
 			void deleteUserPropertyValueAsync(const Model::DeleteUserPropertyValueRequest& request, const DeleteUserPropertyValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserPropertyValueOutcomeCallable deleteUserPropertyValueCallable(const Model::DeleteUserPropertyValueRequest& request) const;
+			DescribeGroupUserOutcome describeGroupUser(const Model::DescribeGroupUserRequest &request)const;
+			void describeGroupUserAsync(const Model::DescribeGroupUserRequest& request, const DescribeGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGroupUserOutcomeCallable describeGroupUserCallable(const Model::DescribeGroupUserRequest& request) const;
+			DescribeGroupsOutcome describeGroups(const Model::DescribeGroupsRequest &request)const;
+			void describeGroupsAsync(const Model::DescribeGroupsRequest& request, const DescribeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGroupsOutcomeCallable describeGroupsCallable(const Model::DescribeGroupsRequest& request) const;
 			DescribeMfaDevicesOutcome describeMfaDevices(const Model::DescribeMfaDevicesRequest &request)const;
 			void describeMfaDevicesAsync(const Model::DescribeMfaDevicesRequest& request, const DescribeMfaDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMfaDevicesOutcomeCallable describeMfaDevicesCallable(const Model::DescribeMfaDevicesRequest& request) const;
@@ -282,6 +331,9 @@ namespace AlibabaCloud
 			LockUsersOutcome lockUsers(const Model::LockUsersRequest &request)const;
 			void lockUsersAsync(const Model::LockUsersRequest& request, const LockUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LockUsersOutcomeCallable lockUsersCallable(const Model::LockUsersRequest& request) const;
+			ModifyGroupOutcome modifyGroup(const Model::ModifyGroupRequest &request)const;
+			void modifyGroupAsync(const Model::ModifyGroupRequest& request, const ModifyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyGroupOutcomeCallable modifyGroupCallable(const Model::ModifyGroupRequest& request) const;
 			ModifyOrgOutcome modifyOrg(const Model::ModifyOrgRequest &request)const;
 			void modifyOrgAsync(const Model::ModifyOrgRequest& request, const ModifyOrgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyOrgOutcomeCallable modifyOrgCallable(const Model::ModifyOrgRequest& request) const;
@@ -291,9 +343,15 @@ namespace AlibabaCloud
 			MoveOrgOutcome moveOrg(const Model::MoveOrgRequest &request)const;
 			void moveOrgAsync(const Model::MoveOrgRequest& request, const MoveOrgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MoveOrgOutcomeCallable moveOrgCallable(const Model::MoveOrgRequest& request) const;
+			MoveUserOrgOutcome moveUserOrg(const Model::MoveUserOrgRequest &request)const;
+			void moveUserOrgAsync(const Model::MoveUserOrgRequest& request, const MoveUserOrgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MoveUserOrgOutcomeCallable moveUserOrgCallable(const Model::MoveUserOrgRequest& request) const;
 			QuerySyncStatusByAliUidOutcome querySyncStatusByAliUid(const Model::QuerySyncStatusByAliUidRequest &request)const;
 			void querySyncStatusByAliUidAsync(const Model::QuerySyncStatusByAliUidRequest& request, const QuerySyncStatusByAliUidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySyncStatusByAliUidOutcomeCallable querySyncStatusByAliUidCallable(const Model::QuerySyncStatusByAliUidRequest& request) const;
+			RemoveGroupOutcome removeGroup(const Model::RemoveGroupRequest &request)const;
+			void removeGroupAsync(const Model::RemoveGroupRequest& request, const RemoveGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveGroupOutcomeCallable removeGroupCallable(const Model::RemoveGroupRequest& request) const;
 			RemoveMfaDeviceOutcome removeMfaDevice(const Model::RemoveMfaDeviceRequest &request)const;
 			void removeMfaDeviceAsync(const Model::RemoveMfaDeviceRequest& request, const RemoveMfaDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveMfaDeviceOutcomeCallable removeMfaDeviceCallable(const Model::RemoveMfaDeviceRequest& request) const;
@@ -324,6 +382,12 @@ namespace AlibabaCloud
 			UpdatePropertyOutcome updateProperty(const Model::UpdatePropertyRequest &request)const;
 			void updatePropertyAsync(const Model::UpdatePropertyRequest& request, const UpdatePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePropertyOutcomeCallable updatePropertyCallable(const Model::UpdatePropertyRequest& request) const;
+			UserBatchJoinGroupOutcome userBatchJoinGroup(const Model::UserBatchJoinGroupRequest &request)const;
+			void userBatchJoinGroupAsync(const Model::UserBatchJoinGroupRequest& request, const UserBatchJoinGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UserBatchJoinGroupOutcomeCallable userBatchJoinGroupCallable(const Model::UserBatchJoinGroupRequest& request) const;
+			UserBatchQuitGroupOutcome userBatchQuitGroup(const Model::UserBatchQuitGroupRequest &request)const;
+			void userBatchQuitGroupAsync(const Model::UserBatchQuitGroupRequest& request, const UserBatchQuitGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UserBatchQuitGroupOutcomeCallable userBatchQuitGroupCallable(const Model::UserBatchQuitGroupRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

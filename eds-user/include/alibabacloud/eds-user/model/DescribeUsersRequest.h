@@ -56,6 +56,8 @@ public:
 	void setMaxResults(long maxResults);
 	std::map<std::string, ObjectOfAny> getShowExtras() const;
 	void setShowExtras(const std::map<std::string, ObjectOfAny> &showExtras);
+	int getStatus() const;
+	void setStatus(int status);
 
 private:
 	bool isQueryAllSubOrgs_;
@@ -71,6 +73,7 @@ private:
 	std::string bizType_;
 	long maxResults_;
 	std::map<std::string, ObjectOfAny> showExtras_;
+	int status_;
 };
 } // namespace Model
 } // namespace Eds_user

@@ -195,6 +195,42 @@ Eds_userClient::CheckUsedPropertyValueOutcomeCallable Eds_userClient::checkUsedP
 	return task->get_future();
 }
 
+Eds_userClient::CreateGroupOutcome Eds_userClient::createGroup(const CreateGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateGroupOutcome(CreateGroupResult(outcome.result()));
+	else
+		return CreateGroupOutcome(outcome.error());
+}
+
+void Eds_userClient::createGroupAsync(const CreateGroupRequest& request, const CreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Eds_userClient::CreateGroupOutcomeCallable Eds_userClient::createGroupCallable(const CreateGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Eds_userClient::CreateOrgOutcome Eds_userClient::createOrg(const CreateOrgRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,78 @@ Eds_userClient::DeleteUserPropertyValueOutcomeCallable Eds_userClient::deleteUse
 			[this, request]()
 			{
 			return this->deleteUserPropertyValue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Eds_userClient::DescribeGroupUserOutcome Eds_userClient::describeGroupUser(const DescribeGroupUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGroupUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGroupUserOutcome(DescribeGroupUserResult(outcome.result()));
+	else
+		return DescribeGroupUserOutcome(outcome.error());
+}
+
+void Eds_userClient::describeGroupUserAsync(const DescribeGroupUserRequest& request, const DescribeGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGroupUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Eds_userClient::DescribeGroupUserOutcomeCallable Eds_userClient::describeGroupUserCallable(const DescribeGroupUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGroupUserOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGroupUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Eds_userClient::DescribeGroupsOutcome Eds_userClient::describeGroups(const DescribeGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGroupsOutcome(DescribeGroupsResult(outcome.result()));
+	else
+		return DescribeGroupsOutcome(outcome.error());
+}
+
+void Eds_userClient::describeGroupsAsync(const DescribeGroupsRequest& request, const DescribeGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Eds_userClient::DescribeGroupsOutcomeCallable Eds_userClient::describeGroupsCallable(const DescribeGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -843,6 +951,42 @@ Eds_userClient::LockUsersOutcomeCallable Eds_userClient::lockUsersCallable(const
 	return task->get_future();
 }
 
+Eds_userClient::ModifyGroupOutcome Eds_userClient::modifyGroup(const ModifyGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyGroupOutcome(ModifyGroupResult(outcome.result()));
+	else
+		return ModifyGroupOutcome(outcome.error());
+}
+
+void Eds_userClient::modifyGroupAsync(const ModifyGroupRequest& request, const ModifyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Eds_userClient::ModifyGroupOutcomeCallable Eds_userClient::modifyGroupCallable(const ModifyGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Eds_userClient::ModifyOrgOutcome Eds_userClient::modifyOrg(const ModifyOrgRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -951,6 +1095,42 @@ Eds_userClient::MoveOrgOutcomeCallable Eds_userClient::moveOrgCallable(const Mov
 	return task->get_future();
 }
 
+Eds_userClient::MoveUserOrgOutcome Eds_userClient::moveUserOrg(const MoveUserOrgRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MoveUserOrgOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MoveUserOrgOutcome(MoveUserOrgResult(outcome.result()));
+	else
+		return MoveUserOrgOutcome(outcome.error());
+}
+
+void Eds_userClient::moveUserOrgAsync(const MoveUserOrgRequest& request, const MoveUserOrgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, moveUserOrg(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Eds_userClient::MoveUserOrgOutcomeCallable Eds_userClient::moveUserOrgCallable(const MoveUserOrgRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MoveUserOrgOutcome()>>(
+			[this, request]()
+			{
+			return this->moveUserOrg(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Eds_userClient::QuerySyncStatusByAliUidOutcome Eds_userClient::querySyncStatusByAliUid(const QuerySyncStatusByAliUidRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1161,42 @@ Eds_userClient::QuerySyncStatusByAliUidOutcomeCallable Eds_userClient::querySync
 			[this, request]()
 			{
 			return this->querySyncStatusByAliUid(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Eds_userClient::RemoveGroupOutcome Eds_userClient::removeGroup(const RemoveGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveGroupOutcome(RemoveGroupResult(outcome.result()));
+	else
+		return RemoveGroupOutcome(outcome.error());
+}
+
+void Eds_userClient::removeGroupAsync(const RemoveGroupRequest& request, const RemoveGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Eds_userClient::RemoveGroupOutcomeCallable Eds_userClient::removeGroupCallable(const RemoveGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->removeGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1341,6 +1557,78 @@ Eds_userClient::UpdatePropertyOutcomeCallable Eds_userClient::updatePropertyCall
 			[this, request]()
 			{
 			return this->updateProperty(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Eds_userClient::UserBatchJoinGroupOutcome Eds_userClient::userBatchJoinGroup(const UserBatchJoinGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UserBatchJoinGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UserBatchJoinGroupOutcome(UserBatchJoinGroupResult(outcome.result()));
+	else
+		return UserBatchJoinGroupOutcome(outcome.error());
+}
+
+void Eds_userClient::userBatchJoinGroupAsync(const UserBatchJoinGroupRequest& request, const UserBatchJoinGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, userBatchJoinGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Eds_userClient::UserBatchJoinGroupOutcomeCallable Eds_userClient::userBatchJoinGroupCallable(const UserBatchJoinGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UserBatchJoinGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->userBatchJoinGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Eds_userClient::UserBatchQuitGroupOutcome Eds_userClient::userBatchQuitGroup(const UserBatchQuitGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UserBatchQuitGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UserBatchQuitGroupOutcome(UserBatchQuitGroupResult(outcome.result()));
+	else
+		return UserBatchQuitGroupOutcome(outcome.error());
+}
+
+void Eds_userClient::userBatchQuitGroupAsync(const UserBatchQuitGroupRequest& request, const UserBatchQuitGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, userBatchQuitGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Eds_userClient::UserBatchQuitGroupOutcomeCallable Eds_userClient::userBatchQuitGroupCallable(const UserBatchQuitGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UserBatchQuitGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->userBatchQuitGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

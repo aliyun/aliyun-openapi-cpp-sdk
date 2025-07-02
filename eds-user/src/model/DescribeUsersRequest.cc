@@ -146,3 +146,12 @@ void DescribeUsersRequest::setShowExtras(const std::map<std::string, ObjectOfAny
   }
 }
 
+int DescribeUsersRequest::getStatus() const {
+  return status_;
+}
+
+void DescribeUsersRequest::setStatus(int status) {
+  status_ = status;
+  setParameter(std::string("Status"), std::to_string(status));
+}
+

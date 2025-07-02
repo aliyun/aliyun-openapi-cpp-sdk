@@ -42,6 +42,14 @@ namespace AlibabaCloud
 					};
 					struct Timer
 					{
+						std::string timerStatus;
+						std::string id;
+						std::string bindStatus;
+						std::string name;
+					};
+					struct AppRule
+					{
+						int type;
 						std::string id;
 						std::string name;
 					};
@@ -49,6 +57,7 @@ namespace AlibabaCloud
 					std::string resourceGroupId;
 					std::string resourceCount;
 					std::string createTime;
+					std::vector<ResourceGroupItem::AppRule> appRules;
 					std::vector<ResourceGroupItem::Timer> timers;
 					std::string resourceGroupName;
 					std::string authCount;

@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					struct Org
 					{
 						std::string orgId;
+						std::string orgNamePath;
 						std::string orgName;
 					};
 					struct Property

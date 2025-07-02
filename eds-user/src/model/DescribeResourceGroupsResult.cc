@@ -73,7 +73,23 @@ void DescribeResourceGroupsResult::parse(const std::string &payload)
 				timersObject.id = valueResourceGroupResourceGroupItemTimersTimer["Id"].asString();
 			if(!valueResourceGroupResourceGroupItemTimersTimer["Name"].isNull())
 				timersObject.name = valueResourceGroupResourceGroupItemTimersTimer["Name"].asString();
+			if(!valueResourceGroupResourceGroupItemTimersTimer["TimerStatus"].isNull())
+				timersObject.timerStatus = valueResourceGroupResourceGroupItemTimersTimer["TimerStatus"].asString();
+			if(!valueResourceGroupResourceGroupItemTimersTimer["BindStatus"].isNull())
+				timersObject.bindStatus = valueResourceGroupResourceGroupItemTimersTimer["BindStatus"].asString();
 			resourceGroupObject.timers.push_back(timersObject);
+		}
+		auto allAppRulesNode = valueResourceGroupResourceGroupItem["AppRules"]["AppRule"];
+		for (auto valueResourceGroupResourceGroupItemAppRulesAppRule : allAppRulesNode)
+		{
+			ResourceGroupItem::AppRule appRulesObject;
+			if(!valueResourceGroupResourceGroupItemAppRulesAppRule["Id"].isNull())
+				appRulesObject.id = valueResourceGroupResourceGroupItemAppRulesAppRule["Id"].asString();
+			if(!valueResourceGroupResourceGroupItemAppRulesAppRule["Name"].isNull())
+				appRulesObject.name = valueResourceGroupResourceGroupItemAppRulesAppRule["Name"].asString();
+			if(!valueResourceGroupResourceGroupItemAppRulesAppRule["Type"].isNull())
+				appRulesObject.type = std::stoi(valueResourceGroupResourceGroupItemAppRulesAppRule["Type"].asString());
+			resourceGroupObject.appRules.push_back(appRulesObject);
 		}
 		resourceGroup_.push_back(resourceGroupObject);
 	}

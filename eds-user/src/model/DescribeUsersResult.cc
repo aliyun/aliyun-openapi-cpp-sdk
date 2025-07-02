@@ -93,6 +93,8 @@ void DescribeUsersResult::parse(const std::string &payload)
 				orgsObject.orgId = valueUsersdataOrgsorg["OrgId"].asString();
 			if(!valueUsersdataOrgsorg["OrgName"].isNull())
 				orgsObject.orgName = valueUsersdataOrgsorg["OrgName"].asString();
+			if(!valueUsersdataOrgsorg["OrgNamePath"].isNull())
+				orgsObject.orgNamePath = valueUsersdataOrgsorg["OrgNamePath"].asString();
 			usersObject.orgs.push_back(orgsObject);
 		}
 		auto allPropertiesNode = valueUsersdata["Properties"]["Property"];

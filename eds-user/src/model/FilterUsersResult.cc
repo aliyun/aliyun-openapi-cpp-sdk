@@ -107,6 +107,8 @@ void FilterUsersResult::parse(const std::string &payload)
 				orgListObject.orgId = valueUsersdataOrgListorgListItem["OrgId"].asString();
 			if(!valueUsersdataOrgListorgListItem["OrgName"].isNull())
 				orgListObject.orgName = valueUsersdataOrgListorgListItem["OrgName"].asString();
+			if(!valueUsersdataOrgListorgListItem["OrgNamePath"].isNull())
+				orgListObject.orgNamePath = valueUsersdataOrgListorgListItem["OrgNamePath"].asString();
 			usersObject.orgList.push_back(orgListObject);
 		}
 		auto allSupportLoginIdpsNode = valueUsersdata["SupportLoginIdps"]["IdpInfo"];

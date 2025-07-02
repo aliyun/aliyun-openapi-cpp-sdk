@@ -56,6 +56,7 @@ namespace AlibabaCloud
 					struct OrgListItem
 					{
 						std::string orgId;
+						std::string orgNamePath;
 						std::string orgName;
 					};
 					struct IdpInfo
