@@ -30,6 +30,8 @@ class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryAuditLogRequest : public RpcServic
 public:
 	QueryAuditLogRequest();
 	~QueryAuditLogRequest();
+	std::string getAccessSourceFlag() const;
+	void setAccessSourceFlag(const std::string &accessSourceFlag);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
 	std::string getStartDate() const;
@@ -48,8 +50,11 @@ public:
 	void setOperatorId(const std::string &operatorId);
 	std::string getWorkspaceId() const;
 	void setWorkspaceId(const std::string &workspaceId);
+	std::string getUserAccessDevice() const;
+	void setUserAccessDevice(const std::string &userAccessDevice);
 
 private:
+	std::string accessSourceFlag_;
 	std::string accessPoint_;
 	std::string startDate_;
 	std::string logType_;
@@ -59,6 +64,7 @@ private:
 	std::string endDate_;
 	std::string operatorId_;
 	std::string workspaceId_;
+	std::string userAccessDevice_;
 };
 } // namespace Model
 } // namespace Quickbi_public

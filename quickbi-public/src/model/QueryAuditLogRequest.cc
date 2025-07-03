@@ -25,6 +25,15 @@ QueryAuditLogRequest::QueryAuditLogRequest()
 
 QueryAuditLogRequest::~QueryAuditLogRequest() {}
 
+std::string QueryAuditLogRequest::getAccessSourceFlag() const {
+  return accessSourceFlag_;
+}
+
+void QueryAuditLogRequest::setAccessSourceFlag(const std::string &accessSourceFlag) {
+  accessSourceFlag_ = accessSourceFlag;
+  setParameter(std::string("AccessSourceFlag"), accessSourceFlag);
+}
+
 std::string QueryAuditLogRequest::getAccessPoint() const {
   return accessPoint_;
 }
@@ -104,5 +113,14 @@ std::string QueryAuditLogRequest::getWorkspaceId() const {
 void QueryAuditLogRequest::setWorkspaceId(const std::string &workspaceId) {
   workspaceId_ = workspaceId;
   setParameter(std::string("WorkspaceId"), workspaceId);
+}
+
+std::string QueryAuditLogRequest::getUserAccessDevice() const {
+  return userAccessDevice_;
+}
+
+void QueryAuditLogRequest::setUserAccessDevice(const std::string &userAccessDevice) {
+  userAccessDevice_ = userAccessDevice;
+  setParameter(std::string("UserAccessDevice"), userAccessDevice);
 }
 
