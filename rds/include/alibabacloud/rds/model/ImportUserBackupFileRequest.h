@@ -32,10 +32,14 @@ public:
 	~ImportUserBackupFileRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getSourceInfo() const;
+	void setSourceInfo(const std::string &sourceInfo);
 	std::string getEngineVersion() const;
 	void setEngineVersion(const std::string &engineVersion);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getMode() const;
+	void setMode(const std::string &mode);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
@@ -52,6 +56,10 @@ public:
 	void setBucketRegion(const std::string &bucketRegion);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getMasterInfo() const;
+	void setMasterInfo(const std::string &masterInfo);
+	bool getBuildReplication() const;
+	void setBuildReplication(bool buildReplication);
 	int getRestoreSize() const;
 	void setRestoreSize(int restoreSize);
 	std::string getZoneId() const;
@@ -61,8 +69,10 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string sourceInfo_;
 	std::string engineVersion_;
 	std::string accessKeyId_;
+	std::string mode_;
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string dBInstanceId_;
@@ -71,6 +81,8 @@ private:
 	std::string backupFile_;
 	std::string bucketRegion_;
 	long ownerId_;
+	std::string masterInfo_;
+	bool buildReplication_;
 	int restoreSize_;
 	std::string zoneId_;
 	std::string comment_;

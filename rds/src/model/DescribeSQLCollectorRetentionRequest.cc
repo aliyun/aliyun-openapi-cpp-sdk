@@ -61,15 +61,6 @@ void DescribeSQLCollectorRetentionRequest::setSecurityToken(const std::string &s
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string DescribeSQLCollectorRetentionRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeSQLCollectorRetentionRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string DescribeSQLCollectorRetentionRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

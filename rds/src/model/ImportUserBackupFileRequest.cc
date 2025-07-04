@@ -34,6 +34,15 @@ void ImportUserBackupFileRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ImportUserBackupFileRequest::getSourceInfo() const {
+  return sourceInfo_;
+}
+
+void ImportUserBackupFileRequest::setSourceInfo(const std::string &sourceInfo) {
+  sourceInfo_ = sourceInfo;
+  setParameter(std::string("SourceInfo"), sourceInfo);
+}
+
 std::string ImportUserBackupFileRequest::getEngineVersion() const {
   return engineVersion_;
 }
@@ -50,6 +59,15 @@ std::string ImportUserBackupFileRequest::getAccessKeyId() const {
 void ImportUserBackupFileRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ImportUserBackupFileRequest::getMode() const {
+  return mode_;
+}
+
+void ImportUserBackupFileRequest::setMode(const std::string &mode) {
+  mode_ = mode;
+  setParameter(std::string("Mode"), mode);
 }
 
 std::string ImportUserBackupFileRequest::getResourceGroupId() const {
@@ -122,6 +140,24 @@ long ImportUserBackupFileRequest::getOwnerId() const {
 void ImportUserBackupFileRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ImportUserBackupFileRequest::getMasterInfo() const {
+  return masterInfo_;
+}
+
+void ImportUserBackupFileRequest::setMasterInfo(const std::string &masterInfo) {
+  masterInfo_ = masterInfo;
+  setParameter(std::string("MasterInfo"), masterInfo);
+}
+
+bool ImportUserBackupFileRequest::getBuildReplication() const {
+  return buildReplication_;
+}
+
+void ImportUserBackupFileRequest::setBuildReplication(bool buildReplication) {
+  buildReplication_ = buildReplication;
+  setParameter(std::string("BuildReplication"), buildReplication ? "true" : "false");
 }
 
 int ImportUserBackupFileRequest::getRestoreSize() const {

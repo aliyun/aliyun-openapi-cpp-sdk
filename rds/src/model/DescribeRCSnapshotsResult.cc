@@ -77,6 +77,18 @@ void DescribeRCSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.status = valueSnapshotsSnapshot["Status"].asString();
 		if(!valueSnapshotsSnapshot["Usage"].isNull())
 			snapshotsObject.usage = valueSnapshotsSnapshot["Usage"].asString();
+		if(!valueSnapshotsSnapshot["ResourceGroupId"].isNull())
+			snapshotsObject.resourceGroupId = valueSnapshotsSnapshot["ResourceGroupId"].asString();
+		auto allTagNode = valueSnapshotsSnapshot["Tag"]["tagItem"];
+		for (auto valueSnapshotsSnapshotTagtagItem : allTagNode)
+		{
+			Snapshot::TagItem tagObject;
+			if(!valueSnapshotsSnapshotTagtagItem["TagKey"].isNull())
+				tagObject.tagKey = valueSnapshotsSnapshotTagtagItem["TagKey"].asString();
+			if(!valueSnapshotsSnapshotTagtagItem["TagValue"].isNull())
+				tagObject.tagValue = valueSnapshotsSnapshotTagtagItem["TagValue"].asString();
+			snapshotsObject.tag.push_back(tagObject);
+		}
 		snapshots_.push_back(snapshotsObject);
 	}
 	if(!value["PageNumber"].isNull())

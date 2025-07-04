@@ -3795,6 +3795,42 @@ RdsClient::DescribeCollationTimeZonesOutcomeCallable RdsClient::describeCollatio
 	return task->get_future();
 }
 
+RdsClient::DescribeComputeBurstConfigOutcome RdsClient::describeComputeBurstConfig(const DescribeComputeBurstConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeComputeBurstConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeComputeBurstConfigOutcome(DescribeComputeBurstConfigResult(outcome.result()));
+	else
+		return DescribeComputeBurstConfigOutcome(outcome.error());
+}
+
+void RdsClient::describeComputeBurstConfigAsync(const DescribeComputeBurstConfigRequest& request, const DescribeComputeBurstConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeComputeBurstConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeComputeBurstConfigOutcomeCallable RdsClient::describeComputeBurstConfigCallable(const DescribeComputeBurstConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeComputeBurstConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeComputeBurstConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeCrossBackupMetaListOutcome RdsClient::describeCrossBackupMetaList(const DescribeCrossBackupMetaListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6495,6 +6531,42 @@ RdsClient::DescribeQuickSaleConfigOutcomeCallable RdsClient::describeQuickSaleCo
 	return task->get_future();
 }
 
+RdsClient::DescribeRCCloudAssistantStatusOutcome RdsClient::describeRCCloudAssistantStatus(const DescribeRCCloudAssistantStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRCCloudAssistantStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRCCloudAssistantStatusOutcome(DescribeRCCloudAssistantStatusResult(outcome.result()));
+	else
+		return DescribeRCCloudAssistantStatusOutcome(outcome.error());
+}
+
+void RdsClient::describeRCCloudAssistantStatusAsync(const DescribeRCCloudAssistantStatusRequest& request, const DescribeRCCloudAssistantStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRCCloudAssistantStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeRCCloudAssistantStatusOutcomeCallable RdsClient::describeRCCloudAssistantStatusCallable(const DescribeRCCloudAssistantStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRCCloudAssistantStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRCCloudAssistantStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeRCClusterConfigOutcome RdsClient::describeRCClusterConfig(const DescribeRCClusterConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6999,6 +7071,42 @@ RdsClient::DescribeRCInstancesOutcomeCallable RdsClient::describeRCInstancesCall
 	return task->get_future();
 }
 
+RdsClient::DescribeRCInvocationResultsOutcome RdsClient::describeRCInvocationResults(const DescribeRCInvocationResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRCInvocationResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRCInvocationResultsOutcome(DescribeRCInvocationResultsResult(outcome.result()));
+	else
+		return DescribeRCInvocationResultsOutcome(outcome.error());
+}
+
+void RdsClient::describeRCInvocationResultsAsync(const DescribeRCInvocationResultsRequest& request, const DescribeRCInvocationResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRCInvocationResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeRCInvocationResultsOutcomeCallable RdsClient::describeRCInvocationResultsCallable(const DescribeRCInvocationResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRCInvocationResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRCInvocationResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeRCMetricListOutcome RdsClient::describeRCMetricList(const DescribeRCMetricListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7173,6 +7281,42 @@ RdsClient::DescribeRCSnapshotsOutcomeCallable RdsClient::describeRCSnapshotsCall
 			[this, request]()
 			{
 			return this->describeRCSnapshots(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeRCVClusterOutcome RdsClient::describeRCVCluster(const DescribeRCVClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRCVClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRCVClusterOutcome(DescribeRCVClusterResult(outcome.result()));
+	else
+		return DescribeRCVClusterOutcome(outcome.error());
+}
+
+void RdsClient::describeRCVClusterAsync(const DescribeRCVClusterRequest& request, const DescribeRCVClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRCVCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeRCVClusterOutcomeCallable RdsClient::describeRCVClusterCallable(const DescribeRCVClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRCVClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRCVCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8007,6 +8151,42 @@ RdsClient::DescribeUpgradeMajorVersionTasksOutcomeCallable RdsClient::describeUp
 	return task->get_future();
 }
 
+RdsClient::DescribeVSwitchListOutcome RdsClient::describeVSwitchList(const DescribeVSwitchListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVSwitchListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVSwitchListOutcome(DescribeVSwitchListResult(outcome.result()));
+	else
+		return DescribeVSwitchListOutcome(outcome.error());
+}
+
+void RdsClient::describeVSwitchListAsync(const DescribeVSwitchListRequest& request, const DescribeVSwitchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVSwitchList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeVSwitchListOutcomeCallable RdsClient::describeVSwitchListCallable(const DescribeVSwitchListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVSwitchListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVSwitchList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeVSwitchesOutcome RdsClient::describeVSwitches(const DescribeVSwitchesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8469,6 +8649,42 @@ RdsClient::ImportUserBackupFileOutcomeCallable RdsClient::importUserBackupFileCa
 			[this, request]()
 			{
 			return this->importUserBackupFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::InstallRCCloudAssistantOutcome RdsClient::installRCCloudAssistant(const InstallRCCloudAssistantRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InstallRCCloudAssistantOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InstallRCCloudAssistantOutcome(InstallRCCloudAssistantResult(outcome.result()));
+	else
+		return InstallRCCloudAssistantOutcome(outcome.error());
+}
+
+void RdsClient::installRCCloudAssistantAsync(const InstallRCCloudAssistantRequest& request, const InstallRCCloudAssistantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, installRCCloudAssistant(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::InstallRCCloudAssistantOutcomeCallable RdsClient::installRCCloudAssistantCallable(const InstallRCCloudAssistantRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InstallRCCloudAssistantOutcome()>>(
+			[this, request]()
+			{
+			return this->installRCCloudAssistant(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9087,6 +9303,42 @@ RdsClient::ModifyBackupPolicyOutcomeCallable RdsClient::modifyBackupPolicyCallab
 	return task->get_future();
 }
 
+RdsClient::ModifyBackupSetExpireTimeOutcome RdsClient::modifyBackupSetExpireTime(const ModifyBackupSetExpireTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBackupSetExpireTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBackupSetExpireTimeOutcome(ModifyBackupSetExpireTimeResult(outcome.result()));
+	else
+		return ModifyBackupSetExpireTimeOutcome(outcome.error());
+}
+
+void RdsClient::modifyBackupSetExpireTimeAsync(const ModifyBackupSetExpireTimeRequest& request, const ModifyBackupSetExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBackupSetExpireTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyBackupSetExpireTimeOutcomeCallable RdsClient::modifyBackupSetExpireTimeCallable(const ModifyBackupSetExpireTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBackupSetExpireTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBackupSetExpireTime(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::ModifyCollationTimeZoneOutcome RdsClient::modifyCollationTimeZone(const ModifyCollationTimeZoneRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -9117,6 +9369,42 @@ RdsClient::ModifyCollationTimeZoneOutcomeCallable RdsClient::modifyCollationTime
 			[this, request]()
 			{
 			return this->modifyCollationTimeZone(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyComputeBurstConfigOutcome RdsClient::modifyComputeBurstConfig(const ModifyComputeBurstConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyComputeBurstConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyComputeBurstConfigOutcome(ModifyComputeBurstConfigResult(outcome.result()));
+	else
+		return ModifyComputeBurstConfigOutcome(outcome.error());
+}
+
+void RdsClient::modifyComputeBurstConfigAsync(const ModifyComputeBurstConfigRequest& request, const ModifyComputeBurstConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyComputeBurstConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyComputeBurstConfigOutcomeCallable RdsClient::modifyComputeBurstConfigCallable(const ModifyComputeBurstConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyComputeBurstConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyComputeBurstConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11535,6 +11823,42 @@ RdsClient::RecoveryDBInstanceOutcomeCallable RdsClient::recoveryDBInstanceCallab
 	return task->get_future();
 }
 
+RdsClient::RedeployRCInstanceOutcome RdsClient::redeployRCInstance(const RedeployRCInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RedeployRCInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RedeployRCInstanceOutcome(RedeployRCInstanceResult(outcome.result()));
+	else
+		return RedeployRCInstanceOutcome(outcome.error());
+}
+
+void RdsClient::redeployRCInstanceAsync(const RedeployRCInstanceRequest& request, const RedeployRCInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, redeployRCInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::RedeployRCInstanceOutcomeCallable RdsClient::redeployRCInstanceCallable(const RedeployRCInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RedeployRCInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->redeployRCInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::ReleaseInstanceConnectionOutcome RdsClient::releaseInstanceConnection(const ReleaseInstanceConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -12105,6 +12429,42 @@ RdsClient::RevokeRCSecurityGroupPermissionOutcomeCallable RdsClient::revokeRCSec
 			[this, request]()
 			{
 			return this->revokeRCSecurityGroupPermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::RunRCCommandOutcome RdsClient::runRCCommand(const RunRCCommandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RunRCCommandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RunRCCommandOutcome(RunRCCommandResult(outcome.result()));
+	else
+		return RunRCCommandOutcome(outcome.error());
+}
+
+void RdsClient::runRCCommandAsync(const RunRCCommandRequest& request, const RunRCCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, runRCCommand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::RunRCCommandOutcomeCallable RdsClient::runRCCommandCallable(const RunRCCommandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RunRCCommandOutcome()>>(
+			[this, request]()
+			{
+			return this->runRCCommand(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

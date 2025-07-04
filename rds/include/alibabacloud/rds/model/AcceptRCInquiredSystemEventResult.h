@@ -37,12 +37,10 @@ namespace AlibabaCloud
 				AcceptRCInquiredSystemEventResult();
 				explicit AcceptRCInquiredSystemEventResult(const std::string &payload);
 				~AcceptRCInquiredSystemEventResult();
-				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string orderId_;
 
 			};
 		}

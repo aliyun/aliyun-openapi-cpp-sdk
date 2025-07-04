@@ -84,6 +84,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getExpired() const;
 	void setExpired(const std::string &expired);
+	bool getQueryAutoRenewal() const;
+	void setQueryAutoRenewal(bool queryAutoRenewal);
 	std::string getEngine() const;
 	void setEngine(const std::string &engine);
 	std::string getRegionId() const;
@@ -149,6 +151,7 @@ private:
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string expired_;
+	bool queryAutoRenewal_;
 	std::string engine_;
 	std::string regionId_;
 	std::string nextToken_;

@@ -80,6 +80,7 @@ namespace AlibabaCloud
 					std::string vpcId;
 					std::string createMode;
 					std::vector<RCInstancesItem::TagResource> tagResources;
+					std::string nodeType;
 					std::string regionId;
 				};
 

@@ -60,6 +60,7 @@ namespace AlibabaCloud
 					int isAvail;
 					std::string slaveStatus;
 					std::string hostInstanceID;
+					std::string expectExpireTime;
 					std::vector<Backup::BackupDownloadLinkByDBItem> backupDownloadLinkByDB;
 					std::string storeStatus;
 					std::string backupDownloadURL;

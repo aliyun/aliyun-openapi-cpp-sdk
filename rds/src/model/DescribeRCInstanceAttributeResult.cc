@@ -45,14 +45,14 @@ void DescribeRCInstanceAttributeResult::parse(const std::string &payload)
 		DataDisk dataDisksObject;
 		if(!valueDataDisksDataDisk["Category"].isNull())
 			dataDisksObject.category = valueDataDisksDataDisk["Category"].asString();
-		if(!valueDataDisksDataDisk["DeleteWithInstance"].isNull())
-			dataDisksObject.deleteWithInstance = valueDataDisksDataDisk["DeleteWithInstance"].asString() == "true";
 		if(!valueDataDisksDataDisk["Encrypted"].isNull())
 			dataDisksObject.encrypted = valueDataDisksDataDisk["Encrypted"].asString();
 		if(!valueDataDisksDataDisk["PerformanceLevel"].isNull())
 			dataDisksObject.performanceLevel = valueDataDisksDataDisk["PerformanceLevel"].asString();
 		if(!valueDataDisksDataDisk["Size"].isNull())
 			dataDisksObject.size = std::stol(valueDataDisksDataDisk["Size"].asString());
+		if(!valueDataDisksDataDisk["DeleteWithInstance"].isNull())
+			dataDisksObject.deleteWithInstance = valueDataDisksDataDisk["DeleteWithInstance"].asString() == "true";
 		dataDisks_.push_back(dataDisksObject);
 	}
 	auto allTagsNode = value["Tags"]["Tag"];
@@ -61,10 +61,10 @@ void DescribeRCInstanceAttributeResult::parse(const std::string &payload)
 		Tag tagsObject;
 		if(!valueTagsTag["ResourceId"].isNull())
 			tagsObject.resourceId = valueTagsTag["ResourceId"].asString();
-		if(!valueTagsTag["ResourceType"].isNull())
-			tagsObject.resourceType = valueTagsTag["ResourceType"].asString();
 		if(!valueTagsTag["TagKey"].isNull())
 			tagsObject.tagKey = valueTagsTag["TagKey"].asString();
+		if(!valueTagsTag["ResourceType"].isNull())
+			tagsObject.resourceType = valueTagsTag["ResourceType"].asString();
 		if(!valueTagsTag["TagValue"].isNull())
 			tagsObject.tagValue = valueTagsTag["TagValue"].asString();
 		tags_.push_back(tagsObject);
@@ -191,12 +191,17 @@ void DescribeRCInstanceAttributeResult::parse(const std::string &payload)
 		createMode_ = std::stoi(value["CreateMode"].asString());
 	if(!value["AutoRenew"].isNull())
 		autoRenew_ = value["AutoRenew"].asString() == "true";
+	if(!value["DeletionProtection"].isNull())
+		deletionProtection_ = value["DeletionProtection"].asString() == "true";
+	if(!value["Gpu"].isNull())
+		gpu_ = std::stoi(value["Gpu"].asString());
+	if(!value["GpuTypes"].isNull())
+		gpuTypes_ = value["GpuTypes"].asString();
+	if(!value["NodeType"].isNull())
+		nodeType_ = value["NodeType"].asString();
+	if(!value["UserData"].isNull())
+		userData_ = value["UserData"].asString();
 
-}
-
-std::string DescribeRCInstanceAttributeResult::getDescription()const
-{
-	return description_;
 }
 
 std::vector<DescribeRCInstanceAttributeResult::DataDisk> DescribeRCInstanceAttributeResult::getDataDisks()const
@@ -219,14 +224,14 @@ std::string DescribeRCInstanceAttributeResult::getInstanceChargeType()const
 	return instanceChargeType_;
 }
 
-bool DescribeRCInstanceAttributeResult::getAutoRenew()const
-{
-	return autoRenew_;
-}
-
 int DescribeRCInstanceAttributeResult::getCpu()const
 {
 	return cpu_;
+}
+
+int DescribeRCInstanceAttributeResult::getGpu()const
+{
+	return gpu_;
 }
 
 std::string DescribeRCInstanceAttributeResult::getInstanceNetworkType()const
@@ -239,11 +244,6 @@ DescribeRCInstanceAttributeResult::SystemDisk DescribeRCInstanceAttributeResult:
 	return systemDisk_;
 }
 
-std::vector<std::string> DescribeRCInstanceAttributeResult::getPublicIpAddress()const
-{
-	return publicIpAddress_;
-}
-
 std::string DescribeRCInstanceAttributeResult::getDiskType()const
 {
 	return diskType_;
@@ -252,11 +252,6 @@ std::string DescribeRCInstanceAttributeResult::getDiskType()const
 std::vector<std::string> DescribeRCInstanceAttributeResult::getInnerIpAddress()const
 {
 	return innerIpAddress_;
-}
-
-std::string DescribeRCInstanceAttributeResult::getHostType()const
-{
-	return hostType_;
 }
 
 bool DescribeRCInstanceAttributeResult::getEnableJumboFrame()const
@@ -284,11 +279,6 @@ std::string DescribeRCInstanceAttributeResult::getEcsInstanceType()const
 	return ecsInstanceType_;
 }
 
-std::string DescribeRCInstanceAttributeResult::getInstanceType()const
-{
-	return instanceType_;
-}
-
 std::vector<DescribeRCInstanceAttributeResult::Tag> DescribeRCInstanceAttributeResult::getTags()const
 {
 	return tags_;
@@ -304,34 +294,9 @@ std::string DescribeRCInstanceAttributeResult::getVlanId()const
 	return vlanId_;
 }
 
-std::string DescribeRCInstanceAttributeResult::getSpotStrategy()const
-{
-	return spotStrategy_;
-}
-
 std::string DescribeRCInstanceAttributeResult::getStatus()const
 {
 	return status_;
-}
-
-std::string DescribeRCInstanceAttributeResult::getKeyPairName()const
-{
-	return keyPairName_;
-}
-
-std::string DescribeRCInstanceAttributeResult::getIoOptimized()const
-{
-	return ioOptimized_;
-}
-
-std::string DescribeRCInstanceAttributeResult::getZoneId()const
-{
-	return zoneId_;
-}
-
-std::string DescribeRCInstanceAttributeResult::getClusterId()const
-{
-	return clusterId_;
 }
 
 std::string DescribeRCInstanceAttributeResult::getInstanceId()const
@@ -344,9 +309,9 @@ std::string DescribeRCInstanceAttributeResult::getStoppedMode()const
 	return stoppedMode_;
 }
 
-DescribeRCInstanceAttributeResult::DedicatedHostAttribute DescribeRCInstanceAttributeResult::getDedicatedHostAttribute()const
+bool DescribeRCInstanceAttributeResult::getDeletionProtection()const
 {
-	return dedicatedHostAttribute_;
+	return deletionProtection_;
 }
 
 DescribeRCInstanceAttributeResult::VpcAttributes DescribeRCInstanceAttributeResult::getVpcAttributes()const
@@ -357,16 +322,6 @@ DescribeRCInstanceAttributeResult::VpcAttributes DescribeRCInstanceAttributeResu
 std::vector<std::string> DescribeRCInstanceAttributeResult::getSecurityGroupIds()const
 {
 	return securityGroupIds_;
-}
-
-std::vector<DescribeRCInstanceAttributeResult::LockReason> DescribeRCInstanceAttributeResult::getOperationLocks()const
-{
-	return operationLocks_;
-}
-
-std::string DescribeRCInstanceAttributeResult::getDbType()const
-{
-	return dbType_;
 }
 
 std::string DescribeRCInstanceAttributeResult::getInternetChargeType()const
@@ -389,11 +344,6 @@ int DescribeRCInstanceAttributeResult::getInternetMaxBandwidthOut()const
 	return internetMaxBandwidthOut_;
 }
 
-int DescribeRCInstanceAttributeResult::getInternetMaxBandwidthIn()const
-{
-	return internetMaxBandwidthIn_;
-}
-
 std::string DescribeRCInstanceAttributeResult::getSerialNumber()const
 {
 	return serialNumber_;
@@ -404,9 +354,94 @@ int DescribeRCInstanceAttributeResult::getCreateMode()const
 	return createMode_;
 }
 
+std::string DescribeRCInstanceAttributeResult::getNodeType()const
+{
+	return nodeType_;
+}
+
 std::string DescribeRCInstanceAttributeResult::getCreationTime()const
 {
 	return creationTime_;
+}
+
+std::string DescribeRCInstanceAttributeResult::getDescription()const
+{
+	return description_;
+}
+
+std::string DescribeRCInstanceAttributeResult::getUserData()const
+{
+	return userData_;
+}
+
+bool DescribeRCInstanceAttributeResult::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+std::vector<std::string> DescribeRCInstanceAttributeResult::getPublicIpAddress()const
+{
+	return publicIpAddress_;
+}
+
+std::string DescribeRCInstanceAttributeResult::getHostType()const
+{
+	return hostType_;
+}
+
+std::string DescribeRCInstanceAttributeResult::getInstanceType()const
+{
+	return instanceType_;
+}
+
+std::string DescribeRCInstanceAttributeResult::getSpotStrategy()const
+{
+	return spotStrategy_;
+}
+
+std::string DescribeRCInstanceAttributeResult::getKeyPairName()const
+{
+	return keyPairName_;
+}
+
+std::string DescribeRCInstanceAttributeResult::getGpuTypes()const
+{
+	return gpuTypes_;
+}
+
+std::string DescribeRCInstanceAttributeResult::getIoOptimized()const
+{
+	return ioOptimized_;
+}
+
+std::string DescribeRCInstanceAttributeResult::getZoneId()const
+{
+	return zoneId_;
+}
+
+std::string DescribeRCInstanceAttributeResult::getClusterId()const
+{
+	return clusterId_;
+}
+
+DescribeRCInstanceAttributeResult::DedicatedHostAttribute DescribeRCInstanceAttributeResult::getDedicatedHostAttribute()const
+{
+	return dedicatedHostAttribute_;
+}
+
+std::vector<DescribeRCInstanceAttributeResult::LockReason> DescribeRCInstanceAttributeResult::getOperationLocks()const
+{
+	return operationLocks_;
+}
+
+std::string DescribeRCInstanceAttributeResult::getDbType()const
+{
+	return dbType_;
+}
+
+int DescribeRCInstanceAttributeResult::getInternetMaxBandwidthIn()const
+{
+	return internetMaxBandwidthIn_;
 }
 
 std::string DescribeRCInstanceAttributeResult::getRegionId()const

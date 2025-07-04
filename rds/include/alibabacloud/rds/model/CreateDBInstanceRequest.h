@@ -114,6 +114,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getTargetDedicatedHostIdForSlave() const;
 	void setTargetDedicatedHostIdForSlave(const std::string &targetDedicatedHostIdForSlave);
+	bool getExternalReplication() const;
+	void setExternalReplication(bool externalReplication);
 	std::string getZoneIdSlave1() const;
 	void setZoneIdSlave1(const std::string &zoneIdSlave1);
 	std::string getZoneIdSlave2() const;
@@ -211,6 +213,7 @@ private:
 	std::string connectionMode_;
 	std::string clientToken_;
 	std::string targetDedicatedHostIdForSlave_;
+	bool externalReplication_;
 	std::string zoneIdSlave1_;
 	std::string zoneIdSlave2_;
 	bool autoUseCoupon_;

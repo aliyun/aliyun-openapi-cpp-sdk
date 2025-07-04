@@ -363,6 +363,15 @@ void CreateDBInstanceRequest::setTargetDedicatedHostIdForSlave(const std::string
   setParameter(std::string("TargetDedicatedHostIdForSlave"), targetDedicatedHostIdForSlave);
 }
 
+bool CreateDBInstanceRequest::getExternalReplication() const {
+  return externalReplication_;
+}
+
+void CreateDBInstanceRequest::setExternalReplication(bool externalReplication) {
+  externalReplication_ = externalReplication;
+  setParameter(std::string("ExternalReplication"), externalReplication ? "true" : "false");
+}
+
 std::string CreateDBInstanceRequest::getZoneIdSlave1() const {
   return zoneIdSlave1_;
 }

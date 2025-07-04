@@ -30,26 +30,35 @@ class ALIBABACLOUD_RDS_EXPORT ModifyRCInstanceAttributeRequest : public RpcServi
 public:
 	ModifyRCInstanceAttributeRequest();
 	~ModifyRCInstanceAttributeRequest();
-	bool getReboot() const;
-	void setReboot(bool reboot);
 	std::string getSecurityGroupId() const;
 	void setSecurityGroupId(const std::string &securityGroupId);
+	bool getDeletionProtection() const;
+	void setDeletionProtection(bool deletionProtection);
 	std::string getPassword() const;
 	void setPassword(const std::string &password);
 	std::string getHostName() const;
 	void setHostName(const std::string &hostName);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getReboot() const;
+	void setReboot(bool reboot);
+	std::vector<std::string> getSecurityGroupIds() const;
+	void setSecurityGroupIds(const std::vector<std::string> &securityGroupIds);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::vector<std::string> getInstanceIds() const;
+	void setInstanceIds(const std::vector<std::string> &instanceIds);
 
 private:
-	bool reboot_;
 	std::string securityGroupId_;
+	bool deletionProtection_;
 	std::string password_;
 	std::string hostName_;
-	std::string instanceId_;
 	std::string regionId_;
+	bool reboot_;
+	std::vector<std::string> securityGroupIds_;
+	std::string instanceId_;
+	std::vector<std::string> instanceIds_;
 };
 } // namespace Model
 } // namespace Rds

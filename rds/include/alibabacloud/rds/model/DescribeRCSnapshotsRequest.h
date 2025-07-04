@@ -28,6 +28,10 @@ namespace Rds {
 namespace Model {
 class ALIBABACLOUD_RDS_EXPORT DescribeRCSnapshotsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	DescribeRCSnapshotsRequest();
 	~DescribeRCSnapshotsRequest();
 	std::string getSnapshotIds() const;
@@ -40,6 +44,8 @@ public:
 	void setPageSize(long pageSize);
 	std::string getDiskId() const;
 	void setDiskId(const std::string &diskId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
 	std::string snapshotIds_;
@@ -47,6 +53,7 @@ private:
 	std::string regionId_;
 	long pageSize_;
 	std::string diskId_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace Rds

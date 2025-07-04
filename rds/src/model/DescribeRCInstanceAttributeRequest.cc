@@ -52,3 +52,12 @@ void DescribeRCInstanceAttributeRequest::setRegionId(const std::string &regionId
   setParameter(std::string("RegionId"), regionId);
 }
 
+long DescribeRCInstanceAttributeRequest::getMaxDisksResults() const {
+  return maxDisksResults_;
+}
+
+void DescribeRCInstanceAttributeRequest::setMaxDisksResults(long maxDisksResults) {
+  maxDisksResults_ = maxDisksResults;
+  setParameter(std::string("MaxDisksResults"), std::to_string(maxDisksResults));
+}
+

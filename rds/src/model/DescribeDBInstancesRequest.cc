@@ -268,6 +268,15 @@ void DescribeDBInstancesRequest::setExpired(const std::string &expired) {
   setParameter(std::string("Expired"), expired);
 }
 
+bool DescribeDBInstancesRequest::getQueryAutoRenewal() const {
+  return queryAutoRenewal_;
+}
+
+void DescribeDBInstancesRequest::setQueryAutoRenewal(bool queryAutoRenewal) {
+  queryAutoRenewal_ = queryAutoRenewal;
+  setParameter(std::string("QueryAutoRenewal"), queryAutoRenewal ? "true" : "false");
+}
+
 std::string DescribeDBInstancesRequest::getEngine() const {
   return engine_;
 }

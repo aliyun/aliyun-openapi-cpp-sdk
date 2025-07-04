@@ -103,6 +103,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.storeStatus = valueItemsBackup["StoreStatus"].asString();
 		if(!valueItemsBackup["TotalBackupSize"].isNull())
 			itemsObject.totalBackupSize = std::stol(valueItemsBackup["TotalBackupSize"].asString());
+		if(!valueItemsBackup["ExpectExpireTime"].isNull())
+			itemsObject.expectExpireTime = valueItemsBackup["ExpectExpireTime"].asString();
 		auto allBackupDownloadLinkByDBNode = valueItemsBackup["BackupDownloadLinkByDB"]["BackupDownloadLinkByDBItem"];
 		for (auto valueItemsBackupBackupDownloadLinkByDBBackupDownloadLinkByDBItem : allBackupDownloadLinkByDBNode)
 		{

@@ -25,15 +25,6 @@ ModifyRCInstanceAttributeRequest::ModifyRCInstanceAttributeRequest()
 
 ModifyRCInstanceAttributeRequest::~ModifyRCInstanceAttributeRequest() {}
 
-bool ModifyRCInstanceAttributeRequest::getReboot() const {
-  return reboot_;
-}
-
-void ModifyRCInstanceAttributeRequest::setReboot(bool reboot) {
-  reboot_ = reboot;
-  setParameter(std::string("Reboot"), reboot ? "true" : "false");
-}
-
 std::string ModifyRCInstanceAttributeRequest::getSecurityGroupId() const {
   return securityGroupId_;
 }
@@ -41,6 +32,15 @@ std::string ModifyRCInstanceAttributeRequest::getSecurityGroupId() const {
 void ModifyRCInstanceAttributeRequest::setSecurityGroupId(const std::string &securityGroupId) {
   securityGroupId_ = securityGroupId;
   setParameter(std::string("SecurityGroupId"), securityGroupId);
+}
+
+bool ModifyRCInstanceAttributeRequest::getDeletionProtection() const {
+  return deletionProtection_;
+}
+
+void ModifyRCInstanceAttributeRequest::setDeletionProtection(bool deletionProtection) {
+  deletionProtection_ = deletionProtection;
+  setParameter(std::string("DeletionProtection"), deletionProtection ? "true" : "false");
 }
 
 std::string ModifyRCInstanceAttributeRequest::getPassword() const {
@@ -61,6 +61,35 @@ void ModifyRCInstanceAttributeRequest::setHostName(const std::string &hostName) 
   setParameter(std::string("HostName"), hostName);
 }
 
+std::string ModifyRCInstanceAttributeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyRCInstanceAttributeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+bool ModifyRCInstanceAttributeRequest::getReboot() const {
+  return reboot_;
+}
+
+void ModifyRCInstanceAttributeRequest::setReboot(bool reboot) {
+  reboot_ = reboot;
+  setParameter(std::string("Reboot"), reboot ? "true" : "false");
+}
+
+std::vector<ModifyRCInstanceAttributeRequest::std::string> ModifyRCInstanceAttributeRequest::getSecurityGroupIds() const {
+  return securityGroupIds_;
+}
+
+void ModifyRCInstanceAttributeRequest::setSecurityGroupIds(const std::vector<ModifyRCInstanceAttributeRequest::std::string> &securityGroupIds) {
+  securityGroupIds_ = securityGroupIds;
+  for(int dep1 = 0; dep1 != securityGroupIds.size(); dep1++) {
+    setParameter(std::string("SecurityGroupIds") + "." + std::to_string(dep1 + 1), securityGroupIds[dep1]);
+  }
+}
+
 std::string ModifyRCInstanceAttributeRequest::getInstanceId() const {
   return instanceId_;
 }
@@ -70,12 +99,14 @@ void ModifyRCInstanceAttributeRequest::setInstanceId(const std::string &instance
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string ModifyRCInstanceAttributeRequest::getRegionId() const {
-  return regionId_;
+std::vector<ModifyRCInstanceAttributeRequest::std::string> ModifyRCInstanceAttributeRequest::getInstanceIds() const {
+  return instanceIds_;
 }
 
-void ModifyRCInstanceAttributeRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void ModifyRCInstanceAttributeRequest::setInstanceIds(const std::vector<ModifyRCInstanceAttributeRequest::std::string> &instanceIds) {
+  instanceIds_ = instanceIds;
+  for(int dep1 = 0; dep1 != instanceIds.size(); dep1++) {
+    setParameter(std::string("InstanceIds") + "." + std::to_string(dep1 + 1), instanceIds[dep1]);
+  }
 }
 

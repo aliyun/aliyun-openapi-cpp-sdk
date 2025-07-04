@@ -63,6 +63,7 @@ namespace AlibabaCloud
 					std::string guardDBInstanceId;
 					std::string lockMode;
 					std::string payType;
+					std::string dBInstanceStorageType;
 					std::string accountType;
 					int maxIOPS;
 					std::string supportUpgradeAccountType;

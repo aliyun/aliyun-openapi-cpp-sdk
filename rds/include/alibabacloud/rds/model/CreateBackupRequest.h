@@ -52,6 +52,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getBackupMethod() const;
 	void setBackupMethod(const std::string &backupMethod);
+	long getBackupRetentionPeriod() const;
+	void setBackupRetentionPeriod(long backupRetentionPeriod);
 	std::string getDBName() const;
 	void setDBName(const std::string &dBName);
 
@@ -67,6 +69,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string backupMethod_;
+	long backupRetentionPeriod_;
 	std::string dBName_;
 };
 } // namespace Model

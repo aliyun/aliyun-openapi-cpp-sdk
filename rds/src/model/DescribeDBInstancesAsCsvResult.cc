@@ -127,6 +127,8 @@ void DescribeDBInstancesAsCsvResult::parse(const std::string &payload)
 			itemsObject.vpcId = valueItemsDBInstanceAttribute["VpcId"].asString();
 		if(!valueItemsDBInstanceAttribute["ZoneId"].isNull())
 			itemsObject.zoneId = valueItemsDBInstanceAttribute["ZoneId"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceStorageType"].isNull())
+			itemsObject.dBInstanceStorageType = valueItemsDBInstanceAttribute["DBInstanceStorageType"].asString();
 		auto allSlaveZones = value["SlaveZones"]["slaveRegion"];
 		for (auto value : allSlaveZones)
 			itemsObject.slaveZones.push_back(value.asString());

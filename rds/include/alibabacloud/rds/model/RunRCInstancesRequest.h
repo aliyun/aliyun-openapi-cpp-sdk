@@ -58,6 +58,8 @@ public:
 	void setSecurityEnhancementStrategy(const std::string &securityEnhancementStrategy);
 	std::string getKeyPairName() const;
 	void setKeyPairName(const std::string &keyPairName);
+	bool getDeletionProtection() const;
+	void setDeletionProtection(bool deletionProtection);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getPassword() const;
@@ -131,6 +133,7 @@ private:
 	std::string createExtraParam_;
 	std::string securityEnhancementStrategy_;
 	std::string keyPairName_;
+	bool deletionProtection_;
 	std::string resourceGroupId_;
 	std::string password_;
 	std::string hostName_;

@@ -52,6 +52,15 @@ void RunRCInstancesRequest::setKeyPairName(const std::string &keyPairName) {
   setParameter(std::string("KeyPairName"), keyPairName);
 }
 
+bool RunRCInstancesRequest::getDeletionProtection() const {
+  return deletionProtection_;
+}
+
+void RunRCInstancesRequest::setDeletionProtection(bool deletionProtection) {
+  deletionProtection_ = deletionProtection;
+  setParameter(std::string("DeletionProtection"), deletionProtection ? "true" : "false");
+}
+
 std::string RunRCInstancesRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }

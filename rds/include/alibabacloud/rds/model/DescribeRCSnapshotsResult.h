@@ -34,12 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct Snapshot
 				{
+					struct TagItem
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					bool instantAccess;
 					std::string progress;
 					std::string usage;
 					std::string category;
 					std::string description;
+					std::string resourceGroupId;
 					bool encrypted;
 					std::string snapshotName;
 					std::string sourceDiskId;
@@ -48,6 +54,7 @@ namespace AlibabaCloud
 					long sourceDiskSize;
 					std::string creationTime;
 					bool available;
+					std::vector<Snapshot::TagItem> tag;
 					std::string regionId;
 					std::string snapshotType;
 					std::string sourceDiskType;

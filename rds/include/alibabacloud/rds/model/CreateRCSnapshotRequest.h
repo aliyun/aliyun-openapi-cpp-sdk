@@ -28,18 +28,26 @@ namespace Rds {
 namespace Model {
 class ALIBABACLOUD_RDS_EXPORT CreateRCSnapshotRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateRCSnapshotRequest();
 	~CreateRCSnapshotRequest();
 	bool getInstantAccess() const;
 	void setInstantAccess(bool instantAccess);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	int getInstantAccessRetentionDays() const;
 	void setInstantAccessRetentionDays(int instantAccessRetentionDays);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getDiskId() const;
 	void setDiskId(const std::string &diskId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 	int getRetentionDays() const;
@@ -48,9 +56,11 @@ public:
 private:
 	bool instantAccess_;
 	std::string description_;
+	std::string resourceGroupId_;
 	int instantAccessRetentionDays_;
 	std::string regionId_;
 	std::string diskId_;
+	std::vector<Tag> tag_;
 	std::string zoneId_;
 	int retentionDays_;
 };

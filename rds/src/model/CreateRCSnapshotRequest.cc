@@ -43,6 +43,15 @@ void CreateRCSnapshotRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+std::string CreateRCSnapshotRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateRCSnapshotRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 int CreateRCSnapshotRequest::getInstantAccessRetentionDays() const {
   return instantAccessRetentionDays_;
 }
@@ -68,6 +77,20 @@ std::string CreateRCSnapshotRequest::getDiskId() const {
 void CreateRCSnapshotRequest::setDiskId(const std::string &diskId) {
   diskId_ = diskId;
   setParameter(std::string("DiskId"), diskId);
+}
+
+std::vector<CreateRCSnapshotRequest::Tag> CreateRCSnapshotRequest::getTag() const {
+  return tag_;
+}
+
+void CreateRCSnapshotRequest::setTag(const std::vector<CreateRCSnapshotRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string CreateRCSnapshotRequest::getZoneId() const {

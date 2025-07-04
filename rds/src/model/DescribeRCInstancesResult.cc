@@ -89,6 +89,8 @@ void DescribeRCInstancesResult::parse(const std::string &payload)
 			rCInstancesObject.deploymentSetId = valueRCInstancesrCInstancesItem["DeploymentSetId"].asString();
 		if(!valueRCInstancesrCInstancesItem["ImageId"].isNull())
 			rCInstancesObject.imageId = valueRCInstancesrCInstancesItem["ImageId"].asString();
+		if(!valueRCInstancesrCInstancesItem["NodeType"].isNull())
+			rCInstancesObject.nodeType = valueRCInstancesrCInstancesItem["NodeType"].asString();
 		auto allTagResourcesNode = valueRCInstancesrCInstancesItem["TagResources"]["TagResource"];
 		for (auto valueRCInstancesrCInstancesItemTagResourcesTagResource : allTagResourcesNode)
 		{

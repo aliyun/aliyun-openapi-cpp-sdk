@@ -124,6 +124,15 @@ void CreateBackupRequest::setBackupMethod(const std::string &backupMethod) {
   setParameter(std::string("BackupMethod"), backupMethod);
 }
 
+long CreateBackupRequest::getBackupRetentionPeriod() const {
+  return backupRetentionPeriod_;
+}
+
+void CreateBackupRequest::setBackupRetentionPeriod(long backupRetentionPeriod) {
+  backupRetentionPeriod_ = backupRetentionPeriod;
+  setParameter(std::string("BackupRetentionPeriod"), std::to_string(backupRetentionPeriod));
+}
+
 std::string CreateBackupRequest::getDBName() const {
   return dBName_;
 }

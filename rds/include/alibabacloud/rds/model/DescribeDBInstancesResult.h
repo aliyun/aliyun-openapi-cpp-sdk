@@ -71,6 +71,7 @@ namespace AlibabaCloud
 					int insId;
 					std::string dedicatedHostIdForSlave;
 					std::string vpcId;
+					bool autoRenewal;
 					std::string masterInstanceId;
 					std::string connectionMode;
 					std::string dedicatedHostZoneIdForLog;

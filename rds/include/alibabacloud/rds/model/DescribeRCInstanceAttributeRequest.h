@@ -36,11 +36,14 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	long getMaxDisksResults() const;
+	void setMaxDisksResults(long maxDisksResults);
 
 private:
 	std::string privateIpAddress_;
 	std::string instanceId_;
 	std::string regionId_;
+	long maxDisksResults_;
 };
 } // namespace Model
 } // namespace Rds

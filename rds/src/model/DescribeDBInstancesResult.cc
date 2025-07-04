@@ -159,6 +159,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.blueInstanceName = valueItemsDBInstance["BlueInstanceName"].asString();
 		if(!valueItemsDBInstance["GreenInstanceName"].isNull())
 			itemsObject.greenInstanceName = valueItemsDBInstance["GreenInstanceName"].asString();
+		if(!valueItemsDBInstance["AutoRenewal"].isNull())
+			itemsObject.autoRenewal = valueItemsDBInstance["AutoRenewal"].asString() == "true";
 		auto allReadOnlyDBInstanceIdsNode = valueItemsDBInstance["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{
