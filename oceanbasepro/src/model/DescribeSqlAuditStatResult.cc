@@ -79,7 +79,14 @@ void DescribeSqlAuditStatResult::parse(const std::string &payload)
 			dataObject.operatorType = valueDataDataItem["OperatorType"].asString();
 		data_.push_back(dataObject);
 	}
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
+}
+
+long DescribeSqlAuditStatResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::vector<DescribeSqlAuditStatResult::DataItem> DescribeSqlAuditStatResult::getData()const

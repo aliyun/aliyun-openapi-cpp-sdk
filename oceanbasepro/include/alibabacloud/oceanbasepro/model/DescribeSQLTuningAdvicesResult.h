@@ -72,7 +72,7 @@ namespace AlibabaCloud
 					struct ColumnsItem
 					{
 						std::string columnName;
-						float ndv;
+						double ndv;
 						std::string minValue;
 						std::string maxValue;
 					};

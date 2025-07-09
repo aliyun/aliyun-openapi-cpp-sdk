@@ -34,6 +34,15 @@ void DescribeSqlAuditStatRequest::setStartTime(const std::string &startTime) {
   setBodyParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeSqlAuditStatRequest::getOperatorType() const {
+  return operatorType_;
+}
+
+void DescribeSqlAuditStatRequest::setOperatorType(const std::string &operatorType) {
+  operatorType_ = operatorType;
+  setBodyParameter(std::string("OperatorType"), operatorType);
+}
+
 int DescribeSqlAuditStatRequest::getPageNumber() const {
   return pageNumber_;
 }

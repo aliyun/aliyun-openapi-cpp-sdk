@@ -63,7 +63,7 @@ namespace AlibabaCloud
 					double sumDbTime;
 					std::vector<DataItem::SqlListItem> sqlList;
 					std::string userName;
-					double lastExecutedTime;
+					std::string lastExecutedTime;
 					float avgRetryCount;
 					double avgGetPlanTime;
 					double cpuTime;

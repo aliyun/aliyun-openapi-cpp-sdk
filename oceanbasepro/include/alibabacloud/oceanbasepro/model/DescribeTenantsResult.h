@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					int cpu;
 					std::string charset;
 					bool enableReadOnlyReplica;
+					int iops;
 					std::string collation;
 					std::string tenantId;
 					std::string vpcId;

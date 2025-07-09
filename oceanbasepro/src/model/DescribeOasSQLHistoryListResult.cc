@@ -48,37 +48,37 @@ void DescribeOasSQLHistoryListResult::parse(const std::string &payload)
 		if(!valueDataDataItem["DbName"].isNull())
 			dataObject.dbName = valueDataDataItem["DbName"].asString();
 		if(!valueDataDataItem["AvgAffectedRows"].isNull())
-			dataObject.avgAffectedRows = std::stol(valueDataDataItem["AvgAffectedRows"].asString());
+			dataObject.avgAffectedRows = valueDataDataItem["AvgAffectedRows"].asString();
 		if(!valueDataDataItem["AvgBlockCacheHit"].isNull())
-			dataObject.avgBlockCacheHit = std::stol(valueDataDataItem["AvgBlockCacheHit"].asString());
+			dataObject.avgBlockCacheHit = valueDataDataItem["AvgBlockCacheHit"].asString();
 		if(!valueDataDataItem["AvgBlockIndexCacheHit"].isNull())
-			dataObject.avgBlockIndexCacheHit = std::stol(valueDataDataItem["AvgBlockIndexCacheHit"].asString());
+			dataObject.avgBlockIndexCacheHit = valueDataDataItem["AvgBlockIndexCacheHit"].asString();
 		if(!valueDataDataItem["AvgBloomFilterCacheHit"].isNull())
-			dataObject.avgBloomFilterCacheHit = std::stol(valueDataDataItem["AvgBloomFilterCacheHit"].asString());
+			dataObject.avgBloomFilterCacheHit = valueDataDataItem["AvgBloomFilterCacheHit"].asString();
 		if(!valueDataDataItem["Executions"].isNull())
 			dataObject.executions = std::stol(valueDataDataItem["Executions"].asString());
 		if(!valueDataDataItem["FailCount"].isNull())
 			dataObject.failCount = std::stol(valueDataDataItem["FailCount"].asString());
 		if(!valueDataDataItem["AvgRpcCount"].isNull())
-			dataObject.avgRpcCount = std::stol(valueDataDataItem["AvgRpcCount"].asString());
+			dataObject.avgRpcCount = valueDataDataItem["AvgRpcCount"].asString();
 		if(!valueDataDataItem["RemotePlans"].isNull())
 			dataObject.remotePlans = std::stol(valueDataDataItem["RemotePlans"].asString());
 		if(!valueDataDataItem["MissPlans"].isNull())
 			dataObject.missPlans = std::stol(valueDataDataItem["MissPlans"].asString());
 		if(!valueDataDataItem["AvgReturnRows"].isNull())
-			dataObject.avgReturnRows = std::stol(valueDataDataItem["AvgReturnRows"].asString());
+			dataObject.avgReturnRows = valueDataDataItem["AvgReturnRows"].asString();
 		if(!valueDataDataItem["AvgLogicalReads"].isNull())
-			dataObject.avgLogicalReads = std::stol(valueDataDataItem["AvgLogicalReads"].asString());
+			dataObject.avgLogicalReads = valueDataDataItem["AvgLogicalReads"].asString();
 		if(!valueDataDataItem["RetryCount"].isNull())
 			dataObject.retryCount = std::stol(valueDataDataItem["RetryCount"].asString());
 		if(!valueDataDataItem["AvgRowCacheHit"].isNull())
-			dataObject.avgRowCacheHit = std::stol(valueDataDataItem["AvgRowCacheHit"].asString());
+			dataObject.avgRowCacheHit = valueDataDataItem["AvgRowCacheHit"].asString();
 		if(!valueDataDataItem["AvgDiskReads"].isNull())
-			dataObject.avgDiskReads = std::stol(valueDataDataItem["AvgDiskReads"].asString());
+			dataObject.avgDiskReads = valueDataDataItem["AvgDiskReads"].asString();
 		if(!valueDataDataItem["AvgMemstoreReadRows"].isNull())
-			dataObject.avgMemstoreReadRows = std::stol(valueDataDataItem["AvgMemstoreReadRows"].asString());
+			dataObject.avgMemstoreReadRows = valueDataDataItem["AvgMemstoreReadRows"].asString();
 		if(!valueDataDataItem["AvgSsstoreReadRows"].isNull())
-			dataObject.avgSsstoreReadRows = std::stol(valueDataDataItem["AvgSsstoreReadRows"].asString());
+			dataObject.avgSsstoreReadRows = valueDataDataItem["AvgSsstoreReadRows"].asString();
 		if(!valueDataDataItem["AvgApplicationWaitTime"].isNull())
 			dataObject.avgApplicationWaitTime = valueDataDataItem["AvgApplicationWaitTime"].asString();
 		if(!valueDataDataItem["AvgElapsedTime"].isNull())
@@ -120,19 +120,19 @@ void DescribeOasSQLHistoryListResult::parse(const std::string &payload)
 		if(!valueDataDataItem["FailPercentage"].isNull())
 			dataObject.failPercentage = valueDataDataItem["FailPercentage"].asString();
 		if(!valueDataDataItem["RetCode4012Count"].isNull())
-			dataObject.retCode4012Count = valueDataDataItem["RetCode4012Count"].asString();
+			dataObject.retCode4012Count = std::stol(valueDataDataItem["RetCode4012Count"].asString());
 		if(!valueDataDataItem["RetCode4013Count"].isNull())
-			dataObject.retCode4013Count = valueDataDataItem["RetCode4013Count"].asString();
+			dataObject.retCode4013Count = std::stol(valueDataDataItem["RetCode4013Count"].asString());
 		if(!valueDataDataItem["RetCode5001Count"].isNull())
-			dataObject.retCode5001Count = valueDataDataItem["RetCode5001Count"].asString();
+			dataObject.retCode5001Count = std::stol(valueDataDataItem["RetCode5001Count"].asString());
 		if(!valueDataDataItem["RetCode5024Count"].isNull())
-			dataObject.retCode5024Count = valueDataDataItem["RetCode5024Count"].asString();
+			dataObject.retCode5024Count = std::stol(valueDataDataItem["RetCode5024Count"].asString());
 		if(!valueDataDataItem["RetCode5167Count"].isNull())
-			dataObject.retCode5167Count = valueDataDataItem["RetCode5167Count"].asString();
+			dataObject.retCode5167Count = std::stol(valueDataDataItem["RetCode5167Count"].asString());
 		if(!valueDataDataItem["RetCode5217Count"].isNull())
-			dataObject.retCode5217Count = valueDataDataItem["RetCode5217Count"].asString();
+			dataObject.retCode5217Count = std::stol(valueDataDataItem["RetCode5217Count"].asString());
 		if(!valueDataDataItem["RetCode6002Count"].isNull())
-			dataObject.retCode6002Count = valueDataDataItem["RetCode6002Count"].asString();
+			dataObject.retCode6002Count = std::stol(valueDataDataItem["RetCode6002Count"].asString());
 		if(!valueDataDataItem["AvgWaitTime"].isNull())
 			dataObject.avgWaitTime = valueDataDataItem["AvgWaitTime"].asString();
 		if(!valueDataDataItem["AvgWaitCount"].isNull())

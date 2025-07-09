@@ -79,6 +79,15 @@ void DescribeMetricsDataRequest::setReplicaType(const std::string &replicaType) 
   setBodyParameter(std::string("ReplicaType"), replicaType);
 }
 
+std::string DescribeMetricsDataRequest::getMetricScope() const {
+  return metricScope_;
+}
+
+void DescribeMetricsDataRequest::setMetricScope(const std::string &metricScope) {
+  metricScope_ = metricScope;
+  setBodyParameter(std::string("MetricScope"), metricScope);
+}
+
 std::string DescribeMetricsDataRequest::getEndTime() const {
   return endTime_;
 }

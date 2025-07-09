@@ -105,6 +105,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.replicaMode = valueInstancesData["ReplicaMode"].asString();
 		if(!valueInstancesData["Migratable"].isNull())
 			instancesObject.migratable = valueInstancesData["Migratable"].asString() == "true";
+		if(!valueInstancesData["Iops"].isNull())
+			instancesObject.iops = std::stoi(valueInstancesData["Iops"].asString());
 		auto resourceNode = value["Resource"];
 		if(!resourceNode["UnitCount"].isNull())
 			instancesObject.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());

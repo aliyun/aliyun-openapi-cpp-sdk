@@ -61,13 +61,13 @@ void DescribeSampleSqlRawTextsRequest::setTenantId(const std::string &tenantId) 
   setBodyParameter(std::string("TenantId"), tenantId);
 }
 
-std::string DescribeSampleSqlRawTextsRequest::getLimit() const {
+int DescribeSampleSqlRawTextsRequest::getLimit() const {
   return limit_;
 }
 
-void DescribeSampleSqlRawTextsRequest::setLimit(const std::string &limit) {
+void DescribeSampleSqlRawTextsRequest::setLimit(int limit) {
   limit_ = limit;
-  setBodyParameter(std::string("Limit"), limit);
+  setBodyParameter(std::string("Limit"), std::to_string(limit));
 }
 
 std::string DescribeSampleSqlRawTextsRequest::getSqlId() const {

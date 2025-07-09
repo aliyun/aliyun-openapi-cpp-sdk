@@ -57,11 +57,13 @@ namespace AlibabaCloud
 				DescribeSqlAuditStatResult();
 				explicit DescribeSqlAuditStatResult(const std::string &payload);
 				~DescribeSqlAuditStatResult();
+				long getTotalCount()const;
 				std::vector<DataItem> getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long totalCount_;
 				std::vector<DataItem> data_;
 
 			};

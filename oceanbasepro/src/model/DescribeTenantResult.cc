@@ -108,6 +108,8 @@ void DescribeTenantResult::parse(const std::string &payload)
 		tenant_.tenantMaxConnections = tenantNode["TenantMaxConnections"].asString();
 	if(!tenantNode["ParameterTemplate"].isNull())
 		tenant_.parameterTemplate = tenantNode["ParameterTemplate"].asString();
+	if(!tenantNode["Iops"].isNull())
+		tenant_.iops = std::stoi(tenantNode["Iops"].asString());
 	auto allTenantConnectionsNode = tenantNode["TenantConnections"]["TenantConnectionsItem"];
 	for (auto tenantNodeTenantConnectionsTenantConnectionsItem : allTenantConnectionsNode)
 	{

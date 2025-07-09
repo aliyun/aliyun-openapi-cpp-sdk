@@ -185,6 +185,7 @@ namespace AlibabaCloud
 					Resource resource;
 					std::string instanceClass;
 					std::string payType;
+					int iops;
 					bool dataDiskAutoScale;
 					bool enableProxyService;
 					std::string instanceName;

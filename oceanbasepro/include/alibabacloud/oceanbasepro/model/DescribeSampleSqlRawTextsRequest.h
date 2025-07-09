@@ -38,8 +38,8 @@ public:
 	void setDynamicSql(bool dynamicSql);
 	std::string getTenantId() const;
 	void setTenantId(const std::string &tenantId);
-	std::string getLimit() const;
-	void setLimit(const std::string &limit);
+	int getLimit() const;
+	void setLimit(int limit);
 	std::string getSqlId() const;
 	void setSqlId(const std::string &sqlId);
 	std::string getEndTime() const;
@@ -54,7 +54,7 @@ private:
 	std::string startTime_;
 	bool dynamicSql_;
 	std::string tenantId_;
-	std::string limit_;
+	int limit_;
 	std::string sqlId_;
 	std::string endTime_;
 	std::string instanceId_;

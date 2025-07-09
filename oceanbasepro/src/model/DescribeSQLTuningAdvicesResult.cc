@@ -60,7 +60,7 @@ void DescribeSQLTuningAdvicesResult::parse(const std::string &payload)
 			if(!valueDataDataItemColumnsColumnsItem["ColumnName"].isNull())
 				columnsObject.columnName = valueDataDataItemColumnsColumnsItem["ColumnName"].asString();
 			if(!valueDataDataItemColumnsColumnsItem["Ndv"].isNull())
-				columnsObject.ndv = std::stof(valueDataDataItemColumnsColumnsItem["Ndv"].asString());
+				columnsObject.ndv = valueDataDataItemColumnsColumnsItem["Ndv"].asString();
 			if(!valueDataDataItemColumnsColumnsItem["MinValue"].isNull())
 				columnsObject.minValue = valueDataDataItemColumnsColumnsItem["MinValue"].asString();
 			if(!valueDataDataItemColumnsColumnsItem["MaxValue"].isNull())

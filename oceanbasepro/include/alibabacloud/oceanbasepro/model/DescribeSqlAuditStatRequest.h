@@ -32,6 +32,8 @@ public:
 	~DescribeSqlAuditStatRequest();
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getOperatorType() const;
+	void setOperatorType(const std::string &operatorType);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getTenantId() const;
@@ -45,6 +47,7 @@ public:
 
 private:
 	std::string startTime_;
+	std::string operatorType_;
 	int pageNumber_;
 	std::string tenantId_;
 	int pageSize_;

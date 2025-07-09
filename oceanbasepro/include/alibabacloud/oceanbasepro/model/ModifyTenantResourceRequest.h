@@ -40,6 +40,8 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	std::string getTenantId() const;
 	void setTenantId(const std::string &tenantId);
+	std::string getIops() const;
+	void setIops(const std::string &iops);
 	std::string getReadOnlyZoneList() const;
 	void setReadOnlyZoneList(const std::string &readOnlyZoneList);
 
@@ -49,6 +51,7 @@ private:
 	int cpu_;
 	std::string instanceId_;
 	std::string tenantId_;
+	std::string iops_;
 	std::string readOnlyZoneList_;
 };
 } // namespace Model

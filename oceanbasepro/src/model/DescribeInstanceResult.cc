@@ -122,6 +122,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.allowModifyInternetAddressConnectionLimit = instanceNode["AllowModifyInternetAddressConnectionLimit"].asString() == "true";
 	if(!instanceNode["AllowCreateProxySqlFirewallRule"].isNull())
 		instance_.allowCreateProxySqlFirewallRule = instanceNode["AllowCreateProxySqlFirewallRule"].asString() == "true";
+	if(!instanceNode["Iops"].isNull())
+		instance_.iops = std::stoi(instanceNode["Iops"].asString());
 	auto resourceNode = instanceNode["Resource"];
 	if(!resourceNode["UnitCount"].isNull())
 		instance_.resource.unitCount = std::stol(resourceNode["UnitCount"].asString());

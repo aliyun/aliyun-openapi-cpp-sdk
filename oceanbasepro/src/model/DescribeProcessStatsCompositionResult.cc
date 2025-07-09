@@ -83,7 +83,7 @@ void DescribeProcessStatsCompositionResult::parse(const std::string &payload)
 		if(!dataNodeAllProcessListAllProcessListItem["PlanId"].isNull())
 			allProcessListItemObject.planId = dataNodeAllProcessListAllProcessListItem["PlanId"].asString();
 		if(!dataNodeAllProcessListAllProcessListItem["DynamicSql"].isNull())
-			allProcessListItemObject.dynamicSql = dataNodeAllProcessListAllProcessListItem["DynamicSql"].asString();
+			allProcessListItemObject.dynamicSql = dataNodeAllProcessListAllProcessListItem["DynamicSql"].asString() == "true";
 		if(!dataNodeAllProcessListAllProcessListItem["ServerSn"].isNull())
 			allProcessListItemObject.serverSn = dataNodeAllProcessListAllProcessListItem["ServerSn"].asString();
 		auto allProcessSqlListsNode = dataNodeAllProcessListAllProcessListItem["ProcessSqlLists"]["ProcessSqlListsItem"];
@@ -121,7 +121,7 @@ void DescribeProcessStatsCompositionResult::parse(const std::string &payload)
 			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["PlanId"].isNull())
 				processSqlListsObject.planId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["PlanId"].asString();
 			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["DynamicSql"].isNull())
-				processSqlListsObject.dynamicSql = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["DynamicSql"].asString();
+				processSqlListsObject.dynamicSql = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["DynamicSql"].asString() == "true";
 			auto allProcessSqlListNode = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["ProcessSqlList"]["ProcessSqlListItem"];
 			for (auto dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem : allProcessSqlListNode)
 			{
@@ -157,7 +157,7 @@ void DescribeProcessStatsCompositionResult::parse(const std::string &payload)
 				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["PlanId"].isNull())
 					processSqlListObject.planId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["PlanId"].asString();
 				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["DynamicSql"].isNull())
-					processSqlListObject.dynamicSql = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["DynamicSql"].asString();
+					processSqlListObject.dynamicSql = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["DynamicSql"].asString() == "true";
 				processSqlListsObject.processSqlList.push_back(processSqlListObject);
 			}
 			allProcessListItemObject.processSqlLists.push_back(processSqlListsObject);

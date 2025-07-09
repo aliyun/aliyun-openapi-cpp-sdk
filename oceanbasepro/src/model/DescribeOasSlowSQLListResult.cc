@@ -44,13 +44,13 @@ void DescribeOasSlowSQLListResult::parse(const std::string &payload)
 	{
 		DataItem dataObject;
 		if(!valueDataDataItem["Executions"].isNull())
-			dataObject.executions = valueDataDataItem["Executions"].asString();
+			dataObject.executions = std::stol(valueDataDataItem["Executions"].asString());
 		if(!valueDataDataItem["RpcCount"].isNull())
 			dataObject.rpcCount = valueDataDataItem["RpcCount"].asString();
 		if(!valueDataDataItem["RemotePlans"].isNull())
-			dataObject.remotePlans = valueDataDataItem["RemotePlans"].asString();
+			dataObject.remotePlans = std::stol(valueDataDataItem["RemotePlans"].asString());
 		if(!valueDataDataItem["MissPlans"].isNull())
-			dataObject.missPlans = valueDataDataItem["MissPlans"].asString();
+			dataObject.missPlans = std::stol(valueDataDataItem["MissPlans"].asString());
 		if(!valueDataDataItem["MaxElapsedTime"].isNull())
 			dataObject.maxElapsedTime = valueDataDataItem["MaxElapsedTime"].asString();
 		if(!valueDataDataItem["TotalWaitTime"].isNull())
@@ -70,15 +70,15 @@ void DescribeOasSlowSQLListResult::parse(const std::string &payload)
 		if(!valueDataDataItem["RetCode4013Count"].isNull())
 			dataObject.retCode4013Count = std::stol(valueDataDataItem["RetCode4013Count"].asString());
 		if(!valueDataDataItem["RetCode5001Count"].isNull())
-			dataObject.retCode5001Count = valueDataDataItem["RetCode5001Count"].asString();
+			dataObject.retCode5001Count = std::stol(valueDataDataItem["RetCode5001Count"].asString());
 		if(!valueDataDataItem["RetCode5024Count"].isNull())
-			dataObject.retCode5024Count = valueDataDataItem["RetCode5024Count"].asString();
+			dataObject.retCode5024Count = std::stol(valueDataDataItem["RetCode5024Count"].asString());
 		if(!valueDataDataItem["RetCode5167Count"].isNull())
-			dataObject.retCode5167Count = valueDataDataItem["RetCode5167Count"].asString();
+			dataObject.retCode5167Count = std::stol(valueDataDataItem["RetCode5167Count"].asString());
 		if(!valueDataDataItem["RetCode5217Count"].isNull())
-			dataObject.retCode5217Count = valueDataDataItem["RetCode5217Count"].asString();
+			dataObject.retCode5217Count = std::stol(valueDataDataItem["RetCode5217Count"].asString());
 		if(!valueDataDataItem["RetCode6002Count"].isNull())
-			dataObject.retCode6002Count = valueDataDataItem["RetCode6002Count"].asString();
+			dataObject.retCode6002Count = std::stol(valueDataDataItem["RetCode6002Count"].asString());
 		if(!valueDataDataItem["FailPercentage"].isNull())
 			dataObject.failPercentage = valueDataDataItem["FailPercentage"].asString();
 		if(!valueDataDataItem["SumWaitTime"].isNull())
@@ -150,7 +150,7 @@ void DescribeOasSlowSQLListResult::parse(const std::string &payload)
 		if(!valueDataDataItem["AvgPartitionCount"].isNull())
 			dataObject.avgPartitionCount = valueDataDataItem["AvgPartitionCount"].asString();
 		if(!valueDataDataItem["FailCount"].isNull())
-			dataObject.failCount = valueDataDataItem["FailCount"].asString();
+			dataObject.failCount = std::stol(valueDataDataItem["FailCount"].asString());
 		if(!valueDataDataItem["AvgWaitTime"].isNull())
 			dataObject.avgWaitTime = valueDataDataItem["AvgWaitTime"].asString();
 		if(!valueDataDataItem["AvgElapsedTime"].isNull())
@@ -186,7 +186,7 @@ void DescribeOasSlowSQLListResult::parse(const std::string &payload)
 		if(!valueDataDataItem["AvgDiskReads"].isNull())
 			dataObject.avgDiskReads = valueDataDataItem["AvgDiskReads"].asString();
 		if(!valueDataDataItem["RetryCount"].isNull())
-			dataObject.retryCount = valueDataDataItem["RetryCount"].asString();
+			dataObject.retryCount = std::stol(valueDataDataItem["RetryCount"].asString());
 		if(!valueDataDataItem["AvgMemstoreReadRows"].isNull())
 			dataObject.avgMemstoreReadRows = valueDataDataItem["AvgMemstoreReadRows"].asString();
 		if(!valueDataDataItem["AvgSsstoreReadRows"].isNull())
@@ -204,13 +204,13 @@ void DescribeOasSlowSQLListResult::parse(const std::string &payload)
 		{
 			DataItem::SqlListItem sqlListObject;
 			if(!valueDataDataItemSqlListSqlListItem["Executions"].isNull())
-				sqlListObject.executions = valueDataDataItemSqlListSqlListItem["Executions"].asString();
+				sqlListObject.executions = std::stol(valueDataDataItemSqlListSqlListItem["Executions"].asString());
 			if(!valueDataDataItemSqlListSqlListItem["RpcCount"].isNull())
 				sqlListObject.rpcCount = valueDataDataItemSqlListSqlListItem["RpcCount"].asString();
 			if(!valueDataDataItemSqlListSqlListItem["RemotePlans"].isNull())
-				sqlListObject.remotePlans = valueDataDataItemSqlListSqlListItem["RemotePlans"].asString();
+				sqlListObject.remotePlans = std::stol(valueDataDataItemSqlListSqlListItem["RemotePlans"].asString());
 			if(!valueDataDataItemSqlListSqlListItem["MissPlans"].isNull())
-				sqlListObject.missPlans = valueDataDataItemSqlListSqlListItem["MissPlans"].asString();
+				sqlListObject.missPlans = std::stol(valueDataDataItemSqlListSqlListItem["MissPlans"].asString());
 			if(!valueDataDataItemSqlListSqlListItem["MaxElapsedTime"].isNull())
 				sqlListObject.maxElapsedTime = valueDataDataItemSqlListSqlListItem["MaxElapsedTime"].asString();
 			if(!valueDataDataItemSqlListSqlListItem["TotalWaitTime"].isNull())
@@ -310,7 +310,7 @@ void DescribeOasSlowSQLListResult::parse(const std::string &payload)
 			if(!valueDataDataItemSqlListSqlListItem["AvgPartitionCount"].isNull())
 				sqlListObject.avgPartitionCount = valueDataDataItemSqlListSqlListItem["AvgPartitionCount"].asString();
 			if(!valueDataDataItemSqlListSqlListItem["FailCount"].isNull())
-				sqlListObject.failCount = valueDataDataItemSqlListSqlListItem["FailCount"].asString();
+				sqlListObject.failCount = std::stol(valueDataDataItemSqlListSqlListItem["FailCount"].asString());
 			if(!valueDataDataItemSqlListSqlListItem["AvgWaitTime"].isNull())
 				sqlListObject.avgWaitTime = valueDataDataItemSqlListSqlListItem["AvgWaitTime"].asString();
 			if(!valueDataDataItemSqlListSqlListItem["AvgElapsedTime"].isNull())
@@ -346,7 +346,7 @@ void DescribeOasSlowSQLListResult::parse(const std::string &payload)
 			if(!valueDataDataItemSqlListSqlListItem["AvgDiskReads"].isNull())
 				sqlListObject.avgDiskReads = valueDataDataItemSqlListSqlListItem["AvgDiskReads"].asString();
 			if(!valueDataDataItemSqlListSqlListItem["RetryCount"].isNull())
-				sqlListObject.retryCount = valueDataDataItemSqlListSqlListItem["RetryCount"].asString();
+				sqlListObject.retryCount = std::stol(valueDataDataItemSqlListSqlListItem["RetryCount"].asString());
 			if(!valueDataDataItemSqlListSqlListItem["AvgMemstoreReadRows"].isNull())
 				sqlListObject.avgMemstoreReadRows = valueDataDataItemSqlListSqlListItem["AvgMemstoreReadRows"].asString();
 			if(!valueDataDataItemSqlListSqlListItem["AvgSsstoreReadRows"].isNull())

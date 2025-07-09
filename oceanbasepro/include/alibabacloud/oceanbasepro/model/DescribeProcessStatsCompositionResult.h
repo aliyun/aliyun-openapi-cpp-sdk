@@ -68,7 +68,7 @@ namespace AlibabaCloud
 							struct ProcessSqlListItem
 							{
 								std::string status;
-								std::string dynamicSql;
+								bool dynamicSql;
 								std::string user;
 								long executeTime;
 								std::string proxySessId;
@@ -85,7 +85,7 @@ namespace AlibabaCloud
 								long sessionId;
 							};
 							std::string status;
-							std::string dynamicSql;
+							bool dynamicSql;
 							std::string user;
 							long executeTime;
 							std::string proxySessId;
@@ -103,7 +103,7 @@ namespace AlibabaCloud
 							long sessionId;
 						};
 						std::string status;
-						std::string dynamicSql;
+						bool dynamicSql;
 						std::string user;
 						long executeTime;
 						std::string proxySessId;

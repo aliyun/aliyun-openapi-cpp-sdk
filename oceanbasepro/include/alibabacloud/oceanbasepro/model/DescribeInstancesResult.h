@@ -121,6 +121,7 @@ namespace AlibabaCloud
 					std::string instanceClass;
 					bool migratable;
 					std::string payType;
+					int iops;
 					std::string instanceName;
 					std::string series;
 					DataDiskAutoScaleConfig dataDiskAutoScaleConfig;

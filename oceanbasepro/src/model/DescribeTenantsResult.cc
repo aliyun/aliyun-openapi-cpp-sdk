@@ -83,6 +83,8 @@ void DescribeTenantsResult::parse(const std::string &payload)
 			tenantsObject.enableReadOnlyReplica = valueTenantsData["EnableReadOnlyReplica"].asString() == "true";
 		if(!valueTenantsData["ParameterTemplate"].isNull())
 			tenantsObject.parameterTemplate = valueTenantsData["ParameterTemplate"].asString();
+		if(!valueTenantsData["Iops"].isNull())
+			tenantsObject.iops = std::stoi(valueTenantsData["Iops"].asString());
 		tenants_.push_back(tenantsObject);
 	}
 	if(!value["TotalCount"].isNull())

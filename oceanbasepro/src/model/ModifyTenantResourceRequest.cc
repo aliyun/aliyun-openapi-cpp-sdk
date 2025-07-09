@@ -70,6 +70,15 @@ void ModifyTenantResourceRequest::setTenantId(const std::string &tenantId) {
   setBodyParameter(std::string("TenantId"), tenantId);
 }
 
+std::string ModifyTenantResourceRequest::getIops() const {
+  return iops_;
+}
+
+void ModifyTenantResourceRequest::setIops(const std::string &iops) {
+  iops_ = iops;
+  setBodyParameter(std::string("Iops"), iops);
+}
+
 std::string ModifyTenantResourceRequest::getReadOnlyZoneList() const {
   return readOnlyZoneList_;
 }

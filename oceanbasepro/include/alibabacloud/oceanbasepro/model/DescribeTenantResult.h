@@ -182,6 +182,7 @@ namespace AlibabaCloud
 					std::string charset;
 					std::string payType;
 					std::string odpVersion;
+					int iops;
 					std::string collation;
 					bool enableInternetAddressService;
 					bool enableReadWriteSplit;

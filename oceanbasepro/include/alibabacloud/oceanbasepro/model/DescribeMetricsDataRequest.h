@@ -42,6 +42,8 @@ public:
 	void setSortMetricKey(const std::string &sortMetricKey);
 	std::string getReplicaType() const;
 	void setReplicaType(const std::string &replicaType);
+	std::string getMetricScope() const;
+	void setMetricScope(const std::string &metricScope);
 	std::string getEndTime() const;
 	void setEndTime(const std::string &endTime);
 	std::string getLabels() const;
@@ -58,6 +60,7 @@ private:
 	std::string sortOrder_;
 	std::string sortMetricKey_;
 	std::string replicaType_;
+	std::string metricScope_;
 	std::string endTime_;
 	std::string labels_;
 	std::string instanceId_;

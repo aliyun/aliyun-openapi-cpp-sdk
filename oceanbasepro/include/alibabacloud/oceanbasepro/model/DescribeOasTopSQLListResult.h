@@ -50,9 +50,9 @@ namespace AlibabaCloud
 						std::string clientIp;
 						bool inner;
 						double avgUserIoWaitTime;
-						double retryCount;
+						long retryCount;
 						long retCode6002Count;
-						double missPlans;
+						long missPlans;
 						long retCode5167Count;
 						std::string sqlType;
 						double avgLogicalReads;
@@ -89,7 +89,7 @@ namespace AlibabaCloud
 						double avgBloomFilterCacheHit;
 						double avgReturnRows;
 						double avgPartitionCount;
-						double failCount;
+						long failCount;
 						std::string dbName;
 						double avgWaitTime;
 						double weakConsistencyPercentage;
@@ -100,7 +100,7 @@ namespace AlibabaCloud
 						double avgDbTime;
 						double avgExpectedWorkerCount;
 						double distPlanPercentage;
-						double remotePlans;
+						long remotePlans;
 						double avgWaitCount;
 						std::string userName;
 						double rpcCount;
@@ -129,10 +129,10 @@ namespace AlibabaCloud
 					std::string clientIp;
 					bool inner;
 					double avgUserIoWaitTime;
-					double retryCount;
+					long retryCount;
 					long retCode6002Count;
-					std::string obDbId;
-					double missPlans;
+					long obDbId;
+					long missPlans;
 					long retCode5167Count;
 					std::string sqlType;
 					double avgLogicalReads;
@@ -170,7 +170,7 @@ namespace AlibabaCloud
 					CustomColumns customColumns;
 					double avgReturnRows;
 					double avgPartitionCount;
-					double failCount;
+					long failCount;
 					std::string dbName;
 					double avgWaitTime;
 					double weakConsistencyPercentage;
@@ -183,7 +183,7 @@ namespace AlibabaCloud
 					double distPlanPercentage;
 					bool dynamicSql;
 					std::vector<DataItem::SqlListItem> sqlList;
-					double remotePlans;
+					long remotePlans;
 					double avgWaitCount;
 					std::string userName;
 					double rpcCount;

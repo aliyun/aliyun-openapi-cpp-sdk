@@ -44,7 +44,7 @@ void DescribeSQLSamplesResult::parse(const std::string &payload)
 	{
 		DataItem dataObject;
 		if(!valueDataDataItem["RequestId"].isNull())
-			dataObject.requestId = valueDataDataItem["RequestId"].asString();
+			dataObject.requestId = std::stol(valueDataDataItem["RequestId"].asString());
 		if(!valueDataDataItem["TraceId"].isNull())
 			dataObject.traceId = valueDataDataItem["TraceId"].asString();
 		if(!valueDataDataItem["RequestTime"].isNull())
@@ -54,7 +54,7 @@ void DescribeSQLSamplesResult::parse(const std::string &payload)
 		if(!valueDataDataItem["ClientIp"].isNull())
 			dataObject.clientIp = valueDataDataItem["ClientIp"].asString();
 		if(!valueDataDataItem["ClientPort"].isNull())
-			dataObject.clientPort = valueDataDataItem["ClientPort"].asString();
+			dataObject.clientPort = std::stoi(valueDataDataItem["ClientPort"].asString());
 		if(!valueDataDataItem["DbName"].isNull())
 			dataObject.dbName = valueDataDataItem["DbName"].asString();
 		if(!valueDataDataItem["UserName"].isNull())
@@ -62,23 +62,23 @@ void DescribeSQLSamplesResult::parse(const std::string &payload)
 		if(!valueDataDataItem["SqlType"].isNull())
 			dataObject.sqlType = valueDataDataItem["SqlType"].asString();
 		if(!valueDataDataItem["PlanId"].isNull())
-			dataObject.planId = valueDataDataItem["PlanId"].asString();
+			dataObject.planId = std::stol(valueDataDataItem["PlanId"].asString());
 		if(!valueDataDataItem["AffectedRows"].isNull())
-			dataObject.affectedRows = valueDataDataItem["AffectedRows"].asString();
+			dataObject.affectedRows = std::stol(valueDataDataItem["AffectedRows"].asString());
 		if(!valueDataDataItem["ReturnRows"].isNull())
-			dataObject.returnRows = valueDataDataItem["ReturnRows"].asString();
+			dataObject.returnRows = std::stol(valueDataDataItem["ReturnRows"].asString());
 		if(!valueDataDataItem["PartitionCount"].isNull())
-			dataObject.partitionCount = valueDataDataItem["PartitionCount"].asString();
+			dataObject.partitionCount = std::stol(valueDataDataItem["PartitionCount"].asString());
 		if(!valueDataDataItem["RetCode"].isNull())
-			dataObject.retCode = valueDataDataItem["RetCode"].asString();
+			dataObject.retCode = std::stoi(valueDataDataItem["RetCode"].asString());
 		if(!valueDataDataItem["WaitEvent"].isNull())
 			dataObject.waitEvent = valueDataDataItem["WaitEvent"].asString();
 		if(!valueDataDataItem["WaitTime"].isNull())
 			dataObject.waitTime = valueDataDataItem["WaitTime"].asString();
 		if(!valueDataDataItem["WaitCount"].isNull())
-			dataObject.waitCount = valueDataDataItem["WaitCount"].asString();
+			dataObject.waitCount = std::stol(valueDataDataItem["WaitCount"].asString());
 		if(!valueDataDataItem["RpcCount"].isNull())
-			dataObject.rpcCount = valueDataDataItem["RpcCount"].asString();
+			dataObject.rpcCount = std::stol(valueDataDataItem["RpcCount"].asString());
 		if(!valueDataDataItem["PlanType"].isNull())
 			dataObject.planType = valueDataDataItem["PlanType"].asString();
 		if(!valueDataDataItem["Inner"].isNull())
@@ -122,25 +122,25 @@ void DescribeSQLSamplesResult::parse(const std::string &payload)
 		if(!valueDataDataItem["DiskReads"].isNull())
 			dataObject.diskReads = valueDataDataItem["DiskReads"].asString();
 		if(!valueDataDataItem["RetryCount"].isNull())
-			dataObject.retryCount = valueDataDataItem["RetryCount"].asString();
+			dataObject.retryCount = std::stol(valueDataDataItem["RetryCount"].asString());
 		if(!valueDataDataItem["TableScan"].isNull())
 			dataObject.tableScan = valueDataDataItem["TableScan"].asString() == "true";
 		if(!valueDataDataItem["ConsistencyLevel"].isNull())
 			dataObject.consistencyLevel = valueDataDataItem["ConsistencyLevel"].asString();
 		if(!valueDataDataItem["MemstoreReadRows"].isNull())
-			dataObject.memstoreReadRows = valueDataDataItem["MemstoreReadRows"].asString();
+			dataObject.memstoreReadRows = std::stol(valueDataDataItem["MemstoreReadRows"].asString());
 		if(!valueDataDataItem["ExpectedWorkerCount"].isNull())
-			dataObject.expectedWorkerCount = valueDataDataItem["ExpectedWorkerCount"].asString();
+			dataObject.expectedWorkerCount = std::stol(valueDataDataItem["ExpectedWorkerCount"].asString());
 		if(!valueDataDataItem["UsedWorkerCount"].isNull())
-			dataObject.usedWorkerCount = valueDataDataItem["UsedWorkerCount"].asString();
+			dataObject.usedWorkerCount = std::stol(valueDataDataItem["UsedWorkerCount"].asString());
 		if(!valueDataDataItem["SsstoreReadRows"].isNull())
-			dataObject.ssstoreReadRows = valueDataDataItem["SsstoreReadRows"].asString();
+			dataObject.ssstoreReadRows = std::stol(valueDataDataItem["SsstoreReadRows"].asString());
 		if(!valueDataDataItem["ObServerId"].isNull())
-			dataObject.obServerId = valueDataDataItem["ObServerId"].asString();
+			dataObject.obServerId = std::stol(valueDataDataItem["ObServerId"].asString());
 		if(!valueDataDataItem["ObUserId"].isNull())
-			dataObject.obUserId = valueDataDataItem["ObUserId"].asString();
+			dataObject.obUserId = std::stol(valueDataDataItem["ObUserId"].asString());
 		if(!valueDataDataItem["ObDbId"].isNull())
-			dataObject.obDbId = valueDataDataItem["ObDbId"].asString();
+			dataObject.obDbId = std::stol(valueDataDataItem["ObDbId"].asString());
 		if(!valueDataDataItem["Statement"].isNull())
 			dataObject.statement = valueDataDataItem["Statement"].asString();
 		if(!valueDataDataItem["TransHash"].isNull())
