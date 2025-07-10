@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				std::string getClientCert()const;
 				long getEndTime()const;
+				std::string getResourceGroupId()const;
 				long getCreateTime()const;
 				std::string getClientKey()const;
 				std::string getSslVpnClientCertId()const;
@@ -55,6 +56,7 @@ namespace AlibabaCloud
 				std::string status_;
 				std::string clientCert_;
 				long endTime_;
+				std::string resourceGroupId_;
 				long createTime_;
 				std::string clientKey_;
 				std::string sslVpnClientCertId_;

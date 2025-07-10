@@ -71,6 +71,32 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 			ipv6CidrBlocksObject.ipv6CidrBlock = valueIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].asString();
 		ipv6CidrBlocks_.push_back(ipv6CidrBlocksObject);
 	}
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
+	{
+		Tag tagsObject;
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
+	auto allAssociatedPropagationSourcesNode = value["AssociatedPropagationSources"]["AssociatedPropagationSourcesItem"];
+	for (auto valueAssociatedPropagationSourcesAssociatedPropagationSourcesItem : allAssociatedPropagationSourcesNode)
+	{
+		AssociatedPropagationSourcesItem associatedPropagationSourcesObject;
+		if(!valueAssociatedPropagationSourcesAssociatedPropagationSourcesItem["SourceType"].isNull())
+			associatedPropagationSourcesObject.sourceType = valueAssociatedPropagationSourcesAssociatedPropagationSourcesItem["SourceType"].asString();
+		if(!valueAssociatedPropagationSourcesAssociatedPropagationSourcesItem["SourceOwnerId"].isNull())
+			associatedPropagationSourcesObject.sourceOwnerId = std::stol(valueAssociatedPropagationSourcesAssociatedPropagationSourcesItem["SourceOwnerId"].asString());
+		if(!valueAssociatedPropagationSourcesAssociatedPropagationSourcesItem["SourceInstanceId"].isNull())
+			associatedPropagationSourcesObject.sourceInstanceId = valueAssociatedPropagationSourcesAssociatedPropagationSourcesItem["SourceInstanceId"].asString();
+		if(!valueAssociatedPropagationSourcesAssociatedPropagationSourcesItem["Status"].isNull())
+			associatedPropagationSourcesObject.status = valueAssociatedPropagationSourcesAssociatedPropagationSourcesItem["Status"].asString();
+		if(!valueAssociatedPropagationSourcesAssociatedPropagationSourcesItem["RoutePropagated"].isNull())
+			associatedPropagationSourcesObject.routePropagated = valueAssociatedPropagationSourcesAssociatedPropagationSourcesItem["RoutePropagated"].asString() == "true";
+		associatedPropagationSources_.push_back(associatedPropagationSourcesObject);
+	}
 	auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 	for (const auto &item : allVSwitchIds)
 		vSwitchIds_.push_back(item.asString());
@@ -116,22 +142,16 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 		supportIpv4Gateway_ = value["SupportIpv4Gateway"].asString() == "true";
 	if(!value["Ipv4GatewayId"].isNull())
 		ipv4GatewayId_ = value["Ipv4GatewayId"].asString();
+	if(!value["EnabledIpv6"].isNull())
+		enabledIpv6_ = value["EnabledIpv6"].asString() == "true";
+	if(!value["DnsHostnameStatus"].isNull())
+		dnsHostnameStatus_ = value["DnsHostnameStatus"].asString();
 
 }
 
-std::string DescribeVpcAttributeResult::getStatus()const
+std::vector<DescribeVpcAttributeResult::AssociatedPropagationSourcesItem> DescribeVpcAttributeResult::getAssociatedPropagationSources()const
 {
-	return status_;
-}
-
-bool DescribeVpcAttributeResult::getIsDefault()const
-{
-	return isDefault_;
-}
-
-std::string DescribeVpcAttributeResult::getDhcpOptionsSetStatus()const
-{
-	return dhcpOptionsSetStatus_;
+	return associatedPropagationSources_;
 }
 
 std::string DescribeVpcAttributeResult::getDescription()const
@@ -147,21 +167,6 @@ bool DescribeVpcAttributeResult::getClassicLinkEnabled()const
 std::string DescribeVpcAttributeResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
-}
-
-bool DescribeVpcAttributeResult::getSupportIpv4Gateway()const
-{
-	return supportIpv4Gateway_;
-}
-
-std::string DescribeVpcAttributeResult::getIpv4GatewayId()const
-{
-	return ipv4GatewayId_;
-}
-
-std::vector<std::string> DescribeVpcAttributeResult::getVSwitchIds()const
-{
-	return vSwitchIds_;
 }
 
 std::vector<std::string> DescribeVpcAttributeResult::getSecondaryCidrBlocks()const
@@ -184,6 +189,11 @@ std::string DescribeVpcAttributeResult::getNetworkAclNum()const
 	return networkAclNum_;
 }
 
+std::string DescribeVpcAttributeResult::getDnsHostnameStatus()const
+{
+	return dnsHostnameStatus_;
+}
+
 std::string DescribeVpcAttributeResult::getVRouterId()const
 {
 	return vRouterId_;
@@ -194,11 +204,6 @@ std::string DescribeVpcAttributeResult::getDhcpOptionsSetId()const
 	return dhcpOptionsSetId_;
 }
 
-std::string DescribeVpcAttributeResult::getVpcId()const
-{
-	return vpcId_;
-}
-
 long DescribeVpcAttributeResult::getOwnerId()const
 {
 	return ownerId_;
@@ -207,6 +212,56 @@ long DescribeVpcAttributeResult::getOwnerId()const
 std::vector<DescribeVpcAttributeResult::AssociatedCen> DescribeVpcAttributeResult::getAssociatedCens()const
 {
 	return associatedCens_;
+}
+
+bool DescribeVpcAttributeResult::getEnabledIpv6()const
+{
+	return enabledIpv6_;
+}
+
+std::vector<DescribeVpcAttributeResult::CloudResourceSetType> DescribeVpcAttributeResult::getCloudResources()const
+{
+	return cloudResources_;
+}
+
+std::vector<DescribeVpcAttributeResult::Tag> DescribeVpcAttributeResult::getTags()const
+{
+	return tags_;
+}
+
+std::string DescribeVpcAttributeResult::getStatus()const
+{
+	return status_;
+}
+
+bool DescribeVpcAttributeResult::getIsDefault()const
+{
+	return isDefault_;
+}
+
+std::string DescribeVpcAttributeResult::getDhcpOptionsSetStatus()const
+{
+	return dhcpOptionsSetStatus_;
+}
+
+bool DescribeVpcAttributeResult::getSupportIpv4Gateway()const
+{
+	return supportIpv4Gateway_;
+}
+
+std::string DescribeVpcAttributeResult::getIpv4GatewayId()const
+{
+	return ipv4GatewayId_;
+}
+
+std::vector<std::string> DescribeVpcAttributeResult::getVSwitchIds()const
+{
+	return vSwitchIds_;
+}
+
+std::string DescribeVpcAttributeResult::getVpcId()const
+{
+	return vpcId_;
 }
 
 std::string DescribeVpcAttributeResult::getCreationTime()const
@@ -232,10 +287,5 @@ std::vector<DescribeVpcAttributeResult::Ipv6CidrBlock> DescribeVpcAttributeResul
 std::string DescribeVpcAttributeResult::getIpv6CidrBlock()const
 {
 	return ipv6CidrBlock_;
-}
-
-std::vector<DescribeVpcAttributeResult::CloudResourceSetType> DescribeVpcAttributeResult::getCloudResources()const
-{
-	return cloudResources_;
 }
 

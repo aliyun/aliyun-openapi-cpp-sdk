@@ -36,6 +36,10 @@ public:
 		std::string cidr;
 		std::string description;
 	};
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateVpcPrefixListRequest();
 	~CreateVpcPrefixListRequest();
 	std::vector<PrefixListEntrys> getPrefixListEntrys() const;
@@ -54,6 +58,8 @@ public:
 	void setIpVersion(const std::string &ipVersion);
 	std::vector<PrefixListEntries> getPrefixListEntries() const;
 	void setPrefixListEntries(const std::vector<PrefixListEntries> &prefixListEntries);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
@@ -76,6 +82,7 @@ private:
 	std::string regionId_;
 	std::string ipVersion_;
 	std::vector<PrefixListEntries> prefixListEntries_;
+	std::vector<Tag> tag_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

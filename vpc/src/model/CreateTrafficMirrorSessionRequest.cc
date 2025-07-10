@@ -105,6 +105,20 @@ void CreateTrafficMirrorSessionRequest::setTrafficMirrorSourceIds(const std::vec
   trafficMirrorSourceIds_ = trafficMirrorSourceIds;
 }
 
+std::vector<CreateTrafficMirrorSessionRequest::Tag> CreateTrafficMirrorSessionRequest::getTag() const {
+  return tag_;
+}
+
+void CreateTrafficMirrorSessionRequest::setTag(const std::vector<CreateTrafficMirrorSessionRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
 bool CreateTrafficMirrorSessionRequest::getDryRun() const {
   return dryRun_;
 }
@@ -184,5 +198,14 @@ int CreateTrafficMirrorSessionRequest::getVirtualNetworkId() const {
 void CreateTrafficMirrorSessionRequest::setVirtualNetworkId(int virtualNetworkId) {
   virtualNetworkId_ = virtualNetworkId;
   setParameter(std::string("VirtualNetworkId"), std::to_string(virtualNetworkId));
+}
+
+int CreateTrafficMirrorSessionRequest::getTrafficMirrorSourceTruncateMode() const {
+  return trafficMirrorSourceTruncateMode_;
+}
+
+void CreateTrafficMirrorSessionRequest::setTrafficMirrorSourceTruncateMode(int trafficMirrorSourceTruncateMode) {
+  trafficMirrorSourceTruncateMode_ = trafficMirrorSourceTruncateMode;
+  setParameter(std::string("TrafficMirrorSourceTruncateMode"), std::to_string(trafficMirrorSourceTruncateMode));
 }
 

@@ -106,6 +106,15 @@ void ModifyRouteTableAttributesRequest::setOwnerAccount(const std::string &owner
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+bool ModifyRouteTableAttributesRequest::getRoutePropagationEnable() const {
+  return routePropagationEnable_;
+}
+
+void ModifyRouteTableAttributesRequest::setRoutePropagationEnable(bool routePropagationEnable) {
+  routePropagationEnable_ = routePropagationEnable;
+  setParameter(std::string("RoutePropagationEnable"), routePropagationEnable ? "true" : "false");
+}
+
 long ModifyRouteTableAttributesRequest::getOwnerId() const {
   return ownerId_;
 }

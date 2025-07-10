@@ -39,12 +39,14 @@ namespace AlibabaCloud
 				~CreatePublicIpAddressPoolResult();
 				std::string getResourceGroupId()const;
 				std::string getPulbicIpAddressPoolId()const;
+				std::string getPublicIpAddressPoolId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string resourceGroupId_;
 				std::string pulbicIpAddressPoolId_;
+				std::string publicIpAddressPoolId_;
 
 			};
 		}

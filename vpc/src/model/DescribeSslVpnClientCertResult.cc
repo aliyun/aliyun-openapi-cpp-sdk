@@ -61,6 +61,8 @@ void DescribeSslVpnClientCertResult::parse(const std::string &payload)
 		sslVpnServerId_ = value["SslVpnServerId"].asString();
 	if(!value["Name"].isNull())
 		name_ = value["Name"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -77,6 +79,11 @@ std::string DescribeSslVpnClientCertResult::getClientCert()const
 long DescribeSslVpnClientCertResult::getEndTime()const
 {
 	return endTime_;
+}
+
+std::string DescribeSslVpnClientCertResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 long DescribeSslVpnClientCertResult::getCreateTime()const

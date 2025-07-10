@@ -77,12 +77,59 @@ namespace AlibabaCloud
 					std::string value;
 					std::string key;
 				};
+				struct TunnelOptions
+				{
+					struct TunnelBgpConfig
+					{
+						std::string localAsn;
+						std::string tunnelCidr;
+						std::string bgpStatus;
+						std::string peerBgpIp;
+						std::string peerAsn;
+						std::string localBgpIp;
+					};
+					struct TunnelIkeConfig
+					{
+						std::string ikeAuthAlg;
+						std::string localId;
+						std::string ikeEncAlg;
+						std::string ikeVersion;
+						std::string ikeMode;
+						std::string ikeLifetime;
+						std::string psk;
+						std::string remoteId;
+						std::string ikePfs;
+					};
+					struct TunnelIpsecConfig
+					{
+						std::string ipsecPfs;
+						std::string ipsecEncAlg;
+						std::string ipsecAuthAlg;
+						std::string ipsecLifetime;
+					};
+					std::string status;
+					std::string customerGatewayId;
+					std::string tunnelId;
+					std::string zoneNo;
+					std::string role;
+					TunnelIkeConfig tunnelIkeConfig;
+					std::string internetIp;
+					TunnelBgpConfig tunnelBgpConfig;
+					std::string state;
+					std::string remoteCaCertificate;
+					int tunnelIndex;
+					std::string enableNatTraversal;
+					TunnelIpsecConfig tunnelIpsecConfig;
+					std::string enableDpd;
+				};
 
 
 				DescribeVpnConnectionResult();
 				explicit DescribeVpnConnectionResult(const std::string &payload);
 				~DescribeVpnConnectionResult();
 				std::string getAttachType()const;
+				std::string getResourceGroupId()const;
+				bool getEnableTunnelsBgp()const;
 				bool getCrossAccountAuthorized()const;
 				std::string getZoneNo()const;
 				std::string getName()const;
@@ -103,6 +150,7 @@ namespace AlibabaCloud
 				std::string getCustomerGatewayId()const;
 				long getCreateTime()const;
 				std::string getTransitRouterName()const;
+				std::vector<TunnelOptions> getTunnelOptionsSpecification()const;
 				VcoHealthCheck getVcoHealthCheck()const;
 				std::string getVpnGatewayId()const;
 				std::string getState()const;
@@ -114,6 +162,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string attachType_;
+				std::string resourceGroupId_;
+				bool enableTunnelsBgp_;
 				bool crossAccountAuthorized_;
 				std::string zoneNo_;
 				std::string name_;
@@ -134,6 +184,7 @@ namespace AlibabaCloud
 				std::string customerGatewayId_;
 				long createTime_;
 				std::string transitRouterName_;
+				std::vector<TunnelOptions> tunnelOptionsSpecification_;
 				VcoHealthCheck vcoHealthCheck_;
 				std::string vpnGatewayId_;
 				std::string state_;

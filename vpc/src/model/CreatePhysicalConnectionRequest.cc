@@ -115,6 +115,20 @@ void CreatePhysicalConnectionRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreatePhysicalConnectionRequest::Tag> CreatePhysicalConnectionRequest::getTag() const {
+  return tag_;
+}
+
+void CreatePhysicalConnectionRequest::setTag(const std::vector<CreatePhysicalConnectionRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string CreatePhysicalConnectionRequest::getRedundantPhysicalConnectionId() const {
   return redundantPhysicalConnectionId_;
 }
@@ -185,5 +199,13 @@ std::string CreatePhysicalConnectionRequest::getName() const {
 void CreatePhysicalConnectionRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+std::vector<std::string> CreatePhysicalConnectionRequest::getDeviceAdvancedCapacity() const {
+  return deviceAdvancedCapacity_;
+}
+
+void CreatePhysicalConnectionRequest::setDeviceAdvancedCapacity(const std::vector<std::string> &deviceAdvancedCapacity) {
+  deviceAdvancedCapacity_ = deviceAdvancedCapacity;
 }
 

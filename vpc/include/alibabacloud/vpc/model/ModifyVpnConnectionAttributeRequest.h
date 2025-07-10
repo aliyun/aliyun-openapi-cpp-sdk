@@ -28,6 +28,39 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT ModifyVpnConnectionAttributeRequest : public RpcServiceRequest {
 public:
+	struct TunnelOptionsSpecification {
+		struct TunnelIpsecConfig {
+			std::string ipsecPfs;
+			int ipsecLifetime;
+			std::string ipsecAuthAlg;
+			std::string ipsecEncAlg;
+		};
+		TunnelIpsecConfig tunnelIpsecConfig;
+		std::string role;
+		struct TunnelBgpConfig {
+			long localAsn;
+			std::string tunnelCidr;
+			std::string localBgpIp;
+		};
+		TunnelBgpConfig tunnelBgpConfig;
+		std::string remoteCaCertificate;
+		std::string tunnelId;
+		struct TunnelIkeConfig {
+			std::string ikeVersion;
+			std::string ikeMode;
+			std::string ikeAuthAlg;
+			std::string psk;
+			std::string ikePfs;
+			long ikeLifetime;
+			std::string localId;
+			std::string ikeEncAlg;
+			std::string remoteId;
+		};
+		TunnelIkeConfig tunnelIkeConfig;
+		bool enableNatTraversal;
+		bool enableDpd;
+		std::string customerGatewayId;
+	};
 	ModifyVpnConnectionAttributeRequest();
 	~ModifyVpnConnectionAttributeRequest();
 	std::string getIkeConfig() const;
@@ -46,6 +79,8 @@ public:
 	void setHealthCheckConfig(const std::string &healthCheckConfig);
 	std::string getLocalSubnet() const;
 	void setLocalSubnet(const std::string &localSubnet);
+	bool getEnableTunnelsBgp() const;
+	void setEnableTunnelsBgp(bool enableTunnelsBgp);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getRemoteSubnet() const;
@@ -60,6 +95,8 @@ public:
 	void setOwnerId(long ownerId);
 	bool getEnableDpd() const;
 	void setEnableDpd(bool enableDpd);
+	std::vector<TunnelOptionsSpecification> getTunnelOptionsSpecification() const;
+	void setTunnelOptionsSpecification(const std::vector<TunnelOptionsSpecification> &tunnelOptionsSpecification);
 	std::string getRemoteCaCertificate() const;
 	void setRemoteCaCertificate(const std::string &remoteCaCertificate);
 	std::string getVpnConnectionId() const;
@@ -78,6 +115,7 @@ private:
 	std::string bgpConfig_;
 	std::string healthCheckConfig_;
 	std::string localSubnet_;
+	bool enableTunnelsBgp_;
 	std::string regionId_;
 	std::string remoteSubnet_;
 	bool effectImmediately_;
@@ -85,6 +123,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	bool enableDpd_;
+	std::vector<TunnelOptionsSpecification> tunnelOptionsSpecification_;
 	std::string remoteCaCertificate_;
 	std::string vpnConnectionId_;
 	std::string name_;

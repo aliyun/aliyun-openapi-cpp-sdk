@@ -34,6 +34,15 @@ void DeleteIpv6InternetBandwidthRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DeleteIpv6InternetBandwidthRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void DeleteIpv6InternetBandwidthRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string DeleteIpv6InternetBandwidthRequest::getIpv6InternetBandwidthId() const {
   return ipv6InternetBandwidthId_;
 }
@@ -50,6 +59,15 @@ std::string DeleteIpv6InternetBandwidthRequest::getRegionId() const {
 void DeleteIpv6InternetBandwidthRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+bool DeleteIpv6InternetBandwidthRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DeleteIpv6InternetBandwidthRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getResourceOwnerAccount() const {

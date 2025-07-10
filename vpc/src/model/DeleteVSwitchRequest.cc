@@ -43,6 +43,15 @@ void DeleteVSwitchRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+bool DeleteVSwitchRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DeleteVSwitchRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string DeleteVSwitchRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

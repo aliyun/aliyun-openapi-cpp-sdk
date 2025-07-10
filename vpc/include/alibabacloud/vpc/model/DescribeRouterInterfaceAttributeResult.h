@@ -32,6 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VPC_EXPORT DescribeRouterInterfaceAttributeResult : public ServiceResult
 			{
 			public:
+				struct TagsItem
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				DescribeRouterInterfaceAttributeResult();
@@ -43,6 +48,7 @@ namespace AlibabaCloud
 				std::string getOppositeRouterId()const;
 				std::string getMessage()const;
 				std::string getEndTime()const;
+				std::string getResourceGroupId()const;
 				std::string getGmtModified()const;
 				std::string getRouterId()const;
 				std::string getBusinessStatus()const;
@@ -53,9 +59,11 @@ namespace AlibabaCloud
 				int getOppositeBandwidth()const;
 				int getBandwidth()const;
 				std::string getConnectedTime()const;
+				std::string getFastLinkMode()const;
 				std::string getReservationActiveTime()const;
 				int getHcThreshold()const;
 				std::string getReservationBandwidth()const;
+				std::vector<TagsItem> getTags()const;
 				std::string getStatus()const;
 				std::string getOppositeInterfaceOwnerId()const;
 				std::string getOppositeRegionId()const;
@@ -89,6 +97,7 @@ namespace AlibabaCloud
 				std::string oppositeRouterId_;
 				std::string message_;
 				std::string endTime_;
+				std::string resourceGroupId_;
 				std::string gmtModified_;
 				std::string routerId_;
 				std::string businessStatus_;
@@ -99,9 +108,11 @@ namespace AlibabaCloud
 				int oppositeBandwidth_;
 				int bandwidth_;
 				std::string connectedTime_;
+				std::string fastLinkMode_;
 				std::string reservationActiveTime_;
 				int hcThreshold_;
 				std::string reservationBandwidth_;
+				std::vector<TagsItem> tags_;
 				std::string status_;
 				std::string oppositeInterfaceOwnerId_;
 				std::string oppositeRegionId_;

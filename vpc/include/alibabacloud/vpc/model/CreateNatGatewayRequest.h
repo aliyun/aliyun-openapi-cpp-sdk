@@ -39,6 +39,10 @@ public:
 		std::string iSP;
 		int ipCount;
 	};
+	struct AccessMode {
+		std::string modeValue;
+		std::string tunnelType;
+	};
 	CreateNatGatewayRequest();
 	~CreateNatGatewayRequest();
 	long getResourceOwnerId() const;
@@ -79,6 +83,8 @@ public:
 	void setPrivateLinkMode(const std::string &privateLinkMode);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	bool getIsCreateDefaultRoute() const;
+	void setIsCreateDefaultRoute(bool isCreateDefaultRoute);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getInternetChargeType() const;
@@ -93,6 +99,8 @@ public:
 	void setEipBindMode(const std::string &eipBindMode);
 	std::string getPricingCycle() const;
 	void setPricingCycle(const std::string &pricingCycle);
+	AccessMode getAccessMode() const;
+	void setAccessMode(const AccessMode &accessMode);
 
 private:
 	long resourceOwnerId_;
@@ -114,6 +122,7 @@ private:
 	std::string ownerAccount_;
 	std::string privateLinkMode_;
 	long ownerId_;
+	bool isCreateDefaultRoute_;
 	std::string vSwitchId_;
 	std::string internetChargeType_;
 	std::string vpcId_;
@@ -121,6 +130,7 @@ private:
 	bool privateLinkEnabled_;
 	std::string eipBindMode_;
 	std::string pricingCycle_;
+	AccessMode accessMode_;
 };
 } // namespace Model
 } // namespace Vpc

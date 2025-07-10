@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT CreatePublicIpAddressPoolRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreatePublicIpAddressPoolRequest();
 	~CreatePublicIpAddressPoolRequest();
 	long getResourceOwnerId() const;
@@ -42,16 +46,24 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::vector<std::string> getZones() const;
+	void setZones(const std::vector<std::string> &zones);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getBizType() const;
+	void setBizType(const std::string &bizType);
 	std::string getName() const;
 	void setName(const std::string &name);
+	std::vector<std::string> getSecurityProtectionTypes() const;
+	void setSecurityProtectionTypes(const std::vector<std::string> &securityProtectionTypes);
 
 private:
 	long resourceOwnerId_;
@@ -60,11 +72,15 @@ private:
 	std::string description_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::vector<Tag> tag_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::vector<std::string> zones_;
 	long ownerId_;
+	std::string bizType_;
 	std::string name_;
+	std::vector<std::string> securityProtectionTypes_;
 };
 } // namespace Model
 } // namespace Vpc

@@ -32,6 +32,8 @@ public:
 	~DescribeEipGatewayInfoRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -40,16 +42,14 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 
 private:
 	long resourceOwnerId_;
+	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string instanceId_;
-	std::string regionId_;
 };
 } // namespace Model
 } // namespace Vpc

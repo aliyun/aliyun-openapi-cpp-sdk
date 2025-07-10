@@ -45,6 +45,11 @@ namespace AlibabaCloud
 						std::string eniType;
 						std::string vswitchId;
 					};
+					struct AccessMode
+					{
+						std::string tunnelType;
+						std::string modeValue;
+					};
 					struct IpList
 					{
 						std::string usingStatus;
@@ -64,6 +69,7 @@ namespace AlibabaCloud
 					std::string instanceChargeType;
 					std::string eipBindMode;
 					bool privateLinkEnabled;
+					std::string enableSessionLog;
 					std::vector<std::string> fullNatTableIds;
 					std::vector<std::string> bandwidthPackageIds;
 					std::string businessStatus;
@@ -86,6 +92,7 @@ namespace AlibabaCloud
 					std::vector<std::string> snatTableIds;
 					std::string creationTime;
 					bool icmpReplyEnabled;
+					AccessMode accessMode;
 					std::string regionId;
 					std::string spec;
 					std::string natGatewayId;

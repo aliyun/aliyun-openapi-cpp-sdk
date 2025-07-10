@@ -67,6 +67,8 @@ void DescribeIpv6GatewaysResult::parse(const std::string &payload)
 			ipv6GatewaysObject.regionId = valueIpv6GatewaysIpv6Gateway["RegionId"].asString();
 		if(!valueIpv6GatewaysIpv6Gateway["ResourceGroupId"].isNull())
 			ipv6GatewaysObject.resourceGroupId = valueIpv6GatewaysIpv6Gateway["ResourceGroupId"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["OwnerId"].isNull())
+			ipv6GatewaysObject.ownerId = std::stol(valueIpv6GatewaysIpv6Gateway["OwnerId"].asString());
 		auto allTagsNode = valueIpv6GatewaysIpv6Gateway["Tags"]["Tag"];
 		for (auto valueIpv6GatewaysIpv6GatewayTagsTag : allTagsNode)
 		{

@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getIPv6CidrType() const;
 	void setIPv6CidrType(const std::string &iPv6CidrType);
+	std::string getIpamPoolId() const;
+	void setIpamPoolId(const std::string &ipamPoolId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getIpv6Isp() const;
@@ -48,6 +50,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getIPv6CidrBlock() const;
 	void setIPv6CidrBlock(const std::string &iPv6CidrBlock);
+	int getSecondaryCidrMask() const;
+	void setSecondaryCidrMask(int secondaryCidrMask);
 	std::string getSecondaryCidrBlock() const;
 	void setSecondaryCidrBlock(const std::string &secondaryCidrBlock);
 	std::string getVpcId() const;
@@ -56,6 +60,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string iPv6CidrType_;
+	std::string ipamPoolId_;
 	std::string regionId_;
 	std::string ipv6Isp_;
 	std::string ipVersion_;
@@ -63,6 +68,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string iPv6CidrBlock_;
+	int secondaryCidrMask_;
 	std::string secondaryCidrBlock_;
 	std::string vpcId_;
 };

@@ -52,6 +52,15 @@ void DescribeRouterInterfacesRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeRouterInterfacesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeRouterInterfacesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeRouterInterfacesRequest::getRegionId() const {
   return regionId_;
 }
@@ -86,6 +95,20 @@ long DescribeRouterInterfacesRequest::getOwnerId() const {
 void DescribeRouterInterfacesRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::vector<DescribeRouterInterfacesRequest::Tags> DescribeRouterInterfacesRequest::getTags() const {
+  return tags_;
+}
+
+void DescribeRouterInterfacesRequest::setTags(const std::vector<DescribeRouterInterfacesRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
 }
 
 std::vector<DescribeRouterInterfacesRequest::Filter> DescribeRouterInterfacesRequest::getFilter() const {

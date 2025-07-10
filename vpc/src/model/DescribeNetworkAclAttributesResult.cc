@@ -72,6 +72,8 @@ void DescribeNetworkAclAttributesResult::parse(const std::string &payload)
 			ingressAclEntryObject.description = networkAclAttributeNodeIngressAclEntriesIngressAclEntry["Description"].asString();
 		if(!networkAclAttributeNodeIngressAclEntriesIngressAclEntry["SourceCidrIp"].isNull())
 			ingressAclEntryObject.sourceCidrIp = networkAclAttributeNodeIngressAclEntriesIngressAclEntry["SourceCidrIp"].asString();
+		if(!networkAclAttributeNodeIngressAclEntriesIngressAclEntry["IpVersion"].isNull())
+			ingressAclEntryObject.ipVersion = networkAclAttributeNodeIngressAclEntriesIngressAclEntry["IpVersion"].asString();
 		if(!networkAclAttributeNodeIngressAclEntriesIngressAclEntry["Protocol"].isNull())
 			ingressAclEntryObject.protocol = networkAclAttributeNodeIngressAclEntriesIngressAclEntry["Protocol"].asString();
 		if(!networkAclAttributeNodeIngressAclEntriesIngressAclEntry["Port"].isNull())
@@ -96,6 +98,8 @@ void DescribeNetworkAclAttributesResult::parse(const std::string &payload)
 			egressAclEntryObject.protocol = networkAclAttributeNodeEgressAclEntriesEgressAclEntry["Protocol"].asString();
 		if(!networkAclAttributeNodeEgressAclEntriesEgressAclEntry["DestinationCidrIp"].isNull())
 			egressAclEntryObject.destinationCidrIp = networkAclAttributeNodeEgressAclEntriesEgressAclEntry["DestinationCidrIp"].asString();
+		if(!networkAclAttributeNodeEgressAclEntriesEgressAclEntry["IpVersion"].isNull())
+			egressAclEntryObject.ipVersion = networkAclAttributeNodeEgressAclEntriesEgressAclEntry["IpVersion"].asString();
 		if(!networkAclAttributeNodeEgressAclEntriesEgressAclEntry["Port"].isNull())
 			egressAclEntryObject.port = networkAclAttributeNodeEgressAclEntriesEgressAclEntry["Port"].asString();
 		networkAclAttribute_.egressAclEntries.push_back(egressAclEntryObject);

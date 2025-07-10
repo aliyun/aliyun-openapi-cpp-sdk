@@ -39,6 +39,16 @@ void DescribeRouterInterfaceAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTagsNode = value["Tags"]["TagsItem"];
+	for (auto valueTagsTagsItem : allTagsNode)
+	{
+		TagsItem tagsObject;
+		if(!valueTagsTagsItem["Key"].isNull())
+			tagsObject.key = valueTagsTagsItem["Key"].asString();
+		if(!valueTagsTagsItem["Value"].isNull())
+			tagsObject.value = valueTagsTagsItem["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
 	if(!value["ReservationActiveTime"].isNull())
 		reservationActiveTime_ = value["ReservationActiveTime"].asString();
 	if(!value["HealthCheckTargetIp"].isNull())
@@ -123,6 +133,10 @@ void DescribeRouterInterfaceAttributeResult::parse(const std::string &payload)
 		hasReservationData_ = value["HasReservationData"].asString();
 	if(!value["AccessPointId"].isNull())
 		accessPointId_ = value["AccessPointId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["FastLinkMode"].isNull())
+		fastLinkMode_ = value["FastLinkMode"].asString();
 
 }
 
@@ -154,6 +168,11 @@ std::string DescribeRouterInterfaceAttributeResult::getMessage()const
 std::string DescribeRouterInterfaceAttributeResult::getEndTime()const
 {
 	return endTime_;
+}
+
+std::string DescribeRouterInterfaceAttributeResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string DescribeRouterInterfaceAttributeResult::getGmtModified()const
@@ -206,6 +225,11 @@ std::string DescribeRouterInterfaceAttributeResult::getConnectedTime()const
 	return connectedTime_;
 }
 
+std::string DescribeRouterInterfaceAttributeResult::getFastLinkMode()const
+{
+	return fastLinkMode_;
+}
+
 std::string DescribeRouterInterfaceAttributeResult::getReservationActiveTime()const
 {
 	return reservationActiveTime_;
@@ -219,6 +243,11 @@ int DescribeRouterInterfaceAttributeResult::getHcThreshold()const
 std::string DescribeRouterInterfaceAttributeResult::getReservationBandwidth()const
 {
 	return reservationBandwidth_;
+}
+
+std::vector<DescribeRouterInterfaceAttributeResult::TagsItem> DescribeRouterInterfaceAttributeResult::getTags()const
+{
+	return tags_;
 }
 
 std::string DescribeRouterInterfaceAttributeResult::getStatus()const

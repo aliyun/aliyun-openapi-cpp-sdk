@@ -36,6 +36,8 @@ public:
 	void setVpnGatewayId(const std::string &vpnGatewayId);
 	std::string getCallerBid() const;
 	void setCallerBid(const std::string &callerBid);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
@@ -51,6 +53,7 @@ private:
 	long resourceOwnerId_;
 	std::string vpnGatewayId_;
 	std::string callerBid_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string nextToken_;
 	std::string ipsecServerName_;

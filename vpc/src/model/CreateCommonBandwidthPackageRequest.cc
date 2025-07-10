@@ -88,6 +88,20 @@ void CreateCommonBandwidthPackageRequest::setZone(const std::string &zone) {
   setParameter(std::string("Zone"), zone);
 }
 
+std::vector<CreateCommonBandwidthPackageRequest::Tag> CreateCommonBandwidthPackageRequest::getTag() const {
+  return tag_;
+}
+
+void CreateCommonBandwidthPackageRequest::setTag(const std::vector<CreateCommonBandwidthPackageRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string CreateCommonBandwidthPackageRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

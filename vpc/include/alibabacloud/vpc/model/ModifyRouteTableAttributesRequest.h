@@ -48,6 +48,8 @@ public:
 	void setBandwidth(const std::string &bandwidth);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	bool getRoutePropagationEnable() const;
+	void setRoutePropagationEnable(bool routePropagationEnable);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getKbpsBandwidth() const;
@@ -65,6 +67,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string bandwidth_;
 	std::string ownerAccount_;
+	bool routePropagationEnable_;
 	long ownerId_;
 	std::string kbpsBandwidth_;
 	std::string resourceBid_;

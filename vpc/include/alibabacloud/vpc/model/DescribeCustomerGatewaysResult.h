@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					};
 					std::string description;
 					std::string customerGatewayId;
+					std::string resourceGroupId;
 					long createTime;
 					std::string authKey;
 					std::string ipAddress;

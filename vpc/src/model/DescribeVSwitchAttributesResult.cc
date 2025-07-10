@@ -94,6 +94,8 @@ void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 		vSwitchName_ = value["VSwitchName"].asString();
 	if(!value["ShareType"].isNull())
 		shareType_ = value["ShareType"].asString();
+	if(!value["EnabledIpv6"].isNull())
+		enabledIpv6_ = value["EnabledIpv6"].asString() == "true";
 
 }
 
@@ -165,6 +167,11 @@ std::string DescribeVSwitchAttributesResult::getCreationTime()const
 std::string DescribeVSwitchAttributesResult::getVSwitchName()const
 {
 	return vSwitchName_;
+}
+
+bool DescribeVSwitchAttributesResult::getEnabledIpv6()const
+{
+	return enabledIpv6_;
 }
 
 std::string DescribeVSwitchAttributesResult::getIpv6CidrBlock()const

@@ -25,6 +25,15 @@ AllocateEipAddressRequest::AllocateEipAddressRequest()
 
 AllocateEipAddressRequest::~AllocateEipAddressRequest() {}
 
+std::string AllocateEipAddressRequest::getIpAddress() const {
+  return ipAddress_;
+}
+
+void AllocateEipAddressRequest::setIpAddress(const std::string &ipAddress) {
+  ipAddress_ = ipAddress;
+  setParameter(std::string("IpAddress"), ipAddress);
+}
+
 long AllocateEipAddressRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
@@ -86,6 +95,29 @@ std::string AllocateEipAddressRequest::getRegionId() const {
 void AllocateEipAddressRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string AllocateEipAddressRequest::getZone() const {
+  return zone_;
+}
+
+void AllocateEipAddressRequest::setZone(const std::string &zone) {
+  zone_ = zone;
+  setParameter(std::string("Zone"), zone);
+}
+
+std::vector<AllocateEipAddressRequest::Tag> AllocateEipAddressRequest::getTag() const {
+  return tag_;
+}
+
+void AllocateEipAddressRequest::setTag(const std::vector<AllocateEipAddressRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string AllocateEipAddressRequest::getNetmode() const {
@@ -167,6 +199,15 @@ long AllocateEipAddressRequest::getActivityId() const {
 void AllocateEipAddressRequest::setActivityId(long activityId) {
   activityId_ = activityId;
   setParameter(std::string("ActivityId"), std::to_string(activityId));
+}
+
+std::string AllocateEipAddressRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void AllocateEipAddressRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string AllocateEipAddressRequest::getInternetChargeType() const {

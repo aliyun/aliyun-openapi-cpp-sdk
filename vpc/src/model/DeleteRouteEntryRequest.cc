@@ -61,6 +61,15 @@ void DeleteRouteEntryRequest::setRouteTableId(const std::string &routeTableId) {
   setParameter(std::string("RouteTableId"), routeTableId);
 }
 
+bool DeleteRouteEntryRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DeleteRouteEntryRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string DeleteRouteEntryRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

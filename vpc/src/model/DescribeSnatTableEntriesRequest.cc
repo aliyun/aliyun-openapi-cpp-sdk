@@ -34,6 +34,17 @@ void DescribeSnatTableEntriesRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::vector<DescribeSnatTableEntriesRequest::std::string> DescribeSnatTableEntriesRequest::getNetworkInterfaceIds() const {
+  return networkInterfaceIds_;
+}
+
+void DescribeSnatTableEntriesRequest::setNetworkInterfaceIds(const std::vector<DescribeSnatTableEntriesRequest::std::string> &networkInterfaceIds) {
+  networkInterfaceIds_ = networkInterfaceIds;
+  for(int dep1 = 0; dep1 != networkInterfaceIds.size(); dep1++) {
+    setParameter(std::string("NetworkInterfaceIds") + "." + std::to_string(dep1 + 1), networkInterfaceIds[dep1]);
+  }
+}
+
 std::string DescribeSnatTableEntriesRequest::getSourceCIDR() const {
   return sourceCIDR_;
 }

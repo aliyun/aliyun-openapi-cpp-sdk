@@ -61,6 +61,15 @@ void UnassociateNetworkAclRequest::setNetworkAclId(const std::string &networkAcl
   setParameter(std::string("NetworkAclId"), networkAclId);
 }
 
+bool UnassociateNetworkAclRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void UnassociateNetworkAclRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::vector<UnassociateNetworkAclRequest::Resource> UnassociateNetworkAclRequest::getResource() const {
   return resource_;
 }
@@ -82,6 +91,15 @@ std::string UnassociateNetworkAclRequest::getResourceOwnerAccount() const {
 void UnassociateNetworkAclRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string UnassociateNetworkAclRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void UnassociateNetworkAclRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
 long UnassociateNetworkAclRequest::getOwnerId() const {

@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string policy;
 						std::string entryType;
 						std::string description;
+						std::string ipVersion;
 						std::string sourceCidrIp;
 						std::string port;
 						std::string networkAclEntryName;
@@ -51,6 +52,7 @@ namespace AlibabaCloud
 						std::string entryType;
 						std::string description;
 						std::string destinationCidrIp;
+						std::string ipVersion;
 						std::string port;
 						std::string networkAclEntryName;
 						std::string protocol;

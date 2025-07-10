@@ -34,15 +34,6 @@ void AssociateRouteTablesWithVpcGatewayEndpointRequest::setResourceOwnerId(long 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-bool AssociateRouteTablesWithVpcGatewayEndpointRequest::getDryRun() const {
-  return dryRun_;
-}
-
-void AssociateRouteTablesWithVpcGatewayEndpointRequest::setDryRun(bool dryRun) {
-  dryRun_ = dryRun;
-  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
-}
-
 std::string AssociateRouteTablesWithVpcGatewayEndpointRequest::getClientToken() const {
   return clientToken_;
 }
@@ -52,15 +43,6 @@ void AssociateRouteTablesWithVpcGatewayEndpointRequest::setClientToken(const std
   setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string AssociateRouteTablesWithVpcGatewayEndpointRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void AssociateRouteTablesWithVpcGatewayEndpointRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string AssociateRouteTablesWithVpcGatewayEndpointRequest::getEndpointId() const {
   return endpointId_;
 }
@@ -68,6 +50,33 @@ std::string AssociateRouteTablesWithVpcGatewayEndpointRequest::getEndpointId() c
 void AssociateRouteTablesWithVpcGatewayEndpointRequest::setEndpointId(const std::string &endpointId) {
   endpointId_ = endpointId;
   setParameter(std::string("EndpointId"), endpointId);
+}
+
+std::string AssociateRouteTablesWithVpcGatewayEndpointRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AssociateRouteTablesWithVpcGatewayEndpointRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+bool AssociateRouteTablesWithVpcGatewayEndpointRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void AssociateRouteTablesWithVpcGatewayEndpointRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
+std::string AssociateRouteTablesWithVpcGatewayEndpointRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void AssociateRouteTablesWithVpcGatewayEndpointRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
 std::string AssociateRouteTablesWithVpcGatewayEndpointRequest::getOwnerAccount() const {
@@ -86,15 +95,6 @@ long AssociateRouteTablesWithVpcGatewayEndpointRequest::getOwnerId() const {
 void AssociateRouteTablesWithVpcGatewayEndpointRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string AssociateRouteTablesWithVpcGatewayEndpointRequest::getRegionId() const {
-  return regionId_;
-}
-
-void AssociateRouteTablesWithVpcGatewayEndpointRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 std::vector<std::string> AssociateRouteTablesWithVpcGatewayEndpointRequest::getRouteTableIds() const {

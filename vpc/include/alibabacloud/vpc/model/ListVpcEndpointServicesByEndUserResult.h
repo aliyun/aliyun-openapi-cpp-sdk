@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				explicit ListVpcEndpointServicesByEndUserResult(const std::string &payload);
 				~ListVpcEndpointServicesByEndUserResult();
 				std::vector<Service> getServices()const;
+				std::string getTotalCount()const;
 				std::string getNextToken()const;
 				long getMaxResults()const;
 
@@ -53,6 +54,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<Service> services_;
+				std::string totalCount_;
 				std::string nextToken_;
 				long maxResults_;
 

@@ -43,6 +43,7 @@ namespace AlibabaCloud
 				explicit DescribeIpv6GatewayAttributeResult(const std::string &payload);
 				~DescribeIpv6GatewayAttributeResult();
 				std::string getStatus()const;
+				std::string getGatewayRouteTableId()const;
 				std::string getDescription()const;
 				std::string getResourceGroupId()const;
 				std::string getInstanceChargeType()const;
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 				std::string getBusinessStatus()const;
 				std::string getName()const;
 				std::string getVpcId()const;
+				long getOwnerId()const;
 				std::string getExpiredTime()const;
 				std::string getCreationTime()const;
 				std::string getRegionId()const;
@@ -60,6 +62,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
+				std::string gatewayRouteTableId_;
 				std::string description_;
 				std::string resourceGroupId_;
 				std::string instanceChargeType_;
@@ -67,6 +70,7 @@ namespace AlibabaCloud
 				std::string businessStatus_;
 				std::string name_;
 				std::string vpcId_;
+				long ownerId_;
 				std::string expiredTime_;
 				std::string creationTime_;
 				std::string regionId_;

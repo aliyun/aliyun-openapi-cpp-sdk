@@ -52,6 +52,15 @@ void CompletePhysicalConnectionLOARequest::setClientToken(const std::string &cli
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string CompletePhysicalConnectionLOARequest::getLineSPContactInfo() const {
+  return lineSPContactInfo_;
+}
+
+void CompletePhysicalConnectionLOARequest::setLineSPContactInfo(const std::string &lineSPContactInfo) {
+  lineSPContactInfo_ = lineSPContactInfo;
+  setParameter(std::string("LineSPContactInfo"), lineSPContactInfo);
+}
+
 std::string CompletePhysicalConnectionLOARequest::getRegionId() const {
   return regionId_;
 }
@@ -59,6 +68,24 @@ std::string CompletePhysicalConnectionLOARequest::getRegionId() const {
 void CompletePhysicalConnectionLOARequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+bool CompletePhysicalConnectionLOARequest::getFinishWork() const {
+  return finishWork_;
+}
+
+void CompletePhysicalConnectionLOARequest::setFinishWork(bool finishWork) {
+  finishWork_ = finishWork;
+  setParameter(std::string("FinishWork"), finishWork ? "true" : "false");
+}
+
+std::string CompletePhysicalConnectionLOARequest::getLineServiceProvider() const {
+  return lineServiceProvider_;
+}
+
+void CompletePhysicalConnectionLOARequest::setLineServiceProvider(const std::string &lineServiceProvider) {
+  lineServiceProvider_ = lineServiceProvider;
+  setParameter(std::string("LineServiceProvider"), lineServiceProvider);
 }
 
 std::string CompletePhysicalConnectionLOARequest::getLineLabel() const {

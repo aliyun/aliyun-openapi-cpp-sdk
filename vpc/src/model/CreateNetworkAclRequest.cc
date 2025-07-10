@@ -61,6 +61,29 @@ void CreateNetworkAclRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreateNetworkAclRequest::Tag> CreateNetworkAclRequest::getTag() const {
+  return tag_;
+}
+
+void CreateNetworkAclRequest::setTag(const std::vector<CreateNetworkAclRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
+bool CreateNetworkAclRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void CreateNetworkAclRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string CreateNetworkAclRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -68,6 +91,15 @@ std::string CreateNetworkAclRequest::getResourceOwnerAccount() const {
 void CreateNetworkAclRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string CreateNetworkAclRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void CreateNetworkAclRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
 std::string CreateNetworkAclRequest::getNetworkAclName() const {

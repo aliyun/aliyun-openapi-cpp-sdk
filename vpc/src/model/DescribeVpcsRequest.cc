@@ -43,6 +43,15 @@ void DescribeVpcsRequest::setVpcOwnerId(long vpcOwnerId) {
   setParameter(std::string("VpcOwnerId"), std::to_string(vpcOwnerId));
 }
 
+bool DescribeVpcsRequest::getEnableIpv6() const {
+  return enableIpv6_;
+}
+
+void DescribeVpcsRequest::setEnableIpv6(bool enableIpv6) {
+  enableIpv6_ = enableIpv6;
+  setParameter(std::string("EnableIpv6"), enableIpv6 ? "true" : "false");
+}
+
 int DescribeVpcsRequest::getPageNumber() const {
   return pageNumber_;
 }

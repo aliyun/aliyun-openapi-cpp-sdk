@@ -40,29 +40,37 @@ namespace AlibabaCloud
 						std::string bandwidthPackageIpRelationStatus;
 						std::string ipAddress;
 					};
-					std::string status;
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string description;
 					int serviceManaged;
 					std::string resourceGroupId;
 					std::string instanceChargeType;
-					std::string iSP;
-					std::string hasReservationData;
-					bool deletionProtection;
 					std::string businessStatus;
-					std::string reservationInternetChargeType;
-					std::string internetChargeType;
 					std::string name;
 					std::string reservationOrderType;
 					std::string bandwidth;
 					std::string expiredTime;
-					std::string creationTime;
-					std::vector<std::string> securityProtectionTypes;
 					std::vector<CommonBandwidthPackage::PublicIpAddresse> publicIpAddresses;
 					std::string bandwidthPackageId;
 					int ratio;
-					std::string regionId;
 					std::string reservationActiveTime;
 					std::string reservationBandwidth;
+					std::vector<CommonBandwidthPackage::Tag> tags;
+					std::string status;
+					std::string zone;
+					std::string iSP;
+					std::string hasReservationData;
+					std::string bizType;
+					bool deletionProtection;
+					std::string reservationInternetChargeType;
+					std::string internetChargeType;
+					std::string creationTime;
+					std::vector<std::string> securityProtectionTypes;
+					std::string regionId;
 				};
 
 

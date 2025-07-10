@@ -43,6 +43,15 @@ void DescribeVirtualBorderRoutersRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeVirtualBorderRoutersRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeVirtualBorderRoutersRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeVirtualBorderRoutersRequest::getRegionId() const {
   return regionId_;
 }
@@ -86,6 +95,20 @@ long DescribeVirtualBorderRoutersRequest::getOwnerId() const {
 void DescribeVirtualBorderRoutersRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::vector<DescribeVirtualBorderRoutersRequest::Tags> DescribeVirtualBorderRoutersRequest::getTags() const {
+  return tags_;
+}
+
+void DescribeVirtualBorderRoutersRequest::setTags(const std::vector<DescribeVirtualBorderRoutersRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
 }
 
 std::vector<DescribeVirtualBorderRoutersRequest::Filter> DescribeVirtualBorderRoutersRequest::getFilter() const {

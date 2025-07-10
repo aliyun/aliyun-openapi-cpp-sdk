@@ -52,6 +52,16 @@ void ModifyNatGatewayAttributeRequest::setDescription(const std::string &descrip
   setParameter(std::string("Description"), description);
 }
 
+ModifyNatGatewayAttributeRequest::LogDelivery ModifyNatGatewayAttributeRequest::getLogDelivery() const {
+  return logDelivery_;
+}
+
+void ModifyNatGatewayAttributeRequest::setLogDelivery(const ModifyNatGatewayAttributeRequest::LogDelivery &logDelivery) {
+  logDelivery_ = logDelivery;
+  setParameter(std::string("LogDelivery") + ".LogDeliveryType", logDelivery.logDeliveryType);
+  setParameter(std::string("LogDelivery") + ".LogDestination", logDelivery.logDestination);
+}
+
 bool ModifyNatGatewayAttributeRequest::getIcmpReplyEnabled() const {
   return icmpReplyEnabled_;
 }
@@ -113,6 +123,15 @@ long ModifyNatGatewayAttributeRequest::getOwnerId() const {
 void ModifyNatGatewayAttributeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+bool ModifyNatGatewayAttributeRequest::getEnableSessionLog() const {
+  return enableSessionLog_;
+}
+
+void ModifyNatGatewayAttributeRequest::setEnableSessionLog(bool enableSessionLog) {
+  enableSessionLog_ = enableSessionLog;
+  setParameter(std::string("EnableSessionLog"), enableSessionLog ? "true" : "false");
 }
 
 std::string ModifyNatGatewayAttributeRequest::getName() const {

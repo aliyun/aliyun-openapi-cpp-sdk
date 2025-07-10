@@ -97,6 +97,15 @@ void CreateRouteEntryRequest::setRouteTableId(const std::string &routeTableId) {
   setParameter(std::string("RouteTableId"), routeTableId);
 }
 
+bool CreateRouteEntryRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void CreateRouteEntryRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string CreateRouteEntryRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

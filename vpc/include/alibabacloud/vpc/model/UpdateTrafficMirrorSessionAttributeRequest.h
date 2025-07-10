@@ -60,8 +60,12 @@ public:
 	void setTrafficMirrorTargetId(const std::string &trafficMirrorTargetId);
 	std::string getTrafficMirrorFilterId() const;
 	void setTrafficMirrorFilterId(const std::string &trafficMirrorFilterId);
+	int getPacketLength() const;
+	void setPacketLength(int packetLength);
 	int getVirtualNetworkId() const;
 	void setVirtualNetworkId(int virtualNetworkId);
+	int getTrafficMirrorSourceTruncateMode() const;
+	void setTrafficMirrorSourceTruncateMode(int trafficMirrorSourceTruncateMode);
 
 private:
 	std::string trafficMirrorTargetType_;
@@ -79,7 +83,9 @@ private:
 	long ownerId_;
 	std::string trafficMirrorTargetId_;
 	std::string trafficMirrorFilterId_;
+	int packetLength_;
 	int virtualNetworkId_;
+	int trafficMirrorSourceTruncateMode_;
 };
 } // namespace Model
 } // namespace Vpc

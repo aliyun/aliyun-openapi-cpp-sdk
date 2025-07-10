@@ -40,6 +40,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getZone() const;
+	void setZone(const std::string &zone);
 	std::string getNetmode() const;
 	void setNetmode(const std::string &netmode);
 	std::string getResourceOwnerAccount() const;
@@ -61,6 +63,7 @@ private:
 	std::string isp_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::string zone_;
 	std::string netmode_;
 	std::string resourceOwnerAccount_;
 	std::string bandwidth_;

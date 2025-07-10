@@ -69,6 +69,10 @@ void ListTrafficMirrorSessionsResult::parse(const std::string &payload)
 			trafficMirrorSessionsObject.trafficMirrorSessionName = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionName"].asString();
 		if(!valueTrafficMirrorSessionsTrafficMirrorSession["ResourceGroupId"].isNull())
 			trafficMirrorSessionsObject.resourceGroupId = valueTrafficMirrorSessionsTrafficMirrorSession["ResourceGroupId"].asString();
+		if(!valueTrafficMirrorSessionsTrafficMirrorSession["CreationTime"].isNull())
+			trafficMirrorSessionsObject.creationTime = valueTrafficMirrorSessionsTrafficMirrorSession["CreationTime"].asString();
+		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSourceTruncateMode"].isNull())
+			trafficMirrorSessionsObject.trafficMirrorSourceTruncateMode = std::stoi(valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSourceTruncateMode"].asString());
 		auto allTagsNode = valueTrafficMirrorSessionsTrafficMirrorSession["Tags"]["Tag"];
 		for (auto valueTrafficMirrorSessionsTrafficMirrorSessionTagsTag : allTagsNode)
 		{

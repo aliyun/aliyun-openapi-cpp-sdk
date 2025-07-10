@@ -36,6 +36,7 @@ public:
 		std::string description;
 		std::string protocol;
 		std::string destinationCidrIp;
+		std::string ipVersion;
 		std::string port;
 	};
 	struct IngressAclEntries {
@@ -44,6 +45,7 @@ public:
 		std::string networkAclEntryName;
 		std::string policy;
 		std::string sourceCidrIp;
+		std::string ipVersion;
 		std::string description;
 		std::string protocol;
 		std::string port;
@@ -62,8 +64,12 @@ public:
 	void setNetworkAclId(const std::string &networkAclId);
 	bool getUpdateIngressAclEntries() const;
 	void setUpdateIngressAclEntries(bool updateIngressAclEntries);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
 	bool getUpdateEgressAclEntries() const;
 	void setUpdateEgressAclEntries(bool updateEgressAclEntries);
 	long getOwnerId() const;
@@ -78,7 +84,9 @@ private:
 	std::string regionId_;
 	std::string networkAclId_;
 	bool updateIngressAclEntries_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
 	bool updateEgressAclEntries_;
 	long ownerId_;
 	std::vector<IngressAclEntries> ingressAclEntries_;

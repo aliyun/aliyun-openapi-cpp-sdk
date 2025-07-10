@@ -79,6 +79,10 @@ void DescribeVpcsResult::parse(const std::string &payload)
 			vpcsObject.ipv6CidrBlock = valueVpcsVpc["Ipv6CidrBlock"].asString();
 		if(!valueVpcsVpc["CenStatus"].isNull())
 			vpcsObject.cenStatus = valueVpcsVpc["CenStatus"].asString();
+		if(!valueVpcsVpc["EnabledIpv6"].isNull())
+			vpcsObject.enabledIpv6 = valueVpcsVpc["EnabledIpv6"].asString() == "true";
+		if(!valueVpcsVpc["DnsHostnameStatus"].isNull())
+			vpcsObject.dnsHostnameStatus = valueVpcsVpc["DnsHostnameStatus"].asString();
 		auto allTagsNode = valueVpcsVpc["Tags"]["Tag"];
 		for (auto valueVpcsVpcTagsTag : allTagsNode)
 		{

@@ -79,6 +79,15 @@ void EnablePhysicalConnectionRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+bool EnablePhysicalConnectionRequest::getByPassSp() const {
+  return byPassSp_;
+}
+
+void EnablePhysicalConnectionRequest::setByPassSp(bool byPassSp) {
+  byPassSp_ = byPassSp;
+  setParameter(std::string("ByPassSp"), byPassSp ? "true" : "false");
+}
+
 std::string EnablePhysicalConnectionRequest::getPhysicalConnectionId() const {
   return physicalConnectionId_;
 }

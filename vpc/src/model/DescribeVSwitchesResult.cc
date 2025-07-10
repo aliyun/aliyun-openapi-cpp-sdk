@@ -73,6 +73,8 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 			vSwitchesObject.vSwitchName = valueVSwitchesVSwitch["VSwitchName"].asString();
 		if(!valueVSwitchesVSwitch["ShareType"].isNull())
 			vSwitchesObject.shareType = valueVSwitchesVSwitch["ShareType"].asString();
+		if(!valueVSwitchesVSwitch["EnabledIpv6"].isNull())
+			vSwitchesObject.enabledIpv6 = valueVSwitchesVSwitch["EnabledIpv6"].asString() == "true";
 		auto allTagsNode = valueVSwitchesVSwitch["Tags"]["Tag"];
 		for (auto valueVSwitchesVSwitchTagsTag : allTagsNode)
 		{

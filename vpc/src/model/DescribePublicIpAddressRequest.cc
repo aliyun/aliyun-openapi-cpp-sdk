@@ -70,6 +70,15 @@ void DescribePublicIpAddressRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string DescribePublicIpAddressRequest::getIpVersion() const {
+  return ipVersion_;
+}
+
+void DescribePublicIpAddressRequest::setIpVersion(const std::string &ipVersion) {
+  ipVersion_ = ipVersion;
+  setParameter(std::string("IpVersion"), ipVersion);
+}
+
 std::string DescribePublicIpAddressRequest::getBandwidth() const {
   return bandwidth_;
 }

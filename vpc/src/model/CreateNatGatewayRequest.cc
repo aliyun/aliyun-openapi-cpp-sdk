@@ -209,6 +209,15 @@ void CreateNatGatewayRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+bool CreateNatGatewayRequest::getIsCreateDefaultRoute() const {
+  return isCreateDefaultRoute_;
+}
+
+void CreateNatGatewayRequest::setIsCreateDefaultRoute(bool isCreateDefaultRoute) {
+  isCreateDefaultRoute_ = isCreateDefaultRoute;
+  setParameter(std::string("IsCreateDefaultRoute"), isCreateDefaultRoute ? "true" : "false");
+}
+
 std::string CreateNatGatewayRequest::getVSwitchId() const {
   return vSwitchId_;
 }
@@ -270,5 +279,15 @@ std::string CreateNatGatewayRequest::getPricingCycle() const {
 void CreateNatGatewayRequest::setPricingCycle(const std::string &pricingCycle) {
   pricingCycle_ = pricingCycle;
   setParameter(std::string("PricingCycle"), pricingCycle);
+}
+
+CreateNatGatewayRequest::AccessMode CreateNatGatewayRequest::getAccessMode() const {
+  return accessMode_;
+}
+
+void CreateNatGatewayRequest::setAccessMode(const CreateNatGatewayRequest::AccessMode &accessMode) {
+  accessMode_ = accessMode;
+  setParameter(std::string("AccessMode") + ".ModeValue", accessMode.modeValue);
+  setParameter(std::string("AccessMode") + ".TunnelType", accessMode.tunnelType);
 }
 

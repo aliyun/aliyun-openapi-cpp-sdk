@@ -58,10 +58,16 @@ namespace AlibabaCloud
 						long cenOwnerId;
 						std::string cenId;
 					};
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
 					long minRxInterval;
 					std::string peerGatewayIp;
 					std::string description;
 					std::string routeTableId;
+					std::string resourceGroupId;
 					std::vector<VirtualBorderRouterType::AssociatedPhysicalConnection> associatedPhysicalConnections;
 					std::string activationTime;
 					std::string physicalConnectionId;
@@ -75,13 +81,17 @@ namespace AlibabaCloud
 					bool enableIpv6;
 					std::string recoveryTime;
 					std::string peeringIpv6SubnetMask;
+					std::string ecrAttatchStatus;
+					std::string ecrId;
 					std::vector<VirtualBorderRouterType::AssociatedCen> associatedCens;
 					int bandwidth;
 					std::string eccId;
 					std::string localIpv6GatewayIp;
+					std::vector<VirtualBorderRouterType::TagsItem> tags;
 					int vlanId;
 					std::string status;
 					std::string circuitCode;
+					bool sitelinkEnable;
 					long minTxInterval;
 					std::string peerIpv6GatewayIp;
 					long detectMultiplier;
@@ -90,6 +100,7 @@ namespace AlibabaCloud
 					std::string localGatewayIp;
 					std::string creationTime;
 					std::string accessPointId;
+					std::string ecrOwnerId;
 					std::string pConnVbrExpireTime;
 					std::string physicalConnectionBusinessStatus;
 					std::string cloudBoxInstanceId;

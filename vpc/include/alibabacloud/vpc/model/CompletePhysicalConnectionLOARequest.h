@@ -36,8 +36,14 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getLineSPContactInfo() const;
+	void setLineSPContactInfo(const std::string &lineSPContactInfo);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getFinishWork() const;
+	void setFinishWork(bool finishWork);
+	std::string getLineServiceProvider() const;
+	void setLineServiceProvider(const std::string &lineServiceProvider);
 	std::string getLineLabel() const;
 	void setLineLabel(const std::string &lineLabel);
 	std::string getResourceOwnerAccount() const;
@@ -53,7 +59,10 @@ private:
 	std::string lineCode_;
 	long resourceOwnerId_;
 	std::string clientToken_;
+	std::string lineSPContactInfo_;
 	std::string regionId_;
+	bool finishWork_;
+	std::string lineServiceProvider_;
 	std::string lineLabel_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

@@ -32,10 +32,14 @@ public:
 	~DeleteIpv6InternetBandwidthRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getIpv6InternetBandwidthId() const;
 	void setIpv6InternetBandwidthId(const std::string &ipv6InternetBandwidthId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -47,8 +51,10 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string clientToken_;
 	std::string ipv6InternetBandwidthId_;
 	std::string regionId_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

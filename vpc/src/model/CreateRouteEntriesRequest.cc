@@ -43,6 +43,15 @@ void CreateRouteEntriesRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+bool CreateRouteEntriesRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void CreateRouteEntriesRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string CreateRouteEntriesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -85,7 +94,7 @@ void CreateRouteEntriesRequest::setRouteEntries(const std::vector<CreateRouteEnt
     setParameter(routeEntriesObjStr + ".NextHop", routeEntriesObj.nextHop);
     setParameter(routeEntriesObjStr + ".NextHopType", routeEntriesObj.nextHopType);
     setParameter(routeEntriesObjStr + ".Name", routeEntriesObj.name);
-    setParameter(routeEntriesObjStr + ".Describption", routeEntriesObj.describption);
+    setParameter(routeEntriesObjStr + ".Description", routeEntriesObj.description);
   }
 }
 

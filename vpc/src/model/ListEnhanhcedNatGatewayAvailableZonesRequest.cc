@@ -70,6 +70,18 @@ void ListEnhanhcedNatGatewayAvailableZonesRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::vector<ListEnhanhcedNatGatewayAvailableZonesRequest::Filter> ListEnhanhcedNatGatewayAvailableZonesRequest::getFilter() const {
+  return filter_;
+}
+
+void ListEnhanhcedNatGatewayAvailableZonesRequest::setFilter(const std::vector<ListEnhanhcedNatGatewayAvailableZonesRequest::Filter> &filter) {
+  filter_ = filter;
+  for(int dep1 = 0; dep1 != filter.size(); dep1++) {
+    setParameter(std::string("Filter") + "." + std::to_string(dep1 + 1) + ".Key", filter[dep1].key);
+    setParameter(std::string("Filter") + "." + std::to_string(dep1 + 1) + ".Value", filter[dep1].value);
+  }
+}
+
 std::string ListEnhanhcedNatGatewayAvailableZonesRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

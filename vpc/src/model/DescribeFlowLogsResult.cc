@@ -73,6 +73,18 @@ void DescribeFlowLogsResult::parse(const std::string &payload)
 			flowLogsObject.serviceType = valueFlowLogsFlowLog["ServiceType"].asString();
 		if(!valueFlowLogsFlowLog["ResourceGroupId"].isNull())
 			flowLogsObject.resourceGroupId = valueFlowLogsFlowLog["ResourceGroupId"].asString();
+		if(!valueFlowLogsFlowLog["FlowLogDeliverStatus"].isNull())
+			flowLogsObject.flowLogDeliverStatus = valueFlowLogsFlowLog["FlowLogDeliverStatus"].asString();
+		if(!valueFlowLogsFlowLog["FlowLogDeliverErrorMessage"].isNull())
+			flowLogsObject.flowLogDeliverErrorMessage = valueFlowLogsFlowLog["FlowLogDeliverErrorMessage"].asString();
+		if(!valueFlowLogsFlowLog["IpVersion"].isNull())
+			flowLogsObject.ipVersion = valueFlowLogsFlowLog["IpVersion"].asString();
+		if(!valueFlowLogsFlowLog["TrafficAnalyzerId"].isNull())
+			flowLogsObject.trafficAnalyzerId = valueFlowLogsFlowLog["TrafficAnalyzerId"].asString();
+		if(!valueFlowLogsFlowLog["EnableTrafficAnalyze"].isNull())
+			flowLogsObject.enableTrafficAnalyze = valueFlowLogsFlowLog["EnableTrafficAnalyze"].asString() == "true";
+		if(!valueFlowLogsFlowLog["EnableLogDelivery"].isNull())
+			flowLogsObject.enableLogDelivery = valueFlowLogsFlowLog["EnableLogDelivery"].asString() == "true";
 		auto allTagsNode = valueFlowLogsFlowLog["Tags"]["Tag"];
 		for (auto valueFlowLogsFlowLogTagsTag : allTagsNode)
 		{

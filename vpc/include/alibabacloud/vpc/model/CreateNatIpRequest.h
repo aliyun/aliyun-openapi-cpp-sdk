@@ -30,8 +30,6 @@ class ALIBABACLOUD_VPC_EXPORT CreateNatIpRequest : public RpcServiceRequest {
 public:
 	CreateNatIpRequest();
 	~CreateNatIpRequest();
-	std::string getNatIpCidrId() const;
-	void setNatIpCidrId(const std::string &natIpCidrId);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getNatIpName() const;
@@ -58,7 +56,6 @@ public:
 	void setNatIp(const std::string &natIp);
 
 private:
-	std::string natIpCidrId_;
 	long resourceOwnerId_;
 	std::string natIpName_;
 	std::string clientToken_;

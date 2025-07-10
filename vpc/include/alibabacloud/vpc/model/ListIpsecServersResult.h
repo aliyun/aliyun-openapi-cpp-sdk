@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					std::string iDaaSInstanceId;
 					bool multiFactorAuthEnabled;
 					int maxConnections;
+					std::string resourceGroupId;
 					std::string ipsecServerId;
 					std::string psk;
 					std::string ipsecServerName;

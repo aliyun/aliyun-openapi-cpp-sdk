@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT CreateRouteTableRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateRouteTableRequest();
 	~CreateRouteTableRequest();
 	long getResourceOwnerId() const;
@@ -42,6 +46,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getAssociateType() const;
 	void setAssociateType(const std::string &associateType);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -58,6 +64,7 @@ private:
 	std::string routeTableName_;
 	std::string regionId_;
 	std::string associateType_;
+	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

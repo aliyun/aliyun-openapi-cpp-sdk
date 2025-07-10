@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct VirtualPhysicalConnection
 				{
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string description;
 					std::string endTime;
 					std::string resourceGroupId;
@@ -49,6 +54,7 @@ namespace AlibabaCloud
 					std::string adLocation;
 					std::string virtualPhysicalConnectionStatus;
 					long bandwidth;
+					std::vector<VirtualPhysicalConnection::TagsItem> tags;
 					std::string vlanId;
 					std::string status;
 					std::string circuitCode;

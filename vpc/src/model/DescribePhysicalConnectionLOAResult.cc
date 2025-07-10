@@ -60,6 +60,10 @@ void DescribePhysicalConnectionLOAResult::parse(const std::string &payload)
 		physicalConnectionLOAType_.lineType = physicalConnectionLOATypeNode["LineType"].asString();
 	if(!physicalConnectionLOATypeNode["CompanyName"].isNull())
 		physicalConnectionLOAType_.companyName = physicalConnectionLOATypeNode["CompanyName"].asString();
+	if(!physicalConnectionLOATypeNode["LineServiceProvider"].isNull())
+		physicalConnectionLOAType_.lineServiceProvider = physicalConnectionLOATypeNode["LineServiceProvider"].asString();
+	if(!physicalConnectionLOATypeNode["LineSPContactInfo"].isNull())
+		physicalConnectionLOAType_.lineSPContactInfo = physicalConnectionLOATypeNode["LineSPContactInfo"].asString();
 	auto allPMInfoNode = physicalConnectionLOATypeNode["PMInfo"]["PMInfoItem"];
 	for (auto physicalConnectionLOATypeNodePMInfoPMInfoItem : allPMInfoNode)
 	{

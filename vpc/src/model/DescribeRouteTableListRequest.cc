@@ -156,3 +156,12 @@ void DescribeRouteTableListRequest::setVpcId(const std::string &vpcId) {
   setParameter(std::string("VpcId"), vpcId);
 }
 
+std::string DescribeRouteTableListRequest::getRouteTableType() const {
+  return routeTableType_;
+}
+
+void DescribeRouteTableListRequest::setRouteTableType(const std::string &routeTableType) {
+  routeTableType_ = routeTableType;
+  setParameter(std::string("RouteTableType"), routeTableType);
+}
+

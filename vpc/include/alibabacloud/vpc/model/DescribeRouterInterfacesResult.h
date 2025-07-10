@@ -34,11 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct RouterInterfaceType
 				{
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string oppositeInterfaceId;
 					std::string oppositeInterfaceStatus;
 					std::string description;
 					std::string oppositeRouterId;
 					std::string endTime;
+					std::string resourceGroupId;
 					std::string routerId;
 					std::string businessStatus;
 					std::string name;
@@ -51,6 +57,7 @@ namespace AlibabaCloud
 					std::string reservationActiveTime;
 					int hcThreshold;
 					std::string reservationBandwidth;
+					std::vector<RouterInterfaceType::TagsItem> tags;
 					std::string status;
 					std::string oppositeInterfaceOwnerId;
 					std::string oppositeRegionId;

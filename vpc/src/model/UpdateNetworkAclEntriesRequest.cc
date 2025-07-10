@@ -50,6 +50,7 @@ void UpdateNetworkAclEntriesRequest::setEgressAclEntries(const std::vector<Updat
     setParameter(egressAclEntriesObjStr + ".Description", egressAclEntriesObj.description);
     setParameter(egressAclEntriesObjStr + ".Protocol", egressAclEntriesObj.protocol);
     setParameter(egressAclEntriesObjStr + ".DestinationCidrIp", egressAclEntriesObj.destinationCidrIp);
+    setParameter(egressAclEntriesObjStr + ".IpVersion", egressAclEntriesObj.ipVersion);
     setParameter(egressAclEntriesObjStr + ".Port", egressAclEntriesObj.port);
   }
 }
@@ -90,6 +91,15 @@ void UpdateNetworkAclEntriesRequest::setUpdateIngressAclEntries(bool updateIngre
   setParameter(std::string("UpdateIngressAclEntries"), updateIngressAclEntries ? "true" : "false");
 }
 
+bool UpdateNetworkAclEntriesRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void UpdateNetworkAclEntriesRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string UpdateNetworkAclEntriesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -97,6 +107,15 @@ std::string UpdateNetworkAclEntriesRequest::getResourceOwnerAccount() const {
 void UpdateNetworkAclEntriesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string UpdateNetworkAclEntriesRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void UpdateNetworkAclEntriesRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
 bool UpdateNetworkAclEntriesRequest::getUpdateEgressAclEntries() const {
@@ -131,6 +150,7 @@ void UpdateNetworkAclEntriesRequest::setIngressAclEntries(const std::vector<Upda
     setParameter(ingressAclEntriesObjStr + ".NetworkAclEntryName", ingressAclEntriesObj.networkAclEntryName);
     setParameter(ingressAclEntriesObjStr + ".Policy", ingressAclEntriesObj.policy);
     setParameter(ingressAclEntriesObjStr + ".SourceCidrIp", ingressAclEntriesObj.sourceCidrIp);
+    setParameter(ingressAclEntriesObjStr + ".IpVersion", ingressAclEntriesObj.ipVersion);
     setParameter(ingressAclEntriesObjStr + ".Description", ingressAclEntriesObj.description);
     setParameter(ingressAclEntriesObjStr + ".Protocol", ingressAclEntriesObj.protocol);
     setParameter(ingressAclEntriesObjStr + ".Port", ingressAclEntriesObj.port);

@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT CreateVirtualPhysicalConnectionRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateVirtualPhysicalConnectionRequest();
 	~CreateVirtualPhysicalConnectionRequest();
 	long getVpconnAliUid() const;
@@ -46,6 +50,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	std::string getToken() const;
@@ -64,6 +70,7 @@ private:
 	std::string spec_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::vector<Tag> tag_;
 	bool dryRun_;
 	std::string token_;
 	std::string physicalConnectionId_;

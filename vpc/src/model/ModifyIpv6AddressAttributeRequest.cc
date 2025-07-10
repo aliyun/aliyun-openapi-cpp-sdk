@@ -34,6 +34,15 @@ void ModifyIpv6AddressAttributeRequest::setResourceOwnerId(long resourceOwnerId)
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyIpv6AddressAttributeRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void ModifyIpv6AddressAttributeRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string ModifyIpv6AddressAttributeRequest::getDescription() const {
   return description_;
 }
@@ -50,6 +59,15 @@ std::string ModifyIpv6AddressAttributeRequest::getRegionId() const {
 void ModifyIpv6AddressAttributeRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+bool ModifyIpv6AddressAttributeRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ModifyIpv6AddressAttributeRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 std::string ModifyIpv6AddressAttributeRequest::getResourceOwnerAccount() const {

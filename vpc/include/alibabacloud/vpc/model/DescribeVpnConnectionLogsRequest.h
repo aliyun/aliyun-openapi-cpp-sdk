@@ -50,6 +50,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getVpnConnectionId() const;
 	void setVpnConnectionId(const std::string &vpnConnectionId);
+	std::string getTunnelId() const;
+	void setTunnelId(const std::string &tunnelId);
 	int getTo() const;
 	void setTo(int to);
 
@@ -64,6 +66,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string vpnConnectionId_;
+	std::string tunnelId_;
 	int to_;
 };
 } // namespace Model

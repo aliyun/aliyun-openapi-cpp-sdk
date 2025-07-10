@@ -53,6 +53,8 @@ public:
 	void setHostOperator(const std::string &hostOperator);
 	std::string getName() const;
 	void setName(const std::string &name);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
 	long resourceOwnerId_;
@@ -65,6 +67,7 @@ private:
 	std::vector<Filter> filter_;
 	std::string hostOperator_;
 	std::string name_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Vpc

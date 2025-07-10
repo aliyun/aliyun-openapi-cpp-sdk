@@ -63,7 +63,22 @@ void DescribeVcoRouteEntriesResult::parse(const std::string &payload)
 			vcoRouteEntriesObject.community = valueVcoRouteEntriesVcoRouteEntrie["Community"].asString();
 		if(!valueVcoRouteEntriesVcoRouteEntrie["Source"].isNull())
 			vcoRouteEntriesObject.source = valueVcoRouteEntriesVcoRouteEntrie["Source"].asString();
+		auto allNextHopTunnelIdList = value["NextHopTunnelIdList"]["NextHopTunnelId"];
+		for (auto value : allNextHopTunnelIdList)
+			vcoRouteEntriesObject.nextHopTunnelIdList.push_back(value.asString());
 		vcoRouteEntries_.push_back(vcoRouteEntriesObject);
+	}
+	auto allVpnRouteCountsNode = value["VpnRouteCounts"]["VpnRouteCount"];
+	for (auto valueVpnRouteCountsVpnRouteCount : allVpnRouteCountsNode)
+	{
+		VpnRouteCount vpnRouteCountsObject;
+		if(!valueVpnRouteCountsVpnRouteCount["RouteEntryType"].isNull())
+			vpnRouteCountsObject.routeEntryType = valueVpnRouteCountsVpnRouteCount["RouteEntryType"].asString();
+		if(!valueVpnRouteCountsVpnRouteCount["RouteCount"].isNull())
+			vpnRouteCountsObject.routeCount = std::stoi(valueVpnRouteCountsVpnRouteCount["RouteCount"].asString());
+		if(!valueVpnRouteCountsVpnRouteCount["Source"].isNull())
+			vpnRouteCountsObject.source = valueVpnRouteCountsVpnRouteCount["Source"].asString();
+		vpnRouteCounts_.push_back(vpnRouteCountsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
@@ -92,5 +107,10 @@ int DescribeVcoRouteEntriesResult::getPageNumber()const
 std::vector<DescribeVcoRouteEntriesResult::VcoRouteEntrie> DescribeVcoRouteEntriesResult::getVcoRouteEntries()const
 {
 	return vcoRouteEntries_;
+}
+
+std::vector<DescribeVcoRouteEntriesResult::VpnRouteCount> DescribeVcoRouteEntriesResult::getVpnRouteCounts()const
+{
+	return vpnRouteCounts_;
 }
 

@@ -47,12 +47,19 @@ void CreateVpcGatewayEndpointResult::parse(const std::string &payload)
 		endpointName_ = value["EndpointName"].asString();
 	if(!value["CreationTime"].isNull())
 		creationTime_ = value["CreationTime"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
 std::string CreateVpcGatewayEndpointResult::getEndpointName()const
 {
 	return endpointName_;
+}
+
+std::string CreateVpcGatewayEndpointResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string CreateVpcGatewayEndpointResult::getServiceName()const

@@ -39,6 +39,16 @@ void GetVpcGatewayEndpointAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
+	{
+		Tag tagsObject;
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
 	auto allRouteTables = value["RouteTables"]["RouteTable"];
 	for (const auto &item : allRouteTables)
 		routeTables_.push_back(item.asString());
@@ -58,6 +68,8 @@ void GetVpcGatewayEndpointAttributeResult::parse(const std::string &payload)
 		creationTime_ = value["CreationTime"].asString();
 	if(!value["EndpointStatus"].isNull())
 		endpointStatus_ = value["EndpointStatus"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -74,6 +86,11 @@ std::string GetVpcGatewayEndpointAttributeResult::getEndpointName()const
 std::string GetVpcGatewayEndpointAttributeResult::getVpcId()const
 {
 	return vpcId_;
+}
+
+std::string GetVpcGatewayEndpointAttributeResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string GetVpcGatewayEndpointAttributeResult::getServiceName()const
@@ -104,5 +121,10 @@ std::string GetVpcGatewayEndpointAttributeResult::getPolicyDocument()const
 std::string GetVpcGatewayEndpointAttributeResult::getEndpointDescription()const
 {
 	return endpointDescription_;
+}
+
+std::vector<GetVpcGatewayEndpointAttributeResult::Tag> GetVpcGatewayEndpointAttributeResult::getTags()const
+{
+	return tags_;
 }
 

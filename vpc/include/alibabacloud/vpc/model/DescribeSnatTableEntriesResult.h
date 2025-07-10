@@ -35,11 +35,14 @@ namespace AlibabaCloud
 				struct SnatTableEntry
 				{
 					std::string status;
+					std::string eipAffinity;
 					std::string sourceVSwitchId;
 					std::string snatEntryName;
 					std::string sourceCIDR;
 					std::string snatEntryId;
 					std::string snatIp;
+					std::string networkInterfaceId;
+					std::string natGatewayId;
 					std::string snatTableId;
 				};
 

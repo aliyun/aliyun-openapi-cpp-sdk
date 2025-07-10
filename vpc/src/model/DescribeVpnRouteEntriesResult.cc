@@ -63,7 +63,21 @@ void DescribeVpnRouteEntriesResult::parse(const std::string &payload)
 			vpnRouteEntriesObject.source = valueVpnRouteEntriesVpnRouteEntry["Source"].asString();
 		if(!valueVpnRouteEntriesVpnRouteEntry["VpnInstanceId"].isNull())
 			vpnRouteEntriesObject.vpnInstanceId = valueVpnRouteEntriesVpnRouteEntry["VpnInstanceId"].asString();
+		if(!valueVpnRouteEntriesVpnRouteEntry["NextHopTunnelId"].isNull())
+			vpnRouteEntriesObject.nextHopTunnelId = valueVpnRouteEntriesVpnRouteEntry["NextHopTunnelId"].asString();
 		vpnRouteEntries_.push_back(vpnRouteEntriesObject);
+	}
+	auto allVpnRouteCountsNode = value["VpnRouteCounts"]["VpnRouteCount"];
+	for (auto valueVpnRouteCountsVpnRouteCount : allVpnRouteCountsNode)
+	{
+		VpnRouteCount vpnRouteCountsObject;
+		if(!valueVpnRouteCountsVpnRouteCount["RouteEntryType"].isNull())
+			vpnRouteCountsObject.routeEntryType = valueVpnRouteCountsVpnRouteCount["RouteEntryType"].asString();
+		if(!valueVpnRouteCountsVpnRouteCount["RouteCount"].isNull())
+			vpnRouteCountsObject.routeCount = std::stoi(valueVpnRouteCountsVpnRouteCount["RouteCount"].asString());
+		if(!valueVpnRouteCountsVpnRouteCount["Source"].isNull())
+			vpnRouteCountsObject.source = valueVpnRouteCountsVpnRouteCount["Source"].asString();
+		vpnRouteCounts_.push_back(vpnRouteCountsObject);
 	}
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
@@ -92,5 +106,10 @@ int DescribeVpnRouteEntriesResult::getPageSize()const
 int DescribeVpnRouteEntriesResult::getPageNumber()const
 {
 	return pageNumber_;
+}
+
+std::vector<DescribeVpnRouteEntriesResult::VpnRouteCount> DescribeVpnRouteEntriesResult::getVpnRouteCounts()const
+{
+	return vpnRouteCounts_;
 }
 

@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT CreateDhcpOptionsSetRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateDhcpOptionsSetRequest();
 	~CreateDhcpOptionsSetRequest();
 	std::string getBootFileName() const;
@@ -38,12 +42,16 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getTFTPServerName() const;
 	void setTFTPServerName(const std::string &tFTPServerName);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getLeaseTime() const;
 	void setLeaseTime(const std::string &leaseTime);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getDomainNameServers() const;
 	void setDomainNameServers(const std::string &domainNameServers);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getDhcpOptionsSetDescription() const;
 	void setDhcpOptionsSetDescription(const std::string &dhcpOptionsSetDescription);
 	bool getDryRun() const;
@@ -66,9 +74,11 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string tFTPServerName_;
+	std::string resourceGroupId_;
 	std::string leaseTime_;
 	std::string regionId_;
 	std::string domainNameServers_;
+	std::vector<Tag> tag_;
 	std::string dhcpOptionsSetDescription_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;

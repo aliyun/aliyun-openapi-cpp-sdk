@@ -36,6 +36,8 @@ public:
 	~DescribeVSwitchesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	bool getEnableIpv6() const;
+	void setEnableIpv6(bool enableIpv6);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getResourceGroupId() const;
@@ -71,6 +73,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	bool enableIpv6_;
 	int pageNumber_;
 	std::string resourceGroupId_;
 	std::string regionId_;

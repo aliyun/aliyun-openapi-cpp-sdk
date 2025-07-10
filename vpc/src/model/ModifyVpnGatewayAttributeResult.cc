@@ -67,6 +67,14 @@ void ModifyVpnGatewayAttributeResult::parse(const std::string &payload)
 		businessStatus_ = value["BusinessStatus"].asString();
 	if(!value["Name"].isNull())
 		name_ = value["Name"].asString();
+	if(!value["DisasterRecoveryInternetIp"].isNull())
+		disasterRecoveryInternetIp_ = value["DisasterRecoveryInternetIp"].asString();
+	if(!value["DisasterRecoveryVSwitchId"].isNull())
+		disasterRecoveryVSwitchId_ = value["DisasterRecoveryVSwitchId"].asString();
+	if(!value["SslVpnInternetIp"].isNull())
+		sslVpnInternetIp_ = value["SslVpnInternetIp"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -85,9 +93,19 @@ bool ModifyVpnGatewayAttributeResult::getEnableBgp()const
 	return enableBgp_;
 }
 
+std::string ModifyVpnGatewayAttributeResult::getDisasterRecoveryVSwitchId()const
+{
+	return disasterRecoveryVSwitchId_;
+}
+
 long ModifyVpnGatewayAttributeResult::getEndTime()const
 {
 	return endTime_;
+}
+
+std::string ModifyVpnGatewayAttributeResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 long ModifyVpnGatewayAttributeResult::getCreateTime()const
@@ -133,6 +151,16 @@ std::string ModifyVpnGatewayAttributeResult::getInternetIp()const
 std::string ModifyVpnGatewayAttributeResult::getVpnGatewayId()const
 {
 	return vpnGatewayId_;
+}
+
+std::string ModifyVpnGatewayAttributeResult::getDisasterRecoveryInternetIp()const
+{
+	return disasterRecoveryInternetIp_;
+}
+
+std::string ModifyVpnGatewayAttributeResult::getSslVpnInternetIp()const
+{
+	return sslVpnInternetIp_;
 }
 
 std::string ModifyVpnGatewayAttributeResult::getSpec()const

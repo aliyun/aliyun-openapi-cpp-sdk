@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string descritpion;
 					std::string ipCount;
 					std::string instanceId;
+					std::string zone;
 					std::string creationTime;
 					std::string regionId;
 					std::string segment;

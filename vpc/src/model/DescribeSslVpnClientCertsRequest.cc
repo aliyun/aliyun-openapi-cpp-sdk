@@ -52,6 +52,15 @@ void DescribeSslVpnClientCertsRequest::setSslVpnServerId(const std::string &sslV
   setParameter(std::string("SslVpnServerId"), sslVpnServerId);
 }
 
+std::string DescribeSslVpnClientCertsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeSslVpnClientCertsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeSslVpnClientCertsRequest::getRegionId() const {
   return regionId_;
 }

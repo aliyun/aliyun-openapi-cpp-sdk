@@ -38,8 +38,12 @@ public:
 	void setSnatIp(const std::string &snatIp);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getEipAffinity() const;
+	void setEipAffinity(int eipAffinity);
 	std::string getSnatEntryId() const;
 	void setSnatEntryId(const std::string &snatEntryId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -50,18 +54,23 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getSnatEntryName() const;
 	void setSnatEntryName(const std::string &snatEntryName);
+	std::string getNetworkInterfaceId() const;
+	void setNetworkInterfaceId(const std::string &networkInterfaceId);
 
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string snatIp_;
 	std::string regionId_;
+	int eipAffinity_;
 	std::string snatEntryId_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string snatTableId_;
 	long ownerId_;
 	std::string snatEntryName_;
+	std::string networkInterfaceId_;
 };
 } // namespace Model
 } // namespace Vpc

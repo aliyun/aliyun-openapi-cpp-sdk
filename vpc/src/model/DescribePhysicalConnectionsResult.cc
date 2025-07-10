@@ -113,6 +113,20 @@ void DescribePhysicalConnectionsResult::parse(const std::string &payload)
 			physicalConnectionSetObject.expectSpec = valuePhysicalConnectionSetPhysicalConnectionType["ExpectSpec"].asString();
 		if(!valuePhysicalConnectionSetPhysicalConnectionType["ResourceGroupId"].isNull())
 			physicalConnectionSetObject.resourceGroupId = valuePhysicalConnectionSetPhysicalConnectionType["ResourceGroupId"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["AdDetailLocation"].isNull())
+			physicalConnectionSetObject.adDetailLocation = valuePhysicalConnectionSetPhysicalConnectionType["AdDetailLocation"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["QosId"].isNull())
+			physicalConnectionSetObject.qosId = valuePhysicalConnectionSetPhysicalConnectionType["QosId"].asString();
+		auto allTagsNode = valuePhysicalConnectionSetPhysicalConnectionType["Tags"]["tagsItem"];
+		for (auto valuePhysicalConnectionSetPhysicalConnectionTypeTagstagsItem : allTagsNode)
+		{
+			PhysicalConnectionType::TagsItem tagsObject;
+			if(!valuePhysicalConnectionSetPhysicalConnectionTypeTagstagsItem["Key"].isNull())
+				tagsObject.key = valuePhysicalConnectionSetPhysicalConnectionTypeTagstagsItem["Key"].asString();
+			if(!valuePhysicalConnectionSetPhysicalConnectionTypeTagstagsItem["Value"].isNull())
+				tagsObject.value = valuePhysicalConnectionSetPhysicalConnectionTypeTagstagsItem["Value"].asString();
+			physicalConnectionSetObject.tags.push_back(tagsObject);
+		}
 		physicalConnectionSet_.push_back(physicalConnectionSetObject);
 	}
 	if(!value["PageNumber"].isNull())

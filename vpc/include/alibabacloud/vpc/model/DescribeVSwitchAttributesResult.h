@@ -66,6 +66,7 @@ namespace AlibabaCloud
 				long getOwnerId()const;
 				std::string getCreationTime()const;
 				std::string getVSwitchName()const;
+				bool getEnabledIpv6()const;
 				std::string getIpv6CidrBlock()const;
 				std::vector<CloudResourceSetType> getCloudResources()const;
 				std::vector<Tag> getTags()const;
@@ -88,6 +89,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string creationTime_;
 				std::string vSwitchName_;
+				bool enabledIpv6_;
 				std::string ipv6CidrBlock_;
 				std::vector<CloudResourceSetType> cloudResources_;
 				std::vector<Tag> tags_;

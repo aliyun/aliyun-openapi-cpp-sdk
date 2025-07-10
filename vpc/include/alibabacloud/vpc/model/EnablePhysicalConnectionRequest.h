@@ -42,6 +42,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	bool getByPassSp() const;
+	void setByPassSp(bool byPassSp);
 	std::string getPhysicalConnectionId() const;
 	void setPhysicalConnectionId(const std::string &physicalConnectionId);
 
@@ -52,6 +54,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	bool byPassSp_;
 	std::string physicalConnectionId_;
 };
 } // namespace Model

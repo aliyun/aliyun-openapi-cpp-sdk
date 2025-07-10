@@ -78,7 +78,54 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					struct TunnelOptions
+					{
+						struct TunnelBgpConfig
+						{
+							std::string localAsn;
+							std::string tunnelCidr;
+							std::string bgpStatus;
+							std::string peerBgpIp;
+							std::string peerAsn;
+							std::string localBgpIp;
+						};
+						struct TunnelIkeConfig
+						{
+							std::string ikeAuthAlg;
+							std::string localId;
+							std::string ikeEncAlg;
+							std::string ikeVersion;
+							std::string ikeMode;
+							std::string ikeLifetime;
+							std::string psk;
+							std::string remoteId;
+							std::string ikePfs;
+						};
+						struct TunnelIpsecConfig
+						{
+							std::string ipsecPfs;
+							std::string ipsecEncAlg;
+							std::string ipsecAuthAlg;
+							std::string ipsecLifetime;
+						};
+						std::string status;
+						std::string customerGatewayId;
+						std::string tunnelId;
+						std::string zoneNo;
+						std::string role;
+						TunnelIkeConfig tunnelIkeConfig;
+						std::string internetIp;
+						TunnelBgpConfig tunnelBgpConfig;
+						std::string state;
+						std::string remoteCaCertificate;
+						int tunnelIndex;
+						std::string enableNatTraversal;
+						TunnelIpsecConfig tunnelIpsecConfig;
+						std::string enableDpd;
+					};
 					std::string attachType;
+					std::string resourceGroupId;
+					bool enableTunnelsBgp;
 					bool crossAccountAuthorized;
 					std::string name;
 					bool effectImmediately;
@@ -97,6 +144,7 @@ namespace AlibabaCloud
 					std::string customerGatewayId;
 					long createTime;
 					std::string transitRouterName;
+					std::vector<VpnConnection::TunnelOptions> tunnelOptionsSpecification;
 					VcoHealthCheck vcoHealthCheck;
 					std::string vpnGatewayId;
 					std::string state;

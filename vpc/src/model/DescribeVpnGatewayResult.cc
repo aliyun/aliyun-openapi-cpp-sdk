@@ -64,6 +64,9 @@ void DescribeVpnGatewayResult::parse(const std::string &payload)
 		reservationData_.reservationMaxConnections = std::stoi(reservationDataNode["ReservationMaxConnections"].asString());
 	if(!reservationDataNode["ReservationEndTime"].isNull())
 		reservationData_.reservationEndTime = reservationDataNode["ReservationEndTime"].asString();
+	auto allEniInstanceIds = value["EniInstanceIds"]["EniInstanceId"];
+	for (const auto &item : allEniInstanceIds)
+		eniInstanceIds_.push_back(item.asString());
 	if(!value["VpnType"].isNull())
 		vpnType_ = value["VpnType"].asString();
 	if(!value["Status"].isNull())
@@ -104,12 +107,15 @@ void DescribeVpnGatewayResult::parse(const std::string &payload)
 		name_ = value["Name"].asString();
 	if(!value["NetworkType"].isNull())
 		networkType_ = value["NetworkType"].asString();
+	if(!value["DisasterRecoveryInternetIp"].isNull())
+		disasterRecoveryInternetIp_ = value["DisasterRecoveryInternetIp"].asString();
+	if(!value["DisasterRecoveryVSwitchId"].isNull())
+		disasterRecoveryVSwitchId_ = value["DisasterRecoveryVSwitchId"].asString();
+	if(!value["SslVpnInternetIp"].isNull())
+		sslVpnInternetIp_ = value["SslVpnInternetIp"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
-}
-
-std::string DescribeVpnGatewayResult::getStatus()const
-{
-	return status_;
 }
 
 std::string DescribeVpnGatewayResult::getIpsecVpn()const
@@ -132,9 +138,9 @@ std::string DescribeVpnGatewayResult::getDescription()const
 	return description_;
 }
 
-bool DescribeVpnGatewayResult::getEnableBgp()const
+std::string DescribeVpnGatewayResult::getDisasterRecoveryVSwitchId()const
 {
-	return enableBgp_;
+	return disasterRecoveryVSwitchId_;
 }
 
 long DescribeVpnGatewayResult::getEndTime()const
@@ -142,14 +148,9 @@ long DescribeVpnGatewayResult::getEndTime()const
 	return endTime_;
 }
 
-long DescribeVpnGatewayResult::getCreateTime()const
+std::string DescribeVpnGatewayResult::getResourceGroupId()const
 {
-	return createTime_;
-}
-
-std::string DescribeVpnGatewayResult::getVSwitchId()const
-{
-	return vSwitchId_;
+	return resourceGroupId_;
 }
 
 bool DescribeVpnGatewayResult::getAutoPropagate()const
@@ -167,9 +168,9 @@ std::string DescribeVpnGatewayResult::getName()const
 	return name_;
 }
 
-std::string DescribeVpnGatewayResult::getVpcId()const
+std::vector<std::string> DescribeVpnGatewayResult::getEniInstanceIds()const
 {
-	return vpcId_;
+	return eniInstanceIds_;
 }
 
 std::string DescribeVpnGatewayResult::getInternetIp()const
@@ -177,29 +178,14 @@ std::string DescribeVpnGatewayResult::getInternetIp()const
 	return internetIp_;
 }
 
-std::string DescribeVpnGatewayResult::getVpnGatewayId()const
+std::string DescribeVpnGatewayResult::getDisasterRecoveryInternetIp()const
 {
-	return vpnGatewayId_;
-}
-
-std::string DescribeVpnGatewayResult::getChargeType()const
-{
-	return chargeType_;
+	return disasterRecoveryInternetIp_;
 }
 
 std::string DescribeVpnGatewayResult::getNetworkType()const
 {
 	return networkType_;
-}
-
-std::string DescribeVpnGatewayResult::getTag()const
-{
-	return tag_;
-}
-
-std::string DescribeVpnGatewayResult::getSpec()const
-{
-	return spec_;
 }
 
 long DescribeVpnGatewayResult::getSslMaxConnections()const
@@ -215,5 +201,55 @@ std::vector<DescribeVpnGatewayResult::Tag> DescribeVpnGatewayResult::getTags()co
 DescribeVpnGatewayResult::ReservationData DescribeVpnGatewayResult::getReservationData()const
 {
 	return reservationData_;
+}
+
+std::string DescribeVpnGatewayResult::getStatus()const
+{
+	return status_;
+}
+
+bool DescribeVpnGatewayResult::getEnableBgp()const
+{
+	return enableBgp_;
+}
+
+long DescribeVpnGatewayResult::getCreateTime()const
+{
+	return createTime_;
+}
+
+std::string DescribeVpnGatewayResult::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+std::string DescribeVpnGatewayResult::getVpcId()const
+{
+	return vpcId_;
+}
+
+std::string DescribeVpnGatewayResult::getVpnGatewayId()const
+{
+	return vpnGatewayId_;
+}
+
+std::string DescribeVpnGatewayResult::getChargeType()const
+{
+	return chargeType_;
+}
+
+std::string DescribeVpnGatewayResult::getSslVpnInternetIp()const
+{
+	return sslVpnInternetIp_;
+}
+
+std::string DescribeVpnGatewayResult::getTag()const
+{
+	return tag_;
+}
+
+std::string DescribeVpnGatewayResult::getSpec()const
+{
+	return spec_;
 }
 

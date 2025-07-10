@@ -44,17 +44,23 @@ namespace AlibabaCloud
 					std::string resourceGroupId;
 					std::vector<std::string> trafficPath;
 					std::string projectName;
+					std::string ipVersion;
+					bool enableLogDelivery;
+					std::string trafficAnalyzerId;
 					std::string resourceType;
 					std::string flowLogId;
 					std::string businessStatus;
 					std::string flowLogName;
 					std::string logStoreName;
 					std::string resourceId;
+					bool enableTrafficAnalyze;
 					std::string serviceType;
+					std::string flowLogDeliverErrorMessage;
 					std::string creationTime;
 					std::string regionId;
 					int aggregationInterval;
 					std::vector<FlowLog::Tag> tags;
+					std::string flowLogDeliverStatus;
 					std::string trafficType;
 				};
 

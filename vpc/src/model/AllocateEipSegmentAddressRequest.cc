@@ -70,6 +70,15 @@ void AllocateEipSegmentAddressRequest::setRegionId(const std::string &regionId) 
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string AllocateEipSegmentAddressRequest::getZone() const {
+  return zone_;
+}
+
+void AllocateEipSegmentAddressRequest::setZone(const std::string &zone) {
+  zone_ = zone;
+  setParameter(std::string("Zone"), zone);
+}
+
 std::string AllocateEipSegmentAddressRequest::getNetmode() const {
   return netmode_;
 }

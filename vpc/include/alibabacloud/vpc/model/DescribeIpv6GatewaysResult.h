@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string businessStatus;
 					std::string name;
 					std::string vpcId;
+					long ownerId;
 					std::string expiredTime;
 					std::string creationTime;
 					std::string regionId;

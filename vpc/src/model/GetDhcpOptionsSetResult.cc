@@ -49,6 +49,16 @@ void GetDhcpOptionsSetResult::parse(const std::string &payload)
 			associateVpcsObject.vpcId = valueAssociateVpcsAssociateVpc["VpcId"].asString();
 		associateVpcs_.push_back(associateVpcsObject);
 	}
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
+	{
+		Tag tagsObject;
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
 	auto dhcpOptionsNode = value["DhcpOptions"];
 	if(!dhcpOptionsNode["TFTPServerName"].isNull())
 		dhcpOptions_.tFTPServerName = dhcpOptionsNode["TFTPServerName"].asString();
@@ -72,6 +82,10 @@ void GetDhcpOptionsSetResult::parse(const std::string &payload)
 		dhcpOptionsSetName_ = value["DhcpOptionsSetName"].asString();
 	if(!value["OwnerId"].isNull())
 		ownerId_ = std::stol(value["OwnerId"].asString());
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["CreationTime"].isNull())
+		creationTime_ = value["CreationTime"].asString();
 
 }
 
@@ -95,6 +109,11 @@ long GetDhcpOptionsSetResult::getOwnerId()const
 	return ownerId_;
 }
 
+std::string GetDhcpOptionsSetResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
 std::vector<GetDhcpOptionsSetResult::AssociateVpc> GetDhcpOptionsSetResult::getAssociateVpcs()const
 {
 	return associateVpcs_;
@@ -108,5 +127,15 @@ std::string GetDhcpOptionsSetResult::getDhcpOptionsSetName()const
 std::string GetDhcpOptionsSetResult::getDhcpOptionsSetDescription()const
 {
 	return dhcpOptionsSetDescription_;
+}
+
+std::string GetDhcpOptionsSetResult::getCreationTime()const
+{
+	return creationTime_;
+}
+
+std::vector<GetDhcpOptionsSetResult::Tag> GetDhcpOptionsSetResult::getTags()const
+{
+	return tags_;
 }
 

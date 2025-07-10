@@ -70,6 +70,15 @@ void DissociateRouteTableFromGatewayRequest::setRouteTableId(const std::string &
   setParameter(std::string("RouteTableId"), routeTableId);
 }
 
+std::string DissociateRouteTableFromGatewayRequest::getGatewayType() const {
+  return gatewayType_;
+}
+
+void DissociateRouteTableFromGatewayRequest::setGatewayType(const std::string &gatewayType) {
+  gatewayType_ = gatewayType;
+  setParameter(std::string("GatewayType"), gatewayType);
+}
+
 bool DissociateRouteTableFromGatewayRequest::getDryRun() const {
   return dryRun_;
 }

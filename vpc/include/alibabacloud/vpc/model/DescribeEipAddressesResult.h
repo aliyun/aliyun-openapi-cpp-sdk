@@ -70,12 +70,14 @@ namespace AlibabaCloud
 					std::string iSP;
 					std::string hasReservationData;
 					std::string publicIpAddressPoolId;
+					std::string bizType;
 					bool deletionProtection;
 					std::string bandwidthPackageType;
 					std::vector<EipAddress::LockReason> operationLocks;
 					std::string bandwidthPackageBandwidth;
 					std::string reservationInternetChargeType;
 					std::string internetChargeType;
+					long serviceID;
 					std::string allocationTime;
 					std::string descritpion;
 					std::string eipBandwidth;

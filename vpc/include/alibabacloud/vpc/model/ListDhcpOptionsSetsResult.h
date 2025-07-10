@@ -41,13 +41,21 @@ namespace AlibabaCloud
 						std::string domainNameServers;
 						std::string leaseTime;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string dhcpOptionsSetId;
 					DhcpOptions dhcpOptions;
 					long ownerId;
+					std::string resourceGroupId;
 					std::string dhcpOptionsSetName;
 					std::string dhcpOptionsSetDescription;
+					std::string creationTime;
 					int associateVpcCount;
+					std::vector<DhcpOptionsSet::Tag> tags;
 				};
 
 
@@ -55,12 +63,14 @@ namespace AlibabaCloud
 				explicit ListDhcpOptionsSetsResult(const std::string &payload);
 				~ListDhcpOptionsSetsResult();
 				std::vector<DhcpOptionsSet> getDhcpOptionsSets()const;
+				std::string getTotalCount()const;
 				std::string getNextToken()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<DhcpOptionsSet> dhcpOptionsSets_;
+				std::string totalCount_;
 				std::string nextToken_;
 
 			};

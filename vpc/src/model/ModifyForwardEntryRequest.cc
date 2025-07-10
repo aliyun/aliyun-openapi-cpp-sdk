@@ -88,6 +88,15 @@ void ModifyForwardEntryRequest::setExternalIp(const std::string &externalIp) {
   setParameter(std::string("ExternalIp"), externalIp);
 }
 
+bool ModifyForwardEntryRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ModifyForwardEntryRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string ModifyForwardEntryRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

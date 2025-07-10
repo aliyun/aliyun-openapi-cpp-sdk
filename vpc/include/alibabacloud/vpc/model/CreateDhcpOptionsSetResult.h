@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit CreateDhcpOptionsSetResult(const std::string &payload);
 				~CreateDhcpOptionsSetResult();
 				std::string getDhcpOptionsSetId()const;
+				std::string getResourceGroupId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string dhcpOptionsSetId_;
+				std::string resourceGroupId_;
 
 			};
 		}

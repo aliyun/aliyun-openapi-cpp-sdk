@@ -53,6 +53,8 @@ void ListTrafficMirrorFiltersResult::parse(const std::string &payload)
 			trafficMirrorFiltersObject.trafficMirrorFilterName = valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterName"].asString();
 		if(!valueTrafficMirrorFiltersTrafficMirrorFilter["ResourceGroupId"].isNull())
 			trafficMirrorFiltersObject.resourceGroupId = valueTrafficMirrorFiltersTrafficMirrorFilter["ResourceGroupId"].asString();
+		if(!valueTrafficMirrorFiltersTrafficMirrorFilter["CreationTime"].isNull())
+			trafficMirrorFiltersObject.creationTime = valueTrafficMirrorFiltersTrafficMirrorFilter["CreationTime"].asString();
 		auto allIngressRulesNode = valueTrafficMirrorFiltersTrafficMirrorFilter["IngressRules"]["TrafficMirrorRule"];
 		for (auto valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule : allIngressRulesNode)
 		{
@@ -67,6 +69,8 @@ void ListTrafficMirrorFiltersResult::parse(const std::string &payload)
 				ingressRulesObject.trafficDirection = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficDirection"].asString();
 			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Protocol"].isNull())
 				ingressRulesObject.protocol = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Protocol"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["IpVersion"].isNull())
+				ingressRulesObject.ipVersion = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["IpVersion"].asString();
 			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["DestinationPortRange"].isNull())
 				ingressRulesObject.destinationPortRange = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["DestinationPortRange"].asString();
 			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficMirrorFilterRuleId"].isNull())
@@ -95,6 +99,8 @@ void ListTrafficMirrorFiltersResult::parse(const std::string &payload)
 				egressRulesObject.trafficDirection = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficDirection"].asString();
 			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Protocol"].isNull())
 				egressRulesObject.protocol = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Protocol"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["IpVersion"].isNull())
+				egressRulesObject.ipVersion = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["IpVersion"].asString();
 			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["DestinationPortRange"].isNull())
 				egressRulesObject.destinationPortRange = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["DestinationPortRange"].asString();
 			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficMirrorFilterRuleId"].isNull())
@@ -125,6 +131,10 @@ void ListTrafficMirrorFiltersResult::parse(const std::string &payload)
 		nextToken_ = value["NextToken"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = value["TotalCount"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
+	if(!value["Count"].isNull())
+		count_ = std::stoi(value["Count"].asString());
 
 }
 
@@ -141,5 +151,15 @@ std::string ListTrafficMirrorFiltersResult::getTotalCount()const
 std::string ListTrafficMirrorFiltersResult::getNextToken()const
 {
 	return nextToken_;
+}
+
+int ListTrafficMirrorFiltersResult::getMaxResults()const
+{
+	return maxResults_;
+}
+
+int ListTrafficMirrorFiltersResult::getCount()const
+{
+	return count_;
 }
 

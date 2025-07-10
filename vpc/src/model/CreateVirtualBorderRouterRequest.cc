@@ -97,6 +97,15 @@ void CreateVirtualBorderRouterRequest::setPeerIpv6GatewayIp(const std::string &p
   setParameter(std::string("PeerIpv6GatewayIp"), peerIpv6GatewayIp);
 }
 
+std::string CreateVirtualBorderRouterRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateVirtualBorderRouterRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateVirtualBorderRouterRequest::getPeeringSubnetMask() const {
   return peeringSubnetMask_;
 }
@@ -167,6 +176,20 @@ long CreateVirtualBorderRouterRequest::getOwnerId() const {
 void CreateVirtualBorderRouterRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::vector<CreateVirtualBorderRouterRequest::Tags> CreateVirtualBorderRouterRequest::getTags() const {
+  return tags_;
+}
+
+void CreateVirtualBorderRouterRequest::setTags(const std::vector<CreateVirtualBorderRouterRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
 }
 
 std::string CreateVirtualBorderRouterRequest::getPhysicalConnectionId() const {

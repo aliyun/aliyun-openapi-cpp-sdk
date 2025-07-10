@@ -53,6 +53,8 @@ void DescribeIpv6AddressesResult::parse(const std::string &payload)
 			ipv6AddressesObject.allocationTime = valueIpv6AddressesIpv6Address["AllocationTime"].asString();
 		if(!valueIpv6AddressesIpv6Address["Ipv6AddressName"].isNull())
 			ipv6AddressesObject.ipv6AddressName = valueIpv6AddressesIpv6Address["Ipv6AddressName"].asString();
+		if(!valueIpv6AddressesIpv6Address["Ipv6AddressDescription"].isNull())
+			ipv6AddressesObject.ipv6AddressDescription = valueIpv6AddressesIpv6Address["Ipv6AddressDescription"].asString();
 		if(!valueIpv6AddressesIpv6Address["AssociatedInstanceType"].isNull())
 			ipv6AddressesObject.associatedInstanceType = valueIpv6AddressesIpv6Address["AssociatedInstanceType"].asString();
 		if(!valueIpv6AddressesIpv6Address["AssociatedInstanceId"].isNull())
@@ -61,6 +63,8 @@ void DescribeIpv6AddressesResult::parse(const std::string &payload)
 			ipv6AddressesObject.networkType = valueIpv6AddressesIpv6Address["NetworkType"].asString();
 		if(!valueIpv6AddressesIpv6Address["Ipv6Address"].isNull())
 			ipv6AddressesObject.ipv6Address = valueIpv6AddressesIpv6Address["Ipv6Address"].asString();
+		if(!valueIpv6AddressesIpv6Address["AddressType"].isNull())
+			ipv6AddressesObject.addressType = valueIpv6AddressesIpv6Address["AddressType"].asString();
 		if(!valueIpv6AddressesIpv6Address["Ipv6Isp"].isNull())
 			ipv6AddressesObject.ipv6Isp = valueIpv6AddressesIpv6Address["Ipv6Isp"].asString();
 		if(!valueIpv6AddressesIpv6Address["VSwitchId"].isNull())
@@ -69,6 +73,20 @@ void DescribeIpv6AddressesResult::parse(const std::string &payload)
 			ipv6AddressesObject.ipv6GatewayId = valueIpv6AddressesIpv6Address["Ipv6GatewayId"].asString();
 		if(!valueIpv6AddressesIpv6Address["RealBandwidth"].isNull())
 			ipv6AddressesObject.realBandwidth = std::stoi(valueIpv6AddressesIpv6Address["RealBandwidth"].asString());
+		if(!valueIpv6AddressesIpv6Address["ResourceGroupId"].isNull())
+			ipv6AddressesObject.resourceGroupId = valueIpv6AddressesIpv6Address["ResourceGroupId"].asString();
+		if(!valueIpv6AddressesIpv6Address["ServiceManaged"].isNull())
+			ipv6AddressesObject.serviceManaged = std::stoi(valueIpv6AddressesIpv6Address["ServiceManaged"].asString());
+		auto allTagsNode = valueIpv6AddressesIpv6Address["Tags"]["Tag"];
+		for (auto valueIpv6AddressesIpv6AddressTagsTag : allTagsNode)
+		{
+			Ipv6Address::Tag tagsObject;
+			if(!valueIpv6AddressesIpv6AddressTagsTag["Key"].isNull())
+				tagsObject.key = valueIpv6AddressesIpv6AddressTagsTag["Key"].asString();
+			if(!valueIpv6AddressesIpv6AddressTagsTag["Value"].isNull())
+				tagsObject.value = valueIpv6AddressesIpv6AddressTagsTag["Value"].asString();
+			ipv6AddressesObject.tags.push_back(tagsObject);
+		}
 		auto ipv6InternetBandwidthNode = value["Ipv6InternetBandwidth"];
 		if(!ipv6InternetBandwidthNode["InternetChargeType"].isNull())
 			ipv6AddressesObject.ipv6InternetBandwidth.internetChargeType = ipv6InternetBandwidthNode["InternetChargeType"].asString();
@@ -80,6 +98,16 @@ void DescribeIpv6AddressesResult::parse(const std::string &payload)
 			ipv6AddressesObject.ipv6InternetBandwidth.ipv6InternetBandwidthId = ipv6InternetBandwidthNode["Ipv6InternetBandwidthId"].asString();
 		if(!ipv6InternetBandwidthNode["InstanceChargeType"].isNull())
 			ipv6AddressesObject.ipv6InternetBandwidth.instanceChargeType = ipv6InternetBandwidthNode["InstanceChargeType"].asString();
+		if(!ipv6InternetBandwidthNode["HasReservationData"].isNull())
+			ipv6AddressesObject.ipv6InternetBandwidth.hasReservationData = ipv6InternetBandwidthNode["HasReservationData"].asString() == "true";
+		if(!ipv6InternetBandwidthNode["ReservationInternetChargeType"].isNull())
+			ipv6AddressesObject.ipv6InternetBandwidth.reservationInternetChargeType = ipv6InternetBandwidthNode["ReservationInternetChargeType"].asString();
+		if(!ipv6InternetBandwidthNode["ReservationOrderType"].isNull())
+			ipv6AddressesObject.ipv6InternetBandwidth.reservationOrderType = ipv6InternetBandwidthNode["ReservationOrderType"].asString();
+		if(!ipv6InternetBandwidthNode["ReservationActiveTime"].isNull())
+			ipv6AddressesObject.ipv6InternetBandwidth.reservationActiveTime = ipv6InternetBandwidthNode["ReservationActiveTime"].asString();
+		if(!ipv6InternetBandwidthNode["ReservationBandwidth"].isNull())
+			ipv6AddressesObject.ipv6InternetBandwidth.reservationBandwidth = std::stol(ipv6InternetBandwidthNode["ReservationBandwidth"].asString());
 		ipv6Addresses_.push_back(ipv6AddressesObject);
 	}
 	if(!value["PageSize"].isNull())

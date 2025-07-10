@@ -119,6 +119,10 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.vpcId = valueEipAddressesEipAddress["VpcId"].asString();
 		if(!valueEipAddressesEipAddress["Zone"].isNull())
 			eipAddressesObject.zone = valueEipAddressesEipAddress["Zone"].asString();
+		if(!valueEipAddressesEipAddress["BizType"].isNull())
+			eipAddressesObject.bizType = valueEipAddressesEipAddress["BizType"].asString();
+		if(!valueEipAddressesEipAddress["ServiceID"].isNull())
+			eipAddressesObject.serviceID = std::stol(valueEipAddressesEipAddress["ServiceID"].asString());
 		auto allOperationLocksNode = valueEipAddressesEipAddress["OperationLocks"]["LockReason"];
 		for (auto valueEipAddressesEipAddressOperationLocksLockReason : allOperationLocksNode)
 		{

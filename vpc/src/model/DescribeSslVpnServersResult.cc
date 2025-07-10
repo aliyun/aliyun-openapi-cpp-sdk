@@ -77,6 +77,12 @@ void DescribeSslVpnServersResult::parse(const std::string &payload)
 			sslVpnServersObject.clientIpPool = valueSslVpnServersSslVpnServer["ClientIpPool"].asString();
 		if(!valueSslVpnServersSslVpnServer["Proto"].isNull())
 			sslVpnServersObject.proto = valueSslVpnServersSslVpnServer["Proto"].asString();
+		if(!valueSslVpnServersSslVpnServer["ResourceGroupId"].isNull())
+			sslVpnServersObject.resourceGroupId = valueSslVpnServersSslVpnServer["ResourceGroupId"].asString();
+		if(!valueSslVpnServersSslVpnServer["IDaaSApplicationId"].isNull())
+			sslVpnServersObject.iDaaSApplicationId = valueSslVpnServersSslVpnServer["IDaaSApplicationId"].asString();
+		if(!valueSslVpnServersSslVpnServer["IDaaSInstanceVersion"].isNull())
+			sslVpnServersObject.iDaaSInstanceVersion = valueSslVpnServersSslVpnServer["IDaaSInstanceVersion"].asString();
 		sslVpnServers_.push_back(sslVpnServersObject);
 	}
 	if(!value["PageSize"].isNull())

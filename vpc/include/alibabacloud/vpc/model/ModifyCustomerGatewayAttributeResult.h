@@ -39,6 +39,7 @@ namespace AlibabaCloud
 				~ModifyCustomerGatewayAttributeResult();
 				std::string getDescription()const;
 				std::string getCustomerGatewayId()const;
+				std::string getResourceGroupId()const;
 				long getCreateTime()const;
 				std::string getIpAddress()const;
 				std::string getName()const;
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 			private:
 				std::string description_;
 				std::string customerGatewayId_;
+				std::string resourceGroupId_;
 				long createTime_;
 				std::string ipAddress_;
 				std::string name_;

@@ -119,3 +119,12 @@ void DescribeAccessPointsRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
+std::string DescribeAccessPointsRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void DescribeAccessPointsRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
+}
+

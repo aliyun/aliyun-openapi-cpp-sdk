@@ -32,6 +32,8 @@ public:
 	~DeleteVpcRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	bool getForceDelete() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string clientToken_;
 	std::string regionId_;
 	bool forceDelete_;
 	bool dryRun_;

@@ -36,6 +36,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	int getBandwidth() const;
 	void setBandwidth(int bandwidth);
 	std::string getResourceOwnerAccount() const;
@@ -55,6 +57,7 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string regionId_;
+	bool dryRun_;
 	int bandwidth_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

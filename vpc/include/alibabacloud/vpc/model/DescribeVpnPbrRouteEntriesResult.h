@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					int priority;
 					long createTime;
 					std::string routeSource;
+					std::string nextHopTunnelId;
 					int weight;
 				};
 

@@ -59,6 +59,8 @@ void DescribeVpnPbrRouteEntriesResult::parse(const std::string &payload)
 			vpnPbrRouteEntriesObject.routeSource = valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteSource"].asString();
 		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["Priority"].isNull())
 			vpnPbrRouteEntriesObject.priority = std::stoi(valueVpnPbrRouteEntriesVpnPbrRouteEntry["Priority"].asString());
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["NextHopTunnelId"].isNull())
+			vpnPbrRouteEntriesObject.nextHopTunnelId = valueVpnPbrRouteEntriesVpnPbrRouteEntry["NextHopTunnelId"].asString();
 		vpnPbrRouteEntries_.push_back(vpnPbrRouteEntriesObject);
 	}
 	if(!value["PageSize"].isNull())

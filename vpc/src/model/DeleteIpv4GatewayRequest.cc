@@ -97,3 +97,12 @@ void DeleteIpv4GatewayRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DeleteIpv4GatewayRequest::getInternetMode() const {
+  return internetMode_;
+}
+
+void DeleteIpv4GatewayRequest::setInternetMode(const std::string &internetMode) {
+  internetMode_ = internetMode;
+  setParameter(std::string("InternetMode"), internetMode);
+}
+

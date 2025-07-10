@@ -72,6 +72,8 @@ public:
 	void setOwnerId(long ownerId);
 	long getMinRxInterval() const;
 	void setMinRxInterval(long minRxInterval);
+	bool getSitelinkEnable() const;
+	void setSitelinkEnable(bool sitelinkEnable);
 	std::string getLocalIpv6GatewayIp() const;
 	void setLocalIpv6GatewayIp(const std::string &localIpv6GatewayIp);
 	std::string getName() const;
@@ -99,6 +101,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	long minRxInterval_;
+	bool sitelinkEnable_;
 	std::string localIpv6GatewayIp_;
 	std::string name_;
 };

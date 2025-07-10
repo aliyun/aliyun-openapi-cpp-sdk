@@ -42,6 +42,8 @@ public:
 	void setEnableIpsec(bool enableIpsec);
 	std::string getNetworkType() const;
 	void setNetworkType(const std::string &networkType);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getInstanceChargeType() const;
@@ -56,6 +58,8 @@ public:
 	void setBandwidth(int bandwidth);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getDisasterRecoveryVSwitchId() const;
+	void setDisasterRecoveryVSwitchId(const std::string &disasterRecoveryVSwitchId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getVpnType() const;
@@ -78,6 +82,7 @@ private:
 	std::string clientToken_;
 	bool enableIpsec_;
 	std::string networkType_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string instanceChargeType_;
 	int period_;
@@ -85,6 +90,7 @@ private:
 	std::string resourceOwnerAccount_;
 	int bandwidth_;
 	std::string ownerAccount_;
+	std::string disasterRecoveryVSwitchId_;
 	long ownerId_;
 	std::string vpnType_;
 	std::vector<Tags> tags_;

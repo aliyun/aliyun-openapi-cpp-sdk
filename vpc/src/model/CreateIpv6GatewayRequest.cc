@@ -79,6 +79,20 @@ void CreateIpv6GatewayRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreateIpv6GatewayRequest::Tag> CreateIpv6GatewayRequest::getTag() const {
+  return tag_;
+}
+
+void CreateIpv6GatewayRequest::setTag(const std::vector<CreateIpv6GatewayRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
 std::string CreateIpv6GatewayRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

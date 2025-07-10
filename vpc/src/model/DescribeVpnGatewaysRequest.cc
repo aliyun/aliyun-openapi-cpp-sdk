@@ -52,6 +52,15 @@ void DescribeVpnGatewaysRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeVpnGatewaysRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeVpnGatewaysRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeVpnGatewaysRequest::getRegionId() const {
   return regionId_;
 }

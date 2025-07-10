@@ -79,6 +79,15 @@ void ModifyVpcAttributeRequest::setIpv6Isp(const std::string &ipv6Isp) {
   setParameter(std::string("Ipv6Isp"), ipv6Isp);
 }
 
+bool ModifyVpcAttributeRequest::getEnableDnsHostname() const {
+  return enableDnsHostname_;
+}
+
+void ModifyVpcAttributeRequest::setEnableDnsHostname(bool enableDnsHostname) {
+  enableDnsHostname_ = enableDnsHostname;
+  setParameter(std::string("EnableDnsHostname"), enableDnsHostname ? "true" : "false");
+}
+
 std::string ModifyVpcAttributeRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

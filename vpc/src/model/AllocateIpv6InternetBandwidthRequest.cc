@@ -52,6 +52,15 @@ void AllocateIpv6InternetBandwidthRequest::setRegionId(const std::string &region
   setParameter(std::string("RegionId"), regionId);
 }
 
+bool AllocateIpv6InternetBandwidthRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void AllocateIpv6InternetBandwidthRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 int AllocateIpv6InternetBandwidthRequest::getBandwidth() const {
   return bandwidth_;
 }

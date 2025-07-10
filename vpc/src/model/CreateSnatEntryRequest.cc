@@ -88,6 +88,15 @@ void CreateSnatEntryRequest::setEipAffinity(int eipAffinity) {
   setParameter(std::string("EipAffinity"), std::to_string(eipAffinity));
 }
 
+bool CreateSnatEntryRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void CreateSnatEntryRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string CreateSnatEntryRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -131,5 +140,14 @@ std::string CreateSnatEntryRequest::getSnatEntryName() const {
 void CreateSnatEntryRequest::setSnatEntryName(const std::string &snatEntryName) {
   snatEntryName_ = snatEntryName;
   setParameter(std::string("SnatEntryName"), snatEntryName);
+}
+
+std::string CreateSnatEntryRequest::getNetworkInterfaceId() const {
+  return networkInterfaceId_;
+}
+
+void CreateSnatEntryRequest::setNetworkInterfaceId(const std::string &networkInterfaceId) {
+  networkInterfaceId_ = networkInterfaceId;
+  setParameter(std::string("NetworkInterfaceId"), networkInterfaceId);
 }
 

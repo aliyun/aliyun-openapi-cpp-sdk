@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct PhysicalConnectionType
 				{
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string description;
 					std::string endTime;
 					int virtualPhysicalConnectionCount;
@@ -50,9 +55,12 @@ namespace AlibabaCloud
 					std::string loaStatus;
 					std::string adLocation;
 					long bandwidth;
+					std::string qosId;
 					std::string reservationActiveTime;
+					std::vector<PhysicalConnectionType::TagsItem> tags;
 					std::string vlanId;
 					std::string status;
+					std::string adDetailLocation;
 					std::string circuitCode;
 					std::string orderMode;
 					std::string expectSpec;

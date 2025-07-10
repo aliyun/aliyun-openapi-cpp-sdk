@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string resourceGroupId;
 					std::vector<std::string> vSwitchIds;
 					std::string associateType;
+					bool routePropagationEnable;
 					std::string routerId;
 					std::string routeTableType;
 					std::string vpcId;

@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						int weight;
 					};
 					std::string status;
+					std::string origin;
 					std::string routeEntryId;
 					std::string type;
 					std::string description;

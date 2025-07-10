@@ -51,6 +51,8 @@ public:
 	void setNextHopType(const std::string &nextHopType);
 	std::string getRouteTableId() const;
 	void setRouteTableId(const std::string &routeTableId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDestinationCidrBlock() const;
@@ -73,6 +75,7 @@ private:
 	std::string nextHopId_;
 	std::string nextHopType_;
 	std::string routeTableId_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string destinationCidrBlock_;
 	std::string ownerAccount_;

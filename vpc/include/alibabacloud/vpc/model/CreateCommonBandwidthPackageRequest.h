@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT CreateCommonBandwidthPackageRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateCommonBandwidthPackageRequest();
 	~CreateCommonBandwidthPackageRequest();
 	long getResourceOwnerId() const;
@@ -44,6 +48,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getZone() const;
 	void setZone(const std::string &zone);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	int getBandwidth() const;
@@ -69,6 +75,7 @@ private:
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string zone_;
+	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
 	int bandwidth_;
 	std::string ownerAccount_;

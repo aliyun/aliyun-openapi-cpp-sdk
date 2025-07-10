@@ -55,6 +55,7 @@ void CreateTrafficMirrorFilterRequest::setIngressRules(const std::vector<CreateT
     setParameter(ingressRulesObjStr + ".Action", ingressRulesObj.action);
     setParameter(ingressRulesObjStr + ".SourceCidrBlock", ingressRulesObj.sourceCidrBlock);
     setParameter(ingressRulesObjStr + ".Protocol", ingressRulesObj.protocol);
+    setParameter(ingressRulesObjStr + ".IpVersion", ingressRulesObj.ipVersion);
     setParameter(ingressRulesObjStr + ".DestinationPortRange", ingressRulesObj.destinationPortRange);
     setParameter(ingressRulesObjStr + ".Priority", std::to_string(ingressRulesObj.priority));
     setParameter(ingressRulesObjStr + ".DestinationCidrBlock", ingressRulesObj.destinationCidrBlock);
@@ -89,6 +90,20 @@ void CreateTrafficMirrorFilterRequest::setRegionId(const std::string &regionId) 
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreateTrafficMirrorFilterRequest::Tag> CreateTrafficMirrorFilterRequest::getTag() const {
+  return tag_;
+}
+
+void CreateTrafficMirrorFilterRequest::setTag(const std::vector<CreateTrafficMirrorFilterRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
 std::vector<CreateTrafficMirrorFilterRequest::EgressRules> CreateTrafficMirrorFilterRequest::getEgressRules() const {
   return egressRules_;
 }
@@ -101,6 +116,7 @@ void CreateTrafficMirrorFilterRequest::setEgressRules(const std::vector<CreateTr
     setParameter(egressRulesObjStr + ".Action", egressRulesObj.action);
     setParameter(egressRulesObjStr + ".SourceCidrBlock", egressRulesObj.sourceCidrBlock);
     setParameter(egressRulesObjStr + ".Protocol", egressRulesObj.protocol);
+    setParameter(egressRulesObjStr + ".IpVersion", egressRulesObj.ipVersion);
     setParameter(egressRulesObjStr + ".DestinationPortRange", egressRulesObj.destinationPortRange);
     setParameter(egressRulesObjStr + ".Priority", std::to_string(egressRulesObj.priority));
     setParameter(egressRulesObjStr + ".DestinationCidrBlock", egressRulesObj.destinationCidrBlock);

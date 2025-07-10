@@ -34,15 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct Endpoint
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string endpointStatus;
 					std::string endpointName;
 					std::string vpcId;
+					std::string resourceGroupId;
 					std::vector<std::string> associatedRouteTables;
 					std::string serviceName;
 					std::string endpointId;
 					std::string creationTime;
 					std::string policyDocument;
 					std::string endpointDescription;
+					std::vector<Endpoint::Tag> tags;
 				};
 
 

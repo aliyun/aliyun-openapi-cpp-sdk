@@ -28,10 +28,16 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT ListDhcpOptionsSetsRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string key;
+		std::string value;
+	};
 	ListDhcpOptionsSetsRequest();
 	~ListDhcpOptionsSetsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
@@ -46,6 +52,8 @@ public:
 	void setDomainName(const std::string &domainName);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
 	std::string getDhcpOptionsSetName() const;
 	void setDhcpOptionsSetName(const std::string &dhcpOptionsSetName);
 	int getMaxResults() const;
@@ -53,6 +61,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string nextToken_;
 	std::vector<std::string> dhcpOptionsSetId_;
@@ -60,6 +69,7 @@ private:
 	std::string ownerAccount_;
 	std::string domainName_;
 	long ownerId_;
+	std::vector<Tags> tags_;
 	std::string dhcpOptionsSetName_;
 	int maxResults_;
 };

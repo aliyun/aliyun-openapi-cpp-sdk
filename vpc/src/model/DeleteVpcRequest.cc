@@ -34,6 +34,15 @@ void DeleteVpcRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DeleteVpcRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void DeleteVpcRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string DeleteVpcRequest::getRegionId() const {
   return regionId_;
 }

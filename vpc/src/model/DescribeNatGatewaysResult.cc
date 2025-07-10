@@ -89,6 +89,8 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 			natGatewaysObject.privateLinkMode = valueNatGatewaysNatGateway["PrivateLinkMode"].asString();
 		if(!valueNatGatewaysNatGateway["EipBindMode"].isNull())
 			natGatewaysObject.eipBindMode = valueNatGatewaysNatGateway["EipBindMode"].asString();
+		if(!valueNatGatewaysNatGateway["EnableSessionLog"].isNull())
+			natGatewaysObject.enableSessionLog = valueNatGatewaysNatGateway["EnableSessionLog"].asString();
 		auto allIpListsNode = valueNatGatewaysNatGateway["IpLists"]["IpList"];
 		for (auto valueNatGatewaysNatGatewayIpListsIpList : allIpListsNode)
 		{
@@ -134,6 +136,11 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 			natGatewaysObject.natGatewayPrivateInfo.izNo = natGatewayPrivateInfoNode["IzNo"].asString();
 		if(!natGatewayPrivateInfoNode["EniType"].isNull())
 			natGatewaysObject.natGatewayPrivateInfo.eniType = natGatewayPrivateInfoNode["EniType"].asString();
+		auto accessModeNode = value["AccessMode"];
+		if(!accessModeNode["ModeValue"].isNull())
+			natGatewaysObject.accessMode.modeValue = accessModeNode["ModeValue"].asString();
+		if(!accessModeNode["TunnelType"].isNull())
+			natGatewaysObject.accessMode.tunnelType = accessModeNode["TunnelType"].asString();
 		auto allForwardTableIds = value["ForwardTableIds"]["ForwardTableId"];
 		for (auto value : allForwardTableIds)
 			natGatewaysObject.forwardTableIds.push_back(value.asString());

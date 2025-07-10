@@ -97,6 +97,20 @@ void CreateVirtualPhysicalConnectionRequest::setRegionId(const std::string &regi
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreateVirtualPhysicalConnectionRequest::Tag> CreateVirtualPhysicalConnectionRequest::getTag() const {
+  return tag_;
+}
+
+void CreateVirtualPhysicalConnectionRequest::setTag(const std::vector<CreateVirtualPhysicalConnectionRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
 bool CreateVirtualPhysicalConnectionRequest::getDryRun() const {
   return dryRun_;
 }

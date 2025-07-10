@@ -34,6 +34,15 @@ void ListPublicIpAddressPoolsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool ListPublicIpAddressPoolsRequest::getSecurityProtectionEnabled() const {
+  return securityProtectionEnabled_;
+}
+
+void ListPublicIpAddressPoolsRequest::setSecurityProtectionEnabled(bool securityProtectionEnabled) {
+  securityProtectionEnabled_ = securityProtectionEnabled;
+  setParameter(std::string("SecurityProtectionEnabled"), securityProtectionEnabled ? "true" : "false");
+}
+
 std::string ListPublicIpAddressPoolsRequest::getIsp() const {
   return isp_;
 }
@@ -41,6 +50,15 @@ std::string ListPublicIpAddressPoolsRequest::getIsp() const {
 void ListPublicIpAddressPoolsRequest::setIsp(const std::string &isp) {
   isp_ = isp;
   setParameter(std::string("Isp"), isp);
+}
+
+int ListPublicIpAddressPoolsRequest::getSecurityProtectionEnabledForCommonBuy() const {
+  return securityProtectionEnabledForCommonBuy_;
+}
+
+void ListPublicIpAddressPoolsRequest::setSecurityProtectionEnabledForCommonBuy(int securityProtectionEnabledForCommonBuy) {
+  securityProtectionEnabledForCommonBuy_ = securityProtectionEnabledForCommonBuy;
+  setParameter(std::string("SecurityProtectionEnabledForCommonBuy"), std::to_string(securityProtectionEnabledForCommonBuy));
 }
 
 std::string ListPublicIpAddressPoolsRequest::getResourceGroupId() const {

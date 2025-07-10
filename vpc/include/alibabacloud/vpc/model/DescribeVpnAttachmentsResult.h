@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string transitRouterName;
 					bool crossAccountAuthorized;
+					std::string tag;
 					std::vector<VpnAttachment::Tag> tags;
 					std::string name;
 					std::string transitRouterId;

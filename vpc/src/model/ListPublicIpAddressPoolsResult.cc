@@ -64,13 +64,17 @@ void ListPublicIpAddressPoolsResult::parse(const std::string &payload)
 		if(!valuePublicIpAddressPoolListPublicIpAddressPool["IpAddressRemaining"].isNull())
 			publicIpAddressPoolListObject.ipAddressRemaining = valuePublicIpAddressPoolListPublicIpAddressPool["IpAddressRemaining"].asString() == "true";
 		if(!valuePublicIpAddressPoolListPublicIpAddressPool["UserType"].isNull())
-			publicIpAddressPoolListObject.userType = valuePublicIpAddressPoolListPublicIpAddressPool["UserType"].asString() == "true";
+			publicIpAddressPoolListObject.userType = valuePublicIpAddressPoolListPublicIpAddressPool["UserType"].asString();
 		if(!valuePublicIpAddressPoolListPublicIpAddressPool["OwnerId"].isNull())
 			publicIpAddressPoolListObject.ownerId = std::stol(valuePublicIpAddressPoolListPublicIpAddressPool["OwnerId"].asString());
 		if(!valuePublicIpAddressPoolListPublicIpAddressPool["ShareType"].isNull())
 			publicIpAddressPoolListObject.shareType = valuePublicIpAddressPoolListPublicIpAddressPool["ShareType"].asString();
 		if(!valuePublicIpAddressPoolListPublicIpAddressPool["ResourceGroupId"].isNull())
 			publicIpAddressPoolListObject.resourceGroupId = valuePublicIpAddressPoolListPublicIpAddressPool["ResourceGroupId"].asString();
+		if(!valuePublicIpAddressPoolListPublicIpAddressPool["BizType"].isNull())
+			publicIpAddressPoolListObject.bizType = valuePublicIpAddressPoolListPublicIpAddressPool["BizType"].asString();
+		if(!valuePublicIpAddressPoolListPublicIpAddressPool["BusinessStatus"].isNull())
+			publicIpAddressPoolListObject.businessStatus = valuePublicIpAddressPoolListPublicIpAddressPool["BusinessStatus"].asString();
 		auto allPublicIpCidrBlockListNode = valuePublicIpAddressPoolListPublicIpAddressPool["PublicIpCidrBlockList"]["PublicIpCidrBlock"];
 		for (auto valuePublicIpAddressPoolListPublicIpAddressPoolPublicIpCidrBlockListPublicIpCidrBlock : allPublicIpCidrBlockListNode)
 		{
@@ -97,6 +101,12 @@ void ListPublicIpAddressPoolsResult::parse(const std::string &payload)
 				tagsObject.value = valuePublicIpAddressPoolListPublicIpAddressPoolTagsTag["Value"].asString();
 			publicIpAddressPoolListObject.tags.push_back(tagsObject);
 		}
+		auto allZones = value["Zones"]["Zone"];
+		for (auto value : allZones)
+			publicIpAddressPoolListObject.zones.push_back(value.asString());
+		auto allSecurityProtectionTypes = value["SecurityProtectionTypes"]["SecurityProtectionType"];
+		for (auto value : allSecurityProtectionTypes)
+			publicIpAddressPoolListObject.securityProtectionTypes.push_back(value.asString());
 		publicIpAddressPoolList_.push_back(publicIpAddressPoolListObject);
 	}
 	if(!value["NextToken"].isNull())

@@ -44,6 +44,8 @@ public:
 	void setForwardEntryId(const std::string &forwardEntryId);
 	std::string getExternalIp() const;
 	void setExternalIp(const std::string &externalIp);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getIpProtocol() const;
@@ -69,6 +71,7 @@ private:
 	std::string regionId_;
 	std::string forwardEntryId_;
 	std::string externalIp_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ipProtocol_;
 	std::string forwardEntryName_;

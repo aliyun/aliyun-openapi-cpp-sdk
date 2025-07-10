@@ -57,6 +57,8 @@ void DescribeCustomerGatewaysResult::parse(const std::string &payload)
 			customerGatewaysObject.name = valueCustomerGatewaysCustomerGateway["Name"].asString();
 		if(!valueCustomerGatewaysCustomerGateway["AuthKey"].isNull())
 			customerGatewaysObject.authKey = valueCustomerGatewaysCustomerGateway["AuthKey"].asString();
+		if(!valueCustomerGatewaysCustomerGateway["ResourceGroupId"].isNull())
+			customerGatewaysObject.resourceGroupId = valueCustomerGatewaysCustomerGateway["ResourceGroupId"].asString();
 		auto allTagsNode = valueCustomerGatewaysCustomerGateway["Tags"]["Tag"];
 		for (auto valueCustomerGatewaysCustomerGatewayTagsTag : allTagsNode)
 		{

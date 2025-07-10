@@ -41,11 +41,18 @@ void CreateDhcpOptionsSetResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["DhcpOptionsSetId"].isNull())
 		dhcpOptionsSetId_ = value["DhcpOptionsSetId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
 std::string CreateDhcpOptionsSetResult::getDhcpOptionsSetId()const
 {
 	return dhcpOptionsSetId_;
+}
+
+std::string CreateDhcpOptionsSetResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 

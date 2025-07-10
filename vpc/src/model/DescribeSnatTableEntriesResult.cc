@@ -57,6 +57,12 @@ void DescribeSnatTableEntriesResult::parse(const std::string &payload)
 			snatTableEntriesObject.snatTableId = valueSnatTableEntriesSnatTableEntry["SnatTableId"].asString();
 		if(!valueSnatTableEntriesSnatTableEntry["SnatIp"].isNull())
 			snatTableEntriesObject.snatIp = valueSnatTableEntriesSnatTableEntry["SnatIp"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["NatGatewayId"].isNull())
+			snatTableEntriesObject.natGatewayId = valueSnatTableEntriesSnatTableEntry["NatGatewayId"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["EipAffinity"].isNull())
+			snatTableEntriesObject.eipAffinity = valueSnatTableEntriesSnatTableEntry["EipAffinity"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["NetworkInterfaceId"].isNull())
+			snatTableEntriesObject.networkInterfaceId = valueSnatTableEntriesSnatTableEntry["NetworkInterfaceId"].asString();
 		snatTableEntries_.push_back(snatTableEntriesObject);
 	}
 	if(!value["PageSize"].isNull())

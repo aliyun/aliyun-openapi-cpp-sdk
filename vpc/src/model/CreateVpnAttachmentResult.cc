@@ -47,10 +47,10 @@ void CreateVpnAttachmentResult::parse(const std::string &payload)
 		createTime_ = std::stol(value["CreateTime"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

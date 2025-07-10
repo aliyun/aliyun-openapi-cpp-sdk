@@ -32,6 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VPC_EXPORT GetVpcGatewayEndpointAttributeResult : public ServiceResult
 			{
 			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				GetVpcGatewayEndpointAttributeResult();
@@ -40,12 +45,14 @@ namespace AlibabaCloud
 				std::string getEndpointStatus()const;
 				std::string getEndpointName()const;
 				std::string getVpcId()const;
+				std::string getResourceGroupId()const;
 				std::string getServiceName()const;
 				std::vector<std::string> getRouteTables()const;
 				std::string getEndpointId()const;
 				std::string getCreationTime()const;
 				std::string getPolicyDocument()const;
 				std::string getEndpointDescription()const;
+				std::vector<Tag> getTags()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -53,12 +60,14 @@ namespace AlibabaCloud
 				std::string endpointStatus_;
 				std::string endpointName_;
 				std::string vpcId_;
+				std::string resourceGroupId_;
 				std::string serviceName_;
 				std::vector<std::string> routeTables_;
 				std::string endpointId_;
 				std::string creationTime_;
 				std::string policyDocument_;
 				std::string endpointDescription_;
+				std::vector<Tag> tags_;
 
 			};
 		}

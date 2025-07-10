@@ -160,6 +160,15 @@ void UpdateTrafficMirrorSessionAttributeRequest::setTrafficMirrorFilterId(const 
   setParameter(std::string("TrafficMirrorFilterId"), trafficMirrorFilterId);
 }
 
+int UpdateTrafficMirrorSessionAttributeRequest::getPacketLength() const {
+  return packetLength_;
+}
+
+void UpdateTrafficMirrorSessionAttributeRequest::setPacketLength(int packetLength) {
+  packetLength_ = packetLength;
+  setParameter(std::string("PacketLength"), std::to_string(packetLength));
+}
+
 int UpdateTrafficMirrorSessionAttributeRequest::getVirtualNetworkId() const {
   return virtualNetworkId_;
 }
@@ -167,5 +176,14 @@ int UpdateTrafficMirrorSessionAttributeRequest::getVirtualNetworkId() const {
 void UpdateTrafficMirrorSessionAttributeRequest::setVirtualNetworkId(int virtualNetworkId) {
   virtualNetworkId_ = virtualNetworkId;
   setParameter(std::string("VirtualNetworkId"), std::to_string(virtualNetworkId));
+}
+
+int UpdateTrafficMirrorSessionAttributeRequest::getTrafficMirrorSourceTruncateMode() const {
+  return trafficMirrorSourceTruncateMode_;
+}
+
+void UpdateTrafficMirrorSessionAttributeRequest::setTrafficMirrorSourceTruncateMode(int trafficMirrorSourceTruncateMode) {
+  trafficMirrorSourceTruncateMode_ = trafficMirrorSourceTruncateMode;
+  setParameter(std::string("TrafficMirrorSourceTruncateMode"), std::to_string(trafficMirrorSourceTruncateMode));
 }
 

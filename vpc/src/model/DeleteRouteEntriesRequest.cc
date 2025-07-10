@@ -43,6 +43,15 @@ void DeleteRouteEntriesRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+bool DeleteRouteEntriesRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DeleteRouteEntriesRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string DeleteRouteEntriesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

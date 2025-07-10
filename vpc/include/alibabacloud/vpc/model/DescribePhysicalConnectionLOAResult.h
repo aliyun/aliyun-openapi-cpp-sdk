@@ -43,16 +43,18 @@ namespace AlibabaCloud
 						std::string pMName;
 					};
 					std::string status;
-					std::string companyName;
-					std::string constructionTime;
+					std::string lineSPContactInfo;
 					std::string instanceId;
-					std::string sI;
 					std::string companyLocalizedName;
 					std::vector<PMInfoItem> pMInfo;
 					std::string loaUrl;
 					std::string lineCode;
-					std::string lineType;
 					std::string lineLabel;
+					std::string companyName;
+					std::string constructionTime;
+					std::string lineServiceProvider;
+					std::string sI;
+					std::string lineType;
 				};
 
 

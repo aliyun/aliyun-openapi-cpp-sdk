@@ -43,6 +43,8 @@ void CreatePublicIpAddressPoolResult::parse(const std::string &payload)
 		pulbicIpAddressPoolId_ = value["PulbicIpAddressPoolId"].asString();
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["PublicIpAddressPoolId"].isNull())
+		publicIpAddressPoolId_ = value["PublicIpAddressPoolId"].asString();
 
 }
 
@@ -54,5 +56,10 @@ std::string CreatePublicIpAddressPoolResult::getResourceGroupId()const
 std::string CreatePublicIpAddressPoolResult::getPulbicIpAddressPoolId()const
 {
 	return pulbicIpAddressPoolId_;
+}
+
+std::string CreatePublicIpAddressPoolResult::getPublicIpAddressPoolId()const
+{
+	return publicIpAddressPoolId_;
 }
 

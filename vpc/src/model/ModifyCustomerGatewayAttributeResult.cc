@@ -49,6 +49,8 @@ void ModifyCustomerGatewayAttributeResult::parse(const std::string &payload)
 		createTime_ = std::stol(value["CreateTime"].asString());
 	if(!value["Name"].isNull())
 		name_ = value["Name"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -60,6 +62,11 @@ std::string ModifyCustomerGatewayAttributeResult::getDescription()const
 std::string ModifyCustomerGatewayAttributeResult::getCustomerGatewayId()const
 {
 	return customerGatewayId_;
+}
+
+std::string ModifyCustomerGatewayAttributeResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 long ModifyCustomerGatewayAttributeResult::getCreateTime()const

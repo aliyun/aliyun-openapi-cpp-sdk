@@ -55,6 +55,7 @@ void CreateTrafficMirrorFilterRulesRequest::setIngressRules(const std::vector<Cr
     setParameter(ingressRulesObjStr + ".Action", ingressRulesObj.action);
     setParameter(ingressRulesObjStr + ".SourceCidrBlock", ingressRulesObj.sourceCidrBlock);
     setParameter(ingressRulesObjStr + ".Protocol", ingressRulesObj.protocol);
+    setParameter(ingressRulesObjStr + ".IpVersion", ingressRulesObj.ipVersion);
     setParameter(ingressRulesObjStr + ".DestinationPortRange", ingressRulesObj.destinationPortRange);
     setParameter(ingressRulesObjStr + ".Priority", std::to_string(ingressRulesObj.priority));
     setParameter(ingressRulesObjStr + ".DestinationCidrBlock", ingressRulesObj.destinationCidrBlock);
@@ -83,6 +84,7 @@ void CreateTrafficMirrorFilterRulesRequest::setEgressRules(const std::vector<Cre
     setParameter(egressRulesObjStr + ".Action", egressRulesObj.action);
     setParameter(egressRulesObjStr + ".SourceCidrBlock", egressRulesObj.sourceCidrBlock);
     setParameter(egressRulesObjStr + ".Protocol", egressRulesObj.protocol);
+    setParameter(egressRulesObjStr + ".IpVersion", egressRulesObj.ipVersion);
     setParameter(egressRulesObjStr + ".DestinationPortRange", egressRulesObj.destinationPortRange);
     setParameter(egressRulesObjStr + ".Priority", std::to_string(egressRulesObj.priority));
     setParameter(egressRulesObjStr + ".DestinationCidrBlock", egressRulesObj.destinationCidrBlock);

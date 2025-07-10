@@ -63,6 +63,8 @@ void DescribeCustomerGatewayResult::parse(const std::string &payload)
 		name_ = value["Name"].asString();
 	if(!value["AuthKey"].isNull())
 		authKey_ = value["AuthKey"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -74,6 +76,11 @@ std::string DescribeCustomerGatewayResult::getDescription()const
 std::string DescribeCustomerGatewayResult::getCustomerGatewayId()const
 {
 	return customerGatewayId_;
+}
+
+std::string DescribeCustomerGatewayResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 long DescribeCustomerGatewayResult::getCreateTime()const

@@ -37,12 +37,14 @@ namespace AlibabaCloud
 				OpenTrafficMirrorServiceResult();
 				explicit OpenTrafficMirrorServiceResult(const std::string &payload);
 				~OpenTrafficMirrorServiceResult();
-				std::string getOrderId()const;
+				std::string getMessage()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string orderId_;
+				std::string message_;
+				std::string code_;
 
 			};
 		}

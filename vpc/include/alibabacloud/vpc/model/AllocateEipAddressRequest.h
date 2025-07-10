@@ -28,8 +28,14 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT AllocateEipAddressRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	AllocateEipAddressRequest();
 	~AllocateEipAddressRequest();
+	std::string getIpAddress() const;
+	void setIpAddress(const std::string &ipAddress);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getPublicIpAddressPoolId() const;
@@ -44,6 +50,10 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getZone() const;
+	void setZone(const std::string &zone);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getNetmode() const;
 	void setNetmode(const std::string &netmode);
 	std::string getInstanceChargeType() const;
@@ -62,6 +72,8 @@ public:
 	void setOwnerId(long ownerId);
 	long getActivityId() const;
 	void setActivityId(long activityId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getInternetChargeType() const;
 	void setInternetChargeType(const std::string &internetChargeType);
 	std::string getName() const;
@@ -72,6 +84,7 @@ public:
 	void setPricingCycle(const std::string &pricingCycle);
 
 private:
+	std::string ipAddress_;
 	long resourceOwnerId_;
 	std::string publicIpAddressPoolId_;
 	std::string clientToken_;
@@ -79,6 +92,8 @@ private:
 	std::string description_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::string zone_;
+	std::vector<Tag> tag_;
 	std::string netmode_;
 	std::string instanceChargeType_;
 	int period_;
@@ -88,6 +103,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	long activityId_;
+	std::string instanceId_;
 	std::string internetChargeType_;
 	std::string name_;
 	std::vector<std::string> securityProtectionTypes_;

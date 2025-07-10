@@ -43,6 +43,15 @@ void AssociateVpcCidrBlockRequest::setIPv6CidrType(const std::string &iPv6CidrTy
   setParameter(std::string("IPv6CidrType"), iPv6CidrType);
 }
 
+std::string AssociateVpcCidrBlockRequest::getIpamPoolId() const {
+  return ipamPoolId_;
+}
+
+void AssociateVpcCidrBlockRequest::setIpamPoolId(const std::string &ipamPoolId) {
+  ipamPoolId_ = ipamPoolId;
+  setParameter(std::string("IpamPoolId"), ipamPoolId);
+}
+
 std::string AssociateVpcCidrBlockRequest::getRegionId() const {
   return regionId_;
 }
@@ -104,6 +113,15 @@ std::string AssociateVpcCidrBlockRequest::getIPv6CidrBlock() const {
 void AssociateVpcCidrBlockRequest::setIPv6CidrBlock(const std::string &iPv6CidrBlock) {
   iPv6CidrBlock_ = iPv6CidrBlock;
   setParameter(std::string("IPv6CidrBlock"), iPv6CidrBlock);
+}
+
+int AssociateVpcCidrBlockRequest::getSecondaryCidrMask() const {
+  return secondaryCidrMask_;
+}
+
+void AssociateVpcCidrBlockRequest::setSecondaryCidrMask(int secondaryCidrMask) {
+  secondaryCidrMask_ = secondaryCidrMask;
+  setParameter(std::string("SecondaryCidrMask"), std::to_string(secondaryCidrMask));
 }
 
 std::string AssociateVpcCidrBlockRequest::getSecondaryCidrBlock() const {

@@ -121,6 +121,18 @@ void DescribeRouterInterfacesResult::parse(const std::string &payload)
 			routerInterfaceSetObject.ipv6Status = valueRouterInterfaceSetRouterInterfaceType["Ipv6Status"].asString();
 		if(!valueRouterInterfaceSetRouterInterfaceType["FastLinkMode"].isNull())
 			routerInterfaceSetObject.fastLinkMode = valueRouterInterfaceSetRouterInterfaceType["FastLinkMode"].asString() == "true";
+		if(!valueRouterInterfaceSetRouterInterfaceType["ResourceGroupId"].isNull())
+			routerInterfaceSetObject.resourceGroupId = valueRouterInterfaceSetRouterInterfaceType["ResourceGroupId"].asString();
+		auto allTagsNode = valueRouterInterfaceSetRouterInterfaceType["Tags"]["TagsItem"];
+		for (auto valueRouterInterfaceSetRouterInterfaceTypeTagsTagsItem : allTagsNode)
+		{
+			RouterInterfaceType::TagsItem tagsObject;
+			if(!valueRouterInterfaceSetRouterInterfaceTypeTagsTagsItem["Key"].isNull())
+				tagsObject.key = valueRouterInterfaceSetRouterInterfaceTypeTagsTagsItem["Key"].asString();
+			if(!valueRouterInterfaceSetRouterInterfaceTypeTagsTagsItem["Value"].isNull())
+				tagsObject.value = valueRouterInterfaceSetRouterInterfaceTypeTagsTagsItem["Value"].asString();
+			routerInterfaceSetObject.tags.push_back(tagsObject);
+		}
 		routerInterfaceSet_.push_back(routerInterfaceSetObject);
 	}
 	if(!value["PageNumber"].isNull())

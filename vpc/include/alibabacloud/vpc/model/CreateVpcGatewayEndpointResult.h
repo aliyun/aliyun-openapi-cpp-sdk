@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit CreateVpcGatewayEndpointResult(const std::string &payload);
 				~CreateVpcGatewayEndpointResult();
 				std::string getEndpointName()const;
+				std::string getResourceGroupId()const;
 				std::string getServiceName()const;
 				std::string getEndpointId()const;
 				std::string getCreationTime()const;
@@ -46,6 +47,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string endpointName_;
+				std::string resourceGroupId_;
 				std::string serviceName_;
 				std::string endpointId_;
 				std::string creationTime_;

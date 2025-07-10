@@ -73,12 +73,21 @@ void DescribeIpv6GatewayAttributeResult::parse(const std::string &payload)
 		name_ = value["Name"].asString();
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["GatewayRouteTableId"].isNull())
+		gatewayRouteTableId_ = value["GatewayRouteTableId"].asString();
+	if(!value["OwnerId"].isNull())
+		ownerId_ = std::stol(value["OwnerId"].asString());
 
 }
 
 std::string DescribeIpv6GatewayAttributeResult::getStatus()const
 {
 	return status_;
+}
+
+std::string DescribeIpv6GatewayAttributeResult::getGatewayRouteTableId()const
+{
+	return gatewayRouteTableId_;
 }
 
 std::string DescribeIpv6GatewayAttributeResult::getDescription()const
@@ -114,6 +123,11 @@ std::string DescribeIpv6GatewayAttributeResult::getName()const
 std::string DescribeIpv6GatewayAttributeResult::getVpcId()const
 {
 	return vpcId_;
+}
+
+long DescribeIpv6GatewayAttributeResult::getOwnerId()const
+{
+	return ownerId_;
 }
 
 std::string DescribeIpv6GatewayAttributeResult::getExpiredTime()const

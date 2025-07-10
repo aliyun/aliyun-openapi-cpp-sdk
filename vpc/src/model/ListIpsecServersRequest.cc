@@ -52,6 +52,15 @@ void ListIpsecServersRequest::setCallerBid(const std::string &callerBid) {
   setParameter(std::string("callerBid"), callerBid);
 }
 
+std::string ListIpsecServersRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListIpsecServersRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListIpsecServersRequest::getRegionId() const {
   return regionId_;
 }

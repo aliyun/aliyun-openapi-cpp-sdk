@@ -40,12 +40,15 @@ namespace AlibabaCloud
 					std::string clientIpPool;
 					std::string iDaaSInstanceId;
 					int maxConnections;
+					std::string resourceGroupId;
 					bool enableMultiFactorAuth;
 					long createTime;
 					int port;
 					std::string sslVpnServerId;
 					std::string iDaaSRegionId;
+					std::string iDaaSInstanceVersion;
 					std::string name;
+					std::string iDaaSApplicationId;
 					std::string internetIp;
 					std::string proto;
 					std::string vpnGatewayId;

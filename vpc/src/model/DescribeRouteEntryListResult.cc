@@ -63,6 +63,8 @@ void DescribeRouteEntryListResult::parse(const std::string &payload)
 			routeEntrysObject.gmtModified = valueRouteEntrysRouteEntry["GmtModified"].asString();
 		if(!valueRouteEntrysRouteEntry["ServiceType"].isNull())
 			routeEntrysObject.serviceType = valueRouteEntrysRouteEntry["ServiceType"].asString();
+		if(!valueRouteEntrysRouteEntry["Origin"].isNull())
+			routeEntrysObject.origin = valueRouteEntrysRouteEntry["Origin"].asString();
 		auto allNextHopsNode = valueRouteEntrysRouteEntry["NextHops"]["NextHop"];
 		for (auto valueRouteEntrysRouteEntryNextHopsNextHop : allNextHopsNode)
 		{

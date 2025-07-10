@@ -39,6 +39,13 @@ void AddPublicIpAddressPoolCidrBlockResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["CidrBlock"].isNull())
+		cidrBlock_ = value["CidrBlock"].asString();
 
+}
+
+std::string AddPublicIpAddressPoolCidrBlockResult::getCidrBlock()const
+{
+	return cidrBlock_;
 }
 

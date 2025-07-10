@@ -79,6 +79,15 @@ void CreateForwardEntryRequest::setExternalIp(const std::string &externalIp) {
   setParameter(std::string("ExternalIp"), externalIp);
 }
 
+bool CreateForwardEntryRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void CreateForwardEntryRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string CreateForwardEntryRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

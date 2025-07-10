@@ -38,6 +38,8 @@ public:
 	void setIpv6InternetBandwidthId(const std::string &ipv6InternetBandwidthId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	long getBandwidth() const;
 	void setBandwidth(long bandwidth);
 	std::string getResourceOwnerAccount() const;
@@ -54,6 +56,7 @@ private:
 	std::string clientToken_;
 	std::string ipv6InternetBandwidthId_;
 	std::string regionId_;
+	bool dryRun_;
 	long bandwidth_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

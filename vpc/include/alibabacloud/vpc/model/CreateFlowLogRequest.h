@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT CreateFlowLogRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateFlowLogRequest();
 	~CreateFlowLogRequest();
 	long getResourceOwnerId() const;
@@ -38,6 +42,10 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getIpVersion() const;
+	void setIpVersion(const std::string &ipVersion);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	std::string getProjectName() const;
@@ -60,12 +68,16 @@ public:
 	void setTrafficType(const std::string &trafficType);
 	std::string getFlowLogName() const;
 	void setFlowLogName(const std::string &flowLogName);
+	std::string getTrafficAnalyzerId() const;
+	void setTrafficAnalyzerId(const std::string &trafficAnalyzerId);
 
 private:
 	long resourceOwnerId_;
 	std::string description_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::string ipVersion_;
+	std::vector<Tag> tag_;
 	std::string resourceId_;
 	std::string projectName_;
 	std::string logStoreName_;
@@ -77,6 +89,7 @@ private:
 	std::string resourceType_;
 	std::string trafficType_;
 	std::string flowLogName_;
+	std::string trafficAnalyzerId_;
 };
 } // namespace Model
 } // namespace Vpc

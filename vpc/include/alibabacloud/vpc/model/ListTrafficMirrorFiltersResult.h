@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string trafficMirrorFilterRuleId;
 						std::string action;
 						std::string sourcePortRange;
+						std::string ipVersion;
 						int priority;
 						std::string trafficMirrorFilterRuleStatus;
 						std::string sourceCidrBlock;
@@ -54,6 +55,7 @@ namespace AlibabaCloud
 						std::string trafficMirrorFilterRuleId;
 						std::string action;
 						std::string sourcePortRange;
+						std::string ipVersion;
 						int priority;
 						std::string trafficMirrorFilterRuleStatus;
 						std::string sourceCidrBlock;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 					std::string trafficMirrorFilterDescription;
 					std::string resourceGroupId;
 					std::vector<TrafficMirrorFilter::TrafficMirrorRule> egressRules;
+					std::string creationTime;
 					std::string trafficMirrorFilterStatus;
 					std::string trafficMirrorFilterId;
 					std::string trafficMirrorFilterName;
@@ -84,6 +87,8 @@ namespace AlibabaCloud
 				std::vector<TrafficMirrorFilter> getTrafficMirrorFilters()const;
 				std::string getTotalCount()const;
 				std::string getNextToken()const;
+				int getMaxResults()const;
+				int getCount()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -91,6 +96,8 @@ namespace AlibabaCloud
 				std::vector<TrafficMirrorFilter> trafficMirrorFilters_;
 				std::string totalCount_;
 				std::string nextToken_;
+				int maxResults_;
+				int count_;
 
 			};
 		}

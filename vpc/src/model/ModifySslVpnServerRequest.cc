@@ -106,6 +106,15 @@ void ModifySslVpnServerRequest::setCipher(const std::string &cipher) {
   setParameter(std::string("Cipher"), cipher);
 }
 
+std::string ModifySslVpnServerRequest::getIDaaSApplicationId() const {
+  return iDaaSApplicationId_;
+}
+
+void ModifySslVpnServerRequest::setIDaaSApplicationId(const std::string &iDaaSApplicationId) {
+  iDaaSApplicationId_ = iDaaSApplicationId;
+  setParameter(std::string("IDaaSApplicationId"), iDaaSApplicationId);
+}
+
 std::string ModifySslVpnServerRequest::getClientIpPool() const {
   return clientIpPool_;
 }
@@ -113,6 +122,15 @@ std::string ModifySslVpnServerRequest::getClientIpPool() const {
 void ModifySslVpnServerRequest::setClientIpPool(const std::string &clientIpPool) {
   clientIpPool_ = clientIpPool;
   setParameter(std::string("ClientIpPool"), clientIpPool);
+}
+
+bool ModifySslVpnServerRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ModifySslVpnServerRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 std::string ModifySslVpnServerRequest::getResourceOwnerAccount() const {

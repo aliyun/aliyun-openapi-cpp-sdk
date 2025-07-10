@@ -103,6 +103,16 @@ void ListVirtualPhysicalConnectionsResult::parse(const std::string &payload)
 			virtualPhysicalConnectionsObject.expectSpec = valueVirtualPhysicalConnectionsVirtualPhysicalConnection["ExpectSpec"].asString();
 		if(!valueVirtualPhysicalConnectionsVirtualPhysicalConnection["ResourceGroupId"].isNull())
 			virtualPhysicalConnectionsObject.resourceGroupId = valueVirtualPhysicalConnectionsVirtualPhysicalConnection["ResourceGroupId"].asString();
+		auto allTagsNode = valueVirtualPhysicalConnectionsVirtualPhysicalConnection["Tags"]["tagsItem"];
+		for (auto valueVirtualPhysicalConnectionsVirtualPhysicalConnectionTagstagsItem : allTagsNode)
+		{
+			VirtualPhysicalConnection::TagsItem tagsObject;
+			if(!valueVirtualPhysicalConnectionsVirtualPhysicalConnectionTagstagsItem["Key"].isNull())
+				tagsObject.key = valueVirtualPhysicalConnectionsVirtualPhysicalConnectionTagstagsItem["Key"].asString();
+			if(!valueVirtualPhysicalConnectionsVirtualPhysicalConnectionTagstagsItem["Value"].isNull())
+				tagsObject.value = valueVirtualPhysicalConnectionsVirtualPhysicalConnectionTagstagsItem["Value"].asString();
+			virtualPhysicalConnectionsObject.tags.push_back(tagsObject);
+		}
 		virtualPhysicalConnections_.push_back(virtualPhysicalConnectionsObject);
 	}
 	if(!value["NextToken"].isNull())

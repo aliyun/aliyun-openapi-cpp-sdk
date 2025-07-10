@@ -70,6 +70,15 @@ void ModifyNetworkAclAttributesRequest::setNetworkAclId(const std::string &netwo
   setParameter(std::string("NetworkAclId"), networkAclId);
 }
 
+bool ModifyNetworkAclAttributesRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ModifyNetworkAclAttributesRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string ModifyNetworkAclAttributesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -77,6 +86,15 @@ std::string ModifyNetworkAclAttributesRequest::getResourceOwnerAccount() const {
 void ModifyNetworkAclAttributesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string ModifyNetworkAclAttributesRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void ModifyNetworkAclAttributesRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
 std::string ModifyNetworkAclAttributesRequest::getNetworkAclName() const {

@@ -61,6 +61,8 @@ void DescribeForwardTableEntriesResult::parse(const std::string &payload)
 			forwardTableEntriesObject.externalPort = valueForwardTableEntriesForwardTableEntry["ExternalPort"].asString();
 		if(!valueForwardTableEntriesForwardTableEntry["ExternalIp"].isNull())
 			forwardTableEntriesObject.externalIp = valueForwardTableEntriesForwardTableEntry["ExternalIp"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["NatGatewayId"].isNull())
+			forwardTableEntriesObject.natGatewayId = valueForwardTableEntriesForwardTableEntry["NatGatewayId"].asString();
 		forwardTableEntries_.push_back(forwardTableEntriesObject);
 	}
 	if(!value["PageSize"].isNull())

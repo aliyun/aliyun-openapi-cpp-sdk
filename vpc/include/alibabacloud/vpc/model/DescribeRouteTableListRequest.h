@@ -62,6 +62,8 @@ public:
 	void setRouterId(const std::string &routerId);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
+	std::string getRouteTableType() const;
+	void setRouteTableType(const std::string &routeTableType);
 
 private:
 	long resourceOwnerId_;
@@ -78,6 +80,7 @@ private:
 	std::string routerType_;
 	std::string routerId_;
 	std::string vpcId_;
+	std::string routeTableType_;
 };
 } // namespace Model
 } // namespace Vpc

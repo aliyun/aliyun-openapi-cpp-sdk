@@ -70,6 +70,15 @@ void AssociateRouteTableWithGatewayRequest::setRouteTableId(const std::string &r
   setParameter(std::string("RouteTableId"), routeTableId);
 }
 
+std::string AssociateRouteTableWithGatewayRequest::getGatewayType() const {
+  return gatewayType_;
+}
+
+void AssociateRouteTableWithGatewayRequest::setGatewayType(const std::string &gatewayType) {
+  gatewayType_ = gatewayType;
+  setParameter(std::string("GatewayType"), gatewayType);
+}
+
 bool AssociateRouteTableWithGatewayRequest::getDryRun() const {
   return dryRun_;
 }

@@ -50,6 +50,8 @@ namespace AlibabaCloud
 					std::string trafficMirrorSessionId;
 					std::string trafficMirrorFilterId;
 					std::string trafficMirrorSessionStatus;
+					int trafficMirrorSourceTruncateMode;
+					std::string creationTime;
 					std::string trafficMirrorSessionDescription;
 					std::string trafficMirrorSessionName;
 					std::vector<TrafficMirrorSession::Tag> tags;

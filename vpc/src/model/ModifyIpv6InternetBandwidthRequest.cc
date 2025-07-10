@@ -61,6 +61,15 @@ void ModifyIpv6InternetBandwidthRequest::setRegionId(const std::string &regionId
   setParameter(std::string("RegionId"), regionId);
 }
 
+bool ModifyIpv6InternetBandwidthRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ModifyIpv6InternetBandwidthRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 long ModifyIpv6InternetBandwidthRequest::getBandwidth() const {
   return bandwidth_;
 }

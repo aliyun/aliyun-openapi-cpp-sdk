@@ -57,6 +57,8 @@ void DescribeSslVpnClientCertsResult::parse(const std::string &payload)
 			sslVpnClientCertKeysObject.name = valueSslVpnClientCertKeysSslVpnClientCertKey["Name"].asString();
 		if(!valueSslVpnClientCertKeysSslVpnClientCertKey["RegionId"].isNull())
 			sslVpnClientCertKeysObject.regionId = valueSslVpnClientCertKeysSslVpnClientCertKey["RegionId"].asString();
+		if(!valueSslVpnClientCertKeysSslVpnClientCertKey["ResourceGroupId"].isNull())
+			sslVpnClientCertKeysObject.resourceGroupId = valueSslVpnClientCertKeysSslVpnClientCertKey["ResourceGroupId"].asString();
 		sslVpnClientCertKeys_.push_back(sslVpnClientCertKeysObject);
 	}
 	if(!value["PageSize"].isNull())

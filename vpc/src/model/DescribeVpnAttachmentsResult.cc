@@ -57,6 +57,8 @@ void DescribeVpnAttachmentsResult::parse(const std::string &payload)
 			vpnAttachmentsObject.transitRouterName = valueVpnAttachmentsvpnAttachment["TransitRouterName"].asString();
 		if(!valueVpnAttachmentsvpnAttachment["CrossAccountAuthorized"].isNull())
 			vpnAttachmentsObject.crossAccountAuthorized = valueVpnAttachmentsvpnAttachment["CrossAccountAuthorized"].asString() == "true";
+		if(!valueVpnAttachmentsvpnAttachment["Tag"].isNull())
+			vpnAttachmentsObject.tag = valueVpnAttachmentsvpnAttachment["Tag"].asString();
 		auto allTagsNode = valueVpnAttachmentsvpnAttachment["Tags"]["Tag"];
 		for (auto valueVpnAttachmentsvpnAttachmentTagsTag : allTagsNode)
 		{

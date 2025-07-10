@@ -61,6 +61,15 @@ void DeleteNetworkAclRequest::setNetworkAclId(const std::string &networkAclId) {
   setParameter(std::string("NetworkAclId"), networkAclId);
 }
 
+bool DeleteNetworkAclRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DeleteNetworkAclRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string DeleteNetworkAclRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -68,6 +77,15 @@ std::string DeleteNetworkAclRequest::getResourceOwnerAccount() const {
 void DeleteNetworkAclRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string DeleteNetworkAclRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void DeleteNetworkAclRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
 long DeleteNetworkAclRequest::getOwnerId() const {

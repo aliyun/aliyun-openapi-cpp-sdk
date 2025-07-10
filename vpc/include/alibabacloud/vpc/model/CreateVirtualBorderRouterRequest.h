@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT CreateVirtualBorderRouterRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	CreateVirtualBorderRouterRequest();
 	~CreateVirtualBorderRouterRequest();
 	long getResourceOwnerId() const;
@@ -46,6 +50,8 @@ public:
 	void setPeerGatewayIp(const std::string &peerGatewayIp);
 	std::string getPeerIpv6GatewayIp() const;
 	void setPeerIpv6GatewayIp(const std::string &peerIpv6GatewayIp);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getPeeringSubnetMask() const;
 	void setPeeringSubnetMask(const std::string &peeringSubnetMask);
 	std::string getRegionId() const;
@@ -62,6 +68,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
 	std::string getPhysicalConnectionId() const;
 	void setPhysicalConnectionId(const std::string &physicalConnectionId);
 	std::string getLocalIpv6GatewayIp() const;
@@ -80,6 +88,7 @@ private:
 	std::string description_;
 	std::string peerGatewayIp_;
 	std::string peerIpv6GatewayIp_;
+	std::string resourceGroupId_;
 	std::string peeringSubnetMask_;
 	std::string regionId_;
 	std::string localGatewayIp_;
@@ -88,6 +97,7 @@ private:
 	long bandwidth_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::vector<Tags> tags_;
 	std::string physicalConnectionId_;
 	std::string localIpv6GatewayIp_;
 	std::string name_;

@@ -52,6 +52,8 @@ public:
 	void setDestinationCidrBlock(const std::string &destinationCidrBlock);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getGatewayRouteTableId() const;
+	void setGatewayRouteTableId(const std::string &gatewayRouteTableId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getName() const;
@@ -69,6 +71,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string destinationCidrBlock_;
 	std::string ownerAccount_;
+	std::string gatewayRouteTableId_;
 	long ownerId_;
 	std::string name_;
 };

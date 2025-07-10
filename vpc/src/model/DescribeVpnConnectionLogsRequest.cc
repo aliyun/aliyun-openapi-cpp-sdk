@@ -115,6 +115,15 @@ void DescribeVpnConnectionLogsRequest::setVpnConnectionId(const std::string &vpn
   setParameter(std::string("VpnConnectionId"), vpnConnectionId);
 }
 
+std::string DescribeVpnConnectionLogsRequest::getTunnelId() const {
+  return tunnelId_;
+}
+
+void DescribeVpnConnectionLogsRequest::setTunnelId(const std::string &tunnelId) {
+  tunnelId_ = tunnelId;
+  setParameter(std::string("TunnelId"), tunnelId);
+}
+
 int DescribeVpnConnectionLogsRequest::getTo() const {
   return to_;
 }

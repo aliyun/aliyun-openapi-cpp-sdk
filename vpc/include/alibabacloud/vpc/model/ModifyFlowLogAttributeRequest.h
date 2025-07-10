@@ -34,8 +34,16 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	bool getEnableTrafficAnalyze() const;
+	void setEnableTrafficAnalyze(bool enableTrafficAnalyze);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getDisableLogDelivery() const;
+	void setDisableLogDelivery(bool disableLogDelivery);
+	std::string getIpVersion() const;
+	void setIpVersion(const std::string &ipVersion);
+	bool getEnableLogDelivery() const;
+	void setEnableLogDelivery(bool enableLogDelivery);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -48,17 +56,24 @@ public:
 	void setFlowLogId(const std::string &flowLogId);
 	std::string getFlowLogName() const;
 	void setFlowLogName(const std::string &flowLogName);
+	std::string getTrafficAnalyzerId() const;
+	void setTrafficAnalyzerId(const std::string &trafficAnalyzerId);
 
 private:
 	long resourceOwnerId_;
 	std::string description_;
+	bool enableTrafficAnalyze_;
 	std::string regionId_;
+	bool disableLogDelivery_;
+	std::string ipVersion_;
+	bool enableLogDelivery_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	int aggregationInterval_;
 	long ownerId_;
 	std::string flowLogId_;
 	std::string flowLogName_;
+	std::string trafficAnalyzerId_;
 };
 } // namespace Model
 } // namespace Vpc

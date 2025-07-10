@@ -58,6 +58,7 @@ namespace AlibabaCloud
 					long ownerId;
 					std::string creationTime;
 					std::string vSwitchName;
+					bool enabledIpv6;
 					std::string ipv6CidrBlock;
 					std::vector<VSwitch::Tag> tags;
 					std::string shareType;

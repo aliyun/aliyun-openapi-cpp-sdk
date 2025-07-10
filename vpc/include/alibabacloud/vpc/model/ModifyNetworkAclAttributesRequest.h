@@ -40,8 +40,12 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getNetworkAclId() const;
 	void setNetworkAclId(const std::string &networkAclId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
 	std::string getNetworkAclName() const;
 	void setNetworkAclName(const std::string &networkAclName);
 	long getOwnerId() const;
@@ -53,7 +57,9 @@ private:
 	std::string description_;
 	std::string regionId_;
 	std::string networkAclId_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
 	std::string networkAclName_;
 	long ownerId_;
 };

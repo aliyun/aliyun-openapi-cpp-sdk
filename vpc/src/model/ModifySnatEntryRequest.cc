@@ -61,6 +61,15 @@ void ModifySnatEntryRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+int ModifySnatEntryRequest::getEipAffinity() const {
+  return eipAffinity_;
+}
+
+void ModifySnatEntryRequest::setEipAffinity(int eipAffinity) {
+  eipAffinity_ = eipAffinity;
+  setParameter(std::string("EipAffinity"), std::to_string(eipAffinity));
+}
+
 std::string ModifySnatEntryRequest::getSnatEntryId() const {
   return snatEntryId_;
 }
@@ -68,6 +77,15 @@ std::string ModifySnatEntryRequest::getSnatEntryId() const {
 void ModifySnatEntryRequest::setSnatEntryId(const std::string &snatEntryId) {
   snatEntryId_ = snatEntryId;
   setParameter(std::string("SnatEntryId"), snatEntryId);
+}
+
+bool ModifySnatEntryRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ModifySnatEntryRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 std::string ModifySnatEntryRequest::getResourceOwnerAccount() const {
@@ -113,5 +131,14 @@ std::string ModifySnatEntryRequest::getSnatEntryName() const {
 void ModifySnatEntryRequest::setSnatEntryName(const std::string &snatEntryName) {
   snatEntryName_ = snatEntryName;
   setParameter(std::string("SnatEntryName"), snatEntryName);
+}
+
+std::string ModifySnatEntryRequest::getNetworkInterfaceId() const {
+  return networkInterfaceId_;
+}
+
+void ModifySnatEntryRequest::setNetworkInterfaceId(const std::string &networkInterfaceId) {
+  networkInterfaceId_ = networkInterfaceId;
+  setParameter(std::string("NetworkInterfaceId"), networkInterfaceId);
 }
 

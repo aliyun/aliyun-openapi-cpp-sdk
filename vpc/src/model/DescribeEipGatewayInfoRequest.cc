@@ -34,6 +34,15 @@ void DescribeEipGatewayInfoRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeEipGatewayInfoRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeEipGatewayInfoRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeEipGatewayInfoRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -68,14 +77,5 @@ std::string DescribeEipGatewayInfoRequest::getInstanceId() const {
 void DescribeEipGatewayInfoRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string DescribeEipGatewayInfoRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeEipGatewayInfoRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 

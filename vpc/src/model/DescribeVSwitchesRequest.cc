@@ -34,6 +34,15 @@ void DescribeVSwitchesRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool DescribeVSwitchesRequest::getEnableIpv6() const {
+  return enableIpv6_;
+}
+
+void DescribeVSwitchesRequest::setEnableIpv6(bool enableIpv6) {
+  enableIpv6_ = enableIpv6;
+  setParameter(std::string("EnableIpv6"), enableIpv6 ? "true" : "false");
+}
+
 int DescribeVSwitchesRequest::getPageNumber() const {
   return pageNumber_;
 }

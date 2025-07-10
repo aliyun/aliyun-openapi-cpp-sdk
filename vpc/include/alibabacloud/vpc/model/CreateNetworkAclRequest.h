@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT CreateNetworkAclRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateNetworkAclRequest();
 	~CreateNetworkAclRequest();
 	long getResourceOwnerId() const;
@@ -38,8 +42,14 @@ public:
 	void setDescription(const std::string &description);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
 	std::string getNetworkAclName() const;
 	void setNetworkAclName(const std::string &networkAclName);
 	long getOwnerId() const;
@@ -52,7 +62,10 @@ private:
 	std::string clientToken_;
 	std::string description_;
 	std::string regionId_;
+	std::vector<Tag> tag_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
 	std::string networkAclName_;
 	long ownerId_;
 	std::string vpcId_;

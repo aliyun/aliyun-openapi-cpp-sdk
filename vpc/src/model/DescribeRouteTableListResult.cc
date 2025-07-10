@@ -67,6 +67,8 @@ void DescribeRouteTableListResult::parse(const std::string &payload)
 			routerTableListObject.routerType = valueRouterTableListRouterTableListType["RouterType"].asString();
 		if(!valueRouterTableListRouterTableListType["RouteTableName"].isNull())
 			routerTableListObject.routeTableName = valueRouterTableListRouterTableListType["RouteTableName"].asString();
+		if(!valueRouterTableListRouterTableListType["RoutePropagationEnable"].isNull())
+			routerTableListObject.routePropagationEnable = valueRouterTableListRouterTableListType["RoutePropagationEnable"].asString() == "true";
 		auto allTagsNode = valueRouterTableListRouterTableListType["Tags"]["Tag"];
 		for (auto valueRouterTableListRouterTableListTypeTagsTag : allTagsNode)
 		{

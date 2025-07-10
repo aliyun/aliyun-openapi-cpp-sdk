@@ -59,6 +59,8 @@ void DescribeEipSegmentResult::parse(const std::string &payload)
 			eipSegmentsObject.segment = valueEipSegmentsEipSegment["Segment"].asString();
 		if(!valueEipSegmentsEipSegment["RegionId"].isNull())
 			eipSegmentsObject.regionId = valueEipSegmentsEipSegment["RegionId"].asString();
+		if(!valueEipSegmentsEipSegment["Zone"].isNull())
+			eipSegmentsObject.zone = valueEipSegmentsEipSegment["Zone"].asString();
 		eipSegments_.push_back(eipSegmentsObject);
 	}
 	if(!value["PageSize"].isNull())

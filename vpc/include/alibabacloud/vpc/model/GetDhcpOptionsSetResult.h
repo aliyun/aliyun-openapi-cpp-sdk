@@ -46,6 +46,11 @@ namespace AlibabaCloud
 					std::string vpcId;
 					std::string associateStatus;
 				};
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				GetDhcpOptionsSetResult();
@@ -55,9 +60,12 @@ namespace AlibabaCloud
 				std::string getDhcpOptionsSetId()const;
 				DhcpOptions getDhcpOptions()const;
 				long getOwnerId()const;
+				std::string getResourceGroupId()const;
 				std::vector<AssociateVpc> getAssociateVpcs()const;
 				std::string getDhcpOptionsSetName()const;
 				std::string getDhcpOptionsSetDescription()const;
+				std::string getCreationTime()const;
+				std::vector<Tag> getTags()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -66,9 +74,12 @@ namespace AlibabaCloud
 				std::string dhcpOptionsSetId_;
 				DhcpOptions dhcpOptions_;
 				long ownerId_;
+				std::string resourceGroupId_;
 				std::vector<AssociateVpc> associateVpcs_;
 				std::string dhcpOptionsSetName_;
 				std::string dhcpOptionsSetDescription_;
+				std::string creationTime_;
+				std::vector<Tag> tags_;
 
 			};
 		}

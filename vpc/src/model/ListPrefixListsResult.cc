@@ -67,6 +67,8 @@ void ListPrefixListsResult::parse(const std::string &payload)
 			prefixListsObject.regionId = valuePrefixListsPrefixList["RegionId"].asString();
 		if(!valuePrefixListsPrefixList["ResourceGroupId"].isNull())
 			prefixListsObject.resourceGroupId = valuePrefixListsPrefixList["ResourceGroupId"].asString();
+		if(!valuePrefixListsPrefixList["PrefixListType"].isNull())
+			prefixListsObject.prefixListType = valuePrefixListsPrefixList["PrefixListType"].asString();
 		auto allTagsNode = valuePrefixListsPrefixList["Tags"]["Tag"];
 		for (auto valuePrefixListsPrefixListTagsTag : allTagsNode)
 		{

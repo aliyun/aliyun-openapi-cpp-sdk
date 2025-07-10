@@ -40,6 +40,8 @@ public:
 	void setResourceUid(long resourceUid);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getIpVersion() const;
+	void setIpVersion(const std::string &ipVersion);
 	std::string getBandwidth() const;
 	void setBandwidth(const std::string &bandwidth);
 	std::string getResourceOwnerAccount() const;
@@ -59,6 +61,7 @@ private:
 	std::string regionId_;
 	long resourceUid_;
 	int pageSize_;
+	std::string ipVersion_;
 	std::string bandwidth_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

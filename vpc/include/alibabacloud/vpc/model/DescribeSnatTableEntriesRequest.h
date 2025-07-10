@@ -32,6 +32,8 @@ public:
 	~DescribeSnatTableEntriesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::vector<std::string> getNetworkInterfaceIds() const;
+	void setNetworkInterfaceIds(const std::vector<std::string> &networkInterfaceIds);
 	std::string getSourceCIDR() const;
 	void setSourceCIDR(const std::string &sourceCIDR);
 	std::string getSnatIp() const;
@@ -61,6 +63,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::vector<std::string> networkInterfaceIds_;
 	std::string sourceCIDR_;
 	std::string snatIp_;
 	int pageNumber_;

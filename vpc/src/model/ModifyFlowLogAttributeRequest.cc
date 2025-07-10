@@ -43,6 +43,15 @@ void ModifyFlowLogAttributeRequest::setDescription(const std::string &descriptio
   setParameter(std::string("Description"), description);
 }
 
+bool ModifyFlowLogAttributeRequest::getEnableTrafficAnalyze() const {
+  return enableTrafficAnalyze_;
+}
+
+void ModifyFlowLogAttributeRequest::setEnableTrafficAnalyze(bool enableTrafficAnalyze) {
+  enableTrafficAnalyze_ = enableTrafficAnalyze;
+  setParameter(std::string("EnableTrafficAnalyze"), enableTrafficAnalyze ? "true" : "false");
+}
+
 std::string ModifyFlowLogAttributeRequest::getRegionId() const {
   return regionId_;
 }
@@ -50,6 +59,33 @@ std::string ModifyFlowLogAttributeRequest::getRegionId() const {
 void ModifyFlowLogAttributeRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+bool ModifyFlowLogAttributeRequest::getDisableLogDelivery() const {
+  return disableLogDelivery_;
+}
+
+void ModifyFlowLogAttributeRequest::setDisableLogDelivery(bool disableLogDelivery) {
+  disableLogDelivery_ = disableLogDelivery;
+  setParameter(std::string("DisableLogDelivery"), disableLogDelivery ? "true" : "false");
+}
+
+std::string ModifyFlowLogAttributeRequest::getIpVersion() const {
+  return ipVersion_;
+}
+
+void ModifyFlowLogAttributeRequest::setIpVersion(const std::string &ipVersion) {
+  ipVersion_ = ipVersion;
+  setParameter(std::string("IpVersion"), ipVersion);
+}
+
+bool ModifyFlowLogAttributeRequest::getEnableLogDelivery() const {
+  return enableLogDelivery_;
+}
+
+void ModifyFlowLogAttributeRequest::setEnableLogDelivery(bool enableLogDelivery) {
+  enableLogDelivery_ = enableLogDelivery;
+  setParameter(std::string("EnableLogDelivery"), enableLogDelivery ? "true" : "false");
 }
 
 std::string ModifyFlowLogAttributeRequest::getResourceOwnerAccount() const {
@@ -104,5 +140,14 @@ std::string ModifyFlowLogAttributeRequest::getFlowLogName() const {
 void ModifyFlowLogAttributeRequest::setFlowLogName(const std::string &flowLogName) {
   flowLogName_ = flowLogName;
   setParameter(std::string("FlowLogName"), flowLogName);
+}
+
+std::string ModifyFlowLogAttributeRequest::getTrafficAnalyzerId() const {
+  return trafficAnalyzerId_;
+}
+
+void ModifyFlowLogAttributeRequest::setTrafficAnalyzerId(const std::string &trafficAnalyzerId) {
+  trafficAnalyzerId_ = trafficAnalyzerId;
+  setParameter(std::string("TrafficAnalyzerId"), trafficAnalyzerId);
 }
 

@@ -70,6 +70,15 @@ void CreateCustomerGatewayRequest::setDescription(const std::string &description
   setParameter(std::string("Description"), description);
 }
 
+std::string CreateCustomerGatewayRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateCustomerGatewayRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateCustomerGatewayRequest::getRegionId() const {
   return regionId_;
 }

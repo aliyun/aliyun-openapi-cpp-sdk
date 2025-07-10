@@ -61,6 +61,29 @@ void CreateFlowLogRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string CreateFlowLogRequest::getIpVersion() const {
+  return ipVersion_;
+}
+
+void CreateFlowLogRequest::setIpVersion(const std::string &ipVersion) {
+  ipVersion_ = ipVersion;
+  setParameter(std::string("IpVersion"), ipVersion);
+}
+
+std::vector<CreateFlowLogRequest::Tag> CreateFlowLogRequest::getTag() const {
+  return tag_;
+}
+
+void CreateFlowLogRequest::setTag(const std::vector<CreateFlowLogRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string CreateFlowLogRequest::getResourceId() const {
   return resourceId_;
 }
@@ -157,5 +180,14 @@ std::string CreateFlowLogRequest::getFlowLogName() const {
 void CreateFlowLogRequest::setFlowLogName(const std::string &flowLogName) {
   flowLogName_ = flowLogName;
   setParameter(std::string("FlowLogName"), flowLogName);
+}
+
+std::string CreateFlowLogRequest::getTrafficAnalyzerId() const {
+  return trafficAnalyzerId_;
+}
+
+void CreateFlowLogRequest::setTrafficAnalyzerId(const std::string &trafficAnalyzerId) {
+  trafficAnalyzerId_ = trafficAnalyzerId;
+  setParameter(std::string("TrafficAnalyzerId"), trafficAnalyzerId);
 }
 

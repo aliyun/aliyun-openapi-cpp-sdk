@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT ListEnhanhcedNatGatewayAvailableZonesRequest : public RpcServiceRequest {
 public:
+	struct Filter {
+		std::string key;
+		std::string value;
+	};
 	ListEnhanhcedNatGatewayAvailableZonesRequest();
 	~ListEnhanhcedNatGatewayAvailableZonesRequest();
 	long getResourceOwnerId() const;
@@ -40,6 +44,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::vector<Filter> getFilter() const;
+	void setFilter(const std::vector<Filter> &filter);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
@@ -49,6 +55,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::vector<Filter> filter_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

@@ -214,6 +214,15 @@ void ModifyVirtualBorderRouterAttributeRequest::setMinRxInterval(long minRxInter
   setParameter(std::string("MinRxInterval"), std::to_string(minRxInterval));
 }
 
+bool ModifyVirtualBorderRouterAttributeRequest::getSitelinkEnable() const {
+  return sitelinkEnable_;
+}
+
+void ModifyVirtualBorderRouterAttributeRequest::setSitelinkEnable(bool sitelinkEnable) {
+  sitelinkEnable_ = sitelinkEnable;
+  setParameter(std::string("SitelinkEnable"), sitelinkEnable ? "true" : "false");
+}
+
 std::string ModifyVirtualBorderRouterAttributeRequest::getLocalIpv6GatewayIp() const {
   return localIpv6GatewayIp_;
 }

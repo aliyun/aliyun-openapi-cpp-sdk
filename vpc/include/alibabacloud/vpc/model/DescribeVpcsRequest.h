@@ -38,6 +38,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	long getVpcOwnerId() const;
 	void setVpcOwnerId(long vpcOwnerId);
+	bool getEnableIpv6() const;
+	void setEnableIpv6(bool enableIpv6);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getVpcName() const;
@@ -70,6 +72,7 @@ public:
 private:
 	long resourceOwnerId_;
 	long vpcOwnerId_;
+	bool enableIpv6_;
 	int pageNumber_;
 	std::string vpcName_;
 	std::string resourceGroupId_;

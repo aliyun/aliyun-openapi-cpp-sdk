@@ -41,8 +41,15 @@ namespace AlibabaCloud
 					std::string nextHop;
 					std::string state;
 					long createTime;
+					std::string nextHopTunnelId;
 					int weight;
 					std::string community;
+					std::string source;
+				};
+				struct VpnRouteCount
+				{
+					std::string routeEntryType;
+					int routeCount;
 					std::string source;
 				};
 
@@ -54,6 +61,7 @@ namespace AlibabaCloud
 				std::vector<VpnRouteEntry> getVpnRouteEntries()const;
 				int getPageSize()const;
 				int getPageNumber()const;
+				std::vector<VpnRouteCount> getVpnRouteCounts()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -62,6 +70,7 @@ namespace AlibabaCloud
 				std::vector<VpnRouteEntry> vpnRouteEntries_;
 				int pageSize_;
 				int pageNumber_;
+				std::vector<VpnRouteCount> vpnRouteCounts_;
 
 			};
 		}

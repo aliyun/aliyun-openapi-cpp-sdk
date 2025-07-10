@@ -59,6 +59,18 @@ void ListVpcGatewayEndpointsResult::parse(const std::string &payload)
 			endpointsObject.creationTime = valueEndpointsEndpoint["CreationTime"].asString();
 		if(!valueEndpointsEndpoint["EndpointStatus"].isNull())
 			endpointsObject.endpointStatus = valueEndpointsEndpoint["EndpointStatus"].asString();
+		if(!valueEndpointsEndpoint["ResourceGroupId"].isNull())
+			endpointsObject.resourceGroupId = valueEndpointsEndpoint["ResourceGroupId"].asString();
+		auto allTagsNode = valueEndpointsEndpoint["Tags"]["Tag"];
+		for (auto valueEndpointsEndpointTagsTag : allTagsNode)
+		{
+			Endpoint::Tag tagsObject;
+			if(!valueEndpointsEndpointTagsTag["Key"].isNull())
+				tagsObject.key = valueEndpointsEndpointTagsTag["Key"].asString();
+			if(!valueEndpointsEndpointTagsTag["Value"].isNull())
+				tagsObject.value = valueEndpointsEndpointTagsTag["Value"].asString();
+			endpointsObject.tags.push_back(tagsObject);
+		}
 		auto allAssociatedRouteTables = value["AssociatedRouteTables"]["RouteTable"];
 		for (auto value : allAssociatedRouteTables)
 			endpointsObject.associatedRouteTables.push_back(value.asString());

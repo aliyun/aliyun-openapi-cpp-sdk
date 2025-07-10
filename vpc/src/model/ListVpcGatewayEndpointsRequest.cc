@@ -43,6 +43,15 @@ void ListVpcGatewayEndpointsRequest::setEndpointId(const std::string &endpointId
   setParameter(std::string("EndpointId"), endpointId);
 }
 
+std::string ListVpcGatewayEndpointsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListVpcGatewayEndpointsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListVpcGatewayEndpointsRequest::getNextToken() const {
   return nextToken_;
 }
@@ -97,6 +106,20 @@ void ListVpcGatewayEndpointsRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::vector<ListVpcGatewayEndpointsRequest::Tags> ListVpcGatewayEndpointsRequest::getTags() const {
+  return tags_;
+}
+
+void ListVpcGatewayEndpointsRequest::setTags(const std::vector<ListVpcGatewayEndpointsRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+  }
+}
+
 std::string ListVpcGatewayEndpointsRequest::getEndpointName() const {
   return endpointName_;
 }
@@ -104,6 +127,15 @@ std::string ListVpcGatewayEndpointsRequest::getEndpointName() const {
 void ListVpcGatewayEndpointsRequest::setEndpointName(const std::string &endpointName) {
   endpointName_ = endpointName;
   setParameter(std::string("EndpointName"), endpointName);
+}
+
+std::string ListVpcGatewayEndpointsRequest::getVpcId() const {
+  return vpcId_;
+}
+
+void ListVpcGatewayEndpointsRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
 }
 
 long ListVpcGatewayEndpointsRequest::getMaxResults() const {

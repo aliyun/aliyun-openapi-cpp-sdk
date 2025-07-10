@@ -55,6 +55,20 @@ void ListDhcpOptionsSetsResult::parse(const std::string &payload)
 			dhcpOptionsSetsObject.associateVpcCount = std::stoi(valueDhcpOptionsSetsDhcpOptionsSet["AssociateVpcCount"].asString());
 		if(!valueDhcpOptionsSetsDhcpOptionsSet["OwnerId"].isNull())
 			dhcpOptionsSetsObject.ownerId = std::stol(valueDhcpOptionsSetsDhcpOptionsSet["OwnerId"].asString());
+		if(!valueDhcpOptionsSetsDhcpOptionsSet["ResourceGroupId"].isNull())
+			dhcpOptionsSetsObject.resourceGroupId = valueDhcpOptionsSetsDhcpOptionsSet["ResourceGroupId"].asString();
+		if(!valueDhcpOptionsSetsDhcpOptionsSet["CreationTime"].isNull())
+			dhcpOptionsSetsObject.creationTime = valueDhcpOptionsSetsDhcpOptionsSet["CreationTime"].asString();
+		auto allTagsNode = valueDhcpOptionsSetsDhcpOptionsSet["Tags"]["Tag"];
+		for (auto valueDhcpOptionsSetsDhcpOptionsSetTagsTag : allTagsNode)
+		{
+			DhcpOptionsSet::Tag tagsObject;
+			if(!valueDhcpOptionsSetsDhcpOptionsSetTagsTag["Key"].isNull())
+				tagsObject.key = valueDhcpOptionsSetsDhcpOptionsSetTagsTag["Key"].asString();
+			if(!valueDhcpOptionsSetsDhcpOptionsSetTagsTag["Value"].isNull())
+				tagsObject.value = valueDhcpOptionsSetsDhcpOptionsSetTagsTag["Value"].asString();
+			dhcpOptionsSetsObject.tags.push_back(tagsObject);
+		}
 		auto dhcpOptionsNode = value["DhcpOptions"];
 		if(!dhcpOptionsNode["DomainNameServers"].isNull())
 			dhcpOptionsSetsObject.dhcpOptions.domainNameServers = dhcpOptionsNode["DomainNameServers"].asString();
@@ -68,12 +82,19 @@ void ListDhcpOptionsSetsResult::parse(const std::string &payload)
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
 
 }
 
 std::vector<ListDhcpOptionsSetsResult::DhcpOptionsSet> ListDhcpOptionsSetsResult::getDhcpOptionsSets()const
 {
 	return dhcpOptionsSets_;
+}
+
+std::string ListDhcpOptionsSetsResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::string ListDhcpOptionsSetsResult::getNextToken()const

@@ -61,6 +61,15 @@ void CreateVpcRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+int CreateVpcRequest::getIpv4CidrMask() const {
+  return ipv4CidrMask_;
+}
+
+void CreateVpcRequest::setIpv4CidrMask(int ipv4CidrMask) {
+  ipv4CidrMask_ = ipv4CidrMask;
+  setParameter(std::string("Ipv4CidrMask"), std::to_string(ipv4CidrMask));
+}
+
 std::string CreateVpcRequest::getVpcName() const {
   return vpcName_;
 }
@@ -88,6 +97,15 @@ void CreateVpcRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string CreateVpcRequest::getIpv4IpamPoolId() const {
+  return ipv4IpamPoolId_;
+}
+
+void CreateVpcRequest::setIpv4IpamPoolId(const std::string &ipv4IpamPoolId) {
+  ipv4IpamPoolId_ = ipv4IpamPoolId;
+  setParameter(std::string("Ipv4IpamPoolId"), ipv4IpamPoolId);
+}
+
 std::string CreateVpcRequest::getIpv6Isp() const {
   return ipv6Isp_;
 }
@@ -106,6 +124,20 @@ void CreateVpcRequest::setUserCidr(const std::string &userCidr) {
   setParameter(std::string("UserCidr"), userCidr);
 }
 
+std::vector<CreateVpcRequest::Tag> CreateVpcRequest::getTag() const {
+  return tag_;
+}
+
+void CreateVpcRequest::setTag(const std::vector<CreateVpcRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 bool CreateVpcRequest::getDryRun() const {
   return dryRun_;
 }
@@ -113,6 +145,15 @@ bool CreateVpcRequest::getDryRun() const {
 void CreateVpcRequest::setDryRun(bool dryRun) {
   dryRun_ = dryRun;
   setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
+bool CreateVpcRequest::getEnableDnsHostname() const {
+  return enableDnsHostname_;
+}
+
+void CreateVpcRequest::setEnableDnsHostname(bool enableDnsHostname) {
+  enableDnsHostname_ = enableDnsHostname;
+  setParameter(std::string("EnableDnsHostname"), enableDnsHostname ? "true" : "false");
 }
 
 std::string CreateVpcRequest::getResourceOwnerAccount() const {

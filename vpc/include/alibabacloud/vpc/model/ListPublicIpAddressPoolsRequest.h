@@ -36,8 +36,12 @@ public:
 	~ListPublicIpAddressPoolsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	bool getSecurityProtectionEnabled() const;
+	void setSecurityProtectionEnabled(bool securityProtectionEnabled);
 	std::string getIsp() const;
 	void setIsp(const std::string &isp);
+	int getSecurityProtectionEnabledForCommonBuy() const;
+	void setSecurityProtectionEnabledForCommonBuy(int securityProtectionEnabledForCommonBuy);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getNextToken() const;
@@ -65,7 +69,9 @@ public:
 
 private:
 	long resourceOwnerId_;
+	bool securityProtectionEnabled_;
 	std::string isp_;
+	int securityProtectionEnabledForCommonBuy_;
 	std::string resourceGroupId_;
 	std::string nextToken_;
 	std::string regionId_;

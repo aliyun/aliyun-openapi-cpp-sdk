@@ -124,6 +124,15 @@ void UpdateGatewayRouteTableEntryAttributeRequest::setOwnerAccount(const std::st
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::string UpdateGatewayRouteTableEntryAttributeRequest::getGatewayRouteTableId() const {
+  return gatewayRouteTableId_;
+}
+
+void UpdateGatewayRouteTableEntryAttributeRequest::setGatewayRouteTableId(const std::string &gatewayRouteTableId) {
+  gatewayRouteTableId_ = gatewayRouteTableId;
+  setParameter(std::string("GatewayRouteTableId"), gatewayRouteTableId);
+}
+
 long UpdateGatewayRouteTableEntryAttributeRequest::getOwnerId() const {
   return ownerId_;
 }

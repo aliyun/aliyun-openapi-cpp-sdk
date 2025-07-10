@@ -32,6 +32,7 @@ public:
 		std::string action;
 		std::string sourceCidrBlock;
 		std::string protocol;
+		std::string ipVersion;
 		std::string destinationPortRange;
 		int priority;
 		std::string destinationCidrBlock;
@@ -41,6 +42,7 @@ public:
 		std::string action;
 		std::string sourceCidrBlock;
 		std::string protocol;
+		std::string ipVersion;
 		std::string destinationPortRange;
 		int priority;
 		std::string destinationCidrBlock;

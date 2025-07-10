@@ -25,15 +25,6 @@ CreateNatIpRequest::CreateNatIpRequest()
 
 CreateNatIpRequest::~CreateNatIpRequest() {}
 
-std::string CreateNatIpRequest::getNatIpCidrId() const {
-  return natIpCidrId_;
-}
-
-void CreateNatIpRequest::setNatIpCidrId(const std::string &natIpCidrId) {
-  natIpCidrId_ = natIpCidrId;
-  setParameter(std::string("NatIpCidrId"), natIpCidrId);
-}
-
 long CreateNatIpRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }

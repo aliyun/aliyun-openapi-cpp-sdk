@@ -32,6 +32,38 @@ public:
 		std::string value;
 		std::string key;
 	};
+	struct TunnelOptionsSpecification {
+		struct TunnelIpsecConfig {
+			std::string ipsecPfs;
+			long ipsecLifetime;
+			std::string ipsecAuthAlg;
+			std::string ipsecEncAlg;
+		};
+		TunnelIpsecConfig tunnelIpsecConfig;
+		std::string role;
+		struct TunnelBgpConfig {
+			long localAsn;
+			std::string tunnelCidr;
+			std::string localBgpIp;
+		};
+		TunnelBgpConfig tunnelBgpConfig;
+		std::string remoteCaCertificate;
+		struct TunnelIkeConfig {
+			std::string ikeVersion;
+			std::string ikeMode;
+			std::string ikeAuthAlg;
+			std::string psk;
+			std::string ikePfs;
+			long ikeLifetime;
+			std::string localId;
+			std::string ikeEncAlg;
+			std::string remoteId;
+		};
+		TunnelIkeConfig tunnelIkeConfig;
+		bool enableNatTraversal;
+		bool enableDpd;
+		std::string customerGatewayId;
+	};
 	CreateVpnConnectionRequest();
 	~CreateVpnConnectionRequest();
 	std::string getIkeConfig() const;
@@ -52,12 +84,16 @@ public:
 	void setCustomerGatewayId(const std::string &customerGatewayId);
 	std::string getLocalSubnet() const;
 	void setLocalSubnet(const std::string &localSubnet);
+	bool getEnableTunnelsBgp() const;
+	void setEnableTunnelsBgp(bool enableTunnelsBgp);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getRemoteSubnet() const;
 	void setRemoteSubnet(const std::string &remoteSubnet);
 	bool getEffectImmediately() const;
 	void setEffectImmediately(bool effectImmediately);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -70,6 +106,8 @@ public:
 	void setEnableDpd(bool enableDpd);
 	std::vector<Tags> getTags() const;
 	void setTags(const std::vector<Tags> &tags);
+	std::vector<TunnelOptionsSpecification> getTunnelOptionsSpecification() const;
+	void setTunnelOptionsSpecification(const std::vector<TunnelOptionsSpecification> &tunnelOptionsSpecification);
 	std::string getRemoteCaCertificate() const;
 	void setRemoteCaCertificate(const std::string &remoteCaCertificate);
 	std::string getName() const;
@@ -87,15 +125,18 @@ private:
 	std::string healthCheckConfig_;
 	std::string customerGatewayId_;
 	std::string localSubnet_;
+	bool enableTunnelsBgp_;
 	std::string regionId_;
 	std::string remoteSubnet_;
 	bool effectImmediately_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string vpnGatewayId_;
 	long ownerId_;
 	bool enableDpd_;
 	std::vector<Tags> tags_;
+	std::vector<TunnelOptionsSpecification> tunnelOptionsSpecification_;
 	std::string remoteCaCertificate_;
 	std::string name_;
 	bool enableNatTraversal_;

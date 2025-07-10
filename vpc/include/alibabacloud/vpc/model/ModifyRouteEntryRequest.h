@@ -36,14 +36,24 @@ public:
 	void setRouteEntryName(const std::string &routeEntryName);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getNewNextHopId() const;
+	void setNewNextHopId(const std::string &newNextHopId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getRouteTableId() const;
+	void setRouteTableId(const std::string &routeTableId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getDestinationCidrBlock() const;
+	void setDestinationCidrBlock(const std::string &destinationCidrBlock);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getNewNextHopType() const;
+	void setNewNextHopType(const std::string &newNextHopType);
 	std::string getRouteEntryId() const;
 	void setRouteEntryId(const std::string &routeEntryId);
 
@@ -51,10 +61,15 @@ private:
 	long resourceOwnerId_;
 	std::string routeEntryName_;
 	std::string description_;
+	std::string newNextHopId_;
 	std::string regionId_;
+	std::string routeTableId_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::string destinationCidrBlock_;
 	long ownerId_;
+	std::string newNextHopType_;
 	std::string routeEntryId_;
 };
 } // namespace Model

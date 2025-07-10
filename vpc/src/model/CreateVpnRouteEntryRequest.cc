@@ -70,6 +70,15 @@ void CreateVpnRouteEntryRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+bool CreateVpnRouteEntryRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void CreateVpnRouteEntryRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string CreateVpnRouteEntryRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

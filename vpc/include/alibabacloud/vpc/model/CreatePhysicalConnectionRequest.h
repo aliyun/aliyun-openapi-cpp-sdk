@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT CreatePhysicalConnectionRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreatePhysicalConnectionRequest();
 	~CreatePhysicalConnectionRequest();
 	std::string getAccessPointId() const;
@@ -50,6 +54,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getRedundantPhysicalConnectionId() const;
 	void setRedundantPhysicalConnectionId(const std::string &redundantPhysicalConnectionId);
 	std::string getPeerLocation() const;
@@ -66,6 +72,8 @@ public:
 	void setLineOperator(const std::string &lineOperator);
 	std::string getName() const;
 	void setName(const std::string &name);
+	std::vector<std::string> getDeviceAdvancedCapacity() const;
+	void setDeviceAdvancedCapacity(const std::vector<std::string> &deviceAdvancedCapacity);
 
 private:
 	std::string accessPointId_;
@@ -78,6 +86,7 @@ private:
 	std::string type_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::vector<Tag> tag_;
 	std::string redundantPhysicalConnectionId_;
 	std::string peerLocation_;
 	int bandwidth_;
@@ -86,6 +95,7 @@ private:
 	long ownerId_;
 	std::string lineOperator_;
 	std::string name_;
+	std::vector<std::string> deviceAdvancedCapacity_;
 };
 } // namespace Model
 } // namespace Vpc

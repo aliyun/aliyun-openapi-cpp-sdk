@@ -61,6 +61,15 @@ void CreateDhcpOptionsSetRequest::setTFTPServerName(const std::string &tFTPServe
   setParameter(std::string("TFTPServerName"), tFTPServerName);
 }
 
+std::string CreateDhcpOptionsSetRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateDhcpOptionsSetRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateDhcpOptionsSetRequest::getLeaseTime() const {
   return leaseTime_;
 }
@@ -86,6 +95,20 @@ std::string CreateDhcpOptionsSetRequest::getDomainNameServers() const {
 void CreateDhcpOptionsSetRequest::setDomainNameServers(const std::string &domainNameServers) {
   domainNameServers_ = domainNameServers;
   setParameter(std::string("DomainNameServers"), domainNameServers);
+}
+
+std::vector<CreateDhcpOptionsSetRequest::Tag> CreateDhcpOptionsSetRequest::getTag() const {
+  return tag_;
+}
+
+void CreateDhcpOptionsSetRequest::setTag(const std::vector<CreateDhcpOptionsSetRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
 }
 
 std::string CreateDhcpOptionsSetRequest::getDhcpOptionsSetDescription() const {

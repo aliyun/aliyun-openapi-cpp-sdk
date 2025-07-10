@@ -79,6 +79,20 @@ void CreatePublicIpAddressPoolRequest::setRegionId(const std::string &regionId) 
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreatePublicIpAddressPoolRequest::Tag> CreatePublicIpAddressPoolRequest::getTag() const {
+  return tag_;
+}
+
+void CreatePublicIpAddressPoolRequest::setTag(const std::vector<CreatePublicIpAddressPoolRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
 bool CreatePublicIpAddressPoolRequest::getDryRun() const {
   return dryRun_;
 }
@@ -106,6 +120,14 @@ void CreatePublicIpAddressPoolRequest::setOwnerAccount(const std::string &ownerA
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::vector<std::string> CreatePublicIpAddressPoolRequest::getZones() const {
+  return zones_;
+}
+
+void CreatePublicIpAddressPoolRequest::setZones(const std::vector<std::string> &zones) {
+  zones_ = zones;
+}
+
 long CreatePublicIpAddressPoolRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -115,6 +137,15 @@ void CreatePublicIpAddressPoolRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string CreatePublicIpAddressPoolRequest::getBizType() const {
+  return bizType_;
+}
+
+void CreatePublicIpAddressPoolRequest::setBizType(const std::string &bizType) {
+  bizType_ = bizType;
+  setParameter(std::string("BizType"), bizType);
+}
+
 std::string CreatePublicIpAddressPoolRequest::getName() const {
   return name_;
 }
@@ -122,5 +153,13 @@ std::string CreatePublicIpAddressPoolRequest::getName() const {
 void CreatePublicIpAddressPoolRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+std::vector<std::string> CreatePublicIpAddressPoolRequest::getSecurityProtectionTypes() const {
+  return securityProtectionTypes_;
+}
+
+void CreatePublicIpAddressPoolRequest::setSecurityProtectionTypes(const std::vector<std::string> &securityProtectionTypes) {
+  securityProtectionTypes_ = securityProtectionTypes;
 }
 

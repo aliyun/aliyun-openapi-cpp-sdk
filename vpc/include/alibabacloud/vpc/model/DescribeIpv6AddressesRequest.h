@@ -28,22 +28,36 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT DescribeIpv6AddressesRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	DescribeIpv6AddressesRequest();
 	~DescribeIpv6AddressesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	bool getServiceManaged() const;
+	void setServiceManaged(bool serviceManaged);
 	std::string getIpv6InternetBandwidthId() const;
 	void setIpv6InternetBandwidthId(const std::string &ipv6InternetBandwidthId);
 	std::string getNetworkType() const;
 	void setNetworkType(const std::string &networkType);
+	bool getIncludeReservationData() const;
+	void setIncludeReservationData(bool includeReservationData);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getAssociatedInstanceType() const;
 	void setAssociatedInstanceType(const std::string &associatedInstanceType);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getAddressType() const;
+	void setAddressType(const std::string &addressType);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -65,12 +79,17 @@ public:
 
 private:
 	long resourceOwnerId_;
+	bool serviceManaged_;
 	std::string ipv6InternetBandwidthId_;
 	std::string networkType_;
+	bool includeReservationData_;
 	int pageNumber_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string associatedInstanceType_;
 	int pageSize_;
+	std::string addressType_;
+	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

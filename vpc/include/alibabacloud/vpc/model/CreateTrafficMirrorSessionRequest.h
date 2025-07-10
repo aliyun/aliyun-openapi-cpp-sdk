@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT CreateTrafficMirrorSessionRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateTrafficMirrorSessionRequest();
 	~CreateTrafficMirrorSessionRequest();
 	std::string getTrafficMirrorTargetType() const;
@@ -48,6 +52,8 @@ public:
 	void setTrafficMirrorSessionDescription(const std::string &trafficMirrorSessionDescription);
 	std::vector<std::string> getTrafficMirrorSourceIds() const;
 	void setTrafficMirrorSourceIds(const std::vector<std::string> &trafficMirrorSourceIds);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
@@ -66,6 +72,8 @@ public:
 	void setPacketLength(int packetLength);
 	int getVirtualNetworkId() const;
 	void setVirtualNetworkId(int virtualNetworkId);
+	int getTrafficMirrorSourceTruncateMode() const;
+	void setTrafficMirrorSourceTruncateMode(int trafficMirrorSourceTruncateMode);
 
 private:
 	std::string trafficMirrorTargetType_;
@@ -77,6 +85,7 @@ private:
 	std::string regionId_;
 	std::string trafficMirrorSessionDescription_;
 	std::vector<std::string> trafficMirrorSourceIds_;
+	std::vector<Tag> tag_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
@@ -86,6 +95,7 @@ private:
 	std::string trafficMirrorFilterId_;
 	int packetLength_;
 	int virtualNetworkId_;
+	int trafficMirrorSourceTruncateMode_;
 };
 } // namespace Model
 } // namespace Vpc

@@ -40,6 +40,8 @@ public:
 	void setFullNatEntryStatus(const std::string &fullNatEntryStatus);
 	std::string getFullNatEntryId() const;
 	void setFullNatEntryId(const std::string &fullNatEntryId);
+	std::string getNatIpPort() const;
+	void setNatIpPort(const std::string &natIpPort);
 	std::string getFullNatTableId() const;
 	void setFullNatTableId(const std::string &fullNatTableId);
 	std::string getNextToken() const;
@@ -58,6 +60,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getNatIp() const;
+	void setNatIp(const std::string &natIp);
 	long getMaxResults() const;
 	void setMaxResults(long maxResults);
 
@@ -67,6 +71,7 @@ private:
 	std::vector<std::string> networkInterfaceIds_;
 	std::string fullNatEntryStatus_;
 	std::string fullNatEntryId_;
+	std::string natIpPort_;
 	std::string fullNatTableId_;
 	std::string nextToken_;
 	std::string regionId_;
@@ -76,6 +81,7 @@ private:
 	std::string ipProtocol_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string natIp_;
 	long maxResults_;
 };
 } // namespace Model

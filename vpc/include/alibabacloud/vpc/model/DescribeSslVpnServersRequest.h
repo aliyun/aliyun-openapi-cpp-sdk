@@ -36,6 +36,8 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getSslVpnServerId() const;
 	void setSslVpnServerId(const std::string &sslVpnServerId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
@@ -55,6 +57,7 @@ private:
 	long resourceOwnerId_;
 	int pageNumber_;
 	std::string sslVpnServerId_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	int pageSize_;
 	std::string resourceOwnerAccount_;

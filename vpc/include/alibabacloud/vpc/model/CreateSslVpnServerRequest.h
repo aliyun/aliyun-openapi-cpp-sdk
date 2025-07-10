@@ -46,8 +46,12 @@ public:
 	void setIDaaSInstanceId(const std::string &iDaaSInstanceId);
 	std::string getCipher() const;
 	void setCipher(const std::string &cipher);
+	std::string getIDaaSApplicationId() const;
+	void setIDaaSApplicationId(const std::string &iDaaSApplicationId);
 	std::string getClientIpPool() const;
 	void setClientIpPool(const std::string &clientIpPool);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	bool getCompress() const;
@@ -74,7 +78,9 @@ private:
 	bool enableMultiFactorAuth_;
 	std::string iDaaSInstanceId_;
 	std::string cipher_;
+	std::string iDaaSApplicationId_;
 	std::string clientIpPool_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	bool compress_;
 	std::string ownerAccount_;

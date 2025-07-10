@@ -39,13 +39,20 @@ void OpenTrafficMirrorServiceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["OrderId"].isNull())
-		orderId_ = value["OrderId"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
-std::string OpenTrafficMirrorServiceResult::getOrderId()const
+std::string OpenTrafficMirrorServiceResult::getMessage()const
 {
-	return orderId_;
+	return message_;
+}
+
+std::string OpenTrafficMirrorServiceResult::getCode()const
+{
+	return code_;
 }
 

@@ -34,6 +34,15 @@ void ListDhcpOptionsSetsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ListDhcpOptionsSetsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListDhcpOptionsSetsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListDhcpOptionsSetsRequest::getRegionId() const {
   return regionId_;
 }
@@ -94,6 +103,20 @@ long ListDhcpOptionsSetsRequest::getOwnerId() const {
 void ListDhcpOptionsSetsRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::vector<ListDhcpOptionsSetsRequest::Tags> ListDhcpOptionsSetsRequest::getTags() const {
+  return tags_;
+}
+
+void ListDhcpOptionsSetsRequest::setTags(const std::vector<ListDhcpOptionsSetsRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+  }
 }
 
 std::string ListDhcpOptionsSetsRequest::getDhcpOptionsSetName() const {

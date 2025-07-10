@@ -34,6 +34,33 @@ void DeleteIpv6GatewayRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DeleteIpv6GatewayRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void DeleteIpv6GatewayRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string DeleteIpv6GatewayRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteIpv6GatewayRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+bool DeleteIpv6GatewayRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DeleteIpv6GatewayRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string DeleteIpv6GatewayRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -59,15 +86,6 @@ long DeleteIpv6GatewayRequest::getOwnerId() const {
 void DeleteIpv6GatewayRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DeleteIpv6GatewayRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DeleteIpv6GatewayRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DeleteIpv6GatewayRequest::getIpv6GatewayId() const {

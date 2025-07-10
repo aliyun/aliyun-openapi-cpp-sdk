@@ -89,6 +89,20 @@ void GetNatGatewayAttributeResult::parse(const std::string &payload)
 	auto deletionProtectionInfoNode = value["DeletionProtectionInfo"];
 	if(!deletionProtectionInfoNode["Enabled"].isNull())
 		deletionProtectionInfo_.enabled = deletionProtectionInfoNode["Enabled"].asString() == "true";
+	auto logDeliveryNode = value["LogDelivery"];
+	if(!logDeliveryNode["LogDeliveryType"].isNull())
+		logDelivery_.logDeliveryType = logDeliveryNode["LogDeliveryType"].asString();
+	if(!logDeliveryNode["LogDestination"].isNull())
+		logDelivery_.logDestination = logDeliveryNode["LogDestination"].asString();
+	if(!logDeliveryNode["DeliveryStatus"].isNull())
+		logDelivery_.deliveryStatus = logDeliveryNode["DeliveryStatus"].asString();
+	if(!logDeliveryNode["DeliverLogsErrorMessage"].isNull())
+		logDelivery_.deliverLogsErrorMessage = logDeliveryNode["DeliverLogsErrorMessage"].asString();
+	auto accessModeNode = value["AccessMode"];
+	if(!accessModeNode["ModeValue"].isNull())
+		accessMode_.modeValue = accessModeNode["ModeValue"].asString();
+	if(!accessModeNode["TunnelType"].isNull())
+		accessMode_.tunnelType = accessModeNode["TunnelType"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
 	if(!value["CreationTime"].isNull())
@@ -119,17 +133,9 @@ void GetNatGatewayAttributeResult::parse(const std::string &payload)
 		privateLinkEnabled_ = value["PrivateLinkEnabled"].asString() == "true";
 	if(!value["PrivateLinkMode"].isNull())
 		privateLinkMode_ = value["PrivateLinkMode"].asString();
+	if(!value["EnableSessionLog"].isNull())
+		enableSessionLog_ = value["EnableSessionLog"].asString() == "true";
 
-}
-
-std::string GetNatGatewayAttributeResult::getStatus()const
-{
-	return status_;
-}
-
-GetNatGatewayAttributeResult::ForwardTable GetNatGatewayAttributeResult::getForwardTable()const
-{
-	return forwardTable_;
 }
 
 std::string GetNatGatewayAttributeResult::getDescription()const
@@ -142,19 +148,14 @@ std::string GetNatGatewayAttributeResult::getResourceGroupId()const
 	return resourceGroupId_;
 }
 
-std::vector<GetNatGatewayAttributeResult::IpListItem> GetNatGatewayAttributeResult::getIpList()const
-{
-	return ipList_;
-}
-
 bool GetNatGatewayAttributeResult::getPrivateLinkEnabled()const
 {
 	return privateLinkEnabled_;
 }
 
-std::string GetNatGatewayAttributeResult::getPrivateLinkMode()const
+bool GetNatGatewayAttributeResult::getEnableSessionLog()const
 {
-	return privateLinkMode_;
+	return enableSessionLog_;
 }
 
 GetNatGatewayAttributeResult::BillingConfig GetNatGatewayAttributeResult::getBillingConfig()const
@@ -167,14 +168,9 @@ GetNatGatewayAttributeResult::DeletionProtectionInfo GetNatGatewayAttributeResul
 	return deletionProtectionInfo_;
 }
 
-GetNatGatewayAttributeResult::SnatTable GetNatGatewayAttributeResult::getSnatTable()const
+GetNatGatewayAttributeResult::LogDelivery GetNatGatewayAttributeResult::getLogDelivery()const
 {
-	return snatTable_;
-}
-
-std::string GetNatGatewayAttributeResult::getNatType()const
-{
-	return natType_;
+	return logDelivery_;
 }
 
 std::string GetNatGatewayAttributeResult::getBusinessStatus()const
@@ -187,24 +183,9 @@ std::string GetNatGatewayAttributeResult::getName()const
 	return name_;
 }
 
-bool GetNatGatewayAttributeResult::getEcsMetricEnabled()const
-{
-	return ecsMetricEnabled_;
-}
-
-std::string GetNatGatewayAttributeResult::getVpcId()const
-{
-	return vpcId_;
-}
-
 std::string GetNatGatewayAttributeResult::getNetworkType()const
 {
 	return networkType_;
-}
-
-GetNatGatewayAttributeResult::FullNatTable GetNatGatewayAttributeResult::getFullNatTable()const
-{
-	return fullNatTable_;
 }
 
 std::string GetNatGatewayAttributeResult::getExpiredTime()const
@@ -217,9 +198,59 @@ GetNatGatewayAttributeResult::PrivateInfo GetNatGatewayAttributeResult::getPriva
 	return privateInfo_;
 }
 
+std::string GetNatGatewayAttributeResult::getStatus()const
+{
+	return status_;
+}
+
+GetNatGatewayAttributeResult::ForwardTable GetNatGatewayAttributeResult::getForwardTable()const
+{
+	return forwardTable_;
+}
+
+std::vector<GetNatGatewayAttributeResult::IpListItem> GetNatGatewayAttributeResult::getIpList()const
+{
+	return ipList_;
+}
+
+std::string GetNatGatewayAttributeResult::getPrivateLinkMode()const
+{
+	return privateLinkMode_;
+}
+
+GetNatGatewayAttributeResult::SnatTable GetNatGatewayAttributeResult::getSnatTable()const
+{
+	return snatTable_;
+}
+
+std::string GetNatGatewayAttributeResult::getNatType()const
+{
+	return natType_;
+}
+
+bool GetNatGatewayAttributeResult::getEcsMetricEnabled()const
+{
+	return ecsMetricEnabled_;
+}
+
+std::string GetNatGatewayAttributeResult::getVpcId()const
+{
+	return vpcId_;
+}
+
+GetNatGatewayAttributeResult::FullNatTable GetNatGatewayAttributeResult::getFullNatTable()const
+{
+	return fullNatTable_;
+}
+
 std::string GetNatGatewayAttributeResult::getCreationTime()const
 {
 	return creationTime_;
+}
+
+GetNatGatewayAttributeResult::AccessMode GetNatGatewayAttributeResult::getAccessMode()const
+{
+	return accessMode_;
 }
 
 std::string GetNatGatewayAttributeResult::getRegionId()const

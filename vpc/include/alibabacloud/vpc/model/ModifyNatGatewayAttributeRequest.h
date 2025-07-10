@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT ModifyNatGatewayAttributeRequest : public RpcServiceRequest {
 public:
+	struct LogDelivery {
+		std::string logDeliveryType;
+		std::string logDestination;
+	};
 	ModifyNatGatewayAttributeRequest();
 	~ModifyNatGatewayAttributeRequest();
 	long getResourceOwnerId() const;
@@ -36,6 +40,8 @@ public:
 	void setSecurityProtectionEnabled(bool securityProtectionEnabled);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	LogDelivery getLogDelivery() const;
+	void setLogDelivery(const LogDelivery &logDelivery);
 	bool getIcmpReplyEnabled() const;
 	void setIcmpReplyEnabled(bool icmpReplyEnabled);
 	std::string getRegionId() const;
@@ -50,6 +56,8 @@ public:
 	void setPrivateLinkMode(const std::string &privateLinkMode);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	bool getEnableSessionLog() const;
+	void setEnableSessionLog(bool enableSessionLog);
 	std::string getName() const;
 	void setName(const std::string &name);
 	std::string getEipBindMode() const;
@@ -59,6 +67,7 @@ private:
 	long resourceOwnerId_;
 	bool securityProtectionEnabled_;
 	std::string description_;
+	LogDelivery logDelivery_;
 	bool icmpReplyEnabled_;
 	std::string regionId_;
 	std::string natGatewayId_;
@@ -66,6 +75,7 @@ private:
 	std::string ownerAccount_;
 	std::string privateLinkMode_;
 	long ownerId_;
+	bool enableSessionLog_;
 	std::string name_;
 	std::string eipBindMode_;
 };

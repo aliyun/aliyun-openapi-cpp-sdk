@@ -52,6 +52,15 @@ void DescribeCustomerGatewaysRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeCustomerGatewaysRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeCustomerGatewaysRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeCustomerGatewaysRequest::getRegionId() const {
   return regionId_;
 }

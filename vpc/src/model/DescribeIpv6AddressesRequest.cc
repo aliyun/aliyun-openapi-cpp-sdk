@@ -34,6 +34,15 @@ void DescribeIpv6AddressesRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+bool DescribeIpv6AddressesRequest::getServiceManaged() const {
+  return serviceManaged_;
+}
+
+void DescribeIpv6AddressesRequest::setServiceManaged(bool serviceManaged) {
+  serviceManaged_ = serviceManaged;
+  setParameter(std::string("ServiceManaged"), serviceManaged ? "true" : "false");
+}
+
 std::string DescribeIpv6AddressesRequest::getIpv6InternetBandwidthId() const {
   return ipv6InternetBandwidthId_;
 }
@@ -52,6 +61,15 @@ void DescribeIpv6AddressesRequest::setNetworkType(const std::string &networkType
   setParameter(std::string("NetworkType"), networkType);
 }
 
+bool DescribeIpv6AddressesRequest::getIncludeReservationData() const {
+  return includeReservationData_;
+}
+
+void DescribeIpv6AddressesRequest::setIncludeReservationData(bool includeReservationData) {
+  includeReservationData_ = includeReservationData;
+  setParameter(std::string("IncludeReservationData"), includeReservationData ? "true" : "false");
+}
+
 int DescribeIpv6AddressesRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -59,6 +77,15 @@ int DescribeIpv6AddressesRequest::getPageNumber() const {
 void DescribeIpv6AddressesRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+std::string DescribeIpv6AddressesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeIpv6AddressesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string DescribeIpv6AddressesRequest::getRegionId() const {
@@ -86,6 +113,29 @@ int DescribeIpv6AddressesRequest::getPageSize() const {
 void DescribeIpv6AddressesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeIpv6AddressesRequest::getAddressType() const {
+  return addressType_;
+}
+
+void DescribeIpv6AddressesRequest::setAddressType(const std::string &addressType) {
+  addressType_ = addressType;
+  setParameter(std::string("AddressType"), addressType);
+}
+
+std::vector<DescribeIpv6AddressesRequest::Tag> DescribeIpv6AddressesRequest::getTag() const {
+  return tag_;
+}
+
+void DescribeIpv6AddressesRequest::setTag(const std::vector<DescribeIpv6AddressesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
 }
 
 std::string DescribeIpv6AddressesRequest::getResourceOwnerAccount() const {

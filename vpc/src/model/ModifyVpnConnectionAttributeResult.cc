@@ -39,6 +39,69 @@ void ModifyVpnConnectionAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTunnelOptionsSpecificationNode = value["TunnelOptionsSpecification"]["TunnelOptions"];
+	for (auto valueTunnelOptionsSpecificationTunnelOptions : allTunnelOptionsSpecificationNode)
+	{
+		TunnelOptions tunnelOptionsSpecificationObject;
+		if(!valueTunnelOptionsSpecificationTunnelOptions["CustomerGatewayId"].isNull())
+			tunnelOptionsSpecificationObject.customerGatewayId = valueTunnelOptionsSpecificationTunnelOptions["CustomerGatewayId"].asString();
+		if(!valueTunnelOptionsSpecificationTunnelOptions["EnableDpd"].isNull())
+			tunnelOptionsSpecificationObject.enableDpd = valueTunnelOptionsSpecificationTunnelOptions["EnableDpd"].asString() == "true";
+		if(!valueTunnelOptionsSpecificationTunnelOptions["EnableNatTraversal"].isNull())
+			tunnelOptionsSpecificationObject.enableNatTraversal = valueTunnelOptionsSpecificationTunnelOptions["EnableNatTraversal"].asString() == "true";
+		if(!valueTunnelOptionsSpecificationTunnelOptions["InternetIp"].isNull())
+			tunnelOptionsSpecificationObject.internetIp = valueTunnelOptionsSpecificationTunnelOptions["InternetIp"].asString();
+		if(!valueTunnelOptionsSpecificationTunnelOptions["RemoteCaCertificate"].isNull())
+			tunnelOptionsSpecificationObject.remoteCaCertificate = valueTunnelOptionsSpecificationTunnelOptions["RemoteCaCertificate"].asString();
+		if(!valueTunnelOptionsSpecificationTunnelOptions["Role"].isNull())
+			tunnelOptionsSpecificationObject.role = valueTunnelOptionsSpecificationTunnelOptions["Role"].asString();
+		if(!valueTunnelOptionsSpecificationTunnelOptions["State"].isNull())
+			tunnelOptionsSpecificationObject.state = valueTunnelOptionsSpecificationTunnelOptions["State"].asString();
+		if(!valueTunnelOptionsSpecificationTunnelOptions["TunnelId"].isNull())
+			tunnelOptionsSpecificationObject.tunnelId = valueTunnelOptionsSpecificationTunnelOptions["TunnelId"].asString();
+		if(!valueTunnelOptionsSpecificationTunnelOptions["ZoneNo"].isNull())
+			tunnelOptionsSpecificationObject.zoneNo = valueTunnelOptionsSpecificationTunnelOptions["ZoneNo"].asString();
+		auto tunnelBgpConfigNode = value["TunnelBgpConfig"];
+		if(!tunnelBgpConfigNode["LocalAsn"].isNull())
+			tunnelOptionsSpecificationObject.tunnelBgpConfig.localAsn = std::stol(tunnelBgpConfigNode["LocalAsn"].asString());
+		if(!tunnelBgpConfigNode["LocalBgpIp"].isNull())
+			tunnelOptionsSpecificationObject.tunnelBgpConfig.localBgpIp = tunnelBgpConfigNode["LocalBgpIp"].asString();
+		if(!tunnelBgpConfigNode["PeerAsn"].isNull())
+			tunnelOptionsSpecificationObject.tunnelBgpConfig.peerAsn = std::stol(tunnelBgpConfigNode["PeerAsn"].asString());
+		if(!tunnelBgpConfigNode["PeerBgpIp"].isNull())
+			tunnelOptionsSpecificationObject.tunnelBgpConfig.peerBgpIp = tunnelBgpConfigNode["PeerBgpIp"].asString();
+		if(!tunnelBgpConfigNode["TunnelCidr"].isNull())
+			tunnelOptionsSpecificationObject.tunnelBgpConfig.tunnelCidr = tunnelBgpConfigNode["TunnelCidr"].asString();
+		auto tunnelIkeConfigNode = value["TunnelIkeConfig"];
+		if(!tunnelIkeConfigNode["IkeAuthAlg"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIkeConfig.ikeAuthAlg = tunnelIkeConfigNode["IkeAuthAlg"].asString();
+		if(!tunnelIkeConfigNode["IkeEncAlg"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIkeConfig.ikeEncAlg = tunnelIkeConfigNode["IkeEncAlg"].asString();
+		if(!tunnelIkeConfigNode["IkeLifetime"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIkeConfig.ikeLifetime = std::stol(tunnelIkeConfigNode["IkeLifetime"].asString());
+		if(!tunnelIkeConfigNode["IkeMode"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIkeConfig.ikeMode = tunnelIkeConfigNode["IkeMode"].asString();
+		if(!tunnelIkeConfigNode["IkePfs"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIkeConfig.ikePfs = tunnelIkeConfigNode["IkePfs"].asString();
+		if(!tunnelIkeConfigNode["IkeVersion"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIkeConfig.ikeVersion = tunnelIkeConfigNode["IkeVersion"].asString();
+		if(!tunnelIkeConfigNode["LocalId"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIkeConfig.localId = tunnelIkeConfigNode["LocalId"].asString();
+		if(!tunnelIkeConfigNode["Psk"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIkeConfig.psk = tunnelIkeConfigNode["Psk"].asString();
+		if(!tunnelIkeConfigNode["RemoteId"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIkeConfig.remoteId = tunnelIkeConfigNode["RemoteId"].asString();
+		auto tunnelIpsecConfigNode = value["TunnelIpsecConfig"];
+		if(!tunnelIpsecConfigNode["IpsecAuthAlg"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIpsecConfig.ipsecAuthAlg = tunnelIpsecConfigNode["IpsecAuthAlg"].asString();
+		if(!tunnelIpsecConfigNode["IpsecEncAlg"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIpsecConfig.ipsecEncAlg = tunnelIpsecConfigNode["IpsecEncAlg"].asString();
+		if(!tunnelIpsecConfigNode["IpsecLifetime"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIpsecConfig.ipsecLifetime = std::stol(tunnelIpsecConfigNode["IpsecLifetime"].asString());
+		if(!tunnelIpsecConfigNode["IpsecPfs"].isNull())
+			tunnelOptionsSpecificationObject.tunnelIpsecConfig.ipsecPfs = tunnelIpsecConfigNode["IpsecPfs"].asString();
+		tunnelOptionsSpecification_.push_back(tunnelOptionsSpecificationObject);
+	}
 	auto ikeConfigNode = value["IkeConfig"];
 	if(!ikeConfigNode["RemoteId"].isNull())
 		ikeConfig_.remoteId = ikeConfigNode["RemoteId"].asString();
@@ -115,6 +178,10 @@ void ModifyVpnConnectionAttributeResult::parse(const std::string &payload)
 		name_ = value["Name"].asString();
 	if(!value["EnableDpd"].isNull())
 		enableDpd_ = value["EnableDpd"].asString() == "true";
+	if(!value["EnableTunnelsBgp"].isNull())
+		enableTunnelsBgp_ = value["EnableTunnelsBgp"].asString() == "true";
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -133,6 +200,16 @@ std::string ModifyVpnConnectionAttributeResult::getCustomerGatewayId()const
 	return customerGatewayId_;
 }
 
+std::string ModifyVpnConnectionAttributeResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+bool ModifyVpnConnectionAttributeResult::getEnableTunnelsBgp()const
+{
+	return enableTunnelsBgp_;
+}
+
 long ModifyVpnConnectionAttributeResult::getCreateTime()const
 {
 	return createTime_;
@@ -146,6 +223,11 @@ std::string ModifyVpnConnectionAttributeResult::getName()const
 bool ModifyVpnConnectionAttributeResult::getEffectImmediately()const
 {
 	return effectImmediately_;
+}
+
+std::vector<ModifyVpnConnectionAttributeResult::TunnelOptions> ModifyVpnConnectionAttributeResult::getTunnelOptionsSpecification()const
+{
+	return tunnelOptionsSpecification_;
 }
 
 ModifyVpnConnectionAttributeResult::VcoHealthCheck ModifyVpnConnectionAttributeResult::getVcoHealthCheck()const

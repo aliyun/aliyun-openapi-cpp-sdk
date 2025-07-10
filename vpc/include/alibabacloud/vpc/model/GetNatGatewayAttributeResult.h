@@ -66,6 +66,18 @@ namespace AlibabaCloud
 				{
 					bool enabled;
 				};
+				struct LogDelivery
+				{
+					std::string deliverLogsErrorMessage;
+					std::string logDeliveryType;
+					std::string deliveryStatus;
+					std::string logDestination;
+				};
+				struct AccessMode
+				{
+					std::string tunnelType;
+					std::string modeValue;
+				};
 				struct IpListItem
 				{
 					std::string usingStatus;
@@ -77,52 +89,58 @@ namespace AlibabaCloud
 				GetNatGatewayAttributeResult();
 				explicit GetNatGatewayAttributeResult(const std::string &payload);
 				~GetNatGatewayAttributeResult();
-				std::string getStatus()const;
-				ForwardTable getForwardTable()const;
 				std::string getDescription()const;
 				std::string getResourceGroupId()const;
-				std::vector<IpListItem> getIpList()const;
 				bool getPrivateLinkEnabled()const;
-				std::string getPrivateLinkMode()const;
+				bool getEnableSessionLog()const;
 				BillingConfig getBillingConfig()const;
 				DeletionProtectionInfo getDeletionProtectionInfo()const;
-				SnatTable getSnatTable()const;
-				std::string getNatType()const;
+				LogDelivery getLogDelivery()const;
 				std::string getBusinessStatus()const;
 				std::string getName()const;
-				bool getEcsMetricEnabled()const;
-				std::string getVpcId()const;
 				std::string getNetworkType()const;
-				FullNatTable getFullNatTable()const;
 				std::string getExpiredTime()const;
 				PrivateInfo getPrivateInfo()const;
+				std::string getStatus()const;
+				ForwardTable getForwardTable()const;
+				std::vector<IpListItem> getIpList()const;
+				std::string getPrivateLinkMode()const;
+				SnatTable getSnatTable()const;
+				std::string getNatType()const;
+				bool getEcsMetricEnabled()const;
+				std::string getVpcId()const;
+				FullNatTable getFullNatTable()const;
 				std::string getCreationTime()const;
+				AccessMode getAccessMode()const;
 				std::string getRegionId()const;
 				std::string getNatGatewayId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string status_;
-				ForwardTable forwardTable_;
 				std::string description_;
 				std::string resourceGroupId_;
-				std::vector<IpListItem> ipList_;
 				bool privateLinkEnabled_;
-				std::string privateLinkMode_;
+				bool enableSessionLog_;
 				BillingConfig billingConfig_;
 				DeletionProtectionInfo deletionProtectionInfo_;
-				SnatTable snatTable_;
-				std::string natType_;
+				LogDelivery logDelivery_;
 				std::string businessStatus_;
 				std::string name_;
-				bool ecsMetricEnabled_;
-				std::string vpcId_;
 				std::string networkType_;
-				FullNatTable fullNatTable_;
 				std::string expiredTime_;
 				PrivateInfo privateInfo_;
+				std::string status_;
+				ForwardTable forwardTable_;
+				std::vector<IpListItem> ipList_;
+				std::string privateLinkMode_;
+				SnatTable snatTable_;
+				std::string natType_;
+				bool ecsMetricEnabled_;
+				std::string vpcId_;
+				FullNatTable fullNatTable_;
 				std::string creationTime_;
+				AccessMode accessMode_;
 				std::string regionId_;
 				std::string natGatewayId_;
 

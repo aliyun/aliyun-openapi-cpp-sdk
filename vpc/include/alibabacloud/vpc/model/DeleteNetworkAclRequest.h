@@ -38,8 +38,12 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getNetworkAclId() const;
 	void setNetworkAclId(const std::string &networkAclId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
@@ -48,7 +52,9 @@ private:
 	std::string clientToken_;
 	std::string regionId_;
 	std::string networkAclId_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
 	long ownerId_;
 };
 } // namespace Model

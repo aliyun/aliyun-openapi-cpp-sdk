@@ -40,6 +40,8 @@ public:
 	void setGatewayId(const std::string &gatewayId);
 	std::string getRouteTableId() const;
 	void setRouteTableId(const std::string &routeTableId);
+	std::string getGatewayType() const;
+	void setGatewayType(const std::string &gatewayType);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
@@ -55,6 +57,7 @@ private:
 	std::string regionId_;
 	std::string gatewayId_;
 	std::string routeTableId_;
+	std::string gatewayType_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

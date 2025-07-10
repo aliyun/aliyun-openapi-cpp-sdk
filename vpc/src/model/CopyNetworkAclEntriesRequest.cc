@@ -70,6 +70,15 @@ void CopyNetworkAclEntriesRequest::setSourceNetworkAclId(const std::string &sour
   setParameter(std::string("SourceNetworkAclId"), sourceNetworkAclId);
 }
 
+bool CopyNetworkAclEntriesRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void CopyNetworkAclEntriesRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string CopyNetworkAclEntriesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -77,6 +86,15 @@ std::string CopyNetworkAclEntriesRequest::getResourceOwnerAccount() const {
 void CopyNetworkAclEntriesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string CopyNetworkAclEntriesRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void CopyNetworkAclEntriesRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
 long CopyNetworkAclEntriesRequest::getOwnerId() const {

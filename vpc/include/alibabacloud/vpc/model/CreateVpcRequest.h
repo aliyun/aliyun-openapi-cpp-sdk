@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT CreateVpcRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateVpcRequest();
 	~CreateVpcRequest();
 	long getResourceOwnerId() const;
@@ -38,18 +42,26 @@ public:
 	void setEnableIpv6(bool enableIpv6);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	int getIpv4CidrMask() const;
+	void setIpv4CidrMask(int ipv4CidrMask);
 	std::string getVpcName() const;
 	void setVpcName(const std::string &vpcName);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getIpv4IpamPoolId() const;
+	void setIpv4IpamPoolId(const std::string &ipv4IpamPoolId);
 	std::string getIpv6Isp() const;
 	void setIpv6Isp(const std::string &ipv6Isp);
 	std::string getUserCidr() const;
 	void setUserCidr(const std::string &userCidr);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
+	bool getEnableDnsHostname() const;
+	void setEnableDnsHostname(bool enableDnsHostname);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -66,12 +78,16 @@ private:
 	std::string clientToken_;
 	bool enableIpv6_;
 	std::string description_;
+	int ipv4CidrMask_;
 	std::string vpcName_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::string ipv4IpamPoolId_;
 	std::string ipv6Isp_;
 	std::string userCidr_;
+	std::vector<Tag> tag_;
 	bool dryRun_;
+	bool enableDnsHostname_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

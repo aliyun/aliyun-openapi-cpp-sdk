@@ -40,6 +40,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -52,6 +54,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string regionId_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

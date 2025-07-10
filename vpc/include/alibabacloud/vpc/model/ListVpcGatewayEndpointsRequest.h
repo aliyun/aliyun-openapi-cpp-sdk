@@ -28,12 +28,18 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT ListVpcGatewayEndpointsRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string key;
+		std::string value;
+	};
 	ListVpcGatewayEndpointsRequest();
 	~ListVpcGatewayEndpointsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getEndpointId() const;
 	void setEndpointId(const std::string &endpointId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
 	std::string getRegionId() const;
@@ -46,21 +52,28 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
 	std::string getEndpointName() const;
 	void setEndpointName(const std::string &endpointName);
+	std::string getVpcId() const;
+	void setVpcId(const std::string &vpcId);
 	long getMaxResults() const;
 	void setMaxResults(long maxResults);
 
 private:
 	long resourceOwnerId_;
 	std::string endpointId_;
+	std::string resourceGroupId_;
 	std::string nextToken_;
 	std::string regionId_;
 	std::string serviceName_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::vector<Tags> tags_;
 	std::string endpointName_;
+	std::string vpcId_;
 	long maxResults_;
 };
 } // namespace Model

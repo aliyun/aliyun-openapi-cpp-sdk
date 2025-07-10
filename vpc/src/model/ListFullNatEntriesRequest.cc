@@ -69,6 +69,15 @@ void ListFullNatEntriesRequest::setFullNatEntryId(const std::string &fullNatEntr
   setParameter(std::string("FullNatEntryId"), fullNatEntryId);
 }
 
+std::string ListFullNatEntriesRequest::getNatIpPort() const {
+  return natIpPort_;
+}
+
+void ListFullNatEntriesRequest::setNatIpPort(const std::string &natIpPort) {
+  natIpPort_ = natIpPort;
+  setParameter(std::string("NatIpPort"), natIpPort);
+}
+
 std::string ListFullNatEntriesRequest::getFullNatTableId() const {
   return fullNatTableId_;
 }
@@ -147,6 +156,15 @@ long ListFullNatEntriesRequest::getOwnerId() const {
 void ListFullNatEntriesRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ListFullNatEntriesRequest::getNatIp() const {
+  return natIp_;
+}
+
+void ListFullNatEntriesRequest::setNatIp(const std::string &natIp) {
+  natIp_ = natIp;
+  setParameter(std::string("NatIp"), natIp);
 }
 
 long ListFullNatEntriesRequest::getMaxResults() const {

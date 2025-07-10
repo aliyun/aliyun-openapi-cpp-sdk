@@ -109,6 +109,16 @@ void DescribeVirtualBorderRoutersResult::parse(const std::string &payload)
 			virtualBorderRouterSetObject.physicalConnectionId = valueVirtualBorderRouterSetVirtualBorderRouterType["PhysicalConnectionId"].asString();
 		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["Bandwidth"].isNull())
 			virtualBorderRouterSetObject.bandwidth = std::stoi(valueVirtualBorderRouterSetVirtualBorderRouterType["Bandwidth"].asString());
+		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["ResourceGroupId"].isNull())
+			virtualBorderRouterSetObject.resourceGroupId = valueVirtualBorderRouterSetVirtualBorderRouterType["ResourceGroupId"].asString();
+		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["EcrId"].isNull())
+			virtualBorderRouterSetObject.ecrId = valueVirtualBorderRouterSetVirtualBorderRouterType["EcrId"].asString();
+		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["SitelinkEnable"].isNull())
+			virtualBorderRouterSetObject.sitelinkEnable = valueVirtualBorderRouterSetVirtualBorderRouterType["SitelinkEnable"].asString() == "true";
+		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["EcrAttatchStatus"].isNull())
+			virtualBorderRouterSetObject.ecrAttatchStatus = valueVirtualBorderRouterSetVirtualBorderRouterType["EcrAttatchStatus"].asString();
+		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["EcrOwnerId"].isNull())
+			virtualBorderRouterSetObject.ecrOwnerId = valueVirtualBorderRouterSetVirtualBorderRouterType["EcrOwnerId"].asString();
 		auto allAssociatedPhysicalConnectionsNode = valueVirtualBorderRouterSetVirtualBorderRouterType["AssociatedPhysicalConnections"]["AssociatedPhysicalConnection"];
 		for (auto valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection : allAssociatedPhysicalConnectionsNode)
 		{
@@ -156,6 +166,16 @@ void DescribeVirtualBorderRoutersResult::parse(const std::string &payload)
 			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedCensAssociatedCen["CenStatus"].isNull())
 				associatedCensObject.cenStatus = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedCensAssociatedCen["CenStatus"].asString();
 			virtualBorderRouterSetObject.associatedCens.push_back(associatedCensObject);
+		}
+		auto allTagsNode = valueVirtualBorderRouterSetVirtualBorderRouterType["Tags"]["TagsItem"];
+		for (auto valueVirtualBorderRouterSetVirtualBorderRouterTypeTagsTagsItem : allTagsNode)
+		{
+			VirtualBorderRouterType::TagsItem tagsObject;
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeTagsTagsItem["Key"].isNull())
+				tagsObject.key = valueVirtualBorderRouterSetVirtualBorderRouterTypeTagsTagsItem["Key"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeTagsTagsItem["Value"].isNull())
+				tagsObject.value = valueVirtualBorderRouterSetVirtualBorderRouterTypeTagsTagsItem["Value"].asString();
+			virtualBorderRouterSetObject.tags.push_back(tagsObject);
 		}
 		virtualBorderRouterSet_.push_back(virtualBorderRouterSetObject);
 	}

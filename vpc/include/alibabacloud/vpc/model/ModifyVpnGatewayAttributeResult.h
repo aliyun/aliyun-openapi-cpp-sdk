@@ -40,7 +40,9 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				std::string getDescription()const;
 				bool getEnableBgp()const;
+				std::string getDisasterRecoveryVSwitchId()const;
 				long getEndTime()const;
+				std::string getResourceGroupId()const;
 				long getCreateTime()const;
 				std::string getVSwitchId()const;
 				bool getAutoPropagate()const;
@@ -50,6 +52,8 @@ namespace AlibabaCloud
 				std::string getVpcId()const;
 				std::string getInternetIp()const;
 				std::string getVpnGatewayId()const;
+				std::string getDisasterRecoveryInternetIp()const;
+				std::string getSslVpnInternetIp()const;
 				std::string getSpec()const;
 
 			protected:
@@ -58,7 +62,9 @@ namespace AlibabaCloud
 				std::string status_;
 				std::string description_;
 				bool enableBgp_;
+				std::string disasterRecoveryVSwitchId_;
 				long endTime_;
+				std::string resourceGroupId_;
 				long createTime_;
 				std::string vSwitchId_;
 				bool autoPropagate_;
@@ -68,6 +74,8 @@ namespace AlibabaCloud
 				std::string vpcId_;
 				std::string internetIp_;
 				std::string vpnGatewayId_;
+				std::string disasterRecoveryInternetIp_;
+				std::string sslVpnInternetIp_;
 				std::string spec_;
 
 			};

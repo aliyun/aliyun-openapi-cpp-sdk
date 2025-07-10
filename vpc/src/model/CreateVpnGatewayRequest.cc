@@ -61,6 +61,15 @@ void CreateVpnGatewayRequest::setNetworkType(const std::string &networkType) {
   setParameter(std::string("NetworkType"), networkType);
 }
 
+std::string CreateVpnGatewayRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateVpnGatewayRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateVpnGatewayRequest::getRegionId() const {
   return regionId_;
 }
@@ -122,6 +131,15 @@ std::string CreateVpnGatewayRequest::getOwnerAccount() const {
 void CreateVpnGatewayRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string CreateVpnGatewayRequest::getDisasterRecoveryVSwitchId() const {
+  return disasterRecoveryVSwitchId_;
+}
+
+void CreateVpnGatewayRequest::setDisasterRecoveryVSwitchId(const std::string &disasterRecoveryVSwitchId) {
+  disasterRecoveryVSwitchId_ = disasterRecoveryVSwitchId;
+  setParameter(std::string("DisasterRecoveryVSwitchId"), disasterRecoveryVSwitchId);
 }
 
 long CreateVpnGatewayRequest::getOwnerId() const {

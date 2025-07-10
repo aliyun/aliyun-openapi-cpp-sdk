@@ -83,6 +83,14 @@ void DescribeVpnGatewaysResult::parse(const std::string &payload)
 			vpnGatewaysObject.name = valueVpnGatewaysVpnGateway["Name"].asString();
 		if(!valueVpnGatewaysVpnGateway["NetworkType"].isNull())
 			vpnGatewaysObject.networkType = valueVpnGatewaysVpnGateway["NetworkType"].asString();
+		if(!valueVpnGatewaysVpnGateway["DisasterRecoveryInternetIp"].isNull())
+			vpnGatewaysObject.disasterRecoveryInternetIp = valueVpnGatewaysVpnGateway["DisasterRecoveryInternetIp"].asString();
+		if(!valueVpnGatewaysVpnGateway["DisasterRecoveryVSwitchId"].isNull())
+			vpnGatewaysObject.disasterRecoveryVSwitchId = valueVpnGatewaysVpnGateway["DisasterRecoveryVSwitchId"].asString();
+		if(!valueVpnGatewaysVpnGateway["SslVpnInternetIp"].isNull())
+			vpnGatewaysObject.sslVpnInternetIp = valueVpnGatewaysVpnGateway["SslVpnInternetIp"].asString();
+		if(!valueVpnGatewaysVpnGateway["ResourceGroupId"].isNull())
+			vpnGatewaysObject.resourceGroupId = valueVpnGatewaysVpnGateway["ResourceGroupId"].asString();
 		auto allTagsNode = valueVpnGatewaysVpnGateway["Tags"]["Tag"];
 		for (auto valueVpnGatewaysVpnGatewayTagsTag : allTagsNode)
 		{
@@ -108,6 +116,9 @@ void DescribeVpnGatewaysResult::parse(const std::string &payload)
 			vpnGatewaysObject.reservationData.reservationMaxConnections = std::stoi(reservationDataNode["ReservationMaxConnections"].asString());
 		if(!reservationDataNode["ReservationEndTime"].isNull())
 			vpnGatewaysObject.reservationData.reservationEndTime = reservationDataNode["ReservationEndTime"].asString();
+		auto allEniInstanceIds = value["EniInstanceIds"]["EniInstanceId"];
+		for (auto value : allEniInstanceIds)
+			vpnGatewaysObject.eniInstanceIds.push_back(value.asString());
 		vpnGateways_.push_back(vpnGatewaysObject);
 	}
 	if(!value["PageSize"].isNull())

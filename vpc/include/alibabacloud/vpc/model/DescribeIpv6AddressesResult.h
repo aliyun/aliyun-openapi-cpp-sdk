@@ -36,14 +36,26 @@ namespace AlibabaCloud
 				{
 					struct Ipv6InternetBandwidth
 					{
+						std::string reservationOrderType;
 						std::string instanceChargeType;
 						int bandwidth;
+						bool hasReservationData;
 						std::string ipv6InternetBandwidthId;
+						std::string reservationActiveTime;
 						std::string businessStatus;
+						long reservationBandwidth;
 						std::string internetChargeType;
+						std::string reservationInternetChargeType;
+					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
 					};
 					std::string status;
 					std::string ipv6Isp;
+					std::string resourceGroupId;
+					int serviceManaged;
 					std::string vSwitchId;
 					std::string ipv6GatewayId;
 					int realBandwidth;
@@ -53,7 +65,10 @@ namespace AlibabaCloud
 					std::string associatedInstanceId;
 					std::string networkType;
 					std::string ipv6AddressId;
+					std::string ipv6AddressDescription;
+					std::string addressType;
 					std::string associatedInstanceType;
+					std::vector<Ipv6Address::Tag> tags;
 					std::string ipv6AddressName;
 					std::string ipv6Address;
 				};

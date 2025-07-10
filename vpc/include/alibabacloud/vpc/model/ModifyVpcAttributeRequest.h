@@ -42,6 +42,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getIpv6Isp() const;
 	void setIpv6Isp(const std::string &ipv6Isp);
+	bool getEnableDnsHostname() const;
+	void setEnableDnsHostname(bool enableDnsHostname);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -62,6 +64,7 @@ private:
 	std::string vpcName_;
 	std::string regionId_;
 	std::string ipv6Isp_;
+	bool enableDnsHostname_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

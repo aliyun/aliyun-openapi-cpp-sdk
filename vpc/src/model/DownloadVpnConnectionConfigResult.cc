@@ -48,6 +48,64 @@ void DownloadVpnConnectionConfigResult::parse(const std::string &payload)
 		vpnConnectionConfig_.remoteSubnet = vpnConnectionConfigNode["RemoteSubnet"].asString();
 	if(!vpnConnectionConfigNode["LocalSubnet"].isNull())
 		vpnConnectionConfig_.localSubnet = vpnConnectionConfigNode["LocalSubnet"].asString();
+	auto allTunnelsConfigNode = vpnConnectionConfigNode["TunnelsConfig"]["TunnelConfig"];
+	for (auto vpnConnectionConfigNodeTunnelsConfigTunnelConfig : allTunnelsConfigNode)
+	{
+		VpnConnectionConfig::TunnelConfig tunnelConfigObject;
+		if(!vpnConnectionConfigNodeTunnelsConfigTunnelConfig["TunnelId"].isNull())
+			tunnelConfigObject.tunnelId = vpnConnectionConfigNodeTunnelsConfigTunnelConfig["TunnelId"].asString();
+		if(!vpnConnectionConfigNodeTunnelsConfigTunnelConfig["Local"].isNull())
+			tunnelConfigObject.local = vpnConnectionConfigNodeTunnelsConfigTunnelConfig["Local"].asString();
+		if(!vpnConnectionConfigNodeTunnelsConfigTunnelConfig["Remote"].isNull())
+			tunnelConfigObject.remote = vpnConnectionConfigNodeTunnelsConfigTunnelConfig["Remote"].asString();
+		auto ikeConfig1Node = value["IkeConfig"];
+		if(!ikeConfig1Node["Psk"].isNull())
+			tunnelConfigObject.ikeConfig1.psk = ikeConfig1Node["Psk"].asString();
+		if(!ikeConfig1Node["IkeVersion"].isNull())
+			tunnelConfigObject.ikeConfig1.ikeVersion = ikeConfig1Node["IkeVersion"].asString();
+		if(!ikeConfig1Node["IkeMode"].isNull())
+			tunnelConfigObject.ikeConfig1.ikeMode = ikeConfig1Node["IkeMode"].asString();
+		if(!ikeConfig1Node["IkeEncAlg"].isNull())
+			tunnelConfigObject.ikeConfig1.ikeEncAlg = ikeConfig1Node["IkeEncAlg"].asString();
+		if(!ikeConfig1Node["IkeAuthAlg"].isNull())
+			tunnelConfigObject.ikeConfig1.ikeAuthAlg = ikeConfig1Node["IkeAuthAlg"].asString();
+		if(!ikeConfig1Node["IkePfs"].isNull())
+			tunnelConfigObject.ikeConfig1.ikePfs = ikeConfig1Node["IkePfs"].asString();
+		if(!ikeConfig1Node["IkeLifetime"].isNull())
+			tunnelConfigObject.ikeConfig1.ikeLifetime = std::stol(ikeConfig1Node["IkeLifetime"].asString());
+		if(!ikeConfig1Node["LocalId"].isNull())
+			tunnelConfigObject.ikeConfig1.localId = ikeConfig1Node["LocalId"].asString();
+		if(!ikeConfig1Node["RemoteId"].isNull())
+			tunnelConfigObject.ikeConfig1.remoteId = ikeConfig1Node["RemoteId"].asString();
+		auto ipsecConfig2Node = value["IpsecConfig"];
+		if(!ipsecConfig2Node["IpsecAuthAlg"].isNull())
+			tunnelConfigObject.ipsecConfig2.ipsecAuthAlg = ipsecConfig2Node["IpsecAuthAlg"].asString();
+		if(!ipsecConfig2Node["IpsecEncAlg"].isNull())
+			tunnelConfigObject.ipsecConfig2.ipsecEncAlg = ipsecConfig2Node["IpsecEncAlg"].asString();
+		if(!ipsecConfig2Node["IpsecPfs"].isNull())
+			tunnelConfigObject.ipsecConfig2.ipsecPfs = ipsecConfig2Node["IpsecPfs"].asString();
+		if(!ipsecConfig2Node["IpsecLifetime"].isNull())
+			tunnelConfigObject.ipsecConfig2.ipsecLifetime = std::stol(ipsecConfig2Node["IpsecLifetime"].asString());
+		vpnConnectionConfig_.tunnelsConfig.push_back(tunnelConfigObject);
+	}
+	auto allBgpConfigsNode = vpnConnectionConfigNode["BgpConfigs"]["BgpConfig"];
+	for (auto vpnConnectionConfigNodeBgpConfigsBgpConfig : allBgpConfigsNode)
+	{
+		VpnConnectionConfig::BgpConfig bgpConfigObject;
+		if(!vpnConnectionConfigNodeBgpConfigsBgpConfig["LocalAsn"].isNull())
+			bgpConfigObject.localAsn = vpnConnectionConfigNodeBgpConfigsBgpConfig["LocalAsn"].asString();
+		if(!vpnConnectionConfigNodeBgpConfigsBgpConfig["LocalBgpIp"].isNull())
+			bgpConfigObject.localBgpIp = vpnConnectionConfigNodeBgpConfigsBgpConfig["LocalBgpIp"].asString();
+		if(!vpnConnectionConfigNodeBgpConfigsBgpConfig["PeerAsn"].isNull())
+			bgpConfigObject.peerAsn = vpnConnectionConfigNodeBgpConfigsBgpConfig["PeerAsn"].asString();
+		if(!vpnConnectionConfigNodeBgpConfigsBgpConfig["PeerBgpIp"].isNull())
+			bgpConfigObject.peerBgpIp = vpnConnectionConfigNodeBgpConfigsBgpConfig["PeerBgpIp"].asString();
+		if(!vpnConnectionConfigNodeBgpConfigsBgpConfig["TunnelCidr"].isNull())
+			bgpConfigObject.tunnelCidr = vpnConnectionConfigNodeBgpConfigsBgpConfig["TunnelCidr"].asString();
+		if(!vpnConnectionConfigNodeBgpConfigsBgpConfig["TunnelId"].isNull())
+			bgpConfigObject.tunnelId = vpnConnectionConfigNodeBgpConfigsBgpConfig["TunnelId"].asString();
+		vpnConnectionConfig_.bgpConfigs.push_back(bgpConfigObject);
+	}
 	auto ikeConfigNode = vpnConnectionConfigNode["IkeConfig"];
 	if(!ikeConfigNode["RemoteId"].isNull())
 		vpnConnectionConfig_.ikeConfig.remoteId = ikeConfigNode["RemoteId"].asString();
@@ -70,10 +128,10 @@ void DownloadVpnConnectionConfigResult::parse(const std::string &payload)
 	auto ipsecConfigNode = vpnConnectionConfigNode["IpsecConfig"];
 	if(!ipsecConfigNode["IpsecAuthAlg"].isNull())
 		vpnConnectionConfig_.ipsecConfig.ipsecAuthAlg = ipsecConfigNode["IpsecAuthAlg"].asString();
-	if(!ipsecConfigNode["IpsecLifetime"].isNull())
-		vpnConnectionConfig_.ipsecConfig.ipsecLifetime = std::stol(ipsecConfigNode["IpsecLifetime"].asString());
 	if(!ipsecConfigNode["IpsecEncAlg"].isNull())
 		vpnConnectionConfig_.ipsecConfig.ipsecEncAlg = ipsecConfigNode["IpsecEncAlg"].asString();
+	if(!ipsecConfigNode["IpsecLifetime"].isNull())
+		vpnConnectionConfig_.ipsecConfig.ipsecLifetime = std::stol(ipsecConfigNode["IpsecLifetime"].asString());
 	if(!ipsecConfigNode["IpsecPfs"].isNull())
 		vpnConnectionConfig_.ipsecConfig.ipsecPfs = ipsecConfigNode["IpsecPfs"].asString();
 

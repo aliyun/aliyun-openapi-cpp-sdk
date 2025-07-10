@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT DescribeRouterInterfacesRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	struct Filter {
 		std::string key;
 	};
@@ -39,6 +43,8 @@ public:
 	void setIncludeReservationData(bool includeReservationData);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
@@ -47,6 +53,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
 	std::vector<Filter> getFilter() const;
 	void setFilter(const std::vector<Filter> &filter);
 
@@ -54,10 +62,12 @@ private:
 	long resourceOwnerId_;
 	bool includeReservationData_;
 	int pageNumber_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	int pageSize_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
+	std::vector<Tags> tags_;
 	std::vector<Filter> filter_;
 };
 } // namespace Model

@@ -106,6 +106,15 @@ void CreateVpnConnectionRequest::setLocalSubnet(const std::string &localSubnet) 
   setParameter(std::string("LocalSubnet"), localSubnet);
 }
 
+bool CreateVpnConnectionRequest::getEnableTunnelsBgp() const {
+  return enableTunnelsBgp_;
+}
+
+void CreateVpnConnectionRequest::setEnableTunnelsBgp(bool enableTunnelsBgp) {
+  enableTunnelsBgp_ = enableTunnelsBgp;
+  setParameter(std::string("EnableTunnelsBgp"), enableTunnelsBgp ? "true" : "false");
+}
+
 std::string CreateVpnConnectionRequest::getRegionId() const {
   return regionId_;
 }
@@ -131,6 +140,15 @@ bool CreateVpnConnectionRequest::getEffectImmediately() const {
 void CreateVpnConnectionRequest::setEffectImmediately(bool effectImmediately) {
   effectImmediately_ = effectImmediately;
   setParameter(std::string("EffectImmediately"), effectImmediately ? "true" : "false");
+}
+
+bool CreateVpnConnectionRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void CreateVpnConnectionRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 std::string CreateVpnConnectionRequest::getResourceOwnerAccount() const {
@@ -189,6 +207,37 @@ void CreateVpnConnectionRequest::setTags(const std::vector<CreateVpnConnectionRe
   std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
     setParameter(tagsObjStr + ".Value", tagsObj.value);
     setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
+}
+
+std::vector<CreateVpnConnectionRequest::TunnelOptionsSpecification> CreateVpnConnectionRequest::getTunnelOptionsSpecification() const {
+  return tunnelOptionsSpecification_;
+}
+
+void CreateVpnConnectionRequest::setTunnelOptionsSpecification(const std::vector<CreateVpnConnectionRequest::TunnelOptionsSpecification> &tunnelOptionsSpecification) {
+  tunnelOptionsSpecification_ = tunnelOptionsSpecification;
+  for(int dep1 = 0; dep1 != tunnelOptionsSpecification.size(); dep1++) {
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIpsecConfig.IpsecPfs", tunnelOptionsSpecification[dep1].tunnelIpsecConfig.ipsecPfs);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIpsecConfig.IpsecLifetime", std::to_string(tunnelOptionsSpecification[dep1].tunnelIpsecConfig.ipsecLifetime));
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIpsecConfig.IpsecAuthAlg", tunnelOptionsSpecification[dep1].tunnelIpsecConfig.ipsecAuthAlg);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIpsecConfig.IpsecEncAlg", tunnelOptionsSpecification[dep1].tunnelIpsecConfig.ipsecEncAlg);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".Role", tunnelOptionsSpecification[dep1].role);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelBgpConfig.LocalAsn", std::to_string(tunnelOptionsSpecification[dep1].tunnelBgpConfig.localAsn));
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelBgpConfig.TunnelCidr", tunnelOptionsSpecification[dep1].tunnelBgpConfig.tunnelCidr);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelBgpConfig.LocalBgpIp", tunnelOptionsSpecification[dep1].tunnelBgpConfig.localBgpIp);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".RemoteCaCertificate", tunnelOptionsSpecification[dep1].remoteCaCertificate);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIkeConfig.IkeVersion", tunnelOptionsSpecification[dep1].tunnelIkeConfig.ikeVersion);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIkeConfig.IkeMode", tunnelOptionsSpecification[dep1].tunnelIkeConfig.ikeMode);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIkeConfig.IkeAuthAlg", tunnelOptionsSpecification[dep1].tunnelIkeConfig.ikeAuthAlg);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIkeConfig.Psk", tunnelOptionsSpecification[dep1].tunnelIkeConfig.psk);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIkeConfig.IkePfs", tunnelOptionsSpecification[dep1].tunnelIkeConfig.ikePfs);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIkeConfig.IkeLifetime", std::to_string(tunnelOptionsSpecification[dep1].tunnelIkeConfig.ikeLifetime));
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIkeConfig.LocalId", tunnelOptionsSpecification[dep1].tunnelIkeConfig.localId);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIkeConfig.IkeEncAlg", tunnelOptionsSpecification[dep1].tunnelIkeConfig.ikeEncAlg);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".TunnelIkeConfig.RemoteId", tunnelOptionsSpecification[dep1].tunnelIkeConfig.remoteId);
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".EnableNatTraversal", tunnelOptionsSpecification[dep1].enableNatTraversal ? "true" : "false");
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".EnableDpd", tunnelOptionsSpecification[dep1].enableDpd ? "true" : "false");
+    setBodyParameter(std::string("TunnelOptionsSpecification") + "." + std::to_string(dep1 + 1) + ".CustomerGatewayId", tunnelOptionsSpecification[dep1].customerGatewayId);
   }
 }
 

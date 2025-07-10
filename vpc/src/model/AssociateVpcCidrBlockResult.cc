@@ -39,6 +39,20 @@ void AssociateVpcCidrBlockResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["CidrBlock"].isNull())
+		cidrBlock_ = value["CidrBlock"].asString();
+	if(!value["IpVersion"].isNull())
+		ipVersion_ = value["IpVersion"].asString();
 
+}
+
+std::string AssociateVpcCidrBlockResult::getIpVersion()const
+{
+	return ipVersion_;
+}
+
+std::string AssociateVpcCidrBlockResult::getCidrBlock()const
+{
+	return cidrBlock_;
 }
 

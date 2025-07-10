@@ -50,6 +50,8 @@ public:
 	void setResourceId(const std::string &resourceId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
 	std::string getNetworkAclName() const;
 	void setNetworkAclName(const std::string &networkAclName);
 	long getOwnerId() const;
@@ -70,6 +72,7 @@ private:
 	std::string networkAclId_;
 	std::string resourceId_;
 	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
 	std::string networkAclName_;
 	long ownerId_;
 	std::string resourceType_;

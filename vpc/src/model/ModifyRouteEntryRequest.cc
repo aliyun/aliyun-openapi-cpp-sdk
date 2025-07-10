@@ -52,6 +52,15 @@ void ModifyRouteEntryRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+std::string ModifyRouteEntryRequest::getNewNextHopId() const {
+  return newNextHopId_;
+}
+
+void ModifyRouteEntryRequest::setNewNextHopId(const std::string &newNextHopId) {
+  newNextHopId_ = newNextHopId;
+  setParameter(std::string("NewNextHopId"), newNextHopId);
+}
+
 std::string ModifyRouteEntryRequest::getRegionId() const {
   return regionId_;
 }
@@ -59,6 +68,24 @@ std::string ModifyRouteEntryRequest::getRegionId() const {
 void ModifyRouteEntryRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ModifyRouteEntryRequest::getRouteTableId() const {
+  return routeTableId_;
+}
+
+void ModifyRouteEntryRequest::setRouteTableId(const std::string &routeTableId) {
+  routeTableId_ = routeTableId;
+  setParameter(std::string("RouteTableId"), routeTableId);
+}
+
+bool ModifyRouteEntryRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ModifyRouteEntryRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 std::string ModifyRouteEntryRequest::getResourceOwnerAccount() const {
@@ -79,6 +106,15 @@ void ModifyRouteEntryRequest::setOwnerAccount(const std::string &ownerAccount) {
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::string ModifyRouteEntryRequest::getDestinationCidrBlock() const {
+  return destinationCidrBlock_;
+}
+
+void ModifyRouteEntryRequest::setDestinationCidrBlock(const std::string &destinationCidrBlock) {
+  destinationCidrBlock_ = destinationCidrBlock;
+  setParameter(std::string("DestinationCidrBlock"), destinationCidrBlock);
+}
+
 long ModifyRouteEntryRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -86,6 +122,15 @@ long ModifyRouteEntryRequest::getOwnerId() const {
 void ModifyRouteEntryRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ModifyRouteEntryRequest::getNewNextHopType() const {
+  return newNextHopType_;
+}
+
+void ModifyRouteEntryRequest::setNewNextHopType(const std::string &newNextHopType) {
+  newNextHopType_ = newNextHopType;
+  setParameter(std::string("NewNextHopType"), newNextHopType);
 }
 
 std::string ModifyRouteEntryRequest::getRouteEntryId() const {

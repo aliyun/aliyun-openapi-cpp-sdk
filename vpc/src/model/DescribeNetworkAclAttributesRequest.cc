@@ -70,6 +70,15 @@ void DescribeNetworkAclAttributesRequest::setResourceOwnerAccount(const std::str
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+std::string DescribeNetworkAclAttributesRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void DescribeNetworkAclAttributesRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
 long DescribeNetworkAclAttributesRequest::getOwnerId() const {
   return ownerId_;
 }

@@ -43,6 +43,15 @@ void CreateVpcGatewayEndpointRequest::setClientToken(const std::string &clientTo
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string CreateVpcGatewayEndpointRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateVpcGatewayEndpointRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateVpcGatewayEndpointRequest::getRegionId() const {
   return regionId_;
 }
@@ -59,6 +68,20 @@ std::string CreateVpcGatewayEndpointRequest::getServiceName() const {
 void CreateVpcGatewayEndpointRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
   setParameter(std::string("ServiceName"), serviceName);
+}
+
+std::vector<CreateVpcGatewayEndpointRequest::Tag> CreateVpcGatewayEndpointRequest::getTag() const {
+  return tag_;
+}
+
+void CreateVpcGatewayEndpointRequest::setTag(const std::vector<CreateVpcGatewayEndpointRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
 }
 
 bool CreateVpcGatewayEndpointRequest::getDryRun() const {

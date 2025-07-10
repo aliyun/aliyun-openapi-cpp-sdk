@@ -73,6 +73,8 @@ void ListIpsecServersResult::parse(const std::string &payload)
 			ipsecServersObject.maxConnections = std::stoi(valueIpsecServersIpsecServer["MaxConnections"].asString());
 		if(!valueIpsecServersIpsecServer["ClientIpPool"].isNull())
 			ipsecServersObject.clientIpPool = valueIpsecServersIpsecServer["ClientIpPool"].asString();
+		if(!valueIpsecServersIpsecServer["ResourceGroupId"].isNull())
+			ipsecServersObject.resourceGroupId = valueIpsecServersIpsecServer["ResourceGroupId"].asString();
 		auto ikeConfigNode = value["IkeConfig"];
 		if(!ikeConfigNode["RemoteId"].isNull())
 			ipsecServersObject.ikeConfig.remoteId = ikeConfigNode["RemoteId"].asString();

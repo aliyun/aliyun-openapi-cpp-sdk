@@ -37,10 +37,14 @@ namespace AlibabaCloud
 				AssociateVpcCidrBlockResult();
 				explicit AssociateVpcCidrBlockResult(const std::string &payload);
 				~AssociateVpcCidrBlockResult();
+				std::string getIpVersion()const;
+				std::string getCidrBlock()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string ipVersion_;
+				std::string cidrBlock_;
 
 			};
 		}

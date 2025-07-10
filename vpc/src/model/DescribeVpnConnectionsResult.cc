@@ -85,6 +85,10 @@ void DescribeVpnConnectionsResult::parse(const std::string &payload)
 			vpnConnectionsObject.crossAccountAuthorized = valueVpnConnectionsVpnConnection["CrossAccountAuthorized"].asString() == "true";
 		if(!valueVpnConnectionsVpnConnection["InternetIp"].isNull())
 			vpnConnectionsObject.internetIp = valueVpnConnectionsVpnConnection["InternetIp"].asString();
+		if(!valueVpnConnectionsVpnConnection["EnableTunnelsBgp"].isNull())
+			vpnConnectionsObject.enableTunnelsBgp = valueVpnConnectionsVpnConnection["EnableTunnelsBgp"].asString() == "true";
+		if(!valueVpnConnectionsVpnConnection["ResourceGroupId"].isNull())
+			vpnConnectionsObject.resourceGroupId = valueVpnConnectionsVpnConnection["ResourceGroupId"].asString();
 		auto allTagNode = valueVpnConnectionsVpnConnection["Tag"]["TagItem"];
 		for (auto valueVpnConnectionsVpnConnectionTagTagItem : allTagNode)
 		{
@@ -94,6 +98,75 @@ void DescribeVpnConnectionsResult::parse(const std::string &payload)
 			if(!valueVpnConnectionsVpnConnectionTagTagItem["Value"].isNull())
 				tagObject.value = valueVpnConnectionsVpnConnectionTagTagItem["Value"].asString();
 			vpnConnectionsObject.tag.push_back(tagObject);
+		}
+		auto allTunnelOptionsSpecificationNode = valueVpnConnectionsVpnConnection["TunnelOptionsSpecification"]["TunnelOptions"];
+		for (auto valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions : allTunnelOptionsSpecificationNode)
+		{
+			VpnConnection::TunnelOptions tunnelOptionsSpecificationObject;
+			if(!valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["TunnelId"].isNull())
+				tunnelOptionsSpecificationObject.tunnelId = valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["TunnelId"].asString();
+			if(!valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["CustomerGatewayId"].isNull())
+				tunnelOptionsSpecificationObject.customerGatewayId = valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["CustomerGatewayId"].asString();
+			if(!valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["EnableDpd"].isNull())
+				tunnelOptionsSpecificationObject.enableDpd = valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["EnableDpd"].asString();
+			if(!valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["EnableNatTraversal"].isNull())
+				tunnelOptionsSpecificationObject.enableNatTraversal = valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["EnableNatTraversal"].asString();
+			if(!valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["InternetIp"].isNull())
+				tunnelOptionsSpecificationObject.internetIp = valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["InternetIp"].asString();
+			if(!valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["RemoteCaCertificate"].isNull())
+				tunnelOptionsSpecificationObject.remoteCaCertificate = valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["RemoteCaCertificate"].asString();
+			if(!valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["Role"].isNull())
+				tunnelOptionsSpecificationObject.role = valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["Role"].asString();
+			if(!valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["TunnelIndex"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIndex = std::stoi(valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["TunnelIndex"].asString());
+			if(!valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["State"].isNull())
+				tunnelOptionsSpecificationObject.state = valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["State"].asString();
+			if(!valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["Status"].isNull())
+				tunnelOptionsSpecificationObject.status = valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["Status"].asString();
+			if(!valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["ZoneNo"].isNull())
+				tunnelOptionsSpecificationObject.zoneNo = valueVpnConnectionsVpnConnectionTunnelOptionsSpecificationTunnelOptions["ZoneNo"].asString();
+			auto tunnelBgpConfigNode = value["TunnelBgpConfig"];
+			if(!tunnelBgpConfigNode["BgpStatus"].isNull())
+				tunnelOptionsSpecificationObject.tunnelBgpConfig.bgpStatus = tunnelBgpConfigNode["BgpStatus"].asString();
+			if(!tunnelBgpConfigNode["LocalAsn"].isNull())
+				tunnelOptionsSpecificationObject.tunnelBgpConfig.localAsn = tunnelBgpConfigNode["LocalAsn"].asString();
+			if(!tunnelBgpConfigNode["LocalBgpIp"].isNull())
+				tunnelOptionsSpecificationObject.tunnelBgpConfig.localBgpIp = tunnelBgpConfigNode["LocalBgpIp"].asString();
+			if(!tunnelBgpConfigNode["PeerAsn"].isNull())
+				tunnelOptionsSpecificationObject.tunnelBgpConfig.peerAsn = tunnelBgpConfigNode["PeerAsn"].asString();
+			if(!tunnelBgpConfigNode["PeerBgpIp"].isNull())
+				tunnelOptionsSpecificationObject.tunnelBgpConfig.peerBgpIp = tunnelBgpConfigNode["PeerBgpIp"].asString();
+			if(!tunnelBgpConfigNode["TunnelCidr"].isNull())
+				tunnelOptionsSpecificationObject.tunnelBgpConfig.tunnelCidr = tunnelBgpConfigNode["TunnelCidr"].asString();
+			auto tunnelIkeConfigNode = value["TunnelIkeConfig"];
+			if(!tunnelIkeConfigNode["IkeAuthAlg"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIkeConfig.ikeAuthAlg = tunnelIkeConfigNode["IkeAuthAlg"].asString();
+			if(!tunnelIkeConfigNode["IkeEncAlg"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIkeConfig.ikeEncAlg = tunnelIkeConfigNode["IkeEncAlg"].asString();
+			if(!tunnelIkeConfigNode["IkeLifetime"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIkeConfig.ikeLifetime = tunnelIkeConfigNode["IkeLifetime"].asString();
+			if(!tunnelIkeConfigNode["IkeMode"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIkeConfig.ikeMode = tunnelIkeConfigNode["IkeMode"].asString();
+			if(!tunnelIkeConfigNode["IkePfs"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIkeConfig.ikePfs = tunnelIkeConfigNode["IkePfs"].asString();
+			if(!tunnelIkeConfigNode["IkeVersion"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIkeConfig.ikeVersion = tunnelIkeConfigNode["IkeVersion"].asString();
+			if(!tunnelIkeConfigNode["LocalId"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIkeConfig.localId = tunnelIkeConfigNode["LocalId"].asString();
+			if(!tunnelIkeConfigNode["Psk"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIkeConfig.psk = tunnelIkeConfigNode["Psk"].asString();
+			if(!tunnelIkeConfigNode["RemoteId"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIkeConfig.remoteId = tunnelIkeConfigNode["RemoteId"].asString();
+			auto tunnelIpsecConfigNode = value["TunnelIpsecConfig"];
+			if(!tunnelIpsecConfigNode["IpsecAuthAlg"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIpsecConfig.ipsecAuthAlg = tunnelIpsecConfigNode["IpsecAuthAlg"].asString();
+			if(!tunnelIpsecConfigNode["IpsecEncAlg"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIpsecConfig.ipsecEncAlg = tunnelIpsecConfigNode["IpsecEncAlg"].asString();
+			if(!tunnelIpsecConfigNode["IpsecLifetime"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIpsecConfig.ipsecLifetime = tunnelIpsecConfigNode["IpsecLifetime"].asString();
+			if(!tunnelIpsecConfigNode["IpsecPfs"].isNull())
+				tunnelOptionsSpecificationObject.tunnelIpsecConfig.ipsecPfs = tunnelIpsecConfigNode["IpsecPfs"].asString();
+			vpnConnectionsObject.tunnelOptionsSpecification.push_back(tunnelOptionsSpecificationObject);
 		}
 		auto ikeConfigNode = value["IkeConfig"];
 		if(!ikeConfigNode["RemoteId"].isNull())

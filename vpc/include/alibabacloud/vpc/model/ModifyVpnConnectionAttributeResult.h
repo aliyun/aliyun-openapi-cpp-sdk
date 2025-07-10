@@ -69,6 +69,48 @@ namespace AlibabaCloud
 					int peerAsn;
 					std::string localBgpIp;
 				};
+				struct TunnelOptions
+				{
+					struct TunnelBgpConfig
+					{
+						long localAsn;
+						std::string tunnelCidr;
+						std::string peerBgpIp;
+						long peerAsn;
+						std::string localBgpIp;
+					};
+					struct TunnelIkeConfig
+					{
+						std::string ikeAuthAlg;
+						std::string localId;
+						std::string ikeEncAlg;
+						std::string ikeVersion;
+						std::string ikeMode;
+						long ikeLifetime;
+						std::string psk;
+						std::string remoteId;
+						std::string ikePfs;
+					};
+					struct TunnelIpsecConfig
+					{
+						std::string ipsecPfs;
+						std::string ipsecEncAlg;
+						std::string ipsecAuthAlg;
+						long ipsecLifetime;
+					};
+					std::string role;
+					TunnelIkeConfig tunnelIkeConfig;
+					std::string customerGatewayId;
+					std::string internetIp;
+					TunnelBgpConfig tunnelBgpConfig;
+					std::string state;
+					std::string remoteCaCertificate;
+					bool enableNatTraversal;
+					TunnelIpsecConfig tunnelIpsecConfig;
+					std::string tunnelId;
+					bool enableDpd;
+					std::string zoneNo;
+				};
 
 
 				ModifyVpnConnectionAttributeResult();
@@ -77,9 +119,12 @@ namespace AlibabaCloud
 				std::string getLocalSubnet()const;
 				std::string getDescription()const;
 				std::string getCustomerGatewayId()const;
+				std::string getResourceGroupId()const;
+				bool getEnableTunnelsBgp()const;
 				long getCreateTime()const;
 				std::string getName()const;
 				bool getEffectImmediately()const;
+				std::vector<TunnelOptions> getTunnelOptionsSpecification()const;
 				VcoHealthCheck getVcoHealthCheck()const;
 				std::string getRemoteSubnet()const;
 				std::string getVpnGatewayId()const;
@@ -96,9 +141,12 @@ namespace AlibabaCloud
 				std::string localSubnet_;
 				std::string description_;
 				std::string customerGatewayId_;
+				std::string resourceGroupId_;
+				bool enableTunnelsBgp_;
 				long createTime_;
 				std::string name_;
 				bool effectImmediately_;
+				std::vector<TunnelOptions> tunnelOptionsSpecification_;
 				VcoHealthCheck vcoHealthCheck_;
 				std::string remoteSubnet_;
 				std::string vpnGatewayId_;

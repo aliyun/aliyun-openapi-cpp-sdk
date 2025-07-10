@@ -59,12 +59,19 @@ void ListVpcEndpointServicesByEndUserResult::parse(const std::string &payload)
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
 		maxResults_ = std::stol(value["MaxResults"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
 
 }
 
 std::vector<ListVpcEndpointServicesByEndUserResult::Service> ListVpcEndpointServicesByEndUserResult::getServices()const
 {
 	return services_;
+}
+
+std::string ListVpcEndpointServicesByEndUserResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::string ListVpcEndpointServicesByEndUserResult::getNextToken()const

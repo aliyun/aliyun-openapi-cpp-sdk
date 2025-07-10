@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string prefixListId;
 					std::string ipVersion;
 					std::string prefixListName;
+					std::string prefixListType;
 					std::vector<std::string> cidrBlocks;
 					std::string prefixListDescription;
 					std::string ownerId;

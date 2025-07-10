@@ -52,15 +52,6 @@ void DescribeEipAddressesRequest::setFilter2Value(const std::string &filter2Valu
   setParameter(std::string("Filter.2.Value"), filter2Value);
 }
 
-bool DescribeEipAddressesRequest::getSecurityProtectionEnabled() const {
-  return securityProtectionEnabled_;
-}
-
-void DescribeEipAddressesRequest::setSecurityProtectionEnabled(bool securityProtectionEnabled) {
-  securityProtectionEnabled_ = securityProtectionEnabled;
-  setParameter(std::string("SecurityProtectionEnabled"), securityProtectionEnabled ? "true" : "false");
-}
-
 std::string DescribeEipAddressesRequest::getISP() const {
   return iSP_;
 }
@@ -79,24 +70,6 @@ void DescribeEipAddressesRequest::setEipName(const std::string &eipName) {
   setParameter(std::string("EipName"), eipName);
 }
 
-std::string DescribeEipAddressesRequest::getAllocationId() const {
-  return allocationId_;
-}
-
-void DescribeEipAddressesRequest::setAllocationId(const std::string &allocationId) {
-  allocationId_ = allocationId;
-  setParameter(std::string("AllocationId"), allocationId);
-}
-
-bool DescribeEipAddressesRequest::getIncludeReservationData() const {
-  return includeReservationData_;
-}
-
-void DescribeEipAddressesRequest::setIncludeReservationData(bool includeReservationData) {
-  includeReservationData_ = includeReservationData;
-  setParameter(std::string("IncludeReservationData"), includeReservationData ? "true" : "false");
-}
-
 std::string DescribeEipAddressesRequest::getEipAddress() const {
   return eipAddress_;
 }
@@ -104,15 +77,6 @@ std::string DescribeEipAddressesRequest::getEipAddress() const {
 void DescribeEipAddressesRequest::setEipAddress(const std::string &eipAddress) {
   eipAddress_ = eipAddress;
   setParameter(std::string("EipAddress"), eipAddress);
-}
-
-int DescribeEipAddressesRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void DescribeEipAddressesRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
 std::string DescribeEipAddressesRequest::getResourceGroupId() const {
@@ -140,33 +104,6 @@ std::string DescribeEipAddressesRequest::getFilter1Key() const {
 void DescribeEipAddressesRequest::setFilter1Key(const std::string &filter1Key) {
   filter1Key_ = filter1Key;
   setParameter(std::string("Filter.1.Key"), filter1Key);
-}
-
-std::string DescribeEipAddressesRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeEipAddressesRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string DescribeEipAddressesRequest::getAssociatedInstanceType() const {
-  return associatedInstanceType_;
-}
-
-void DescribeEipAddressesRequest::setAssociatedInstanceType(const std::string &associatedInstanceType) {
-  associatedInstanceType_ = associatedInstanceType;
-  setParameter(std::string("AssociatedInstanceType"), associatedInstanceType);
-}
-
-int DescribeEipAddressesRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void DescribeEipAddressesRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 std::vector<DescribeEipAddressesRequest::Tag> DescribeEipAddressesRequest::getTag() const {
@@ -201,6 +138,105 @@ void DescribeEipAddressesRequest::setDryRun(bool dryRun) {
   setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
+std::string DescribeEipAddressesRequest::getFilter1Value() const {
+  return filter1Value_;
+}
+
+void DescribeEipAddressesRequest::setFilter1Value(const std::string &filter1Value) {
+  filter1Value_ = filter1Value;
+  setParameter(std::string("Filter.1.Value"), filter1Value);
+}
+
+long DescribeEipAddressesRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeEipAddressesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeEipAddressesRequest::getStatus() const {
+  return status_;
+}
+
+void DescribeEipAddressesRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+
+bool DescribeEipAddressesRequest::getSecurityProtectionEnabled() const {
+  return securityProtectionEnabled_;
+}
+
+void DescribeEipAddressesRequest::setSecurityProtectionEnabled(bool securityProtectionEnabled) {
+  securityProtectionEnabled_ = securityProtectionEnabled;
+  setParameter(std::string("SecurityProtectionEnabled"), securityProtectionEnabled ? "true" : "false");
+}
+
+bool DescribeEipAddressesRequest::getServiceManaged() const {
+  return serviceManaged_;
+}
+
+void DescribeEipAddressesRequest::setServiceManaged(bool serviceManaged) {
+  serviceManaged_ = serviceManaged;
+  setParameter(std::string("ServiceManaged"), serviceManaged ? "true" : "false");
+}
+
+std::string DescribeEipAddressesRequest::getAllocationId() const {
+  return allocationId_;
+}
+
+void DescribeEipAddressesRequest::setAllocationId(const std::string &allocationId) {
+  allocationId_ = allocationId;
+  setParameter(std::string("AllocationId"), allocationId);
+}
+
+bool DescribeEipAddressesRequest::getIncludeReservationData() const {
+  return includeReservationData_;
+}
+
+void DescribeEipAddressesRequest::setIncludeReservationData(bool includeReservationData) {
+  includeReservationData_ = includeReservationData;
+  setParameter(std::string("IncludeReservationData"), includeReservationData ? "true" : "false");
+}
+
+int DescribeEipAddressesRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void DescribeEipAddressesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+std::string DescribeEipAddressesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeEipAddressesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeEipAddressesRequest::getAssociatedInstanceType() const {
+  return associatedInstanceType_;
+}
+
+void DescribeEipAddressesRequest::setAssociatedInstanceType(const std::string &associatedInstanceType) {
+  associatedInstanceType_ = associatedInstanceType;
+  setParameter(std::string("AssociatedInstanceType"), associatedInstanceType);
+}
+
+int DescribeEipAddressesRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeEipAddressesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
 std::string DescribeEipAddressesRequest::getBandwidthPackageId() const {
   return bandwidthPackageId_;
 }
@@ -228,15 +264,6 @@ void DescribeEipAddressesRequest::setOwnerAccount(const std::string &ownerAccoun
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string DescribeEipAddressesRequest::getFilter1Value() const {
-  return filter1Value_;
-}
-
-void DescribeEipAddressesRequest::setFilter1Value(const std::string &filter1Value) {
-  filter1Value_ = filter1Value;
-  setParameter(std::string("Filter.1.Value"), filter1Value);
-}
-
 std::string DescribeEipAddressesRequest::getFilter2Key() const {
   return filter2Key_;
 }
@@ -244,15 +271,6 @@ std::string DescribeEipAddressesRequest::getFilter2Key() const {
 void DescribeEipAddressesRequest::setFilter2Key(const std::string &filter2Key) {
   filter2Key_ = filter2Key;
   setParameter(std::string("Filter.2.Key"), filter2Key);
-}
-
-long DescribeEipAddressesRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeEipAddressesRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 std::string DescribeEipAddressesRequest::getChargeType() const {
@@ -271,14 +289,5 @@ std::string DescribeEipAddressesRequest::getAssociatedInstanceId() const {
 void DescribeEipAddressesRequest::setAssociatedInstanceId(const std::string &associatedInstanceId) {
   associatedInstanceId_ = associatedInstanceId;
   setParameter(std::string("AssociatedInstanceId"), associatedInstanceId);
-}
-
-std::string DescribeEipAddressesRequest::getStatus() const {
-  return status_;
-}
-
-void DescribeEipAddressesRequest::setStatus(const std::string &status) {
-  status_ = status;
-  setParameter(std::string("Status"), status);
 }
 

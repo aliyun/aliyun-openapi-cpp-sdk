@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				AddPublicIpAddressPoolCidrBlockResult();
 				explicit AddPublicIpAddressPoolCidrBlockResult(const std::string &payload);
 				~AddPublicIpAddressPoolCidrBlockResult();
+				std::string getCidrBlock()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string cidrBlock_;
 
 			};
 		}

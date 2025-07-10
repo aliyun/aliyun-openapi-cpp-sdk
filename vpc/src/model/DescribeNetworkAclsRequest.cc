@@ -97,6 +97,15 @@ void DescribeNetworkAclsRequest::setResourceOwnerAccount(const std::string &reso
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+std::string DescribeNetworkAclsRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void DescribeNetworkAclsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
 std::string DescribeNetworkAclsRequest::getNetworkAclName() const {
   return networkAclName_;
 }

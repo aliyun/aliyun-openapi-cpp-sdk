@@ -71,6 +71,12 @@ void ModifySslVpnServerResult::parse(const std::string &payload)
 		clientIpPool_ = value["ClientIpPool"].asString();
 	if(!value["Proto"].isNull())
 		proto_ = value["Proto"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["IDaaSApplicationId"].isNull())
+		iDaaSApplicationId_ = value["IDaaSApplicationId"].asString();
+	if(!value["IDaaSInstanceVersion"].isNull())
+		iDaaSInstanceVersion_ = value["IDaaSInstanceVersion"].asString();
 
 }
 
@@ -104,6 +110,11 @@ int ModifySslVpnServerResult::getMaxConnections()const
 	return maxConnections_;
 }
 
+std::string ModifySslVpnServerResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
 bool ModifySslVpnServerResult::getEnableMultiFactorAuth()const
 {
 	return enableMultiFactorAuth_;
@@ -124,9 +135,19 @@ std::string ModifySslVpnServerResult::getSslVpnServerId()const
 	return sslVpnServerId_;
 }
 
+std::string ModifySslVpnServerResult::getIDaaSInstanceVersion()const
+{
+	return iDaaSInstanceVersion_;
+}
+
 std::string ModifySslVpnServerResult::getName()const
 {
 	return name_;
+}
+
+std::string ModifySslVpnServerResult::getIDaaSApplicationId()const
+{
+	return iDaaSApplicationId_;
 }
 
 std::string ModifySslVpnServerResult::getInternetIp()const

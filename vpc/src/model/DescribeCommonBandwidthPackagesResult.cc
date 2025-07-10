@@ -85,6 +85,10 @@ void DescribeCommonBandwidthPackagesResult::parse(const std::string &payload)
 			commonBandwidthPackagesObject.iSP = valueCommonBandwidthPackagesCommonBandwidthPackage["ISP"].asString();
 		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["HasReservationData"].isNull())
 			commonBandwidthPackagesObject.hasReservationData = valueCommonBandwidthPackagesCommonBandwidthPackage["HasReservationData"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["BizType"].isNull())
+			commonBandwidthPackagesObject.bizType = valueCommonBandwidthPackagesCommonBandwidthPackage["BizType"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["Zone"].isNull())
+			commonBandwidthPackagesObject.zone = valueCommonBandwidthPackagesCommonBandwidthPackage["Zone"].asString();
 		auto allPublicIpAddressesNode = valueCommonBandwidthPackagesCommonBandwidthPackage["PublicIpAddresses"]["PublicIpAddresse"];
 		for (auto valueCommonBandwidthPackagesCommonBandwidthPackagePublicIpAddressesPublicIpAddresse : allPublicIpAddressesNode)
 		{
@@ -96,6 +100,16 @@ void DescribeCommonBandwidthPackagesResult::parse(const std::string &payload)
 			if(!valueCommonBandwidthPackagesCommonBandwidthPackagePublicIpAddressesPublicIpAddresse["BandwidthPackageIpRelationStatus"].isNull())
 				publicIpAddressesObject.bandwidthPackageIpRelationStatus = valueCommonBandwidthPackagesCommonBandwidthPackagePublicIpAddressesPublicIpAddresse["BandwidthPackageIpRelationStatus"].asString();
 			commonBandwidthPackagesObject.publicIpAddresses.push_back(publicIpAddressesObject);
+		}
+		auto allTagsNode = valueCommonBandwidthPackagesCommonBandwidthPackage["Tags"]["Tag"];
+		for (auto valueCommonBandwidthPackagesCommonBandwidthPackageTagsTag : allTagsNode)
+		{
+			CommonBandwidthPackage::Tag tagsObject;
+			if(!valueCommonBandwidthPackagesCommonBandwidthPackageTagsTag["Key"].isNull())
+				tagsObject.key = valueCommonBandwidthPackagesCommonBandwidthPackageTagsTag["Key"].asString();
+			if(!valueCommonBandwidthPackagesCommonBandwidthPackageTagsTag["Value"].isNull())
+				tagsObject.value = valueCommonBandwidthPackagesCommonBandwidthPackageTagsTag["Value"].asString();
+			commonBandwidthPackagesObject.tags.push_back(tagsObject);
 		}
 		auto allSecurityProtectionTypes = value["SecurityProtectionTypes"]["SecurityProtectionType"];
 		for (auto value : allSecurityProtectionTypes)

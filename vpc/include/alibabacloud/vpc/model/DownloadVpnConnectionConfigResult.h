@@ -53,11 +53,49 @@ namespace AlibabaCloud
 						std::string ipsecAuthAlg;
 						long ipsecLifetime;
 					};
+					struct TunnelConfig
+					{
+						struct IkeConfig1
+						{
+							std::string ikeAuthAlg;
+							std::string localId;
+							std::string ikeEncAlg;
+							std::string ikeVersion;
+							std::string ikeMode;
+							long ikeLifetime;
+							std::string psk;
+							std::string remoteId;
+							std::string ikePfs;
+						};
+						struct IpsecConfig2
+						{
+							std::string ipsecPfs;
+							std::string ipsecEncAlg;
+							std::string ipsecAuthAlg;
+							long ipsecLifetime;
+						};
+						IkeConfig1 ikeConfig1;
+						IpsecConfig2 ipsecConfig2;
+						std::string local;
+						std::string remote;
+						std::string tunnelId;
+					};
+					struct BgpConfig
+					{
+						std::string localAsn;
+						std::string tunnelCidr;
+						std::string peerBgpIp;
+						std::string peerAsn;
+						std::string tunnelId;
+						std::string localBgpIp;
+					};
 					std::string localSubnet;
+					std::vector<BgpConfig> bgpConfigs;
 					std::string remoteSubnet;
 					IpsecConfig ipsecConfig;
 					std::string remote;
 					std::string local;
+					std::vector<TunnelConfig> tunnelsConfig;
 					IkeConfig ikeConfig;
 				};
 

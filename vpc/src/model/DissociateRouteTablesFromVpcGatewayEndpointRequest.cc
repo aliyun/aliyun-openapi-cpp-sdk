@@ -34,15 +34,6 @@ void DissociateRouteTablesFromVpcGatewayEndpointRequest::setResourceOwnerId(long
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-bool DissociateRouteTablesFromVpcGatewayEndpointRequest::getDryRun() const {
-  return dryRun_;
-}
-
-void DissociateRouteTablesFromVpcGatewayEndpointRequest::setDryRun(bool dryRun) {
-  dryRun_ = dryRun;
-  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
-}
-
 std::string DissociateRouteTablesFromVpcGatewayEndpointRequest::getClientToken() const {
   return clientToken_;
 }
@@ -52,15 +43,6 @@ void DissociateRouteTablesFromVpcGatewayEndpointRequest::setClientToken(const st
   setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string DissociateRouteTablesFromVpcGatewayEndpointRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DissociateRouteTablesFromVpcGatewayEndpointRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string DissociateRouteTablesFromVpcGatewayEndpointRequest::getEndpointId() const {
   return endpointId_;
 }
@@ -68,6 +50,33 @@ std::string DissociateRouteTablesFromVpcGatewayEndpointRequest::getEndpointId() 
 void DissociateRouteTablesFromVpcGatewayEndpointRequest::setEndpointId(const std::string &endpointId) {
   endpointId_ = endpointId;
   setParameter(std::string("EndpointId"), endpointId);
+}
+
+std::string DissociateRouteTablesFromVpcGatewayEndpointRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DissociateRouteTablesFromVpcGatewayEndpointRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+bool DissociateRouteTablesFromVpcGatewayEndpointRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DissociateRouteTablesFromVpcGatewayEndpointRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
+std::string DissociateRouteTablesFromVpcGatewayEndpointRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DissociateRouteTablesFromVpcGatewayEndpointRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
 std::string DissociateRouteTablesFromVpcGatewayEndpointRequest::getOwnerAccount() const {
@@ -86,15 +95,6 @@ long DissociateRouteTablesFromVpcGatewayEndpointRequest::getOwnerId() const {
 void DissociateRouteTablesFromVpcGatewayEndpointRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DissociateRouteTablesFromVpcGatewayEndpointRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DissociateRouteTablesFromVpcGatewayEndpointRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 std::vector<std::string> DissociateRouteTablesFromVpcGatewayEndpointRequest::getRouteTableIds() const {

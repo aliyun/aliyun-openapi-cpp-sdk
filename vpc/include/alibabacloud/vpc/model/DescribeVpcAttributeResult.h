@@ -48,63 +48,84 @@ namespace AlibabaCloud
 					std::string ipv6Isp;
 					std::string ipv6CidrBlock;
 				};
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
+				struct AssociatedPropagationSourcesItem
+				{
+					std::string status;
+					bool routePropagated;
+					std::string sourceType;
+					long sourceOwnerId;
+					std::string sourceInstanceId;
+				};
 
 
 				DescribeVpcAttributeResult();
 				explicit DescribeVpcAttributeResult(const std::string &payload);
 				~DescribeVpcAttributeResult();
-				std::string getStatus()const;
-				bool getIsDefault()const;
-				std::string getDhcpOptionsSetStatus()const;
+				std::vector<AssociatedPropagationSourcesItem> getAssociatedPropagationSources()const;
 				std::string getDescription()const;
 				bool getClassicLinkEnabled()const;
 				std::string getResourceGroupId()const;
-				bool getSupportIpv4Gateway()const;
-				std::string getIpv4GatewayId()const;
-				std::vector<std::string> getVSwitchIds()const;
 				std::vector<std::string> getSecondaryCidrBlocks()const;
 				std::string getCidrBlock()const;
 				std::vector<std::string> getUserCidrs()const;
 				std::string getNetworkAclNum()const;
+				std::string getDnsHostnameStatus()const;
 				std::string getVRouterId()const;
 				std::string getDhcpOptionsSetId()const;
-				std::string getVpcId()const;
 				long getOwnerId()const;
 				std::vector<AssociatedCen> getAssociatedCens()const;
+				bool getEnabledIpv6()const;
+				std::vector<CloudResourceSetType> getCloudResources()const;
+				std::vector<Tag> getTags()const;
+				std::string getStatus()const;
+				bool getIsDefault()const;
+				std::string getDhcpOptionsSetStatus()const;
+				bool getSupportIpv4Gateway()const;
+				std::string getIpv4GatewayId()const;
+				std::vector<std::string> getVSwitchIds()const;
+				std::string getVpcId()const;
 				std::string getCreationTime()const;
 				std::string getVpcName()const;
 				std::string getRegionId()const;
 				std::vector<Ipv6CidrBlock> getIpv6CidrBlocks()const;
 				std::string getIpv6CidrBlock()const;
-				std::vector<CloudResourceSetType> getCloudResources()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string status_;
-				bool isDefault_;
-				std::string dhcpOptionsSetStatus_;
+				std::vector<AssociatedPropagationSourcesItem> associatedPropagationSources_;
 				std::string description_;
 				bool classicLinkEnabled_;
 				std::string resourceGroupId_;
-				bool supportIpv4Gateway_;
-				std::string ipv4GatewayId_;
-				std::vector<std::string> vSwitchIds_;
 				std::vector<std::string> secondaryCidrBlocks_;
 				std::string cidrBlock_;
 				std::vector<std::string> userCidrs_;
 				std::string networkAclNum_;
+				std::string dnsHostnameStatus_;
 				std::string vRouterId_;
 				std::string dhcpOptionsSetId_;
-				std::string vpcId_;
 				long ownerId_;
 				std::vector<AssociatedCen> associatedCens_;
+				bool enabledIpv6_;
+				std::vector<CloudResourceSetType> cloudResources_;
+				std::vector<Tag> tags_;
+				std::string status_;
+				bool isDefault_;
+				std::string dhcpOptionsSetStatus_;
+				bool supportIpv4Gateway_;
+				std::string ipv4GatewayId_;
+				std::vector<std::string> vSwitchIds_;
+				std::string vpcId_;
 				std::string creationTime_;
 				std::string vpcName_;
 				std::string regionId_;
 				std::vector<Ipv6CidrBlock> ipv6CidrBlocks_;
 				std::string ipv6CidrBlock_;
-				std::vector<CloudResourceSetType> cloudResources_;
 
 			};
 		}

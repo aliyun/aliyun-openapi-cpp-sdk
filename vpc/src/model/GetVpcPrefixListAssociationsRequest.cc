@@ -34,33 +34,6 @@ void GetVpcPrefixListAssociationsRequest::setResourceOwnerId(long resourceOwnerI
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string GetVpcPrefixListAssociationsRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void GetVpcPrefixListAssociationsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string GetVpcPrefixListAssociationsRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void GetVpcPrefixListAssociationsRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long GetVpcPrefixListAssociationsRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void GetVpcPrefixListAssociationsRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string GetVpcPrefixListAssociationsRequest::getPrefixListId() const {
   return prefixListId_;
 }
@@ -86,6 +59,33 @@ std::string GetVpcPrefixListAssociationsRequest::getRegionId() const {
 void GetVpcPrefixListAssociationsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string GetVpcPrefixListAssociationsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void GetVpcPrefixListAssociationsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string GetVpcPrefixListAssociationsRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void GetVpcPrefixListAssociationsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long GetVpcPrefixListAssociationsRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void GetVpcPrefixListAssociationsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 long GetVpcPrefixListAssociationsRequest::getMaxResults() const {
