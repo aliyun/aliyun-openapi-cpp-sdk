@@ -73,7 +73,7 @@ namespace AlibabaCloud
 								long executeTime;
 								std::string proxySessId;
 								std::string serverIp;
-								std::string planId;
+								long planId;
 								std::string sqlText;
 								long cpuTime;
 								std::string clientIp;
@@ -90,7 +90,7 @@ namespace AlibabaCloud
 							long executeTime;
 							std::string proxySessId;
 							std::string serverIp;
-							std::string planId;
+							long planId;
 							std::string sqlText;
 							long cpuTime;
 							std::string clientIp;
@@ -108,7 +108,7 @@ namespace AlibabaCloud
 						long executeTime;
 						std::string proxySessId;
 						std::string serverIp;
-						std::string planId;
+						long planId;
 						std::string sqlText;
 						std::vector<AllProcessListItem::ProcessSqlListsItem> processSqlLists;
 						long cpuTime;
@@ -122,9 +122,9 @@ namespace AlibabaCloud
 						long sessionId;
 					};
 					SessionStatistics sessionStatistics;
-					int totalSessionCount;
-					int activeSessionCount;
-					int idleSessionCount;
+					long totalSessionCount;
+					long activeSessionCount;
+					long idleSessionCount;
 					std::string obVersion;
 					std::vector<AllProcessListItem> allProcessList;
 				};

@@ -78,11 +78,11 @@ void DescribeOasAnomalySQLListResult::parse(const std::string &payload)
 		if(!valueDataDataItem["SumDbTime"].isNull())
 			dataObject.sumDbTime = valueDataDataItem["SumDbTime"].asString();
 		if(!valueDataDataItem["AvgRetryCount"].isNull())
-			dataObject.avgRetryCount = std::stof(valueDataDataItem["AvgRetryCount"].asString());
+			dataObject.avgRetryCount = valueDataDataItem["AvgRetryCount"].asString();
 		if(!valueDataDataItem["SumRetryCount"].isNull())
-			dataObject.sumRetryCount = std::stof(valueDataDataItem["SumRetryCount"].asString());
+			dataObject.sumRetryCount = valueDataDataItem["SumRetryCount"].asString();
 		if(!valueDataDataItem["AvgLogicalReads"].isNull())
-			dataObject.avgLogicalReads = std::stof(valueDataDataItem["AvgLogicalReads"].asString());
+			dataObject.avgLogicalReads = valueDataDataItem["AvgLogicalReads"].asString();
 		auto allSqlListNode = valueDataDataItem["SqlList"]["SqlListItem"];
 		for (auto valueDataDataItemSqlListSqlListItem : allSqlListNode)
 		{
@@ -120,11 +120,11 @@ void DescribeOasAnomalySQLListResult::parse(const std::string &payload)
 			if(!valueDataDataItemSqlListSqlListItem["SumDbTime"].isNull())
 				sqlListObject.sumDbTime = valueDataDataItemSqlListSqlListItem["SumDbTime"].asString();
 			if(!valueDataDataItemSqlListSqlListItem["AvgRetryCount"].isNull())
-				sqlListObject.avgRetryCount = std::stof(valueDataDataItemSqlListSqlListItem["AvgRetryCount"].asString());
+				sqlListObject.avgRetryCount = valueDataDataItemSqlListSqlListItem["AvgRetryCount"].asString();
 			if(!valueDataDataItemSqlListSqlListItem["SumRetryCount"].isNull())
-				sqlListObject.sumRetryCount = std::stof(valueDataDataItemSqlListSqlListItem["SumRetryCount"].asString());
+				sqlListObject.sumRetryCount = valueDataDataItemSqlListSqlListItem["SumRetryCount"].asString();
 			if(!valueDataDataItemSqlListSqlListItem["AvgLogicalReads"].isNull())
-				sqlListObject.avgLogicalReads = std::stof(valueDataDataItemSqlListSqlListItem["AvgLogicalReads"].asString());
+				sqlListObject.avgLogicalReads = valueDataDataItemSqlListSqlListItem["AvgLogicalReads"].asString();
 			auto allDiagTypes1 = value["DiagTypes"]["DiagTypes"];
 			for (auto value : allDiagTypes1)
 				sqlListObject.diagTypes1.push_back(value.asString());

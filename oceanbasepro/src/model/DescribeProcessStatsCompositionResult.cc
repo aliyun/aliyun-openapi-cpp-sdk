@@ -41,11 +41,11 @@ void DescribeProcessStatsCompositionResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	if(!dataNode["TotalSessionCount"].isNull())
-		data_.totalSessionCount = std::stoi(dataNode["TotalSessionCount"].asString());
+		data_.totalSessionCount = std::stol(dataNode["TotalSessionCount"].asString());
 	if(!dataNode["ActiveSessionCount"].isNull())
-		data_.activeSessionCount = std::stoi(dataNode["ActiveSessionCount"].asString());
+		data_.activeSessionCount = std::stol(dataNode["ActiveSessionCount"].asString());
 	if(!dataNode["IdleSessionCount"].isNull())
-		data_.idleSessionCount = std::stoi(dataNode["IdleSessionCount"].asString());
+		data_.idleSessionCount = std::stol(dataNode["IdleSessionCount"].asString());
 	if(!dataNode["ObVersion"].isNull())
 		data_.obVersion = dataNode["ObVersion"].asString();
 	auto allAllProcessListNode = dataNode["AllProcessList"]["AllProcessListItem"];
@@ -81,7 +81,7 @@ void DescribeProcessStatsCompositionResult::parse(const std::string &payload)
 		if(!dataNodeAllProcessListAllProcessListItem["TraceId"].isNull())
 			allProcessListItemObject.traceId = dataNodeAllProcessListAllProcessListItem["TraceId"].asString();
 		if(!dataNodeAllProcessListAllProcessListItem["PlanId"].isNull())
-			allProcessListItemObject.planId = dataNodeAllProcessListAllProcessListItem["PlanId"].asString();
+			allProcessListItemObject.planId = std::stol(dataNodeAllProcessListAllProcessListItem["PlanId"].asString());
 		if(!dataNodeAllProcessListAllProcessListItem["DynamicSql"].isNull())
 			allProcessListItemObject.dynamicSql = dataNodeAllProcessListAllProcessListItem["DynamicSql"].asString() == "true";
 		if(!dataNodeAllProcessListAllProcessListItem["ServerSn"].isNull())
@@ -119,7 +119,7 @@ void DescribeProcessStatsCompositionResult::parse(const std::string &payload)
 			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["TraceId"].isNull())
 				processSqlListsObject.traceId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["TraceId"].asString();
 			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["PlanId"].isNull())
-				processSqlListsObject.planId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["PlanId"].asString();
+				processSqlListsObject.planId = std::stol(dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["PlanId"].asString());
 			if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["DynamicSql"].isNull())
 				processSqlListsObject.dynamicSql = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["DynamicSql"].asString() == "true";
 			auto allProcessSqlListNode = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItem["ProcessSqlList"]["ProcessSqlListItem"];
@@ -155,7 +155,7 @@ void DescribeProcessStatsCompositionResult::parse(const std::string &payload)
 				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["TraceId"].isNull())
 					processSqlListObject.traceId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["TraceId"].asString();
 				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["PlanId"].isNull())
-					processSqlListObject.planId = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["PlanId"].asString();
+					processSqlListObject.planId = std::stol(dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["PlanId"].asString());
 				if(!dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["DynamicSql"].isNull())
 					processSqlListObject.dynamicSql = dataNodeAllProcessListAllProcessListItemProcessSqlListsProcessSqlListsItemProcessSqlListProcessSqlListItem["DynamicSql"].asString() == "true";
 				processSqlListsObject.processSqlList.push_back(processSqlListObject);
