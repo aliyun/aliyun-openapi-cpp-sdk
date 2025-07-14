@@ -176,6 +176,8 @@
 #include "model/QueryOrganizationWorkspaceListResult.h"
 #include "model/QueryReadableResourcesListByUserIdRequest.h"
 #include "model/QueryReadableResourcesListByUserIdResult.h"
+#include "model/QueryReadableResourcesListByUserIdV2Request.h"
+#include "model/QueryReadableResourcesListByUserIdV2Result.h"
 #include "model/QueryReportPerformanceRequest.h"
 #include "model/QueryReportPerformanceResult.h"
 #include "model/QueryShareListRequest.h"
@@ -490,6 +492,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryReadableResourcesListByUserIdResult> QueryReadableResourcesListByUserIdOutcome;
 			typedef std::future<QueryReadableResourcesListByUserIdOutcome> QueryReadableResourcesListByUserIdOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryReadableResourcesListByUserIdRequest&, const QueryReadableResourcesListByUserIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryReadableResourcesListByUserIdAsyncHandler;
+			typedef Outcome<Error, Model::QueryReadableResourcesListByUserIdV2Result> QueryReadableResourcesListByUserIdV2Outcome;
+			typedef std::future<QueryReadableResourcesListByUserIdV2Outcome> QueryReadableResourcesListByUserIdV2OutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryReadableResourcesListByUserIdV2Request&, const QueryReadableResourcesListByUserIdV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryReadableResourcesListByUserIdV2AsyncHandler;
 			typedef Outcome<Error, Model::QueryReportPerformanceResult> QueryReportPerformanceOutcome;
 			typedef std::future<QueryReportPerformanceOutcome> QueryReportPerformanceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryReportPerformanceRequest&, const QueryReportPerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryReportPerformanceAsyncHandler;
@@ -837,6 +842,9 @@ namespace AlibabaCloud
 			QueryReadableResourcesListByUserIdOutcome queryReadableResourcesListByUserId(const Model::QueryReadableResourcesListByUserIdRequest &request)const;
 			void queryReadableResourcesListByUserIdAsync(const Model::QueryReadableResourcesListByUserIdRequest& request, const QueryReadableResourcesListByUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryReadableResourcesListByUserIdOutcomeCallable queryReadableResourcesListByUserIdCallable(const Model::QueryReadableResourcesListByUserIdRequest& request) const;
+			QueryReadableResourcesListByUserIdV2Outcome queryReadableResourcesListByUserIdV2(const Model::QueryReadableResourcesListByUserIdV2Request &request)const;
+			void queryReadableResourcesListByUserIdV2Async(const Model::QueryReadableResourcesListByUserIdV2Request& request, const QueryReadableResourcesListByUserIdV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryReadableResourcesListByUserIdV2OutcomeCallable queryReadableResourcesListByUserIdV2Callable(const Model::QueryReadableResourcesListByUserIdV2Request& request) const;
 			QueryReportPerformanceOutcome queryReportPerformance(const Model::QueryReportPerformanceRequest &request)const;
 			void queryReportPerformanceAsync(const Model::QueryReportPerformanceRequest& request, const QueryReportPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryReportPerformanceOutcomeCallable queryReportPerformanceCallable(const Model::QueryReportPerformanceRequest& request) const;

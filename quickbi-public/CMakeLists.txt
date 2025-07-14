@@ -175,6 +175,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryOrganizationWorkspaceListResult.h
 	include/alibabacloud/quickbi-public/model/QueryReadableResourcesListByUserIdRequest.h
 	include/alibabacloud/quickbi-public/model/QueryReadableResourcesListByUserIdResult.h
+	include/alibabacloud/quickbi-public/model/QueryReadableResourcesListByUserIdV2Request.h
+	include/alibabacloud/quickbi-public/model/QueryReadableResourcesListByUserIdV2Result.h
 	include/alibabacloud/quickbi-public/model/QueryReportPerformanceRequest.h
 	include/alibabacloud/quickbi-public/model/QueryReportPerformanceResult.h
 	include/alibabacloud/quickbi-public/model/QueryShareListRequest.h
@@ -406,6 +408,8 @@ set(quickbi-public_src
 	src/model/QueryOrganizationWorkspaceListResult.cc
 	src/model/QueryReadableResourcesListByUserIdRequest.cc
 	src/model/QueryReadableResourcesListByUserIdResult.cc
+	src/model/QueryReadableResourcesListByUserIdV2Request.cc
+	src/model/QueryReadableResourcesListByUserIdV2Result.cc
 	src/model/QueryReportPerformanceRequest.cc
 	src/model/QueryReportPerformanceResult.cc
 	src/model/QueryShareListRequest.cc

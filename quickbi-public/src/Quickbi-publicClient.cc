@@ -2823,6 +2823,42 @@ Quickbi_publicClient::QueryReadableResourcesListByUserIdOutcomeCallable Quickbi_
 	return task->get_future();
 }
 
+Quickbi_publicClient::QueryReadableResourcesListByUserIdV2Outcome Quickbi_publicClient::queryReadableResourcesListByUserIdV2(const QueryReadableResourcesListByUserIdV2Request &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryReadableResourcesListByUserIdV2Outcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryReadableResourcesListByUserIdV2Outcome(QueryReadableResourcesListByUserIdV2Result(outcome.result()));
+	else
+		return QueryReadableResourcesListByUserIdV2Outcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryReadableResourcesListByUserIdV2Async(const QueryReadableResourcesListByUserIdV2Request& request, const QueryReadableResourcesListByUserIdV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryReadableResourcesListByUserIdV2(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryReadableResourcesListByUserIdV2OutcomeCallable Quickbi_publicClient::queryReadableResourcesListByUserIdV2Callable(const QueryReadableResourcesListByUserIdV2Request &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryReadableResourcesListByUserIdV2Outcome()>>(
+			[this, request]()
+			{
+			return this->queryReadableResourcesListByUserIdV2(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::QueryReportPerformanceOutcome Quickbi_publicClient::queryReportPerformance(const QueryReportPerformanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
