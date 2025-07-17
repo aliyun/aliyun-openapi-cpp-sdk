@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_GETINSTANCERESULT_H_
-#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_GETINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_GETLLMCONFIGRESULT_H_
+#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_GETLLMCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,47 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT GetInstanceResult : public ServiceResult
+			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT GetLLMConfigResult : public ServiceResult
 			{
 			public:
-				struct FeatureDBInstanceInfo
-				{
-					std::string status;
-				};
-				struct FeatureDBInfo
-				{
-					std::string status;
-				};
 
 
-				GetInstanceResult();
-				explicit GetInstanceResult(const std::string &payload);
-				~GetInstanceResult();
-				std::string getStatus()const;
-				double getProgress()const;
-				std::string getType()const;
-				std::string getMessage()const;
-				FeatureDBInstanceInfo getFeatureDBInstanceInfo()const;
-				FeatureDBInfo getFeatureDBInfo()const;
-				std::string getRegionId()const;
+				GetLLMConfigResult();
+				explicit GetLLMConfigResult(const std::string &payload);
+				~GetLLMConfigResult();
+				int getBatchSize()const;
+				std::string getApiKey()const;
+				std::string getLLMConfigId()const;
+				int getRps()const;
+				int getMaxTokens()const;
+				std::string getModel()const;
+				std::string getWorkspaceId()const;
+				std::string getBaseUrl()const;
 				std::string getGmtCreateTime()const;
 				std::string getGmtModifiedTime()const;
+				std::string getName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string status_;
-				double progress_;
-				std::string type_;
-				std::string message_;
-				FeatureDBInstanceInfo featureDBInstanceInfo_;
-				FeatureDBInfo featureDBInfo_;
-				std::string regionId_;
+				int batchSize_;
+				std::string apiKey_;
+				std::string lLMConfigId_;
+				int rps_;
+				int maxTokens_;
+				std::string model_;
+				std::string workspaceId_;
+				std::string baseUrl_;
 				std::string gmtCreateTime_;
 				std::string gmtModifiedTime_;
+				std::string name_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_GETINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_GETLLMCONFIGRESULT_H_

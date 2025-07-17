@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREVIEWFIELDRELATIONSHIPSRESULT_H_
-#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREVIEWFIELDRELATIONSHIPSRESULT_H_
+#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTPROJECTFEATURESRESULT_H_
+#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTPROJECTFEATURESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT ListFeatureViewFieldRelationshipsResult : public ServiceResult
+			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT ListProjectFeaturesResult : public ServiceResult
 			{
 			public:
-				struct RelationshipsItem
+				struct FeaturesItem
 				{
-					struct ModelsItem
-					{
-						std::string modelName;
-						std::string modelId;
-						std::string featureAliasName;
-					};
-					std::vector<RelationshipsItem::ModelsItem> models;
-					std::string onlineTableName;
-					std::string offlineTableName;
-					std::string featureName;
+					std::string type;
+					std::string owner;
+					std::string featureViewId;
+					int modelFeatureCount;
+					std::string featureViewName;
+					std::string aliasNames;
+					std::string gmtCreateTime;
+					std::string name;
 				};
 
 
-				ListFeatureViewFieldRelationshipsResult();
-				explicit ListFeatureViewFieldRelationshipsResult(const std::string &payload);
-				~ListFeatureViewFieldRelationshipsResult();
-				std::vector<RelationshipsItem> getRelationships()const;
+				ListProjectFeaturesResult();
+				explicit ListProjectFeaturesResult(const std::string &payload);
+				~ListProjectFeaturesResult();
+				int getTotalCount()const;
+				std::string getRequestId()const;
+				std::vector<FeaturesItem> getFeatures()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<RelationshipsItem> relationships_;
+				int totalCount_;
+				std::string requestId_;
+				std::vector<FeaturesItem> features_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREVIEWFIELDRELATIONSHIPSRESULT_H_
+#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTPROJECTFEATURESRESULT_H_

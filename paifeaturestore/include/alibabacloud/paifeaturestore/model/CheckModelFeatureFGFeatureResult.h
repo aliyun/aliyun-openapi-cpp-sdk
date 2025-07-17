@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREVIEWFIELDRELATIONSHIPSRESULT_H_
-#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREVIEWFIELDRELATIONSHIPSRESULT_H_
+#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_CHECKMODELFEATUREFGFEATURERESULT_H_
+#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_CHECKMODELFEATUREFGFEATURERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT ListFeatureViewFieldRelationshipsResult : public ServiceResult
+			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT CheckModelFeatureFGFeatureResult : public ServiceResult
 			{
 			public:
-				struct RelationshipsItem
+				struct FGCheckResultsItem
 				{
-					struct ModelsItem
-					{
-						std::string modelName;
-						std::string modelId;
-						std::string featureAliasName;
-					};
-					std::vector<RelationshipsItem::ModelsItem> models;
-					std::string onlineTableName;
-					std::string offlineTableName;
-					std::string featureName;
+					bool status;
+					std::string message;
+					std::string ruleCode;
 				};
 
 
-				ListFeatureViewFieldRelationshipsResult();
-				explicit ListFeatureViewFieldRelationshipsResult(const std::string &payload);
-				~ListFeatureViewFieldRelationshipsResult();
-				std::vector<RelationshipsItem> getRelationships()const;
+				CheckModelFeatureFGFeatureResult();
+				explicit CheckModelFeatureFGFeatureResult(const std::string &payload);
+				~CheckModelFeatureFGFeatureResult();
+				std::string getRequestId()const;
+				std::vector<FGCheckResultsItem> getFGCheckResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<RelationshipsItem> relationships_;
+				std::string requestId_;
+				std::vector<FGCheckResultsItem> fGCheckResults_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREVIEWFIELDRELATIONSHIPSRESULT_H_
+#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_CHECKMODELFEATUREFGFEATURERESULT_H_

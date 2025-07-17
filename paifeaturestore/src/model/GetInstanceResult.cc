@@ -42,6 +42,9 @@ void GetInstanceResult::parse(const std::string &payload)
 	auto featureDBInstanceInfoNode = value["FeatureDBInstanceInfo"];
 	if(!featureDBInstanceInfoNode["Status"].isNull())
 		featureDBInstanceInfo_.status = featureDBInstanceInfoNode["Status"].asString();
+	auto featureDBInfoNode = value["FeatureDBInfo"];
+	if(!featureDBInfoNode["Status"].isNull())
+		featureDBInfo_.status = featureDBInfoNode["Status"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
 	if(!value["RegionId"].isNull())
@@ -82,6 +85,11 @@ std::string GetInstanceResult::getMessage()const
 GetInstanceResult::FeatureDBInstanceInfo GetInstanceResult::getFeatureDBInstanceInfo()const
 {
 	return featureDBInstanceInfo_;
+}
+
+GetInstanceResult::FeatureDBInfo GetInstanceResult::getFeatureDBInfo()const
+{
+	return featureDBInfo_;
 }
 
 std::string GetInstanceResult::getRegionId()const

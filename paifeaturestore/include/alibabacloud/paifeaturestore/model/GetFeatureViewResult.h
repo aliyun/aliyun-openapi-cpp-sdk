@@ -34,8 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct FieldsItem
 				{
+					struct TransformItem
+					{
+						struct InputItem
+						{
+							std::string type;
+							std::string name;
+						};
+						std::vector<TransformItem::InputItem> input;
+						std::string type;
+						int lLMConfigId;
+					};
 					std::string type;
 					std::vector<std::string> attributes;
+					std::vector<FieldsItem::TransformItem> transform;
 					std::string name;
 				};
 

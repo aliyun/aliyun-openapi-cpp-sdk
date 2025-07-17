@@ -47,6 +47,26 @@ void GetFeatureViewResult::parse(const std::string &payload)
 			fieldsObject.name = valueFieldsFieldsItem["Name"].asString();
 		if(!valueFieldsFieldsItem["Type"].isNull())
 			fieldsObject.type = valueFieldsFieldsItem["Type"].asString();
+		auto allTransformNode = valueFieldsFieldsItem["Transform"]["TransformItem"];
+		for (auto valueFieldsFieldsItemTransformTransformItem : allTransformNode)
+		{
+			FieldsItem::TransformItem transformObject;
+			if(!valueFieldsFieldsItemTransformTransformItem["Type"].isNull())
+				transformObject.type = valueFieldsFieldsItemTransformTransformItem["Type"].asString();
+			if(!valueFieldsFieldsItemTransformTransformItem["LLMConfigId"].isNull())
+				transformObject.lLMConfigId = std::stoi(valueFieldsFieldsItemTransformTransformItem["LLMConfigId"].asString());
+			auto allInputNode = valueFieldsFieldsItemTransformTransformItem["Input"]["InputItem"];
+			for (auto valueFieldsFieldsItemTransformTransformItemInputInputItem : allInputNode)
+			{
+				FieldsItem::TransformItem::InputItem inputObject;
+				if(!valueFieldsFieldsItemTransformTransformItemInputInputItem["Name"].isNull())
+					inputObject.name = valueFieldsFieldsItemTransformTransformItemInputInputItem["Name"].asString();
+				if(!valueFieldsFieldsItemTransformTransformItemInputInputItem["Type"].isNull())
+					inputObject.type = valueFieldsFieldsItemTransformTransformItemInputInputItem["Type"].asString();
+				transformObject.input.push_back(inputObject);
+			}
+			fieldsObject.transform.push_back(transformObject);
+		}
 		auto allAttributes = value["Attributes"]["Attributes"];
 		for (auto value : allAttributes)
 			fieldsObject.attributes.push_back(value.asString());

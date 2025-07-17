@@ -57,6 +57,8 @@ void ListFeatureViewFieldRelationshipsResult::parse(const std::string &payload)
 				modelsObject.modelId = valueRelationshipsRelationshipsItemModelsModelsItem["ModelId"].asString();
 			if(!valueRelationshipsRelationshipsItemModelsModelsItem["ModelName"].isNull())
 				modelsObject.modelName = valueRelationshipsRelationshipsItemModelsModelsItem["ModelName"].asString();
+			if(!valueRelationshipsRelationshipsItemModelsModelsItem["FeatureAliasName"].isNull())
+				modelsObject.featureAliasName = valueRelationshipsRelationshipsItemModelsModelsItem["FeatureAliasName"].asString();
 			relationshipsObject.models.push_back(modelsObject);
 		}
 		relationships_.push_back(relationshipsObject);

@@ -58,6 +58,9 @@ void ListInstancesResult::parse(const std::string &payload)
 		auto featureDBInstanceInfoNode = value["FeatureDBInstanceInfo"];
 		if(!featureDBInstanceInfoNode["Status"].isNull())
 			instancesObject.featureDBInstanceInfo.status = featureDBInstanceInfoNode["Status"].asString();
+		auto featureDBInfoNode = value["FeatureDBInfo"];
+		if(!featureDBInfoNode["Status"].isNull())
+			instancesObject.featureDBInfo.status = featureDBInfoNode["Status"].asString();
 		instances_.push_back(instancesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTINSTANCESRESULT_H_
-#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTLLMCONFIGSRESULT_H_
+#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTLLMCONFIGSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT ListInstancesResult : public ServiceResult
+			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT ListLLMConfigsResult : public ServiceResult
 			{
 			public:
-				struct InstancesItem
+				struct LlmConfigsItem
 				{
-					struct FeatureDBInstanceInfo
-					{
-						std::string status;
-					};
-					struct FeatureDBInfo
-					{
-						std::string status;
-					};
-					std::string status;
-					std::string type;
-					std::string instanceId;
-					FeatureDBInstanceInfo featureDBInstanceInfo;
-					FeatureDBInfo featureDBInfo;
-					std::string regionId;
+					int batchSize;
+					std::string apiKey;
+					std::string lLMConfigId;
+					int rps;
+					std::string resourceGroupId;
+					int maxTokens;
+					std::string model;
+					std::string workspaceId;
+					std::string baseUrl;
 					std::string gmtCreateTime;
 					std::string gmtModifiedTime;
+					std::string name;
 				};
 
 
-				ListInstancesResult();
-				explicit ListInstancesResult(const std::string &payload);
-				~ListInstancesResult();
-				std::vector<InstancesItem> getInstances()const;
+				ListLLMConfigsResult();
+				explicit ListLLMConfigsResult(const std::string &payload);
+				~ListLLMConfigsResult();
 				long getTotalCount()const;
+				std::string getNextToken()const;
+				std::vector<LlmConfigsItem> getLLMConfigs()const;
+				int getMaxResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<InstancesItem> instances_;
 				long totalCount_;
+				std::string nextToken_;
+				std::vector<LlmConfigsItem> lLMConfigs_;
+				int maxResults_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTLLMCONFIGSRESULT_H_

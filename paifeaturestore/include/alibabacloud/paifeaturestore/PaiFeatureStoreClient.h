@@ -24,6 +24,8 @@
 #include "PaiFeatureStoreExport.h"
 #include "model/CheckInstanceDatasourceRequest.h"
 #include "model/CheckInstanceDatasourceResult.h"
+#include "model/CheckModelFeatureFGFeatureRequest.h"
+#include "model/CheckModelFeatureFGFeatureResult.h"
 #include "model/CreateDatasourceRequest.h"
 #include "model/CreateDatasourceResult.h"
 #include "model/CreateFeatureEntityRequest.h"
@@ -32,6 +34,8 @@
 #include "model/CreateFeatureViewResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
+#include "model/CreateLLMConfigRequest.h"
+#include "model/CreateLLMConfigResult.h"
 #include "model/CreateLabelTableRequest.h"
 #include "model/CreateLabelTableResult.h"
 #include "model/CreateModelFeatureRequest.h"
@@ -46,6 +50,8 @@
 #include "model/DeleteFeatureEntityResult.h"
 #include "model/DeleteFeatureViewRequest.h"
 #include "model/DeleteFeatureViewResult.h"
+#include "model/DeleteLLMConfigRequest.h"
+#include "model/DeleteLLMConfigResult.h"
 #include "model/DeleteLabelTableRequest.h"
 #include "model/DeleteLabelTableResult.h"
 #include "model/DeleteModelFeatureRequest.h"
@@ -64,6 +70,8 @@
 #include "model/GetFeatureViewResult.h"
 #include "model/GetInstanceRequest.h"
 #include "model/GetInstanceResult.h"
+#include "model/GetLLMConfigRequest.h"
+#include "model/GetLLMConfigResult.h"
 #include "model/GetLabelTableRequest.h"
 #include "model/GetLabelTableResult.h"
 #include "model/GetModelFeatureRequest.h"
@@ -80,6 +88,8 @@
 #include "model/GetServiceIdentityRoleResult.h"
 #include "model/GetTaskRequest.h"
 #include "model/GetTaskResult.h"
+#include "model/ListDatasourceFeatureViewsRequest.h"
+#include "model/ListDatasourceFeatureViewsResult.h"
 #include "model/ListDatasourceTablesRequest.h"
 #include "model/ListDatasourceTablesResult.h"
 #include "model/ListDatasourcesRequest.h"
@@ -96,6 +106,8 @@
 #include "model/ListFeatureViewsResult.h"
 #include "model/ListInstancesRequest.h"
 #include "model/ListInstancesResult.h"
+#include "model/ListLLMConfigsRequest.h"
+#include "model/ListLLMConfigsResult.h"
 #include "model/ListLabelTablesRequest.h"
 #include "model/ListLabelTablesResult.h"
 #include "model/ListModelFeatureAvailableFeaturesRequest.h"
@@ -104,6 +116,8 @@
 #include "model/ListModelFeaturesResult.h"
 #include "model/ListProjectFeatureViewsRequest.h"
 #include "model/ListProjectFeatureViewsResult.h"
+#include "model/ListProjectFeaturesRequest.h"
+#include "model/ListProjectFeaturesResult.h"
 #include "model/ListProjectsRequest.h"
 #include "model/ListProjectsResult.h"
 #include "model/ListTaskLogsRequest.h"
@@ -112,8 +126,12 @@
 #include "model/ListTasksResult.h"
 #include "model/PublishFeatureViewTableRequest.h"
 #include "model/PublishFeatureViewTableResult.h"
+#include "model/StopTaskRequest.h"
+#include "model/StopTaskResult.h"
 #include "model/UpdateDatasourceRequest.h"
 #include "model/UpdateDatasourceResult.h"
+#include "model/UpdateLLMConfigRequest.h"
+#include "model/UpdateLLMConfigResult.h"
 #include "model/UpdateLabelTableRequest.h"
 #include "model/UpdateLabelTableResult.h"
 #include "model/UpdateModelFeatureRequest.h"
@@ -136,6 +154,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckInstanceDatasourceResult> CheckInstanceDatasourceOutcome;
 			typedef std::future<CheckInstanceDatasourceOutcome> CheckInstanceDatasourceOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::CheckInstanceDatasourceRequest&, const CheckInstanceDatasourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckInstanceDatasourceAsyncHandler;
+			typedef Outcome<Error, Model::CheckModelFeatureFGFeatureResult> CheckModelFeatureFGFeatureOutcome;
+			typedef std::future<CheckModelFeatureFGFeatureOutcome> CheckModelFeatureFGFeatureOutcomeCallable;
+			typedef std::function<void(const PaiFeatureStoreClient*, const Model::CheckModelFeatureFGFeatureRequest&, const CheckModelFeatureFGFeatureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckModelFeatureFGFeatureAsyncHandler;
 			typedef Outcome<Error, Model::CreateDatasourceResult> CreateDatasourceOutcome;
 			typedef std::future<CreateDatasourceOutcome> CreateDatasourceOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::CreateDatasourceRequest&, const CreateDatasourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatasourceAsyncHandler;
@@ -148,6 +169,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateLLMConfigResult> CreateLLMConfigOutcome;
+			typedef std::future<CreateLLMConfigOutcome> CreateLLMConfigOutcomeCallable;
+			typedef std::function<void(const PaiFeatureStoreClient*, const Model::CreateLLMConfigRequest&, const CreateLLMConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLLMConfigAsyncHandler;
 			typedef Outcome<Error, Model::CreateLabelTableResult> CreateLabelTableOutcome;
 			typedef std::future<CreateLabelTableOutcome> CreateLabelTableOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::CreateLabelTableRequest&, const CreateLabelTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLabelTableAsyncHandler;
@@ -169,6 +193,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteFeatureViewResult> DeleteFeatureViewOutcome;
 			typedef std::future<DeleteFeatureViewOutcome> DeleteFeatureViewOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::DeleteFeatureViewRequest&, const DeleteFeatureViewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFeatureViewAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLLMConfigResult> DeleteLLMConfigOutcome;
+			typedef std::future<DeleteLLMConfigOutcome> DeleteLLMConfigOutcomeCallable;
+			typedef std::function<void(const PaiFeatureStoreClient*, const Model::DeleteLLMConfigRequest&, const DeleteLLMConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLLMConfigAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLabelTableResult> DeleteLabelTableOutcome;
 			typedef std::future<DeleteLabelTableOutcome> DeleteLabelTableOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::DeleteLabelTableRequest&, const DeleteLabelTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLabelTableAsyncHandler;
@@ -196,6 +223,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInstanceResult> GetInstanceOutcome;
 			typedef std::future<GetInstanceOutcome> GetInstanceOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::GetInstanceRequest&, const GetInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceAsyncHandler;
+			typedef Outcome<Error, Model::GetLLMConfigResult> GetLLMConfigOutcome;
+			typedef std::future<GetLLMConfigOutcome> GetLLMConfigOutcomeCallable;
+			typedef std::function<void(const PaiFeatureStoreClient*, const Model::GetLLMConfigRequest&, const GetLLMConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLLMConfigAsyncHandler;
 			typedef Outcome<Error, Model::GetLabelTableResult> GetLabelTableOutcome;
 			typedef std::future<GetLabelTableOutcome> GetLabelTableOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::GetLabelTableRequest&, const GetLabelTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLabelTableAsyncHandler;
@@ -220,6 +250,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTaskResult> GetTaskOutcome;
 			typedef std::future<GetTaskOutcome> GetTaskOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::GetTaskRequest&, const GetTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskAsyncHandler;
+			typedef Outcome<Error, Model::ListDatasourceFeatureViewsResult> ListDatasourceFeatureViewsOutcome;
+			typedef std::future<ListDatasourceFeatureViewsOutcome> ListDatasourceFeatureViewsOutcomeCallable;
+			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListDatasourceFeatureViewsRequest&, const ListDatasourceFeatureViewsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDatasourceFeatureViewsAsyncHandler;
 			typedef Outcome<Error, Model::ListDatasourceTablesResult> ListDatasourceTablesOutcome;
 			typedef std::future<ListDatasourceTablesOutcome> ListDatasourceTablesOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListDatasourceTablesRequest&, const ListDatasourceTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDatasourceTablesAsyncHandler;
@@ -244,6 +277,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListInstancesResult> ListInstancesOutcome;
 			typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListInstancesRequest&, const ListInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListLLMConfigsResult> ListLLMConfigsOutcome;
+			typedef std::future<ListLLMConfigsOutcome> ListLLMConfigsOutcomeCallable;
+			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListLLMConfigsRequest&, const ListLLMConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLLMConfigsAsyncHandler;
 			typedef Outcome<Error, Model::ListLabelTablesResult> ListLabelTablesOutcome;
 			typedef std::future<ListLabelTablesOutcome> ListLabelTablesOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListLabelTablesRequest&, const ListLabelTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLabelTablesAsyncHandler;
@@ -256,6 +292,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListProjectFeatureViewsResult> ListProjectFeatureViewsOutcome;
 			typedef std::future<ListProjectFeatureViewsOutcome> ListProjectFeatureViewsOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListProjectFeatureViewsRequest&, const ListProjectFeatureViewsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectFeatureViewsAsyncHandler;
+			typedef Outcome<Error, Model::ListProjectFeaturesResult> ListProjectFeaturesOutcome;
+			typedef std::future<ListProjectFeaturesOutcome> ListProjectFeaturesOutcomeCallable;
+			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListProjectFeaturesRequest&, const ListProjectFeaturesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectFeaturesAsyncHandler;
 			typedef Outcome<Error, Model::ListProjectsResult> ListProjectsOutcome;
 			typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::ListProjectsRequest&, const ListProjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectsAsyncHandler;
@@ -268,9 +307,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PublishFeatureViewTableResult> PublishFeatureViewTableOutcome;
 			typedef std::future<PublishFeatureViewTableOutcome> PublishFeatureViewTableOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::PublishFeatureViewTableRequest&, const PublishFeatureViewTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishFeatureViewTableAsyncHandler;
+			typedef Outcome<Error, Model::StopTaskResult> StopTaskOutcome;
+			typedef std::future<StopTaskOutcome> StopTaskOutcomeCallable;
+			typedef std::function<void(const PaiFeatureStoreClient*, const Model::StopTaskRequest&, const StopTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopTaskAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDatasourceResult> UpdateDatasourceOutcome;
 			typedef std::future<UpdateDatasourceOutcome> UpdateDatasourceOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::UpdateDatasourceRequest&, const UpdateDatasourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDatasourceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLLMConfigResult> UpdateLLMConfigOutcome;
+			typedef std::future<UpdateLLMConfigOutcome> UpdateLLMConfigOutcomeCallable;
+			typedef std::function<void(const PaiFeatureStoreClient*, const Model::UpdateLLMConfigRequest&, const UpdateLLMConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLLMConfigAsyncHandler;
 			typedef Outcome<Error, Model::UpdateLabelTableResult> UpdateLabelTableOutcome;
 			typedef std::future<UpdateLabelTableOutcome> UpdateLabelTableOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::UpdateLabelTableRequest&, const UpdateLabelTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLabelTableAsyncHandler;
@@ -294,6 +339,9 @@ namespace AlibabaCloud
 			CheckInstanceDatasourceOutcome checkInstanceDatasource(const Model::CheckInstanceDatasourceRequest &request)const;
 			void checkInstanceDatasourceAsync(const Model::CheckInstanceDatasourceRequest& request, const CheckInstanceDatasourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckInstanceDatasourceOutcomeCallable checkInstanceDatasourceCallable(const Model::CheckInstanceDatasourceRequest& request) const;
+			CheckModelFeatureFGFeatureOutcome checkModelFeatureFGFeature(const Model::CheckModelFeatureFGFeatureRequest &request)const;
+			void checkModelFeatureFGFeatureAsync(const Model::CheckModelFeatureFGFeatureRequest& request, const CheckModelFeatureFGFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckModelFeatureFGFeatureOutcomeCallable checkModelFeatureFGFeatureCallable(const Model::CheckModelFeatureFGFeatureRequest& request) const;
 			CreateDatasourceOutcome createDatasource(const Model::CreateDatasourceRequest &request)const;
 			void createDatasourceAsync(const Model::CreateDatasourceRequest& request, const CreateDatasourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDatasourceOutcomeCallable createDatasourceCallable(const Model::CreateDatasourceRequest& request) const;
@@ -306,6 +354,9 @@ namespace AlibabaCloud
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
+			CreateLLMConfigOutcome createLLMConfig(const Model::CreateLLMConfigRequest &request)const;
+			void createLLMConfigAsync(const Model::CreateLLMConfigRequest& request, const CreateLLMConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateLLMConfigOutcomeCallable createLLMConfigCallable(const Model::CreateLLMConfigRequest& request) const;
 			CreateLabelTableOutcome createLabelTable(const Model::CreateLabelTableRequest &request)const;
 			void createLabelTableAsync(const Model::CreateLabelTableRequest& request, const CreateLabelTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLabelTableOutcomeCallable createLabelTableCallable(const Model::CreateLabelTableRequest& request) const;
@@ -327,6 +378,9 @@ namespace AlibabaCloud
 			DeleteFeatureViewOutcome deleteFeatureView(const Model::DeleteFeatureViewRequest &request)const;
 			void deleteFeatureViewAsync(const Model::DeleteFeatureViewRequest& request, const DeleteFeatureViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFeatureViewOutcomeCallable deleteFeatureViewCallable(const Model::DeleteFeatureViewRequest& request) const;
+			DeleteLLMConfigOutcome deleteLLMConfig(const Model::DeleteLLMConfigRequest &request)const;
+			void deleteLLMConfigAsync(const Model::DeleteLLMConfigRequest& request, const DeleteLLMConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLLMConfigOutcomeCallable deleteLLMConfigCallable(const Model::DeleteLLMConfigRequest& request) const;
 			DeleteLabelTableOutcome deleteLabelTable(const Model::DeleteLabelTableRequest &request)const;
 			void deleteLabelTableAsync(const Model::DeleteLabelTableRequest& request, const DeleteLabelTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLabelTableOutcomeCallable deleteLabelTableCallable(const Model::DeleteLabelTableRequest& request) const;
@@ -354,6 +408,9 @@ namespace AlibabaCloud
 			GetInstanceOutcome getInstance(const Model::GetInstanceRequest &request)const;
 			void getInstanceAsync(const Model::GetInstanceRequest& request, const GetInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceOutcomeCallable getInstanceCallable(const Model::GetInstanceRequest& request) const;
+			GetLLMConfigOutcome getLLMConfig(const Model::GetLLMConfigRequest &request)const;
+			void getLLMConfigAsync(const Model::GetLLMConfigRequest& request, const GetLLMConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLLMConfigOutcomeCallable getLLMConfigCallable(const Model::GetLLMConfigRequest& request) const;
 			GetLabelTableOutcome getLabelTable(const Model::GetLabelTableRequest &request)const;
 			void getLabelTableAsync(const Model::GetLabelTableRequest& request, const GetLabelTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLabelTableOutcomeCallable getLabelTableCallable(const Model::GetLabelTableRequest& request) const;
@@ -378,6 +435,9 @@ namespace AlibabaCloud
 			GetTaskOutcome getTask(const Model::GetTaskRequest &request)const;
 			void getTaskAsync(const Model::GetTaskRequest& request, const GetTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTaskOutcomeCallable getTaskCallable(const Model::GetTaskRequest& request) const;
+			ListDatasourceFeatureViewsOutcome listDatasourceFeatureViews(const Model::ListDatasourceFeatureViewsRequest &request)const;
+			void listDatasourceFeatureViewsAsync(const Model::ListDatasourceFeatureViewsRequest& request, const ListDatasourceFeatureViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDatasourceFeatureViewsOutcomeCallable listDatasourceFeatureViewsCallable(const Model::ListDatasourceFeatureViewsRequest& request) const;
 			ListDatasourceTablesOutcome listDatasourceTables(const Model::ListDatasourceTablesRequest &request)const;
 			void listDatasourceTablesAsync(const Model::ListDatasourceTablesRequest& request, const ListDatasourceTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDatasourceTablesOutcomeCallable listDatasourceTablesCallable(const Model::ListDatasourceTablesRequest& request) const;
@@ -402,6 +462,9 @@ namespace AlibabaCloud
 			ListInstancesOutcome listInstances(const Model::ListInstancesRequest &request)const;
 			void listInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstancesOutcomeCallable listInstancesCallable(const Model::ListInstancesRequest& request) const;
+			ListLLMConfigsOutcome listLLMConfigs(const Model::ListLLMConfigsRequest &request)const;
+			void listLLMConfigsAsync(const Model::ListLLMConfigsRequest& request, const ListLLMConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListLLMConfigsOutcomeCallable listLLMConfigsCallable(const Model::ListLLMConfigsRequest& request) const;
 			ListLabelTablesOutcome listLabelTables(const Model::ListLabelTablesRequest &request)const;
 			void listLabelTablesAsync(const Model::ListLabelTablesRequest& request, const ListLabelTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListLabelTablesOutcomeCallable listLabelTablesCallable(const Model::ListLabelTablesRequest& request) const;
@@ -414,6 +477,9 @@ namespace AlibabaCloud
 			ListProjectFeatureViewsOutcome listProjectFeatureViews(const Model::ListProjectFeatureViewsRequest &request)const;
 			void listProjectFeatureViewsAsync(const Model::ListProjectFeatureViewsRequest& request, const ListProjectFeatureViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProjectFeatureViewsOutcomeCallable listProjectFeatureViewsCallable(const Model::ListProjectFeatureViewsRequest& request) const;
+			ListProjectFeaturesOutcome listProjectFeatures(const Model::ListProjectFeaturesRequest &request)const;
+			void listProjectFeaturesAsync(const Model::ListProjectFeaturesRequest& request, const ListProjectFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListProjectFeaturesOutcomeCallable listProjectFeaturesCallable(const Model::ListProjectFeaturesRequest& request) const;
 			ListProjectsOutcome listProjects(const Model::ListProjectsRequest &request)const;
 			void listProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProjectsOutcomeCallable listProjectsCallable(const Model::ListProjectsRequest& request) const;
@@ -426,9 +492,15 @@ namespace AlibabaCloud
 			PublishFeatureViewTableOutcome publishFeatureViewTable(const Model::PublishFeatureViewTableRequest &request)const;
 			void publishFeatureViewTableAsync(const Model::PublishFeatureViewTableRequest& request, const PublishFeatureViewTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishFeatureViewTableOutcomeCallable publishFeatureViewTableCallable(const Model::PublishFeatureViewTableRequest& request) const;
+			StopTaskOutcome stopTask(const Model::StopTaskRequest &request)const;
+			void stopTaskAsync(const Model::StopTaskRequest& request, const StopTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopTaskOutcomeCallable stopTaskCallable(const Model::StopTaskRequest& request) const;
 			UpdateDatasourceOutcome updateDatasource(const Model::UpdateDatasourceRequest &request)const;
 			void updateDatasourceAsync(const Model::UpdateDatasourceRequest& request, const UpdateDatasourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDatasourceOutcomeCallable updateDatasourceCallable(const Model::UpdateDatasourceRequest& request) const;
+			UpdateLLMConfigOutcome updateLLMConfig(const Model::UpdateLLMConfigRequest &request)const;
+			void updateLLMConfigAsync(const Model::UpdateLLMConfigRequest& request, const UpdateLLMConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLLMConfigOutcomeCallable updateLLMConfigCallable(const Model::UpdateLLMConfigRequest& request) const;
 			UpdateLabelTableOutcome updateLabelTable(const Model::UpdateLabelTableRequest &request)const;
 			void updateLabelTableAsync(const Model::UpdateLabelTableRequest& request, const UpdateLabelTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLabelTableOutcomeCallable updateLabelTableCallable(const Model::UpdateLabelTableRequest& request) const;
