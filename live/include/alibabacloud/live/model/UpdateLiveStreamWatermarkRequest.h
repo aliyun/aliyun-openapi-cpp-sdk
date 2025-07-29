@@ -36,6 +36,8 @@ public:
 	void setPictureUrl(const std::string &pictureUrl);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getHeight() const;
 	void setHeight(int height);
 	float getXOffset() const;
@@ -59,6 +61,7 @@ private:
 	float yOffset_;
 	std::string pictureUrl_;
 	std::string description_;
+	std::string regionId_;
 	int height_;
 	float xOffset_;
 	long ownerId_;

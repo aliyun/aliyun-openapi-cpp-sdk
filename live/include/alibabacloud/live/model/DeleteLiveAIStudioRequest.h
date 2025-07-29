@@ -30,12 +30,15 @@ class ALIBABACLOUD_LIVE_EXPORT DeleteLiveAIStudioRequest : public RpcServiceRequ
 public:
 	DeleteLiveAIStudioRequest();
 	~DeleteLiveAIStudioRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStudioId() const;
 	void setStudioId(const std::string &studioId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
 private:
+	std::string regionId_;
 	std::string studioId_;
 	long ownerId_;
 };

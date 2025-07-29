@@ -34,6 +34,15 @@ void MiguLivePullToPushStartRequest::setMiguData(const std::string &miguData) {
   setParameter(std::string("MiguData"), miguData);
 }
 
+std::string MiguLivePullToPushStartRequest::getRegionId() const {
+  return regionId_;
+}
+
+void MiguLivePullToPushStartRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string MiguLivePullToPushStartRequest::getDomainName() const {
   return domainName_;
 }

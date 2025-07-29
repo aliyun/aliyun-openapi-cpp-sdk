@@ -61,6 +61,15 @@ void DescribeLiveStreamMetricDetailDataRequest::setAppName(const std::string &ap
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeLiveStreamMetricDetailDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamMetricDetailDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveStreamMetricDetailDataRequest::getStreamName() const {
   return streamName_;
 }

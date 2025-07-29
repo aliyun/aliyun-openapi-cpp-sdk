@@ -43,6 +43,15 @@ void CreateMixStreamRequest::setLayoutId(const std::string &layoutId) {
   setParameter(std::string("LayoutId"), layoutId);
 }
 
+std::string CreateMixStreamRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateMixStreamRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateMixStreamRequest::getDomainName() const {
   return domainName_;
 }

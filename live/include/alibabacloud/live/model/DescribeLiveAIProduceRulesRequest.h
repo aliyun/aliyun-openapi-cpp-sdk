@@ -32,6 +32,8 @@ public:
 	~DescribeLiveAIProduceRulesRequest();
 	std::string getPageNumber() const;
 	void setPageNumber(const std::string &pageNumber);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
 	std::string getRulesId() const;
@@ -47,6 +49,7 @@ public:
 
 private:
 	std::string pageNumber_;
+	std::string regionId_;
 	std::string pageSize_;
 	std::string rulesId_;
 	std::string app_;

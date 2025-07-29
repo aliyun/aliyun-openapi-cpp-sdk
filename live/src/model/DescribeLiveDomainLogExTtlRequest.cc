@@ -52,6 +52,15 @@ void DescribeLiveDomainLogExTtlRequest::setLogType(const std::string &logType) {
   setParameter(std::string("LogType"), logType);
 }
 
+std::string DescribeLiveDomainLogExTtlRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainLogExTtlRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeLiveDomainLogExTtlRequest::getPageSize() const {
   return pageSize_;
 }

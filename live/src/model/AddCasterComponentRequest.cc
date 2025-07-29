@@ -52,6 +52,15 @@ void AddCasterComponentRequest::setComponentName(const std::string &componentNam
   setParameter(std::string("ComponentName"), componentName);
 }
 
+std::string AddCasterComponentRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddCasterComponentRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddCasterComponentRequest::getLayerOrder() const {
   return layerOrder_;
 }

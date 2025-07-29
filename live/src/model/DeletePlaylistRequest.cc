@@ -25,6 +25,15 @@ DeletePlaylistRequest::DeletePlaylistRequest()
 
 DeletePlaylistRequest::~DeletePlaylistRequest() {}
 
+std::string DeletePlaylistRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeletePlaylistRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeletePlaylistRequest::getProgramId() const {
   return programId_;
 }

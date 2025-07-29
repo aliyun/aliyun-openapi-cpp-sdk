@@ -25,6 +25,15 @@ DescribeLivePrivateLineAreasRequest::DescribeLivePrivateLineAreasRequest()
 
 DescribeLivePrivateLineAreasRequest::~DescribeLivePrivateLineAreasRequest() {}
 
+std::string DescribeLivePrivateLineAreasRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLivePrivateLineAreasRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLivePrivateLineAreasRequest::getDomainName() const {
   return domainName_;
 }

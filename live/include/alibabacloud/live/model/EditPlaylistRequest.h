@@ -32,6 +32,8 @@ public:
 	~EditPlaylistRequest();
 	std::string getProgramItems() const;
 	void setProgramItems(const std::string &programItems);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getProgramId() const;
 	void setProgramId(const std::string &programId);
 	long getOwnerId() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	std::string programItems_;
+	std::string regionId_;
 	std::string programId_;
 	long ownerId_;
 	std::string programConfig_;

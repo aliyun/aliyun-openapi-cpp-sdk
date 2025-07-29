@@ -52,6 +52,15 @@ void UpdateLiveAIProduceRulesRequest::setSubtitleName(const std::string &subtitl
   setParameter(std::string("SubtitleName"), subtitleName);
 }
 
+std::string UpdateLiveAIProduceRulesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateLiveAIProduceRulesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpdateLiveAIProduceRulesRequest::getRulesId() const {
   return rulesId_;
 }

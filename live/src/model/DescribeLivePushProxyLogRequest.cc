@@ -52,6 +52,15 @@ void DescribeLivePushProxyLogRequest::setLogType(const std::string &logType) {
   setParameter(std::string("LogType"), logType);
 }
 
+std::string DescribeLivePushProxyLogRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLivePushProxyLogRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeLivePushProxyLogRequest::getPageSize() const {
   return pageSize_;
 }

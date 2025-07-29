@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT AddLiveDomainPlayMappingRequest : public RpcServi
 public:
 	AddLiveDomainPlayMappingRequest();
 	~AddLiveDomainPlayMappingRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getPlayDomain() const;
 	void setPlayDomain(const std::string &playDomain);
 	long getOwnerId() const;
@@ -38,6 +40,7 @@ public:
 	void setPullDomain(const std::string &pullDomain);
 
 private:
+	std::string regionId_;
 	std::string playDomain_;
 	long ownerId_;
 	std::string pullDomain_;

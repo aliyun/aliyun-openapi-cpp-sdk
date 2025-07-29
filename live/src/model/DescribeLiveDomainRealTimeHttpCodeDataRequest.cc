@@ -52,6 +52,15 @@ void DescribeLiveDomainRealTimeHttpCodeDataRequest::setIspNameEn(const std::stri
   setParameter(std::string("IspNameEn"), ispNameEn);
 }
 
+std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainRealTimeHttpCodeDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getDomainName() const {
   return domainName_;
 }

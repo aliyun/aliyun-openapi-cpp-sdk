@@ -52,6 +52,15 @@ void CreateRtcAsrTaskRequest::setMode(const std::string &mode) {
   setParameter(std::string("Mode"), mode);
 }
 
+std::string CreateRtcAsrTaskRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateRtcAsrTaskRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 bool CreateRtcAsrTaskRequest::getTranslateEnabled() const {
   return translateEnabled_;
 }

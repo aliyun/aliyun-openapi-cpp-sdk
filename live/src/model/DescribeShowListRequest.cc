@@ -25,6 +25,15 @@ DescribeShowListRequest::DescribeShowListRequest()
 
 DescribeShowListRequest::~DescribeShowListRequest() {}
 
+std::string DescribeShowListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeShowListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeShowListRequest::getCasterId() const {
   return casterId_;
 }

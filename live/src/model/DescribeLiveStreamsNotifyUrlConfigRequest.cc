@@ -25,6 +25,15 @@ DescribeLiveStreamsNotifyUrlConfigRequest::DescribeLiveStreamsNotifyUrlConfigReq
 
 DescribeLiveStreamsNotifyUrlConfigRequest::~DescribeLiveStreamsNotifyUrlConfigRequest() {}
 
+std::string DescribeLiveStreamsNotifyUrlConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamsNotifyUrlConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveStreamsNotifyUrlConfigRequest::getNotifyType() const {
   return notifyType_;
 }

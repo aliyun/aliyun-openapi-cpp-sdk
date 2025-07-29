@@ -25,6 +25,15 @@ TagLiveResourcesRequest::TagLiveResourcesRequest()
 
 TagLiveResourcesRequest::~TagLiveResourcesRequest() {}
 
+std::string TagLiveResourcesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void TagLiveResourcesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::vector<TagLiveResourcesRequest::Tag> TagLiveResourcesRequest::getTag() const {
   return tag_;
 }

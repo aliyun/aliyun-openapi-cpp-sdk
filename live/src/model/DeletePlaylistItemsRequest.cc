@@ -34,6 +34,15 @@ void DeletePlaylistItemsRequest::setProgramItemIds(const std::string &programIte
   setParameter(std::string("ProgramItemIds"), programItemIds);
 }
 
+std::string DeletePlaylistItemsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeletePlaylistItemsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeletePlaylistItemsRequest::getProgramId() const {
   return programId_;
 }

@@ -43,6 +43,15 @@ void DescribeLivePrivateLineAvailGARequest::setAppName(const std::string &appNam
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeLivePrivateLineAvailGARequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLivePrivateLineAvailGARequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLivePrivateLineAvailGARequest::getStreamName() const {
   return streamName_;
 }

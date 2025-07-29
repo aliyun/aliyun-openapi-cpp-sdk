@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT DeleteLiveAIProduceRulesRequest : public RpcServi
 public:
 	DeleteLiveAIProduceRulesRequest();
 	~DeleteLiveAIProduceRulesRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getRulesId() const;
 	void setRulesId(const std::string &rulesId);
 	std::string getApp() const;
@@ -42,6 +44,7 @@ public:
 	void setDomain(const std::string &domain);
 
 private:
+	std::string regionId_;
 	std::string rulesId_;
 	std::string app_;
 	long ownerId_;

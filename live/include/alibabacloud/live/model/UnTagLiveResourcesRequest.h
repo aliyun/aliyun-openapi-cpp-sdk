@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT UnTagLiveResourcesRequest : public RpcServiceRequ
 public:
 	UnTagLiveResourcesRequest();
 	~UnTagLiveResourcesRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	bool getAll() const;
 	void setAll(bool all);
 	std::vector<std::string> getResourceId() const;
@@ -42,6 +44,7 @@ public:
 	void setTagKey(const std::vector<std::string> &tagKey);
 
 private:
+	std::string regionId_;
 	bool all_;
 	std::vector<std::string> resourceId_;
 	long ownerId_;

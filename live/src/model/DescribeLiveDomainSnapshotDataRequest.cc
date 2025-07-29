@@ -34,6 +34,15 @@ void DescribeLiveDomainSnapshotDataRequest::setStartTime(const std::string &star
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveDomainSnapshotDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainSnapshotDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainSnapshotDataRequest::getDomainName() const {
   return domainName_;
 }

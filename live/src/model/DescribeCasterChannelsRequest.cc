@@ -25,6 +25,15 @@ DescribeCasterChannelsRequest::DescribeCasterChannelsRequest()
 
 DescribeCasterChannelsRequest::~DescribeCasterChannelsRequest() {}
 
+std::string DescribeCasterChannelsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeCasterChannelsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeCasterChannelsRequest::getCasterId() const {
   return casterId_;
 }

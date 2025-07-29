@@ -34,6 +34,15 @@ void DescribeLiveUpVideoAudioInfoRequest::setStartTime(const std::string &startT
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveUpVideoAudioInfoRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveUpVideoAudioInfoRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveUpVideoAudioInfoRequest::getStream() const {
   return stream_;
 }

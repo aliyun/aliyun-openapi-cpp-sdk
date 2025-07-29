@@ -43,6 +43,15 @@ void DescribeLiveDomainPublishErrorCodeRequest::setAppName(const std::string &ap
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeLiveDomainPublishErrorCodeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainPublishErrorCodeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainPublishErrorCodeRequest::getDomainName() const {
   return domainName_;
 }

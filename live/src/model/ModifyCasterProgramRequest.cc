@@ -44,6 +44,15 @@ void ModifyCasterProgramRequest::setEpisode(const std::vector<ModifyCasterProgra
   }
 }
 
+std::string ModifyCasterProgramRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyCasterProgramRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyCasterProgramRequest::getCasterId() const {
   return casterId_;
 }

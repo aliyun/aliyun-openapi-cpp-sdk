@@ -34,6 +34,15 @@ void UpdateLiveStreamWatermarkRuleRequest::setDescription(const std::string &des
   setParameter(std::string("Description"), description);
 }
 
+std::string UpdateLiveStreamWatermarkRuleRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateLiveStreamWatermarkRuleRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long UpdateLiveStreamWatermarkRuleRequest::getOwnerId() const {
   return ownerId_;
 }

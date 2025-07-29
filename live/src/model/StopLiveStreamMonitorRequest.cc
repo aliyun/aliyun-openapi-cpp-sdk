@@ -34,6 +34,15 @@ void StopLiveStreamMonitorRequest::setMonitorId(const std::string &monitorId) {
   setParameter(std::string("MonitorId"), monitorId);
 }
 
+std::string StopLiveStreamMonitorRequest::getRegionId() const {
+  return regionId_;
+}
+
+void StopLiveStreamMonitorRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long StopLiveStreamMonitorRequest::getOwnerId() const {
   return ownerId_;
 }

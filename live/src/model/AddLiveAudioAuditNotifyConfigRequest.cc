@@ -25,6 +25,15 @@ AddLiveAudioAuditNotifyConfigRequest::AddLiveAudioAuditNotifyConfigRequest()
 
 AddLiveAudioAuditNotifyConfigRequest::~AddLiveAudioAuditNotifyConfigRequest() {}
 
+std::string AddLiveAudioAuditNotifyConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddLiveAudioAuditNotifyConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddLiveAudioAuditNotifyConfigRequest::getDomainName() const {
   return domainName_;
 }

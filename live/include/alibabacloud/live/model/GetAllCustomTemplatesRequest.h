@@ -32,11 +32,14 @@ public:
 	~GetAllCustomTemplatesRequest();
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
 private:
 	std::string userId_;
+	std::string regionId_;
 	long ownerId_;
 };
 } // namespace Model

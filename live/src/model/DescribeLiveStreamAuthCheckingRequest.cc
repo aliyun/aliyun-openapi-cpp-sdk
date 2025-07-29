@@ -25,6 +25,15 @@ DescribeLiveStreamAuthCheckingRequest::DescribeLiveStreamAuthCheckingRequest()
 
 DescribeLiveStreamAuthCheckingRequest::~DescribeLiveStreamAuthCheckingRequest() {}
 
+std::string DescribeLiveStreamAuthCheckingRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamAuthCheckingRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveStreamAuthCheckingRequest::getDomainName() const {
   return domainName_;
 }

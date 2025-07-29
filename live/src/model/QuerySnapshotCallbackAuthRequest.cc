@@ -25,6 +25,15 @@ QuerySnapshotCallbackAuthRequest::QuerySnapshotCallbackAuthRequest()
 
 QuerySnapshotCallbackAuthRequest::~QuerySnapshotCallbackAuthRequest() {}
 
+std::string QuerySnapshotCallbackAuthRequest::getRegionId() const {
+  return regionId_;
+}
+
+void QuerySnapshotCallbackAuthRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string QuerySnapshotCallbackAuthRequest::getDomainName() const {
   return domainName_;
 }

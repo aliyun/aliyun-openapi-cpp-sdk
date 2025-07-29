@@ -36,6 +36,8 @@ public:
 	void setType(const std::string &type);
 	std::string getDataProtocol() const;
 	void setDataProtocol(const std::string &dataProtocol);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getArea() const;
 	void setArea(const std::string &area);
 	std::string getDomainName() const;
@@ -53,6 +55,7 @@ private:
 	std::string startTime_;
 	std::string type_;
 	std::string dataProtocol_;
+	std::string regionId_;
 	std::string area_;
 	std::string domainName_;
 	std::string endTime_;

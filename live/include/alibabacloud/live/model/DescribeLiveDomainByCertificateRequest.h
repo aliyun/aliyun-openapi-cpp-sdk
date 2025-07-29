@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainByCertificateRequest : public R
 public:
 	DescribeLiveDomainByCertificateRequest();
 	~DescribeLiveDomainByCertificateRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	bool getSSLStatus() const;
@@ -38,6 +40,7 @@ public:
 	void setSSLPub(const std::string &sSLPub);
 
 private:
+	std::string regionId_;
 	long ownerId_;
 	bool sSLStatus_;
 	std::string sSLPub_;

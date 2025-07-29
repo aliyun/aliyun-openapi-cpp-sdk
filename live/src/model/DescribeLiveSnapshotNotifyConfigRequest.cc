@@ -25,6 +25,15 @@ DescribeLiveSnapshotNotifyConfigRequest::DescribeLiveSnapshotNotifyConfigRequest
 
 DescribeLiveSnapshotNotifyConfigRequest::~DescribeLiveSnapshotNotifyConfigRequest() {}
 
+std::string DescribeLiveSnapshotNotifyConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveSnapshotNotifyConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveSnapshotNotifyConfigRequest::getDomainName() const {
   return domainName_;
 }

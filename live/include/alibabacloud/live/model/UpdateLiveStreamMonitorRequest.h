@@ -36,6 +36,8 @@ public:
 	void setMonitorConfig(const std::string &monitorConfig);
 	std::string getMonitorName() const;
 	void setMonitorName(const std::string &monitorName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStream() const;
 	void setStream(const std::string &stream);
 	std::string getOutputTemplate() const;
@@ -57,6 +59,7 @@ private:
 	std::string monitorId_;
 	std::string monitorConfig_;
 	std::string monitorName_;
+	std::string regionId_;
 	std::string stream_;
 	std::string outputTemplate_;
 	std::string app_;

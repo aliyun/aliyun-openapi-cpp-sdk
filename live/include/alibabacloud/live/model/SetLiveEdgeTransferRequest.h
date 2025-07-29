@@ -34,6 +34,8 @@ public:
 	void setTransferArgs(const std::string &transferArgs);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStreamName() const;
 	void setStreamName(const std::string &streamName);
 	std::string getTargetDomainList() const;
@@ -48,6 +50,7 @@ public:
 private:
 	std::string transferArgs_;
 	std::string appName_;
+	std::string regionId_;
 	std::string streamName_;
 	std::string targetDomainList_;
 	std::string domainName_;

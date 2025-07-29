@@ -516,6 +516,8 @@
 #include "model/DescribeLiveUserBillPredictionResult.h"
 #include "model/DescribeLiveUserDomainsRequest.h"
 #include "model/DescribeLiveUserDomainsResult.h"
+#include "model/DescribeLiveUserStreamMetricDataRequest.h"
+#include "model/DescribeLiveUserStreamMetricDataResult.h"
 #include "model/DescribeLiveUserTagsRequest.h"
 #include "model/DescribeLiveUserTagsResult.h"
 #include "model/DescribeLiveUserTrafficLogRequest.h"
@@ -1628,6 +1630,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveUserDomainsResult> DescribeLiveUserDomainsOutcome;
 			typedef std::future<DescribeLiveUserDomainsOutcome> DescribeLiveUserDomainsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUserDomainsRequest&, const DescribeLiveUserDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUserDomainsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveUserStreamMetricDataResult> DescribeLiveUserStreamMetricDataOutcome;
+			typedef std::future<DescribeLiveUserStreamMetricDataOutcome> DescribeLiveUserStreamMetricDataOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUserStreamMetricDataRequest&, const DescribeLiveUserStreamMetricDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUserStreamMetricDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveUserTagsResult> DescribeLiveUserTagsOutcome;
 			typedef std::future<DescribeLiveUserTagsOutcome> DescribeLiveUserTagsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUserTagsRequest&, const DescribeLiveUserTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUserTagsAsyncHandler;
@@ -2917,6 +2922,9 @@ namespace AlibabaCloud
 			DescribeLiveUserDomainsOutcome describeLiveUserDomains(const Model::DescribeLiveUserDomainsRequest &request)const;
 			void describeLiveUserDomainsAsync(const Model::DescribeLiveUserDomainsRequest& request, const DescribeLiveUserDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveUserDomainsOutcomeCallable describeLiveUserDomainsCallable(const Model::DescribeLiveUserDomainsRequest& request) const;
+			DescribeLiveUserStreamMetricDataOutcome describeLiveUserStreamMetricData(const Model::DescribeLiveUserStreamMetricDataRequest &request)const;
+			void describeLiveUserStreamMetricDataAsync(const Model::DescribeLiveUserStreamMetricDataRequest& request, const DescribeLiveUserStreamMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveUserStreamMetricDataOutcomeCallable describeLiveUserStreamMetricDataCallable(const Model::DescribeLiveUserStreamMetricDataRequest& request) const;
 			DescribeLiveUserTagsOutcome describeLiveUserTags(const Model::DescribeLiveUserTagsRequest &request)const;
 			void describeLiveUserTagsAsync(const Model::DescribeLiveUserTagsRequest& request, const DescribeLiveUserTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveUserTagsOutcomeCallable describeLiveUserTagsCallable(const Model::DescribeLiveUserTagsRequest& request) const;

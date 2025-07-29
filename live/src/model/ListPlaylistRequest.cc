@@ -25,6 +25,15 @@ ListPlaylistRequest::ListPlaylistRequest()
 
 ListPlaylistRequest::~ListPlaylistRequest() {}
 
+std::string ListPlaylistRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListPlaylistRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int ListPlaylistRequest::getPageSize() const {
   return pageSize_;
 }

@@ -32,6 +32,8 @@ public:
 	~CreateCustomTemplateRequest();
 	std::string get_Template() const;
 	void set_Template(const std::string &_template);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCustomTemplate() const;
 	void setCustomTemplate(const std::string &customTemplate);
 	long getOwnerId() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string _template_;
+	std::string regionId_;
 	std::string customTemplate_;
 	long ownerId_;
 };

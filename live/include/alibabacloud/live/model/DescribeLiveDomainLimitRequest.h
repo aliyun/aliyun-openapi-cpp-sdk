@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainLimitRequest : public RpcServic
 public:
 	DescribeLiveDomainLimitRequest();
 	~DescribeLiveDomainLimitRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getLiveapiRequestFrom() const;
 	void setLiveapiRequestFrom(const std::string &liveapiRequestFrom);
 	std::string getDomainName() const;
@@ -38,6 +40,7 @@ public:
 	void setOwnerId(long ownerId);
 
 private:
+	std::string regionId_;
 	std::string liveapiRequestFrom_;
 	std::string domainName_;
 	long ownerId_;

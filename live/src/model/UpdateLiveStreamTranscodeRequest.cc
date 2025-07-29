@@ -43,6 +43,15 @@ void UpdateLiveStreamTranscodeRequest::setLazy(const std::string &lazy) {
   setParameter(std::string("Lazy"), lazy);
 }
 
+std::string UpdateLiveStreamTranscodeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateLiveStreamTranscodeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpdateLiveStreamTranscodeRequest::getMix() const {
   return mix_;
 }

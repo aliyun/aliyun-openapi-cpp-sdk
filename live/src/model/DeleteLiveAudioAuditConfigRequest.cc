@@ -34,6 +34,15 @@ void DeleteLiveAudioAuditConfigRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DeleteLiveAudioAuditConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveAudioAuditConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveAudioAuditConfigRequest::getStreamName() const {
   return streamName_;
 }

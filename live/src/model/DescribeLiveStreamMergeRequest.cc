@@ -43,6 +43,15 @@ void DescribeLiveStreamMergeRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeLiveStreamMergeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamMergeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveStreamMergeRequest::getStreamName() const {
   return streamName_;
 }

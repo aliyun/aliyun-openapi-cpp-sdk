@@ -32,6 +32,8 @@ public:
 	~CreateLiveRealTimeLogDeliveryRequest();
 	std::string getProject() const;
 	void setProject(const std::string &project);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	long getOwnerId() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string project_;
+	std::string regionId_;
 	std::string domainName_;
 	long ownerId_;
 	std::string region_;

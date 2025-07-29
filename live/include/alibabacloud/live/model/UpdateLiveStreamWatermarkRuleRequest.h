@@ -32,6 +32,8 @@ public:
 	~UpdateLiveStreamWatermarkRuleRequest();
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getTemplateId() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string description_;
+	std::string regionId_;
 	long ownerId_;
 	std::string templateId_;
 	std::string name_;

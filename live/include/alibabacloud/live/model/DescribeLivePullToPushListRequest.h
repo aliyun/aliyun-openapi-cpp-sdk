@@ -34,6 +34,8 @@ public:
 	void setTaskName(const std::string &taskName);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getTaskId() const;
@@ -48,6 +50,7 @@ public:
 private:
 	std::string taskName_;
 	int pageNumber_;
+	std::string regionId_;
 	int pageSize_;
 	std::string taskId_;
 	std::string dstUrl_;

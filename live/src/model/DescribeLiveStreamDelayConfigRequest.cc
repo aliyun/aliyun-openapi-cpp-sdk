@@ -25,6 +25,15 @@ DescribeLiveStreamDelayConfigRequest::DescribeLiveStreamDelayConfigRequest()
 
 DescribeLiveStreamDelayConfigRequest::~DescribeLiveStreamDelayConfigRequest() {}
 
+std::string DescribeLiveStreamDelayConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamDelayConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveStreamDelayConfigRequest::getDomainName() const {
   return domainName_;
 }

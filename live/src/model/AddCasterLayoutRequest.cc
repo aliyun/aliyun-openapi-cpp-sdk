@@ -33,6 +33,15 @@ void AddCasterLayoutRequest::setBlendList(const std::vector<std::string> &blendL
   blendList_ = blendList;
 }
 
+std::string AddCasterLayoutRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddCasterLayoutRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddCasterLayoutRequest::getCasterId() const {
   return casterId_;
 }

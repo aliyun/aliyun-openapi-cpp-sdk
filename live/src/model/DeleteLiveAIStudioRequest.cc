@@ -25,6 +25,15 @@ DeleteLiveAIStudioRequest::DeleteLiveAIStudioRequest()
 
 DeleteLiveAIStudioRequest::~DeleteLiveAIStudioRequest() {}
 
+std::string DeleteLiveAIStudioRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveAIStudioRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveAIStudioRequest::getStudioId() const {
   return studioId_;
 }

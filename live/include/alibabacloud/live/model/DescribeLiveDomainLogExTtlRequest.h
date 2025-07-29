@@ -36,6 +36,8 @@ public:
 	void setPageNumber(long pageNumber);
 	std::string getLogType() const;
 	void setLogType(const std::string &logType);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
 	std::string getDomainName() const;
@@ -49,6 +51,7 @@ private:
 	std::string startTime_;
 	long pageNumber_;
 	std::string logType_;
+	std::string regionId_;
 	long pageSize_;
 	std::string domainName_;
 	std::string endTime_;

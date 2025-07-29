@@ -34,6 +34,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStreamName() const;
 	void setStreamName(const std::string &streamName);
 	std::string getDomainName() const;
@@ -46,6 +48,7 @@ public:
 private:
 	std::string startTime_;
 	std::string appName_;
+	std::string regionId_;
 	std::string streamName_;
 	std::string domainName_;
 	std::string endTime_;

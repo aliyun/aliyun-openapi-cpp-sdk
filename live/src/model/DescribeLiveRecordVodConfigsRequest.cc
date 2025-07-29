@@ -43,6 +43,15 @@ void DescribeLiveRecordVodConfigsRequest::setAppName(const std::string &appName)
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeLiveRecordVodConfigsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveRecordVodConfigsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeLiveRecordVodConfigsRequest::getPageSize() const {
   return pageSize_;
 }

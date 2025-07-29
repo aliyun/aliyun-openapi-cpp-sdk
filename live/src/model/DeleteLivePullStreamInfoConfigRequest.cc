@@ -34,6 +34,15 @@ void DeleteLivePullStreamInfoConfigRequest::setAppName(const std::string &appNam
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DeleteLivePullStreamInfoConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLivePullStreamInfoConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLivePullStreamInfoConfigRequest::getStreamName() const {
   return streamName_;
 }

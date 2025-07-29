@@ -43,6 +43,15 @@ void DescribeDomainWithIntegrityRequest::setIntegrity(float integrity) {
   setParameter(std::string("Integrity"), std::to_string(integrity));
 }
 
+std::string DescribeDomainWithIntegrityRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDomainWithIntegrityRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDomainWithIntegrityRequest::getEndTime() const {
   return endTime_;
 }

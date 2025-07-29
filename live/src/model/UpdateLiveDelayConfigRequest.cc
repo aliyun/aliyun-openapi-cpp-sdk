@@ -34,6 +34,15 @@ void UpdateLiveDelayConfigRequest::setDelayTime(int delayTime) {
   setParameter(std::string("DelayTime"), std::to_string(delayTime));
 }
 
+std::string UpdateLiveDelayConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateLiveDelayConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpdateLiveDelayConfigRequest::getStream() const {
   return stream_;
 }

@@ -43,6 +43,15 @@ void DescribeLiveStreamMonitorListRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
+std::string DescribeLiveStreamMonitorListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamMonitorListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeLiveStreamMonitorListRequest::getPageSize() const {
   return pageSize_;
 }

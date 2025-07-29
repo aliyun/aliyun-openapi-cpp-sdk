@@ -34,6 +34,8 @@ public:
 	void setPattern(const std::string &pattern);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getRepeat() const;
 	void setRepeat(int repeat);
 	std::string getText() const;
@@ -50,6 +52,7 @@ public:
 private:
 	std::string pattern_;
 	std::string appName_;
+	std::string regionId_;
 	int repeat_;
 	std::string text_;
 	std::string streamName_;

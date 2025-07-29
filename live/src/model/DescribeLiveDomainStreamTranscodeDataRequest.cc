@@ -52,6 +52,15 @@ void DescribeLiveDomainStreamTranscodeDataRequest::setSplit(const std::string &s
   setParameter(std::string("Split"), split);
 }
 
+std::string DescribeLiveDomainStreamTranscodeDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainStreamTranscodeDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainStreamTranscodeDataRequest::getDomainName() const {
   return domainName_;
 }

@@ -30,10 +30,13 @@ class ALIBABACLOUD_LIVE_EXPORT DescribeLiveUserTagsRequest : public RpcServiceRe
 public:
 	DescribeLiveUserTagsRequest();
 	~DescribeLiveUserTagsRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
 private:
+	std::string regionId_;
 	long ownerId_;
 };
 } // namespace Model

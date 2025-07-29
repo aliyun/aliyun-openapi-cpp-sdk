@@ -36,6 +36,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	int getRepeatNumber() const;
 	void setRepeatNumber(int repeatNumber);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getTaskId() const;
 	void setTaskId(const std::string &taskId);
 	int getOffset() const;
@@ -55,6 +57,7 @@ private:
 	int fileIndex_;
 	std::string startTime_;
 	int repeatNumber_;
+	std::string regionId_;
 	std::string taskId_;
 	int offset_;
 	std::string endTime_;

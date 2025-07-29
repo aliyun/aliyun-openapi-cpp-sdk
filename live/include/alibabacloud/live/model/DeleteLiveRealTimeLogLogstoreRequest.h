@@ -32,6 +32,8 @@ public:
 	~DeleteLiveRealTimeLogLogstoreRequest();
 	std::string getProject() const;
 	void setProject(const std::string &project);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getRegion() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	std::string project_;
+	std::string regionId_;
 	long ownerId_;
 	std::string region_;
 	std::string logstore_;

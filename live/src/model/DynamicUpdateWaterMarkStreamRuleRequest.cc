@@ -25,6 +25,15 @@ DynamicUpdateWaterMarkStreamRuleRequest::DynamicUpdateWaterMarkStreamRuleRequest
 
 DynamicUpdateWaterMarkStreamRuleRequest::~DynamicUpdateWaterMarkStreamRuleRequest() {}
 
+std::string DynamicUpdateWaterMarkStreamRuleRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DynamicUpdateWaterMarkStreamRuleRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DynamicUpdateWaterMarkStreamRuleRequest::getStream() const {
   return stream_;
 }

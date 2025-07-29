@@ -25,6 +25,15 @@ DescribeAutoShowListTasksRequest::DescribeAutoShowListTasksRequest()
 
 DescribeAutoShowListTasksRequest::~DescribeAutoShowListTasksRequest() {}
 
+std::string DescribeAutoShowListTasksRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeAutoShowListTasksRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeAutoShowListTasksRequest::getCasterId() const {
   return casterId_;
 }

@@ -25,6 +25,15 @@ PlayChoosenShowRequest::PlayChoosenShowRequest()
 
 PlayChoosenShowRequest::~PlayChoosenShowRequest() {}
 
+std::string PlayChoosenShowRequest::getRegionId() const {
+  return regionId_;
+}
+
+void PlayChoosenShowRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string PlayChoosenShowRequest::getCasterId() const {
   return casterId_;
 }

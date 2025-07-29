@@ -25,6 +25,15 @@ DescribeLivePullStreamConfigRequest::DescribeLivePullStreamConfigRequest()
 
 DescribeLivePullStreamConfigRequest::~DescribeLivePullStreamConfigRequest() {}
 
+std::string DescribeLivePullStreamConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLivePullStreamConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLivePullStreamConfigRequest::getLiveapiRequestFrom() const {
   return liveapiRequestFrom_;
 }

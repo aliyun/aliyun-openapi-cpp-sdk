@@ -43,6 +43,15 @@ void CreateLiveStreamMonitorRequest::setMonitorName(const std::string &monitorNa
   setParameter(std::string("MonitorName"), monitorName);
 }
 
+std::string CreateLiveStreamMonitorRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateLiveStreamMonitorRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateLiveStreamMonitorRequest::getStream() const {
   return stream_;
 }

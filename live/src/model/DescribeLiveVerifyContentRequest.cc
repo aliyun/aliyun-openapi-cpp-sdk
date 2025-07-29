@@ -25,6 +25,15 @@ DescribeLiveVerifyContentRequest::DescribeLiveVerifyContentRequest()
 
 DescribeLiveVerifyContentRequest::~DescribeLiveVerifyContentRequest() {}
 
+std::string DescribeLiveVerifyContentRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveVerifyContentRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveVerifyContentRequest::getDomainName() const {
   return domainName_;
 }

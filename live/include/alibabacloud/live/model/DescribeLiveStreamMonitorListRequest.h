@@ -34,6 +34,8 @@ public:
 	void setMonitorId(const std::string &monitorId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	long getOwnerId() const;
@@ -46,6 +48,7 @@ public:
 private:
 	std::string monitorId_;
 	int pageNum_;
+	std::string regionId_;
 	int pageSize_;
 	long ownerId_;
 	int orderRule_;

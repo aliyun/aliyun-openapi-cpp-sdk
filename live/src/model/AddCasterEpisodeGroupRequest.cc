@@ -43,6 +43,15 @@ void AddCasterEpisodeGroupRequest::setStartTime(const std::string &startTime) {
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string AddCasterEpisodeGroupRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddCasterEpisodeGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddCasterEpisodeGroupRequest::getSideOutputUrl() const {
   return sideOutputUrl_;
 }

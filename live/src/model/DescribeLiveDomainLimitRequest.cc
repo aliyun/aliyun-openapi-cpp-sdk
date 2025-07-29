@@ -25,6 +25,15 @@ DescribeLiveDomainLimitRequest::DescribeLiveDomainLimitRequest()
 
 DescribeLiveDomainLimitRequest::~DescribeLiveDomainLimitRequest() {}
 
+std::string DescribeLiveDomainLimitRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainLimitRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainLimitRequest::getLiveapiRequestFrom() const {
   return liveapiRequestFrom_;
 }

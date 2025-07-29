@@ -25,6 +25,15 @@ DeleteLiveDomainPlayMappingRequest::DeleteLiveDomainPlayMappingRequest()
 
 DeleteLiveDomainPlayMappingRequest::~DeleteLiveDomainPlayMappingRequest() {}
 
+std::string DeleteLiveDomainPlayMappingRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveDomainPlayMappingRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveDomainPlayMappingRequest::getPlayDomain() const {
   return playDomain_;
 }

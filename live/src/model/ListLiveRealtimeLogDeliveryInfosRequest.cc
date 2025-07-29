@@ -25,6 +25,15 @@ ListLiveRealtimeLogDeliveryInfosRequest::ListLiveRealtimeLogDeliveryInfosRequest
 
 ListLiveRealtimeLogDeliveryInfosRequest::~ListLiveRealtimeLogDeliveryInfosRequest() {}
 
+std::string ListLiveRealtimeLogDeliveryInfosRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListLiveRealtimeLogDeliveryInfosRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long ListLiveRealtimeLogDeliveryInfosRequest::getOwnerId() const {
   return ownerId_;
 }

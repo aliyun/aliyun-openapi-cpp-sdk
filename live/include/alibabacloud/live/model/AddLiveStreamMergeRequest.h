@@ -40,6 +40,8 @@ public:
 	void setProtocol(const std::string &protocol);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getInStreamName2() const;
 	void setInStreamName2(const std::string &inStreamName2);
 	std::string getStreamName() const;
@@ -59,6 +61,7 @@ private:
 	std::string startTime_;
 	std::string protocol_;
 	std::string appName_;
+	std::string regionId_;
 	std::string inStreamName2_;
 	std::string streamName_;
 	std::string inStreamName1_;

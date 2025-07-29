@@ -36,6 +36,8 @@ public:
 	void setIspNameEn(const std::string &ispNameEn);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	std::string getEndTime() const;
@@ -47,6 +49,7 @@ private:
 	std::string locationNameEn_;
 	std::string ispNameEn_;
 	std::string startTime_;
+	std::string regionId_;
 	std::string domainName_;
 	std::string endTime_;
 	long ownerId_;

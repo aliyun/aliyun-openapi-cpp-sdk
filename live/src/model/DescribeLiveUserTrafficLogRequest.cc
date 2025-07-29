@@ -43,6 +43,15 @@ void DescribeLiveUserTrafficLogRequest::setPageNumber(long pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeLiveUserTrafficLogRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveUserTrafficLogRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeLiveUserTrafficLogRequest::getPageSize() const {
   return pageSize_;
 }

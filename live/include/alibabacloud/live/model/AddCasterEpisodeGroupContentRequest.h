@@ -34,12 +34,15 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getContent() const;
 	void setContent(const std::string &content);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
 private:
 	std::string clientToken_;
 	std::string content_;
+	std::string regionId_;
 	long ownerId_;
 };
 } // namespace Model

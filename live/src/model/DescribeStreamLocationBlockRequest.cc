@@ -52,6 +52,15 @@ void DescribeStreamLocationBlockRequest::setAppName(const std::string &appName) 
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeStreamLocationBlockRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeStreamLocationBlockRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeStreamLocationBlockRequest::getPageSize() const {
   return pageSize_;
 }

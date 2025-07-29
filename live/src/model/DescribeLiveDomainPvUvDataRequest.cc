@@ -34,6 +34,15 @@ void DescribeLiveDomainPvUvDataRequest::setStartTime(const std::string &startTim
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveDomainPvUvDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainPvUvDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainPvUvDataRequest::getDomainName() const {
   return domainName_;
 }

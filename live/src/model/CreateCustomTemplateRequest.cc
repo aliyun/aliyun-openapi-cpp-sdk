@@ -34,6 +34,15 @@ void CreateCustomTemplateRequest::set_Template(const std::string &_template) {
   setParameter(std::string("Template"), _template);
 }
 
+std::string CreateCustomTemplateRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateCustomTemplateRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateCustomTemplateRequest::getCustomTemplate() const {
   return customTemplate_;
 }

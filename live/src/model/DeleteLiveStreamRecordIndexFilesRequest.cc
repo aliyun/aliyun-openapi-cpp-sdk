@@ -43,6 +43,15 @@ void DeleteLiveStreamRecordIndexFilesRequest::setAppName(const std::string &appN
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DeleteLiveStreamRecordIndexFilesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveStreamRecordIndexFilesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveStreamRecordIndexFilesRequest::getStreamName() const {
   return streamName_;
 }

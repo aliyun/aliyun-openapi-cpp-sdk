@@ -25,6 +25,15 @@ EffectCasterVideoResourceRequest::EffectCasterVideoResourceRequest()
 
 EffectCasterVideoResourceRequest::~EffectCasterVideoResourceRequest() {}
 
+std::string EffectCasterVideoResourceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void EffectCasterVideoResourceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string EffectCasterVideoResourceRequest::getResourceId() const {
   return resourceId_;
 }

@@ -32,6 +32,8 @@ public:
 	~DeleteLiveAISubtitleRequest();
 	std::string getSubtitleName() const;
 	void setSubtitleName(const std::string &subtitleName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getSubtitleId() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string subtitleName_;
+	std::string regionId_;
 	long ownerId_;
 	std::string subtitleId_;
 };

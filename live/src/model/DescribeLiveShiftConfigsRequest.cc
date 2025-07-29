@@ -25,6 +25,15 @@ DescribeLiveShiftConfigsRequest::DescribeLiveShiftConfigsRequest()
 
 DescribeLiveShiftConfigsRequest::~DescribeLiveShiftConfigsRequest() {}
 
+std::string DescribeLiveShiftConfigsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveShiftConfigsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveShiftConfigsRequest::getDomainName() const {
   return domainName_;
 }

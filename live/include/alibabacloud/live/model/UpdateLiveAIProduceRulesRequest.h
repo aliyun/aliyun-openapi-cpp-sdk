@@ -36,6 +36,8 @@ public:
 	void setSuffix(const std::string &suffix);
 	std::string getSubtitleName() const;
 	void setSubtitleName(const std::string &subtitleName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getRulesId() const;
 	void setRulesId(const std::string &rulesId);
 	std::string getApp() const;
@@ -59,6 +61,7 @@ private:
 	std::string description_;
 	std::string suffix_;
 	std::string subtitleName_;
+	std::string regionId_;
 	std::string rulesId_;
 	std::string app_;
 	long ownerId_;

@@ -25,6 +25,15 @@ GetEdgeTranscodeTemplateRequest::GetEdgeTranscodeTemplateRequest()
 
 GetEdgeTranscodeTemplateRequest::~GetEdgeTranscodeTemplateRequest() {}
 
+std::string GetEdgeTranscodeTemplateRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetEdgeTranscodeTemplateRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string GetEdgeTranscodeTemplateRequest::getClusterId() const {
   return clusterId_;
 }

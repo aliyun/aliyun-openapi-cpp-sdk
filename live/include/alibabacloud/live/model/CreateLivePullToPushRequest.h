@@ -40,6 +40,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	int getRepeatNumber() const;
 	void setRepeatNumber(int repeatNumber);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getSourceProtocol() const;
 	void setSourceProtocol(const std::string &sourceProtocol);
 	std::string getSourceType() const;
@@ -67,6 +69,7 @@ private:
 	std::string taskName_;
 	std::string startTime_;
 	int repeatNumber_;
+	std::string regionId_;
 	std::string sourceProtocol_;
 	std::string sourceType_;
 	int offset_;

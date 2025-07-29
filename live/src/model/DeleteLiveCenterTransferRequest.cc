@@ -34,6 +34,15 @@ void DeleteLiveCenterTransferRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DeleteLiveCenterTransferRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveCenterTransferRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveCenterTransferRequest::getStreamName() const {
   return streamName_;
 }

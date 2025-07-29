@@ -34,6 +34,15 @@ void ListLiveDelayConfigRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
+std::string ListLiveDelayConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListLiveDelayConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int ListLiveDelayConfigRequest::getPageSize() const {
   return pageSize_;
 }

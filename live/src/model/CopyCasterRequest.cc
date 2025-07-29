@@ -34,6 +34,15 @@ void CopyCasterRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string CopyCasterRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CopyCasterRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CopyCasterRequest::getCasterName() const {
   return casterName_;
 }

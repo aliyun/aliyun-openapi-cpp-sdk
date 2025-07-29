@@ -38,6 +38,8 @@ public:
 	void setEndOffset(int endOffset);
 	std::string getMaterialId() const;
 	void setMaterialId(const std::string &materialId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	std::string getVodUrl() const;
@@ -64,6 +66,7 @@ private:
 	int inputType_;
 	int endOffset_;
 	std::string materialId_;
+	std::string regionId_;
 	std::string resourceId_;
 	std::string vodUrl_;
 	std::string casterId_;

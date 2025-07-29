@@ -34,6 +34,8 @@ public:
 	void setFlvLevel(const std::string &flvLevel);
 	std::string getHlsLevel() const;
 	void setHlsLevel(const std::string &hlsLevel);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getRtmpDelay() const;
 	void setRtmpDelay(int rtmpDelay);
 	std::string getDomainName() const;
@@ -50,6 +52,7 @@ public:
 private:
 	std::string flvLevel_;
 	std::string hlsLevel_;
+	std::string regionId_;
 	int rtmpDelay_;
 	std::string domainName_;
 	long ownerId_;

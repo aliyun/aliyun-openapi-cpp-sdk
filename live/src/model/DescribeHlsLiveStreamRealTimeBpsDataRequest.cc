@@ -25,6 +25,15 @@ DescribeHlsLiveStreamRealTimeBpsDataRequest::DescribeHlsLiveStreamRealTimeBpsDat
 
 DescribeHlsLiveStreamRealTimeBpsDataRequest::~DescribeHlsLiveStreamRealTimeBpsDataRequest() {}
 
+std::string DescribeHlsLiveStreamRealTimeBpsDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeHlsLiveStreamRealTimeBpsDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeHlsLiveStreamRealTimeBpsDataRequest::getDomainName() const {
   return domainName_;
 }

@@ -41,6 +41,8 @@ public:
 	~ModifyCasterProgramRequest();
 	std::vector<Episode> getEpisode() const;
 	void setEpisode(const std::vector<Episode> &episode);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterId() const;
 	void setCasterId(const std::string &casterId);
 	long getOwnerId() const;
@@ -48,6 +50,7 @@ public:
 
 private:
 	std::vector<Episode> episode_;
+	std::string regionId_;
 	std::string casterId_;
 	long ownerId_;
 };

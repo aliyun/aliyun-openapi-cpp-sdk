@@ -34,6 +34,15 @@ void DescribeLiveDomainTimeShiftDataRequest::setStartTime(const std::string &sta
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveDomainTimeShiftDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainTimeShiftDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainTimeShiftDataRequest::getDomainName() const {
   return domainName_;
 }

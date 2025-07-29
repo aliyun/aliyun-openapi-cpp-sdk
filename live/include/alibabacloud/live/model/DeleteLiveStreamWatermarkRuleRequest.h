@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT DeleteLiveStreamWatermarkRuleRequest : public Rpc
 public:
 	DeleteLiveStreamWatermarkRuleRequest();
 	~DeleteLiveStreamWatermarkRuleRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStream() const;
 	void setStream(const std::string &stream);
 	std::string getApp() const;
@@ -42,6 +44,7 @@ public:
 	void setRuleId(const std::string &ruleId);
 
 private:
+	std::string regionId_;
 	std::string stream_;
 	std::string app_;
 	long ownerId_;

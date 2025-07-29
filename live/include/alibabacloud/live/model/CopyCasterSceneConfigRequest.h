@@ -34,6 +34,8 @@ public:
 	void setFromSceneId(const std::string &fromSceneId);
 	std::string getToSceneId() const;
 	void setToSceneId(const std::string &toSceneId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterId() const;
 	void setCasterId(const std::string &casterId);
 	long getOwnerId() const;
@@ -42,6 +44,7 @@ public:
 private:
 	std::string fromSceneId_;
 	std::string toSceneId_;
+	std::string regionId_;
 	std::string casterId_;
 	long ownerId_;
 };

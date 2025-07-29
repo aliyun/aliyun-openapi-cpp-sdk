@@ -25,6 +25,15 @@ DescribeLiveRealtimeLogAuthorizedRequest::DescribeLiveRealtimeLogAuthorizedReque
 
 DescribeLiveRealtimeLogAuthorizedRequest::~DescribeLiveRealtimeLogAuthorizedRequest() {}
 
+std::string DescribeLiveRealtimeLogAuthorizedRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveRealtimeLogAuthorizedRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeLiveRealtimeLogAuthorizedRequest::getOwnerId() const {
   return ownerId_;
 }

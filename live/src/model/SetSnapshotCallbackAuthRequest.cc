@@ -25,6 +25,15 @@ SetSnapshotCallbackAuthRequest::SetSnapshotCallbackAuthRequest()
 
 SetSnapshotCallbackAuthRequest::~SetSnapshotCallbackAuthRequest() {}
 
+std::string SetSnapshotCallbackAuthRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SetSnapshotCallbackAuthRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SetSnapshotCallbackAuthRequest::getCallbackAuthKey() const {
   return callbackAuthKey_;
 }

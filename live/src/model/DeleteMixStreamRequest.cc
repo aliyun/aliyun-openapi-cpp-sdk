@@ -34,6 +34,15 @@ void DeleteMixStreamRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DeleteMixStreamRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteMixStreamRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteMixStreamRequest::getStreamName() const {
   return streamName_;
 }

@@ -34,6 +34,8 @@ public:
 	void setStartTime(float startTime);
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStorageInfo() const;
 	void setStorageInfo(const std::string &storageInfo);
 	std::string getCasterId() const;
@@ -48,6 +50,7 @@ public:
 private:
 	float startTime_;
 	std::string userData_;
+	std::string regionId_;
 	std::string storageInfo_;
 	std::string casterId_;
 	float endTime_;

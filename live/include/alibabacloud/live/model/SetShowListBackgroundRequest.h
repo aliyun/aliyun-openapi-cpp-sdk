@@ -32,6 +32,8 @@ public:
 	~SetShowListBackgroundRequest();
 	std::string getMaterialId() const;
 	void setMaterialId(const std::string &materialId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterId() const;
 	void setCasterId(const std::string &casterId);
 	long getOwnerId() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string materialId_;
+	std::string regionId_;
 	std::string casterId_;
 	long ownerId_;
 	std::string resourceType_;

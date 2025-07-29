@@ -34,6 +34,15 @@ void DescribeLiveTopDomainsByFlowRequest::setStartTime(const std::string &startT
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveTopDomainsByFlowRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveTopDomainsByFlowRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeLiveTopDomainsByFlowRequest::getLimit() const {
   return limit_;
 }

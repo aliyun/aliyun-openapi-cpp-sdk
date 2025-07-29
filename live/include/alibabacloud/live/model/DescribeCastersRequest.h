@@ -40,6 +40,8 @@ public:
 	void setPageNum(int pageNum);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterName() const;
 	void setCasterName(const std::string &casterName);
 	int getPageSize() const;
@@ -65,6 +67,7 @@ private:
 	std::string startTime_;
 	int pageNum_;
 	std::string resourceGroupId_;
+	std::string regionId_;
 	std::string casterName_;
 	int pageSize_;
 	std::vector<Tag> tag_;

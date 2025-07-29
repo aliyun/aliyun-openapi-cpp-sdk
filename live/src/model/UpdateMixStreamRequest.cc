@@ -34,6 +34,15 @@ void UpdateMixStreamRequest::setLayoutId(const std::string &layoutId) {
   setParameter(std::string("LayoutId"), layoutId);
 }
 
+std::string UpdateMixStreamRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateMixStreamRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpdateMixStreamRequest::getMixStreamId() const {
   return mixStreamId_;
 }

@@ -515,6 +515,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveUserBillPredictionResult.h
 	include/alibabacloud/live/model/DescribeLiveUserDomainsRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserDomainsResult.h
+	include/alibabacloud/live/model/DescribeLiveUserStreamMetricDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveUserStreamMetricDataResult.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsResult.h
 	include/alibabacloud/live/model/DescribeLiveUserTrafficLogRequest.h
@@ -1374,6 +1376,8 @@ set(live_src
 	src/model/DescribeLiveUserBillPredictionResult.cc
 	src/model/DescribeLiveUserDomainsRequest.cc
 	src/model/DescribeLiveUserDomainsResult.cc
+	src/model/DescribeLiveUserStreamMetricDataRequest.cc
+	src/model/DescribeLiveUserStreamMetricDataResult.cc
 	src/model/DescribeLiveUserTagsRequest.cc
 	src/model/DescribeLiveUserTagsResult.cc
 	src/model/DescribeLiveUserTrafficLogRequest.cc

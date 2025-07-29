@@ -34,6 +34,15 @@ void DeleteCustomTemplateRequest::set_Template(const std::string &_template) {
   setParameter(std::string("Template"), _template);
 }
 
+std::string DeleteCustomTemplateRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteCustomTemplateRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DeleteCustomTemplateRequest::getOwnerId() const {
   return ownerId_;
 }

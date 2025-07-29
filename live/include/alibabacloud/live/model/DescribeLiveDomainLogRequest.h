@@ -34,6 +34,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	long getPageNumber() const;
 	void setPageNumber(long pageNumber);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
 	std::string getDomainName() const;
@@ -46,6 +48,7 @@ public:
 private:
 	std::string startTime_;
 	long pageNumber_;
+	std::string regionId_;
 	long pageSize_;
 	std::string domainName_;
 	std::string endTime_;

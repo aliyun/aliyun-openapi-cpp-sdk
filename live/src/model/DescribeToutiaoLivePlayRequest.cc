@@ -34,6 +34,15 @@ void DescribeToutiaoLivePlayRequest::setStartTime(const std::string &startTime) 
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeToutiaoLivePlayRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeToutiaoLivePlayRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeToutiaoLivePlayRequest::getStream() const {
   return stream_;
 }

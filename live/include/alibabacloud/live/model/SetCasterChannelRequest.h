@@ -36,6 +36,8 @@ public:
 	void setSeekOffset(int seekOffset);
 	int getPlayStatus() const;
 	void setPlayStatus(int playStatus);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	std::string getCasterId() const;
@@ -53,6 +55,7 @@ private:
 	std::string faceBeauty_;
 	int seekOffset_;
 	int playStatus_;
+	std::string regionId_;
 	std::string resourceId_;
 	std::string casterId_;
 	bool enableSeekResume_;

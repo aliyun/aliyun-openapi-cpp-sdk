@@ -34,6 +34,15 @@ void DescribeLiveAIProduceRulesRequest::setPageNumber(const std::string &pageNum
   setParameter(std::string("PageNumber"), pageNumber);
 }
 
+std::string DescribeLiveAIProduceRulesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveAIProduceRulesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveAIProduceRulesRequest::getPageSize() const {
   return pageSize_;
 }

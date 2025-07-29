@@ -34,6 +34,8 @@ public:
 	void setDuration(int duration);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStreamName() const;
 	void setStreamName(const std::string &streamName);
 	bool getIgnoreTranscode() const;
@@ -48,6 +50,7 @@ public:
 private:
 	int duration_;
 	std::string appName_;
+	std::string regionId_;
 	std::string streamName_;
 	bool ignoreTranscode_;
 	std::string domainName_;

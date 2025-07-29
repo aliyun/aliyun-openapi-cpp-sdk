@@ -52,6 +52,15 @@ void UpdateLivePackageConfigRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string UpdateLivePackageConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateLivePackageConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int UpdateLivePackageConfigRequest::getPartDuration() const {
   return partDuration_;
 }

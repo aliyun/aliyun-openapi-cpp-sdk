@@ -43,6 +43,15 @@ void CreateEdgeTranscodeJobRequest::setStreamOutput(const std::string &streamOut
   setParameter(std::string("StreamOutput"), streamOutput);
 }
 
+std::string CreateEdgeTranscodeJobRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateEdgeTranscodeJobRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateEdgeTranscodeJobRequest::getClusterId() const {
   return clusterId_;
 }

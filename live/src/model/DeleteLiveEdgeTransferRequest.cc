@@ -25,6 +25,15 @@ DeleteLiveEdgeTransferRequest::DeleteLiveEdgeTransferRequest()
 
 DeleteLiveEdgeTransferRequest::~DeleteLiveEdgeTransferRequest() {}
 
+std::string DeleteLiveEdgeTransferRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveEdgeTransferRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveEdgeTransferRequest::getDomainName() const {
   return domainName_;
 }

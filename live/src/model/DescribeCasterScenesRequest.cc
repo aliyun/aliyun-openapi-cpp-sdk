@@ -25,6 +25,15 @@ DescribeCasterScenesRequest::DescribeCasterScenesRequest()
 
 DescribeCasterScenesRequest::~DescribeCasterScenesRequest() {}
 
+std::string DescribeCasterScenesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeCasterScenesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeCasterScenesRequest::getCasterId() const {
   return casterId_;
 }

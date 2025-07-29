@@ -34,6 +34,15 @@ void DeleteLiveStreamBlockRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DeleteLiveStreamBlockRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveStreamBlockRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveStreamBlockRequest::getStreamName() const {
   return streamName_;
 }

@@ -79,6 +79,15 @@ void AddRtsLiveStreamTranscodeRequest::setAudioCodec(const std::string &audioCod
   setParameter(std::string("AudioCodec"), audioCodec);
 }
 
+std::string AddRtsLiveStreamTranscodeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddRtsLiveStreamTranscodeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddRtsLiveStreamTranscodeRequest::getTemplateType() const {
   return templateType_;
 }

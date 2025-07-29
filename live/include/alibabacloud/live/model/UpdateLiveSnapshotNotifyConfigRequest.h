@@ -32,6 +32,8 @@ public:
 	~UpdateLiveSnapshotNotifyConfigRequest();
 	std::string getNotifyReqAuth() const;
 	void setNotifyReqAuth(const std::string &notifyReqAuth);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getNotifyUrl() const;
 	void setNotifyUrl(const std::string &notifyUrl);
 	std::string getDomainName() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string notifyReqAuth_;
+	std::string regionId_;
 	std::string notifyUrl_;
 	std::string domainName_;
 	long ownerId_;

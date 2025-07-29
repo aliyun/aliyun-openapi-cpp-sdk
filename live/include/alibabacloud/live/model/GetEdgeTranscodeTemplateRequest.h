@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT GetEdgeTranscodeTemplateRequest : public RpcServi
 public:
 	GetEdgeTranscodeTemplateRequest();
 	~GetEdgeTranscodeTemplateRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	long getOwnerId() const;
@@ -38,6 +40,7 @@ public:
 	void setTemplateId(const std::string &templateId);
 
 private:
+	std::string regionId_;
 	std::string clusterId_;
 	long ownerId_;
 	std::string templateId_;

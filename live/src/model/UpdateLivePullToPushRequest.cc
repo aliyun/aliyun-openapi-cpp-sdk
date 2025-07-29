@@ -52,6 +52,15 @@ void UpdateLivePullToPushRequest::setRepeatNumber(int repeatNumber) {
   setParameter(std::string("RepeatNumber"), std::to_string(repeatNumber));
 }
 
+std::string UpdateLivePullToPushRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateLivePullToPushRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpdateLivePullToPushRequest::getTaskId() const {
   return taskId_;
 }

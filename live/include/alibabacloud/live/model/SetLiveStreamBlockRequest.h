@@ -38,6 +38,8 @@ public:
 	void setReleaseTime(const std::string &releaseTime);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStreamName() const;
 	void setStreamName(const std::string &streamName);
 	std::string getDomainName() const;
@@ -50,6 +52,7 @@ private:
 	std::string blockType_;
 	std::string releaseTime_;
 	std::string appName_;
+	std::string regionId_;
 	std::string streamName_;
 	std::string domainName_;
 	long ownerId_;

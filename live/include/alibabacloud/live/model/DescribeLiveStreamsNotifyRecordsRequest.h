@@ -36,6 +36,8 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getStreamName() const;
@@ -53,6 +55,7 @@ private:
 	std::string startTime_;
 	int pageNumber_;
 	std::string appName_;
+	std::string regionId_;
 	int pageSize_;
 	std::string streamName_;
 	std::string domainName_;

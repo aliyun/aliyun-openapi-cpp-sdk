@@ -36,6 +36,8 @@ public:
 	void setOssObject(const std::string &ossObject);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStreamName() const;
 	void setStreamName(const std::string &streamName);
 	std::string getOssBucket() const;
@@ -51,6 +53,7 @@ private:
 	std::string ossEndpoint_;
 	std::string ossObject_;
 	std::string appName_;
+	std::string regionId_;
 	std::string streamName_;
 	std::string ossBucket_;
 	std::string domainName_;

@@ -43,6 +43,15 @@ void DescribeLiveStreamPreloadTasksRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
+std::string DescribeLiveStreamPreloadTasksRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamPreloadTasksRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeLiveStreamPreloadTasksRequest::getPageSize() const {
   return pageSize_;
 }

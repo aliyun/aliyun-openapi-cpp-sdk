@@ -34,6 +34,15 @@ void DescribeLiveDrmUsageDataRequest::setStartTime(const std::string &startTime)
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveDrmUsageDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDrmUsageDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDrmUsageDataRequest::getSplitBy() const {
   return splitBy_;
 }

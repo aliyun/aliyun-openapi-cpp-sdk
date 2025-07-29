@@ -44,6 +44,8 @@ public:
 	~AddCasterLayoutRequest();
 	std::vector<std::string> getBlendList() const;
 	void setBlendList(const std::vector<std::string> &blendList);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterId() const;
 	void setCasterId(const std::string &casterId);
 	long getOwnerId() const;
@@ -57,6 +59,7 @@ public:
 
 private:
 	std::vector<std::string> blendList_;
+	std::string regionId_;
 	std::string casterId_;
 	long ownerId_;
 	std::vector<AudioLayer> audioLayer_;

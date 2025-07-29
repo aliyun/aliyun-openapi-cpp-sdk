@@ -43,6 +43,15 @@ void DescribeLivePullToPushListRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeLivePullToPushListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLivePullToPushListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeLivePullToPushListRequest::getPageSize() const {
   return pageSize_;
 }

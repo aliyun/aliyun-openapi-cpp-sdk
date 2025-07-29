@@ -34,6 +34,15 @@ void RemoveShowFromShowListRequest::setIsBatchMode(bool isBatchMode) {
   setParameter(std::string("isBatchMode"), isBatchMode ? "true" : "false");
 }
 
+std::string RemoveShowFromShowListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RemoveShowFromShowListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::vector<std::string> RemoveShowFromShowListRequest::getShowIdList() const {
   return showIdList_;
 }

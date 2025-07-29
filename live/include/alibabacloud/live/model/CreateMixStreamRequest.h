@@ -34,6 +34,8 @@ public:
 	void setOutputConfig(const std::string &outputConfig);
 	std::string getLayoutId() const;
 	void setLayoutId(const std::string &layoutId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	std::string getInputStreamList() const;
@@ -46,6 +48,7 @@ public:
 private:
 	std::string outputConfig_;
 	std::string layoutId_;
+	std::string regionId_;
 	std::string domainName_;
 	std::string inputStreamList_;
 	long ownerId_;

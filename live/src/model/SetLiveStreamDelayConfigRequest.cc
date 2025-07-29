@@ -43,6 +43,15 @@ void SetLiveStreamDelayConfigRequest::setHlsLevel(const std::string &hlsLevel) {
   setParameter(std::string("HlsLevel"), hlsLevel);
 }
 
+std::string SetLiveStreamDelayConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SetLiveStreamDelayConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int SetLiveStreamDelayConfigRequest::getRtmpDelay() const {
   return rtmpDelay_;
 }

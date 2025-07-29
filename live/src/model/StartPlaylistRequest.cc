@@ -34,6 +34,15 @@ void StartPlaylistRequest::setResumeMode(const std::string &resumeMode) {
   setParameter(std::string("ResumeMode"), resumeMode);
 }
 
+std::string StartPlaylistRequest::getRegionId() const {
+  return regionId_;
+}
+
+void StartPlaylistRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string StartPlaylistRequest::getStartItemId() const {
   return startItemId_;
 }

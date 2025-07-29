@@ -34,6 +34,15 @@ void UpdateCasterSceneConfigRequest::setLayoutId(const std::string &layoutId) {
   setParameter(std::string("LayoutId"), layoutId);
 }
 
+std::string UpdateCasterSceneConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateCasterSceneConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::vector<std::string> UpdateCasterSceneConfigRequest::getComponentId() const {
   return componentId_;
 }

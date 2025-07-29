@@ -61,6 +61,15 @@ void CreateLivePrivateLineRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string CreateLivePrivateLineRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateLivePrivateLineRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateLivePrivateLineRequest::getStreamName() const {
   return streamName_;
 }

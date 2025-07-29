@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT DescribeLiveIpInfoRequest : public RpcServiceRequ
 public:
 	DescribeLiveIpInfoRequest();
 	~DescribeLiveIpInfoRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getMethod() const;
 	void setMethod(const std::string &method);
 	std::string getIP() const;
@@ -38,6 +40,7 @@ public:
 	void setOwnerId(long ownerId);
 
 private:
+	std::string regionId_;
 	std::string method_;
 	std::string iP_;
 	long ownerId_;

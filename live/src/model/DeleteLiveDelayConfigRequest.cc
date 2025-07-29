@@ -25,6 +25,15 @@ DeleteLiveDelayConfigRequest::DeleteLiveDelayConfigRequest()
 
 DeleteLiveDelayConfigRequest::~DeleteLiveDelayConfigRequest() {}
 
+std::string DeleteLiveDelayConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveDelayConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveDelayConfigRequest::getStream() const {
   return stream_;
 }

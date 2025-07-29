@@ -34,6 +34,15 @@ void DescribeLiveStreamWatermarksRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeLiveStreamWatermarksRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamWatermarksRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeLiveStreamWatermarksRequest::getPageSize() const {
   return pageSize_;
 }

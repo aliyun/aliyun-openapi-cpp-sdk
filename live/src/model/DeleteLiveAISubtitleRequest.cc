@@ -34,6 +34,15 @@ void DeleteLiveAISubtitleRequest::setSubtitleName(const std::string &subtitleNam
   setParameter(std::string("SubtitleName"), subtitleName);
 }
 
+std::string DeleteLiveAISubtitleRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveAISubtitleRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DeleteLiveAISubtitleRequest::getOwnerId() const {
   return ownerId_;
 }

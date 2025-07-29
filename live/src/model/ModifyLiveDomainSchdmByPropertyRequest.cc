@@ -25,6 +25,15 @@ ModifyLiveDomainSchdmByPropertyRequest::ModifyLiveDomainSchdmByPropertyRequest()
 
 ModifyLiveDomainSchdmByPropertyRequest::~ModifyLiveDomainSchdmByPropertyRequest() {}
 
+std::string ModifyLiveDomainSchdmByPropertyRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyLiveDomainSchdmByPropertyRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyLiveDomainSchdmByPropertyRequest::getProperty() const {
   return property_;
 }

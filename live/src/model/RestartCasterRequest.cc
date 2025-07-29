@@ -25,6 +25,15 @@ RestartCasterRequest::RestartCasterRequest()
 
 RestartCasterRequest::~RestartCasterRequest() {}
 
+std::string RestartCasterRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RestartCasterRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string RestartCasterRequest::getCasterId() const {
   return casterId_;
 }

@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT SetSnapshotCallbackAuthRequest : public RpcServic
 public:
 	SetSnapshotCallbackAuthRequest();
 	~SetSnapshotCallbackAuthRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCallbackAuthKey() const;
 	void setCallbackAuthKey(const std::string &callbackAuthKey);
 	std::string getDomainName() const;
@@ -40,6 +42,7 @@ public:
 	void setCallbackReqAuth(const std::string &callbackReqAuth);
 
 private:
+	std::string regionId_;
 	std::string callbackAuthKey_;
 	std::string domainName_;
 	long ownerId_;

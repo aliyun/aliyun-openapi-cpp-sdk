@@ -25,6 +25,15 @@ ChangeLiveDomainResourceGroupRequest::ChangeLiveDomainResourceGroupRequest()
 
 ChangeLiveDomainResourceGroupRequest::~ChangeLiveDomainResourceGroupRequest() {}
 
+std::string ChangeLiveDomainResourceGroupRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ChangeLiveDomainResourceGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ChangeLiveDomainResourceGroupRequest::getDomainName() const {
   return domainName_;
 }

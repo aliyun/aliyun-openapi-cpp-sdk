@@ -88,6 +88,15 @@ void SetCasterConfigRequest::setTranscodeConfig(const std::string &transcodeConf
   setParameter(std::string("TranscodeConfig"), transcodeConfig);
 }
 
+std::string SetCasterConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SetCasterConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SetCasterConfigRequest::getCasterName() const {
   return casterName_;
 }

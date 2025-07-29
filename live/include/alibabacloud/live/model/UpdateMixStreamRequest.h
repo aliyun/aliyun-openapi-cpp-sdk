@@ -32,6 +32,8 @@ public:
 	~UpdateMixStreamRequest();
 	std::string getLayoutId() const;
 	void setLayoutId(const std::string &layoutId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getMixStreamId() const;
 	void setMixStreamId(const std::string &mixStreamId);
 	std::string getDomainName() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string layoutId_;
+	std::string regionId_;
 	std::string mixStreamId_;
 	std::string domainName_;
 	std::string inputStreamList_;

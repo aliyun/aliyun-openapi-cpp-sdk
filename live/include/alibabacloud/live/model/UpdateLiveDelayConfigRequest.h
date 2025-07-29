@@ -32,6 +32,8 @@ public:
 	~UpdateLiveDelayConfigRequest();
 	int getDelayTime() const;
 	void setDelayTime(int delayTime);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStream() const;
 	void setStream(const std::string &stream);
 	std::string getApp() const;
@@ -45,6 +47,7 @@ public:
 
 private:
 	int delayTime_;
+	std::string regionId_;
 	std::string stream_;
 	std::string app_;
 	long ownerId_;

@@ -25,6 +25,15 @@ StopLivePullToPushRequest::StopLivePullToPushRequest()
 
 StopLivePullToPushRequest::~StopLivePullToPushRequest() {}
 
+std::string StopLivePullToPushRequest::getRegionId() const {
+  return regionId_;
+}
+
+void StopLivePullToPushRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string StopLivePullToPushRequest::getTaskId() const {
   return taskId_;
 }

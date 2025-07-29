@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT DeleteCasterEpisodeRequest : public RpcServiceReq
 public:
 	DeleteCasterEpisodeRequest();
 	~DeleteCasterEpisodeRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterId() const;
 	void setCasterId(const std::string &casterId);
 	long getOwnerId() const;
@@ -38,6 +40,7 @@ public:
 	void setEpisodeId(const std::string &episodeId);
 
 private:
+	std::string regionId_;
 	std::string casterId_;
 	long ownerId_;
 	std::string episodeId_;

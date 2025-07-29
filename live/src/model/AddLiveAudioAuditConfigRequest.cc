@@ -52,6 +52,15 @@ void AddLiveAudioAuditConfigRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string AddLiveAudioAuditConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddLiveAudioAuditConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddLiveAudioAuditConfigRequest::getStreamName() const {
   return streamName_;
 }

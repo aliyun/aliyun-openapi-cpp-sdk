@@ -44,6 +44,8 @@ public:
 	void setUrgentMaterialId(const std::string &urgentMaterialId);
 	std::string getTranscodeConfig() const;
 	void setTranscodeConfig(const std::string &transcodeConfig);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterName() const;
 	void setCasterName(const std::string &casterName);
 	bool getAutoSwitchUrgentOn() const;
@@ -79,6 +81,7 @@ private:
 	std::string recordConfig_;
 	std::string urgentMaterialId_;
 	std::string transcodeConfig_;
+	std::string regionId_;
 	std::string casterName_;
 	bool autoSwitchUrgentOn_;
 	std::string autoSwitchUrgentConfig_;

@@ -43,6 +43,15 @@ void DescribeLiveDomainLogRequest::setPageNumber(long pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeLiveDomainLogRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainLogRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeLiveDomainLogRequest::getPageSize() const {
   return pageSize_;
 }

@@ -52,6 +52,15 @@ void DescribeDomainUsageDataRequest::setDataProtocol(const std::string &dataProt
   setParameter(std::string("DataProtocol"), dataProtocol);
 }
 
+std::string DescribeDomainUsageDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDomainUsageDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeDomainUsageDataRequest::getArea() const {
   return area_;
 }

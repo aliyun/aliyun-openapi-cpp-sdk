@@ -34,6 +34,15 @@ void DescribeLiveHttpsDomainListRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeLiveHttpsDomainListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveHttpsDomainListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeLiveHttpsDomainListRequest::getPageSize() const {
   return pageSize_;
 }

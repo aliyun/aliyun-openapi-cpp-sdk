@@ -34,6 +34,15 @@ void DeleteCasterSceneConfigRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
+std::string DeleteCasterSceneConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteCasterSceneConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteCasterSceneConfigRequest::getCasterId() const {
   return casterId_;
 }

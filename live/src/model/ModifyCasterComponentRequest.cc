@@ -43,6 +43,15 @@ void ModifyCasterComponentRequest::setComponentName(const std::string &component
   setParameter(std::string("ComponentName"), componentName);
 }
 
+std::string ModifyCasterComponentRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyCasterComponentRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyCasterComponentRequest::getComponentId() const {
   return componentId_;
 }

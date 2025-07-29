@@ -36,6 +36,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getType() const;
 	void setType(const std::string &type);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getSplitBy() const;
 	void setSplitBy(const std::string &splitBy);
 	std::string getApp() const;
@@ -55,6 +57,7 @@ private:
 	std::string instance_;
 	std::string startTime_;
 	std::string type_;
+	std::string regionId_;
 	std::string splitBy_;
 	std::string app_;
 	std::string domainName_;

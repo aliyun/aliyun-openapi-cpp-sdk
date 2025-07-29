@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStreamsNotifyUrlConfigRequest : publi
 public:
 	DescribeLiveStreamsNotifyUrlConfigRequest();
 	~DescribeLiveStreamsNotifyUrlConfigRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getNotifyType() const;
 	void setNotifyType(const std::string &notifyType);
 	std::string getDomainName() const;
@@ -38,6 +40,7 @@ public:
 	void setOwnerId(long ownerId);
 
 private:
+	std::string regionId_;
 	std::string notifyType_;
 	std::string domainName_;
 	long ownerId_;

@@ -34,6 +34,15 @@ void DescribeToutiaoLivePublishRequest::setStartTime(const std::string &startTim
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeToutiaoLivePublishRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeToutiaoLivePublishRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeToutiaoLivePublishRequest::getStream() const {
   return stream_;
 }

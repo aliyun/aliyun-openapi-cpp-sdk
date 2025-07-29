@@ -25,6 +25,15 @@ StartCasterSceneRequest::StartCasterSceneRequest()
 
 StartCasterSceneRequest::~StartCasterSceneRequest() {}
 
+std::string StartCasterSceneRequest::getRegionId() const {
+  return regionId_;
+}
+
+void StartCasterSceneRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string StartCasterSceneRequest::getCasterId() const {
   return casterId_;
 }

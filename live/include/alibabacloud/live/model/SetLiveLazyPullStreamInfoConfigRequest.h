@@ -34,6 +34,8 @@ public:
 	void setPullArgs(const std::string &pullArgs);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getLiveapiRequestFrom() const;
 	void setLiveapiRequestFrom(const std::string &liveapiRequestFrom);
 	std::string getPullAuthKey() const;
@@ -56,6 +58,7 @@ public:
 private:
 	std::string pullArgs_;
 	std::string appName_;
+	std::string regionId_;
 	std::string liveapiRequestFrom_;
 	std::string pullAuthKey_;
 	std::string pullAuthType_;

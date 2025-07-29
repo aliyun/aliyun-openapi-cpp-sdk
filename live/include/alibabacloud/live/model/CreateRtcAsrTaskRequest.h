@@ -36,6 +36,8 @@ public:
 	void setLanguage(const std::string &language);
 	std::string getMode() const;
 	void setMode(const std::string &mode);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	bool getTranslateEnabled() const;
 	void setTranslateEnabled(bool translateEnabled);
 	std::string getTag() const;
@@ -65,6 +67,7 @@ private:
 	std::string authKey_;
 	std::string language_;
 	std::string mode_;
+	std::string regionId_;
 	bool translateEnabled_;
 	std::string tag_;
 	std::string streamURL_;

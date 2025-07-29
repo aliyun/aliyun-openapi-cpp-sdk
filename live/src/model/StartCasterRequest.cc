@@ -25,6 +25,15 @@ StartCasterRequest::StartCasterRequest()
 
 StartCasterRequest::~StartCasterRequest() {}
 
+std::string StartCasterRequest::getRegionId() const {
+  return regionId_;
+}
+
+void StartCasterRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int StartCasterRequest::getPlayerType() const {
   return playerType_;
 }

@@ -40,6 +40,8 @@ public:
 	void setGop(const std::string &gop);
 	std::string getAudioCodec() const;
 	void setAudioCodec(const std::string &audioCodec);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getTemplateType() const;
 	void setTemplateType(const std::string &templateType);
 	std::string getAudioProfile() const;
@@ -81,6 +83,7 @@ private:
 	std::string lazy_;
 	std::string gop_;
 	std::string audioCodec_;
+	std::string regionId_;
 	std::string templateType_;
 	std::string audioProfile_;
 	int height_;

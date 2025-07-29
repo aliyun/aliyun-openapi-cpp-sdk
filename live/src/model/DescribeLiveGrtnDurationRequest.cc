@@ -34,6 +34,15 @@ void DescribeLiveGrtnDurationRequest::setStartTime(const std::string &startTime)
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveGrtnDurationRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveGrtnDurationRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveGrtnDurationRequest::getArea() const {
   return area_;
 }

@@ -43,6 +43,15 @@ void ModifyStudioLayoutRequest::setLayoutId(const std::string &layoutId) {
   setParameter(std::string("LayoutId"), layoutId);
 }
 
+std::string ModifyStudioLayoutRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyStudioLayoutRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyStudioLayoutRequest::getLayoutName() const {
   return layoutName_;
 }

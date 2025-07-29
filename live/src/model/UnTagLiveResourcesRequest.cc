@@ -25,6 +25,15 @@ UnTagLiveResourcesRequest::UnTagLiveResourcesRequest()
 
 UnTagLiveResourcesRequest::~UnTagLiveResourcesRequest() {}
 
+std::string UnTagLiveResourcesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UnTagLiveResourcesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 bool UnTagLiveResourcesRequest::getAll() const {
   return all_;
 }

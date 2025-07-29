@@ -25,6 +25,15 @@ DescribeLiveDelayConfigRequest::DescribeLiveDelayConfigRequest()
 
 DescribeLiveDelayConfigRequest::~DescribeLiveDelayConfigRequest() {}
 
+std::string DescribeLiveDelayConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDelayConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDelayConfigRequest::getStream() const {
   return stream_;
 }

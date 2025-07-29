@@ -30,12 +30,15 @@ class ALIBABACLOUD_LIVE_EXPORT StopPlaylistRequest : public RpcServiceRequest {
 public:
 	StopPlaylistRequest();
 	~StopPlaylistRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getProgramId() const;
 	void setProgramId(const std::string &programId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
 private:
+	std::string regionId_;
 	std::string programId_;
 	long ownerId_;
 };

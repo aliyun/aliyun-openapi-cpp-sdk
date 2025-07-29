@@ -43,6 +43,15 @@ void SetLiveLazyPullStreamInfoConfigRequest::setAppName(const std::string &appNa
   setParameter(std::string("AppName"), appName);
 }
 
+std::string SetLiveLazyPullStreamInfoConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SetLiveLazyPullStreamInfoConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SetLiveLazyPullStreamInfoConfigRequest::getLiveapiRequestFrom() const {
   return liveapiRequestFrom_;
 }

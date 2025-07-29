@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT SetLiveStreamPreloadTasksRequest : public RpcServ
 public:
 	SetLiveStreamPreloadTasksRequest();
 	~SetLiveStreamPreloadTasksRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getPreloadedStartTime() const;
 	void setPreloadedStartTime(const std::string &preloadedStartTime);
 	std::string getArea() const;
@@ -44,6 +46,7 @@ public:
 	void setPlayUrl(const std::string &playUrl);
 
 private:
+	std::string regionId_;
 	std::string preloadedStartTime_;
 	std::string area_;
 	std::string preloadedEndTime_;

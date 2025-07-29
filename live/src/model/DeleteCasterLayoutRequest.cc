@@ -34,6 +34,15 @@ void DeleteCasterLayoutRequest::setLayoutId(const std::string &layoutId) {
   setParameter(std::string("LayoutId"), layoutId);
 }
 
+std::string DeleteCasterLayoutRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteCasterLayoutRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteCasterLayoutRequest::getCasterId() const {
   return casterId_;
 }

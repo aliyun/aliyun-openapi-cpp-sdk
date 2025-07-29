@@ -36,11 +36,14 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 
 private:
 	std::string domainName_;
 	long ownerId_;
 	std::string appName_;
+	std::string regionId_;
 };
 } // namespace Model
 } // namespace Live

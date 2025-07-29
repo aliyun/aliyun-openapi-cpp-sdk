@@ -25,6 +25,15 @@ DeleteLiveStreamWatermarkRequest::DeleteLiveStreamWatermarkRequest()
 
 DeleteLiveStreamWatermarkRequest::~DeleteLiveStreamWatermarkRequest() {}
 
+std::string DeleteLiveStreamWatermarkRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveStreamWatermarkRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DeleteLiveStreamWatermarkRequest::getOwnerId() const {
   return ownerId_;
 }

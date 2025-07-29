@@ -25,6 +25,15 @@ UpdateCasterResourceGroupRequest::UpdateCasterResourceGroupRequest()
 
 UpdateCasterResourceGroupRequest::~UpdateCasterResourceGroupRequest() {}
 
+std::string UpdateCasterResourceGroupRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateCasterResourceGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpdateCasterResourceGroupRequest::getCasterId() const {
   return casterId_;
 }

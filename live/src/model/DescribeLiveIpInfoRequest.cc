@@ -25,6 +25,15 @@ DescribeLiveIpInfoRequest::DescribeLiveIpInfoRequest()
 
 DescribeLiveIpInfoRequest::~DescribeLiveIpInfoRequest() {}
 
+std::string DescribeLiveIpInfoRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveIpInfoRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveIpInfoRequest::getMethod() const {
   return method_;
 }

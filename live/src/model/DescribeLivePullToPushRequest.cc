@@ -25,6 +25,15 @@ DescribeLivePullToPushRequest::DescribeLivePullToPushRequest()
 
 DescribeLivePullToPushRequest::~DescribeLivePullToPushRequest() {}
 
+std::string DescribeLivePullToPushRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLivePullToPushRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLivePullToPushRequest::getTaskId() const {
   return taskId_;
 }

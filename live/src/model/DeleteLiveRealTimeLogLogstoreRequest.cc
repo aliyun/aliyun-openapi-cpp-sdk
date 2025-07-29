@@ -34,6 +34,15 @@ void DeleteLiveRealTimeLogLogstoreRequest::setProject(const std::string &project
   setParameter(std::string("Project"), project);
 }
 
+std::string DeleteLiveRealTimeLogLogstoreRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveRealTimeLogLogstoreRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DeleteLiveRealTimeLogLogstoreRequest::getOwnerId() const {
   return ownerId_;
 }

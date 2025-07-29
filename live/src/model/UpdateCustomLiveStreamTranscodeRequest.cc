@@ -70,6 +70,15 @@ void UpdateCustomLiveStreamTranscodeRequest::setAudioCodec(const std::string &au
   setParameter(std::string("AudioCodec"), audioCodec);
 }
 
+std::string UpdateCustomLiveStreamTranscodeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateCustomLiveStreamTranscodeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpdateCustomLiveStreamTranscodeRequest::getTemplateType() const {
   return templateType_;
 }

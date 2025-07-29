@@ -52,6 +52,15 @@ void DescribeLiveRecordNotifyRecordsRequest::setAppName(const std::string &appNa
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeLiveRecordNotifyRecordsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveRecordNotifyRecordsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeLiveRecordNotifyRecordsRequest::getPageSize() const {
   return pageSize_;
 }

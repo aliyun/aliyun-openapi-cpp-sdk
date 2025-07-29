@@ -34,6 +34,15 @@ void ForbidLiveStreamRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string ForbidLiveStreamRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ForbidLiveStreamRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ForbidLiveStreamRequest::getStreamName() const {
   return streamName_;
 }

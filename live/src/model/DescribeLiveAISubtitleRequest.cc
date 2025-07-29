@@ -43,6 +43,15 @@ void DescribeLiveAISubtitleRequest::setPageNumber(const std::string &pageNumber)
   setParameter(std::string("PageNumber"), pageNumber);
 }
 
+std::string DescribeLiveAISubtitleRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveAISubtitleRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveAISubtitleRequest::getPageSize() const {
   return pageSize_;
 }

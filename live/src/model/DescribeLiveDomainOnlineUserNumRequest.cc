@@ -34,6 +34,15 @@ void DescribeLiveDomainOnlineUserNumRequest::setQueryTime(const std::string &que
   setParameter(std::string("QueryTime"), queryTime);
 }
 
+std::string DescribeLiveDomainOnlineUserNumRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainOnlineUserNumRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainOnlineUserNumRequest::getDomainName() const {
   return domainName_;
 }

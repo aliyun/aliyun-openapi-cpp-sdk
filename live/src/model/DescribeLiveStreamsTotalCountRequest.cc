@@ -43,6 +43,15 @@ void DescribeLiveStreamsTotalCountRequest::setStartTime(const std::string &start
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveStreamsTotalCountRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamsTotalCountRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveStreamsTotalCountRequest::getDomainName() const {
   return domainName_;
 }

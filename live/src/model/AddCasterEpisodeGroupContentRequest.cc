@@ -43,6 +43,15 @@ void AddCasterEpisodeGroupContentRequest::setContent(const std::string &content)
   setParameter(std::string("Content"), content);
 }
 
+std::string AddCasterEpisodeGroupContentRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddCasterEpisodeGroupContentRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long AddCasterEpisodeGroupContentRequest::getOwnerId() const {
   return ownerId_;
 }

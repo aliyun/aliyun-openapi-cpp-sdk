@@ -34,6 +34,15 @@ void DeleteLivePackageConfigRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DeleteLivePackageConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLivePackageConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLivePackageConfigRequest::getStreamName() const {
   return streamName_;
 }

@@ -52,6 +52,8 @@ public:
 	void setMattingType(const std::string &mattingType);
 	std::string getMediaResourceUrl() const;
 	void setMediaResourceUrl(const std::string &mediaResourceUrl);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getHeight() const;
 	void setHeight(int height);
 	std::string getBackgroundResourceUrl() const;
@@ -76,6 +78,7 @@ private:
 	std::string backgroundType_;
 	std::string mattingType_;
 	std::string mediaResourceUrl_;
+	std::string regionId_;
 	int height_;
 	std::string backgroundResourceUrl_;
 	std::string mediaResourceId_;

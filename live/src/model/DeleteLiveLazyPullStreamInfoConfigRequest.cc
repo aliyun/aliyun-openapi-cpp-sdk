@@ -52,3 +52,12 @@ void DeleteLiveLazyPullStreamInfoConfigRequest::setAppName(const std::string &ap
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DeleteLiveLazyPullStreamInfoConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveLazyPullStreamInfoConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+

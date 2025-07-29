@@ -32,6 +32,8 @@ public:
 	~StartPlaylistRequest();
 	std::string getResumeMode() const;
 	void setResumeMode(const std::string &resumeMode);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStartItemId() const;
 	void setStartItemId(const std::string &startItemId);
 	std::string getProgramId() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string resumeMode_;
+	std::string regionId_;
 	std::string startItemId_;
 	std::string programId_;
 	int offset_;

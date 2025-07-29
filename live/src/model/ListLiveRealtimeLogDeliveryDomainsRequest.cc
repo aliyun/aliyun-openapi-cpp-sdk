@@ -34,6 +34,15 @@ void ListLiveRealtimeLogDeliveryDomainsRequest::setProject(const std::string &pr
   setParameter(std::string("Project"), project);
 }
 
+std::string ListLiveRealtimeLogDeliveryDomainsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListLiveRealtimeLogDeliveryDomainsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long ListLiveRealtimeLogDeliveryDomainsRequest::getOwnerId() const {
   return ownerId_;
 }

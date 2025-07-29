@@ -32,6 +32,8 @@ public:
 	~DescribeLiveTopDomainsByFlowRequest();
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getLimit() const;
 	void setLimit(long limit);
 	std::string getEndTime() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	std::string startTime_;
+	std::string regionId_;
 	long limit_;
 	std::string endTime_;
 	long ownerId_;

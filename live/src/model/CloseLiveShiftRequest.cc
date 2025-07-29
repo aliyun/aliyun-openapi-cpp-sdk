@@ -34,6 +34,15 @@ void CloseLiveShiftRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string CloseLiveShiftRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CloseLiveShiftRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CloseLiveShiftRequest::getStreamName() const {
   return streamName_;
 }

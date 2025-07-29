@@ -61,6 +61,15 @@ void ModifyCasterVideoResourceRequest::setMaterialId(const std::string &material
   setParameter(std::string("MaterialId"), materialId);
 }
 
+std::string ModifyCasterVideoResourceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyCasterVideoResourceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyCasterVideoResourceRequest::getResourceId() const {
   return resourceId_;
 }

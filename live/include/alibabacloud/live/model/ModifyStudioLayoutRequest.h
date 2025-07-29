@@ -34,6 +34,8 @@ public:
 	void setScreenInputConfigList(const std::string &screenInputConfigList);
 	std::string getLayoutId() const;
 	void setLayoutId(const std::string &layoutId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getLayoutName() const;
 	void setLayoutName(const std::string &layoutName);
 	std::string getLayerOrderConfigList() const;
@@ -52,6 +54,7 @@ public:
 private:
 	std::string screenInputConfigList_;
 	std::string layoutId_;
+	std::string regionId_;
 	std::string layoutName_;
 	std::string layerOrderConfigList_;
 	std::string mediaInputConfigList_;

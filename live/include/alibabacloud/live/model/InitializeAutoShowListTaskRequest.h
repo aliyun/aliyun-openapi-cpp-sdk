@@ -32,6 +32,8 @@ public:
 	~InitializeAutoShowListTaskRequest();
 	long getStartTime() const;
 	void setStartTime(long startTime);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterConfig() const;
 	void setCasterConfig(const std::string &casterConfig);
 	std::string getDomainName() const;
@@ -47,6 +49,7 @@ public:
 
 private:
 	long startTime_;
+	std::string regionId_;
 	std::string casterConfig_;
 	std::string domainName_;
 	long endTime_;

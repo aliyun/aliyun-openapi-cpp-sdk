@@ -36,6 +36,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getScene() const;
 	void setScene(const std::string &scene);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStream() const;
 	void setStream(const std::string &stream);
 	std::string getSplitBy() const;
@@ -55,6 +57,7 @@ private:
 	std::string fee_;
 	std::string startTime_;
 	std::string scene_;
+	std::string regionId_;
 	std::string stream_;
 	std::string splitBy_;
 	std::string app_;

@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT ListPlaylistRequest : public RpcServiceRequest {
 public:
 	ListPlaylistRequest();
 	~ListPlaylistRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getProgramId() const;
@@ -40,6 +42,7 @@ public:
 	void setPage(int page);
 
 private:
+	std::string regionId_;
 	int pageSize_;
 	std::string programId_;
 	long ownerId_;

@@ -25,6 +25,15 @@ StopRtcAsrTaskRequest::StopRtcAsrTaskRequest()
 
 StopRtcAsrTaskRequest::~StopRtcAsrTaskRequest() {}
 
+std::string StopRtcAsrTaskRequest::getRegionId() const {
+  return regionId_;
+}
+
+void StopRtcAsrTaskRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string StopRtcAsrTaskRequest::getTaskId() const {
   return taskId_;
 }

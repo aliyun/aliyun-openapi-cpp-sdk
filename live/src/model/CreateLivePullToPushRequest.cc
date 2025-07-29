@@ -70,6 +70,15 @@ void CreateLivePullToPushRequest::setRepeatNumber(int repeatNumber) {
   setParameter(std::string("RepeatNumber"), std::to_string(repeatNumber));
 }
 
+std::string CreateLivePullToPushRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateLivePullToPushRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateLivePullToPushRequest::getSourceProtocol() const {
   return sourceProtocol_;
 }

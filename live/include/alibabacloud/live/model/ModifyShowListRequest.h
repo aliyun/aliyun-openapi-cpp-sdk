@@ -34,6 +34,8 @@ public:
 	void setRepeatTimes(int repeatTimes);
 	std::string getHighPriorityShowStartTime() const;
 	void setHighPriorityShowStartTime(const std::string &highPriorityShowStartTime);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterId() const;
 	void setCasterId(const std::string &casterId);
 	std::string getHighPriorityShowId() const;
@@ -48,6 +50,7 @@ public:
 private:
 	int repeatTimes_;
 	std::string highPriorityShowStartTime_;
+	std::string regionId_;
 	std::string casterId_;
 	std::string highPriorityShowId_;
 	long ownerId_;

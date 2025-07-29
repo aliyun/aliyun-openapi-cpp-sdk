@@ -58,6 +58,8 @@ public:
 	void setLazy(const std::string &lazy);
 	std::string getKmsKeyExpireInterval() const;
 	void setKmsKeyExpireInterval(const std::string &kmsKeyExpireInterval);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getTemplateType() const;
 	void setTemplateType(const std::string &templateType);
 	std::string getAudioProfile() const;
@@ -96,6 +98,7 @@ private:
 	std::string _template_;
 	std::string lazy_;
 	std::string kmsKeyExpireInterval_;
+	std::string regionId_;
 	std::string templateType_;
 	std::string audioProfile_;
 	std::string encryptParameters_;

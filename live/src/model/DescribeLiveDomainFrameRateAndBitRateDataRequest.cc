@@ -34,6 +34,15 @@ void DescribeLiveDomainFrameRateAndBitRateDataRequest::setQueryTime(const std::s
   setParameter(std::string("QueryTime"), queryTime);
 }
 
+std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainFrameRateAndBitRateDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getDomainName() const {
   return domainName_;
 }

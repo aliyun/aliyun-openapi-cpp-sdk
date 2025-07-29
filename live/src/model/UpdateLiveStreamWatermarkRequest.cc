@@ -52,6 +52,15 @@ void UpdateLiveStreamWatermarkRequest::setDescription(const std::string &descrip
   setParameter(std::string("Description"), description);
 }
 
+std::string UpdateLiveStreamWatermarkRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateLiveStreamWatermarkRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int UpdateLiveStreamWatermarkRequest::getHeight() const {
   return height_;
 }

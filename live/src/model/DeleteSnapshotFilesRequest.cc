@@ -43,6 +43,15 @@ void DeleteSnapshotFilesRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DeleteSnapshotFilesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteSnapshotFilesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteSnapshotFilesRequest::getStreamName() const {
   return streamName_;
 }

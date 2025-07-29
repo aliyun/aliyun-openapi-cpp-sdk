@@ -61,6 +61,15 @@ void SetLiveStreamBlockRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string SetLiveStreamBlockRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SetLiveStreamBlockRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SetLiveStreamBlockRequest::getStreamName() const {
   return streamName_;
 }

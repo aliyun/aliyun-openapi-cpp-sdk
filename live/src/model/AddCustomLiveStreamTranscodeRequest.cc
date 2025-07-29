@@ -151,6 +151,15 @@ void AddCustomLiveStreamTranscodeRequest::setKmsKeyExpireInterval(const std::str
   setParameter(std::string("KmsKeyExpireInterval"), kmsKeyExpireInterval);
 }
 
+std::string AddCustomLiveStreamTranscodeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddCustomLiveStreamTranscodeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddCustomLiveStreamTranscodeRequest::getTemplateType() const {
   return templateType_;
 }

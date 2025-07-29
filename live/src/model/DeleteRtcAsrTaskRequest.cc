@@ -25,6 +25,15 @@ DeleteRtcAsrTaskRequest::DeleteRtcAsrTaskRequest()
 
 DeleteRtcAsrTaskRequest::~DeleteRtcAsrTaskRequest() {}
 
+std::string DeleteRtcAsrTaskRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteRtcAsrTaskRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteRtcAsrTaskRequest::getTaskId() const {
   return taskId_;
 }

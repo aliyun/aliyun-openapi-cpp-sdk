@@ -89,6 +89,15 @@ void AddShowIntoShowListRequest::setShowName(const std::string &showName) {
   setParameter(std::string("ShowName"), showName);
 }
 
+std::string AddShowIntoShowListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddShowIntoShowListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddShowIntoShowListRequest::getResourceId() const {
   return resourceId_;
 }

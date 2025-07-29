@@ -42,6 +42,15 @@ void ModifyCasterLayoutRequest::setLayoutId(const std::string &layoutId) {
   setParameter(std::string("LayoutId"), layoutId);
 }
 
+std::string ModifyCasterLayoutRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyCasterLayoutRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyCasterLayoutRequest::getCasterId() const {
   return casterId_;
 }

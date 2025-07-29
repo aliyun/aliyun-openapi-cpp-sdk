@@ -52,6 +52,15 @@ void DescribeLiveDomainEdgeLogRequest::setLogType(const std::string &logType) {
   setParameter(std::string("LogType"), logType);
 }
 
+std::string DescribeLiveDomainEdgeLogRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainEdgeLogRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeLiveDomainEdgeLogRequest::getPageSize() const {
   return pageSize_;
 }

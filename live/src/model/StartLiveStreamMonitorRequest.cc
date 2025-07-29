@@ -34,6 +34,15 @@ void StartLiveStreamMonitorRequest::setMonitorId(const std::string &monitorId) {
   setParameter(std::string("MonitorId"), monitorId);
 }
 
+std::string StartLiveStreamMonitorRequest::getRegionId() const {
+  return regionId_;
+}
+
+void StartLiveStreamMonitorRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long StartLiveStreamMonitorRequest::getOwnerId() const {
   return ownerId_;
 }

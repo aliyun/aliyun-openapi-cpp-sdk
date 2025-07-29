@@ -34,6 +34,15 @@ void DeleteLiveStreamMergeRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DeleteLiveStreamMergeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveStreamMergeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveStreamMergeRequest::getStreamName() const {
   return streamName_;
 }

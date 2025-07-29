@@ -34,6 +34,15 @@ void InitializeAutoShowListTaskRequest::setStartTime(long startTime) {
   setParameter(std::string("StartTime"), std::to_string(startTime));
 }
 
+std::string InitializeAutoShowListTaskRequest::getRegionId() const {
+  return regionId_;
+}
+
+void InitializeAutoShowListTaskRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string InitializeAutoShowListTaskRequest::getCasterConfig() const {
   return casterConfig_;
 }

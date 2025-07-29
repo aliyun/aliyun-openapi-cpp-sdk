@@ -34,6 +34,8 @@ public:
 	void set_Template(const std::string &_template);
 	std::string getLazy() const;
 	void setLazy(const std::string &lazy);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getMix() const;
 	void setMix(const std::string &mix);
 	std::string getApp() const;
@@ -54,6 +56,7 @@ public:
 private:
 	std::string _template_;
 	std::string lazy_;
+	std::string regionId_;
 	std::string mix_;
 	std::string app_;
 	std::string encryptParameters_;

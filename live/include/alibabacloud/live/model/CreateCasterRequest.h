@@ -38,6 +38,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterName() const;
 	void setCasterName(const std::string &casterName);
 	std::vector<Tag> getTag() const;
@@ -60,6 +62,7 @@ public:
 private:
 	std::string clientToken_;
 	std::string resourceGroupId_;
+	std::string regionId_;
 	std::string casterName_;
 	std::vector<Tag> tag_;
 	std::string casterTemplate_;

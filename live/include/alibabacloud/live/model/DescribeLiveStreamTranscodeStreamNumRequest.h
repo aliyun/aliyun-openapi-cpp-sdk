@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStreamTranscodeStreamNumRequest : pub
 public:
 	DescribeLiveStreamTranscodeStreamNumRequest();
 	~DescribeLiveStreamTranscodeStreamNumRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	long getOwnerId() const;
@@ -38,6 +40,7 @@ public:
 	void setSplitType(const std::string &splitType);
 
 private:
+	std::string regionId_;
 	std::string domainName_;
 	long ownerId_;
 	std::string splitType_;

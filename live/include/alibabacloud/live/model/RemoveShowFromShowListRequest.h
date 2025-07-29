@@ -32,6 +32,8 @@ public:
 	~RemoveShowFromShowListRequest();
 	bool getIsBatchMode() const;
 	void setIsBatchMode(bool isBatchMode);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::vector<std::string> getShowIdList() const;
 	void setShowIdList(const std::vector<std::string> &showIdList);
 	std::string getCasterId() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	bool isBatchMode_;
+	std::string regionId_;
 	std::vector<std::string> showIdList_;
 	std::string casterId_;
 	long ownerId_;

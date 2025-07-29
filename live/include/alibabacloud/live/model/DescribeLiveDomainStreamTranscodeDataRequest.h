@@ -36,6 +36,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getSplit() const;
 	void setSplit(const std::string &split);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	std::string getEndTime() const;
@@ -49,6 +51,7 @@ private:
 	std::string precision_;
 	std::string startTime_;
 	std::string split_;
+	std::string regionId_;
 	std::string domainName_;
 	std::string endTime_;
 	long ownerId_;

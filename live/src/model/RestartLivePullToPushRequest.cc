@@ -25,6 +25,15 @@ RestartLivePullToPushRequest::RestartLivePullToPushRequest()
 
 RestartLivePullToPushRequest::~RestartLivePullToPushRequest() {}
 
+std::string RestartLivePullToPushRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RestartLivePullToPushRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string RestartLivePullToPushRequest::getTaskId() const {
   return taskId_;
 }

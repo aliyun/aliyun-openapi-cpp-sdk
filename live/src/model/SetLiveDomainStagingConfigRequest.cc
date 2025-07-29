@@ -34,6 +34,15 @@ void SetLiveDomainStagingConfigRequest::setFunctions(const std::string &function
   setParameter(std::string("Functions"), functions);
 }
 
+std::string SetLiveDomainStagingConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SetLiveDomainStagingConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SetLiveDomainStagingConfigRequest::getDomainName() const {
   return domainName_;
 }

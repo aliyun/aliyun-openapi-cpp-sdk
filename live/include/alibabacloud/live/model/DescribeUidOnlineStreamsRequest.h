@@ -32,6 +32,8 @@ public:
 	~DescribeUidOnlineStreamsRequest();
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	long getOwnerId() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string appName_;
+	std::string regionId_;
 	std::string domainName_;
 	long ownerId_;
 };

@@ -34,6 +34,15 @@ void DescribeLiveDomainRecordUsageDataRequest::setStartTime(const std::string &s
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveDomainRecordUsageDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainRecordUsageDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainRecordUsageDataRequest::getSplitBy() const {
   return splitBy_;
 }

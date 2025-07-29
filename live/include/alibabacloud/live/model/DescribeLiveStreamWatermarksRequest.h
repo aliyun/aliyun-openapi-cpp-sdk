@@ -32,6 +32,8 @@ public:
 	~DescribeLiveStreamWatermarksRequest();
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getKeyWord() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	int pageNumber_;
+	std::string regionId_;
 	int pageSize_;
 	std::string keyWord_;
 	long ownerId_;

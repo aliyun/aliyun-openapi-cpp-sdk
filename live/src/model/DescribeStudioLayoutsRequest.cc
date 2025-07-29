@@ -34,6 +34,15 @@ void DescribeStudioLayoutsRequest::setLayoutId(const std::string &layoutId) {
   setParameter(std::string("LayoutId"), layoutId);
 }
 
+std::string DescribeStudioLayoutsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeStudioLayoutsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeStudioLayoutsRequest::getCasterId() const {
   return casterId_;
 }

@@ -34,6 +34,15 @@ void DescribeLivePushProxyUsageDataRequest::setStartTime(const std::string &star
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLivePushProxyUsageDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLivePushProxyUsageDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLivePushProxyUsageDataRequest::getSplitBy() const {
   return splitBy_;
 }

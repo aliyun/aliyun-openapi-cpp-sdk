@@ -34,6 +34,15 @@ void RealTimeRecordCommandRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string RealTimeRecordCommandRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RealTimeRecordCommandRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string RealTimeRecordCommandRequest::getStreamName() const {
   return streamName_;
 }

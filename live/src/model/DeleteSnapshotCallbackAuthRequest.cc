@@ -25,6 +25,15 @@ DeleteSnapshotCallbackAuthRequest::DeleteSnapshotCallbackAuthRequest()
 
 DeleteSnapshotCallbackAuthRequest::~DeleteSnapshotCallbackAuthRequest() {}
 
+std::string DeleteSnapshotCallbackAuthRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteSnapshotCallbackAuthRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteSnapshotCallbackAuthRequest::getDomainName() const {
   return domainName_;
 }

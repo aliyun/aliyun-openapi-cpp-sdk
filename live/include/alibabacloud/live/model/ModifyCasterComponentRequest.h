@@ -34,6 +34,8 @@ public:
 	void setImageLayerContent(const std::string &imageLayerContent);
 	std::string getComponentName() const;
 	void setComponentName(const std::string &componentName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getComponentId() const;
 	void setComponentId(const std::string &componentId);
 	std::string getCasterId() const;
@@ -54,6 +56,7 @@ public:
 private:
 	std::string imageLayerContent_;
 	std::string componentName_;
+	std::string regionId_;
 	std::string componentId_;
 	std::string casterId_;
 	std::string componentLayer_;

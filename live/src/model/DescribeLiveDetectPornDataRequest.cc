@@ -52,6 +52,15 @@ void DescribeLiveDetectPornDataRequest::setScene(const std::string &scene) {
   setParameter(std::string("Scene"), scene);
 }
 
+std::string DescribeLiveDetectPornDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDetectPornDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDetectPornDataRequest::getStream() const {
   return stream_;
 }

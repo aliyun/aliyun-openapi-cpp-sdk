@@ -25,6 +25,15 @@ DisableLiveRealtimeLogDeliveryRequest::DisableLiveRealtimeLogDeliveryRequest()
 
 DisableLiveRealtimeLogDeliveryRequest::~DisableLiveRealtimeLogDeliveryRequest() {}
 
+std::string DisableLiveRealtimeLogDeliveryRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DisableLiveRealtimeLogDeliveryRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DisableLiveRealtimeLogDeliveryRequest::getDomainName() const {
   return domainName_;
 }

@@ -25,6 +25,15 @@ DescribeLiveDomainMappingRequest::DescribeLiveDomainMappingRequest()
 
 DescribeLiveDomainMappingRequest::~DescribeLiveDomainMappingRequest() {}
 
+std::string DescribeLiveDomainMappingRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainMappingRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainMappingRequest::getDomainName() const {
   return domainName_;
 }

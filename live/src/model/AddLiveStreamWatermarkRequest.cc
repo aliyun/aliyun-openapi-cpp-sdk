@@ -61,6 +61,15 @@ void AddLiveStreamWatermarkRequest::setType(int type) {
   setParameter(std::string("Type"), std::to_string(type));
 }
 
+std::string AddLiveStreamWatermarkRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddLiveStreamWatermarkRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int AddLiveStreamWatermarkRequest::getHeight() const {
   return height_;
 }

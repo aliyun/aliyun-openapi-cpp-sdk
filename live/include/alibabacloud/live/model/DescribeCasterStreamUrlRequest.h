@@ -30,12 +30,15 @@ class ALIBABACLOUD_LIVE_EXPORT DescribeCasterStreamUrlRequest : public RpcServic
 public:
 	DescribeCasterStreamUrlRequest();
 	~DescribeCasterStreamUrlRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterId() const;
 	void setCasterId(const std::string &casterId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
 private:
+	std::string regionId_;
 	std::string casterId_;
 	long ownerId_;
 };

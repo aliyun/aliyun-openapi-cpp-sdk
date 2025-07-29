@@ -43,6 +43,15 @@ void DescribeLiveRealtimeDeliveryAccRequest::setStartTime(const std::string &sta
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveRealtimeDeliveryAccRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveRealtimeDeliveryAccRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveRealtimeDeliveryAccRequest::getDomainName() const {
   return domainName_;
 }

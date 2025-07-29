@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT UpdateLiveAudioAuditNotifyConfigRequest : public 
 public:
 	UpdateLiveAudioAuditNotifyConfigRequest();
 	~UpdateLiveAudioAuditNotifyConfigRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	long getOwnerId() const;
@@ -40,6 +42,7 @@ public:
 	void setCallback(const std::string &callback);
 
 private:
+	std::string regionId_;
 	std::string domainName_;
 	long ownerId_;
 	std::string callbackTemplate_;

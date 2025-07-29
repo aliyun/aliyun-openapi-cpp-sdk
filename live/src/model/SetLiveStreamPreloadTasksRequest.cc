@@ -25,6 +25,15 @@ SetLiveStreamPreloadTasksRequest::SetLiveStreamPreloadTasksRequest()
 
 SetLiveStreamPreloadTasksRequest::~SetLiveStreamPreloadTasksRequest() {}
 
+std::string SetLiveStreamPreloadTasksRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SetLiveStreamPreloadTasksRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SetLiveStreamPreloadTasksRequest::getPreloadedStartTime() const {
   return preloadedStartTime_;
 }

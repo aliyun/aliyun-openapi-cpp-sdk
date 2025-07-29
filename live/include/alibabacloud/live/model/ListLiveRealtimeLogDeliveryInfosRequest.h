@@ -30,12 +30,15 @@ class ALIBABACLOUD_LIVE_EXPORT ListLiveRealtimeLogDeliveryInfosRequest : public 
 public:
 	ListLiveRealtimeLogDeliveryInfosRequest();
 	~ListLiveRealtimeLogDeliveryInfosRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getLiveOpenapiReserve() const;
 	void setLiveOpenapiReserve(const std::string &liveOpenapiReserve);
 
 private:
+	std::string regionId_;
 	long ownerId_;
 	std::string liveOpenapiReserve_;
 };

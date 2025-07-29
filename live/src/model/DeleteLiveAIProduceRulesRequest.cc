@@ -25,6 +25,15 @@ DeleteLiveAIProduceRulesRequest::DeleteLiveAIProduceRulesRequest()
 
 DeleteLiveAIProduceRulesRequest::~DeleteLiveAIProduceRulesRequest() {}
 
+std::string DeleteLiveAIProduceRulesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveAIProduceRulesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveAIProduceRulesRequest::getRulesId() const {
   return rulesId_;
 }

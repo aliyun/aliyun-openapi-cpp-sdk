@@ -70,6 +70,15 @@ void UpdateLiveAISubtitleRequest::setFontSizeNormalized(float fontSizeNormalized
   setParameter(std::string("FontSizeNormalized"), std::to_string(fontSizeNormalized));
 }
 
+std::string UpdateLiveAISubtitleRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateLiveAISubtitleRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpdateLiveAISubtitleRequest::getFontColor() const {
   return fontColor_;
 }

@@ -25,6 +25,15 @@ DescribeLiveStreamCountRequest::DescribeLiveStreamCountRequest()
 
 DescribeLiveStreamCountRequest::~DescribeLiveStreamCountRequest() {}
 
+std::string DescribeLiveStreamCountRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamCountRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveStreamCountRequest::getDomainName() const {
   return domainName_;
 }

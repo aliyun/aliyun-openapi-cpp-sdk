@@ -25,6 +25,15 @@ DeleteCasterVideoResourceRequest::DeleteCasterVideoResourceRequest()
 
 DeleteCasterVideoResourceRequest::~DeleteCasterVideoResourceRequest() {}
 
+std::string DeleteCasterVideoResourceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteCasterVideoResourceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteCasterVideoResourceRequest::getResourceId() const {
   return resourceId_;
 }

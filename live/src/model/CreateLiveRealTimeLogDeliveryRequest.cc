@@ -34,6 +34,15 @@ void CreateLiveRealTimeLogDeliveryRequest::setProject(const std::string &project
   setParameter(std::string("Project"), project);
 }
 
+std::string CreateLiveRealTimeLogDeliveryRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateLiveRealTimeLogDeliveryRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CreateLiveRealTimeLogDeliveryRequest::getDomainName() const {
   return domainName_;
 }

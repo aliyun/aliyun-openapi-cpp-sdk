@@ -32,6 +32,8 @@ public:
 	~DescribeLiveStreamTranscodeInfoRequest();
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getDomainTranscodeName() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string appName_;
+	std::string regionId_;
 	long ownerId_;
 	std::string domainTranscodeName_;
 };

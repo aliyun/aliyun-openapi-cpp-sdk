@@ -25,6 +25,15 @@ DescribeLiveEdgeTransferRequest::DescribeLiveEdgeTransferRequest()
 
 DescribeLiveEdgeTransferRequest::~DescribeLiveEdgeTransferRequest() {}
 
+std::string DescribeLiveEdgeTransferRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveEdgeTransferRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveEdgeTransferRequest::getDomainName() const {
   return domainName_;
 }

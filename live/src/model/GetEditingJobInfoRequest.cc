@@ -25,6 +25,15 @@ GetEditingJobInfoRequest::GetEditingJobInfoRequest()
 
 GetEditingJobInfoRequest::~GetEditingJobInfoRequest() {}
 
+std::string GetEditingJobInfoRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetEditingJobInfoRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string GetEditingJobInfoRequest::getCasterId() const {
   return casterId_;
 }

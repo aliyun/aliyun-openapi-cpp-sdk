@@ -34,6 +34,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	std::string getEndTime() const;
@@ -44,6 +46,7 @@ public:
 private:
 	std::string startTime_;
 	std::string appName_;
+	std::string regionId_;
 	std::string domainName_;
 	std::string endTime_;
 	long ownerId_;

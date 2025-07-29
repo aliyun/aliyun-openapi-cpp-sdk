@@ -25,6 +25,15 @@ StopCasterSceneRequest::StopCasterSceneRequest()
 
 StopCasterSceneRequest::~StopCasterSceneRequest() {}
 
+std::string StopCasterSceneRequest::getRegionId() const {
+  return regionId_;
+}
+
+void StopCasterSceneRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string StopCasterSceneRequest::getCasterId() const {
   return casterId_;
 }

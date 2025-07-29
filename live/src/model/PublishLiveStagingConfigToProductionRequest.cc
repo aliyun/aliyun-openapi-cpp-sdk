@@ -25,6 +25,15 @@ PublishLiveStagingConfigToProductionRequest::PublishLiveStagingConfigToProductio
 
 PublishLiveStagingConfigToProductionRequest::~PublishLiveStagingConfigToProductionRequest() {}
 
+std::string PublishLiveStagingConfigToProductionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void PublishLiveStagingConfigToProductionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string PublishLiveStagingConfigToProductionRequest::getFunctionName() const {
   return functionName_;
 }

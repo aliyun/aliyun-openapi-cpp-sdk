@@ -34,6 +34,15 @@ void DescribeLiveUserBillPredictionRequest::setStartTime(const std::string &star
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveUserBillPredictionRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveUserBillPredictionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveUserBillPredictionRequest::getEndTime() const {
   return endTime_;
 }

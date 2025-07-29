@@ -32,6 +32,8 @@ public:
 	~CopyCasterRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterName() const;
 	void setCasterName(const std::string &casterName);
 	std::string getSrcCasterId() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	std::string clientToken_;
+	std::string regionId_;
 	std::string casterName_;
 	std::string srcCasterId_;
 	long ownerId_;

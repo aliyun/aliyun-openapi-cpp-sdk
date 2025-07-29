@@ -52,6 +52,15 @@ void DescribeLiveDomainRealTimeBpsDataRequest::setStartTime(const std::string &s
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeLiveDomainRealTimeBpsDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainRealTimeBpsDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainRealTimeBpsDataRequest::getDomainName() const {
   return domainName_;
 }

@@ -34,6 +34,8 @@ public:
 	void setEpisodeName(const std::string &episodeName);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	std::vector<std::string> getComponentId() const;
@@ -52,6 +54,7 @@ public:
 private:
 	std::string episodeName_;
 	std::string startTime_;
+	std::string regionId_;
 	std::string resourceId_;
 	std::vector<std::string> componentId_;
 	std::string casterId_;

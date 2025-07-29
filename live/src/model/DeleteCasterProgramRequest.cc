@@ -25,6 +25,15 @@ DeleteCasterProgramRequest::DeleteCasterProgramRequest()
 
 DeleteCasterProgramRequest::~DeleteCasterProgramRequest() {}
 
+std::string DeleteCasterProgramRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteCasterProgramRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteCasterProgramRequest::getCasterId() const {
   return casterId_;
 }

@@ -43,6 +43,15 @@ void AddLivePullStreamInfoConfigRequest::setAppName(const std::string &appName) 
   setParameter(std::string("AppName"), appName);
 }
 
+std::string AddLivePullStreamInfoConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddLivePullStreamInfoConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddLivePullStreamInfoConfigRequest::getStreamName() const {
   return streamName_;
 }

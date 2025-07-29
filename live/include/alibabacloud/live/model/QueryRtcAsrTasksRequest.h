@@ -30,12 +30,15 @@ class ALIBABACLOUD_LIVE_EXPORT QueryRtcAsrTasksRequest : public RpcServiceReques
 public:
 	QueryRtcAsrTasksRequest();
 	~QueryRtcAsrTasksRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getTaskId() const;
 	void setTaskId(const std::string &taskId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
 private:
+	std::string regionId_;
 	std::string taskId_;
 	long ownerId_;
 };

@@ -34,6 +34,15 @@ void DescribeLiveStreamStateRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeLiveStreamStateRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamStateRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveStreamStateRequest::getStreamName() const {
   return streamName_;
 }

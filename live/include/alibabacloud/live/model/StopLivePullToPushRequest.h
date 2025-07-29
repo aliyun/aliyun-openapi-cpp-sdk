@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT StopLivePullToPushRequest : public RpcServiceRequ
 public:
 	StopLivePullToPushRequest();
 	~StopLivePullToPushRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getTaskId() const;
 	void setTaskId(const std::string &taskId);
 	long getOwnerId() const;
@@ -38,6 +40,7 @@ public:
 	void setRegion(const std::string &region);
 
 private:
+	std::string regionId_;
 	std::string taskId_;
 	long ownerId_;
 	std::string region_;

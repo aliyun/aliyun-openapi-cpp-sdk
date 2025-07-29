@@ -34,6 +34,15 @@ void VerifyLiveDomainOwnerRequest::setVerifyType(const std::string &verifyType) 
   setParameter(std::string("VerifyType"), verifyType);
 }
 
+std::string VerifyLiveDomainOwnerRequest::getRegionId() const {
+  return regionId_;
+}
+
+void VerifyLiveDomainOwnerRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string VerifyLiveDomainOwnerRequest::getDomainName() const {
   return domainName_;
 }

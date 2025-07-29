@@ -25,6 +25,15 @@ RollbackLiveStagingConfigRequest::RollbackLiveStagingConfigRequest()
 
 RollbackLiveStagingConfigRequest::~RollbackLiveStagingConfigRequest() {}
 
+std::string RollbackLiveStagingConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RollbackLiveStagingConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string RollbackLiveStagingConfigRequest::getFunctionName() const {
   return functionName_;
 }

@@ -52,6 +52,15 @@ void SetCasterChannelRequest::setPlayStatus(int playStatus) {
   setParameter(std::string("PlayStatus"), std::to_string(playStatus));
 }
 
+std::string SetCasterChannelRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SetCasterChannelRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SetCasterChannelRequest::getResourceId() const {
   return resourceId_;
 }

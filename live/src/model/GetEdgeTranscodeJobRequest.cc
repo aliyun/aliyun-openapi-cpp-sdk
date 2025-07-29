@@ -34,6 +34,15 @@ void GetEdgeTranscodeJobRequest::setJobId(const std::string &jobId) {
   setParameter(std::string("JobId"), jobId);
 }
 
+std::string GetEdgeTranscodeJobRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetEdgeTranscodeJobRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string GetEdgeTranscodeJobRequest::getClusterId() const {
   return clusterId_;
 }

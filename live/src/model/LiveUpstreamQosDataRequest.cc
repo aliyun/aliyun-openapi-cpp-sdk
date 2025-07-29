@@ -52,6 +52,15 @@ void LiveUpstreamQosDataRequest::setCdnProvinces(const std::string &cdnProvinces
   setParameter(std::string("CdnProvinces"), cdnProvinces);
 }
 
+std::string LiveUpstreamQosDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void LiveUpstreamQosDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string LiveUpstreamQosDataRequest::getKwaiSidcs() const {
   return kwaiSidcs_;
 }

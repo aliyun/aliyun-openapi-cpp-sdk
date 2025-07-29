@@ -52,6 +52,15 @@ void DescribeLiveDomainRealTimeTrafficDataRequest::setIspNameEn(const std::strin
   setParameter(std::string("IspNameEn"), ispNameEn);
 }
 
+std::string DescribeLiveDomainRealTimeTrafficDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainRealTimeTrafficDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainRealTimeTrafficDataRequest::getDomainName() const {
   return domainName_;
 }

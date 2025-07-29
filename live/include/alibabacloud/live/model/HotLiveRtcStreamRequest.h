@@ -40,6 +40,8 @@ public:
 	void setAppName(const std::string &appName);
 	std::string getAudioMsid() const;
 	void setAudioMsid(const std::string &audioMsid);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getMediaTimeout() const;
 	void setMediaTimeout(const std::string &mediaTimeout);
 	std::string getStreamName() const;
@@ -55,6 +57,7 @@ private:
 	std::string connectionTimeout_;
 	std::string appName_;
 	std::string audioMsid_;
+	std::string regionId_;
 	std::string mediaTimeout_;
 	std::string streamName_;
 	std::string domainName_;

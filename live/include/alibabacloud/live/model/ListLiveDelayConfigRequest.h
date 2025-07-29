@@ -32,6 +32,8 @@ public:
 	~ListLiveDelayConfigRequest();
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	long getOwnerId() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	int pageNum_;
+	std::string regionId_;
 	int pageSize_;
 	long ownerId_;
 	std::string domain_;

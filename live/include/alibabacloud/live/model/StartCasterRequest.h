@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT StartCasterRequest : public RpcServiceRequest {
 public:
 	StartCasterRequest();
 	~StartCasterRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPlayerType() const;
 	void setPlayerType(int playerType);
 	std::string getCasterId() const;
@@ -38,6 +40,7 @@ public:
 	void setOwnerId(long ownerId);
 
 private:
+	std::string regionId_;
 	int playerType_;
 	std::string casterId_;
 	long ownerId_;

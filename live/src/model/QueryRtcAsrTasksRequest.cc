@@ -25,6 +25,15 @@ QueryRtcAsrTasksRequest::QueryRtcAsrTasksRequest()
 
 QueryRtcAsrTasksRequest::~QueryRtcAsrTasksRequest() {}
 
+std::string QueryRtcAsrTasksRequest::getRegionId() const {
+  return regionId_;
+}
+
+void QueryRtcAsrTasksRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string QueryRtcAsrTasksRequest::getTaskId() const {
   return taskId_;
 }

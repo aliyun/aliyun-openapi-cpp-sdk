@@ -43,6 +43,15 @@ void DescribeCasterProgramRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
+std::string DescribeCasterProgramRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeCasterProgramRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeCasterProgramRequest::getPageSize() const {
   return pageSize_;
 }

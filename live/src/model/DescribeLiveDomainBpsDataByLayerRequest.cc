@@ -61,6 +61,15 @@ void DescribeLiveDomainBpsDataByLayerRequest::setLayer(const std::string &layer)
   setParameter(std::string("Layer"), layer);
 }
 
+std::string DescribeLiveDomainBpsDataByLayerRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainBpsDataByLayerRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainBpsDataByLayerRequest::getDomainName() const {
   return domainName_;
 }

@@ -40,6 +40,8 @@ public:
 	void setSubtitleName(const std::string &subtitleName);
 	float getFontSizeNormalized() const;
 	void setFontSizeNormalized(float fontSizeNormalized);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getFontColor() const;
 	void setFontColor(const std::string &fontColor);
 	bool getShowSourceLan() const;
@@ -73,6 +75,7 @@ private:
 	std::string fontName_;
 	std::string subtitleName_;
 	float fontSizeNormalized_;
+	std::string regionId_;
 	std::string fontColor_;
 	bool showSourceLan_;
 	std::vector<float> positionNormalized_;

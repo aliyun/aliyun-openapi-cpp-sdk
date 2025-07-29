@@ -34,6 +34,15 @@ void SetShowListBackgroundRequest::setMaterialId(const std::string &materialId) 
   setParameter(std::string("MaterialId"), materialId);
 }
 
+std::string SetShowListBackgroundRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SetShowListBackgroundRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SetShowListBackgroundRequest::getCasterId() const {
   return casterId_;
 }

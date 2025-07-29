@@ -32,6 +32,8 @@ public:
 	~DeletePlaylistItemsRequest();
 	std::string getProgramItemIds() const;
 	void setProgramItemIds(const std::string &programItemIds);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getProgramId() const;
 	void setProgramId(const std::string &programId);
 	long getOwnerId() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string programItemIds_;
+	std::string regionId_;
 	std::string programId_;
 	long ownerId_;
 };

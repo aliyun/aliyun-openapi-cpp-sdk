@@ -36,6 +36,8 @@ public:
 	void setProtocol(const std::string &protocol);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPartDuration() const;
 	void setPartDuration(int partDuration);
 	std::string getStreamName() const;
@@ -53,6 +55,7 @@ private:
 	int segmentNum_;
 	std::string protocol_;
 	std::string appName_;
+	std::string regionId_;
 	int partDuration_;
 	std::string streamName_;
 	bool ignoreTranscode_;

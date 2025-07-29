@@ -32,6 +32,8 @@ public:
 	~ListEdgeTranscodeJobRequest();
 	std::string getType() const;
 	void setType(const std::string &type);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getKeyword() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	std::string type_;
+	std::string regionId_;
 	int pageSize_;
 	std::string keyword_;
 	std::string clusterId_;

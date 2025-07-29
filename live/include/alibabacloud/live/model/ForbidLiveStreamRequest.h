@@ -32,6 +32,8 @@ public:
 	~ForbidLiveStreamRequest();
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getStreamName() const;
 	void setStreamName(const std::string &streamName);
 	std::string getControlStreamAction() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	std::string appName_;
+	std::string regionId_;
 	std::string streamName_;
 	std::string controlStreamAction_;
 	std::string resumeTime_;

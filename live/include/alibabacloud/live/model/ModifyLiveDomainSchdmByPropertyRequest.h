@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT ModifyLiveDomainSchdmByPropertyRequest : public R
 public:
 	ModifyLiveDomainSchdmByPropertyRequest();
 	~ModifyLiveDomainSchdmByPropertyRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getProperty() const;
 	void setProperty(const std::string &property);
 	std::string getDomainName() const;
@@ -38,6 +40,7 @@ public:
 	void setOwnerId(long ownerId);
 
 private:
+	std::string regionId_;
 	std::string property_;
 	std::string domainName_;
 	long ownerId_;

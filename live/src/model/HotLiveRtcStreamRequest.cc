@@ -70,6 +70,15 @@ void HotLiveRtcStreamRequest::setAudioMsid(const std::string &audioMsid) {
   setParameter(std::string("AudioMsid"), audioMsid);
 }
 
+std::string HotLiveRtcStreamRequest::getRegionId() const {
+  return regionId_;
+}
+
+void HotLiveRtcStreamRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string HotLiveRtcStreamRequest::getMediaTimeout() const {
   return mediaTimeout_;
 }

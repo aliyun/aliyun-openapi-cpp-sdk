@@ -34,6 +34,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getCasterId() const;
@@ -52,6 +54,7 @@ public:
 private:
 	std::string startTime_;
 	int pageNum_;
+	std::string regionId_;
 	int pageSize_;
 	std::string casterId_;
 	std::string episodeType_;

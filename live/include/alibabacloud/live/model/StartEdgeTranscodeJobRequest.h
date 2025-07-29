@@ -32,6 +32,8 @@ public:
 	~StartEdgeTranscodeJobRequest();
 	std::string getJobId() const;
 	void setJobId(const std::string &jobId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	long getOwnerId() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string jobId_;
+	std::string regionId_;
 	std::string clusterId_;
 	long ownerId_;
 };

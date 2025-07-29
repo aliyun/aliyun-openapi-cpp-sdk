@@ -34,6 +34,15 @@ void AddLiveSnapshotNotifyConfigRequest::setNotifyReqAuth(const std::string &not
   setParameter(std::string("NotifyReqAuth"), notifyReqAuth);
 }
 
+std::string AddLiveSnapshotNotifyConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddLiveSnapshotNotifyConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddLiveSnapshotNotifyConfigRequest::getNotifyUrl() const {
   return notifyUrl_;
 }

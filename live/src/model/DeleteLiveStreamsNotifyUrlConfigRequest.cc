@@ -25,6 +25,15 @@ DeleteLiveStreamsNotifyUrlConfigRequest::DeleteLiveStreamsNotifyUrlConfigRequest
 
 DeleteLiveStreamsNotifyUrlConfigRequest::~DeleteLiveStreamsNotifyUrlConfigRequest() {}
 
+std::string DeleteLiveStreamsNotifyUrlConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveStreamsNotifyUrlConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveStreamsNotifyUrlConfigRequest::getDomainName() const {
   return domainName_;
 }

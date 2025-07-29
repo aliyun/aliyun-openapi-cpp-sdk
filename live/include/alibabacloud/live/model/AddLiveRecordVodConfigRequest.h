@@ -38,6 +38,8 @@ public:
 	void setStorageLocation(const std::string &storageLocation);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getOnDemand() const;
 	void setOnDemand(int onDemand);
 	std::string getStreamName() const;
@@ -56,6 +58,7 @@ private:
 	std::string composeVodTranscodeGroupId_;
 	std::string storageLocation_;
 	std::string appName_;
+	std::string regionId_;
 	int onDemand_;
 	std::string streamName_;
 	std::string vodTranscodeGroupId_;

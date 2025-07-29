@@ -52,6 +52,15 @@ void DescribeLiveDomainBpsDataRequest::setIspNameEn(const std::string &ispNameEn
   setParameter(std::string("IspNameEn"), ispNameEn);
 }
 
+std::string DescribeLiveDomainBpsDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainBpsDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveDomainBpsDataRequest::getDomainName() const {
   return domainName_;
 }

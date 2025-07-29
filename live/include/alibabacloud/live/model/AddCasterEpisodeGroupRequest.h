@@ -38,6 +38,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getSideOutputUrl() const;
 	void setSideOutputUrl(const std::string &sideOutputUrl);
 	std::vector<Item> getItem() const;
@@ -54,6 +56,7 @@ public:
 private:
 	std::string clientToken_;
 	std::string startTime_;
+	std::string regionId_;
 	std::string sideOutputUrl_;
 	std::vector<Item> item_;
 	std::string domainName_;

@@ -36,6 +36,8 @@ public:
 	void setSuffix(const std::string &suffix);
 	std::string getSubtitleName() const;
 	void setSubtitleName(const std::string &subtitleName);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getApp() const;
 	void setApp(const std::string &app);
 	long getOwnerId() const;
@@ -55,6 +57,7 @@ private:
 	std::string description_;
 	std::string suffix_;
 	std::string subtitleName_;
+	std::string regionId_;
 	std::string app_;
 	long ownerId_;
 	bool isLazy_;

@@ -25,6 +25,15 @@ DescribeLiveDomainByCertificateRequest::DescribeLiveDomainByCertificateRequest()
 
 DescribeLiveDomainByCertificateRequest::~DescribeLiveDomainByCertificateRequest() {}
 
+std::string DescribeLiveDomainByCertificateRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveDomainByCertificateRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeLiveDomainByCertificateRequest::getOwnerId() const {
   return ownerId_;
 }

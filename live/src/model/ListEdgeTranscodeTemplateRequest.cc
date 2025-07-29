@@ -34,6 +34,15 @@ void ListEdgeTranscodeTemplateRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
+std::string ListEdgeTranscodeTemplateRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListEdgeTranscodeTemplateRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int ListEdgeTranscodeTemplateRequest::getPageSize() const {
   return pageSize_;
 }

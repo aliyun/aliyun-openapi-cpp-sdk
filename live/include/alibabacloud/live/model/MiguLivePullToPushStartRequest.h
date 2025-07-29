@@ -32,6 +32,8 @@ public:
 	~MiguLivePullToPushStartRequest();
 	std::string getMiguData() const;
 	void setMiguData(const std::string &miguData);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	long getOwnerId() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string miguData_;
+	std::string regionId_;
 	std::string domainName_;
 	long ownerId_;
 };

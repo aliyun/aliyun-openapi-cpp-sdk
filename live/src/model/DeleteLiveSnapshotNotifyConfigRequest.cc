@@ -25,6 +25,15 @@ DeleteLiveSnapshotNotifyConfigRequest::DeleteLiveSnapshotNotifyConfigRequest()
 
 DeleteLiveSnapshotNotifyConfigRequest::~DeleteLiveSnapshotNotifyConfigRequest() {}
 
+std::string DeleteLiveSnapshotNotifyConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveSnapshotNotifyConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveSnapshotNotifyConfigRequest::getDomainName() const {
   return domainName_;
 }

@@ -32,11 +32,14 @@ public:
 	~StopLiveStreamMonitorRequest();
 	std::string getMonitorId() const;
 	void setMonitorId(const std::string &monitorId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
 private:
 	std::string monitorId_;
+	std::string regionId_;
 	long ownerId_;
 };
 } // namespace Model

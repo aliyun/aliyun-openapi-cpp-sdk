@@ -25,6 +25,15 @@ StopPlaylistRequest::StopPlaylistRequest()
 
 StopPlaylistRequest::~StopPlaylistRequest() {}
 
+std::string StopPlaylistRequest::getRegionId() const {
+  return regionId_;
+}
+
+void StopPlaylistRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string StopPlaylistRequest::getProgramId() const {
   return programId_;
 }

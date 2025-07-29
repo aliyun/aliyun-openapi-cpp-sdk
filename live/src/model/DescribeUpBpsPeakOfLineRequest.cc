@@ -43,6 +43,15 @@ void DescribeUpBpsPeakOfLineRequest::setStartTime(const std::string &startTime) 
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeUpBpsPeakOfLineRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeUpBpsPeakOfLineRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeUpBpsPeakOfLineRequest::getDomainName() const {
   return domainName_;
 }

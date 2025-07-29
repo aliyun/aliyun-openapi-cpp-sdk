@@ -34,6 +34,15 @@ void ListEdgeTranscodeJobRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
+std::string ListEdgeTranscodeJobRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListEdgeTranscodeJobRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int ListEdgeTranscodeJobRequest::getPageSize() const {
   return pageSize_;
 }

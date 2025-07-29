@@ -70,6 +70,15 @@ void DescribeLiveStreamsOnlineListRequest::setAppName(const std::string &appName
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeLiveStreamsOnlineListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeLiveStreamsOnlineListRequest::getPageSize() const {
   return pageSize_;
 }

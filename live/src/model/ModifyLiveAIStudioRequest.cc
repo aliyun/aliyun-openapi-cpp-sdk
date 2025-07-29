@@ -81,6 +81,15 @@ void ModifyLiveAIStudioRequest::setMediaResourceUrl(const std::string &mediaReso
   setParameter(std::string("MediaResourceUrl"), mediaResourceUrl);
 }
 
+std::string ModifyLiveAIStudioRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyLiveAIStudioRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int ModifyLiveAIStudioRequest::getHeight() const {
   return height_;
 }

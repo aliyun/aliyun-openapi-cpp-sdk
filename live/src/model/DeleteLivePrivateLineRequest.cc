@@ -34,6 +34,15 @@ void DeleteLivePrivateLineRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DeleteLivePrivateLineRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLivePrivateLineRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLivePrivateLineRequest::getStreamName() const {
   return streamName_;
 }

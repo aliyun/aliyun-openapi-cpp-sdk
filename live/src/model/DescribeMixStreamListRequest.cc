@@ -43,6 +43,15 @@ void DescribeMixStreamListRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeMixStreamListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeMixStreamListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeMixStreamListRequest::getPageSize() const {
   return pageSize_;
 }

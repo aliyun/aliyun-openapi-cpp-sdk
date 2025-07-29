@@ -52,6 +52,15 @@ void DescribeLiveProducerUsageDataRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
+std::string DescribeLiveProducerUsageDataRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveProducerUsageDataRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveProducerUsageDataRequest::getSplitBy() const {
   return splitBy_;
 }

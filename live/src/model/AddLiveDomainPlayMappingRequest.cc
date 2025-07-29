@@ -25,6 +25,15 @@ AddLiveDomainPlayMappingRequest::AddLiveDomainPlayMappingRequest()
 
 AddLiveDomainPlayMappingRequest::~AddLiveDomainPlayMappingRequest() {}
 
+std::string AddLiveDomainPlayMappingRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddLiveDomainPlayMappingRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddLiveDomainPlayMappingRequest::getPlayDomain() const {
   return playDomain_;
 }

@@ -43,6 +43,15 @@ void DescribeLiveStreamsControlHistoryRequest::setAppName(const std::string &app
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeLiveStreamsControlHistoryRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamsControlHistoryRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveStreamsControlHistoryRequest::getDomainName() const {
   return domainName_;
 }

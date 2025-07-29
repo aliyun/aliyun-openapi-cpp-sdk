@@ -36,6 +36,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getCdnProvinces() const;
 	void setCdnProvinces(const std::string &cdnProvinces);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getKwaiSidcs() const;
 	void setKwaiSidcs(const std::string &kwaiSidcs);
 	std::vector<int> getKwaiTsc() const;
@@ -55,6 +57,7 @@ private:
 	std::string cdnDomains_;
 	std::string startTime_;
 	std::string cdnProvinces_;
+	std::string regionId_;
 	std::string kwaiSidcs_;
 	std::vector<int> kwaiTsc_;
 	std::string upstreamDomains_;

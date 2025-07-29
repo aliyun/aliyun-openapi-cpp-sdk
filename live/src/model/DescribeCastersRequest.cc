@@ -52,6 +52,15 @@ void DescribeCastersRequest::setResourceGroupId(const std::string &resourceGroup
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeCastersRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeCastersRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeCastersRequest::getCasterName() const {
   return casterName_;
 }

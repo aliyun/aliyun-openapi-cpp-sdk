@@ -34,6 +34,15 @@ void AddPlaylistItemsRequest::setProgramItems(const std::string &programItems) {
   setParameter(std::string("ProgramItems"), programItems);
 }
 
+std::string AddPlaylistItemsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddPlaylistItemsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string AddPlaylistItemsRequest::getProgramId() const {
   return programId_;
 }

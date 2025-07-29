@@ -43,6 +43,15 @@ void CopyCasterSceneConfigRequest::setToSceneId(const std::string &toSceneId) {
   setParameter(std::string("ToSceneId"), toSceneId);
 }
 
+std::string CopyCasterSceneConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CopyCasterSceneConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string CopyCasterSceneConfigRequest::getCasterId() const {
   return casterId_;
 }

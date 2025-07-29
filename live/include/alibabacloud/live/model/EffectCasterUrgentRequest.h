@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT EffectCasterUrgentRequest : public RpcServiceRequ
 public:
 	EffectCasterUrgentRequest();
 	~EffectCasterUrgentRequest();
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterId() const;
 	void setCasterId(const std::string &casterId);
 	long getOwnerId() const;
@@ -38,6 +40,7 @@ public:
 	void setSceneId(const std::string &sceneId);
 
 private:
+	std::string regionId_;
 	std::string casterId_;
 	long ownerId_;
 	std::string sceneId_;

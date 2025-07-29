@@ -25,6 +25,15 @@ DeleteLiveAudioAuditNotifyConfigRequest::DeleteLiveAudioAuditNotifyConfigRequest
 
 DeleteLiveAudioAuditNotifyConfigRequest::~DeleteLiveAudioAuditNotifyConfigRequest() {}
 
+std::string DeleteLiveAudioAuditNotifyConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveAudioAuditNotifyConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveAudioAuditNotifyConfigRequest::getDomainName() const {
   return domainName_;
 }

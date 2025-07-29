@@ -34,6 +34,15 @@ void DescribeLiveAIStudioRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeLiveAIStudioRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveAIStudioRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeLiveAIStudioRequest::getPageSize() const {
   return pageSize_;
 }

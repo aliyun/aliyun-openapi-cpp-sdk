@@ -34,6 +34,15 @@ void DeleteLiveStreamMonitorRequest::setMonitorId(const std::string &monitorId) 
   setParameter(std::string("MonitorId"), monitorId);
 }
 
+std::string DeleteLiveStreamMonitorRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveStreamMonitorRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DeleteLiveStreamMonitorRequest::getOwnerId() const {
   return ownerId_;
 }

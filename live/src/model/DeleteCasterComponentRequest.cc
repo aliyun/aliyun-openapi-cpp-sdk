@@ -25,6 +25,15 @@ DeleteCasterComponentRequest::DeleteCasterComponentRequest()
 
 DeleteCasterComponentRequest::~DeleteCasterComponentRequest() {}
 
+std::string DeleteCasterComponentRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteCasterComponentRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteCasterComponentRequest::getComponentId() const {
   return componentId_;
 }

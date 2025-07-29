@@ -43,6 +43,15 @@ void ModifyShowListRequest::setHighPriorityShowStartTime(const std::string &high
   setParameter(std::string("HighPriorityShowStartTime"), highPriorityShowStartTime);
 }
 
+std::string ModifyShowListRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyShowListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyShowListRequest::getCasterId() const {
   return casterId_;
 }

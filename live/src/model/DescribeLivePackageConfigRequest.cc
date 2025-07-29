@@ -43,6 +43,15 @@ void DescribeLivePackageConfigRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeLivePackageConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLivePackageConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeLivePackageConfigRequest::getPageSize() const {
   return pageSize_;
 }

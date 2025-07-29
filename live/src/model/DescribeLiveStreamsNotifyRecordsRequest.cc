@@ -52,6 +52,15 @@ void DescribeLiveStreamsNotifyRecordsRequest::setAppName(const std::string &appN
   setParameter(std::string("AppName"), appName);
 }
 
+std::string DescribeLiveStreamsNotifyRecordsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamsNotifyRecordsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int DescribeLiveStreamsNotifyRecordsRequest::getPageSize() const {
   return pageSize_;
 }

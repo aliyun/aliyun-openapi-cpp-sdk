@@ -61,6 +61,15 @@ void AddLiveRecordVodConfigRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string AddLiveRecordVodConfigRequest::getRegionId() const {
+  return regionId_;
+}
+
+void AddLiveRecordVodConfigRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int AddLiveRecordVodConfigRequest::getOnDemand() const {
   return onDemand_;
 }

@@ -43,6 +43,15 @@ void EditShowAndReplaceRequest::setUserData(const std::string &userData) {
   setParameter(std::string("UserData"), userData);
 }
 
+std::string EditShowAndReplaceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void EditShowAndReplaceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string EditShowAndReplaceRequest::getStorageInfo() const {
   return storageInfo_;
 }

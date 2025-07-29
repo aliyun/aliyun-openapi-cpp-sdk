@@ -52,6 +52,15 @@ void UpdateLiveCenterTransferRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string UpdateLiveCenterTransferRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateLiveCenterTransferRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string UpdateLiveCenterTransferRequest::getStreamName() const {
   return streamName_;
 }

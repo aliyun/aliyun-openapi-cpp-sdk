@@ -43,6 +43,15 @@ void SetLiveEdgeTransferRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string SetLiveEdgeTransferRequest::getRegionId() const {
+  return regionId_;
+}
+
+void SetLiveEdgeTransferRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string SetLiveEdgeTransferRequest::getStreamName() const {
   return streamName_;
 }

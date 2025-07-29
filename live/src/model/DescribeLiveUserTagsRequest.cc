@@ -25,6 +25,15 @@ DescribeLiveUserTagsRequest::DescribeLiveUserTagsRequest()
 
 DescribeLiveUserTagsRequest::~DescribeLiveUserTagsRequest() {}
 
+std::string DescribeLiveUserTagsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveUserTagsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 long DescribeLiveUserTagsRequest::getOwnerId() const {
   return ownerId_;
 }

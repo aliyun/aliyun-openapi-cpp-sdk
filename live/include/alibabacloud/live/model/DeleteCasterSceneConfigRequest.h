@@ -32,6 +32,8 @@ public:
 	~DeleteCasterSceneConfigRequest();
 	std::string getType() const;
 	void setType(const std::string &type);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getCasterId() const;
 	void setCasterId(const std::string &casterId);
 	long getOwnerId() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	std::string type_;
+	std::string regionId_;
 	std::string casterId_;
 	long ownerId_;
 	std::string sceneId_;

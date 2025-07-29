@@ -25,6 +25,15 @@ DescribeLiveStreamTranscodeStreamNumRequest::DescribeLiveStreamTranscodeStreamNu
 
 DescribeLiveStreamTranscodeStreamNumRequest::~DescribeLiveStreamTranscodeStreamNumRequest() {}
 
+std::string DescribeLiveStreamTranscodeStreamNumRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeLiveStreamTranscodeStreamNumRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeLiveStreamTranscodeStreamNumRequest::getDomainName() const {
   return domainName_;
 }

@@ -34,6 +34,15 @@ void DeleteLiveRealtimeLogDeliveryRequest::setProject(const std::string &project
   setParameter(std::string("Project"), project);
 }
 
+std::string DeleteLiveRealtimeLogDeliveryRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DeleteLiveRealtimeLogDeliveryRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DeleteLiveRealtimeLogDeliveryRequest::getDomainName() const {
   return domainName_;
 }

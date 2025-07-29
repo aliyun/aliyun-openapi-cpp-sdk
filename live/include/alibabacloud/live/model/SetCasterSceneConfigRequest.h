@@ -32,6 +32,8 @@ public:
 	~SetCasterSceneConfigRequest();
 	std::string getLayoutId() const;
 	void setLayoutId(const std::string &layoutId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::vector<std::string> getComponentId() const;
 	void setComponentId(const std::vector<std::string> &componentId);
 	std::string getCasterId() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string layoutId_;
+	std::string regionId_;
 	std::vector<std::string> componentId_;
 	std::string casterId_;
 	long ownerId_;

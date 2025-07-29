@@ -36,6 +36,8 @@ public:
 	void setStreamOutput(const std::string &streamOutput);
 	std::string getJobId() const;
 	void setJobId(const std::string &jobId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	long getOwnerId() const;
@@ -49,6 +51,7 @@ private:
 	std::string streamInput_;
 	std::string streamOutput_;
 	std::string jobId_;
+	std::string regionId_;
 	std::string clusterId_;
 	long ownerId_;
 	std::string templateId_;
