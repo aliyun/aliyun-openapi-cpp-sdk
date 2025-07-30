@@ -70,6 +70,15 @@ void ModifyInstanceSpecRequest::setCouponNo(const std::string &couponNo) {
   setParameter(std::string("CouponNo"), couponNo);
 }
 
+int ModifyInstanceSpecRequest::getStorage() const {
+  return storage_;
+}
+
+void ModifyInstanceSpecRequest::setStorage(int storage) {
+  storage_ = storage;
+  setParameter(std::string("Storage"), std::to_string(storage));
+}
+
 std::string ModifyInstanceSpecRequest::getInstanceClass() const {
   return instanceClass_;
 }
@@ -77,6 +86,15 @@ std::string ModifyInstanceSpecRequest::getInstanceClass() const {
 void ModifyInstanceSpecRequest::setInstanceClass(const std::string &instanceClass) {
   instanceClass_ = instanceClass;
   setParameter(std::string("InstanceClass"), instanceClass);
+}
+
+std::string ModifyInstanceSpecRequest::getStorageType() const {
+  return storageType_;
+}
+
+void ModifyInstanceSpecRequest::setStorageType(const std::string &storageType) {
+  storageType_ = storageType;
+  setParameter(std::string("StorageType"), storageType);
 }
 
 std::string ModifyInstanceSpecRequest::getAccessKeyId() const {
@@ -232,6 +250,15 @@ void ModifyInstanceSpecRequest::setForceUpgrade(bool forceUpgrade) {
   setParameter(std::string("ForceUpgrade"), forceUpgrade ? "true" : "false");
 }
 
+int ModifyInstanceSpecRequest::getSlaveReplicaCount() const {
+  return slaveReplicaCount_;
+}
+
+void ModifyInstanceSpecRequest::setSlaveReplicaCount(int slaveReplicaCount) {
+  slaveReplicaCount_ = slaveReplicaCount;
+  setParameter(std::string("SlaveReplicaCount"), std::to_string(slaveReplicaCount));
+}
+
 std::string ModifyInstanceSpecRequest::getOrderType() const {
   return orderType_;
 }
@@ -239,5 +266,14 @@ std::string ModifyInstanceSpecRequest::getOrderType() const {
 void ModifyInstanceSpecRequest::setOrderType(const std::string &orderType) {
   orderType_ = orderType;
   setParameter(std::string("OrderType"), orderType);
+}
+
+int ModifyInstanceSpecRequest::getReplicaCount() const {
+  return replicaCount_;
+}
+
+void ModifyInstanceSpecRequest::setReplicaCount(int replicaCount) {
+  replicaCount_ = replicaCount;
+  setParameter(std::string("ReplicaCount"), std::to_string(replicaCount));
 }
 

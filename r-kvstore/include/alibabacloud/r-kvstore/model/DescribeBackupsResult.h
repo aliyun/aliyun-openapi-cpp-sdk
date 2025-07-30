@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					long backupId;
 					std::string nodeInstanceId;
 					long backupJobID;
+					std::string expectExpireTime;
 					std::string backupDBNames;
 					std::string backupDownloadURL;
 					std::string backupEndTime;

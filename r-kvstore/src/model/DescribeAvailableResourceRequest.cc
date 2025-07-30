@@ -34,6 +34,15 @@ void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeAvailableResourceRequest::getInstanceClass() const {
+  return instanceClass_;
+}
+
+void DescribeAvailableResourceRequest::setInstanceClass(const std::string &instanceClass) {
+  instanceClass_ = instanceClass;
+  setParameter(std::string("InstanceClass"), instanceClass);
+}
+
 std::string DescribeAvailableResourceRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -86,6 +95,15 @@ std::string DescribeAvailableResourceRequest::getEngine() const {
 void DescribeAvailableResourceRequest::setEngine(const std::string &engine) {
   engine_ = engine;
   setParameter(std::string("Engine"), engine);
+}
+
+std::string DescribeAvailableResourceRequest::getExcludeZoneId() const {
+  return excludeZoneId_;
+}
+
+void DescribeAvailableResourceRequest::setExcludeZoneId(const std::string &excludeZoneId) {
+  excludeZoneId_ = excludeZoneId;
+  setParameter(std::string("ExcludeZoneId"), excludeZoneId);
 }
 
 std::string DescribeAvailableResourceRequest::getInstanceChargeType() const {
@@ -167,6 +185,15 @@ std::string DescribeAvailableResourceRequest::getZoneId() const {
 void DescribeAvailableResourceRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
   setParameter(std::string("ZoneId"), zoneId);
+}
+
+bool DescribeAvailableResourceRequest::getFromConsole() const {
+  return fromConsole_;
+}
+
+void DescribeAvailableResourceRequest::setFromConsole(bool fromConsole) {
+  fromConsole_ = fromConsole;
+  setParameter(std::string("FromConsole"), fromConsole ? "true" : "false");
 }
 
 std::string DescribeAvailableResourceRequest::getInstanceScene() const {

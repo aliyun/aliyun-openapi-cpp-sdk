@@ -41,11 +41,53 @@ void DescribeInstanceConfigResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Config"].isNull())
 		config_ = value["Config"].asString();
+	if(!value["ParamReplMode"].isNull())
+		paramReplMode_ = value["ParamReplMode"].asString();
+	if(!value["ParamReplTimeout"].isNull())
+		paramReplTimeout_ = value["ParamReplTimeout"].asString();
+	if(!value["ParamNoLooseSentinelEnabled"].isNull())
+		paramNoLooseSentinelEnabled_ = value["ParamNoLooseSentinelEnabled"].asString();
+	if(!value["ParamSentinelCompatEnable"].isNull())
+		paramSentinelCompatEnable_ = value["ParamSentinelCompatEnable"].asString();
+	if(!value["ParamNoLooseSentinelPasswordFreeAccess"].isNull())
+		paramNoLooseSentinelPasswordFreeAccess_ = value["ParamNoLooseSentinelPasswordFreeAccess"].asString();
+	if(!value["ParamNoLooseSentinelPasswordFreeCommands"].isNull())
+		paramNoLooseSentinelPasswordFreeCommands_ = value["ParamNoLooseSentinelPasswordFreeCommands"].asString();
 
+}
+
+std::string DescribeInstanceConfigResult::getParamReplTimeout()const
+{
+	return paramReplTimeout_;
+}
+
+std::string DescribeInstanceConfigResult::getParamReplMode()const
+{
+	return paramReplMode_;
+}
+
+std::string DescribeInstanceConfigResult::getParamNoLooseSentinelPasswordFreeCommands()const
+{
+	return paramNoLooseSentinelPasswordFreeCommands_;
 }
 
 std::string DescribeInstanceConfigResult::getConfig()const
 {
 	return config_;
+}
+
+std::string DescribeInstanceConfigResult::getParamNoLooseSentinelEnabled()const
+{
+	return paramNoLooseSentinelEnabled_;
+}
+
+std::string DescribeInstanceConfigResult::getParamSentinelCompatEnable()const
+{
+	return paramSentinelCompatEnable_;
+}
+
+std::string DescribeInstanceConfigResult::getParamNoLooseSentinelPasswordFreeAccess()const
+{
+	return paramNoLooseSentinelPasswordFreeAccess_;
 }
 

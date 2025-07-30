@@ -37,12 +37,24 @@ namespace AlibabaCloud
 				DescribeInstanceConfigResult();
 				explicit DescribeInstanceConfigResult(const std::string &payload);
 				~DescribeInstanceConfigResult();
+				std::string getParamReplTimeout()const;
+				std::string getParamReplMode()const;
+				std::string getParamNoLooseSentinelPasswordFreeCommands()const;
 				std::string getConfig()const;
+				std::string getParamNoLooseSentinelEnabled()const;
+				std::string getParamSentinelCompatEnable()const;
+				std::string getParamNoLooseSentinelPasswordFreeAccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string paramReplTimeout_;
+				std::string paramReplMode_;
+				std::string paramNoLooseSentinelPasswordFreeCommands_;
 				std::string config_;
+				std::string paramNoLooseSentinelEnabled_;
+				std::string paramSentinelCompatEnable_;
+				std::string paramNoLooseSentinelPasswordFreeAccess_;
 
 			};
 		}

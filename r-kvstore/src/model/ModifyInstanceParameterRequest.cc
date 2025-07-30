@@ -61,6 +61,15 @@ void ModifyInstanceParameterRequest::setSecurityToken(const std::string &securit
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string ModifyInstanceParameterRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyInstanceParameterRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyInstanceParameterRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -34,6 +34,33 @@ void ModifyInstanceConfigRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyInstanceConfigRequest::getParamSemisyncReplTimeout() const {
+  return paramSemisyncReplTimeout_;
+}
+
+void ModifyInstanceConfigRequest::setParamSemisyncReplTimeout(const std::string &paramSemisyncReplTimeout) {
+  paramSemisyncReplTimeout_ = paramSemisyncReplTimeout;
+  setParameter(std::string("ParamSemisyncReplTimeout"), paramSemisyncReplTimeout);
+}
+
+std::string ModifyInstanceConfigRequest::getParamNoLooseSentinelPasswordFreeCommands() const {
+  return paramNoLooseSentinelPasswordFreeCommands_;
+}
+
+void ModifyInstanceConfigRequest::setParamNoLooseSentinelPasswordFreeCommands(const std::string &paramNoLooseSentinelPasswordFreeCommands) {
+  paramNoLooseSentinelPasswordFreeCommands_ = paramNoLooseSentinelPasswordFreeCommands;
+  setParameter(std::string("ParamNoLooseSentinelPasswordFreeCommands"), paramNoLooseSentinelPasswordFreeCommands);
+}
+
+std::string ModifyInstanceConfigRequest::getParamNoLooseSentinelPasswordFreeAccess() const {
+  return paramNoLooseSentinelPasswordFreeAccess_;
+}
+
+void ModifyInstanceConfigRequest::setParamNoLooseSentinelPasswordFreeAccess(const std::string &paramNoLooseSentinelPasswordFreeAccess) {
+  paramNoLooseSentinelPasswordFreeAccess_ = paramNoLooseSentinelPasswordFreeAccess;
+  setParameter(std::string("ParamNoLooseSentinelPasswordFreeAccess"), paramNoLooseSentinelPasswordFreeAccess);
+}
+
 std::string ModifyInstanceConfigRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -43,6 +70,15 @@ void ModifyInstanceConfigRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyInstanceConfigRequest::getParamReplMode() const {
+  return paramReplMode_;
+}
+
+void ModifyInstanceConfigRequest::setParamReplMode(const std::string &paramReplMode) {
+  paramReplMode_ = paramReplMode;
+  setParameter(std::string("ParamReplMode"), paramReplMode);
+}
+
 std::string ModifyInstanceConfigRequest::getSecurityToken() const {
   return securityToken_;
 }
@@ -50,6 +86,15 @@ std::string ModifyInstanceConfigRequest::getSecurityToken() const {
 void ModifyInstanceConfigRequest::setSecurityToken(const std::string &securityToken) {
   securityToken_ = securityToken;
   setParameter(std::string("SecurityToken"), securityToken);
+}
+
+std::string ModifyInstanceConfigRequest::getParamNoLooseSentinelEnabled() const {
+  return paramNoLooseSentinelEnabled_;
+}
+
+void ModifyInstanceConfigRequest::setParamNoLooseSentinelEnabled(const std::string &paramNoLooseSentinelEnabled) {
+  paramNoLooseSentinelEnabled_ = paramNoLooseSentinelEnabled;
+  setParameter(std::string("ParamNoLooseSentinelEnabled"), paramNoLooseSentinelEnabled);
 }
 
 std::string ModifyInstanceConfigRequest::getProduct() const {
@@ -77,6 +122,15 @@ std::string ModifyInstanceConfigRequest::getOwnerAccount() const {
 void ModifyInstanceConfigRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string ModifyInstanceConfigRequest::getParamSentinelCompatEnable() const {
+  return paramSentinelCompatEnable_;
+}
+
+void ModifyInstanceConfigRequest::setParamSentinelCompatEnable(const std::string &paramSentinelCompatEnable) {
+  paramSentinelCompatEnable_ = paramSentinelCompatEnable;
+  setParameter(std::string("ParamSentinelCompatEnable"), paramSentinelCompatEnable);
 }
 
 long ModifyInstanceConfigRequest::getOwnerId() const {

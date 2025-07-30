@@ -32,6 +32,8 @@ public:
 	~DescribeAvailableResourceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getInstanceClass() const;
+	void setInstanceClass(const std::string &instanceClass);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getProductType() const;
@@ -44,6 +46,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getEngine() const;
 	void setEngine(const std::string &engine);
+	std::string getExcludeZoneId() const;
+	void setExcludeZoneId(const std::string &excludeZoneId);
 	std::string getInstanceChargeType() const;
 	void setInstanceChargeType(const std::string &instanceChargeType);
 	std::string getNodeId() const;
@@ -62,6 +66,8 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	bool getFromConsole() const;
+	void setFromConsole(bool fromConsole);
 	std::string getInstanceScene() const;
 	void setInstanceScene(const std::string &instanceScene);
 	std::string getOrderType() const;
@@ -69,12 +75,14 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string instanceClass_;
 	std::string accessKeyId_;
 	std::string productType_;
 	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string regionId_;
 	std::string engine_;
+	std::string excludeZoneId_;
 	std::string instanceChargeType_;
 	std::string nodeId_;
 	std::string resourceOwnerAccount_;
@@ -84,6 +92,7 @@ private:
 	std::string instanceId_;
 	std::string acceptLanguage_;
 	std::string zoneId_;
+	bool fromConsole_;
 	std::string instanceScene_;
 	std::string orderType_;
 };

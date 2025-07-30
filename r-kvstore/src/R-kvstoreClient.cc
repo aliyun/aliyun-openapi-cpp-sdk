@@ -159,6 +159,42 @@ R_kvstoreClient::AllocateInstancePublicConnectionOutcomeCallable R_kvstoreClient
 	return task->get_future();
 }
 
+R_kvstoreClient::CancelActiveOperationTasksOutcome R_kvstoreClient::cancelActiveOperationTasks(const CancelActiveOperationTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelActiveOperationTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelActiveOperationTasksOutcome(CancelActiveOperationTasksResult(outcome.result()));
+	else
+		return CancelActiveOperationTasksOutcome(outcome.error());
+}
+
+void R_kvstoreClient::cancelActiveOperationTasksAsync(const CancelActiveOperationTasksRequest& request, const CancelActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelActiveOperationTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::CancelActiveOperationTasksOutcomeCallable R_kvstoreClient::cancelActiveOperationTasksCallable(const CancelActiveOperationTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelActiveOperationTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelActiveOperationTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::CheckCloudResourceAuthorizedOutcome R_kvstoreClient::checkCloudResourceAuthorized(const CheckCloudResourceAuthorizedRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,6 +519,42 @@ R_kvstoreClient::CreateParameterGroupOutcomeCallable R_kvstoreClient::createPara
 	return task->get_future();
 }
 
+R_kvstoreClient::CreateTCInstanceOutcome R_kvstoreClient::createTCInstance(const CreateTCInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTCInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTCInstanceOutcome(CreateTCInstanceResult(outcome.result()));
+	else
+		return CreateTCInstanceOutcome(outcome.error());
+}
+
+void R_kvstoreClient::createTCInstanceAsync(const CreateTCInstanceRequest& request, const CreateTCInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTCInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::CreateTCInstanceOutcomeCallable R_kvstoreClient::createTCInstanceCallable(const CreateTCInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTCInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->createTCInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::CreateTairInstanceOutcome R_kvstoreClient::createTairInstance(const CreateTairInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +621,42 @@ R_kvstoreClient::DeleteAccountOutcomeCallable R_kvstoreClient::deleteAccountCall
 			[this, request]()
 			{
 			return this->deleteAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DeleteBackupOutcome R_kvstoreClient::deleteBackup(const DeleteBackupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBackupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBackupOutcome(DeleteBackupResult(outcome.result()));
+	else
+		return DeleteBackupOutcome(outcome.error());
+}
+
+void R_kvstoreClient::deleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBackup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DeleteBackupOutcomeCallable R_kvstoreClient::deleteBackupCallable(const DeleteBackupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBackupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBackup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2427,36 +2535,180 @@ R_kvstoreClient::DescribeSlowLogRecordsOutcomeCallable R_kvstoreClient::describe
 	return task->get_future();
 }
 
-R_kvstoreClient::DescribeTasksOutcome R_kvstoreClient::describeTasks(const DescribeTasksRequest &request) const
+R_kvstoreClient::DescribeTairKVCacheCustomInstanceAttributeOutcome R_kvstoreClient::describeTairKVCacheCustomInstanceAttribute(const DescribeTairKVCacheCustomInstanceAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeTasksOutcome(endpointOutcome.error());
+		return DescribeTairKVCacheCustomInstanceAttributeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeTasksOutcome(DescribeTasksResult(outcome.result()));
+		return DescribeTairKVCacheCustomInstanceAttributeOutcome(DescribeTairKVCacheCustomInstanceAttributeResult(outcome.result()));
 	else
-		return DescribeTasksOutcome(outcome.error());
+		return DescribeTairKVCacheCustomInstanceAttributeOutcome(outcome.error());
 }
 
-void R_kvstoreClient::describeTasksAsync(const DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void R_kvstoreClient::describeTairKVCacheCustomInstanceAttributeAsync(const DescribeTairKVCacheCustomInstanceAttributeRequest& request, const DescribeTairKVCacheCustomInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeTasks(request), context);
+		handler(this, request, describeTairKVCacheCustomInstanceAttribute(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-R_kvstoreClient::DescribeTasksOutcomeCallable R_kvstoreClient::describeTasksCallable(const DescribeTasksRequest &request) const
+R_kvstoreClient::DescribeTairKVCacheCustomInstanceAttributeOutcomeCallable R_kvstoreClient::describeTairKVCacheCustomInstanceAttributeCallable(const DescribeTairKVCacheCustomInstanceAttributeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeTasksOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeTairKVCacheCustomInstanceAttributeOutcome()>>(
 			[this, request]()
 			{
-			return this->describeTasks(request);
+			return this->describeTairKVCacheCustomInstanceAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcome R_kvstoreClient::describeTairKVCacheCustomInstanceHistoryMonitorValues(const DescribeTairKVCacheCustomInstanceHistoryMonitorValuesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcome(DescribeTairKVCacheCustomInstanceHistoryMonitorValuesResult(outcome.result()));
+	else
+		return DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeTairKVCacheCustomInstanceHistoryMonitorValuesAsync(const DescribeTairKVCacheCustomInstanceHistoryMonitorValuesRequest& request, const DescribeTairKVCacheCustomInstanceHistoryMonitorValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTairKVCacheCustomInstanceHistoryMonitorValues(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcomeCallable R_kvstoreClient::describeTairKVCacheCustomInstanceHistoryMonitorValuesCallable(const DescribeTairKVCacheCustomInstanceHistoryMonitorValuesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTairKVCacheCustomInstanceHistoryMonitorValues(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeTairKVCacheCustomInstancesOutcome R_kvstoreClient::describeTairKVCacheCustomInstances(const DescribeTairKVCacheCustomInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTairKVCacheCustomInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTairKVCacheCustomInstancesOutcome(DescribeTairKVCacheCustomInstancesResult(outcome.result()));
+	else
+		return DescribeTairKVCacheCustomInstancesOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeTairKVCacheCustomInstancesAsync(const DescribeTairKVCacheCustomInstancesRequest& request, const DescribeTairKVCacheCustomInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTairKVCacheCustomInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeTairKVCacheCustomInstancesOutcomeCallable R_kvstoreClient::describeTairKVCacheCustomInstancesCallable(const DescribeTairKVCacheCustomInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTairKVCacheCustomInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTairKVCacheCustomInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeTairKVCacheInferInstanceAttributeOutcome R_kvstoreClient::describeTairKVCacheInferInstanceAttribute(const DescribeTairKVCacheInferInstanceAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTairKVCacheInferInstanceAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTairKVCacheInferInstanceAttributeOutcome(DescribeTairKVCacheInferInstanceAttributeResult(outcome.result()));
+	else
+		return DescribeTairKVCacheInferInstanceAttributeOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeTairKVCacheInferInstanceAttributeAsync(const DescribeTairKVCacheInferInstanceAttributeRequest& request, const DescribeTairKVCacheInferInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTairKVCacheInferInstanceAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeTairKVCacheInferInstanceAttributeOutcomeCallable R_kvstoreClient::describeTairKVCacheInferInstanceAttributeCallable(const DescribeTairKVCacheInferInstanceAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTairKVCacheInferInstanceAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTairKVCacheInferInstanceAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeTairKVCacheInferInstancesOutcome R_kvstoreClient::describeTairKVCacheInferInstances(const DescribeTairKVCacheInferInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTairKVCacheInferInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTairKVCacheInferInstancesOutcome(DescribeTairKVCacheInferInstancesResult(outcome.result()));
+	else
+		return DescribeTairKVCacheInferInstancesOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeTairKVCacheInferInstancesAsync(const DescribeTairKVCacheInferInstancesRequest& request, const DescribeTairKVCacheInferInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTairKVCacheInferInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeTairKVCacheInferInstancesOutcomeCallable R_kvstoreClient::describeTairKVCacheInferInstancesCallable(const DescribeTairKVCacheInferInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTairKVCacheInferInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTairKVCacheInferInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2787,6 +3039,42 @@ R_kvstoreClient::LockDBInstanceWriteOutcomeCallable R_kvstoreClient::lockDBInsta
 	return task->get_future();
 }
 
+R_kvstoreClient::MasterNodeShutDownFailOverOutcome R_kvstoreClient::masterNodeShutDownFailOver(const MasterNodeShutDownFailOverRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MasterNodeShutDownFailOverOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MasterNodeShutDownFailOverOutcome(MasterNodeShutDownFailOverResult(outcome.result()));
+	else
+		return MasterNodeShutDownFailOverOutcome(outcome.error());
+}
+
+void R_kvstoreClient::masterNodeShutDownFailOverAsync(const MasterNodeShutDownFailOverRequest& request, const MasterNodeShutDownFailOverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, masterNodeShutDownFailOver(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::MasterNodeShutDownFailOverOutcomeCallable R_kvstoreClient::masterNodeShutDownFailOverCallable(const MasterNodeShutDownFailOverRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MasterNodeShutDownFailOverOutcome()>>(
+			[this, request]()
+			{
+			return this->masterNodeShutDownFailOver(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::MigrateToOtherZoneOutcome R_kvstoreClient::migrateToOtherZone(const MigrateToOtherZoneRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2997,6 +3285,42 @@ R_kvstoreClient::ModifyAuditLogConfigOutcomeCallable R_kvstoreClient::modifyAudi
 			[this, request]()
 			{
 			return this->modifyAuditLogConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ModifyBackupExpireTimeOutcome R_kvstoreClient::modifyBackupExpireTime(const ModifyBackupExpireTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBackupExpireTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBackupExpireTimeOutcome(ModifyBackupExpireTimeResult(outcome.result()));
+	else
+		return ModifyBackupExpireTimeOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyBackupExpireTimeAsync(const ModifyBackupExpireTimeRequest& request, const ModifyBackupExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBackupExpireTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyBackupExpireTimeOutcomeCallable R_kvstoreClient::modifyBackupExpireTimeCallable(const ModifyBackupExpireTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBackupExpireTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBackupExpireTime(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3285,6 +3609,42 @@ R_kvstoreClient::ModifyInstanceAutoRenewalAttributeOutcomeCallable R_kvstoreClie
 			[this, request]()
 			{
 			return this->modifyInstanceAutoRenewalAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ModifyInstanceBandwidthOutcome R_kvstoreClient::modifyInstanceBandwidth(const ModifyInstanceBandwidthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceBandwidthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceBandwidthOutcome(ModifyInstanceBandwidthResult(outcome.result()));
+	else
+		return ModifyInstanceBandwidthOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyInstanceBandwidthAsync(const ModifyInstanceBandwidthRequest& request, const ModifyInstanceBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceBandwidth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyInstanceBandwidthOutcomeCallable R_kvstoreClient::modifyInstanceBandwidthCallable(const ModifyInstanceBandwidthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceBandwidthOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceBandwidth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3831,6 +4191,78 @@ R_kvstoreClient::ModifySecurityIpsOutcomeCallable R_kvstoreClient::modifySecurit
 	return task->get_future();
 }
 
+R_kvstoreClient::ModifyTairKVCacheCustomInstanceAttributeOutcome R_kvstoreClient::modifyTairKVCacheCustomInstanceAttribute(const ModifyTairKVCacheCustomInstanceAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyTairKVCacheCustomInstanceAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyTairKVCacheCustomInstanceAttributeOutcome(ModifyTairKVCacheCustomInstanceAttributeResult(outcome.result()));
+	else
+		return ModifyTairKVCacheCustomInstanceAttributeOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyTairKVCacheCustomInstanceAttributeAsync(const ModifyTairKVCacheCustomInstanceAttributeRequest& request, const ModifyTairKVCacheCustomInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyTairKVCacheCustomInstanceAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyTairKVCacheCustomInstanceAttributeOutcomeCallable R_kvstoreClient::modifyTairKVCacheCustomInstanceAttributeCallable(const ModifyTairKVCacheCustomInstanceAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyTairKVCacheCustomInstanceAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyTairKVCacheCustomInstanceAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ModifyTaskInfoOutcome R_kvstoreClient::modifyTaskInfo(const ModifyTaskInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyTaskInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyTaskInfoOutcome(ModifyTaskInfoResult(outcome.result()));
+	else
+		return ModifyTaskInfoOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyTaskInfoAsync(const ModifyTaskInfoRequest& request, const ModifyTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyTaskInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyTaskInfoOutcomeCallable R_kvstoreClient::modifyTaskInfoCallable(const ModifyTaskInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyTaskInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyTaskInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::ReleaseDirectConnectionOutcome R_kvstoreClient::releaseDirectConnection(const ReleaseDirectConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4047,6 +4479,78 @@ R_kvstoreClient::ResetAccountPasswordOutcomeCallable R_kvstoreClient::resetAccou
 	return task->get_future();
 }
 
+R_kvstoreClient::ResetTairKVCacheCustomInstancePasswordOutcome R_kvstoreClient::resetTairKVCacheCustomInstancePassword(const ResetTairKVCacheCustomInstancePasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResetTairKVCacheCustomInstancePasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResetTairKVCacheCustomInstancePasswordOutcome(ResetTairKVCacheCustomInstancePasswordResult(outcome.result()));
+	else
+		return ResetTairKVCacheCustomInstancePasswordOutcome(outcome.error());
+}
+
+void R_kvstoreClient::resetTairKVCacheCustomInstancePasswordAsync(const ResetTairKVCacheCustomInstancePasswordRequest& request, const ResetTairKVCacheCustomInstancePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resetTairKVCacheCustomInstancePassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ResetTairKVCacheCustomInstancePasswordOutcomeCallable R_kvstoreClient::resetTairKVCacheCustomInstancePasswordCallable(const ResetTairKVCacheCustomInstancePasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResetTairKVCacheCustomInstancePasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->resetTairKVCacheCustomInstancePassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ResizeTairKVCacheCustomInstanceDiskOutcome R_kvstoreClient::resizeTairKVCacheCustomInstanceDisk(const ResizeTairKVCacheCustomInstanceDiskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResizeTairKVCacheCustomInstanceDiskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResizeTairKVCacheCustomInstanceDiskOutcome(ResizeTairKVCacheCustomInstanceDiskResult(outcome.result()));
+	else
+		return ResizeTairKVCacheCustomInstanceDiskOutcome(outcome.error());
+}
+
+void R_kvstoreClient::resizeTairKVCacheCustomInstanceDiskAsync(const ResizeTairKVCacheCustomInstanceDiskRequest& request, const ResizeTairKVCacheCustomInstanceDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resizeTairKVCacheCustomInstanceDisk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ResizeTairKVCacheCustomInstanceDiskOutcomeCallable R_kvstoreClient::resizeTairKVCacheCustomInstanceDiskCallable(const ResizeTairKVCacheCustomInstanceDiskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResizeTairKVCacheCustomInstanceDiskOutcome()>>(
+			[this, request]()
+			{
+			return this->resizeTairKVCacheCustomInstanceDisk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::RestartInstanceOutcome R_kvstoreClient::restartInstance(const RestartInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4083,6 +4587,42 @@ R_kvstoreClient::RestartInstanceOutcomeCallable R_kvstoreClient::restartInstance
 	return task->get_future();
 }
 
+R_kvstoreClient::RestartTairKVCacheCustomInstanceOutcome R_kvstoreClient::restartTairKVCacheCustomInstance(const RestartTairKVCacheCustomInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartTairKVCacheCustomInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartTairKVCacheCustomInstanceOutcome(RestartTairKVCacheCustomInstanceResult(outcome.result()));
+	else
+		return RestartTairKVCacheCustomInstanceOutcome(outcome.error());
+}
+
+void R_kvstoreClient::restartTairKVCacheCustomInstanceAsync(const RestartTairKVCacheCustomInstanceRequest& request, const RestartTairKVCacheCustomInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartTairKVCacheCustomInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::RestartTairKVCacheCustomInstanceOutcomeCallable R_kvstoreClient::restartTairKVCacheCustomInstanceCallable(const RestartTairKVCacheCustomInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartTairKVCacheCustomInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->restartTairKVCacheCustomInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::RestoreInstanceOutcome R_kvstoreClient::restoreInstance(const RestoreInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4113,6 +4653,78 @@ R_kvstoreClient::RestoreInstanceOutcomeCallable R_kvstoreClient::restoreInstance
 			[this, request]()
 			{
 			return this->restoreInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::StartTairKVCacheCustomInstanceOutcome R_kvstoreClient::startTairKVCacheCustomInstance(const StartTairKVCacheCustomInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartTairKVCacheCustomInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartTairKVCacheCustomInstanceOutcome(StartTairKVCacheCustomInstanceResult(outcome.result()));
+	else
+		return StartTairKVCacheCustomInstanceOutcome(outcome.error());
+}
+
+void R_kvstoreClient::startTairKVCacheCustomInstanceAsync(const StartTairKVCacheCustomInstanceRequest& request, const StartTairKVCacheCustomInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startTairKVCacheCustomInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::StartTairKVCacheCustomInstanceOutcomeCallable R_kvstoreClient::startTairKVCacheCustomInstanceCallable(const StartTairKVCacheCustomInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartTairKVCacheCustomInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->startTairKVCacheCustomInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::StopTairKVCacheCustomInstanceOutcome R_kvstoreClient::stopTairKVCacheCustomInstance(const StopTairKVCacheCustomInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopTairKVCacheCustomInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopTairKVCacheCustomInstanceOutcome(StopTairKVCacheCustomInstanceResult(outcome.result()));
+	else
+		return StopTairKVCacheCustomInstanceOutcome(outcome.error());
+}
+
+void R_kvstoreClient::stopTairKVCacheCustomInstanceAsync(const StopTairKVCacheCustomInstanceRequest& request, const StopTairKVCacheCustomInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopTairKVCacheCustomInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::StopTairKVCacheCustomInstanceOutcomeCallable R_kvstoreClient::stopTairKVCacheCustomInstanceCallable(const StopTairKVCacheCustomInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopTairKVCacheCustomInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->stopTairKVCacheCustomInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4185,6 +4797,42 @@ R_kvstoreClient::SwitchInstanceProxyOutcomeCallable R_kvstoreClient::switchInsta
 			[this, request]()
 			{
 			return this->switchInstanceProxy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::SwitchInstanceZoneFailOverOutcome R_kvstoreClient::switchInstanceZoneFailOver(const SwitchInstanceZoneFailOverRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SwitchInstanceZoneFailOverOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SwitchInstanceZoneFailOverOutcome(SwitchInstanceZoneFailOverResult(outcome.result()));
+	else
+		return SwitchInstanceZoneFailOverOutcome(outcome.error());
+}
+
+void R_kvstoreClient::switchInstanceZoneFailOverAsync(const SwitchInstanceZoneFailOverRequest& request, const SwitchInstanceZoneFailOverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, switchInstanceZoneFailOver(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::SwitchInstanceZoneFailOverOutcomeCallable R_kvstoreClient::switchInstanceZoneFailOverCallable(const SwitchInstanceZoneFailOverRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SwitchInstanceZoneFailOverOutcome()>>(
+			[this, request]()
+			{
+			return this->switchInstanceZoneFailOver(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

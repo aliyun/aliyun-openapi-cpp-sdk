@@ -42,6 +42,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	long getBackupRetentionPeriod() const;
+	void setBackupRetentionPeriod(long backupRetentionPeriod);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
@@ -52,6 +54,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	long backupRetentionPeriod_;
 	std::string instanceId_;
 };
 } // namespace Model

@@ -39,6 +39,20 @@ void CreateGlobalDistributeCacheResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["GlobalInstanceId"].isNull())
+		globalInstanceId_ = value["GlobalInstanceId"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
 
+}
+
+std::string CreateGlobalDistributeCacheResult::getInstanceId()const
+{
+	return instanceId_;
+}
+
+std::string CreateGlobalDistributeCacheResult::getGlobalInstanceId()const
+{
+	return globalInstanceId_;
 }
 

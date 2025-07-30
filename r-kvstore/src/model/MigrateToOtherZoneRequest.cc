@@ -43,6 +43,15 @@ void MigrateToOtherZoneRequest::setSecondaryZoneId(const std::string &secondaryZ
   setParameter(std::string("SecondaryZoneId"), secondaryZoneId);
 }
 
+int MigrateToOtherZoneRequest::getSlaveReadOnlyCount() const {
+  return slaveReadOnlyCount_;
+}
+
+void MigrateToOtherZoneRequest::setSlaveReadOnlyCount(int slaveReadOnlyCount) {
+  slaveReadOnlyCount_ = slaveReadOnlyCount;
+  setParameter(std::string("SlaveReadOnlyCount"), std::to_string(slaveReadOnlyCount));
+}
+
 std::string MigrateToOtherZoneRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -122,5 +131,32 @@ std::string MigrateToOtherZoneRequest::getZoneId() const {
 void MigrateToOtherZoneRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
   setParameter(std::string("ZoneId"), zoneId);
+}
+
+int MigrateToOtherZoneRequest::getReadOnlyCount() const {
+  return readOnlyCount_;
+}
+
+void MigrateToOtherZoneRequest::setReadOnlyCount(int readOnlyCount) {
+  readOnlyCount_ = readOnlyCount;
+  setParameter(std::string("ReadOnlyCount"), std::to_string(readOnlyCount));
+}
+
+int MigrateToOtherZoneRequest::getSlaveReplicaCount() const {
+  return slaveReplicaCount_;
+}
+
+void MigrateToOtherZoneRequest::setSlaveReplicaCount(int slaveReplicaCount) {
+  slaveReplicaCount_ = slaveReplicaCount;
+  setParameter(std::string("SlaveReplicaCount"), std::to_string(slaveReplicaCount));
+}
+
+int MigrateToOtherZoneRequest::getReplicaCount() const {
+  return replicaCount_;
+}
+
+void MigrateToOtherZoneRequest::setReplicaCount(int replicaCount) {
+  replicaCount_ = replicaCount;
+  setParameter(std::string("ReplicaCount"), std::to_string(replicaCount));
 }
 

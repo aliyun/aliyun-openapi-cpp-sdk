@@ -52,6 +52,15 @@ void DeleteShardingNodeRequest::setSecurityToken(const std::string &securityToke
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string DeleteShardingNodeRequest::getEffectiveTime() const {
+  return effectiveTime_;
+}
+
+void DeleteShardingNodeRequest::setEffectiveTime(const std::string &effectiveTime) {
+  effectiveTime_ = effectiveTime;
+  setParameter(std::string("EffectiveTime"), effectiveTime);
+}
+
 std::string DeleteShardingNodeRequest::getNodeId() const {
   return nodeId_;
 }

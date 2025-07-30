@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETASKSREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETASKSREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYTASKINFOREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYTASKINFOREQUEST_H_
 
 #include <alibabacloud/r-kvstore/R_kvstoreExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,50 +26,41 @@
 namespace AlibabaCloud {
 namespace R_kvstore {
 namespace Model {
-class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeTasksRequest : public RpcServiceRequest {
+class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyTaskInfoRequest : public RpcServiceRequest {
 public:
-	DescribeTasksRequest();
-	~DescribeTasksRequest();
+	ModifyTaskInfoRequest();
+	~ModifyTaskInfoRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getStartTime() const;
-	void setStartTime(const std::string &startTime);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getTaskId() const;
+	void setTaskId(const std::string &taskId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	std::string getOwnerAccount() const;
-	void setOwnerAccount(const std::string &ownerAccount);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
-	std::string getStatus() const;
-	void setStatus(const std::string &status);
+	std::string getStepName() const;
+	void setStepName(const std::string &stepName);
+	std::string getActionParams() const;
+	void setActionParams(const std::string &actionParams);
+	std::string getTaskAction() const;
+	void setTaskAction(const std::string &taskAction);
 
 private:
 	long resourceOwnerId_;
-	std::string startTime_;
-	int pageNumber_;
 	std::string accessKeyId_;
 	std::string securityToken_;
-	int pageSize_;
+	std::string regionId_;
+	std::string taskId_;
 	std::string resourceOwnerAccount_;
-	std::string ownerAccount_;
-	std::string endTime_;
-	long ownerId_;
-	std::string instanceId_;
-	std::string status_;
+	std::string stepName_;
+	std::string actionParams_;
+	std::string taskAction_;
 };
 } // namespace Model
 } // namespace R_kvstore
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETASKSREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYTASKINFOREQUEST_H_

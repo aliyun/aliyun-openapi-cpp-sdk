@@ -28,6 +28,8 @@
 #include "model/AllocateDirectConnectionResult.h"
 #include "model/AllocateInstancePublicConnectionRequest.h"
 #include "model/AllocateInstancePublicConnectionResult.h"
+#include "model/CancelActiveOperationTasksRequest.h"
+#include "model/CancelActiveOperationTasksResult.h"
 #include "model/CheckCloudResourceAuthorizedRequest.h"
 #include "model/CheckCloudResourceAuthorizedResult.h"
 #include "model/CreateAccountRequest.h"
@@ -46,10 +48,14 @@
 #include "model/CreateInstancesResult.h"
 #include "model/CreateParameterGroupRequest.h"
 #include "model/CreateParameterGroupResult.h"
+#include "model/CreateTCInstanceRequest.h"
+#include "model/CreateTCInstanceResult.h"
 #include "model/CreateTairInstanceRequest.h"
 #include "model/CreateTairInstanceResult.h"
 #include "model/DeleteAccountRequest.h"
 #include "model/DeleteAccountResult.h"
+#include "model/DeleteBackupRequest.h"
+#include "model/DeleteBackupResult.h"
 #include "model/DeleteGlobalSecurityIPGroupRequest.h"
 #include "model/DeleteGlobalSecurityIPGroupResult.h"
 #include "model/DeleteInstanceRequest.h"
@@ -154,8 +160,16 @@
 #include "model/DescribeSecurityIpsResult.h"
 #include "model/DescribeSlowLogRecordsRequest.h"
 #include "model/DescribeSlowLogRecordsResult.h"
-#include "model/DescribeTasksRequest.h"
-#include "model/DescribeTasksResult.h"
+#include "model/DescribeTairKVCacheCustomInstanceAttributeRequest.h"
+#include "model/DescribeTairKVCacheCustomInstanceAttributeResult.h"
+#include "model/DescribeTairKVCacheCustomInstanceHistoryMonitorValuesRequest.h"
+#include "model/DescribeTairKVCacheCustomInstanceHistoryMonitorValuesResult.h"
+#include "model/DescribeTairKVCacheCustomInstancesRequest.h"
+#include "model/DescribeTairKVCacheCustomInstancesResult.h"
+#include "model/DescribeTairKVCacheInferInstanceAttributeRequest.h"
+#include "model/DescribeTairKVCacheInferInstanceAttributeResult.h"
+#include "model/DescribeTairKVCacheInferInstancesRequest.h"
+#include "model/DescribeTairKVCacheInferInstancesResult.h"
 #include "model/DescribeZonesRequest.h"
 #include "model/DescribeZonesResult.h"
 #include "model/EnableAdditionalBandwidthRequest.h"
@@ -174,6 +188,8 @@
 #include "model/ListTagResourcesResult.h"
 #include "model/LockDBInstanceWriteRequest.h"
 #include "model/LockDBInstanceWriteResult.h"
+#include "model/MasterNodeShutDownFailOverRequest.h"
+#include "model/MasterNodeShutDownFailOverResult.h"
 #include "model/MigrateToOtherZoneRequest.h"
 #include "model/MigrateToOtherZoneResult.h"
 #include "model/ModifyAccountDescriptionRequest.h"
@@ -186,6 +202,8 @@
 #include "model/ModifyActiveOperationTasksResult.h"
 #include "model/ModifyAuditLogConfigRequest.h"
 #include "model/ModifyAuditLogConfigResult.h"
+#include "model/ModifyBackupExpireTimeRequest.h"
+#include "model/ModifyBackupExpireTimeResult.h"
 #include "model/ModifyBackupPolicyRequest.h"
 #include "model/ModifyBackupPolicyResult.h"
 #include "model/ModifyDBInstanceAutoUpgradeRequest.h"
@@ -202,6 +220,8 @@
 #include "model/ModifyInstanceAttributeResult.h"
 #include "model/ModifyInstanceAutoRenewalAttributeRequest.h"
 #include "model/ModifyInstanceAutoRenewalAttributeResult.h"
+#include "model/ModifyInstanceBandwidthRequest.h"
+#include "model/ModifyInstanceBandwidthResult.h"
 #include "model/ModifyInstanceConfigRequest.h"
 #include "model/ModifyInstanceConfigResult.h"
 #include "model/ModifyInstanceMaintainTimeRequest.h"
@@ -232,6 +252,10 @@
 #include "model/ModifySecurityGroupConfigurationResult.h"
 #include "model/ModifySecurityIpsRequest.h"
 #include "model/ModifySecurityIpsResult.h"
+#include "model/ModifyTairKVCacheCustomInstanceAttributeRequest.h"
+#include "model/ModifyTairKVCacheCustomInstanceAttributeResult.h"
+#include "model/ModifyTaskInfoRequest.h"
+#include "model/ModifyTaskInfoResult.h"
 #include "model/ReleaseDirectConnectionRequest.h"
 #include "model/ReleaseDirectConnectionResult.h"
 #include "model/ReleaseInstancePublicConnectionRequest.h"
@@ -244,14 +268,26 @@
 #include "model/RenewInstanceResult.h"
 #include "model/ResetAccountPasswordRequest.h"
 #include "model/ResetAccountPasswordResult.h"
+#include "model/ResetTairKVCacheCustomInstancePasswordRequest.h"
+#include "model/ResetTairKVCacheCustomInstancePasswordResult.h"
+#include "model/ResizeTairKVCacheCustomInstanceDiskRequest.h"
+#include "model/ResizeTairKVCacheCustomInstanceDiskResult.h"
 #include "model/RestartInstanceRequest.h"
 #include "model/RestartInstanceResult.h"
+#include "model/RestartTairKVCacheCustomInstanceRequest.h"
+#include "model/RestartTairKVCacheCustomInstanceResult.h"
 #include "model/RestoreInstanceRequest.h"
 #include "model/RestoreInstanceResult.h"
+#include "model/StartTairKVCacheCustomInstanceRequest.h"
+#include "model/StartTairKVCacheCustomInstanceResult.h"
+#include "model/StopTairKVCacheCustomInstanceRequest.h"
+#include "model/StopTairKVCacheCustomInstanceResult.h"
 #include "model/SwitchInstanceHARequest.h"
 #include "model/SwitchInstanceHAResult.h"
 #include "model/SwitchInstanceProxyRequest.h"
 #include "model/SwitchInstanceProxyResult.h"
+#include "model/SwitchInstanceZoneFailOverRequest.h"
+#include "model/SwitchInstanceZoneFailOverResult.h"
 #include "model/SwitchNetworkRequest.h"
 #include "model/SwitchNetworkResult.h"
 #include "model/SyncDtsStatusRequest.h"
@@ -284,6 +320,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AllocateInstancePublicConnectionResult> AllocateInstancePublicConnectionOutcome;
 			typedef std::future<AllocateInstancePublicConnectionOutcome> AllocateInstancePublicConnectionOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::AllocateInstancePublicConnectionRequest&, const AllocateInstancePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateInstancePublicConnectionAsyncHandler;
+			typedef Outcome<Error, Model::CancelActiveOperationTasksResult> CancelActiveOperationTasksOutcome;
+			typedef std::future<CancelActiveOperationTasksOutcome> CancelActiveOperationTasksOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::CancelActiveOperationTasksRequest&, const CancelActiveOperationTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelActiveOperationTasksAsyncHandler;
 			typedef Outcome<Error, Model::CheckCloudResourceAuthorizedResult> CheckCloudResourceAuthorizedOutcome;
 			typedef std::future<CheckCloudResourceAuthorizedOutcome> CheckCloudResourceAuthorizedOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::CheckCloudResourceAuthorizedRequest&, const CheckCloudResourceAuthorizedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckCloudResourceAuthorizedAsyncHandler;
@@ -311,12 +350,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateParameterGroupResult> CreateParameterGroupOutcome;
 			typedef std::future<CreateParameterGroupOutcome> CreateParameterGroupOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::CreateParameterGroupRequest&, const CreateParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateParameterGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateTCInstanceResult> CreateTCInstanceOutcome;
+			typedef std::future<CreateTCInstanceOutcome> CreateTCInstanceOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::CreateTCInstanceRequest&, const CreateTCInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTCInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CreateTairInstanceResult> CreateTairInstanceOutcome;
 			typedef std::future<CreateTairInstanceOutcome> CreateTairInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::CreateTairInstanceRequest&, const CreateTairInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTairInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAccountResult> DeleteAccountOutcome;
 			typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DeleteAccountRequest&, const DeleteAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
+			typedef Outcome<Error, Model::DeleteBackupResult> DeleteBackupOutcome;
+			typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DeleteBackupRequest&, const DeleteBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteGlobalSecurityIPGroupResult> DeleteGlobalSecurityIPGroupOutcome;
 			typedef std::future<DeleteGlobalSecurityIPGroupOutcome> DeleteGlobalSecurityIPGroupOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DeleteGlobalSecurityIPGroupRequest&, const DeleteGlobalSecurityIPGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlobalSecurityIPGroupAsyncHandler;
@@ -473,9 +518,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSlowLogRecordsResult> DescribeSlowLogRecordsOutcome;
 			typedef std::future<DescribeSlowLogRecordsOutcome> DescribeSlowLogRecordsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeSlowLogRecordsRequest&, const DescribeSlowLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogRecordsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeTasksResult> DescribeTasksOutcome;
-			typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
-			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeTasksRequest&, const DescribeTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTairKVCacheCustomInstanceAttributeResult> DescribeTairKVCacheCustomInstanceAttributeOutcome;
+			typedef std::future<DescribeTairKVCacheCustomInstanceAttributeOutcome> DescribeTairKVCacheCustomInstanceAttributeOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeTairKVCacheCustomInstanceAttributeRequest&, const DescribeTairKVCacheCustomInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTairKVCacheCustomInstanceAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTairKVCacheCustomInstanceHistoryMonitorValuesResult> DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcome;
+			typedef std::future<DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcome> DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeTairKVCacheCustomInstanceHistoryMonitorValuesRequest&, const DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTairKVCacheCustomInstanceHistoryMonitorValuesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTairKVCacheCustomInstancesResult> DescribeTairKVCacheCustomInstancesOutcome;
+			typedef std::future<DescribeTairKVCacheCustomInstancesOutcome> DescribeTairKVCacheCustomInstancesOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeTairKVCacheCustomInstancesRequest&, const DescribeTairKVCacheCustomInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTairKVCacheCustomInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTairKVCacheInferInstanceAttributeResult> DescribeTairKVCacheInferInstanceAttributeOutcome;
+			typedef std::future<DescribeTairKVCacheInferInstanceAttributeOutcome> DescribeTairKVCacheInferInstanceAttributeOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeTairKVCacheInferInstanceAttributeRequest&, const DescribeTairKVCacheInferInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTairKVCacheInferInstanceAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTairKVCacheInferInstancesResult> DescribeTairKVCacheInferInstancesOutcome;
+			typedef std::future<DescribeTairKVCacheInferInstancesOutcome> DescribeTairKVCacheInferInstancesOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeTairKVCacheInferInstancesRequest&, const DescribeTairKVCacheInferInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTairKVCacheInferInstancesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeZonesResult> DescribeZonesOutcome;
 			typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeZonesRequest&, const DescribeZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
@@ -503,6 +560,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::LockDBInstanceWriteResult> LockDBInstanceWriteOutcome;
 			typedef std::future<LockDBInstanceWriteOutcome> LockDBInstanceWriteOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::LockDBInstanceWriteRequest&, const LockDBInstanceWriteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LockDBInstanceWriteAsyncHandler;
+			typedef Outcome<Error, Model::MasterNodeShutDownFailOverResult> MasterNodeShutDownFailOverOutcome;
+			typedef std::future<MasterNodeShutDownFailOverOutcome> MasterNodeShutDownFailOverOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::MasterNodeShutDownFailOverRequest&, const MasterNodeShutDownFailOverOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MasterNodeShutDownFailOverAsyncHandler;
 			typedef Outcome<Error, Model::MigrateToOtherZoneResult> MigrateToOtherZoneOutcome;
 			typedef std::future<MigrateToOtherZoneOutcome> MigrateToOtherZoneOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::MigrateToOtherZoneRequest&, const MigrateToOtherZoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MigrateToOtherZoneAsyncHandler;
@@ -521,6 +581,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyAuditLogConfigResult> ModifyAuditLogConfigOutcome;
 			typedef std::future<ModifyAuditLogConfigOutcome> ModifyAuditLogConfigOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyAuditLogConfigRequest&, const ModifyAuditLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditLogConfigAsyncHandler;
+			typedef Outcome<Error, Model::ModifyBackupExpireTimeResult> ModifyBackupExpireTimeOutcome;
+			typedef std::future<ModifyBackupExpireTimeOutcome> ModifyBackupExpireTimeOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyBackupExpireTimeRequest&, const ModifyBackupExpireTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupExpireTimeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyBackupPolicyResult> ModifyBackupPolicyOutcome;
 			typedef std::future<ModifyBackupPolicyOutcome> ModifyBackupPolicyOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyBackupPolicyRequest&, const ModifyBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupPolicyAsyncHandler;
@@ -545,6 +608,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyInstanceAutoRenewalAttributeResult> ModifyInstanceAutoRenewalAttributeOutcome;
 			typedef std::future<ModifyInstanceAutoRenewalAttributeOutcome> ModifyInstanceAutoRenewalAttributeOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyInstanceAutoRenewalAttributeRequest&, const ModifyInstanceAutoRenewalAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAutoRenewalAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstanceBandwidthResult> ModifyInstanceBandwidthOutcome;
+			typedef std::future<ModifyInstanceBandwidthOutcome> ModifyInstanceBandwidthOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyInstanceBandwidthRequest&, const ModifyInstanceBandwidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceBandwidthAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceConfigResult> ModifyInstanceConfigOutcome;
 			typedef std::future<ModifyInstanceConfigOutcome> ModifyInstanceConfigOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyInstanceConfigRequest&, const ModifyInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceConfigAsyncHandler;
@@ -590,6 +656,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySecurityIpsResult> ModifySecurityIpsOutcome;
 			typedef std::future<ModifySecurityIpsOutcome> ModifySecurityIpsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifySecurityIpsRequest&, const ModifySecurityIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityIpsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyTairKVCacheCustomInstanceAttributeResult> ModifyTairKVCacheCustomInstanceAttributeOutcome;
+			typedef std::future<ModifyTairKVCacheCustomInstanceAttributeOutcome> ModifyTairKVCacheCustomInstanceAttributeOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyTairKVCacheCustomInstanceAttributeRequest&, const ModifyTairKVCacheCustomInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTairKVCacheCustomInstanceAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyTaskInfoResult> ModifyTaskInfoOutcome;
+			typedef std::future<ModifyTaskInfoOutcome> ModifyTaskInfoOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyTaskInfoRequest&, const ModifyTaskInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskInfoAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseDirectConnectionResult> ReleaseDirectConnectionOutcome;
 			typedef std::future<ReleaseDirectConnectionOutcome> ReleaseDirectConnectionOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ReleaseDirectConnectionRequest&, const ReleaseDirectConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseDirectConnectionAsyncHandler;
@@ -608,18 +680,36 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResetAccountPasswordResult> ResetAccountPasswordOutcome;
 			typedef std::future<ResetAccountPasswordOutcome> ResetAccountPasswordOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ResetAccountPasswordRequest&, const ResetAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountPasswordAsyncHandler;
+			typedef Outcome<Error, Model::ResetTairKVCacheCustomInstancePasswordResult> ResetTairKVCacheCustomInstancePasswordOutcome;
+			typedef std::future<ResetTairKVCacheCustomInstancePasswordOutcome> ResetTairKVCacheCustomInstancePasswordOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ResetTairKVCacheCustomInstancePasswordRequest&, const ResetTairKVCacheCustomInstancePasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetTairKVCacheCustomInstancePasswordAsyncHandler;
+			typedef Outcome<Error, Model::ResizeTairKVCacheCustomInstanceDiskResult> ResizeTairKVCacheCustomInstanceDiskOutcome;
+			typedef std::future<ResizeTairKVCacheCustomInstanceDiskOutcome> ResizeTairKVCacheCustomInstanceDiskOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ResizeTairKVCacheCustomInstanceDiskRequest&, const ResizeTairKVCacheCustomInstanceDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeTairKVCacheCustomInstanceDiskAsyncHandler;
 			typedef Outcome<Error, Model::RestartInstanceResult> RestartInstanceOutcome;
 			typedef std::future<RestartInstanceOutcome> RestartInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::RestartInstanceRequest&, const RestartInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RestartTairKVCacheCustomInstanceResult> RestartTairKVCacheCustomInstanceOutcome;
+			typedef std::future<RestartTairKVCacheCustomInstanceOutcome> RestartTairKVCacheCustomInstanceOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::RestartTairKVCacheCustomInstanceRequest&, const RestartTairKVCacheCustomInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartTairKVCacheCustomInstanceAsyncHandler;
 			typedef Outcome<Error, Model::RestoreInstanceResult> RestoreInstanceOutcome;
 			typedef std::future<RestoreInstanceOutcome> RestoreInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::RestoreInstanceRequest&, const RestoreInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestoreInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StartTairKVCacheCustomInstanceResult> StartTairKVCacheCustomInstanceOutcome;
+			typedef std::future<StartTairKVCacheCustomInstanceOutcome> StartTairKVCacheCustomInstanceOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::StartTairKVCacheCustomInstanceRequest&, const StartTairKVCacheCustomInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartTairKVCacheCustomInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StopTairKVCacheCustomInstanceResult> StopTairKVCacheCustomInstanceOutcome;
+			typedef std::future<StopTairKVCacheCustomInstanceOutcome> StopTairKVCacheCustomInstanceOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::StopTairKVCacheCustomInstanceRequest&, const StopTairKVCacheCustomInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopTairKVCacheCustomInstanceAsyncHandler;
 			typedef Outcome<Error, Model::SwitchInstanceHAResult> SwitchInstanceHAOutcome;
 			typedef std::future<SwitchInstanceHAOutcome> SwitchInstanceHAOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::SwitchInstanceHARequest&, const SwitchInstanceHAOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchInstanceHAAsyncHandler;
 			typedef Outcome<Error, Model::SwitchInstanceProxyResult> SwitchInstanceProxyOutcome;
 			typedef std::future<SwitchInstanceProxyOutcome> SwitchInstanceProxyOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::SwitchInstanceProxyRequest&, const SwitchInstanceProxyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchInstanceProxyAsyncHandler;
+			typedef Outcome<Error, Model::SwitchInstanceZoneFailOverResult> SwitchInstanceZoneFailOverOutcome;
+			typedef std::future<SwitchInstanceZoneFailOverOutcome> SwitchInstanceZoneFailOverOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::SwitchInstanceZoneFailOverRequest&, const SwitchInstanceZoneFailOverOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchInstanceZoneFailOverAsyncHandler;
 			typedef Outcome<Error, Model::SwitchNetworkResult> SwitchNetworkOutcome;
 			typedef std::future<SwitchNetworkOutcome> SwitchNetworkOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::SwitchNetworkRequest&, const SwitchNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchNetworkAsyncHandler;
@@ -655,6 +745,9 @@ namespace AlibabaCloud
 			AllocateInstancePublicConnectionOutcome allocateInstancePublicConnection(const Model::AllocateInstancePublicConnectionRequest &request)const;
 			void allocateInstancePublicConnectionAsync(const Model::AllocateInstancePublicConnectionRequest& request, const AllocateInstancePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocateInstancePublicConnectionOutcomeCallable allocateInstancePublicConnectionCallable(const Model::AllocateInstancePublicConnectionRequest& request) const;
+			CancelActiveOperationTasksOutcome cancelActiveOperationTasks(const Model::CancelActiveOperationTasksRequest &request)const;
+			void cancelActiveOperationTasksAsync(const Model::CancelActiveOperationTasksRequest& request, const CancelActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelActiveOperationTasksOutcomeCallable cancelActiveOperationTasksCallable(const Model::CancelActiveOperationTasksRequest& request) const;
 			CheckCloudResourceAuthorizedOutcome checkCloudResourceAuthorized(const Model::CheckCloudResourceAuthorizedRequest &request)const;
 			void checkCloudResourceAuthorizedAsync(const Model::CheckCloudResourceAuthorizedRequest& request, const CheckCloudResourceAuthorizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckCloudResourceAuthorizedOutcomeCallable checkCloudResourceAuthorizedCallable(const Model::CheckCloudResourceAuthorizedRequest& request) const;
@@ -682,12 +775,18 @@ namespace AlibabaCloud
 			CreateParameterGroupOutcome createParameterGroup(const Model::CreateParameterGroupRequest &request)const;
 			void createParameterGroupAsync(const Model::CreateParameterGroupRequest& request, const CreateParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateParameterGroupOutcomeCallable createParameterGroupCallable(const Model::CreateParameterGroupRequest& request) const;
+			CreateTCInstanceOutcome createTCInstance(const Model::CreateTCInstanceRequest &request)const;
+			void createTCInstanceAsync(const Model::CreateTCInstanceRequest& request, const CreateTCInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTCInstanceOutcomeCallable createTCInstanceCallable(const Model::CreateTCInstanceRequest& request) const;
 			CreateTairInstanceOutcome createTairInstance(const Model::CreateTairInstanceRequest &request)const;
 			void createTairInstanceAsync(const Model::CreateTairInstanceRequest& request, const CreateTairInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTairInstanceOutcomeCallable createTairInstanceCallable(const Model::CreateTairInstanceRequest& request) const;
 			DeleteAccountOutcome deleteAccount(const Model::DeleteAccountRequest &request)const;
 			void deleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccountOutcomeCallable deleteAccountCallable(const Model::DeleteAccountRequest& request) const;
+			DeleteBackupOutcome deleteBackup(const Model::DeleteBackupRequest &request)const;
+			void deleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteBackupOutcomeCallable deleteBackupCallable(const Model::DeleteBackupRequest& request) const;
 			DeleteGlobalSecurityIPGroupOutcome deleteGlobalSecurityIPGroup(const Model::DeleteGlobalSecurityIPGroupRequest &request)const;
 			void deleteGlobalSecurityIPGroupAsync(const Model::DeleteGlobalSecurityIPGroupRequest& request, const DeleteGlobalSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteGlobalSecurityIPGroupOutcomeCallable deleteGlobalSecurityIPGroupCallable(const Model::DeleteGlobalSecurityIPGroupRequest& request) const;
@@ -844,9 +943,21 @@ namespace AlibabaCloud
 			DescribeSlowLogRecordsOutcome describeSlowLogRecords(const Model::DescribeSlowLogRecordsRequest &request)const;
 			void describeSlowLogRecordsAsync(const Model::DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowLogRecordsOutcomeCallable describeSlowLogRecordsCallable(const Model::DescribeSlowLogRecordsRequest& request) const;
-			DescribeTasksOutcome describeTasks(const Model::DescribeTasksRequest &request)const;
-			void describeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeTasksOutcomeCallable describeTasksCallable(const Model::DescribeTasksRequest& request) const;
+			DescribeTairKVCacheCustomInstanceAttributeOutcome describeTairKVCacheCustomInstanceAttribute(const Model::DescribeTairKVCacheCustomInstanceAttributeRequest &request)const;
+			void describeTairKVCacheCustomInstanceAttributeAsync(const Model::DescribeTairKVCacheCustomInstanceAttributeRequest& request, const DescribeTairKVCacheCustomInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTairKVCacheCustomInstanceAttributeOutcomeCallable describeTairKVCacheCustomInstanceAttributeCallable(const Model::DescribeTairKVCacheCustomInstanceAttributeRequest& request) const;
+			DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcome describeTairKVCacheCustomInstanceHistoryMonitorValues(const Model::DescribeTairKVCacheCustomInstanceHistoryMonitorValuesRequest &request)const;
+			void describeTairKVCacheCustomInstanceHistoryMonitorValuesAsync(const Model::DescribeTairKVCacheCustomInstanceHistoryMonitorValuesRequest& request, const DescribeTairKVCacheCustomInstanceHistoryMonitorValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTairKVCacheCustomInstanceHistoryMonitorValuesOutcomeCallable describeTairKVCacheCustomInstanceHistoryMonitorValuesCallable(const Model::DescribeTairKVCacheCustomInstanceHistoryMonitorValuesRequest& request) const;
+			DescribeTairKVCacheCustomInstancesOutcome describeTairKVCacheCustomInstances(const Model::DescribeTairKVCacheCustomInstancesRequest &request)const;
+			void describeTairKVCacheCustomInstancesAsync(const Model::DescribeTairKVCacheCustomInstancesRequest& request, const DescribeTairKVCacheCustomInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTairKVCacheCustomInstancesOutcomeCallable describeTairKVCacheCustomInstancesCallable(const Model::DescribeTairKVCacheCustomInstancesRequest& request) const;
+			DescribeTairKVCacheInferInstanceAttributeOutcome describeTairKVCacheInferInstanceAttribute(const Model::DescribeTairKVCacheInferInstanceAttributeRequest &request)const;
+			void describeTairKVCacheInferInstanceAttributeAsync(const Model::DescribeTairKVCacheInferInstanceAttributeRequest& request, const DescribeTairKVCacheInferInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTairKVCacheInferInstanceAttributeOutcomeCallable describeTairKVCacheInferInstanceAttributeCallable(const Model::DescribeTairKVCacheInferInstanceAttributeRequest& request) const;
+			DescribeTairKVCacheInferInstancesOutcome describeTairKVCacheInferInstances(const Model::DescribeTairKVCacheInferInstancesRequest &request)const;
+			void describeTairKVCacheInferInstancesAsync(const Model::DescribeTairKVCacheInferInstancesRequest& request, const DescribeTairKVCacheInferInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTairKVCacheInferInstancesOutcomeCallable describeTairKVCacheInferInstancesCallable(const Model::DescribeTairKVCacheInferInstancesRequest& request) const;
 			DescribeZonesOutcome describeZones(const Model::DescribeZonesRequest &request)const;
 			void describeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeZonesOutcomeCallable describeZonesCallable(const Model::DescribeZonesRequest& request) const;
@@ -874,6 +985,9 @@ namespace AlibabaCloud
 			LockDBInstanceWriteOutcome lockDBInstanceWrite(const Model::LockDBInstanceWriteRequest &request)const;
 			void lockDBInstanceWriteAsync(const Model::LockDBInstanceWriteRequest& request, const LockDBInstanceWriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LockDBInstanceWriteOutcomeCallable lockDBInstanceWriteCallable(const Model::LockDBInstanceWriteRequest& request) const;
+			MasterNodeShutDownFailOverOutcome masterNodeShutDownFailOver(const Model::MasterNodeShutDownFailOverRequest &request)const;
+			void masterNodeShutDownFailOverAsync(const Model::MasterNodeShutDownFailOverRequest& request, const MasterNodeShutDownFailOverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MasterNodeShutDownFailOverOutcomeCallable masterNodeShutDownFailOverCallable(const Model::MasterNodeShutDownFailOverRequest& request) const;
 			MigrateToOtherZoneOutcome migrateToOtherZone(const Model::MigrateToOtherZoneRequest &request)const;
 			void migrateToOtherZoneAsync(const Model::MigrateToOtherZoneRequest& request, const MigrateToOtherZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MigrateToOtherZoneOutcomeCallable migrateToOtherZoneCallable(const Model::MigrateToOtherZoneRequest& request) const;
@@ -892,6 +1006,9 @@ namespace AlibabaCloud
 			ModifyAuditLogConfigOutcome modifyAuditLogConfig(const Model::ModifyAuditLogConfigRequest &request)const;
 			void modifyAuditLogConfigAsync(const Model::ModifyAuditLogConfigRequest& request, const ModifyAuditLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAuditLogConfigOutcomeCallable modifyAuditLogConfigCallable(const Model::ModifyAuditLogConfigRequest& request) const;
+			ModifyBackupExpireTimeOutcome modifyBackupExpireTime(const Model::ModifyBackupExpireTimeRequest &request)const;
+			void modifyBackupExpireTimeAsync(const Model::ModifyBackupExpireTimeRequest& request, const ModifyBackupExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyBackupExpireTimeOutcomeCallable modifyBackupExpireTimeCallable(const Model::ModifyBackupExpireTimeRequest& request) const;
 			ModifyBackupPolicyOutcome modifyBackupPolicy(const Model::ModifyBackupPolicyRequest &request)const;
 			void modifyBackupPolicyAsync(const Model::ModifyBackupPolicyRequest& request, const ModifyBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBackupPolicyOutcomeCallable modifyBackupPolicyCallable(const Model::ModifyBackupPolicyRequest& request) const;
@@ -916,6 +1033,9 @@ namespace AlibabaCloud
 			ModifyInstanceAutoRenewalAttributeOutcome modifyInstanceAutoRenewalAttribute(const Model::ModifyInstanceAutoRenewalAttributeRequest &request)const;
 			void modifyInstanceAutoRenewalAttributeAsync(const Model::ModifyInstanceAutoRenewalAttributeRequest& request, const ModifyInstanceAutoRenewalAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceAutoRenewalAttributeOutcomeCallable modifyInstanceAutoRenewalAttributeCallable(const Model::ModifyInstanceAutoRenewalAttributeRequest& request) const;
+			ModifyInstanceBandwidthOutcome modifyInstanceBandwidth(const Model::ModifyInstanceBandwidthRequest &request)const;
+			void modifyInstanceBandwidthAsync(const Model::ModifyInstanceBandwidthRequest& request, const ModifyInstanceBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstanceBandwidthOutcomeCallable modifyInstanceBandwidthCallable(const Model::ModifyInstanceBandwidthRequest& request) const;
 			ModifyInstanceConfigOutcome modifyInstanceConfig(const Model::ModifyInstanceConfigRequest &request)const;
 			void modifyInstanceConfigAsync(const Model::ModifyInstanceConfigRequest& request, const ModifyInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceConfigOutcomeCallable modifyInstanceConfigCallable(const Model::ModifyInstanceConfigRequest& request) const;
@@ -961,6 +1081,12 @@ namespace AlibabaCloud
 			ModifySecurityIpsOutcome modifySecurityIps(const Model::ModifySecurityIpsRequest &request)const;
 			void modifySecurityIpsAsync(const Model::ModifySecurityIpsRequest& request, const ModifySecurityIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySecurityIpsOutcomeCallable modifySecurityIpsCallable(const Model::ModifySecurityIpsRequest& request) const;
+			ModifyTairKVCacheCustomInstanceAttributeOutcome modifyTairKVCacheCustomInstanceAttribute(const Model::ModifyTairKVCacheCustomInstanceAttributeRequest &request)const;
+			void modifyTairKVCacheCustomInstanceAttributeAsync(const Model::ModifyTairKVCacheCustomInstanceAttributeRequest& request, const ModifyTairKVCacheCustomInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyTairKVCacheCustomInstanceAttributeOutcomeCallable modifyTairKVCacheCustomInstanceAttributeCallable(const Model::ModifyTairKVCacheCustomInstanceAttributeRequest& request) const;
+			ModifyTaskInfoOutcome modifyTaskInfo(const Model::ModifyTaskInfoRequest &request)const;
+			void modifyTaskInfoAsync(const Model::ModifyTaskInfoRequest& request, const ModifyTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyTaskInfoOutcomeCallable modifyTaskInfoCallable(const Model::ModifyTaskInfoRequest& request) const;
 			ReleaseDirectConnectionOutcome releaseDirectConnection(const Model::ReleaseDirectConnectionRequest &request)const;
 			void releaseDirectConnectionAsync(const Model::ReleaseDirectConnectionRequest& request, const ReleaseDirectConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseDirectConnectionOutcomeCallable releaseDirectConnectionCallable(const Model::ReleaseDirectConnectionRequest& request) const;
@@ -979,18 +1105,36 @@ namespace AlibabaCloud
 			ResetAccountPasswordOutcome resetAccountPassword(const Model::ResetAccountPasswordRequest &request)const;
 			void resetAccountPasswordAsync(const Model::ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAccountPasswordOutcomeCallable resetAccountPasswordCallable(const Model::ResetAccountPasswordRequest& request) const;
+			ResetTairKVCacheCustomInstancePasswordOutcome resetTairKVCacheCustomInstancePassword(const Model::ResetTairKVCacheCustomInstancePasswordRequest &request)const;
+			void resetTairKVCacheCustomInstancePasswordAsync(const Model::ResetTairKVCacheCustomInstancePasswordRequest& request, const ResetTairKVCacheCustomInstancePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResetTairKVCacheCustomInstancePasswordOutcomeCallable resetTairKVCacheCustomInstancePasswordCallable(const Model::ResetTairKVCacheCustomInstancePasswordRequest& request) const;
+			ResizeTairKVCacheCustomInstanceDiskOutcome resizeTairKVCacheCustomInstanceDisk(const Model::ResizeTairKVCacheCustomInstanceDiskRequest &request)const;
+			void resizeTairKVCacheCustomInstanceDiskAsync(const Model::ResizeTairKVCacheCustomInstanceDiskRequest& request, const ResizeTairKVCacheCustomInstanceDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResizeTairKVCacheCustomInstanceDiskOutcomeCallable resizeTairKVCacheCustomInstanceDiskCallable(const Model::ResizeTairKVCacheCustomInstanceDiskRequest& request) const;
 			RestartInstanceOutcome restartInstance(const Model::RestartInstanceRequest &request)const;
 			void restartInstanceAsync(const Model::RestartInstanceRequest& request, const RestartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartInstanceOutcomeCallable restartInstanceCallable(const Model::RestartInstanceRequest& request) const;
+			RestartTairKVCacheCustomInstanceOutcome restartTairKVCacheCustomInstance(const Model::RestartTairKVCacheCustomInstanceRequest &request)const;
+			void restartTairKVCacheCustomInstanceAsync(const Model::RestartTairKVCacheCustomInstanceRequest& request, const RestartTairKVCacheCustomInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RestartTairKVCacheCustomInstanceOutcomeCallable restartTairKVCacheCustomInstanceCallable(const Model::RestartTairKVCacheCustomInstanceRequest& request) const;
 			RestoreInstanceOutcome restoreInstance(const Model::RestoreInstanceRequest &request)const;
 			void restoreInstanceAsync(const Model::RestoreInstanceRequest& request, const RestoreInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestoreInstanceOutcomeCallable restoreInstanceCallable(const Model::RestoreInstanceRequest& request) const;
+			StartTairKVCacheCustomInstanceOutcome startTairKVCacheCustomInstance(const Model::StartTairKVCacheCustomInstanceRequest &request)const;
+			void startTairKVCacheCustomInstanceAsync(const Model::StartTairKVCacheCustomInstanceRequest& request, const StartTairKVCacheCustomInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartTairKVCacheCustomInstanceOutcomeCallable startTairKVCacheCustomInstanceCallable(const Model::StartTairKVCacheCustomInstanceRequest& request) const;
+			StopTairKVCacheCustomInstanceOutcome stopTairKVCacheCustomInstance(const Model::StopTairKVCacheCustomInstanceRequest &request)const;
+			void stopTairKVCacheCustomInstanceAsync(const Model::StopTairKVCacheCustomInstanceRequest& request, const StopTairKVCacheCustomInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopTairKVCacheCustomInstanceOutcomeCallable stopTairKVCacheCustomInstanceCallable(const Model::StopTairKVCacheCustomInstanceRequest& request) const;
 			SwitchInstanceHAOutcome switchInstanceHA(const Model::SwitchInstanceHARequest &request)const;
 			void switchInstanceHAAsync(const Model::SwitchInstanceHARequest& request, const SwitchInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchInstanceHAOutcomeCallable switchInstanceHACallable(const Model::SwitchInstanceHARequest& request) const;
 			SwitchInstanceProxyOutcome switchInstanceProxy(const Model::SwitchInstanceProxyRequest &request)const;
 			void switchInstanceProxyAsync(const Model::SwitchInstanceProxyRequest& request, const SwitchInstanceProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchInstanceProxyOutcomeCallable switchInstanceProxyCallable(const Model::SwitchInstanceProxyRequest& request) const;
+			SwitchInstanceZoneFailOverOutcome switchInstanceZoneFailOver(const Model::SwitchInstanceZoneFailOverRequest &request)const;
+			void switchInstanceZoneFailOverAsync(const Model::SwitchInstanceZoneFailOverRequest& request, const SwitchInstanceZoneFailOverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SwitchInstanceZoneFailOverOutcomeCallable switchInstanceZoneFailOverCallable(const Model::SwitchInstanceZoneFailOverRequest& request) const;
 			SwitchNetworkOutcome switchNetwork(const Model::SwitchNetworkRequest &request)const;
 			void switchNetworkAsync(const Model::SwitchNetworkRequest& request, const SwitchNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchNetworkOutcomeCallable switchNetworkCallable(const Model::SwitchNetworkRequest& request) const;

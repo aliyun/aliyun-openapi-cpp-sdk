@@ -70,6 +70,15 @@ void ModifyInstanceAutoRenewalAttributeRequest::setDBInstanceId(const std::strin
   setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
+std::string ModifyInstanceAutoRenewalAttributeRequest::getProduct() const {
+  return product_;
+}
+
+void ModifyInstanceAutoRenewalAttributeRequest::setProduct(const std::string &product) {
+  product_ = product;
+  setParameter(std::string("Product"), product);
+}
+
 std::string ModifyInstanceAutoRenewalAttributeRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

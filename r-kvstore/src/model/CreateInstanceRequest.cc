@@ -264,6 +264,15 @@ void CreateInstanceRequest::setZoneId(const std::string &zoneId) {
   setParameter(std::string("ZoneId"), zoneId);
 }
 
+int CreateInstanceRequest::getReplicaCount() const {
+  return replicaCount_;
+}
+
+void CreateInstanceRequest::setReplicaCount(int replicaCount) {
+  replicaCount_ = replicaCount;
+  setParameter(std::string("ReplicaCount"), std::to_string(replicaCount));
+}
+
 std::string CreateInstanceRequest::getAppendonly() const {
   return appendonly_;
 }
@@ -469,6 +478,15 @@ std::string CreateInstanceRequest::getConfig() const {
 void CreateInstanceRequest::setConfig(const std::string &config) {
   config_ = config;
   setParameter(std::string("Config"), config);
+}
+
+int CreateInstanceRequest::getSlaveReplicaCount() const {
+  return slaveReplicaCount_;
+}
+
+void CreateInstanceRequest::setSlaveReplicaCount(int slaveReplicaCount) {
+  slaveReplicaCount_ = slaveReplicaCount;
+  setParameter(std::string("SlaveReplicaCount"), std::to_string(slaveReplicaCount));
 }
 
 std::string CreateInstanceRequest::getClusterBackupId() const {

@@ -61,6 +61,15 @@ void DescribePriceRequest::setCouponNo(const std::string &couponNo) {
   setParameter(std::string("CouponNo"), couponNo);
 }
 
+std::string DescribePriceRequest::getEngineVersion() const {
+  return engineVersion_;
+}
+
+void DescribePriceRequest::setEngineVersion(const std::string &engineVersion) {
+  engineVersion_ = engineVersion;
+  setParameter(std::string("EngineVersion"), engineVersion);
+}
+
 std::string DescribePriceRequest::getInstanceClass() const {
   return instanceClass_;
 }
@@ -113,6 +122,15 @@ std::string DescribePriceRequest::getBusinessInfo() const {
 void DescribePriceRequest::setBusinessInfo(const std::string &businessInfo) {
   businessInfo_ = businessInfo;
   setParameter(std::string("BusinessInfo"), businessInfo);
+}
+
+int DescribePriceRequest::getShardCount() const {
+  return shardCount_;
+}
+
+void DescribePriceRequest::setShardCount(int shardCount) {
+  shardCount_ = shardCount;
+  setParameter(std::string("ShardCount"), std::to_string(shardCount));
 }
 
 long DescribePriceRequest::getPeriod() const {

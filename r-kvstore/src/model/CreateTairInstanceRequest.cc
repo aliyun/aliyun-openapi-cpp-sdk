@@ -34,6 +34,15 @@ void CreateTairInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string CreateTairInstanceRequest::getConnectionStringPrefix() const {
+  return connectionStringPrefix_;
+}
+
+void CreateTairInstanceRequest::setConnectionStringPrefix(const std::string &connectionStringPrefix) {
+  connectionStringPrefix_ = connectionStringPrefix;
+  setParameter(std::string("ConnectionStringPrefix"), connectionStringPrefix);
+}
+
 std::string CreateTairInstanceRequest::getSecondaryZoneId() const {
   return secondaryZoneId_;
 }
@@ -255,6 +264,15 @@ void CreateTairInstanceRequest::setZoneId(const std::string &zoneId) {
   setParameter(std::string("ZoneId"), zoneId);
 }
 
+int CreateTairInstanceRequest::getReplicaCount() const {
+  return replicaCount_;
+}
+
+void CreateTairInstanceRequest::setReplicaCount(int replicaCount) {
+  replicaCount_ = replicaCount;
+  setParameter(std::string("ReplicaCount"), std::to_string(replicaCount));
+}
+
 std::string CreateTairInstanceRequest::getClientToken() const {
   return clientToken_;
 }
@@ -415,6 +433,15 @@ std::string CreateTairInstanceRequest::getChargeType() const {
 void CreateTairInstanceRequest::setChargeType(const std::string &chargeType) {
   chargeType_ = chargeType;
   setParameter(std::string("ChargeType"), chargeType);
+}
+
+int CreateTairInstanceRequest::getSlaveReplicaCount() const {
+  return slaveReplicaCount_;
+}
+
+void CreateTairInstanceRequest::setSlaveReplicaCount(int slaveReplicaCount) {
+  slaveReplicaCount_ = slaveReplicaCount;
+  setParameter(std::string("SlaveReplicaCount"), std::to_string(slaveReplicaCount));
 }
 
 std::string CreateTairInstanceRequest::getClusterBackupId() const {

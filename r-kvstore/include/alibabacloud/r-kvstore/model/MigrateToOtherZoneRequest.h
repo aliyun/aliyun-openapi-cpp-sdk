@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getSecondaryZoneId() const;
 	void setSecondaryZoneId(const std::string &secondaryZoneId);
+	int getSlaveReadOnlyCount() const;
+	void setSlaveReadOnlyCount(int slaveReadOnlyCount);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
@@ -52,10 +54,17 @@ public:
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	int getReadOnlyCount() const;
+	void setReadOnlyCount(int readOnlyCount);
+	int getSlaveReplicaCount() const;
+	void setSlaveReplicaCount(int slaveReplicaCount);
+	int getReplicaCount() const;
+	void setReplicaCount(int replicaCount);
 
 private:
 	long resourceOwnerId_;
 	std::string secondaryZoneId_;
+	int slaveReadOnlyCount_;
 	std::string accessKeyId_;
 	std::string securityToken_;
 	std::string effectiveTime_;
@@ -65,6 +74,9 @@ private:
 	long ownerId_;
 	std::string vSwitchId_;
 	std::string zoneId_;
+	int readOnlyCount_;
+	int slaveReplicaCount_;
+	int replicaCount_;
 };
 } // namespace Model
 } // namespace R_kvstore

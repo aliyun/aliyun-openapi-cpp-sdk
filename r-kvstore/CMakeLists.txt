@@ -27,6 +27,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/AllocateDirectConnectionResult.h
 	include/alibabacloud/r-kvstore/model/AllocateInstancePublicConnectionRequest.h
 	include/alibabacloud/r-kvstore/model/AllocateInstancePublicConnectionResult.h
+	include/alibabacloud/r-kvstore/model/CancelActiveOperationTasksRequest.h
+	include/alibabacloud/r-kvstore/model/CancelActiveOperationTasksResult.h
 	include/alibabacloud/r-kvstore/model/CheckCloudResourceAuthorizedRequest.h
 	include/alibabacloud/r-kvstore/model/CheckCloudResourceAuthorizedResult.h
 	include/alibabacloud/r-kvstore/model/CreateAccountRequest.h
@@ -45,10 +47,14 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/CreateInstancesResult.h
 	include/alibabacloud/r-kvstore/model/CreateParameterGroupRequest.h
 	include/alibabacloud/r-kvstore/model/CreateParameterGroupResult.h
+	include/alibabacloud/r-kvstore/model/CreateTCInstanceRequest.h
+	include/alibabacloud/r-kvstore/model/CreateTCInstanceResult.h
 	include/alibabacloud/r-kvstore/model/CreateTairInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/CreateTairInstanceResult.h
 	include/alibabacloud/r-kvstore/model/DeleteAccountRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteAccountResult.h
+	include/alibabacloud/r-kvstore/model/DeleteBackupRequest.h
+	include/alibabacloud/r-kvstore/model/DeleteBackupResult.h
 	include/alibabacloud/r-kvstore/model/DeleteGlobalSecurityIPGroupRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteGlobalSecurityIPGroupResult.h
 	include/alibabacloud/r-kvstore/model/DeleteInstanceRequest.h
@@ -153,8 +159,16 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeSecurityIpsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeSlowLogRecordsResult.h
-	include/alibabacloud/r-kvstore/model/DescribeTasksRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeTasksResult.h
+	include/alibabacloud/r-kvstore/model/DescribeTairKVCacheCustomInstanceAttributeRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeTairKVCacheCustomInstanceAttributeResult.h
+	include/alibabacloud/r-kvstore/model/DescribeTairKVCacheCustomInstanceHistoryMonitorValuesRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeTairKVCacheCustomInstanceHistoryMonitorValuesResult.h
+	include/alibabacloud/r-kvstore/model/DescribeTairKVCacheCustomInstancesRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeTairKVCacheCustomInstancesResult.h
+	include/alibabacloud/r-kvstore/model/DescribeTairKVCacheInferInstanceAttributeRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeTairKVCacheInferInstanceAttributeResult.h
+	include/alibabacloud/r-kvstore/model/DescribeTairKVCacheInferInstancesRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeTairKVCacheInferInstancesResult.h
 	include/alibabacloud/r-kvstore/model/DescribeZonesRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeZonesResult.h
 	include/alibabacloud/r-kvstore/model/EnableAdditionalBandwidthRequest.h
@@ -173,6 +187,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ListTagResourcesResult.h
 	include/alibabacloud/r-kvstore/model/LockDBInstanceWriteRequest.h
 	include/alibabacloud/r-kvstore/model/LockDBInstanceWriteResult.h
+	include/alibabacloud/r-kvstore/model/MasterNodeShutDownFailOverRequest.h
+	include/alibabacloud/r-kvstore/model/MasterNodeShutDownFailOverResult.h
 	include/alibabacloud/r-kvstore/model/MigrateToOtherZoneRequest.h
 	include/alibabacloud/r-kvstore/model/MigrateToOtherZoneResult.h
 	include/alibabacloud/r-kvstore/model/ModifyAccountDescriptionRequest.h
@@ -185,6 +201,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyActiveOperationTasksResult.h
 	include/alibabacloud/r-kvstore/model/ModifyAuditLogConfigRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyAuditLogConfigResult.h
+	include/alibabacloud/r-kvstore/model/ModifyBackupExpireTimeRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyBackupExpireTimeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyResult.h
 	include/alibabacloud/r-kvstore/model/ModifyDBInstanceAutoUpgradeRequest.h
@@ -201,6 +219,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAttributeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAutoRenewalAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAutoRenewalAttributeResult.h
+	include/alibabacloud/r-kvstore/model/ModifyInstanceBandwidthRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyInstanceBandwidthResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceConfigRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceConfigResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceMaintainTimeRequest.h
@@ -231,6 +251,10 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifySecurityGroupConfigurationResult.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityIpsRequest.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityIpsResult.h
+	include/alibabacloud/r-kvstore/model/ModifyTairKVCacheCustomInstanceAttributeRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyTairKVCacheCustomInstanceAttributeResult.h
+	include/alibabacloud/r-kvstore/model/ModifyTaskInfoRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyTaskInfoResult.h
 	include/alibabacloud/r-kvstore/model/ReleaseDirectConnectionRequest.h
 	include/alibabacloud/r-kvstore/model/ReleaseDirectConnectionResult.h
 	include/alibabacloud/r-kvstore/model/ReleaseInstancePublicConnectionRequest.h
@@ -243,14 +267,26 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/RenewInstanceResult.h
 	include/alibabacloud/r-kvstore/model/ResetAccountPasswordRequest.h
 	include/alibabacloud/r-kvstore/model/ResetAccountPasswordResult.h
+	include/alibabacloud/r-kvstore/model/ResetTairKVCacheCustomInstancePasswordRequest.h
+	include/alibabacloud/r-kvstore/model/ResetTairKVCacheCustomInstancePasswordResult.h
+	include/alibabacloud/r-kvstore/model/ResizeTairKVCacheCustomInstanceDiskRequest.h
+	include/alibabacloud/r-kvstore/model/ResizeTairKVCacheCustomInstanceDiskResult.h
 	include/alibabacloud/r-kvstore/model/RestartInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/RestartInstanceResult.h
+	include/alibabacloud/r-kvstore/model/RestartTairKVCacheCustomInstanceRequest.h
+	include/alibabacloud/r-kvstore/model/RestartTairKVCacheCustomInstanceResult.h
 	include/alibabacloud/r-kvstore/model/RestoreInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/RestoreInstanceResult.h
+	include/alibabacloud/r-kvstore/model/StartTairKVCacheCustomInstanceRequest.h
+	include/alibabacloud/r-kvstore/model/StartTairKVCacheCustomInstanceResult.h
+	include/alibabacloud/r-kvstore/model/StopTairKVCacheCustomInstanceRequest.h
+	include/alibabacloud/r-kvstore/model/StopTairKVCacheCustomInstanceResult.h
 	include/alibabacloud/r-kvstore/model/SwitchInstanceHARequest.h
 	include/alibabacloud/r-kvstore/model/SwitchInstanceHAResult.h
 	include/alibabacloud/r-kvstore/model/SwitchInstanceProxyRequest.h
 	include/alibabacloud/r-kvstore/model/SwitchInstanceProxyResult.h
+	include/alibabacloud/r-kvstore/model/SwitchInstanceZoneFailOverRequest.h
+	include/alibabacloud/r-kvstore/model/SwitchInstanceZoneFailOverResult.h
 	include/alibabacloud/r-kvstore/model/SwitchNetworkRequest.h
 	include/alibabacloud/r-kvstore/model/SwitchNetworkResult.h
 	include/alibabacloud/r-kvstore/model/SyncDtsStatusRequest.h
@@ -274,6 +310,8 @@ set(r-kvstore_src
 	src/model/AllocateDirectConnectionResult.cc
 	src/model/AllocateInstancePublicConnectionRequest.cc
 	src/model/AllocateInstancePublicConnectionResult.cc
+	src/model/CancelActiveOperationTasksRequest.cc
+	src/model/CancelActiveOperationTasksResult.cc
 	src/model/CheckCloudResourceAuthorizedRequest.cc
 	src/model/CheckCloudResourceAuthorizedResult.cc
 	src/model/CreateAccountRequest.cc
@@ -292,10 +330,14 @@ set(r-kvstore_src
 	src/model/CreateInstancesResult.cc
 	src/model/CreateParameterGroupRequest.cc
 	src/model/CreateParameterGroupResult.cc
+	src/model/CreateTCInstanceRequest.cc
+	src/model/CreateTCInstanceResult.cc
 	src/model/CreateTairInstanceRequest.cc
 	src/model/CreateTairInstanceResult.cc
 	src/model/DeleteAccountRequest.cc
 	src/model/DeleteAccountResult.cc
+	src/model/DeleteBackupRequest.cc
+	src/model/DeleteBackupResult.cc
 	src/model/DeleteGlobalSecurityIPGroupRequest.cc
 	src/model/DeleteGlobalSecurityIPGroupResult.cc
 	src/model/DeleteInstanceRequest.cc
@@ -400,8 +442,16 @@ set(r-kvstore_src
 	src/model/DescribeSecurityIpsResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
-	src/model/DescribeTasksRequest.cc
-	src/model/DescribeTasksResult.cc
+	src/model/DescribeTairKVCacheCustomInstanceAttributeRequest.cc
+	src/model/DescribeTairKVCacheCustomInstanceAttributeResult.cc
+	src/model/DescribeTairKVCacheCustomInstanceHistoryMonitorValuesRequest.cc
+	src/model/DescribeTairKVCacheCustomInstanceHistoryMonitorValuesResult.cc
+	src/model/DescribeTairKVCacheCustomInstancesRequest.cc
+	src/model/DescribeTairKVCacheCustomInstancesResult.cc
+	src/model/DescribeTairKVCacheInferInstanceAttributeRequest.cc
+	src/model/DescribeTairKVCacheInferInstanceAttributeResult.cc
+	src/model/DescribeTairKVCacheInferInstancesRequest.cc
+	src/model/DescribeTairKVCacheInferInstancesResult.cc
 	src/model/DescribeZonesRequest.cc
 	src/model/DescribeZonesResult.cc
 	src/model/EnableAdditionalBandwidthRequest.cc
@@ -420,6 +470,8 @@ set(r-kvstore_src
 	src/model/ListTagResourcesResult.cc
 	src/model/LockDBInstanceWriteRequest.cc
 	src/model/LockDBInstanceWriteResult.cc
+	src/model/MasterNodeShutDownFailOverRequest.cc
+	src/model/MasterNodeShutDownFailOverResult.cc
 	src/model/MigrateToOtherZoneRequest.cc
 	src/model/MigrateToOtherZoneResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
@@ -432,6 +484,8 @@ set(r-kvstore_src
 	src/model/ModifyActiveOperationTasksResult.cc
 	src/model/ModifyAuditLogConfigRequest.cc
 	src/model/ModifyAuditLogConfigResult.cc
+	src/model/ModifyBackupExpireTimeRequest.cc
+	src/model/ModifyBackupExpireTimeResult.cc
 	src/model/ModifyBackupPolicyRequest.cc
 	src/model/ModifyBackupPolicyResult.cc
 	src/model/ModifyDBInstanceAutoUpgradeRequest.cc
@@ -448,6 +502,8 @@ set(r-kvstore_src
 	src/model/ModifyInstanceAttributeResult.cc
 	src/model/ModifyInstanceAutoRenewalAttributeRequest.cc
 	src/model/ModifyInstanceAutoRenewalAttributeResult.cc
+	src/model/ModifyInstanceBandwidthRequest.cc
+	src/model/ModifyInstanceBandwidthResult.cc
 	src/model/ModifyInstanceConfigRequest.cc
 	src/model/ModifyInstanceConfigResult.cc
 	src/model/ModifyInstanceMaintainTimeRequest.cc
@@ -478,6 +534,10 @@ set(r-kvstore_src
 	src/model/ModifySecurityGroupConfigurationResult.cc
 	src/model/ModifySecurityIpsRequest.cc
 	src/model/ModifySecurityIpsResult.cc
+	src/model/ModifyTairKVCacheCustomInstanceAttributeRequest.cc
+	src/model/ModifyTairKVCacheCustomInstanceAttributeResult.cc
+	src/model/ModifyTaskInfoRequest.cc
+	src/model/ModifyTaskInfoResult.cc
 	src/model/ReleaseDirectConnectionRequest.cc
 	src/model/ReleaseDirectConnectionResult.cc
 	src/model/ReleaseInstancePublicConnectionRequest.cc
@@ -490,14 +550,26 @@ set(r-kvstore_src
 	src/model/RenewInstanceResult.cc
 	src/model/ResetAccountPasswordRequest.cc
 	src/model/ResetAccountPasswordResult.cc
+	src/model/ResetTairKVCacheCustomInstancePasswordRequest.cc
+	src/model/ResetTairKVCacheCustomInstancePasswordResult.cc
+	src/model/ResizeTairKVCacheCustomInstanceDiskRequest.cc
+	src/model/ResizeTairKVCacheCustomInstanceDiskResult.cc
 	src/model/RestartInstanceRequest.cc
 	src/model/RestartInstanceResult.cc
+	src/model/RestartTairKVCacheCustomInstanceRequest.cc
+	src/model/RestartTairKVCacheCustomInstanceResult.cc
 	src/model/RestoreInstanceRequest.cc
 	src/model/RestoreInstanceResult.cc
+	src/model/StartTairKVCacheCustomInstanceRequest.cc
+	src/model/StartTairKVCacheCustomInstanceResult.cc
+	src/model/StopTairKVCacheCustomInstanceRequest.cc
+	src/model/StopTairKVCacheCustomInstanceResult.cc
 	src/model/SwitchInstanceHARequest.cc
 	src/model/SwitchInstanceHAResult.cc
 	src/model/SwitchInstanceProxyRequest.cc
 	src/model/SwitchInstanceProxyResult.cc
+	src/model/SwitchInstanceZoneFailOverRequest.cc
+	src/model/SwitchInstanceZoneFailOverResult.cc
 	src/model/SwitchNetworkRequest.cc
 	src/model/SwitchNetworkResult.cc
 	src/model/SyncDtsStatusRequest.cc

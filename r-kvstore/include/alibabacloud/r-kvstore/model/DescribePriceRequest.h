@@ -38,6 +38,8 @@ public:
 	void setInstances(const std::string &instances);
 	std::string getCouponNo() const;
 	void setCouponNo(const std::string &couponNo);
+	std::string getEngineVersion() const;
+	void setEngineVersion(const std::string &engineVersion);
 	std::string getInstanceClass() const;
 	void setInstanceClass(const std::string &instanceClass);
 	std::string getAccessKeyId() const;
@@ -50,6 +52,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getBusinessInfo() const;
 	void setBusinessInfo(const std::string &businessInfo);
+	int getShardCount() const;
+	void setShardCount(int shardCount);
 	long getPeriod() const;
 	void setPeriod(long period);
 	std::string getProduct() const;
@@ -82,12 +86,14 @@ private:
 	std::string nodeType_;
 	std::string instances_;
 	std::string couponNo_;
+	std::string engineVersion_;
 	std::string instanceClass_;
 	std::string accessKeyId_;
 	long capacity_;
 	std::string securityToken_;
 	std::string regionId_;
 	std::string businessInfo_;
+	int shardCount_;
 	long period_;
 	std::string product_;
 	long quantity_;

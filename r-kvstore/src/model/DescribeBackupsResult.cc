@@ -73,6 +73,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			backupsObject.backupJobID = std::stol(valueBackupsBackup["BackupJobID"].asString());
 		if(!valueBackupsBackup["RecoverConfigMode"].isNull())
 			backupsObject.recoverConfigMode = valueBackupsBackup["RecoverConfigMode"].asString();
+		if(!valueBackupsBackup["ExpectExpireTime"].isNull())
+			backupsObject.expectExpireTime = valueBackupsBackup["ExpectExpireTime"].asString();
 		backups_.push_back(backupsObject);
 	}
 	auto accessDeniedDetailNode = value["AccessDeniedDetail"];

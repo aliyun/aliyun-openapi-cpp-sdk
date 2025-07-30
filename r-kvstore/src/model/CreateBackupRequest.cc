@@ -79,6 +79,15 @@ void CreateBackupRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+long CreateBackupRequest::getBackupRetentionPeriod() const {
+  return backupRetentionPeriod_;
+}
+
+void CreateBackupRequest::setBackupRetentionPeriod(long backupRetentionPeriod) {
+  backupRetentionPeriod_ = backupRetentionPeriod;
+  setParameter(std::string("BackupRetentionPeriod"), std::to_string(backupRetentionPeriod));
+}
+
 std::string CreateBackupRequest::getInstanceId() const {
   return instanceId_;
 }

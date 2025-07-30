@@ -57,6 +57,8 @@ void DescribeBackupTasksResult::parse(const std::string &payload)
 			backupJobsObject.nodeId = valueBackupJobsBackupJob["NodeId"].asString();
 		if(!valueBackupJobsBackupJob["TaskAction"].isNull())
 			backupJobsObject.taskAction = valueBackupJobsBackupJob["TaskAction"].asString();
+		if(!valueBackupJobsBackupJob["Progress"].isNull())
+			backupJobsObject.progress = valueBackupJobsBackupJob["Progress"].asString();
 		backupJobs_.push_back(backupJobsObject);
 	}
 	auto accessDeniedDetailNode = value["AccessDeniedDetail"];

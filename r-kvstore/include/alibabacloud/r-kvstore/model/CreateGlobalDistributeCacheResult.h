@@ -37,10 +37,14 @@ namespace AlibabaCloud
 				CreateGlobalDistributeCacheResult();
 				explicit CreateGlobalDistributeCacheResult(const std::string &payload);
 				~CreateGlobalDistributeCacheResult();
+				std::string getInstanceId()const;
+				std::string getGlobalInstanceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string instanceId_;
+				std::string globalInstanceId_;
 
 			};
 		}

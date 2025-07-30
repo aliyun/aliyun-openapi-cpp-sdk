@@ -36,6 +36,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	long getAutoRenewPeriod() const;
+	void setAutoRenewPeriod(long autoRenewPeriod);
 	long getPeriod() const;
 	void setPeriod(long period);
 	bool getAutoPay() const;
@@ -50,6 +52,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getAutoRenew() const;
+	void setAutoRenew(const std::string &autoRenew);
 	std::string getChargeType() const;
 	void setChargeType(const std::string &chargeType);
 
@@ -57,6 +61,7 @@ private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string securityToken_;
+	long autoRenewPeriod_;
 	long period_;
 	bool autoPay_;
 	std::string fromApp_;
@@ -64,6 +69,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string instanceId_;
+	std::string autoRenew_;
 	std::string chargeType_;
 };
 } // namespace Model

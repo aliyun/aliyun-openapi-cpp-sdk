@@ -54,6 +54,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getNoShardBackup() const;
+	void setNoShardBackup(const std::string &noShardBackup);
 	std::string getClusterBackupId() const;
 	void setClusterBackupId(const std::string &clusterBackupId);
 
@@ -70,6 +72,7 @@ private:
 	std::string endTime_;
 	long ownerId_;
 	std::string instanceId_;
+	std::string noShardBackup_;
 	std::string clusterBackupId_;
 };
 } // namespace Model

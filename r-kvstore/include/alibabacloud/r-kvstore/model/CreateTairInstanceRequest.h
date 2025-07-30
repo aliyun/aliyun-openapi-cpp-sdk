@@ -36,6 +36,8 @@ public:
 	~CreateTairInstanceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getConnectionStringPrefix() const;
+	void setConnectionStringPrefix(const std::string &connectionStringPrefix);
 	std::string getSecondaryZoneId() const;
 	void setSecondaryZoneId(const std::string &secondaryZoneId);
 	int getSlaveReadOnlyCount() const;
@@ -84,6 +86,8 @@ public:
 	void setPort(int port);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	int getReplicaCount() const;
+	void setReplicaCount(int replicaCount);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getAutoUseCoupon() const;
@@ -120,11 +124,14 @@ public:
 	void setReadOnlyCount(int readOnlyCount);
 	std::string getChargeType() const;
 	void setChargeType(const std::string &chargeType);
+	int getSlaveReplicaCount() const;
+	void setSlaveReplicaCount(int slaveReplicaCount);
 	std::string getClusterBackupId() const;
 	void setClusterBackupId(const std::string &clusterBackupId);
 
 private:
 	long resourceOwnerId_;
+	std::string connectionStringPrefix_;
 	std::string secondaryZoneId_;
 	int slaveReadOnlyCount_;
 	std::string couponNo_;
@@ -149,6 +156,7 @@ private:
 	std::string autoRenew_;
 	int port_;
 	std::string zoneId_;
+	int replicaCount_;
 	std::string clientToken_;
 	std::string autoUseCoupon_;
 	int storage_;
@@ -167,6 +175,7 @@ private:
 	std::string vpcId_;
 	int readOnlyCount_;
 	std::string chargeType_;
+	int slaveReplicaCount_;
 	std::string clusterBackupId_;
 };
 } // namespace Model

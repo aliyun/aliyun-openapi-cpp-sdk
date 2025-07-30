@@ -133,6 +133,15 @@ void DescribeClusterBackupListRequest::setInstanceId(const std::string &instance
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string DescribeClusterBackupListRequest::getNoShardBackup() const {
+  return noShardBackup_;
+}
+
+void DescribeClusterBackupListRequest::setNoShardBackup(const std::string &noShardBackup) {
+  noShardBackup_ = noShardBackup;
+  setParameter(std::string("NoShardBackup"), noShardBackup);
+}
+
 std::string DescribeClusterBackupListRequest::getClusterBackupId() const {
   return clusterBackupId_;
 }

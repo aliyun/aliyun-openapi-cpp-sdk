@@ -86,6 +86,8 @@ public:
 	void setPort(const std::string &port);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	int getReplicaCount() const;
+	void setReplicaCount(int replicaCount);
 	std::string getAppendonly() const;
 	void setAppendonly(const std::string &appendonly);
 	std::string getNodeType() const;
@@ -132,6 +134,8 @@ public:
 	void setChargeType(const std::string &chargeType);
 	std::string getConfig() const;
 	void setConfig(const std::string &config);
+	int getSlaveReplicaCount() const;
+	void setSlaveReplicaCount(int slaveReplicaCount);
 	std::string getClusterBackupId() const;
 	void setClusterBackupId(const std::string &clusterBackupId);
 
@@ -162,6 +166,7 @@ private:
 	std::string autoRenew_;
 	std::string port_;
 	std::string zoneId_;
+	int replicaCount_;
 	std::string appendonly_;
 	std::string nodeType_;
 	std::string autoUseCoupon_;
@@ -185,6 +190,7 @@ private:
 	int readOnlyCount_;
 	std::string chargeType_;
 	std::string config_;
+	int slaveReplicaCount_;
 	std::string clusterBackupId_;
 };
 } // namespace Model

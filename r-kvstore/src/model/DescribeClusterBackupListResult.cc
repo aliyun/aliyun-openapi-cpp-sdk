@@ -61,6 +61,8 @@ void DescribeClusterBackupListResult::parse(const std::string &payload)
 			clusterBackupsObject.shardClassMemory = std::stoi(valueClusterBackupsclusterBackup["ShardClassMemory"].asString());
 		if(!valueClusterBackupsclusterBackup["Progress"].isNull())
 			clusterBackupsObject.progress = valueClusterBackupsclusterBackup["Progress"].asString();
+		if(!valueClusterBackupsclusterBackup["ExpectExpireTime"].isNull())
+			clusterBackupsObject.expectExpireTime = valueClusterBackupsclusterBackup["ExpectExpireTime"].asString();
 		auto allBackupsNode = valueClusterBackupsclusterBackup["Backups"]["backup"];
 		for (auto valueClusterBackupsclusterBackupBackupsbackup : allBackupsNode)
 		{

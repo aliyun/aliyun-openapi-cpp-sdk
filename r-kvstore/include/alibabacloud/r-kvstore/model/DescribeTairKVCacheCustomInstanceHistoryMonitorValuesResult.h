@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETASKSRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETASKSRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETAIRKVCACHECUSTOMINSTANCEHISTORYMONITORVALUESRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETAIRKVCACHECUSTOMINSTANCEHISTORYMONITORVALUESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeTasksResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeTairKVCacheCustomInstanceHistoryMonitorValuesResult : public ServiceResult
 			{
 			public:
-				struct TaskProgressInfo
-				{
-					std::string status;
-					std::string stepProgressInfo;
-					float progress;
-					int remain;
-					std::string taskId;
-					std::string finishTime;
-					std::string stepsInfo;
-					std::string currentStepName;
-					std::string taskAction;
-					std::string beginTime;
-				};
 
 
-				DescribeTasksResult();
-				explicit DescribeTasksResult(const std::string &payload);
-				~DescribeTasksResult();
-				int getTotalRecordCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<TaskProgressInfo> getItems()const;
+				DescribeTairKVCacheCustomInstanceHistoryMonitorValuesResult();
+				explicit DescribeTairKVCacheCustomInstanceHistoryMonitorValuesResult(const std::string &payload);
+				~DescribeTairKVCacheCustomInstanceHistoryMonitorValuesResult();
+				std::string getNextToken()const;
+				std::string getPeriod()const;
+				std::string getDatapoints()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalRecordCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<TaskProgressInfo> items_;
+				std::string nextToken_;
+				std::string period_;
+				std::string datapoints_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETASKSRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETAIRKVCACHECUSTOMINSTANCEHISTORYMONITORVALUESRESULT_H_

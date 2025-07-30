@@ -40,12 +40,14 @@ namespace AlibabaCloud
 						std::string key;
 					};
 					long connections;
+					bool autoSecondaryZone;
 					std::string resourceGroupId;
 					long port;
 					std::string globalInstanceId;
 					std::string hasRenewChangeOrder;
 					bool isSupportTDE;
 					int shardCount;
+					int slaveReplicaCount;
 					std::string privateIp;
 					long capacity;
 					long qPS;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 					std::string storageType;
 					std::string engineVersion;
 					std::string instanceId;
+					int replicaCount;
 					std::string vSwitchId;
 					std::string replicationMode;
 					std::string backupLogStartTime;

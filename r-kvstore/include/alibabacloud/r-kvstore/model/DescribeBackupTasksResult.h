@@ -45,6 +45,7 @@ namespace AlibabaCloud
 				struct BackupJob
 				{
 					std::string jobMode;
+					std::string progress;
 					std::string taskAction;
 					std::string startTime;
 					std::string nodeId;

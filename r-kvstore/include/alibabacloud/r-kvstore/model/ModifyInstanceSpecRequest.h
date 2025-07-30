@@ -40,8 +40,12 @@ public:
 	void setSlaveReadOnlyCount(int slaveReadOnlyCount);
 	std::string getCouponNo() const;
 	void setCouponNo(const std::string &couponNo);
+	int getStorage() const;
+	void setStorage(int storage);
 	std::string getInstanceClass() const;
 	void setInstanceClass(const std::string &instanceClass);
+	std::string getStorageType() const;
+	void setStorageType(const std::string &storageType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
@@ -76,8 +80,12 @@ public:
 	void setReadOnlyCount(int readOnlyCount);
 	bool getForceUpgrade() const;
 	void setForceUpgrade(bool forceUpgrade);
+	int getSlaveReplicaCount() const;
+	void setSlaveReplicaCount(int slaveReplicaCount);
 	std::string getOrderType() const;
 	void setOrderType(const std::string &orderType);
+	int getReplicaCount() const;
+	void setReplicaCount(int replicaCount);
 
 private:
 	long resourceOwnerId_;
@@ -85,7 +93,9 @@ private:
 	std::string clientToken_;
 	int slaveReadOnlyCount_;
 	std::string couponNo_;
+	int storage_;
 	std::string instanceClass_;
+	std::string storageType_;
 	std::string accessKeyId_;
 	std::string securityToken_;
 	std::string regionId_;
@@ -103,7 +113,9 @@ private:
 	std::string instanceId_;
 	int readOnlyCount_;
 	bool forceUpgrade_;
+	int slaveReplicaCount_;
 	std::string orderType_;
+	int replicaCount_;
 };
 } // namespace Model
 } // namespace R_kvstore

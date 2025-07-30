@@ -40,6 +40,8 @@ public:
 	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getProduct() const;
+	void setProduct(const std::string &product);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -55,6 +57,7 @@ private:
 	std::string duration_;
 	std::string securityToken_;
 	std::string dBInstanceId_;
+	std::string product_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

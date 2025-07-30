@@ -71,6 +71,7 @@ namespace AlibabaCloud
 					std::string clusterBackupMode;
 					ExtraInfo extraInfo;
 					int isAvail;
+					std::string expectExpireTime;
 					int shardClassMemory;
 				};
 

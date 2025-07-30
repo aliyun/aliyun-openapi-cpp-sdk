@@ -52,6 +52,15 @@ void DescribeHistoryMonitorValuesRequest::setStartTime(const std::string &startT
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribeHistoryMonitorValuesRequest::getType() const {
+  return type_;
+}
+
+void DescribeHistoryMonitorValuesRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
+}
+
 std::string DescribeHistoryMonitorValuesRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

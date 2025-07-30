@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					bool hasRenewChangeOrder;
 					int shardCount;
 					std::string connectionDomain;
+					int slaveReplicaCount;
 					std::string privateIp;
 					long capacity;
 					long qPS;
@@ -69,11 +70,13 @@ namespace AlibabaCloud
 					std::string shardClass;
 					std::string createTime;
 					std::string vSwitchId;
+					int replicaCount;
 					std::string readOnlyCount;
 					std::string instanceClass;
 					bool isRds;
 					std::string secondaryZoneId;
 					std::string instanceName;
+					int slaveReadOnlyCount;
 					std::string vpcId;
 					std::string chargeType;
 					std::string computingType;

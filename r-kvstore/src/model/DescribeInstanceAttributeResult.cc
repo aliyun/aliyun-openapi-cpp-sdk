@@ -87,8 +87,14 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.securityIPList = valueInstancesDBInstanceAttribute["SecurityIPList"].asString();
 		if(!valueInstancesDBInstanceAttribute["ShardCount"].isNull())
 			instancesObject.shardCount = std::stoi(valueInstancesDBInstanceAttribute["ShardCount"].asString());
+		if(!valueInstancesDBInstanceAttribute["ReplicaCount"].isNull())
+			instancesObject.replicaCount = std::stoi(valueInstancesDBInstanceAttribute["ReplicaCount"].asString());
+		if(!valueInstancesDBInstanceAttribute["SlaveReplicaCount"].isNull())
+			instancesObject.slaveReplicaCount = std::stoi(valueInstancesDBInstanceAttribute["SlaveReplicaCount"].asString());
 		if(!valueInstancesDBInstanceAttribute["ReadOnlyCount"].isNull())
 			instancesObject.readOnlyCount = std::stoi(valueInstancesDBInstanceAttribute["ReadOnlyCount"].asString());
+		if(!valueInstancesDBInstanceAttribute["SlaveReadOnlyCount"].isNull())
+			instancesObject.slaveReadOnlyCount = std::stol(valueInstancesDBInstanceAttribute["SlaveReadOnlyCount"].asString());
 		if(!valueInstancesDBInstanceAttribute["GlobalInstanceId"].isNull())
 			instancesObject.globalInstanceId = valueInstancesDBInstanceAttribute["GlobalInstanceId"].asString();
 		if(!valueInstancesDBInstanceAttribute["QPS"].isNull())
@@ -129,8 +135,6 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.connections = std::stol(valueInstancesDBInstanceAttribute["Connections"].asString());
 		if(!valueInstancesDBInstanceAttribute["BackupLogStartTime"].isNull())
 			instancesObject.backupLogStartTime = valueInstancesDBInstanceAttribute["BackupLogStartTime"].asString();
-		if(!valueInstancesDBInstanceAttribute["SlaveReadOnlyCount"].isNull())
-			instancesObject.slaveReadOnlyCount = std::stol(valueInstancesDBInstanceAttribute["SlaveReadOnlyCount"].asString());
 		if(!valueInstancesDBInstanceAttribute["ResourceGroupId"].isNull())
 			instancesObject.resourceGroupId = valueInstancesDBInstanceAttribute["ResourceGroupId"].asString();
 		if(!valueInstancesDBInstanceAttribute["ZoneId"].isNull())
@@ -147,6 +151,8 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.isOrderCompleted = valueInstancesDBInstanceAttribute["IsOrderCompleted"].asString() == "true";
 		if(!valueInstancesDBInstanceAttribute["IsSupportTDE"].isNull())
 			instancesObject.isSupportTDE = valueInstancesDBInstanceAttribute["IsSupportTDE"].asString() == "true";
+		if(!valueInstancesDBInstanceAttribute["AutoSecondaryZone"].isNull())
+			instancesObject.autoSecondaryZone = valueInstancesDBInstanceAttribute["AutoSecondaryZone"].asString() == "true";
 		auto allTagsNode = valueInstancesDBInstanceAttribute["Tags"]["Tag"];
 		for (auto valueInstancesDBInstanceAttributeTagsTag : allTagsNode)
 		{

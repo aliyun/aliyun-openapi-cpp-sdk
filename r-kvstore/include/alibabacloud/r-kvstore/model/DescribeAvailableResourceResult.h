@@ -78,6 +78,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string zoneName;
 					std::string networkTypes;
+					bool isMainSale;
 					std::string zoneId;
 					std::vector<AvailableZone::SupportedEngine> supportedEngines;
 					std::string regionId;

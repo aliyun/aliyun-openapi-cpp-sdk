@@ -52,6 +52,15 @@ void TransformToPrePaidRequest::setSecurityToken(const std::string &securityToke
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+long TransformToPrePaidRequest::getAutoRenewPeriod() const {
+  return autoRenewPeriod_;
+}
+
+void TransformToPrePaidRequest::setAutoRenewPeriod(long autoRenewPeriod) {
+  autoRenewPeriod_ = autoRenewPeriod;
+  setParameter(std::string("AutoRenewPeriod"), std::to_string(autoRenewPeriod));
+}
+
 long TransformToPrePaidRequest::getPeriod() const {
   return period_;
 }
@@ -113,6 +122,15 @@ std::string TransformToPrePaidRequest::getInstanceId() const {
 void TransformToPrePaidRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string TransformToPrePaidRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void TransformToPrePaidRequest::setAutoRenew(const std::string &autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew);
 }
 
 std::string TransformToPrePaidRequest::getChargeType() const {

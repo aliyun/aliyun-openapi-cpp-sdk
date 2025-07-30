@@ -44,7 +44,7 @@ void DescribeHistoryTasksResult::parse(const std::string &payload)
 	{
 		ItemsItem itemsObject;
 		if(!valueItemsItemsItem["Status"].isNull())
-			itemsObject.status = std::stoi(valueItemsItemsItem["Status"].asString());
+			itemsObject.status = valueItemsItemsItem["Status"].asString();
 		if(!valueItemsItemsItem["TaskId"].isNull())
 			itemsObject.taskId = valueItemsItemsItem["TaskId"].asString();
 		if(!valueItemsItemsItem["CurrentStepName"].isNull())

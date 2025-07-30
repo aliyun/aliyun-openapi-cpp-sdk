@@ -36,6 +36,8 @@ public:
 	void setNodeRole(const std::string &nodeRole);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getType() const;
+	void setType(const std::string &type);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getReplicatorJobId() const;
@@ -69,6 +71,7 @@ private:
 	long resourceOwnerId_;
 	std::string nodeRole_;
 	std::string startTime_;
+	std::string type_;
 	std::string accessKeyId_;
 	std::string replicatorJobId_;
 	std::string securityToken_;

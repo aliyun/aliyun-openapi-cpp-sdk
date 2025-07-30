@@ -36,6 +36,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::string getEffectiveTime() const;
+	void setEffectiveTime(const std::string &effectiveTime);
 	std::string getNodeId() const;
 	void setNodeId(const std::string &nodeId);
 	int getShardCount() const;
@@ -55,6 +57,7 @@ private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string securityToken_;
+	std::string effectiveTime_;
 	std::string nodeId_;
 	int shardCount_;
 	std::string resourceOwnerAccount_;

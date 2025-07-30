@@ -123,10 +123,16 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.cloudType = valueInstancesKVStoreInstance["CloudType"].asString();
 		if(!valueInstancesKVStoreInstance["EditionType"].isNull())
 			instancesObject.editionType = valueInstancesKVStoreInstance["EditionType"].asString();
-		if(!valueInstancesKVStoreInstance["ReadOnlyCount"].isNull())
-			instancesObject.readOnlyCount = valueInstancesKVStoreInstance["ReadOnlyCount"].asString();
 		if(!valueInstancesKVStoreInstance["ShardClass"].isNull())
 			instancesObject.shardClass = valueInstancesKVStoreInstance["ShardClass"].asString();
+		if(!valueInstancesKVStoreInstance["ReplicaCount"].isNull())
+			instancesObject.replicaCount = std::stoi(valueInstancesKVStoreInstance["ReplicaCount"].asString());
+		if(!valueInstancesKVStoreInstance["SlaveReplicaCount"].isNull())
+			instancesObject.slaveReplicaCount = std::stoi(valueInstancesKVStoreInstance["SlaveReplicaCount"].asString());
+		if(!valueInstancesKVStoreInstance["ReadOnlyCount"].isNull())
+			instancesObject.readOnlyCount = valueInstancesKVStoreInstance["ReadOnlyCount"].asString();
+		if(!valueInstancesKVStoreInstance["SlaveReadOnlyCount"].isNull())
+			instancesObject.slaveReadOnlyCount = std::stoi(valueInstancesKVStoreInstance["SlaveReadOnlyCount"].asString());
 		auto allTagsNode = valueInstancesKVStoreInstance["Tags"]["Tag"];
 		for (auto valueInstancesKVStoreInstanceTagsTag : allTagsNode)
 		{
