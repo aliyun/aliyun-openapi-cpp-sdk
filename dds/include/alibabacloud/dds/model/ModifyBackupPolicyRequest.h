@@ -80,6 +80,8 @@ public:
 	void setCrossLogRetentionType(const std::string &crossLogRetentionType);
 	long getLogBackupRetentionPeriod() const;
 	void setLogBackupRetentionPeriod(long logBackupRetentionPeriod);
+	bool getPreserveOneEachHour() const;
+	void setPreserveOneEachHour(bool preserveOneEachHour);
 
 private:
 	long resourceOwnerId_;
@@ -107,6 +109,7 @@ private:
 	int crossRetentionValue_;
 	std::string crossLogRetentionType_;
 	long logBackupRetentionPeriod_;
+	bool preserveOneEachHour_;
 };
 } // namespace Model
 } // namespace Dds

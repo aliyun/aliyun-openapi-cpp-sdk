@@ -50,6 +50,7 @@ namespace AlibabaCloud
 				std::string getCrossRetentionType()const;
 				int getCrossLogRetentionValue()const;
 				int getEnableCrossLogBackup()const;
+				bool getPreserveOneEachHour()const;
 				std::string getSnapshotBackupType()const;
 				int getEnableBackupLog()const;
 				std::string getBackupRetentionPeriod()const;
@@ -72,6 +73,7 @@ namespace AlibabaCloud
 				std::string crossRetentionType_;
 				int crossLogRetentionValue_;
 				int enableCrossLogBackup_;
+				bool preserveOneEachHour_;
 				std::string snapshotBackupType_;
 				int enableBackupLog_;
 				std::string backupRetentionPeriod_;

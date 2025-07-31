@@ -184,6 +184,8 @@
 #include "model/ModifyAuditPolicyResult.h"
 #include "model/ModifyBackupPolicyRequest.h"
 #include "model/ModifyBackupPolicyResult.h"
+#include "model/ModifyDBInstanceAttributeRequest.h"
+#include "model/ModifyDBInstanceAttributeResult.h"
 #include "model/ModifyDBInstanceConfigRequest.h"
 #include "model/ModifyDBInstanceConfigResult.h"
 #include "model/ModifyDBInstanceConnectionStringRequest.h"
@@ -510,6 +512,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyBackupPolicyResult> ModifyBackupPolicyOutcome;
 			typedef std::future<ModifyBackupPolicyOutcome> ModifyBackupPolicyOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyBackupPolicyRequest&, const ModifyBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBInstanceAttributeResult> ModifyDBInstanceAttributeOutcome;
+			typedef std::future<ModifyDBInstanceAttributeOutcome> ModifyDBInstanceAttributeOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::ModifyDBInstanceAttributeRequest&, const ModifyDBInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceAttributeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBInstanceConfigResult> ModifyDBInstanceConfigOutcome;
 			typedef std::future<ModifyDBInstanceConfigOutcome> ModifyDBInstanceConfigOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyDBInstanceConfigRequest&, const ModifyDBInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceConfigAsyncHandler;
@@ -869,6 +874,9 @@ namespace AlibabaCloud
 			ModifyBackupPolicyOutcome modifyBackupPolicy(const Model::ModifyBackupPolicyRequest &request)const;
 			void modifyBackupPolicyAsync(const Model::ModifyBackupPolicyRequest& request, const ModifyBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBackupPolicyOutcomeCallable modifyBackupPolicyCallable(const Model::ModifyBackupPolicyRequest& request) const;
+			ModifyDBInstanceAttributeOutcome modifyDBInstanceAttribute(const Model::ModifyDBInstanceAttributeRequest &request)const;
+			void modifyDBInstanceAttributeAsync(const Model::ModifyDBInstanceAttributeRequest& request, const ModifyDBInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBInstanceAttributeOutcomeCallable modifyDBInstanceAttributeCallable(const Model::ModifyDBInstanceAttributeRequest& request) const;
 			ModifyDBInstanceConfigOutcome modifyDBInstanceConfig(const Model::ModifyDBInstanceConfigRequest &request)const;
 			void modifyDBInstanceConfigAsync(const Model::ModifyDBInstanceConfigRequest& request, const ModifyDBInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstanceConfigOutcomeCallable modifyDBInstanceConfigCallable(const Model::ModifyDBInstanceConfigRequest& request) const;

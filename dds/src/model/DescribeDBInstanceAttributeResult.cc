@@ -141,6 +141,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.burstingEnabled = valueDBInstancesDBInstance["BurstingEnabled"].asString() == "true";
 		if(!valueDBInstancesDBInstance["ProvisionedIops"].isNull())
 			dBInstancesObject.provisionedIops = std::stol(valueDBInstancesDBInstance["ProvisionedIops"].asString());
+		if(!valueDBInstancesDBInstance["DisasterRecoveryInfo"].isNull())
+			dBInstancesObject.disasterRecoveryInfo = valueDBInstancesDBInstance["DisasterRecoveryInfo"].asString();
 		auto allReplicaSetsNode = valueDBInstancesDBInstance["ReplicaSets"]["ReplicaSet"];
 		for (auto valueDBInstancesDBInstanceReplicaSetsReplicaSet : allReplicaSetsNode)
 		{
@@ -235,6 +237,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 				shardListObject.maxDiskMbps = valueDBInstancesDBInstanceShardListShardAttribute["MaxDiskMbps"].asString();
 			if(!valueDBInstancesDBInstanceShardListShardAttribute["CurrentKernelVersion"].isNull())
 				shardListObject.currentKernelVersion = valueDBInstancesDBInstanceShardListShardAttribute["CurrentKernelVersion"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["ReplicaSetName"].isNull())
+				shardListObject.replicaSetName = valueDBInstancesDBInstanceShardListShardAttribute["ReplicaSetName"].asString();
 			dBInstancesObject.shardList.push_back(shardListObject);
 		}
 		auto allConfigserverListNode = valueDBInstancesDBInstance["ConfigserverList"]["ConfigserverAttribute"];

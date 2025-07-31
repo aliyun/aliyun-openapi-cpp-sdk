@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getSwitchMode() const;
+	void setSwitchMode(const std::string &switchMode);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
@@ -54,6 +56,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
+	std::string switchMode_;
 	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string nodeId_;

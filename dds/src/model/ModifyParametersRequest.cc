@@ -43,6 +43,15 @@ void ModifyParametersRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyParametersRequest::getSwitchMode() const {
+  return switchMode_;
+}
+
+void ModifyParametersRequest::setSwitchMode(const std::string &switchMode) {
+  switchMode_ = switchMode;
+  setParameter(std::string("SwitchMode"), switchMode);
+}
+
 std::string ModifyParametersRequest::getRegionId() const {
   return regionId_;
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_RESTARTDBINSTANCEREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_RESTARTDBINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCEATTRIBUTEREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCEATTRIBUTEREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,18 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT RestartDBInstanceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT ModifyDBInstanceAttributeRequest : public RpcServiceRequest {
 public:
-	RestartDBInstanceRequest();
-	~RestartDBInstanceRequest();
+	ModifyDBInstanceAttributeRequest();
+	~ModifyDBInstanceAttributeRequest();
+	bool getDBInstanceReleaseProtection() const;
+	void setDBInstanceReleaseProtection(bool dBInstanceReleaseProtection);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSwitchMode() const;
-	void setSwitchMode(const std::string &switchMode);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
-	std::string getNodeId() const;
-	void setNodeId(const std::string &nodeId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -48,11 +46,10 @@ public:
 	void setOwnerId(long ownerId);
 
 private:
+	bool dBInstanceReleaseProtection_;
 	long resourceOwnerId_;
 	std::string accessKeyId_;
-	std::string switchMode_;
 	std::string dBInstanceId_;
-	std::string nodeId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
@@ -60,4 +57,4 @@ private:
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_RESTARTDBINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCEATTRIBUTEREQUEST_H_

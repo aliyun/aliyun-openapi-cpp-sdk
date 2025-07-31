@@ -63,6 +63,8 @@ void DescribeClusterBackupsResult::parse(const std::string &payload)
 			clusterBackupsObject.attachLogStatus = valueClusterBackupsclusterBackup["AttachLogStatus"].asString();
 		if(!valueClusterBackupsclusterBackup["EngineVersion"].isNull())
 			clusterBackupsObject.engineVersion = valueClusterBackupsclusterBackup["EngineVersion"].asString();
+		if(!valueClusterBackupsclusterBackup["BackupExpireTime"].isNull())
+			clusterBackupsObject.backupExpireTime = valueClusterBackupsclusterBackup["BackupExpireTime"].asString();
 		auto allBackupsNode = valueClusterBackupsclusterBackup["Backups"]["backup"];
 		for (auto valueClusterBackupsclusterBackupBackupsbackup : allBackupsNode)
 		{

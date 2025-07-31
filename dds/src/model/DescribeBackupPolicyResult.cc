@@ -75,6 +75,8 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		crossLogRetentionType_ = value["CrossLogRetentionType"].asString();
 	if(!value["CrossLogRetentionValue"].isNull())
 		crossLogRetentionValue_ = std::stoi(value["CrossLogRetentionValue"].asString());
+	if(!value["PreserveOneEachHour"].isNull())
+		preserveOneEachHour_ = value["PreserveOneEachHour"].asString() == "true";
 
 }
 
@@ -141,6 +143,11 @@ int DescribeBackupPolicyResult::getCrossLogRetentionValue()const
 int DescribeBackupPolicyResult::getEnableCrossLogBackup()const
 {
 	return enableCrossLogBackup_;
+}
+
+bool DescribeBackupPolicyResult::getPreserveOneEachHour()const
+{
+	return preserveOneEachHour_;
 }
 
 std::string DescribeBackupPolicyResult::getSnapshotBackupType()const

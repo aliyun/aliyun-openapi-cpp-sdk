@@ -43,6 +43,15 @@ void RestartDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string RestartDBInstanceRequest::getSwitchMode() const {
+  return switchMode_;
+}
+
+void RestartDBInstanceRequest::setSwitchMode(const std::string &switchMode) {
+  switchMode_ = switchMode;
+  setParameter(std::string("SwitchMode"), switchMode);
+}
+
 std::string RestartDBInstanceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

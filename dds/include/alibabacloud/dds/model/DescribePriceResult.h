@@ -86,6 +86,7 @@ namespace AlibabaCloud
 					std::string optionalPromotions;
 					std::string currency;
 					std::string promDetailList;
+					double totalCostAmount;
 					DepreciateInfo5 depreciateInfo5;
 					std::vector<Coupon> coupons;
 					bool isContractActivity;

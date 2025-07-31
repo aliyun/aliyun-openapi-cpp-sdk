@@ -183,6 +183,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifyAuditPolicyResult.h
 	include/alibabacloud/dds/model/ModifyBackupPolicyRequest.h
 	include/alibabacloud/dds/model/ModifyBackupPolicyResult.h
+	include/alibabacloud/dds/model/ModifyDBInstanceAttributeRequest.h
+	include/alibabacloud/dds/model/ModifyDBInstanceAttributeResult.h
 	include/alibabacloud/dds/model/ModifyDBInstanceConfigRequest.h
 	include/alibabacloud/dds/model/ModifyDBInstanceConfigResult.h
 	include/alibabacloud/dds/model/ModifyDBInstanceConnectionStringRequest.h
@@ -422,6 +424,8 @@ set(dds_src
 	src/model/ModifyAuditPolicyResult.cc
 	src/model/ModifyBackupPolicyRequest.cc
 	src/model/ModifyBackupPolicyResult.cc
+	src/model/ModifyDBInstanceAttributeRequest.cc
+	src/model/ModifyDBInstanceAttributeResult.cc
 	src/model/ModifyDBInstanceConfigRequest.cc
 	src/model/ModifyDBInstanceConfigResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc

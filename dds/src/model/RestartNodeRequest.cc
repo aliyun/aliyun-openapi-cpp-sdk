@@ -52,6 +52,15 @@ void RestartNodeRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string RestartNodeRequest::getSwitchMode() const {
+  return switchMode_;
+}
+
+void RestartNodeRequest::setSwitchMode(const std::string &switchMode) {
+  switchMode_ = switchMode;
+  setParameter(std::string("SwitchMode"), switchMode);
+}
+
 std::string RestartNodeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

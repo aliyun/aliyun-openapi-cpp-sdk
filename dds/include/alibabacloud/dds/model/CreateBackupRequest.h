@@ -44,6 +44,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getBackupMethod() const;
 	void setBackupMethod(const std::string &backupMethod);
+	long getBackupRetentionPeriod() const;
+	void setBackupRetentionPeriod(long backupRetentionPeriod);
 
 private:
 	long resourceOwnerId_;
@@ -53,6 +55,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string backupMethod_;
+	long backupRetentionPeriod_;
 };
 } // namespace Model
 } // namespace Dds

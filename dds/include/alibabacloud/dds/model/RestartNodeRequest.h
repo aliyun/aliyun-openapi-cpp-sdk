@@ -36,6 +36,8 @@ public:
 	void setRoleId(const std::string &roleId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getSwitchMode() const;
+	void setSwitchMode(const std::string &switchMode);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getNodeId() const;
@@ -51,6 +53,7 @@ private:
 	long resourceOwnerId_;
 	std::string roleId_;
 	std::string accessKeyId_;
+	std::string switchMode_;
 	std::string dBInstanceId_;
 	std::string nodeId_;
 	std::string resourceOwnerAccount_;

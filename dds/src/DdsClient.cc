@@ -2967,6 +2967,42 @@ DdsClient::ModifyBackupPolicyOutcomeCallable DdsClient::modifyBackupPolicyCallab
 	return task->get_future();
 }
 
+DdsClient::ModifyDBInstanceAttributeOutcome DdsClient::modifyDBInstanceAttribute(const ModifyDBInstanceAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBInstanceAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBInstanceAttributeOutcome(ModifyDBInstanceAttributeResult(outcome.result()));
+	else
+		return ModifyDBInstanceAttributeOutcome(outcome.error());
+}
+
+void DdsClient::modifyDBInstanceAttributeAsync(const ModifyDBInstanceAttributeRequest& request, const ModifyDBInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBInstanceAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifyDBInstanceAttributeOutcomeCallable DdsClient::modifyDBInstanceAttributeCallable(const ModifyDBInstanceAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBInstanceAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::ModifyDBInstanceConfigOutcome DdsClient::modifyDBInstanceConfig(const ModifyDBInstanceConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

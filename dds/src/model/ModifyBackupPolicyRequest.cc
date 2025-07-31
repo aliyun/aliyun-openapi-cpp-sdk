@@ -250,3 +250,12 @@ void ModifyBackupPolicyRequest::setLogBackupRetentionPeriod(long logBackupRetent
   setParameter(std::string("LogBackupRetentionPeriod"), std::to_string(logBackupRetentionPeriod));
 }
 
+bool ModifyBackupPolicyRequest::getPreserveOneEachHour() const {
+  return preserveOneEachHour_;
+}
+
+void ModifyBackupPolicyRequest::setPreserveOneEachHour(bool preserveOneEachHour) {
+  preserveOneEachHour_ = preserveOneEachHour;
+  setParameter(std::string("PreserveOneEachHour"), preserveOneEachHour ? "true" : "false");
+}
+

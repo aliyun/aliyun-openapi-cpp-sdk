@@ -43,6 +43,15 @@ void ModifyDBInstanceTDERequest::setAccessKeyId(const std::string &accessKeyId) 
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBInstanceTDERequest::getSwitchMode() const {
+  return switchMode_;
+}
+
+void ModifyDBInstanceTDERequest::setSwitchMode(const std::string &switchMode) {
+  switchMode_ = switchMode;
+  setParameter(std::string("SwitchMode"), switchMode);
+}
+
 std::string ModifyDBInstanceTDERequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -73,6 +73,7 @@ namespace AlibabaCloud
 						int readonlyReplicas;
 						int port;
 						std::string lockMode;
+						std::string replicaSetName;
 						std::string maxDiskMbps;
 						int maxIOPS;
 						std::string nodeClass;
@@ -141,6 +142,7 @@ namespace AlibabaCloud
 					std::vector<DBInstance::NetworkAddress> networkAddresses;
 					std::vector<DBInstance::ConfigserverAttribute> configserverList;
 					std::string expireTime;
+					std::string disasterRecoveryInfo;
 					std::string vPCCloudInstanceIds;
 					std::string encryptionKey;
 					std::string storageEngine;

@@ -43,6 +43,15 @@ void ModifyDBInstanceSSLRequest::setAccessKeyId(const std::string &accessKeyId) 
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBInstanceSSLRequest::getSwitchMode() const {
+  return switchMode_;
+}
+
+void ModifyDBInstanceSSLRequest::setSwitchMode(const std::string &switchMode) {
+  switchMode_ = switchMode;
+  setParameter(std::string("SwitchMode"), switchMode);
+}
+
 std::string ModifyDBInstanceSSLRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

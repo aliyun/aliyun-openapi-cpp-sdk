@@ -281,6 +281,8 @@ void DescribePriceResult::parse(const std::string &payload)
 		order_.message = orderNode["Message"].asString();
 	if(!orderNode["IsContractActivity"].isNull())
 		order_.isContractActivity = orderNode["IsContractActivity"].asString() == "true";
+	if(!orderNode["TotalCostAmount"].isNull())
+		order_.totalCostAmount = orderNode["TotalCostAmount"].asString();
 	auto allCouponsNode = orderNode["Coupons"]["Coupon"];
 	for (auto orderNodeCouponsCoupon : allCouponsNode)
 	{
