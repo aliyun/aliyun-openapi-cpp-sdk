@@ -30,6 +30,10 @@
 #include "model/OperateAppInstanceForPartnerResult.h"
 #include "model/OperateAppServiceForPartnerRequest.h"
 #include "model/OperateAppServiceForPartnerResult.h"
+#include "model/SearchImageRequest.h"
+#include "model/SearchImageResult.h"
+#include "model/SyncAppInstanceForPartnerRequest.h"
+#include "model/SyncAppInstanceForPartnerResult.h"
 
 
 namespace AlibabaCloud
@@ -51,6 +55,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OperateAppServiceForPartnerResult> OperateAppServiceForPartnerOutcome;
 			typedef std::future<OperateAppServiceForPartnerOutcome> OperateAppServiceForPartnerOutcomeCallable;
 			typedef std::function<void(const WebsiteBuildClient*, const Model::OperateAppServiceForPartnerRequest&, const OperateAppServiceForPartnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateAppServiceForPartnerAsyncHandler;
+			typedef Outcome<Error, Model::SearchImageResult> SearchImageOutcome;
+			typedef std::future<SearchImageOutcome> SearchImageOutcomeCallable;
+			typedef std::function<void(const WebsiteBuildClient*, const Model::SearchImageRequest&, const SearchImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchImageAsyncHandler;
+			typedef Outcome<Error, Model::SyncAppInstanceForPartnerResult> SyncAppInstanceForPartnerOutcome;
+			typedef std::future<SyncAppInstanceForPartnerOutcome> SyncAppInstanceForPartnerOutcomeCallable;
+			typedef std::function<void(const WebsiteBuildClient*, const Model::SyncAppInstanceForPartnerRequest&, const SyncAppInstanceForPartnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncAppInstanceForPartnerAsyncHandler;
 
 			WebsiteBuildClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			WebsiteBuildClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -68,6 +78,12 @@ namespace AlibabaCloud
 			OperateAppServiceForPartnerOutcome operateAppServiceForPartner(const Model::OperateAppServiceForPartnerRequest &request)const;
 			void operateAppServiceForPartnerAsync(const Model::OperateAppServiceForPartnerRequest& request, const OperateAppServiceForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateAppServiceForPartnerOutcomeCallable operateAppServiceForPartnerCallable(const Model::OperateAppServiceForPartnerRequest& request) const;
+			SearchImageOutcome searchImage(const Model::SearchImageRequest &request)const;
+			void searchImageAsync(const Model::SearchImageRequest& request, const SearchImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchImageOutcomeCallable searchImageCallable(const Model::SearchImageRequest& request) const;
+			SyncAppInstanceForPartnerOutcome syncAppInstanceForPartner(const Model::SyncAppInstanceForPartnerRequest &request)const;
+			void syncAppInstanceForPartnerAsync(const Model::SyncAppInstanceForPartnerRequest& request, const SyncAppInstanceForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SyncAppInstanceForPartnerOutcomeCallable syncAppInstanceForPartnerCallable(const Model::SyncAppInstanceForPartnerRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

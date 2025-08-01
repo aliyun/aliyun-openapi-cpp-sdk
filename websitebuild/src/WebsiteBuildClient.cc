@@ -195,3 +195,75 @@ WebsiteBuildClient::OperateAppServiceForPartnerOutcomeCallable WebsiteBuildClien
 	return task->get_future();
 }
 
+WebsiteBuildClient::SearchImageOutcome WebsiteBuildClient::searchImage(const SearchImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchImageOutcome(SearchImageResult(outcome.result()));
+	else
+		return SearchImageOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::searchImageAsync(const SearchImageRequest& request, const SearchImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::SearchImageOutcomeCallable WebsiteBuildClient::searchImageCallable(const SearchImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchImageOutcome()>>(
+			[this, request]()
+			{
+			return this->searchImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::SyncAppInstanceForPartnerOutcome WebsiteBuildClient::syncAppInstanceForPartner(const SyncAppInstanceForPartnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SyncAppInstanceForPartnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SyncAppInstanceForPartnerOutcome(SyncAppInstanceForPartnerResult(outcome.result()));
+	else
+		return SyncAppInstanceForPartnerOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::syncAppInstanceForPartnerAsync(const SyncAppInstanceForPartnerRequest& request, const SyncAppInstanceForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, syncAppInstanceForPartner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::SyncAppInstanceForPartnerOutcomeCallable WebsiteBuildClient::syncAppInstanceForPartnerCallable(const SyncAppInstanceForPartnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SyncAppInstanceForPartnerOutcome()>>(
+			[this, request]()
+			{
+			return this->syncAppInstanceForPartner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

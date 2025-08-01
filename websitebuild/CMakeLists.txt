@@ -28,7 +28,11 @@ set(websitebuild_public_header_model
 	include/alibabacloud/websitebuild/model/OperateAppInstanceForPartnerRequest.h
 	include/alibabacloud/websitebuild/model/OperateAppInstanceForPartnerResult.h
 	include/alibabacloud/websitebuild/model/OperateAppServiceForPartnerRequest.h
-	include/alibabacloud/websitebuild/model/OperateAppServiceForPartnerResult.h )
+	include/alibabacloud/websitebuild/model/OperateAppServiceForPartnerResult.h
+	include/alibabacloud/websitebuild/model/SearchImageRequest.h
+	include/alibabacloud/websitebuild/model/SearchImageResult.h
+	include/alibabacloud/websitebuild/model/SyncAppInstanceForPartnerRequest.h
+	include/alibabacloud/websitebuild/model/SyncAppInstanceForPartnerResult.h )
 
 set(websitebuild_src 
 	src/WebsiteBuildClient.cc
@@ -39,7 +43,11 @@ set(websitebuild_src
 	src/model/OperateAppInstanceForPartnerRequest.cc
 	src/model/OperateAppInstanceForPartnerResult.cc
 	src/model/OperateAppServiceForPartnerRequest.cc
-	src/model/OperateAppServiceForPartnerResult.cc )
+	src/model/OperateAppServiceForPartnerResult.cc
+	src/model/SearchImageRequest.cc
+	src/model/SearchImageResult.cc
+	src/model/SyncAppInstanceForPartnerRequest.cc
+	src/model/SyncAppInstanceForPartnerResult.cc )
 
 add_library(websitebuild ${LIB_TYPE}
 	${websitebuild_public_header}
