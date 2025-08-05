@@ -69,6 +69,10 @@ void DescribeLiveStreamMergeResult::parse(const std::string &payload)
 			liveStreamMergeListObject.streamName = valueLiveStreamMergeListLiveStreamMerge["StreamName"].asString();
 		if(!valueLiveStreamMergeListLiveStreamMerge["StreamUsing"].isNull())
 			liveStreamMergeListObject.streamUsing = valueLiveStreamMergeListLiveStreamMerge["StreamUsing"].asString();
+		if(!valueLiveStreamMergeListLiveStreamMerge["LiveMerger"].isNull())
+			liveStreamMergeListObject.liveMerger = valueLiveStreamMergeListLiveStreamMerge["LiveMerger"].asString();
+		if(!valueLiveStreamMergeListLiveStreamMerge["MergeParameters"].isNull())
+			liveStreamMergeListObject.mergeParameters = valueLiveStreamMergeListLiveStreamMerge["MergeParameters"].asString();
 		liveStreamMergeList_.push_back(liveStreamMergeListObject);
 	}
 

@@ -70,6 +70,15 @@ void AddLiveStreamMergeRequest::setAppName(const std::string &appName) {
   setParameter(std::string("AppName"), appName);
 }
 
+std::string AddLiveStreamMergeRequest::getLiveMerger() const {
+  return liveMerger_;
+}
+
+void AddLiveStreamMergeRequest::setLiveMerger(const std::string &liveMerger) {
+  liveMerger_ = liveMerger;
+  setParameter(std::string("LiveMerger"), liveMerger);
+}
+
 std::string AddLiveStreamMergeRequest::getRegionId() const {
   return regionId_;
 }
@@ -131,5 +140,14 @@ long AddLiveStreamMergeRequest::getOwnerId() const {
 void AddLiveStreamMergeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string AddLiveStreamMergeRequest::getMergeParameters() const {
+  return mergeParameters_;
+}
+
+void AddLiveStreamMergeRequest::setMergeParameters(const std::string &mergeParameters) {
+  mergeParameters_ = mergeParameters;
+  setParameter(std::string("MergeParameters"), mergeParameters);
 }
 

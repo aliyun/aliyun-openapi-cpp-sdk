@@ -43,24 +43,26 @@ void DescribeLiveStreamsNotifyRecordsResult::parse(const std::string &payload)
 	for (auto valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo : allNotifyRecordsInfoNode)
 	{
 		LiveStreamNotifyRecordsInfo notifyRecordsInfoObject;
-		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["AppName"].isNull())
-			notifyRecordsInfoObject.appName = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["AppName"].asString();
+		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyType"].isNull())
+			notifyRecordsInfoObject.notifyType = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyType"].asString();
 		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["Description"].isNull())
 			notifyRecordsInfoObject.description = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["Description"].asString();
+		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["StreamName"].isNull())
+			notifyRecordsInfoObject.streamName = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["StreamName"].asString();
+		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyTime"].isNull())
+			notifyRecordsInfoObject.notifyTime = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyTime"].asString();
 		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["DomainName"].isNull())
 			notifyRecordsInfoObject.domainName = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["DomainName"].asString();
 		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyContent"].isNull())
 			notifyRecordsInfoObject.notifyContent = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyContent"].asString();
-		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyResult"].isNull())
-			notifyRecordsInfoObject.notifyResult = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyResult"].asString();
-		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyTime"].isNull())
-			notifyRecordsInfoObject.notifyTime = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyTime"].asString();
-		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyType"].isNull())
-			notifyRecordsInfoObject.notifyType = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyType"].asString();
+		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyResponse"].isNull())
+			notifyRecordsInfoObject.notifyResponse = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyResponse"].asString();
 		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyUrl"].isNull())
 			notifyRecordsInfoObject.notifyUrl = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyUrl"].asString();
-		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["StreamName"].isNull())
-			notifyRecordsInfoObject.streamName = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["StreamName"].asString();
+		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyResult"].isNull())
+			notifyRecordsInfoObject.notifyResult = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["NotifyResult"].asString();
+		if(!valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["AppName"].isNull())
+			notifyRecordsInfoObject.appName = valueNotifyRecordsInfoLiveStreamNotifyRecordsInfo["AppName"].asString();
 		notifyRecordsInfo_.push_back(notifyRecordsInfoObject);
 	}
 	if(!value["PageNum"].isNull())

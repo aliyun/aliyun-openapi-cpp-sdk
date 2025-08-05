@@ -39,26 +39,6 @@ void DescribeRtcCloudRecordingFilesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto taskInfoNode = value["TaskInfo"];
-	if(!taskInfoNode["TaskId"].isNull())
-		taskInfo_.taskId = taskInfoNode["TaskId"].asString();
-	if(!taskInfoNode["Status"].isNull())
-		taskInfo_.status = taskInfoNode["Status"].asString();
-	auto recordFileListNode = taskInfoNode["RecordFileList"];
-		auto allMp3FileList = recordFileListNode["Mp3FileList"]["FileName"];
-		for (auto value : allMp3FileList)
-			taskInfo_.recordFileList.mp3FileList.push_back(value.asString());
-		auto allMp4FileList = recordFileListNode["Mp4FileList"]["FileName"];
-		for (auto value : allMp4FileList)
-			taskInfo_.recordFileList.mp4FileList.push_back(value.asString());
-		auto allHlsFileList = recordFileListNode["HlsFileList"]["FileName"];
-		for (auto value : allHlsFileList)
-			taskInfo_.recordFileList.hlsFileList.push_back(value.asString());
 
-}
-
-DescribeRtcCloudRecordingFilesResult::TaskInfo DescribeRtcCloudRecordingFilesResult::getTaskInfo()const
-{
-	return taskInfo_;
 }
 

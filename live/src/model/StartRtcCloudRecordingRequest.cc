@@ -31,10 +31,17 @@ StartRtcCloudRecordingRequest::StorageParams StartRtcCloudRecordingRequest::getS
 
 void StartRtcCloudRecordingRequest::setStorageParams(const StartRtcCloudRecordingRequest::StorageParams &storageParams) {
   storageParams_ = storageParams;
+  setParameter(std::string("StorageParams") + ".VodParams.AutoCompose", std::to_string(storageParams.vodParams.autoCompose));
+  setParameter(std::string("StorageParams") + ".VodParams.ComposeVodTranscodeGroupId", storageParams.vodParams.composeVodTranscodeGroupId);
+  setParameter(std::string("StorageParams") + ".VodParams.VodTranscodeGroupId", storageParams.vodParams.vodTranscodeGroupId);
+  setParameter(std::string("StorageParams") + ".VodParams.StorageLocation", storageParams.vodParams.storageLocation);
   for(int dep1 = 0; dep1 != storageParams.fileInfo.size(); dep1++) {
     setParameter(std::string("StorageParams") + ".FileInfo." + std::to_string(dep1 + 1) + ".FileNamePattern", storageParams.fileInfo[dep1].fileNamePattern);
     setParameter(std::string("StorageParams") + ".FileInfo." + std::to_string(dep1 + 1) + ".Format", storageParams.fileInfo[dep1].format);
     setParameter(std::string("StorageParams") + ".FileInfo." + std::to_string(dep1 + 1) + ".SliceNamePattern", storageParams.fileInfo[dep1].sliceNamePattern);
+    for(int dep2 = 0; dep2 != storageParams.fileInfo[dep1].filePathPrefix.size(); dep2++) {
+      setParameter(std::string("StorageParams") + ".FileInfo." + std::to_string(dep1 + 1) + ".FilePathPrefix." + std::to_string(dep2 + 1), storageParams.fileInfo[dep1].filePathPrefix[dep2]);
+    }
   }
   setParameter(std::string("StorageParams") + ".StorageType", std::to_string(storageParams.storageType));
   setParameter(std::string("StorageParams") + ".OSSParams.OSSBucket", storageParams.oSSParams.oSSBucket);
@@ -74,6 +81,15 @@ void StartRtcCloudRecordingRequest::setRecordParams(const StartRtcCloudRecording
   setParameter(std::string("RecordParams") + ".RecordMode", std::to_string(recordParams.recordMode));
 }
 
+long StartRtcCloudRecordingRequest::getMaxIdleTime() const {
+  return maxIdleTime_;
+}
+
+void StartRtcCloudRecordingRequest::setMaxIdleTime(long maxIdleTime) {
+  maxIdleTime_ = maxIdleTime;
+  setParameter(std::string("MaxIdleTime"), std::to_string(maxIdleTime));
+}
+
 StartRtcCloudRecordingRequest::MixTranscodeParams StartRtcCloudRecordingRequest::getMixTranscodeParams() const {
   return mixTranscodeParams_;
 }
@@ -90,6 +106,15 @@ void StartRtcCloudRecordingRequest::setMixTranscodeParams(const StartRtcCloudRec
   setParameter(std::string("MixTranscodeParams") + ".VideoCodec", mixTranscodeParams.videoCodec);
   setParameter(std::string("MixTranscodeParams") + ".AudioChannels", std::to_string(mixTranscodeParams.audioChannels));
   setParameter(std::string("MixTranscodeParams") + ".VideoGop", std::to_string(mixTranscodeParams.videoGop));
+}
+
+std::string StartRtcCloudRecordingRequest::getNotifyAuthKey() const {
+  return notifyAuthKey_;
+}
+
+void StartRtcCloudRecordingRequest::setNotifyAuthKey(const std::string &notifyAuthKey) {
+  notifyAuthKey_ = notifyAuthKey;
+  setParameter(std::string("NotifyAuthKey"), notifyAuthKey);
 }
 
 std::string StartRtcCloudRecordingRequest::getAppId() const {

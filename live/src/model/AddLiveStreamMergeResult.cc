@@ -39,6 +39,13 @@ void AddLiveStreamMergeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string AddLiveStreamMergeResult::getMessage()const
+{
+	return message_;
 }
 

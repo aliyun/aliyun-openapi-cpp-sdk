@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string notifyTime;
 					std::string domainName;
 					std::string notifyContent;
+					std::string notifyResponse;
 					std::string notifyUrl;
 					std::string notifyResult;
 					std::string appName;

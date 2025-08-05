@@ -29,10 +29,19 @@ namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT StartRtcCloudRecordingRequest : public RpcServiceRequest {
 public:
 	struct StorageParams {
+		struct VodParams {
+			int autoCompose;
+			std::string composeVodTranscodeGroupId;
+			std::string vodTranscodeGroupId;
+			std::string storageLocation;
+		};
+		VodParams vodParams;
 		struct FileInfoItem {
 			std::string fileNamePattern;
 			std::string format;
 			std::string sliceNamePattern;
+			std::string string;
+			std::vector<std::string> filePathPrefix;
 		};
 		FileInfoItem fileInfoItem;
 		std::vector<FileInfoItem> fileInfo;
@@ -102,8 +111,12 @@ public:
 	void setSubscribeParams(const SubscribeParams &subscribeParams);
 	RecordParams getRecordParams() const;
 	void setRecordParams(const RecordParams &recordParams);
+	long getMaxIdleTime() const;
+	void setMaxIdleTime(long maxIdleTime);
 	MixTranscodeParams getMixTranscodeParams() const;
 	void setMixTranscodeParams(const MixTranscodeParams &mixTranscodeParams);
+	std::string getNotifyAuthKey() const;
+	void setNotifyAuthKey(const std::string &notifyAuthKey);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
 	std::string getChannelId() const;
@@ -116,7 +129,9 @@ private:
 	std::string notifyUrl_;
 	SubscribeParams subscribeParams_;
 	RecordParams recordParams_;
+	long maxIdleTime_;
 	MixTranscodeParams mixTranscodeParams_;
+	std::string notifyAuthKey_;
 	std::string appId_;
 	std::string channelId_;
 	MixLayoutParams mixLayoutParams_;

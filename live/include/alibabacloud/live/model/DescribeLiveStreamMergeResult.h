@@ -40,8 +40,10 @@ namespace AlibabaCloud
 					std::string inStreamName2;
 					std::string startTime;
 					std::string appUsing;
+					std::string liveMerger;
 					std::string appName;
 					std::string streamName;
+					std::string mergeParameters;
 					std::string extraInAppStreams;
 					std::string streamUsing;
 					std::string inAppName1;

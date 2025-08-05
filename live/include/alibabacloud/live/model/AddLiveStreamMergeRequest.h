@@ -40,6 +40,8 @@ public:
 	void setProtocol(const std::string &protocol);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
+	std::string getLiveMerger() const;
+	void setLiveMerger(const std::string &liveMerger);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getInStreamName2() const;
@@ -54,6 +56,8 @@ public:
 	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getMergeParameters() const;
+	void setMergeParameters(const std::string &mergeParameters);
 
 private:
 	std::string inAppName2_;
@@ -61,6 +65,7 @@ private:
 	std::string startTime_;
 	std::string protocol_;
 	std::string appName_;
+	std::string liveMerger_;
 	std::string regionId_;
 	std::string inStreamName2_;
 	std::string streamName_;
@@ -68,6 +73,7 @@ private:
 	std::string domainName_;
 	std::string endTime_;
 	long ownerId_;
+	std::string mergeParameters_;
 };
 } // namespace Model
 } // namespace Live

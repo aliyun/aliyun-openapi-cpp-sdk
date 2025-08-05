@@ -59,6 +59,8 @@ void DescribeLiveRecordNotifyRecordsResult::parse(const std::string &payload)
 			callbackListObject.notifyType = valueCallbackListCallback["NotifyType"].asString();
 		if(!valueCallbackListCallback["NotifyUrl"].isNull())
 			callbackListObject.notifyUrl = valueCallbackListCallback["NotifyUrl"].asString();
+		if(!valueCallbackListCallback["NotifyResponse"].isNull())
+			callbackListObject.notifyResponse = valueCallbackListCallback["NotifyResponse"].asString();
 		if(!valueCallbackListCallback["StreamName"].isNull())
 			callbackListObject.streamName = valueCallbackListCallback["StreamName"].asString();
 		callbackList_.push_back(callbackListObject);
