@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_CREATEBACKUPSETDOWNLOADLINKRESULT_H_
-#define ALIBABACLOUD_OCEANBASEPRO_MODEL_CREATEBACKUPSETDOWNLOADLINKRESULT_H_
+#ifndef ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEMETRICSDATAV2RESULT_H_
+#define ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEMETRICSDATAV2RESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OCEANBASEPRO_EXPORT CreateBackupSetDownloadLinkResult : public ServiceResult
+			class ALIBABACLOUD_OCEANBASEPRO_EXPORT DescribeMetricsDataV2Result : public ServiceResult
 			{
 			public:
-				struct Data
+				struct DataItem
 				{
-					long downloadTaskId;
+					struct DataItem2
+					{
+						std::string metricValue;
+						long timestamp;
+					};
+					std::string labels;
+					std::vector<DataItem::DataItem2> data1;
 				};
 
 
-				CreateBackupSetDownloadLinkResult();
-				explicit CreateBackupSetDownloadLinkResult(const std::string &payload);
-				~CreateBackupSetDownloadLinkResult();
-				Data getData()const;
+				DescribeMetricsDataV2Result();
+				explicit DescribeMetricsDataV2Result(const std::string &payload);
+				~DescribeMetricsDataV2Result();
+				std::vector<DataItem> getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
+				std::vector<DataItem> data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_CREATEBACKUPSETDOWNLOADLINKRESULT_H_
+#endif // !ALIBABACLOUD_OCEANBASEPRO_MODEL_DESCRIBEMETRICSDATAV2RESULT_H_

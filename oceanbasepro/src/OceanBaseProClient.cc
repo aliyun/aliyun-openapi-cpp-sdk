@@ -1923,6 +1923,42 @@ OceanBaseProClient::DescribeMetricsDataOutcomeCallable OceanBaseProClient::descr
 	return task->get_future();
 }
 
+OceanBaseProClient::DescribeMetricsDataV2Outcome OceanBaseProClient::describeMetricsDataV2(const DescribeMetricsDataV2Request &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMetricsDataV2Outcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMetricsDataV2Outcome(DescribeMetricsDataV2Result(outcome.result()));
+	else
+		return DescribeMetricsDataV2Outcome(outcome.error());
+}
+
+void OceanBaseProClient::describeMetricsDataV2Async(const DescribeMetricsDataV2Request& request, const DescribeMetricsDataV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMetricsDataV2(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OceanBaseProClient::DescribeMetricsDataV2OutcomeCallable OceanBaseProClient::describeMetricsDataV2Callable(const DescribeMetricsDataV2Request &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMetricsDataV2Outcome()>>(
+			[this, request]()
+			{
+			return this->describeMetricsDataV2(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OceanBaseProClient::DescribeNodeMetricsOutcome OceanBaseProClient::describeNodeMetrics(const DescribeNodeMetricsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

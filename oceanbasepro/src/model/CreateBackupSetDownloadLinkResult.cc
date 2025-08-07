@@ -39,13 +39,14 @@ void CreateBackupSetDownloadLinkResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DownloadTaskId"].isNull())
-		downloadTaskId_ = std::stol(value["DownloadTaskId"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["DownloadTaskId"].isNull())
+		data_.downloadTaskId = std::stol(dataNode["DownloadTaskId"].asString());
 
 }
 
-long CreateBackupSetDownloadLinkResult::getDownloadTaskId()const
+CreateBackupSetDownloadLinkResult::Data CreateBackupSetDownloadLinkResult::getData()const
 {
-	return downloadTaskId_;
+	return data_;
 }
 

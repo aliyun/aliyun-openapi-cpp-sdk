@@ -125,6 +125,8 @@ set(oceanbasepro_public_header_model
 	include/alibabacloud/oceanbasepro/model/DescribeInstancesResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeMetricsDataRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeMetricsDataResult.h
+	include/alibabacloud/oceanbasepro/model/DescribeMetricsDataV2Request.h
+	include/alibabacloud/oceanbasepro/model/DescribeMetricsDataV2Result.h
 	include/alibabacloud/oceanbasepro/model/DescribeNodeMetricsRequest.h
 	include/alibabacloud/oceanbasepro/model/DescribeNodeMetricsResult.h
 	include/alibabacloud/oceanbasepro/model/DescribeOasAnomalySQLListRequest.h
@@ -406,6 +408,8 @@ set(oceanbasepro_src
 	src/model/DescribeInstancesResult.cc
 	src/model/DescribeMetricsDataRequest.cc
 	src/model/DescribeMetricsDataResult.cc
+	src/model/DescribeMetricsDataV2Request.cc
+	src/model/DescribeMetricsDataV2Result.cc
 	src/model/DescribeNodeMetricsRequest.cc
 	src/model/DescribeNodeMetricsResult.cc
 	src/model/DescribeOasAnomalySQLListRequest.cc

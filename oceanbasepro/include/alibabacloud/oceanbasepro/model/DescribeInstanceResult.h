@@ -151,7 +151,7 @@ namespace AlibabaCloud
 					std::string deployType;
 					std::string proxyServiceStatus;
 					ReadOnlyResource readOnlyResource;
-					std::string nodeNum;
+					long nodeNum;
 					bool enableIsolationOptimization;
 					std::string dataMergeTime;
 					std::string specType;

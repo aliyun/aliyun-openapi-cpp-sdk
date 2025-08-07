@@ -83,7 +83,7 @@ void DescribeInstanceResult::parse(const std::string &payload)
 	if(!instanceNode["InstanceRole"].isNull())
 		instance_.instanceRole = instanceNode["InstanceRole"].asString();
 	if(!instanceNode["NodeNum"].isNull())
-		instance_.nodeNum = instanceNode["NodeNum"].asString();
+		instance_.nodeNum = std::stol(instanceNode["NodeNum"].asString());
 	if(!instanceNode["ReplicaMode"].isNull())
 		instance_.replicaMode = instanceNode["ReplicaMode"].asString();
 	if(!instanceNode["IsolationOptimization"].isNull())

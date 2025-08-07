@@ -53,7 +53,9 @@ namespace AlibabaCloud
 					long requestId;
 					std::string requestTime;
 					std::string paramsValue;
+					std::string sqlId;
 					long ssstoreReadRows;
+					std::string sqlTextShort;
 					double scheduleTime;
 					long obUserId;
 					std::string traceId;

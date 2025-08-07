@@ -105,7 +105,7 @@ void DescribeTenantResult::parse(const std::string &payload)
 	if(!tenantNode["OdpVersion"].isNull())
 		tenant_.odpVersion = tenantNode["OdpVersion"].asString();
 	if(!tenantNode["TenantMaxConnections"].isNull())
-		tenant_.tenantMaxConnections = tenantNode["TenantMaxConnections"].asString();
+		tenant_.tenantMaxConnections = std::stol(tenantNode["TenantMaxConnections"].asString());
 	if(!tenantNode["ParameterTemplate"].isNull())
 		tenant_.parameterTemplate = tenantNode["ParameterTemplate"].asString();
 	if(!tenantNode["Iops"].isNull())
@@ -166,6 +166,10 @@ void DescribeTenantResult::parse(const std::string &payload)
 			tenantConnectionsItemObject.odpVersion = tenantNodeTenantConnectionsTenantConnectionsItem["OdpVersion"].asString();
 		if(!tenantNodeTenantConnectionsTenantConnectionsItem["InternetSqlPort"].isNull())
 			tenantConnectionsItemObject.internetSqlPort = std::stoi(tenantNodeTenantConnectionsTenantConnectionsItem["InternetSqlPort"].asString());
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["InternetAddressServiceType"].isNull())
+			tenantConnectionsItemObject.internetAddressServiceType = tenantNodeTenantConnectionsTenantConnectionsItem["InternetAddressServiceType"].asString();
+		if(!tenantNodeTenantConnectionsTenantConnectionsItem["IntranetAddressServiceType"].isNull())
+			tenantConnectionsItemObject.intranetAddressServiceType = tenantNodeTenantConnectionsTenantConnectionsItem["IntranetAddressServiceType"].asString();
 		auto allConnectionZones = value["ConnectionZones"]["ConnectionZones"];
 		for (auto value : allConnectionZones)
 			tenantConnectionsItemObject.connectionZones.push_back(value.asString());

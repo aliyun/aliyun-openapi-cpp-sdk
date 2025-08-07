@@ -119,6 +119,7 @@ namespace AlibabaCloud
 						std::string proxyClusterId;
 						int intranetPort;
 						long parallelQueryDegree;
+						std::string intranetAddressServiceType;
 						int internetSqlPort;
 						int internetRpcPort;
 						std::string connectionReplicaType;
@@ -131,6 +132,7 @@ namespace AlibabaCloud
 						long internetMaxConnectionLimit;
 						int intranetRpcPort;
 						std::string odpVersion;
+						std::string internetAddressServiceType;
 						std::string intranetAddress;
 						std::string vpcId;
 						std::vector<std::string> connectionLogicalZones;
@@ -193,7 +195,7 @@ namespace AlibabaCloud
 					std::string timeZone;
 					TenantResource tenantResource;
 					std::string vpcId;
-					std::string tenantMaxConnections;
+					long tenantMaxConnections;
 				};
 
 

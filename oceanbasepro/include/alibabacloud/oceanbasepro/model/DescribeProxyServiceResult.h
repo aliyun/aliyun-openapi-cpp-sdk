@@ -38,11 +38,16 @@ namespace AlibabaCloud
 					long currentEndpointNum;
 					std::string zone;
 					long unitNum;
+					long exclusiveUnitNumLimit;
 					std::string createTime;
 					std::string proxyVersion;
 					std::string proxyClusterId;
 					long unitNumLimit;
+					long serverNumLimit;
+					bool allowModifyServerNum;
+					long sharedUnitNumLimit;
 					long endpointNumQuota;
+					std::string deployMode;
 					std::string unitSpec;
 					std::string expireTime;
 					std::string proxyServiceVersion;

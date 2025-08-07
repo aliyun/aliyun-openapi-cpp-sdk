@@ -66,6 +66,16 @@ void DescribeProxyServiceResult::parse(const std::string &payload)
 		data_.unitNumLimit = std::stol(dataNode["UnitNumLimit"].asString());
 	if(!dataNode["ProxyVersion"].isNull())
 		data_.proxyVersion = dataNode["ProxyVersion"].asString();
+	if(!dataNode["DeployMode"].isNull())
+		data_.deployMode = dataNode["DeployMode"].asString();
+	if(!dataNode["ServerNumLimit"].isNull())
+		data_.serverNumLimit = std::stol(dataNode["ServerNumLimit"].asString());
+	if(!dataNode["AllowModifyServerNum"].isNull())
+		data_.allowModifyServerNum = dataNode["AllowModifyServerNum"].asString() == "true";
+	if(!dataNode["SharedUnitNumLimit"].isNull())
+		data_.sharedUnitNumLimit = std::stol(dataNode["SharedUnitNumLimit"].asString());
+	if(!dataNode["ExclusiveUnitNumLimit"].isNull())
+		data_.exclusiveUnitNumLimit = std::stol(dataNode["ExclusiveUnitNumLimit"].asString());
 
 }
 

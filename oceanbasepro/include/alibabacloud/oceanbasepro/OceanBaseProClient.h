@@ -126,6 +126,8 @@
 #include "model/DescribeInstancesResult.h"
 #include "model/DescribeMetricsDataRequest.h"
 #include "model/DescribeMetricsDataResult.h"
+#include "model/DescribeMetricsDataV2Request.h"
+#include "model/DescribeMetricsDataV2Result.h"
 #include "model/DescribeNodeMetricsRequest.h"
 #include "model/DescribeNodeMetricsResult.h"
 #include "model/DescribeOasAnomalySQLListRequest.h"
@@ -465,6 +467,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeMetricsDataResult> DescribeMetricsDataOutcome;
 			typedef std::future<DescribeMetricsDataOutcome> DescribeMetricsDataOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeMetricsDataRequest&, const DescribeMetricsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricsDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMetricsDataV2Result> DescribeMetricsDataV2Outcome;
+			typedef std::future<DescribeMetricsDataV2Outcome> DescribeMetricsDataV2OutcomeCallable;
+			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeMetricsDataV2Request&, const DescribeMetricsDataV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricsDataV2AsyncHandler;
 			typedef Outcome<Error, Model::DescribeNodeMetricsResult> DescribeNodeMetricsOutcome;
 			typedef std::future<DescribeNodeMetricsOutcome> DescribeNodeMetricsOutcomeCallable;
 			typedef std::function<void(const OceanBaseProClient*, const Model::DescribeNodeMetricsRequest&, const DescribeNodeMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeMetricsAsyncHandler;
@@ -887,6 +892,9 @@ namespace AlibabaCloud
 			DescribeMetricsDataOutcome describeMetricsData(const Model::DescribeMetricsDataRequest &request)const;
 			void describeMetricsDataAsync(const Model::DescribeMetricsDataRequest& request, const DescribeMetricsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMetricsDataOutcomeCallable describeMetricsDataCallable(const Model::DescribeMetricsDataRequest& request) const;
+			DescribeMetricsDataV2Outcome describeMetricsDataV2(const Model::DescribeMetricsDataV2Request &request)const;
+			void describeMetricsDataV2Async(const Model::DescribeMetricsDataV2Request& request, const DescribeMetricsDataV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMetricsDataV2OutcomeCallable describeMetricsDataV2Callable(const Model::DescribeMetricsDataV2Request& request) const;
 			DescribeNodeMetricsOutcome describeNodeMetrics(const Model::DescribeNodeMetricsRequest &request)const;
 			void describeNodeMetricsAsync(const Model::DescribeNodeMetricsRequest& request, const DescribeNodeMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNodeMetricsOutcomeCallable describeNodeMetricsCallable(const Model::DescribeNodeMetricsRequest& request) const;
