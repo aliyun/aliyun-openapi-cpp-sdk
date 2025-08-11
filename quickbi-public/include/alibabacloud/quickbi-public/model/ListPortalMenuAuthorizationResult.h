@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string receiverId;
 						int receiverType;
+						int authPointsValue;
 					};
 					std::string menuId;
 					std::vector<Data::ReceiversItem> receivers;

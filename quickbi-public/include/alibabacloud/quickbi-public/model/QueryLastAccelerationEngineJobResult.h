@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDATARESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDATARESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYLASTACCELERATIONENGINEJOBRESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYLASTACCELERATIONENGINEJOBRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryDataResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryLastAccelerationEngineJobResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
-					struct HeadersItem
-					{
-						std::string type;
-						std::string column;
-						std::string label;
-						std::string aggregator;
-						std::string dataType;
-						std::string granularity;
-						std::string originalColumn;
-					};
-					std::vector<HeadersItem> headers;
-					std::vector<std::string> values;
-					std::string sql;
+					std::string status;
+					std::string gmtCreate;
+					std::string gmtModified;
+					std::string jobHistoryId;
 				};
 
 
-				QueryDataResult();
-				explicit QueryDataResult(const std::string &payload);
-				~QueryDataResult();
+				QueryLastAccelerationEngineJobResult();
+				explicit QueryLastAccelerationEngineJobResult(const std::string &payload);
+				~QueryLastAccelerationEngineJobResult();
 				bool getSuccess()const;
 				Result getResult()const;
 
@@ -66,4 +57,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDATARESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYLASTACCELERATIONENGINEJOBRESULT_H_

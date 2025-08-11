@@ -55,6 +55,8 @@ void ListPortalMenuAuthorizationResult::parse(const std::string &payload)
 				receiversObject.receiverId = valueResultDataReceiversReceiversItem["ReceiverId"].asString();
 			if(!valueResultDataReceiversReceiversItem["ReceiverType"].isNull())
 				receiversObject.receiverType = std::stoi(valueResultDataReceiversReceiversItem["ReceiverType"].asString());
+			if(!valueResultDataReceiversReceiversItem["AuthPointsValue"].isNull())
+				receiversObject.authPointsValue = std::stoi(valueResultDataReceiversReceiversItem["AuthPointsValue"].asString());
 			resultObject.receivers.push_back(receiversObject);
 		}
 		result_.push_back(resultObject);

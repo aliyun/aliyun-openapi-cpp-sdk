@@ -146,6 +146,8 @@
 #include "model/QueryCubeOptimizationResult.h"
 #include "model/QueryCubePerformanceRequest.h"
 #include "model/QueryCubePerformanceResult.h"
+#include "model/QueryDashboardNl2sqlRequest.h"
+#include "model/QueryDashboardNl2sqlResult.h"
 #include "model/QueryDataRequest.h"
 #include "model/QueryDataResult.h"
 #include "model/QueryDataRangeRequest.h"
@@ -168,6 +170,8 @@
 #include "model/QueryEmbeddedInfoResult.h"
 #include "model/QueryEmbeddedStatusRequest.h"
 #include "model/QueryEmbeddedStatusResult.h"
+#include "model/QueryLastAccelerationEngineJobRequest.h"
+#include "model/QueryLastAccelerationEngineJobResult.h"
 #include "model/QueryLlmCubeWithThemeListByUserIdRequest.h"
 #include "model/QueryLlmCubeWithThemeListByUserIdResult.h"
 #include "model/QueryOrganizationRoleConfigRequest.h"
@@ -447,6 +451,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryCubePerformanceResult> QueryCubePerformanceOutcome;
 			typedef std::future<QueryCubePerformanceOutcome> QueryCubePerformanceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryCubePerformanceRequest&, const QueryCubePerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCubePerformanceAsyncHandler;
+			typedef Outcome<Error, Model::QueryDashboardNl2sqlResult> QueryDashboardNl2sqlOutcome;
+			typedef std::future<QueryDashboardNl2sqlOutcome> QueryDashboardNl2sqlOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryDashboardNl2sqlRequest&, const QueryDashboardNl2sqlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDashboardNl2sqlAsyncHandler;
 			typedef Outcome<Error, Model::QueryDataResult> QueryDataOutcome;
 			typedef std::future<QueryDataOutcome> QueryDataOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryDataRequest&, const QueryDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDataAsyncHandler;
@@ -480,6 +487,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryEmbeddedStatusResult> QueryEmbeddedStatusOutcome;
 			typedef std::future<QueryEmbeddedStatusOutcome> QueryEmbeddedStatusOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryEmbeddedStatusRequest&, const QueryEmbeddedStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEmbeddedStatusAsyncHandler;
+			typedef Outcome<Error, Model::QueryLastAccelerationEngineJobResult> QueryLastAccelerationEngineJobOutcome;
+			typedef std::future<QueryLastAccelerationEngineJobOutcome> QueryLastAccelerationEngineJobOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryLastAccelerationEngineJobRequest&, const QueryLastAccelerationEngineJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryLastAccelerationEngineJobAsyncHandler;
 			typedef Outcome<Error, Model::QueryLlmCubeWithThemeListByUserIdResult> QueryLlmCubeWithThemeListByUserIdOutcome;
 			typedef std::future<QueryLlmCubeWithThemeListByUserIdOutcome> QueryLlmCubeWithThemeListByUserIdOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryLlmCubeWithThemeListByUserIdRequest&, const QueryLlmCubeWithThemeListByUserIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryLlmCubeWithThemeListByUserIdAsyncHandler;
@@ -797,6 +807,9 @@ namespace AlibabaCloud
 			QueryCubePerformanceOutcome queryCubePerformance(const Model::QueryCubePerformanceRequest &request)const;
 			void queryCubePerformanceAsync(const Model::QueryCubePerformanceRequest& request, const QueryCubePerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCubePerformanceOutcomeCallable queryCubePerformanceCallable(const Model::QueryCubePerformanceRequest& request) const;
+			QueryDashboardNl2sqlOutcome queryDashboardNl2sql(const Model::QueryDashboardNl2sqlRequest &request)const;
+			void queryDashboardNl2sqlAsync(const Model::QueryDashboardNl2sqlRequest& request, const QueryDashboardNl2sqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDashboardNl2sqlOutcomeCallable queryDashboardNl2sqlCallable(const Model::QueryDashboardNl2sqlRequest& request) const;
 			QueryDataOutcome queryData(const Model::QueryDataRequest &request)const;
 			void queryDataAsync(const Model::QueryDataRequest& request, const QueryDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDataOutcomeCallable queryDataCallable(const Model::QueryDataRequest& request) const;
@@ -830,6 +843,9 @@ namespace AlibabaCloud
 			QueryEmbeddedStatusOutcome queryEmbeddedStatus(const Model::QueryEmbeddedStatusRequest &request)const;
 			void queryEmbeddedStatusAsync(const Model::QueryEmbeddedStatusRequest& request, const QueryEmbeddedStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryEmbeddedStatusOutcomeCallable queryEmbeddedStatusCallable(const Model::QueryEmbeddedStatusRequest& request) const;
+			QueryLastAccelerationEngineJobOutcome queryLastAccelerationEngineJob(const Model::QueryLastAccelerationEngineJobRequest &request)const;
+			void queryLastAccelerationEngineJobAsync(const Model::QueryLastAccelerationEngineJobRequest& request, const QueryLastAccelerationEngineJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryLastAccelerationEngineJobOutcomeCallable queryLastAccelerationEngineJobCallable(const Model::QueryLastAccelerationEngineJobRequest& request) const;
 			QueryLlmCubeWithThemeListByUserIdOutcome queryLlmCubeWithThemeListByUserId(const Model::QueryLlmCubeWithThemeListByUserIdRequest &request)const;
 			void queryLlmCubeWithThemeListByUserIdAsync(const Model::QueryLlmCubeWithThemeListByUserIdRequest& request, const QueryLlmCubeWithThemeListByUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryLlmCubeWithThemeListByUserIdOutcomeCallable queryLlmCubeWithThemeListByUserIdCallable(const Model::QueryLlmCubeWithThemeListByUserIdRequest& request) const;

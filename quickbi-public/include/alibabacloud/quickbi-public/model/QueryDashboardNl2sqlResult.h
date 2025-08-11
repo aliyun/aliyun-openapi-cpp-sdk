@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDATARESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDATARESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDASHBOARDNL2SQLRESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDASHBOARDNL2SQLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryDataResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryDashboardNl2sqlResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct Data
 				{
-					struct HeadersItem
-					{
-						std::string type;
-						std::string column;
-						std::string label;
-						std::string aggregator;
-						std::string dataType;
-						std::string granularity;
-						std::string originalColumn;
-					};
-					std::vector<HeadersItem> headers;
-					std::vector<std::string> values;
-					std::string sql;
+					std::string dashboardName;
+					std::string dashboardNl2sqlId;
+					std::string ownerId;
+					std::vector<std::string> authorities;
 				};
 
 
-				QueryDataResult();
-				explicit QueryDataResult(const std::string &payload);
-				~QueryDataResult();
+				QueryDashboardNl2sqlResult();
+				explicit QueryDashboardNl2sqlResult(const std::string &payload);
+				~QueryDashboardNl2sqlResult();
 				bool getSuccess()const;
-				Result getResult()const;
+				std::vector<Data> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				bool success_;
-				Result result_;
+				std::vector<Data> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDATARESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYDASHBOARDNL2SQLRESULT_H_

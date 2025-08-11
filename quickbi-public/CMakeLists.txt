@@ -145,6 +145,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryCubeOptimizationResult.h
 	include/alibabacloud/quickbi-public/model/QueryCubePerformanceRequest.h
 	include/alibabacloud/quickbi-public/model/QueryCubePerformanceResult.h
+	include/alibabacloud/quickbi-public/model/QueryDashboardNl2sqlRequest.h
+	include/alibabacloud/quickbi-public/model/QueryDashboardNl2sqlResult.h
 	include/alibabacloud/quickbi-public/model/QueryDataRequest.h
 	include/alibabacloud/quickbi-public/model/QueryDataResult.h
 	include/alibabacloud/quickbi-public/model/QueryDataRangeRequest.h
@@ -167,6 +169,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedStatusRequest.h
 	include/alibabacloud/quickbi-public/model/QueryEmbeddedStatusResult.h
+	include/alibabacloud/quickbi-public/model/QueryLastAccelerationEngineJobRequest.h
+	include/alibabacloud/quickbi-public/model/QueryLastAccelerationEngineJobResult.h
 	include/alibabacloud/quickbi-public/model/QueryLlmCubeWithThemeListByUserIdRequest.h
 	include/alibabacloud/quickbi-public/model/QueryLlmCubeWithThemeListByUserIdResult.h
 	include/alibabacloud/quickbi-public/model/QueryOrganizationRoleConfigRequest.h
@@ -378,6 +382,8 @@ set(quickbi-public_src
 	src/model/QueryCubeOptimizationResult.cc
 	src/model/QueryCubePerformanceRequest.cc
 	src/model/QueryCubePerformanceResult.cc
+	src/model/QueryDashboardNl2sqlRequest.cc
+	src/model/QueryDashboardNl2sqlResult.cc
 	src/model/QueryDataRequest.cc
 	src/model/QueryDataResult.cc
 	src/model/QueryDataRangeRequest.cc
@@ -400,6 +406,8 @@ set(quickbi-public_src
 	src/model/QueryEmbeddedInfoResult.cc
 	src/model/QueryEmbeddedStatusRequest.cc
 	src/model/QueryEmbeddedStatusResult.cc
+	src/model/QueryLastAccelerationEngineJobRequest.cc
+	src/model/QueryLastAccelerationEngineJobResult.cc
 	src/model/QueryLlmCubeWithThemeListByUserIdRequest.cc
 	src/model/QueryLlmCubeWithThemeListByUserIdResult.cc
 	src/model/QueryOrganizationRoleConfigRequest.cc

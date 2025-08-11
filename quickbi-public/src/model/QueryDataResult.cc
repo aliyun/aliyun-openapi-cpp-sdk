@@ -58,6 +58,8 @@ void QueryDataResult::parse(const std::string &payload)
 			headersItemObject.label = resultNodeHeadersHeadersItem["Label"].asString();
 		if(!resultNodeHeadersHeadersItem["Type"].isNull())
 			headersItemObject.type = resultNodeHeadersHeadersItem["Type"].asString();
+		if(!resultNodeHeadersHeadersItem["OriginalColumn"].isNull())
+			headersItemObject.originalColumn = resultNodeHeadersHeadersItem["OriginalColumn"].asString();
 		result_.headers.push_back(headersItemObject);
 	}
 		auto allValues = resultNode["Values"]["Values"];

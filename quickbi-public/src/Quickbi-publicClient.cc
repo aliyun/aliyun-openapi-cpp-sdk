@@ -2283,6 +2283,42 @@ Quickbi_publicClient::QueryCubePerformanceOutcomeCallable Quickbi_publicClient::
 	return task->get_future();
 }
 
+Quickbi_publicClient::QueryDashboardNl2sqlOutcome Quickbi_publicClient::queryDashboardNl2sql(const QueryDashboardNl2sqlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDashboardNl2sqlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDashboardNl2sqlOutcome(QueryDashboardNl2sqlResult(outcome.result()));
+	else
+		return QueryDashboardNl2sqlOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryDashboardNl2sqlAsync(const QueryDashboardNl2sqlRequest& request, const QueryDashboardNl2sqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDashboardNl2sql(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryDashboardNl2sqlOutcomeCallable Quickbi_publicClient::queryDashboardNl2sqlCallable(const QueryDashboardNl2sqlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDashboardNl2sqlOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDashboardNl2sql(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::QueryDataOutcome Quickbi_publicClient::queryData(const QueryDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2673,6 +2709,42 @@ Quickbi_publicClient::QueryEmbeddedStatusOutcomeCallable Quickbi_publicClient::q
 			[this, request]()
 			{
 			return this->queryEmbeddedStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryLastAccelerationEngineJobOutcome Quickbi_publicClient::queryLastAccelerationEngineJob(const QueryLastAccelerationEngineJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryLastAccelerationEngineJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryLastAccelerationEngineJobOutcome(QueryLastAccelerationEngineJobResult(outcome.result()));
+	else
+		return QueryLastAccelerationEngineJobOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryLastAccelerationEngineJobAsync(const QueryLastAccelerationEngineJobRequest& request, const QueryLastAccelerationEngineJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryLastAccelerationEngineJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryLastAccelerationEngineJobOutcomeCallable Quickbi_publicClient::queryLastAccelerationEngineJobCallable(const QueryLastAccelerationEngineJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryLastAccelerationEngineJobOutcome()>>(
+			[this, request]()
+			{
+			return this->queryLastAccelerationEngineJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
