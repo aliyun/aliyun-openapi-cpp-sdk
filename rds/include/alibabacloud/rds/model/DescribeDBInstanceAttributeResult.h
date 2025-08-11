@@ -130,6 +130,7 @@ namespace AlibabaCloud
 					std::string maintainTime;
 					std::string dispenseMode;
 					std::string readOnlyStatus;
+					bool isAnalyticReadOnlyIns;
 					std::string dBInstanceStorageType;
 					int maxIOPS;
 					std::vector<DBInstanceAttribute::SlaveZone> slaveZones;
@@ -166,8 +167,8 @@ namespace AlibabaCloud
 					std::string compressionMode;
 					std::vector<DBInstanceAttribute::ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 					std::string compressionRatio;
-					bool burstingEnabled;
 					bool coldDataEnabled;
+					bool burstingEnabled;
 					std::string zoneId;
 					std::string tempUpgradeRecoveryTime;
 					std::string collation;

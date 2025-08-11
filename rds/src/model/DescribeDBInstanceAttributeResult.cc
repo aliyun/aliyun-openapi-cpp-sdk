@@ -55,8 +55,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.availabilityValue = valueItemsDBInstanceAttribute["AvailabilityValue"].asString();
 		if(!valueItemsDBInstanceAttribute["BpeEnabled"].isNull())
 			itemsObject.bpeEnabled = valueItemsDBInstanceAttribute["BpeEnabled"].asString();
-		if(!valueItemsDBInstanceAttribute["BurstingEnabled"].isNull())
-			itemsObject.burstingEnabled = valueItemsDBInstanceAttribute["BurstingEnabled"].asString() == "true";
+		if(!valueItemsDBInstanceAttribute["IsAnalyticReadOnlyIns"].isNull())
+			itemsObject.isAnalyticReadOnlyIns = valueItemsDBInstanceAttribute["IsAnalyticReadOnlyIns"].asString() == "true";
 		if(!valueItemsDBInstanceAttribute["CanTempUpgrade"].isNull())
 			itemsObject.canTempUpgrade = valueItemsDBInstanceAttribute["CanTempUpgrade"].asString() == "true";
 		if(!valueItemsDBInstanceAttribute["Category"].isNull())
@@ -237,6 +237,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.computeBurstEnabled = valueItemsDBInstanceAttribute["ComputeBurstEnabled"].asString() == "true";
 		if(!valueItemsDBInstanceAttribute["ReadOnlyStatus"].isNull())
 			itemsObject.readOnlyStatus = valueItemsDBInstanceAttribute["ReadOnlyStatus"].asString();
+		if(!valueItemsDBInstanceAttribute["BurstingEnabled"].isNull())
+			itemsObject.burstingEnabled = valueItemsDBInstanceAttribute["BurstingEnabled"].asString() == "true";
 		auto allDBClusterNodesNode = valueItemsDBInstanceAttribute["DBClusterNodes"]["DBClusterNode"];
 		for (auto valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode : allDBClusterNodesNode)
 		{

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEDIAGNOSTICREPORTLISTREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEDIAGNOSTICREPORTLISTREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYRCVCLUSTERREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_MODIFYRCVCLUSTERREQUEST_H_
 
 #include <alibabacloud/rds/RdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,23 @@
 namespace AlibabaCloud {
 namespace Rds {
 namespace Model {
-class ALIBABACLOUD_RDS_EXPORT DescribeDiagnosticReportListRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RDS_EXPORT ModifyRCVClusterRequest : public RpcServiceRequest {
 public:
-	DescribeDiagnosticReportListRequest();
-	~DescribeDiagnosticReportListRequest();
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
+	ModifyRCVClusterRequest();
+	~ModifyRCVClusterRequest();
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getDBInstanceId() const;
-	void setDBInstanceId(const std::string &dBInstanceId);
+	std::vector<std::string> getSupportDiskPerformanceLevel() const;
+	void setSupportDiskPerformanceLevel(const std::vector<std::string> &supportDiskPerformanceLevel);
 
 private:
-	std::string accessKeyId_;
-	std::string resourceGroupId_;
+	std::string clusterId_;
 	std::string regionId_;
-	std::string dBInstanceId_;
+	std::vector<std::string> supportDiskPerformanceLevel_;
 };
 } // namespace Model
 } // namespace Rds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEDIAGNOSTICREPORTLISTREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYRCVCLUSTERREQUEST_H_

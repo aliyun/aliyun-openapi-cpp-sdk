@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DELETERCVCLUSTERREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_DELETERCVCLUSTERREQUEST_H_
 
 #include <alibabacloud/rds/RdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,20 @@
 namespace AlibabaCloud {
 namespace Rds {
 namespace Model {
-class ALIBABACLOUD_RDS_EXPORT CreateDiagnosticReportRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RDS_EXPORT DeleteRCVClusterRequest : public RpcServiceRequest {
 public:
-	CreateDiagnosticReportRequest();
-	~CreateDiagnosticReportRequest();
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
-	std::string getStartTime() const;
-	void setStartTime(const std::string &startTime);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
+	DeleteRCVClusterRequest();
+	~DeleteRCVClusterRequest();
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getDBInstanceId() const;
-	void setDBInstanceId(const std::string &dBInstanceId);
-	std::string getCategory() const;
-	void setCategory(const std::string &category);
 
 private:
-	std::string endTime_;
-	std::string startTime_;
-	std::string accessKeyId_;
+	std::string clusterId_;
 	std::string regionId_;
-	std::string dBInstanceId_;
-	std::string category_;
 };
 } // namespace Model
 } // namespace Rds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DELETERCVCLUSTERREQUEST_H_

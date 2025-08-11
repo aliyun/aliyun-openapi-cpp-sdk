@@ -102,6 +102,8 @@ public:
 	void setBurstingEnabled(bool burstingEnabled);
 	std::string getVPCId() const;
 	void setVPCId(const std::string &vPCId);
+	bool getIsAnalyticReadOnlyIns() const;
+	void setIsAnalyticReadOnlyIns(bool isAnalyticReadOnlyIns);
 	std::string getCategory() const;
 	void setCategory(const std::string &category);
 	std::string getPayType() const;
@@ -146,6 +148,7 @@ private:
 	std::string usedTime_;
 	bool burstingEnabled_;
 	std::string vPCId_;
+	bool isAnalyticReadOnlyIns_;
 	std::string category_;
 	std::string payType_;
 	std::string bpeEnabled_;

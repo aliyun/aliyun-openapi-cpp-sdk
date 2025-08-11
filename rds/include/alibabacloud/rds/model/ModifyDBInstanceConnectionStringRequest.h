@@ -44,6 +44,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	bool getRetainVip() const;
+	void setRetainVip(bool retainVip);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -56,6 +58,8 @@ public:
 	void setCurrentConnectionString(const std::string &currentConnectionString);
 	std::string getPort() const;
 	void setPort(const std::string &port);
+	std::string getTargetDBInstanceId() const;
+	void setTargetDBInstanceId(const std::string &targetDBInstanceId);
 
 private:
 	long resourceOwnerId_;
@@ -65,12 +69,14 @@ private:
 	std::string accessKeyId_;
 	std::string regionId_;
 	std::string dBInstanceId_;
+	bool retainVip_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string babelfishPort_;
 	std::string currentConnectionString_;
 	std::string port_;
+	std::string targetDBInstanceId_;
 };
 } // namespace Model
 } // namespace Rds

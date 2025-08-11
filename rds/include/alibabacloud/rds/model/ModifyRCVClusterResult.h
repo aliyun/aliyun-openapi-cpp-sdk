@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEDIAGNOSTICREPORTLISTRESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEDIAGNOSTICREPORTLISTRESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYRCVCLUSTERRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_MODIFYRCVCLUSTERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeDiagnosticReportListResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT ModifyRCVClusterResult : public ServiceResult
 			{
 			public:
-				struct Report
-				{
-					int score;
-					std::string diagnosticTime;
-					std::string endTime;
-					std::string startTime;
-					std::string downloadURL;
-				};
 
 
-				DescribeDiagnosticReportListResult();
-				explicit DescribeDiagnosticReportListResult(const std::string &payload);
-				~DescribeDiagnosticReportListResult();
-				std::string getDBInstanceId()const;
-				std::vector<Report> getReportList()const;
+				ModifyRCVClusterResult();
+				explicit ModifyRCVClusterResult(const std::string &payload);
+				~ModifyRCVClusterResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dBInstanceId_;
-				std::vector<Report> reportList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEDIAGNOSTICREPORTLISTRESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYRCVCLUSTERRESULT_H_

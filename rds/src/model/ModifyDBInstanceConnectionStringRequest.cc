@@ -88,6 +88,15 @@ void ModifyDBInstanceConnectionStringRequest::setDBInstanceId(const std::string 
   setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
+bool ModifyDBInstanceConnectionStringRequest::getRetainVip() const {
+  return retainVip_;
+}
+
+void ModifyDBInstanceConnectionStringRequest::setRetainVip(bool retainVip) {
+  retainVip_ = retainVip;
+  setParameter(std::string("RetainVip"), retainVip ? "true" : "false");
+}
+
 std::string ModifyDBInstanceConnectionStringRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -140,5 +149,14 @@ std::string ModifyDBInstanceConnectionStringRequest::getPort() const {
 void ModifyDBInstanceConnectionStringRequest::setPort(const std::string &port) {
   port_ = port;
   setParameter(std::string("Port"), port);
+}
+
+std::string ModifyDBInstanceConnectionStringRequest::getTargetDBInstanceId() const {
+  return targetDBInstanceId_;
+}
+
+void ModifyDBInstanceConnectionStringRequest::setTargetDBInstanceId(const std::string &targetDBInstanceId) {
+  targetDBInstanceId_ = targetDBInstanceId;
+  setParameter(std::string("TargetDBInstanceId"), targetDBInstanceId);
 }
 

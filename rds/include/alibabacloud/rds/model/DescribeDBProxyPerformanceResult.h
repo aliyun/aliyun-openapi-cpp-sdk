@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string date;
 					};
 					std::string valueFormat;
+					std::string server;
 					std::string node;
 					std::vector<PerformanceKey::PerformanceValue> values;
 					std::string service;

@@ -93,6 +93,7 @@ namespace AlibabaCloud
 					bool coldDataEnabled;
 					std::string zoneId;
 					std::string createTime;
+					bool isAnalyticReadOnlyIns;
 					std::string dBInstanceStorageType;
 					std::string bpeEnabled;
 					std::string vpcName;

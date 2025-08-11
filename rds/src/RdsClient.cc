@@ -1347,42 +1347,6 @@ RdsClient::CreateDdrInstanceOutcomeCallable RdsClient::createDdrInstanceCallable
 	return task->get_future();
 }
 
-RdsClient::CreateDiagnosticReportOutcome RdsClient::createDiagnosticReport(const CreateDiagnosticReportRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDiagnosticReportOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDiagnosticReportOutcome(CreateDiagnosticReportResult(outcome.result()));
-	else
-		return CreateDiagnosticReportOutcome(outcome.error());
-}
-
-void RdsClient::createDiagnosticReportAsync(const CreateDiagnosticReportRequest& request, const CreateDiagnosticReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDiagnosticReport(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::CreateDiagnosticReportOutcomeCallable RdsClient::createDiagnosticReportCallable(const CreateDiagnosticReportRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDiagnosticReportOutcome()>>(
-			[this, request]()
-			{
-			return this->createDiagnosticReport(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::CreateGADInstanceOutcome RdsClient::createGADInstance(const CreateGADInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2817,6 +2781,42 @@ RdsClient::DeleteRCSnapshotOutcomeCallable RdsClient::deleteRCSnapshotCallable(c
 			[this, request]()
 			{
 			return this->deleteRCSnapshot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DeleteRCVClusterOutcome RdsClient::deleteRCVCluster(const DeleteRCVClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRCVClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRCVClusterOutcome(DeleteRCVClusterResult(outcome.result()));
+	else
+		return DeleteRCVClusterOutcome(outcome.error());
+}
+
+void RdsClient::deleteRCVClusterAsync(const DeleteRCVClusterRequest& request, const DeleteRCVClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRCVCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DeleteRCVClusterOutcomeCallable RdsClient::deleteRCVClusterCallable(const DeleteRCVClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRCVClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRCVCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5271,42 +5271,6 @@ RdsClient::DescribeDetachedBackupsOutcomeCallable RdsClient::describeDetachedBac
 	return task->get_future();
 }
 
-RdsClient::DescribeDiagnosticReportListOutcome RdsClient::describeDiagnosticReportList(const DescribeDiagnosticReportListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDiagnosticReportListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDiagnosticReportListOutcome(DescribeDiagnosticReportListResult(outcome.result()));
-	else
-		return DescribeDiagnosticReportListOutcome(outcome.error());
-}
-
-void RdsClient::describeDiagnosticReportListAsync(const DescribeDiagnosticReportListRequest& request, const DescribeDiagnosticReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDiagnosticReportList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeDiagnosticReportListOutcomeCallable RdsClient::describeDiagnosticReportListCallable(const DescribeDiagnosticReportListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDiagnosticReportListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDiagnosticReportList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::DescribeErrorLogsOutcome RdsClient::describeErrorLogs(const DescribeErrorLogsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6531,6 +6495,42 @@ RdsClient::DescribeQuickSaleConfigOutcomeCallable RdsClient::describeQuickSaleCo
 	return task->get_future();
 }
 
+RdsClient::DescribeRCAvailableResourceOutcome RdsClient::describeRCAvailableResource(const DescribeRCAvailableResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRCAvailableResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRCAvailableResourceOutcome(DescribeRCAvailableResourceResult(outcome.result()));
+	else
+		return DescribeRCAvailableResourceOutcome(outcome.error());
+}
+
+void RdsClient::describeRCAvailableResourceAsync(const DescribeRCAvailableResourceRequest& request, const DescribeRCAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRCAvailableResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeRCAvailableResourceOutcomeCallable RdsClient::describeRCAvailableResourceCallable(const DescribeRCAvailableResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRCAvailableResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRCAvailableResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeRCCloudAssistantStatusOutcome RdsClient::describeRCCloudAssistantStatus(const DescribeRCCloudAssistantStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7173,6 +7173,42 @@ RdsClient::DescribeRCNodePoolOutcomeCallable RdsClient::describeRCNodePoolCallab
 			[this, request]()
 			{
 			return this->describeRCNodePool(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeRCResourcesModificationOutcome RdsClient::describeRCResourcesModification(const DescribeRCResourcesModificationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRCResourcesModificationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRCResourcesModificationOutcome(DescribeRCResourcesModificationResult(outcome.result()));
+	else
+		return DescribeRCResourcesModificationOutcome(outcome.error());
+}
+
+void RdsClient::describeRCResourcesModificationAsync(const DescribeRCResourcesModificationRequest& request, const DescribeRCResourcesModificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRCResourcesModification(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeRCResourcesModificationOutcomeCallable RdsClient::describeRCResourcesModificationCallable(const DescribeRCResourcesModificationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRCResourcesModificationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRCResourcesModification(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8721,6 +8757,42 @@ RdsClient::ListClassesOutcomeCallable RdsClient::listClassesCallable(const ListC
 			[this, request]()
 			{
 			return this->listClasses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ListRCVClustersOutcome RdsClient::listRCVClusters(const ListRCVClustersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRCVClustersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRCVClustersOutcome(ListRCVClustersResult(outcome.result()));
+	else
+		return ListRCVClustersOutcome(outcome.error());
+}
+
+void RdsClient::listRCVClustersAsync(const ListRCVClustersRequest& request, const ListRCVClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRCVClusters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ListRCVClustersOutcomeCallable RdsClient::listRCVClustersCallable(const ListRCVClustersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRCVClustersOutcome()>>(
+			[this, request]()
+			{
+			return this->listRCVClusters(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11133,6 +11205,42 @@ RdsClient::ModifyRCSecurityGroupPermissionOutcomeCallable RdsClient::modifyRCSec
 			[this, request]()
 			{
 			return this->modifyRCSecurityGroupPermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyRCVClusterOutcome RdsClient::modifyRCVCluster(const ModifyRCVClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyRCVClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyRCVClusterOutcome(ModifyRCVClusterResult(outcome.result()));
+	else
+		return ModifyRCVClusterOutcome(outcome.error());
+}
+
+void RdsClient::modifyRCVClusterAsync(const ModifyRCVClusterRequest& request, const ModifyRCVClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyRCVCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyRCVClusterOutcomeCallable RdsClient::modifyRCVClusterCallable(const ModifyRCVClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyRCVClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyRCVCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

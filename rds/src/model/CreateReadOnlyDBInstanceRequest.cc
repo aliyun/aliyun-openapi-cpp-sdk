@@ -349,6 +349,15 @@ void CreateReadOnlyDBInstanceRequest::setVPCId(const std::string &vPCId) {
   setParameter(std::string("VPCId"), vPCId);
 }
 
+bool CreateReadOnlyDBInstanceRequest::getIsAnalyticReadOnlyIns() const {
+  return isAnalyticReadOnlyIns_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setIsAnalyticReadOnlyIns(bool isAnalyticReadOnlyIns) {
+  isAnalyticReadOnlyIns_ = isAnalyticReadOnlyIns;
+  setParameter(std::string("IsAnalyticReadOnlyIns"), isAnalyticReadOnlyIns ? "true" : "false");
+}
+
 std::string CreateReadOnlyDBInstanceRequest::getCategory() const {
   return category_;
 }

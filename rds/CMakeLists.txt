@@ -93,8 +93,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CreateDatabaseResult.h
 	include/alibabacloud/rds/model/CreateDdrInstanceRequest.h
 	include/alibabacloud/rds/model/CreateDdrInstanceResult.h
-	include/alibabacloud/rds/model/CreateDiagnosticReportRequest.h
-	include/alibabacloud/rds/model/CreateDiagnosticReportResult.h
 	include/alibabacloud/rds/model/CreateGADInstanceRequest.h
 	include/alibabacloud/rds/model/CreateGADInstanceResult.h
 	include/alibabacloud/rds/model/CreateGadInstanceMemberRequest.h
@@ -175,6 +173,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DeleteRCNodePoolResult.h
 	include/alibabacloud/rds/model/DeleteRCSnapshotRequest.h
 	include/alibabacloud/rds/model/DeleteRCSnapshotResult.h
+	include/alibabacloud/rds/model/DeleteRCVClusterRequest.h
+	include/alibabacloud/rds/model/DeleteRCVClusterResult.h
 	include/alibabacloud/rds/model/DeleteReplicationLinkRequest.h
 	include/alibabacloud/rds/model/DeleteReplicationLinkResult.h
 	include/alibabacloud/rds/model/DeleteSecretRequest.h
@@ -311,8 +311,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeDedicatedHostsResult.h
 	include/alibabacloud/rds/model/DescribeDetachedBackupsRequest.h
 	include/alibabacloud/rds/model/DescribeDetachedBackupsResult.h
-	include/alibabacloud/rds/model/DescribeDiagnosticReportListRequest.h
-	include/alibabacloud/rds/model/DescribeDiagnosticReportListResult.h
 	include/alibabacloud/rds/model/DescribeErrorLogsRequest.h
 	include/alibabacloud/rds/model/DescribeErrorLogsResult.h
 	include/alibabacloud/rds/model/DescribeEventsRequest.h
@@ -381,6 +379,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribePriceResult.h
 	include/alibabacloud/rds/model/DescribeQuickSaleConfigRequest.h
 	include/alibabacloud/rds/model/DescribeQuickSaleConfigResult.h
+	include/alibabacloud/rds/model/DescribeRCAvailableResourceRequest.h
+	include/alibabacloud/rds/model/DescribeRCAvailableResourceResult.h
 	include/alibabacloud/rds/model/DescribeRCCloudAssistantStatusRequest.h
 	include/alibabacloud/rds/model/DescribeRCCloudAssistantStatusResult.h
 	include/alibabacloud/rds/model/DescribeRCClusterConfigRequest.h
@@ -417,6 +417,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeRCMetricListResult.h
 	include/alibabacloud/rds/model/DescribeRCNodePoolRequest.h
 	include/alibabacloud/rds/model/DescribeRCNodePoolResult.h
+	include/alibabacloud/rds/model/DescribeRCResourcesModificationRequest.h
+	include/alibabacloud/rds/model/DescribeRCResourcesModificationResult.h
 	include/alibabacloud/rds/model/DescribeRCSecurityGroupListRequest.h
 	include/alibabacloud/rds/model/DescribeRCSecurityGroupListResult.h
 	include/alibabacloud/rds/model/DescribeRCSecurityGroupPermissionRequest.h
@@ -503,6 +505,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/InstallRCCloudAssistantResult.h
 	include/alibabacloud/rds/model/ListClassesRequest.h
 	include/alibabacloud/rds/model/ListClassesResult.h
+	include/alibabacloud/rds/model/ListRCVClustersRequest.h
+	include/alibabacloud/rds/model/ListRCVClustersResult.h
 	include/alibabacloud/rds/model/ListTagResourcesRequest.h
 	include/alibabacloud/rds/model/ListTagResourcesResult.h
 	include/alibabacloud/rds/model/ListUserBackupFilesRequest.h
@@ -637,6 +641,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyRCInstanceNetworkSpecResult.h
 	include/alibabacloud/rds/model/ModifyRCSecurityGroupPermissionRequest.h
 	include/alibabacloud/rds/model/ModifyRCSecurityGroupPermissionResult.h
+	include/alibabacloud/rds/model/ModifyRCVClusterRequest.h
+	include/alibabacloud/rds/model/ModifyRCVClusterResult.h
 	include/alibabacloud/rds/model/ModifyReadWriteSplittingConnectionRequest.h
 	include/alibabacloud/rds/model/ModifyReadWriteSplittingConnectionResult.h
 	include/alibabacloud/rds/model/ModifyReadonlyInstanceDelayReplicationTimeRequest.h
@@ -840,8 +846,6 @@ set(rds_src
 	src/model/CreateDatabaseResult.cc
 	src/model/CreateDdrInstanceRequest.cc
 	src/model/CreateDdrInstanceResult.cc
-	src/model/CreateDiagnosticReportRequest.cc
-	src/model/CreateDiagnosticReportResult.cc
 	src/model/CreateGADInstanceRequest.cc
 	src/model/CreateGADInstanceResult.cc
 	src/model/CreateGadInstanceMemberRequest.cc
@@ -922,6 +926,8 @@ set(rds_src
 	src/model/DeleteRCNodePoolResult.cc
 	src/model/DeleteRCSnapshotRequest.cc
 	src/model/DeleteRCSnapshotResult.cc
+	src/model/DeleteRCVClusterRequest.cc
+	src/model/DeleteRCVClusterResult.cc
 	src/model/DeleteReplicationLinkRequest.cc
 	src/model/DeleteReplicationLinkResult.cc
 	src/model/DeleteSecretRequest.cc
@@ -1058,8 +1064,6 @@ set(rds_src
 	src/model/DescribeDedicatedHostsResult.cc
 	src/model/DescribeDetachedBackupsRequest.cc
 	src/model/DescribeDetachedBackupsResult.cc
-	src/model/DescribeDiagnosticReportListRequest.cc
-	src/model/DescribeDiagnosticReportListResult.cc
 	src/model/DescribeErrorLogsRequest.cc
 	src/model/DescribeErrorLogsResult.cc
 	src/model/DescribeEventsRequest.cc
@@ -1128,6 +1132,8 @@ set(rds_src
 	src/model/DescribePriceResult.cc
 	src/model/DescribeQuickSaleConfigRequest.cc
 	src/model/DescribeQuickSaleConfigResult.cc
+	src/model/DescribeRCAvailableResourceRequest.cc
+	src/model/DescribeRCAvailableResourceResult.cc
 	src/model/DescribeRCCloudAssistantStatusRequest.cc
 	src/model/DescribeRCCloudAssistantStatusResult.cc
 	src/model/DescribeRCClusterConfigRequest.cc
@@ -1164,6 +1170,8 @@ set(rds_src
 	src/model/DescribeRCMetricListResult.cc
 	src/model/DescribeRCNodePoolRequest.cc
 	src/model/DescribeRCNodePoolResult.cc
+	src/model/DescribeRCResourcesModificationRequest.cc
+	src/model/DescribeRCResourcesModificationResult.cc
 	src/model/DescribeRCSecurityGroupListRequest.cc
 	src/model/DescribeRCSecurityGroupListResult.cc
 	src/model/DescribeRCSecurityGroupPermissionRequest.cc
@@ -1250,6 +1258,8 @@ set(rds_src
 	src/model/InstallRCCloudAssistantResult.cc
 	src/model/ListClassesRequest.cc
 	src/model/ListClassesResult.cc
+	src/model/ListRCVClustersRequest.cc
+	src/model/ListRCVClustersResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ListUserBackupFilesRequest.cc
@@ -1384,6 +1394,8 @@ set(rds_src
 	src/model/ModifyRCInstanceNetworkSpecResult.cc
 	src/model/ModifyRCSecurityGroupPermissionRequest.cc
 	src/model/ModifyRCSecurityGroupPermissionResult.cc
+	src/model/ModifyRCVClusterRequest.cc
+	src/model/ModifyRCVClusterResult.cc
 	src/model/ModifyReadWriteSplittingConnectionRequest.cc
 	src/model/ModifyReadWriteSplittingConnectionResult.cc
 	src/model/ModifyReadonlyInstanceDelayReplicationTimeRequest.cc

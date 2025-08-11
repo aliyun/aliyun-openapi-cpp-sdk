@@ -51,8 +51,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.burstingEnabled = valueItemsDBInstance["BurstingEnabled"].asString() == "true";
 		if(!valueItemsDBInstance["Category"].isNull())
 			itemsObject.category = valueItemsDBInstance["Category"].asString();
-		if(!valueItemsDBInstance["ColdDataEnabled"].isNull())
-			itemsObject.coldDataEnabled = valueItemsDBInstance["ColdDataEnabled"].asString() == "true";
+		if(!valueItemsDBInstance["IsAnalyticReadOnlyIns"].isNull())
+			itemsObject.isAnalyticReadOnlyIns = valueItemsDBInstance["IsAnalyticReadOnlyIns"].asString() == "true";
 		if(!valueItemsDBInstance["ConnectionMode"].isNull())
 			itemsObject.connectionMode = valueItemsDBInstance["ConnectionMode"].asString();
 		if(!valueItemsDBInstance["ConnectionString"].isNull())
@@ -161,6 +161,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.greenInstanceName = valueItemsDBInstance["GreenInstanceName"].asString();
 		if(!valueItemsDBInstance["AutoRenewal"].isNull())
 			itemsObject.autoRenewal = valueItemsDBInstance["AutoRenewal"].asString() == "true";
+		if(!valueItemsDBInstance["ColdDataEnabled"].isNull())
+			itemsObject.coldDataEnabled = valueItemsDBInstance["ColdDataEnabled"].asString() == "true";
 		auto allReadOnlyDBInstanceIdsNode = valueItemsDBInstance["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{

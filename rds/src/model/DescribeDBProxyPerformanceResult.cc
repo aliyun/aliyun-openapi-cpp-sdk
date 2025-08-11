@@ -51,6 +51,8 @@ void DescribeDBProxyPerformanceResult::parse(const std::string &payload)
 			performanceKeysObject.service = valuePerformanceKeysPerformanceKey["Service"].asString();
 		if(!valuePerformanceKeysPerformanceKey["Node"].isNull())
 			performanceKeysObject.node = valuePerformanceKeysPerformanceKey["Node"].asString();
+		if(!valuePerformanceKeysPerformanceKey["Server"].isNull())
+			performanceKeysObject.server = valuePerformanceKeysPerformanceKey["Server"].asString();
 		auto allValuesNode = valuePerformanceKeysPerformanceKey["Values"]["PerformanceValue"];
 		for (auto valuePerformanceKeysPerformanceKeyValuesPerformanceValue : allValuesNode)
 		{

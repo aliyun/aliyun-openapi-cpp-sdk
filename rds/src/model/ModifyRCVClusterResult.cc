@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rds/model/CreateDiagnosticReportResult.h>
+#include <alibabacloud/rds/model/ModifyRCVClusterResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rds;
 using namespace AlibabaCloud::Rds::Model;
 
-CreateDiagnosticReportResult::CreateDiagnosticReportResult() :
+ModifyRCVClusterResult::ModifyRCVClusterResult() :
 	ServiceResult()
 {}
 
-CreateDiagnosticReportResult::CreateDiagnosticReportResult(const std::string &payload) :
+ModifyRCVClusterResult::ModifyRCVClusterResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateDiagnosticReportResult::~CreateDiagnosticReportResult()
+ModifyRCVClusterResult::~ModifyRCVClusterResult()
 {}
 
-void CreateDiagnosticReportResult::parse(const std::string &payload)
+void ModifyRCVClusterResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ReportId"].isNull())
-		reportId_ = value["ReportId"].asString();
 
-}
-
-std::string CreateDiagnosticReportResult::getReportId()const
-{
-	return reportId_;
 }
 
