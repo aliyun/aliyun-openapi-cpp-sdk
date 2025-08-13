@@ -39,6 +39,40 @@ void DescribeRtcCloudRecordingFilesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto taskInfoNode = value["TaskInfo"];
+	if(!taskInfoNode["TaskId"].isNull())
+		taskInfo_.taskId = taskInfoNode["TaskId"].asString();
+	if(!taskInfoNode["Status"].isNull())
+		taskInfo_.status = taskInfoNode["Status"].asString();
+	auto recordFileListNode = taskInfoNode["RecordFileList"];
+	auto allVodMediaListNode = recordFileListNode["VodMediaList"]["MediaInfo"];
+	for (auto recordFileListNodeVodMediaListMediaInfo : allVodMediaListNode)
+	{
+		TaskInfo::RecordFileList::MediaInfo mediaInfoObject;
+		if(!recordFileListNodeVodMediaListMediaInfo["Stream"].isNull())
+			mediaInfoObject.stream = recordFileListNodeVodMediaListMediaInfo["Stream"].asString();
+		auto allMediaIds = value["MediaIds"]["mediaId"];
+		for (auto value : allMediaIds)
+			mediaInfoObject.mediaIds.push_back(value.asString());
+		auto allMergedIds = value["MergedIds"]["mergedId"];
+		for (auto value : allMergedIds)
+			mediaInfoObject.mergedIds.push_back(value.asString());
+		taskInfo_.recordFileList.vodMediaList.push_back(mediaInfoObject);
+	}
+		auto allMp3FileList = recordFileListNode["Mp3FileList"]["FileName"];
+		for (auto value : allMp3FileList)
+			taskInfo_.recordFileList.mp3FileList.push_back(value.asString());
+		auto allMp4FileList = recordFileListNode["Mp4FileList"]["FileName"];
+		for (auto value : allMp4FileList)
+			taskInfo_.recordFileList.mp4FileList.push_back(value.asString());
+		auto allHlsFileList = recordFileListNode["HlsFileList"]["FileName"];
+		for (auto value : allHlsFileList)
+			taskInfo_.recordFileList.hlsFileList.push_back(value.asString());
 
+}
+
+DescribeRtcCloudRecordingFilesResult::TaskInfo DescribeRtcCloudRecordingFilesResult::getTaskInfo()const
+{
+	return taskInfo_;
 }
 

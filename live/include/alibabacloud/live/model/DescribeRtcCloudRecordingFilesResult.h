@@ -32,15 +32,36 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_LIVE_EXPORT DescribeRtcCloudRecordingFilesResult : public ServiceResult
 			{
 			public:
+				struct TaskInfo
+				{
+					struct RecordFileList
+					{
+						struct MediaInfo
+						{
+							std::string stream;
+							std::vector<std::string> mediaIds;
+							std::vector<std::string> mergedIds;
+						};
+						std::vector<std::string> hlsFileList;
+						std::vector<std::string> mp3FileList;
+						std::vector<std::string> mp4FileList;
+						std::vector<MediaInfo> vodMediaList;
+					};
+					std::string status;
+					std::string taskId;
+					RecordFileList recordFileList;
+				};
 
 
 				DescribeRtcCloudRecordingFilesResult();
 				explicit DescribeRtcCloudRecordingFilesResult(const std::string &payload);
 				~DescribeRtcCloudRecordingFilesResult();
+				TaskInfo getTaskInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				TaskInfo taskInfo_;
 
 			};
 		}
