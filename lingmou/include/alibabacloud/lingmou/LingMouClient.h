@@ -22,8 +22,12 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RoaServiceClient.h>
 #include "LingMouExport.h"
+#include "model/CloseChatInstanceSessionsRequest.h"
+#include "model/CloseChatInstanceSessionsResult.h"
 #include "model/CreateChatSessionRequest.h"
 #include "model/CreateChatSessionResult.h"
+#include "model/QueryChatInstanceSessionsRequest.h"
+#include "model/QueryChatInstanceSessionsResult.h"
 
 
 namespace AlibabaCloud
@@ -33,17 +37,29 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_LINGMOU_EXPORT LingMouClient : public RoaServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CloseChatInstanceSessionsResult> CloseChatInstanceSessionsOutcome;
+			typedef std::future<CloseChatInstanceSessionsOutcome> CloseChatInstanceSessionsOutcomeCallable;
+			typedef std::function<void(const LingMouClient*, const Model::CloseChatInstanceSessionsRequest&, const CloseChatInstanceSessionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseChatInstanceSessionsAsyncHandler;
 			typedef Outcome<Error, Model::CreateChatSessionResult> CreateChatSessionOutcome;
 			typedef std::future<CreateChatSessionOutcome> CreateChatSessionOutcomeCallable;
 			typedef std::function<void(const LingMouClient*, const Model::CreateChatSessionRequest&, const CreateChatSessionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateChatSessionAsyncHandler;
+			typedef Outcome<Error, Model::QueryChatInstanceSessionsResult> QueryChatInstanceSessionsOutcome;
+			typedef std::future<QueryChatInstanceSessionsOutcome> QueryChatInstanceSessionsOutcomeCallable;
+			typedef std::function<void(const LingMouClient*, const Model::QueryChatInstanceSessionsRequest&, const QueryChatInstanceSessionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryChatInstanceSessionsAsyncHandler;
 
 			LingMouClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			LingMouClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			LingMouClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~LingMouClient();
+			CloseChatInstanceSessionsOutcome closeChatInstanceSessions(const Model::CloseChatInstanceSessionsRequest &request)const;
+			void closeChatInstanceSessionsAsync(const Model::CloseChatInstanceSessionsRequest& request, const CloseChatInstanceSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CloseChatInstanceSessionsOutcomeCallable closeChatInstanceSessionsCallable(const Model::CloseChatInstanceSessionsRequest& request) const;
 			CreateChatSessionOutcome createChatSession(const Model::CreateChatSessionRequest &request)const;
 			void createChatSessionAsync(const Model::CreateChatSessionRequest& request, const CreateChatSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateChatSessionOutcomeCallable createChatSessionCallable(const Model::CreateChatSessionRequest& request) const;
+			QueryChatInstanceSessionsOutcome queryChatInstanceSessions(const Model::QueryChatInstanceSessionsRequest &request)const;
+			void queryChatInstanceSessionsAsync(const Model::QueryChatInstanceSessionsRequest& request, const QueryChatInstanceSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryChatInstanceSessionsOutcomeCallable queryChatInstanceSessionsCallable(const Model::QueryChatInstanceSessionsRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

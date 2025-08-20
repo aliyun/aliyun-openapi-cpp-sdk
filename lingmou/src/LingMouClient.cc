@@ -51,6 +51,42 @@ LingMouClient::LingMouClient(const std::string & accessKeyId, const std::string 
 LingMouClient::~LingMouClient()
 {}
 
+LingMouClient::CloseChatInstanceSessionsOutcome LingMouClient::closeChatInstanceSessions(const CloseChatInstanceSessionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CloseChatInstanceSessionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CloseChatInstanceSessionsOutcome(CloseChatInstanceSessionsResult(outcome.result()));
+	else
+		return CloseChatInstanceSessionsOutcome(outcome.error());
+}
+
+void LingMouClient::closeChatInstanceSessionsAsync(const CloseChatInstanceSessionsRequest& request, const CloseChatInstanceSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, closeChatInstanceSessions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LingMouClient::CloseChatInstanceSessionsOutcomeCallable LingMouClient::closeChatInstanceSessionsCallable(const CloseChatInstanceSessionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CloseChatInstanceSessionsOutcome()>>(
+			[this, request]()
+			{
+			return this->closeChatInstanceSessions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LingMouClient::CreateChatSessionOutcome LingMouClient::createChatSession(const CreateChatSessionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -81,6 +117,42 @@ LingMouClient::CreateChatSessionOutcomeCallable LingMouClient::createChatSession
 			[this, request]()
 			{
 			return this->createChatSession(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LingMouClient::QueryChatInstanceSessionsOutcome LingMouClient::queryChatInstanceSessions(const QueryChatInstanceSessionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryChatInstanceSessionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryChatInstanceSessionsOutcome(QueryChatInstanceSessionsResult(outcome.result()));
+	else
+		return QueryChatInstanceSessionsOutcome(outcome.error());
+}
+
+void LingMouClient::queryChatInstanceSessionsAsync(const QueryChatInstanceSessionsRequest& request, const QueryChatInstanceSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryChatInstanceSessions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LingMouClient::QueryChatInstanceSessionsOutcomeCallable LingMouClient::queryChatInstanceSessionsCallable(const QueryChatInstanceSessionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryChatInstanceSessionsOutcome()>>(
+			[this, request]()
+			{
+			return this->queryChatInstanceSessions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

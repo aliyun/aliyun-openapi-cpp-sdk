@@ -21,13 +21,21 @@ set(lingmou_public_header
 	include/alibabacloud/lingmou/LingMouExport.h )
 
 set(lingmou_public_header_model 
+	include/alibabacloud/lingmou/model/CloseChatInstanceSessionsRequest.h
+	include/alibabacloud/lingmou/model/CloseChatInstanceSessionsResult.h
 	include/alibabacloud/lingmou/model/CreateChatSessionRequest.h
-	include/alibabacloud/lingmou/model/CreateChatSessionResult.h )
+	include/alibabacloud/lingmou/model/CreateChatSessionResult.h
+	include/alibabacloud/lingmou/model/QueryChatInstanceSessionsRequest.h
+	include/alibabacloud/lingmou/model/QueryChatInstanceSessionsResult.h )
 
 set(lingmou_src 
 	src/LingMouClient.cc
+	src/model/CloseChatInstanceSessionsRequest.cc
+	src/model/CloseChatInstanceSessionsResult.cc
 	src/model/CreateChatSessionRequest.cc
-	src/model/CreateChatSessionResult.cc )
+	src/model/CreateChatSessionResult.cc
+	src/model/QueryChatInstanceSessionsRequest.cc
+	src/model/QueryChatInstanceSessionsResult.cc )
 
 add_library(lingmou ${LIB_TYPE}
 	${lingmou_public_header}
