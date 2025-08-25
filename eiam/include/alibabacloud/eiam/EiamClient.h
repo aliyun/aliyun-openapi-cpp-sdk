@@ -262,6 +262,8 @@
 #include "model/UnlockUserResult.h"
 #include "model/UpdateApplicationAuthorizationTypeRequest.h"
 #include "model/UpdateApplicationAuthorizationTypeResult.h"
+#include "model/UpdateApplicationClientSecretExpirationTimeRequest.h"
+#include "model/UpdateApplicationClientSecretExpirationTimeResult.h"
 #include "model/UpdateApplicationDescriptionRequest.h"
 #include "model/UpdateApplicationDescriptionResult.h"
 #include "model/UpdateConditionalAccessPolicyRequest.h"
@@ -659,6 +661,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateApplicationAuthorizationTypeResult> UpdateApplicationAuthorizationTypeOutcome;
 			typedef std::future<UpdateApplicationAuthorizationTypeOutcome> UpdateApplicationAuthorizationTypeOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::UpdateApplicationAuthorizationTypeRequest&, const UpdateApplicationAuthorizationTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApplicationAuthorizationTypeAsyncHandler;
+			typedef Outcome<Error, Model::UpdateApplicationClientSecretExpirationTimeResult> UpdateApplicationClientSecretExpirationTimeOutcome;
+			typedef std::future<UpdateApplicationClientSecretExpirationTimeOutcome> UpdateApplicationClientSecretExpirationTimeOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::UpdateApplicationClientSecretExpirationTimeRequest&, const UpdateApplicationClientSecretExpirationTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApplicationClientSecretExpirationTimeAsyncHandler;
 			typedef Outcome<Error, Model::UpdateApplicationDescriptionResult> UpdateApplicationDescriptionOutcome;
 			typedef std::future<UpdateApplicationDescriptionOutcome> UpdateApplicationDescriptionOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::UpdateApplicationDescriptionRequest&, const UpdateApplicationDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApplicationDescriptionAsyncHandler;
@@ -1066,6 +1071,9 @@ namespace AlibabaCloud
 			UpdateApplicationAuthorizationTypeOutcome updateApplicationAuthorizationType(const Model::UpdateApplicationAuthorizationTypeRequest &request)const;
 			void updateApplicationAuthorizationTypeAsync(const Model::UpdateApplicationAuthorizationTypeRequest& request, const UpdateApplicationAuthorizationTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateApplicationAuthorizationTypeOutcomeCallable updateApplicationAuthorizationTypeCallable(const Model::UpdateApplicationAuthorizationTypeRequest& request) const;
+			UpdateApplicationClientSecretExpirationTimeOutcome updateApplicationClientSecretExpirationTime(const Model::UpdateApplicationClientSecretExpirationTimeRequest &request)const;
+			void updateApplicationClientSecretExpirationTimeAsync(const Model::UpdateApplicationClientSecretExpirationTimeRequest& request, const UpdateApplicationClientSecretExpirationTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateApplicationClientSecretExpirationTimeOutcomeCallable updateApplicationClientSecretExpirationTimeCallable(const Model::UpdateApplicationClientSecretExpirationTimeRequest& request) const;
 			UpdateApplicationDescriptionOutcome updateApplicationDescription(const Model::UpdateApplicationDescriptionRequest &request)const;
 			void updateApplicationDescriptionAsync(const Model::UpdateApplicationDescriptionRequest& request, const UpdateApplicationDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateApplicationDescriptionOutcomeCallable updateApplicationDescriptionCallable(const Model::UpdateApplicationDescriptionRequest& request) const;

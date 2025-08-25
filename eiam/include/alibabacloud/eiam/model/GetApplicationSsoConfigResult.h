@@ -77,6 +77,7 @@ namespace AlibabaCloud
 						long accessTokenEffectiveTime;
 						std::vector<std::string> grantScopes;
 						long idTokenEffectiveTime;
+						std::string allowedPublicClient;
 						std::vector<std::string> redirectUris;
 						long codeEffectiveTime;
 						std::vector<std::string> grantTypes;

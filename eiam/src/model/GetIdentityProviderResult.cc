@@ -85,6 +85,10 @@ void GetIdentityProviderResult::parse(const std::string &payload)
 		identityProviderDetail_.dingtalkAppConfig.corpId = dingtalkAppConfigNode["CorpId"].asString();
 	if(!dingtalkAppConfigNode["DingtalkVersion"].isNull())
 		identityProviderDetail_.dingtalkAppConfig.dingtalkVersion = dingtalkAppConfigNode["DingtalkVersion"].asString();
+	if(!dingtalkAppConfigNode["EncryptKey"].isNull())
+		identityProviderDetail_.dingtalkAppConfig.encryptKey = dingtalkAppConfigNode["EncryptKey"].asString();
+	if(!dingtalkAppConfigNode["VerificationToken"].isNull())
+		identityProviderDetail_.dingtalkAppConfig.verificationToken = dingtalkAppConfigNode["VerificationToken"].asString();
 	auto dingtalkProvisioningConfigNode = identityProviderDetailNode["DingtalkProvisioningConfig"];
 	if(!dingtalkProvisioningConfigNode["CorpId"].isNull())
 		identityProviderDetail_.dingtalkProvisioningConfig.corpId = dingtalkProvisioningConfigNode["CorpId"].asString();

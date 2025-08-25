@@ -41,6 +41,8 @@ public:
 	};
 	CreateUserRequest();
 	~CreateUserRequest();
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getPhoneNumber() const;
 	void setPhoneNumber(const std::string &phoneNumber);
 	std::string getDescription() const;
@@ -73,6 +75,7 @@ public:
 	void setEmailVerified(bool emailVerified);
 
 private:
+	std::string clientToken_;
 	std::string phoneNumber_;
 	std::string description_;
 	std::string phoneRegion_;

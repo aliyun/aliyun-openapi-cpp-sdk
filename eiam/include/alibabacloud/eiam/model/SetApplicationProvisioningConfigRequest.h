@@ -57,6 +57,8 @@ public:
 	};
 	SetApplicationProvisioningConfigRequest();
 	~SetApplicationProvisioningConfigRequest();
+	std::string getNetworkAccessEndpointId() const;
+	void setNetworkAccessEndpointId(const std::string &networkAccessEndpointId);
 	std::string getProvisionProtocolType() const;
 	void setProvisionProtocolType(const std::string &provisionProtocolType);
 	std::string getApplicationId() const;
@@ -71,6 +73,7 @@ public:
 	void setScimProvisioningConfig(const ScimProvisioningConfig &scimProvisioningConfig);
 
 private:
+	std::string networkAccessEndpointId_;
 	std::string provisionProtocolType_;
 	std::string applicationId_;
 	CallbackProvisioningConfig callbackProvisioningConfig_;

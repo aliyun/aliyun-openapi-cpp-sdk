@@ -25,13 +25,13 @@ CreateApplicationClientSecretRequest::CreateApplicationClientSecretRequest()
 
 CreateApplicationClientSecretRequest::~CreateApplicationClientSecretRequest() {}
 
-std::string CreateApplicationClientSecretRequest::getInstanceId() const {
-  return instanceId_;
+long CreateApplicationClientSecretRequest::getExpirationTime() const {
+  return expirationTime_;
 }
 
-void CreateApplicationClientSecretRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
+void CreateApplicationClientSecretRequest::setExpirationTime(long expirationTime) {
+  expirationTime_ = expirationTime;
+  setParameter(std::string("ExpirationTime"), std::to_string(expirationTime));
 }
 
 std::string CreateApplicationClientSecretRequest::getApplicationId() const {
@@ -41,5 +41,14 @@ std::string CreateApplicationClientSecretRequest::getApplicationId() const {
 void CreateApplicationClientSecretRequest::setApplicationId(const std::string &applicationId) {
   applicationId_ = applicationId;
   setParameter(std::string("ApplicationId"), applicationId);
+}
+
+std::string CreateApplicationClientSecretRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void CreateApplicationClientSecretRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

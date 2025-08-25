@@ -54,6 +54,8 @@ void GetApplicationProvisioningConfigResult::parse(const std::string &payload)
 		applicationProvisioningConfig_.status = applicationProvisioningConfigNode["Status"].asString();
 	if(!applicationProvisioningConfigNode["ConfigOperateMode"].isNull())
 		applicationProvisioningConfig_.configOperateMode = applicationProvisioningConfigNode["ConfigOperateMode"].asString();
+	if(!applicationProvisioningConfigNode["NetworkAccessEndpointId"].isNull())
+		applicationProvisioningConfig_.networkAccessEndpointId = applicationProvisioningConfigNode["NetworkAccessEndpointId"].asString();
 	auto callbackProvisioningConfigNode = applicationProvisioningConfigNode["CallbackProvisioningConfig"];
 	if(!callbackProvisioningConfigNode["CallbackUrl"].isNull())
 		applicationProvisioningConfig_.callbackProvisioningConfig.callbackUrl = callbackProvisioningConfigNode["CallbackUrl"].asString();

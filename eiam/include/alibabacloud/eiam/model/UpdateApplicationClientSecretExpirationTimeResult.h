@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EIAM_MODEL_LISTAPPLICATIONCLIENTSECRETSRESULT_H_
-#define ALIBABACLOUD_EIAM_MODEL_LISTAPPLICATIONCLIENTSECRETSRESULT_H_
+#ifndef ALIBABACLOUD_EIAM_MODEL_UPDATEAPPLICATIONCLIENTSECRETEXPIRATIONTIMERESULT_H_
+#define ALIBABACLOUD_EIAM_MODEL_UPDATEAPPLICATIONCLIENTSECRETEXPIRATIONTIMERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EIAM_EXPORT ListApplicationClientSecretsResult : public ServiceResult
+			class ALIBABACLOUD_EIAM_EXPORT UpdateApplicationClientSecretExpirationTimeResult : public ServiceResult
 			{
 			public:
-				struct ApplicationClientSecret
-				{
-					std::string status;
-					std::string instanceId;
-					std::string clientSecret;
-					std::string secretId;
-					long lastUsedTime;
-					std::string clientId;
-					std::string applicationId;
-					long expirationTime;
-				};
 
 
-				ListApplicationClientSecretsResult();
-				explicit ListApplicationClientSecretsResult(const std::string &payload);
-				~ListApplicationClientSecretsResult();
-				long getTotalCount()const;
-				std::vector<ApplicationClientSecret> getApplicationClientSecrets()const;
+				UpdateApplicationClientSecretExpirationTimeResult();
+				explicit UpdateApplicationClientSecretExpirationTimeResult(const std::string &payload);
+				~UpdateApplicationClientSecretExpirationTimeResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				std::vector<ApplicationClientSecret> applicationClientSecrets_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EIAM_MODEL_LISTAPPLICATIONCLIENTSECRETSRESULT_H_
+#endif // !ALIBABACLOUD_EIAM_MODEL_UPDATEAPPLICATIONCLIENTSECRETEXPIRATIONTIMERESULT_H_

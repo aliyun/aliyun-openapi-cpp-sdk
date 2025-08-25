@@ -30,6 +30,8 @@ class ALIBABACLOUD_EIAM_EXPORT UpdateConditionalAccessPolicyDescriptionRequest :
 public:
 	UpdateConditionalAccessPolicyDescriptionRequest();
 	~UpdateConditionalAccessPolicyDescriptionRequest();
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getConditionalAccessPolicyId() const;
@@ -38,6 +40,7 @@ public:
 	void setInstanceId(const std::string &instanceId);
 
 private:
+	std::string clientToken_;
 	std::string description_;
 	std::string conditionalAccessPolicyId_;
 	std::string instanceId_;

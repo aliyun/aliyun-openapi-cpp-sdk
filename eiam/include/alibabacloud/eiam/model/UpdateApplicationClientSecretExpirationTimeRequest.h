@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EIAM_MODEL_CREATEAPPLICATIONCLIENTSECRETREQUEST_H_
-#define ALIBABACLOUD_EIAM_MODEL_CREATEAPPLICATIONCLIENTSECRETREQUEST_H_
+#ifndef ALIBABACLOUD_EIAM_MODEL_UPDATEAPPLICATIONCLIENTSECRETEXPIRATIONTIMEREQUEST_H_
+#define ALIBABACLOUD_EIAM_MODEL_UPDATEAPPLICATIONCLIENTSECRETEXPIRATIONTIMEREQUEST_H_
 
 #include <alibabacloud/eiam/EiamExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,26 @@
 namespace AlibabaCloud {
 namespace Eiam {
 namespace Model {
-class ALIBABACLOUD_EIAM_EXPORT CreateApplicationClientSecretRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EIAM_EXPORT UpdateApplicationClientSecretExpirationTimeRequest : public RpcServiceRequest {
 public:
-	CreateApplicationClientSecretRequest();
-	~CreateApplicationClientSecretRequest();
+	UpdateApplicationClientSecretExpirationTimeRequest();
+	~UpdateApplicationClientSecretExpirationTimeRequest();
 	long getExpirationTime() const;
 	void setExpirationTime(long expirationTime);
 	std::string getApplicationId() const;
 	void setApplicationId(const std::string &applicationId);
+	std::string getSecretId() const;
+	void setSecretId(const std::string &secretId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
 private:
 	long expirationTime_;
 	std::string applicationId_;
+	std::string secretId_;
 	std::string instanceId_;
 };
 } // namespace Model
 } // namespace Eiam
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EIAM_MODEL_CREATEAPPLICATIONCLIENTSECRETREQUEST_H_
+#endif // !ALIBABACLOUD_EIAM_MODEL_UPDATEAPPLICATIONCLIENTSECRETEXPIRATIONTIMEREQUEST_H_

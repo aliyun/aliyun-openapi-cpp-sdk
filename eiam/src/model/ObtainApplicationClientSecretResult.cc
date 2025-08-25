@@ -54,6 +54,8 @@ void ObtainApplicationClientSecretResult::parse(const std::string &payload)
 		applicationClientSecret_.status = applicationClientSecretNode["Status"].asString();
 	if(!applicationClientSecretNode["LastUsedTime"].isNull())
 		applicationClientSecret_.lastUsedTime = std::stol(applicationClientSecretNode["LastUsedTime"].asString());
+	if(!applicationClientSecretNode["ExpirationTime"].isNull())
+		applicationClientSecret_.expirationTime = std::stol(applicationClientSecretNode["ExpirationTime"].asString());
 
 }
 

@@ -52,6 +52,7 @@ namespace AlibabaCloud
 					long updateTime;
 					std::string clientId;
 					std::string features;
+					std::string customSubjectStatus;
 					std::string applicationId;
 					std::string authorizationType;
 					std::string m2MClientStatus;

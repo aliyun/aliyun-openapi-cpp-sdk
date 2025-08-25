@@ -261,6 +261,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/UnlockUserResult.h
 	include/alibabacloud/eiam/model/UpdateApplicationAuthorizationTypeRequest.h
 	include/alibabacloud/eiam/model/UpdateApplicationAuthorizationTypeResult.h
+	include/alibabacloud/eiam/model/UpdateApplicationClientSecretExpirationTimeRequest.h
+	include/alibabacloud/eiam/model/UpdateApplicationClientSecretExpirationTimeResult.h
 	include/alibabacloud/eiam/model/UpdateApplicationDescriptionRequest.h
 	include/alibabacloud/eiam/model/UpdateApplicationDescriptionResult.h
 	include/alibabacloud/eiam/model/UpdateConditionalAccessPolicyRequest.h
@@ -532,6 +534,8 @@ set(eiam_src
 	src/model/UnlockUserResult.cc
 	src/model/UpdateApplicationAuthorizationTypeRequest.cc
 	src/model/UpdateApplicationAuthorizationTypeResult.cc
+	src/model/UpdateApplicationClientSecretExpirationTimeRequest.cc
+	src/model/UpdateApplicationClientSecretExpirationTimeResult.cc
 	src/model/UpdateApplicationDescriptionRequest.cc
 	src/model/UpdateApplicationDescriptionResult.cc
 	src/model/UpdateConditionalAccessPolicyRequest.cc

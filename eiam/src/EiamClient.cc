@@ -4371,6 +4371,42 @@ EiamClient::UpdateApplicationAuthorizationTypeOutcomeCallable EiamClient::update
 	return task->get_future();
 }
 
+EiamClient::UpdateApplicationClientSecretExpirationTimeOutcome EiamClient::updateApplicationClientSecretExpirationTime(const UpdateApplicationClientSecretExpirationTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationClientSecretExpirationTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationClientSecretExpirationTimeOutcome(UpdateApplicationClientSecretExpirationTimeResult(outcome.result()));
+	else
+		return UpdateApplicationClientSecretExpirationTimeOutcome(outcome.error());
+}
+
+void EiamClient::updateApplicationClientSecretExpirationTimeAsync(const UpdateApplicationClientSecretExpirationTimeRequest& request, const UpdateApplicationClientSecretExpirationTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplicationClientSecretExpirationTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateApplicationClientSecretExpirationTimeOutcomeCallable EiamClient::updateApplicationClientSecretExpirationTimeCallable(const UpdateApplicationClientSecretExpirationTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationClientSecretExpirationTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplicationClientSecretExpirationTime(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::UpdateApplicationDescriptionOutcome EiamClient::updateApplicationDescription(const UpdateApplicationDescriptionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

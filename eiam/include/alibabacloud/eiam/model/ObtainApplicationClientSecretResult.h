@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					long lastUsedTime;
 					std::string clientId;
 					std::string applicationId;
+					long expirationTime;
 				};
 
 

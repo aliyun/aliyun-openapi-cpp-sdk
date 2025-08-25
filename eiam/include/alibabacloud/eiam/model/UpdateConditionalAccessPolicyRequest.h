@@ -69,6 +69,8 @@ public:
 	};
 	UpdateConditionalAccessPolicyRequest();
 	~UpdateConditionalAccessPolicyRequest();
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	ConditionsConfig getConditionsConfig() const;
 	void setConditionsConfig(const ConditionsConfig &conditionsConfig);
 	std::string getDecisionType() const;
@@ -85,6 +87,7 @@ public:
 	void setInstanceId(const std::string &instanceId);
 
 private:
+	std::string clientToken_;
 	ConditionsConfig conditionsConfig_;
 	std::string decisionType_;
 	std::string conditionalAccessPolicyId_;

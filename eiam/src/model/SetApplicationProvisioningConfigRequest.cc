@@ -25,6 +25,15 @@ SetApplicationProvisioningConfigRequest::SetApplicationProvisioningConfigRequest
 
 SetApplicationProvisioningConfigRequest::~SetApplicationProvisioningConfigRequest() {}
 
+std::string SetApplicationProvisioningConfigRequest::getNetworkAccessEndpointId() const {
+  return networkAccessEndpointId_;
+}
+
+void SetApplicationProvisioningConfigRequest::setNetworkAccessEndpointId(const std::string &networkAccessEndpointId) {
+  networkAccessEndpointId_ = networkAccessEndpointId;
+  setParameter(std::string("NetworkAccessEndpointId"), networkAccessEndpointId);
+}
+
 std::string SetApplicationProvisioningConfigRequest::getProvisionProtocolType() const {
   return provisionProtocolType_;
 }

@@ -25,6 +25,15 @@ UpdateConditionalAccessPolicyDescriptionRequest::UpdateConditionalAccessPolicyDe
 
 UpdateConditionalAccessPolicyDescriptionRequest::~UpdateConditionalAccessPolicyDescriptionRequest() {}
 
+std::string UpdateConditionalAccessPolicyDescriptionRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void UpdateConditionalAccessPolicyDescriptionRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string UpdateConditionalAccessPolicyDescriptionRequest::getDescription() const {
   return description_;
 }

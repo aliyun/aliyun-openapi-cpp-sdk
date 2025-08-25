@@ -34,7 +34,18 @@ void CreateIdentityProviderRequest::setDingtalkAppConfig(const CreateIdentityPro
   setParameter(std::string("DingtalkAppConfig") + ".CorpId", dingtalkAppConfig.corpId);
   setParameter(std::string("DingtalkAppConfig") + ".DingtalkVersion", dingtalkAppConfig.dingtalkVersion);
   setParameter(std::string("DingtalkAppConfig") + ".AppSecret", dingtalkAppConfig.appSecret);
+  setParameter(std::string("DingtalkAppConfig") + ".VerificationToken", dingtalkAppConfig.verificationToken);
   setParameter(std::string("DingtalkAppConfig") + ".AppKey", dingtalkAppConfig.appKey);
+  setParameter(std::string("DingtalkAppConfig") + ".EncryptKey", dingtalkAppConfig.encryptKey);
+}
+
+std::string CreateIdentityProviderRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CreateIdentityProviderRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
 std::string CreateIdentityProviderRequest::getNetworkAccessEndpointId() const {

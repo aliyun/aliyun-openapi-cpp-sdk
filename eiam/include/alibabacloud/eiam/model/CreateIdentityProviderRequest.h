@@ -32,7 +32,9 @@ public:
 		std::string corpId;
 		std::string dingtalkVersion;
 		std::string appSecret;
+		std::string verificationToken;
 		std::string appKey;
+		std::string encryptKey;
 	};
 	struct AutoUpdateUserConfig {
 		std::string autoUpdateUserStatus;
@@ -144,6 +146,8 @@ public:
 	~CreateIdentityProviderRequest();
 	DingtalkAppConfig getDingtalkAppConfig() const;
 	void setDingtalkAppConfig(const DingtalkAppConfig &dingtalkAppConfig);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getNetworkAccessEndpointId() const;
 	void setNetworkAccessEndpointId(const std::string &networkAccessEndpointId);
 	AutoUpdateUserConfig getAutoUpdateUserConfig() const;
@@ -177,6 +181,7 @@ public:
 
 private:
 	DingtalkAppConfig dingtalkAppConfig_;
+	std::string clientToken_;
 	std::string networkAccessEndpointId_;
 	AutoUpdateUserConfig autoUpdateUserConfig_;
 	std::string logoUrl_;

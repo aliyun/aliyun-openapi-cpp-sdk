@@ -80,6 +80,8 @@ void GetApplicationResult::parse(const std::string &payload)
 		application_.resourceServerStatus = applicationNode["ResourceServerStatus"].asString();
 	if(!applicationNode["ResourceServerIdentifier"].isNull())
 		application_.resourceServerIdentifier = applicationNode["ResourceServerIdentifier"].asString();
+	if(!applicationNode["CustomSubjectStatus"].isNull())
+		application_.customSubjectStatus = applicationNode["CustomSubjectStatus"].asString();
 		auto allApplicationVisibility = applicationNode["ApplicationVisibility"]["应用可见性"];
 		for (auto value : allApplicationVisibility)
 			application_.applicationVisibility.push_back(value.asString());

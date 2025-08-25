@@ -53,6 +53,7 @@ public:
 		std::vector<CustomClaimsItem> customClaims;
 		std::string subjectIdExpression;
 		bool pkceRequired;
+		bool allowedPublicClient;
 		std::string string;
 		std::vector<std::string> redirectUris;
 	};

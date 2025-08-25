@@ -30,7 +30,9 @@ class ALIBABACLOUD_EIAM_EXPORT UpdateIdentityProviderRequest : public RpcService
 public:
 	struct DingtalkAppConfig {
 		std::string appSecret;
+		std::string verificationToken;
 		std::string appKey;
+		std::string encryptKey;
 	};
 	struct LarkConfig {
 		std::string appId;
@@ -79,6 +81,8 @@ public:
 	~UpdateIdentityProviderRequest();
 	DingtalkAppConfig getDingtalkAppConfig() const;
 	void setDingtalkAppConfig(const DingtalkAppConfig &dingtalkAppConfig);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getNetworkAccessEndpointId() const;
 	void setNetworkAccessEndpointId(const std::string &networkAccessEndpointId);
 	std::string getLogoUrl() const;
@@ -100,6 +104,7 @@ public:
 
 private:
 	DingtalkAppConfig dingtalkAppConfig_;
+	std::string clientToken_;
 	std::string networkAccessEndpointId_;
 	std::string logoUrl_;
 	std::string identityProviderId_;

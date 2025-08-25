@@ -45,13 +45,10 @@ namespace AlibabaCloud
 					std::string applicationSourceType;
 					std::string ssoType;
 					std::string managedServiceCode;
-					std::string resourceServerIdentifier;
-					std::string resourceServerStatus;
 					long updateTime;
 					std::string clientId;
 					std::string features;
 					std::string applicationId;
-					std::string m2MClientStatus;
 				};
 
 

@@ -103,6 +103,7 @@ void SetApplicationSsoConfigRequest::setOidcSsoConfig(const SetApplicationSsoCon
   }
   setParameter(std::string("OidcSsoConfig") + ".SubjectIdExpression", oidcSsoConfig.subjectIdExpression);
   setParameter(std::string("OidcSsoConfig") + ".PkceRequired", oidcSsoConfig.pkceRequired ? "true" : "false");
+  setParameter(std::string("OidcSsoConfig") + ".AllowedPublicClient", oidcSsoConfig.allowedPublicClient ? "true" : "false");
   for(int dep1 = 0; dep1 != oidcSsoConfig.redirectUris.size(); dep1++) {
     setParameter(std::string("OidcSsoConfig") + ".RedirectUris." + std::to_string(dep1 + 1), oidcSsoConfig.redirectUris[dep1]);
   }

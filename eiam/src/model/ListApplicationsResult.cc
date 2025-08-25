@@ -73,12 +73,6 @@ void ListApplicationsResult::parse(const std::string &payload)
 			applicationsObject.managedServiceCode = valueApplicationsApplication["ManagedServiceCode"].asString();
 		if(!valueApplicationsApplication["ApplicationTemplateId"].isNull())
 			applicationsObject.applicationTemplateId = valueApplicationsApplication["ApplicationTemplateId"].asString();
-		if(!valueApplicationsApplication["M2MClientStatus"].isNull())
-			applicationsObject.m2MClientStatus = valueApplicationsApplication["M2MClientStatus"].asString();
-		if(!valueApplicationsApplication["ResourceServerStatus"].isNull())
-			applicationsObject.resourceServerStatus = valueApplicationsApplication["ResourceServerStatus"].asString();
-		if(!valueApplicationsApplication["ResourceServerIdentifier"].isNull())
-			applicationsObject.resourceServerIdentifier = valueApplicationsApplication["ResourceServerIdentifier"].asString();
 		applications_.push_back(applicationsObject);
 	}
 	if(!value["TotalCount"].isNull())

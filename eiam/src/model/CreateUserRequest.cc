@@ -25,6 +25,15 @@ CreateUserRequest::CreateUserRequest()
 
 CreateUserRequest::~CreateUserRequest() {}
 
+std::string CreateUserRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CreateUserRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string CreateUserRequest::getPhoneNumber() const {
   return phoneNumber_;
 }

@@ -102,6 +102,8 @@ void GetApplicationSsoConfigResult::parse(const std::string &payload)
 		applicationSsoConfig_.oidcSsoConfig.refreshTokenEffective = std::stol(oidcSsoConfigNode["RefreshTokenEffective"].asString());
 	if(!oidcSsoConfigNode["SubjectIdExpression"].isNull())
 		applicationSsoConfig_.oidcSsoConfig.subjectIdExpression = oidcSsoConfigNode["SubjectIdExpression"].asString();
+	if(!oidcSsoConfigNode["AllowedPublicClient"].isNull())
+		applicationSsoConfig_.oidcSsoConfig.allowedPublicClient = oidcSsoConfigNode["AllowedPublicClient"].asString();
 	auto allCustomClaimsNode = oidcSsoConfigNode["CustomClaims"]["CustomClaim"];
 	for (auto oidcSsoConfigNodeCustomClaimsCustomClaim : allCustomClaimsNode)
 	{

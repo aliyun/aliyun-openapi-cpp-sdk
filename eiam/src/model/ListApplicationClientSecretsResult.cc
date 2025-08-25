@@ -57,6 +57,8 @@ void ListApplicationClientSecretsResult::parse(const std::string &payload)
 			applicationClientSecretsObject.status = valueApplicationClientSecretsApplicationClientSecret["Status"].asString();
 		if(!valueApplicationClientSecretsApplicationClientSecret["LastUsedTime"].isNull())
 			applicationClientSecretsObject.lastUsedTime = std::stol(valueApplicationClientSecretsApplicationClientSecret["LastUsedTime"].asString());
+		if(!valueApplicationClientSecretsApplicationClientSecret["ExpirationTime"].isNull())
+			applicationClientSecretsObject.expirationTime = std::stol(valueApplicationClientSecretsApplicationClientSecret["ExpirationTime"].asString());
 		applicationClientSecrets_.push_back(applicationClientSecretsObject);
 	}
 	if(!value["TotalCount"].isNull())

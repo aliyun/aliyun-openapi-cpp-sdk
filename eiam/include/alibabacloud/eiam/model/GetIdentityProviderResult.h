@@ -36,7 +36,9 @@ namespace AlibabaCloud
 				{
 					struct DingtalkAppConfig
 					{
+						std::string encryptKey;
 						std::string corpId;
+						std::string verificationToken;
 						std::string appKey;
 						std::string dingtalkVersion;
 						std::string appSecret;

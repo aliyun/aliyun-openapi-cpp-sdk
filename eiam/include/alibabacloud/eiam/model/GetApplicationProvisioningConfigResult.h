@@ -67,6 +67,7 @@ namespace AlibabaCloud
 					CallbackProvisioningConfig callbackProvisioningConfig;
 					bool provisionPassword;
 					std::string instanceId;
+					std::string networkAccessEndpointId;
 					std::string configOperateMode;
 					std::string applicationId;
 					ScimProvisioningConfig scimProvisioningConfig;
