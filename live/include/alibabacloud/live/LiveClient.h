@@ -646,6 +646,8 @@
 #include "model/ListPlaylistResult.h"
 #include "model/ListPlaylistItemsRequest.h"
 #include "model/ListPlaylistItemsResult.h"
+#include "model/ListRTCLiveRoomsRequest.h"
+#include "model/ListRTCLiveRoomsResult.h"
 #include "model/ListRtcMPUEventSubRecordRequest.h"
 #include "model/ListRtcMPUEventSubRecordResult.h"
 #include "model/ListRtcMPUTaskDetailRequest.h"
@@ -1825,6 +1827,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPlaylistItemsResult> ListPlaylistItemsOutcome;
 			typedef std::future<ListPlaylistItemsOutcome> ListPlaylistItemsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ListPlaylistItemsRequest&, const ListPlaylistItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPlaylistItemsAsyncHandler;
+			typedef Outcome<Error, Model::ListRTCLiveRoomsResult> ListRTCLiveRoomsOutcome;
+			typedef std::future<ListRTCLiveRoomsOutcome> ListRTCLiveRoomsOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::ListRTCLiveRoomsRequest&, const ListRTCLiveRoomsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRTCLiveRoomsAsyncHandler;
 			typedef Outcome<Error, Model::ListRtcMPUEventSubRecordResult> ListRtcMPUEventSubRecordOutcome;
 			typedef std::future<ListRtcMPUEventSubRecordOutcome> ListRtcMPUEventSubRecordOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ListRtcMPUEventSubRecordRequest&, const ListRtcMPUEventSubRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRtcMPUEventSubRecordAsyncHandler;
@@ -3117,6 +3122,9 @@ namespace AlibabaCloud
 			ListPlaylistItemsOutcome listPlaylistItems(const Model::ListPlaylistItemsRequest &request)const;
 			void listPlaylistItemsAsync(const Model::ListPlaylistItemsRequest& request, const ListPlaylistItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPlaylistItemsOutcomeCallable listPlaylistItemsCallable(const Model::ListPlaylistItemsRequest& request) const;
+			ListRTCLiveRoomsOutcome listRTCLiveRooms(const Model::ListRTCLiveRoomsRequest &request)const;
+			void listRTCLiveRoomsAsync(const Model::ListRTCLiveRoomsRequest& request, const ListRTCLiveRoomsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRTCLiveRoomsOutcomeCallable listRTCLiveRoomsCallable(const Model::ListRTCLiveRoomsRequest& request) const;
 			ListRtcMPUEventSubRecordOutcome listRtcMPUEventSubRecord(const Model::ListRtcMPUEventSubRecordRequest &request)const;
 			void listRtcMPUEventSubRecordAsync(const Model::ListRtcMPUEventSubRecordRequest& request, const ListRtcMPUEventSubRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRtcMPUEventSubRecordOutcomeCallable listRtcMPUEventSubRecordCallable(const Model::ListRtcMPUEventSubRecordRequest& request) const;

@@ -11283,6 +11283,42 @@ LiveClient::ListPlaylistItemsOutcomeCallable LiveClient::listPlaylistItemsCallab
 	return task->get_future();
 }
 
+LiveClient::ListRTCLiveRoomsOutcome LiveClient::listRTCLiveRooms(const ListRTCLiveRoomsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRTCLiveRoomsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRTCLiveRoomsOutcome(ListRTCLiveRoomsResult(outcome.result()));
+	else
+		return ListRTCLiveRoomsOutcome(outcome.error());
+}
+
+void LiveClient::listRTCLiveRoomsAsync(const ListRTCLiveRoomsRequest& request, const ListRTCLiveRoomsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRTCLiveRooms(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListRTCLiveRoomsOutcomeCallable LiveClient::listRTCLiveRoomsCallable(const ListRTCLiveRoomsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRTCLiveRoomsOutcome()>>(
+			[this, request]()
+			{
+			return this->listRTCLiveRooms(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::ListRtcMPUEventSubRecordOutcome LiveClient::listRtcMPUEventSubRecord(const ListRtcMPUEventSubRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
