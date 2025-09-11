@@ -123,6 +123,42 @@ Quickbi_publicClient::AddDataLevelPermissionWhiteListOutcomeCallable Quickbi_pub
 	return task->get_future();
 }
 
+Quickbi_publicClient::AddDataSourceOutcome Quickbi_publicClient::addDataSource(const AddDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDataSourceOutcome(AddDataSourceResult(outcome.result()));
+	else
+		return AddDataSourceOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::addDataSourceAsync(const AddDataSourceRequest& request, const AddDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::AddDataSourceOutcomeCallable Quickbi_publicClient::addDataSourceCallable(const AddDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->addDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::AddShareReportOutcome Quickbi_publicClient::addShareReport(const AddShareReportRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,6 +663,78 @@ Quickbi_publicClient::ChangeVisibilityModelOutcomeCallable Quickbi_publicClient:
 	return task->get_future();
 }
 
+Quickbi_publicClient::CheckDatasetExistedOutcome Quickbi_publicClient::checkDatasetExisted(const CheckDatasetExistedRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckDatasetExistedOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckDatasetExistedOutcome(CheckDatasetExistedResult(outcome.result()));
+	else
+		return CheckDatasetExistedOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::checkDatasetExistedAsync(const CheckDatasetExistedRequest& request, const CheckDatasetExistedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkDatasetExisted(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::CheckDatasetExistedOutcomeCallable Quickbi_publicClient::checkDatasetExistedCallable(const CheckDatasetExistedRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckDatasetExistedOutcome()>>(
+			[this, request]()
+			{
+			return this->checkDatasetExisted(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::CheckOrganizationMemberOutcome Quickbi_publicClient::checkOrganizationMember(const CheckOrganizationMemberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckOrganizationMemberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckOrganizationMemberOutcome(CheckOrganizationMemberResult(outcome.result()));
+	else
+		return CheckOrganizationMemberOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::checkOrganizationMemberAsync(const CheckOrganizationMemberRequest& request, const CheckOrganizationMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkOrganizationMember(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::CheckOrganizationMemberOutcomeCallable Quickbi_publicClient::checkOrganizationMemberCallable(const CheckOrganizationMemberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckOrganizationMemberOutcome()>>(
+			[this, request]()
+			{
+			return this->checkOrganizationMember(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::CheckReadableOutcome Quickbi_publicClient::checkReadable(const CheckReadableRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +765,78 @@ Quickbi_publicClient::CheckReadableOutcomeCallable Quickbi_publicClient::checkRe
 			[this, request]()
 			{
 			return this->checkReadable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::CreateCubeBySqlOutcome Quickbi_publicClient::createCubeBySql(const CreateCubeBySqlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCubeBySqlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCubeBySqlOutcome(CreateCubeBySqlResult(outcome.result()));
+	else
+		return CreateCubeBySqlOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::createCubeBySqlAsync(const CreateCubeBySqlRequest& request, const CreateCubeBySqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCubeBySql(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::CreateCubeBySqlOutcomeCallable Quickbi_publicClient::createCubeBySqlCallable(const CreateCubeBySqlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCubeBySqlOutcome()>>(
+			[this, request]()
+			{
+			return this->createCubeBySql(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::CreateDatasetOutcome Quickbi_publicClient::createDataset(const CreateDatasetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDatasetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDatasetOutcome(CreateDatasetResult(outcome.result()));
+	else
+		return CreateDatasetOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::createDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataset(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::CreateDatasetOutcomeCallable Quickbi_publicClient::createDatasetCallable(const CreateDatasetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDatasetOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataset(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1953,6 +2133,42 @@ Quickbi_publicClient::ListWorkspaceRolesOutcomeCallable Quickbi_publicClient::li
 			[this, request]()
 			{
 			return this->listWorkspaceRoles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ListWorkspaceUserRolesByUserIdOutcome Quickbi_publicClient::listWorkspaceUserRolesByUserId(const ListWorkspaceUserRolesByUserIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListWorkspaceUserRolesByUserIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListWorkspaceUserRolesByUserIdOutcome(ListWorkspaceUserRolesByUserIdResult(outcome.result()));
+	else
+		return ListWorkspaceUserRolesByUserIdOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listWorkspaceUserRolesByUserIdAsync(const ListWorkspaceUserRolesByUserIdRequest& request, const ListWorkspaceUserRolesByUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listWorkspaceUserRolesByUserId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListWorkspaceUserRolesByUserIdOutcomeCallable Quickbi_publicClient::listWorkspaceUserRolesByUserIdCallable(const ListWorkspaceUserRolesByUserIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListWorkspaceUserRolesByUserIdOutcome()>>(
+			[this, request]()
+			{
+			return this->listWorkspaceUserRolesByUserId(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3903,6 +4119,42 @@ Quickbi_publicClient::SmartqQueryAbilityOutcomeCallable Quickbi_publicClient::sm
 	return task->get_future();
 }
 
+Quickbi_publicClient::UpdateCubeBySqlOutcome Quickbi_publicClient::updateCubeBySql(const UpdateCubeBySqlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCubeBySqlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCubeBySqlOutcome(UpdateCubeBySqlResult(outcome.result()));
+	else
+		return UpdateCubeBySqlOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::updateCubeBySqlAsync(const UpdateCubeBySqlRequest& request, const UpdateCubeBySqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCubeBySql(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::UpdateCubeBySqlOutcomeCallable Quickbi_publicClient::updateCubeBySqlCallable(const UpdateCubeBySqlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCubeBySqlOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCubeBySql(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::UpdateDataLevelPermissionStatusOutcome Quickbi_publicClient::updateDataLevelPermissionStatus(const UpdateDataLevelPermissionStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3933,6 +4185,42 @@ Quickbi_publicClient::UpdateDataLevelPermissionStatusOutcomeCallable Quickbi_pub
 			[this, request]()
 			{
 			return this->updateDataLevelPermissionStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::UpdateDataSourceOutcome Quickbi_publicClient::updateDataSource(const UpdateDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDataSourceOutcome(UpdateDataSourceResult(outcome.result()));
+	else
+		return UpdateDataSourceOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::updateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::UpdateDataSourceOutcomeCallable Quickbi_publicClient::updateDataSourceCallable(const UpdateDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDataSource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

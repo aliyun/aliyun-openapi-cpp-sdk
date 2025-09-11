@@ -25,6 +25,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/AddDataLevelPermissionRuleUsersResult.h
 	include/alibabacloud/quickbi-public/model/AddDataLevelPermissionWhiteListRequest.h
 	include/alibabacloud/quickbi-public/model/AddDataLevelPermissionWhiteListResult.h
+	include/alibabacloud/quickbi-public/model/AddDataSourceRequest.h
+	include/alibabacloud/quickbi-public/model/AddDataSourceResult.h
 	include/alibabacloud/quickbi-public/model/AddShareReportRequest.h
 	include/alibabacloud/quickbi-public/model/AddShareReportResult.h
 	include/alibabacloud/quickbi-public/model/AddUserRequest.h
@@ -53,8 +55,16 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/CancelReportShareResult.h
 	include/alibabacloud/quickbi-public/model/ChangeVisibilityModelRequest.h
 	include/alibabacloud/quickbi-public/model/ChangeVisibilityModelResult.h
+	include/alibabacloud/quickbi-public/model/CheckDatasetExistedRequest.h
+	include/alibabacloud/quickbi-public/model/CheckDatasetExistedResult.h
+	include/alibabacloud/quickbi-public/model/CheckOrganizationMemberRequest.h
+	include/alibabacloud/quickbi-public/model/CheckOrganizationMemberResult.h
 	include/alibabacloud/quickbi-public/model/CheckReadableRequest.h
 	include/alibabacloud/quickbi-public/model/CheckReadableResult.h
+	include/alibabacloud/quickbi-public/model/CreateCubeBySqlRequest.h
+	include/alibabacloud/quickbi-public/model/CreateCubeBySqlResult.h
+	include/alibabacloud/quickbi-public/model/CreateDatasetRequest.h
+	include/alibabacloud/quickbi-public/model/CreateDatasetResult.h
 	include/alibabacloud/quickbi-public/model/CreateTicketRequest.h
 	include/alibabacloud/quickbi-public/model/CreateTicketResult.h
 	include/alibabacloud/quickbi-public/model/CreateTicket4CopilotRequest.h
@@ -127,6 +137,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListWorkspaceRoleUsersResult.h
 	include/alibabacloud/quickbi-public/model/ListWorkspaceRolesRequest.h
 	include/alibabacloud/quickbi-public/model/ListWorkspaceRolesResult.h
+	include/alibabacloud/quickbi-public/model/ListWorkspaceUserRolesByUserIdRequest.h
+	include/alibabacloud/quickbi-public/model/ListWorkspaceUserRolesByUserIdResult.h
 	include/alibabacloud/quickbi-public/model/ManualRunMailTaskRequest.h
 	include/alibabacloud/quickbi-public/model/ManualRunMailTaskResult.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersRequest.h
@@ -235,8 +247,12 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/SmartqAuthorizeResult.h
 	include/alibabacloud/quickbi-public/model/SmartqQueryAbilityRequest.h
 	include/alibabacloud/quickbi-public/model/SmartqQueryAbilityResult.h
+	include/alibabacloud/quickbi-public/model/UpdateCubeBySqlRequest.h
+	include/alibabacloud/quickbi-public/model/UpdateCubeBySqlResult.h
 	include/alibabacloud/quickbi-public/model/UpdateDataLevelPermissionStatusRequest.h
 	include/alibabacloud/quickbi-public/model/UpdateDataLevelPermissionStatusResult.h
+	include/alibabacloud/quickbi-public/model/UpdateDataSourceRequest.h
+	include/alibabacloud/quickbi-public/model/UpdateDataSourceResult.h
 	include/alibabacloud/quickbi-public/model/UpdateEmbeddedStatusRequest.h
 	include/alibabacloud/quickbi-public/model/UpdateEmbeddedStatusResult.h
 	include/alibabacloud/quickbi-public/model/UpdateTicketNumRequest.h
@@ -262,6 +278,8 @@ set(quickbi-public_src
 	src/model/AddDataLevelPermissionRuleUsersResult.cc
 	src/model/AddDataLevelPermissionWhiteListRequest.cc
 	src/model/AddDataLevelPermissionWhiteListResult.cc
+	src/model/AddDataSourceRequest.cc
+	src/model/AddDataSourceResult.cc
 	src/model/AddShareReportRequest.cc
 	src/model/AddShareReportResult.cc
 	src/model/AddUserRequest.cc
@@ -290,8 +308,16 @@ set(quickbi-public_src
 	src/model/CancelReportShareResult.cc
 	src/model/ChangeVisibilityModelRequest.cc
 	src/model/ChangeVisibilityModelResult.cc
+	src/model/CheckDatasetExistedRequest.cc
+	src/model/CheckDatasetExistedResult.cc
+	src/model/CheckOrganizationMemberRequest.cc
+	src/model/CheckOrganizationMemberResult.cc
 	src/model/CheckReadableRequest.cc
 	src/model/CheckReadableResult.cc
+	src/model/CreateCubeBySqlRequest.cc
+	src/model/CreateCubeBySqlResult.cc
+	src/model/CreateDatasetRequest.cc
+	src/model/CreateDatasetResult.cc
 	src/model/CreateTicketRequest.cc
 	src/model/CreateTicketResult.cc
 	src/model/CreateTicket4CopilotRequest.cc
@@ -364,6 +390,8 @@ set(quickbi-public_src
 	src/model/ListWorkspaceRoleUsersResult.cc
 	src/model/ListWorkspaceRolesRequest.cc
 	src/model/ListWorkspaceRolesResult.cc
+	src/model/ListWorkspaceUserRolesByUserIdRequest.cc
+	src/model/ListWorkspaceUserRolesByUserIdResult.cc
 	src/model/ManualRunMailTaskRequest.cc
 	src/model/ManualRunMailTaskResult.cc
 	src/model/ModifyApiDatasourceParametersRequest.cc
@@ -472,8 +500,12 @@ set(quickbi-public_src
 	src/model/SmartqAuthorizeResult.cc
 	src/model/SmartqQueryAbilityRequest.cc
 	src/model/SmartqQueryAbilityResult.cc
+	src/model/UpdateCubeBySqlRequest.cc
+	src/model/UpdateCubeBySqlResult.cc
 	src/model/UpdateDataLevelPermissionStatusRequest.cc
 	src/model/UpdateDataLevelPermissionStatusResult.cc
+	src/model/UpdateDataSourceRequest.cc
+	src/model/UpdateDataSourceResult.cc
 	src/model/UpdateEmbeddedStatusRequest.cc
 	src/model/UpdateEmbeddedStatusResult.cc
 	src/model/UpdateTicketNumRequest.cc

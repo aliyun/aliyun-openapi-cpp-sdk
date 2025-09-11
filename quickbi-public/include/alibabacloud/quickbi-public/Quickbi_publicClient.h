@@ -26,6 +26,8 @@
 #include "model/AddDataLevelPermissionRuleUsersResult.h"
 #include "model/AddDataLevelPermissionWhiteListRequest.h"
 #include "model/AddDataLevelPermissionWhiteListResult.h"
+#include "model/AddDataSourceRequest.h"
+#include "model/AddDataSourceResult.h"
 #include "model/AddShareReportRequest.h"
 #include "model/AddShareReportResult.h"
 #include "model/AddUserRequest.h"
@@ -54,8 +56,16 @@
 #include "model/CancelReportShareResult.h"
 #include "model/ChangeVisibilityModelRequest.h"
 #include "model/ChangeVisibilityModelResult.h"
+#include "model/CheckDatasetExistedRequest.h"
+#include "model/CheckDatasetExistedResult.h"
+#include "model/CheckOrganizationMemberRequest.h"
+#include "model/CheckOrganizationMemberResult.h"
 #include "model/CheckReadableRequest.h"
 #include "model/CheckReadableResult.h"
+#include "model/CreateCubeBySqlRequest.h"
+#include "model/CreateCubeBySqlResult.h"
+#include "model/CreateDatasetRequest.h"
+#include "model/CreateDatasetResult.h"
 #include "model/CreateTicketRequest.h"
 #include "model/CreateTicketResult.h"
 #include "model/CreateTicket4CopilotRequest.h"
@@ -128,6 +138,8 @@
 #include "model/ListWorkspaceRoleUsersResult.h"
 #include "model/ListWorkspaceRolesRequest.h"
 #include "model/ListWorkspaceRolesResult.h"
+#include "model/ListWorkspaceUserRolesByUserIdRequest.h"
+#include "model/ListWorkspaceUserRolesByUserIdResult.h"
 #include "model/ManualRunMailTaskRequest.h"
 #include "model/ManualRunMailTaskResult.h"
 #include "model/ModifyApiDatasourceParametersRequest.h"
@@ -236,8 +248,12 @@
 #include "model/SmartqAuthorizeResult.h"
 #include "model/SmartqQueryAbilityRequest.h"
 #include "model/SmartqQueryAbilityResult.h"
+#include "model/UpdateCubeBySqlRequest.h"
+#include "model/UpdateCubeBySqlResult.h"
 #include "model/UpdateDataLevelPermissionStatusRequest.h"
 #include "model/UpdateDataLevelPermissionStatusResult.h"
+#include "model/UpdateDataSourceRequest.h"
+#include "model/UpdateDataSourceResult.h"
 #include "model/UpdateEmbeddedStatusRequest.h"
 #include "model/UpdateEmbeddedStatusResult.h"
 #include "model/UpdateTicketNumRequest.h"
@@ -271,6 +287,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddDataLevelPermissionWhiteListResult> AddDataLevelPermissionWhiteListOutcome;
 			typedef std::future<AddDataLevelPermissionWhiteListOutcome> AddDataLevelPermissionWhiteListOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::AddDataLevelPermissionWhiteListRequest&, const AddDataLevelPermissionWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDataLevelPermissionWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::AddDataSourceResult> AddDataSourceOutcome;
+			typedef std::future<AddDataSourceOutcome> AddDataSourceOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::AddDataSourceRequest&, const AddDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDataSourceAsyncHandler;
 			typedef Outcome<Error, Model::AddShareReportResult> AddShareReportOutcome;
 			typedef std::future<AddShareReportOutcome> AddShareReportOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::AddShareReportRequest&, const AddShareReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddShareReportAsyncHandler;
@@ -313,9 +332,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ChangeVisibilityModelResult> ChangeVisibilityModelOutcome;
 			typedef std::future<ChangeVisibilityModelOutcome> ChangeVisibilityModelOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ChangeVisibilityModelRequest&, const ChangeVisibilityModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeVisibilityModelAsyncHandler;
+			typedef Outcome<Error, Model::CheckDatasetExistedResult> CheckDatasetExistedOutcome;
+			typedef std::future<CheckDatasetExistedOutcome> CheckDatasetExistedOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::CheckDatasetExistedRequest&, const CheckDatasetExistedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDatasetExistedAsyncHandler;
+			typedef Outcome<Error, Model::CheckOrganizationMemberResult> CheckOrganizationMemberOutcome;
+			typedef std::future<CheckOrganizationMemberOutcome> CheckOrganizationMemberOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::CheckOrganizationMemberRequest&, const CheckOrganizationMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckOrganizationMemberAsyncHandler;
 			typedef Outcome<Error, Model::CheckReadableResult> CheckReadableOutcome;
 			typedef std::future<CheckReadableOutcome> CheckReadableOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CheckReadableRequest&, const CheckReadableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckReadableAsyncHandler;
+			typedef Outcome<Error, Model::CreateCubeBySqlResult> CreateCubeBySqlOutcome;
+			typedef std::future<CreateCubeBySqlOutcome> CreateCubeBySqlOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateCubeBySqlRequest&, const CreateCubeBySqlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCubeBySqlAsyncHandler;
+			typedef Outcome<Error, Model::CreateDatasetResult> CreateDatasetOutcome;
+			typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateDatasetRequest&, const CreateDatasetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatasetAsyncHandler;
 			typedef Outcome<Error, Model::CreateTicketResult> CreateTicketOutcome;
 			typedef std::future<CreateTicketOutcome> CreateTicketOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateTicketRequest&, const CreateTicketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTicketAsyncHandler;
@@ -424,6 +455,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListWorkspaceRolesResult> ListWorkspaceRolesOutcome;
 			typedef std::future<ListWorkspaceRolesOutcome> ListWorkspaceRolesOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListWorkspaceRolesRequest&, const ListWorkspaceRolesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkspaceRolesAsyncHandler;
+			typedef Outcome<Error, Model::ListWorkspaceUserRolesByUserIdResult> ListWorkspaceUserRolesByUserIdOutcome;
+			typedef std::future<ListWorkspaceUserRolesByUserIdOutcome> ListWorkspaceUserRolesByUserIdOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListWorkspaceUserRolesByUserIdRequest&, const ListWorkspaceUserRolesByUserIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkspaceUserRolesByUserIdAsyncHandler;
 			typedef Outcome<Error, Model::ManualRunMailTaskResult> ManualRunMailTaskOutcome;
 			typedef std::future<ManualRunMailTaskOutcome> ManualRunMailTaskOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ManualRunMailTaskRequest&, const ManualRunMailTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ManualRunMailTaskAsyncHandler;
@@ -586,9 +620,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SmartqQueryAbilityResult> SmartqQueryAbilityOutcome;
 			typedef std::future<SmartqQueryAbilityOutcome> SmartqQueryAbilityOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::SmartqQueryAbilityRequest&, const SmartqQueryAbilityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SmartqQueryAbilityAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCubeBySqlResult> UpdateCubeBySqlOutcome;
+			typedef std::future<UpdateCubeBySqlOutcome> UpdateCubeBySqlOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateCubeBySqlRequest&, const UpdateCubeBySqlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCubeBySqlAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDataLevelPermissionStatusResult> UpdateDataLevelPermissionStatusOutcome;
 			typedef std::future<UpdateDataLevelPermissionStatusOutcome> UpdateDataLevelPermissionStatusOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateDataLevelPermissionStatusRequest&, const UpdateDataLevelPermissionStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDataLevelPermissionStatusAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDataSourceResult> UpdateDataSourceOutcome;
+			typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateDataSourceRequest&, const UpdateDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDataSourceAsyncHandler;
 			typedef Outcome<Error, Model::UpdateEmbeddedStatusResult> UpdateEmbeddedStatusOutcome;
 			typedef std::future<UpdateEmbeddedStatusOutcome> UpdateEmbeddedStatusOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateEmbeddedStatusRequest&, const UpdateEmbeddedStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEmbeddedStatusAsyncHandler;
@@ -627,6 +667,9 @@ namespace AlibabaCloud
 			AddDataLevelPermissionWhiteListOutcome addDataLevelPermissionWhiteList(const Model::AddDataLevelPermissionWhiteListRequest &request)const;
 			void addDataLevelPermissionWhiteListAsync(const Model::AddDataLevelPermissionWhiteListRequest& request, const AddDataLevelPermissionWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddDataLevelPermissionWhiteListOutcomeCallable addDataLevelPermissionWhiteListCallable(const Model::AddDataLevelPermissionWhiteListRequest& request) const;
+			AddDataSourceOutcome addDataSource(const Model::AddDataSourceRequest &request)const;
+			void addDataSourceAsync(const Model::AddDataSourceRequest& request, const AddDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddDataSourceOutcomeCallable addDataSourceCallable(const Model::AddDataSourceRequest& request) const;
 			AddShareReportOutcome addShareReport(const Model::AddShareReportRequest &request)const;
 			void addShareReportAsync(const Model::AddShareReportRequest& request, const AddShareReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddShareReportOutcomeCallable addShareReportCallable(const Model::AddShareReportRequest& request) const;
@@ -669,9 +712,21 @@ namespace AlibabaCloud
 			ChangeVisibilityModelOutcome changeVisibilityModel(const Model::ChangeVisibilityModelRequest &request)const;
 			void changeVisibilityModelAsync(const Model::ChangeVisibilityModelRequest& request, const ChangeVisibilityModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeVisibilityModelOutcomeCallable changeVisibilityModelCallable(const Model::ChangeVisibilityModelRequest& request) const;
+			CheckDatasetExistedOutcome checkDatasetExisted(const Model::CheckDatasetExistedRequest &request)const;
+			void checkDatasetExistedAsync(const Model::CheckDatasetExistedRequest& request, const CheckDatasetExistedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckDatasetExistedOutcomeCallable checkDatasetExistedCallable(const Model::CheckDatasetExistedRequest& request) const;
+			CheckOrganizationMemberOutcome checkOrganizationMember(const Model::CheckOrganizationMemberRequest &request)const;
+			void checkOrganizationMemberAsync(const Model::CheckOrganizationMemberRequest& request, const CheckOrganizationMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckOrganizationMemberOutcomeCallable checkOrganizationMemberCallable(const Model::CheckOrganizationMemberRequest& request) const;
 			CheckReadableOutcome checkReadable(const Model::CheckReadableRequest &request)const;
 			void checkReadableAsync(const Model::CheckReadableRequest& request, const CheckReadableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckReadableOutcomeCallable checkReadableCallable(const Model::CheckReadableRequest& request) const;
+			CreateCubeBySqlOutcome createCubeBySql(const Model::CreateCubeBySqlRequest &request)const;
+			void createCubeBySqlAsync(const Model::CreateCubeBySqlRequest& request, const CreateCubeBySqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCubeBySqlOutcomeCallable createCubeBySqlCallable(const Model::CreateCubeBySqlRequest& request) const;
+			CreateDatasetOutcome createDataset(const Model::CreateDatasetRequest &request)const;
+			void createDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDatasetOutcomeCallable createDatasetCallable(const Model::CreateDatasetRequest& request) const;
 			CreateTicketOutcome createTicket(const Model::CreateTicketRequest &request)const;
 			void createTicketAsync(const Model::CreateTicketRequest& request, const CreateTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTicketOutcomeCallable createTicketCallable(const Model::CreateTicketRequest& request) const;
@@ -780,6 +835,9 @@ namespace AlibabaCloud
 			ListWorkspaceRolesOutcome listWorkspaceRoles(const Model::ListWorkspaceRolesRequest &request)const;
 			void listWorkspaceRolesAsync(const Model::ListWorkspaceRolesRequest& request, const ListWorkspaceRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListWorkspaceRolesOutcomeCallable listWorkspaceRolesCallable(const Model::ListWorkspaceRolesRequest& request) const;
+			ListWorkspaceUserRolesByUserIdOutcome listWorkspaceUserRolesByUserId(const Model::ListWorkspaceUserRolesByUserIdRequest &request)const;
+			void listWorkspaceUserRolesByUserIdAsync(const Model::ListWorkspaceUserRolesByUserIdRequest& request, const ListWorkspaceUserRolesByUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListWorkspaceUserRolesByUserIdOutcomeCallable listWorkspaceUserRolesByUserIdCallable(const Model::ListWorkspaceUserRolesByUserIdRequest& request) const;
 			ManualRunMailTaskOutcome manualRunMailTask(const Model::ManualRunMailTaskRequest &request)const;
 			void manualRunMailTaskAsync(const Model::ManualRunMailTaskRequest& request, const ManualRunMailTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ManualRunMailTaskOutcomeCallable manualRunMailTaskCallable(const Model::ManualRunMailTaskRequest& request) const;
@@ -942,9 +1000,15 @@ namespace AlibabaCloud
 			SmartqQueryAbilityOutcome smartqQueryAbility(const Model::SmartqQueryAbilityRequest &request)const;
 			void smartqQueryAbilityAsync(const Model::SmartqQueryAbilityRequest& request, const SmartqQueryAbilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SmartqQueryAbilityOutcomeCallable smartqQueryAbilityCallable(const Model::SmartqQueryAbilityRequest& request) const;
+			UpdateCubeBySqlOutcome updateCubeBySql(const Model::UpdateCubeBySqlRequest &request)const;
+			void updateCubeBySqlAsync(const Model::UpdateCubeBySqlRequest& request, const UpdateCubeBySqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCubeBySqlOutcomeCallable updateCubeBySqlCallable(const Model::UpdateCubeBySqlRequest& request) const;
 			UpdateDataLevelPermissionStatusOutcome updateDataLevelPermissionStatus(const Model::UpdateDataLevelPermissionStatusRequest &request)const;
 			void updateDataLevelPermissionStatusAsync(const Model::UpdateDataLevelPermissionStatusRequest& request, const UpdateDataLevelPermissionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDataLevelPermissionStatusOutcomeCallable updateDataLevelPermissionStatusCallable(const Model::UpdateDataLevelPermissionStatusRequest& request) const;
+			UpdateDataSourceOutcome updateDataSource(const Model::UpdateDataSourceRequest &request)const;
+			void updateDataSourceAsync(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDataSourceOutcomeCallable updateDataSourceCallable(const Model::UpdateDataSourceRequest& request) const;
 			UpdateEmbeddedStatusOutcome updateEmbeddedStatus(const Model::UpdateEmbeddedStatusRequest &request)const;
 			void updateEmbeddedStatusAsync(const Model::UpdateEmbeddedStatusRequest& request, const UpdateEmbeddedStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateEmbeddedStatusOutcomeCallable updateEmbeddedStatusCallable(const Model::UpdateEmbeddedStatusRequest& request) const;
