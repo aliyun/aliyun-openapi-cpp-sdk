@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAS_MODEL_LISTCERTRESULT_H_
-#define ALIBABACLOUD_CAS_MODEL_LISTCERTRESULT_H_
+#ifndef ALIBABACLOUD_CAS_MODEL_DESCRIBECACERTIFICATELISTRESULT_H_
+#define ALIBABACLOUD_CAS_MODEL_DESCRIBECACERTIFICATELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,56 +29,59 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CAS_EXPORT ListCertResult : public ServiceResult
+			class ALIBABACLOUD_CAS_EXPORT DescribeCACertificateListResult : public ServiceResult
 			{
 			public:
-				struct ListItem
+				struct Certificate
 				{
-					std::string status;
-					std::string afterDate;
+					std::string sha2;
 					std::string organization;
-					bool keyExportable;
-					std::string subjectDn;
-					std::string algorithm;
-					std::string certificateType;
+					std::string subjectDN;
 					std::string identifier;
-					std::string serialNumber;
-					std::string extra;
-					std::string organizationUnit;
-					long beforeTime;
-					std::string aliasName;
-					long afterTime;
-					std::string id;
-					std::vector<std::string> tags;
+					std::string sans;
+					std::string countryCode;
+					std::string signAlgorithm;
 					std::string commonName;
-					std::string beforeDate;
+					std::string md5;
+					long beforeDate;
+					std::string status;
+					long afterDate;
+					int years;
+					int trial;
+					std::string locality;
+					std::string algorithm;
+					std::string parentIdentifier;
+					std::string x509Certificate;
+					std::string certificateType;
+					int gift;
+					std::string serialNumber;
+					std::string state;
+					std::string organizationUnit;
+					std::string alias;
+					int keySize;
 				};
 
 
-				ListCertResult();
-				explicit ListCertResult(const std::string &payload);
-				~ListCertResult();
-				long getTotalCount()const;
+				DescribeCACertificateListResult();
+				explicit DescribeCACertificateListResult(const std::string &payload);
+				~DescribeCACertificateListResult();
+				int getTotalCount()const;
 				int getPageCount()const;
-				std::string getNextToken()const;
 				int getCurrentPage()const;
-				int getMaxResults()const;
+				std::vector<Certificate> getCertificateList()const;
 				int getShowSize()const;
-				std::vector<ListItem> getList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
+				int totalCount_;
 				int pageCount_;
-				std::string nextToken_;
 				int currentPage_;
-				int maxResults_;
+				std::vector<Certificate> certificateList_;
 				int showSize_;
-				std::vector<ListItem> list_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CAS_MODEL_LISTCERTRESULT_H_
+#endif // !ALIBABACLOUD_CAS_MODEL_DESCRIBECACERTIFICATELISTRESULT_H_

@@ -19,73 +19,82 @@
 using AlibabaCloud::Cas::Model::ListCertRequest;
 
 ListCertRequest::ListCertRequest()
-    : RpcServiceRequest("cas", "2020-04-07", "ListCert") {
+    : RpcServiceRequest("cas", "2020-06-30", "ListCert") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ListCertRequest::~ListCertRequest() {}
 
-std::string ListCertRequest::getSourceIp() const {
-  return sourceIp_;
+std::string ListCertRequest::getBeforeDate() const {
+  return beforeDate_;
 }
 
-void ListCertRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
+void ListCertRequest::setBeforeDate(const std::string &beforeDate) {
+  beforeDate_ = beforeDate;
+  setParameter(std::string("BeforeDate"), beforeDate);
 }
 
-long ListCertRequest::getWarehouseId() const {
-  return warehouseId_;
-}
-
-void ListCertRequest::setWarehouseId(long warehouseId) {
-  warehouseId_ = warehouseId;
-  setParameter(std::string("WarehouseId"), std::to_string(warehouseId));
-}
-
-std::string ListCertRequest::getCertType() const {
-  return certType_;
-}
-
-void ListCertRequest::setCertType(const std::string &certType) {
-  certType_ = certType;
-  setParameter(std::string("CertType"), certType);
-}
-
-std::string ListCertRequest::getSourceType() const {
-  return sourceType_;
-}
-
-void ListCertRequest::setSourceType(const std::string &sourceType) {
-  sourceType_ = sourceType;
-  setParameter(std::string("SourceType"), sourceType);
-}
-
-std::string ListCertRequest::getKeyWord() const {
-  return keyWord_;
-}
-
-void ListCertRequest::setKeyWord(const std::string &keyWord) {
-  keyWord_ = keyWord;
-  setParameter(std::string("KeyWord"), keyWord);
-}
-
-long ListCertRequest::getShowSize() const {
+int ListCertRequest::getShowSize() const {
   return showSize_;
 }
 
-void ListCertRequest::setShowSize(long showSize) {
+void ListCertRequest::setShowSize(int showSize) {
   showSize_ = showSize;
   setParameter(std::string("ShowSize"), std::to_string(showSize));
 }
 
-long ListCertRequest::getCurrentPage() const {
+std::string ListCertRequest::getInstanceUuid() const {
+  return instanceUuid_;
+}
+
+void ListCertRequest::setInstanceUuid(const std::string &instanceUuid) {
+  instanceUuid_ = instanceUuid;
+  setParameter(std::string("InstanceUuid"), instanceUuid);
+}
+
+int ListCertRequest::getCurrentPage() const {
   return currentPage_;
 }
 
-void ListCertRequest::setCurrentPage(long currentPage) {
+void ListCertRequest::setCurrentPage(int currentPage) {
   currentPage_ = currentPage;
   setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string ListCertRequest::getType() const {
+  return type_;
+}
+
+void ListCertRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
+}
+
+std::string ListCertRequest::getAfterDate() const {
+  return afterDate_;
+}
+
+void ListCertRequest::setAfterDate(const std::string &afterDate) {
+  afterDate_ = afterDate;
+  setParameter(std::string("AfterDate"), afterDate);
+}
+
+std::string ListCertRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void ListCertRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
+int ListCertRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void ListCertRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
 std::string ListCertRequest::getStatus() const {

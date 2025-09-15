@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAS_MODEL_LISTCERTRESULT_H_
-#define ALIBABACLOUD_CAS_MODEL_LISTCERTRESULT_H_
+#ifndef ALIBABACLOUD_CAS_MODEL_LISTPCACACERTIFICATERESULT_H_
+#define ALIBABACLOUD_CAS_MODEL_LISTPCACACERTIFICATERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,56 +29,40 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CAS_EXPORT ListCertResult : public ServiceResult
+			class ALIBABACLOUD_CAS_EXPORT ListPcaCaCertificateResult : public ServiceResult
 			{
 			public:
 				struct ListItem
 				{
 					std::string status;
-					std::string afterDate;
-					std::string organization;
-					bool keyExportable;
-					std::string subjectDn;
-					std::string algorithm;
-					std::string certificateType;
-					std::string identifier;
-					std::string serialNumber;
-					std::string extra;
-					std::string organizationUnit;
-					long beforeTime;
-					std::string aliasName;
-					long afterTime;
-					std::string id;
-					std::vector<std::string> tags;
+					std::string issuerIdentifier;
+					std::string userId;
+					std::string certIdentifier;
+					std::string privateCaInstanceId;
+					std::string privateCaRegionId;
+					ObjectOfAny innerResult;
 					std::string commonName;
-					std::string beforeDate;
 				};
 
 
-				ListCertResult();
-				explicit ListCertResult(const std::string &payload);
-				~ListCertResult();
+				ListPcaCaCertificateResult();
+				explicit ListPcaCaCertificateResult(const std::string &payload);
+				~ListPcaCaCertificateResult();
 				long getTotalCount()const;
-				int getPageCount()const;
 				std::string getNextToken()const;
-				int getCurrentPage()const;
 				int getMaxResults()const;
-				int getShowSize()const;
 				std::vector<ListItem> getList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				long totalCount_;
-				int pageCount_;
 				std::string nextToken_;
-				int currentPage_;
 				int maxResults_;
-				int showSize_;
 				std::vector<ListItem> list_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CAS_MODEL_LISTCERTRESULT_H_
+#endif // !ALIBABACLOUD_CAS_MODEL_LISTPCACACERTIFICATERESULT_H_

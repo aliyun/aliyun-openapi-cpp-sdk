@@ -39,48 +39,62 @@ void ListCertResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCertListNode = value["CertList"]["Cert"];
-	for (auto valueCertListCert : allCertListNode)
+	auto allListNode = value["List"]["ListItem"];
+	for (auto valueListListItem : allListNode)
 	{
-		Cert certListObject;
-		if(!valueCertListCert["WhId"].isNull())
-			certListObject.whId = std::stol(valueCertListCert["WhId"].asString());
-		if(!valueCertListCert["Identifier"].isNull())
-			certListObject.identifier = valueCertListCert["Identifier"].asString();
-		if(!valueCertListCert["WhInstanceId"].isNull())
-			certListObject.whInstanceId = valueCertListCert["WhInstanceId"].asString();
-		if(!valueCertListCert["Status"].isNull())
-			certListObject.status = valueCertListCert["Status"].asString();
-		if(!valueCertListCert["SourceType"].isNull())
-			certListObject.sourceType = valueCertListCert["SourceType"].asString();
-		if(!valueCertListCert["CertType"].isNull())
-			certListObject.certType = valueCertListCert["CertType"].asString();
-		if(!valueCertListCert["CommonName"].isNull())
-			certListObject.commonName = valueCertListCert["CommonName"].asString();
-		if(!valueCertListCert["BeforeDate"].isNull())
-			certListObject.beforeDate = std::stol(valueCertListCert["BeforeDate"].asString());
-		if(!valueCertListCert["Issuer"].isNull())
-			certListObject.issuer = valueCertListCert["Issuer"].asString();
-		if(!valueCertListCert["AfterDate"].isNull())
-			certListObject.afterDate = std::stol(valueCertListCert["AfterDate"].asString());
-		if(!valueCertListCert["ExistPrivateKey"].isNull())
-			certListObject.existPrivateKey = valueCertListCert["ExistPrivateKey"].asString() == "true";
-		if(!valueCertListCert["Sans"].isNull())
-			certListObject.sans = valueCertListCert["Sans"].asString();
-		certList_.push_back(certListObject);
+		ListItem listObject;
+		if(!valueListListItem["Status"].isNull())
+			listObject.status = valueListListItem["Status"].asString();
+		if(!valueListListItem["AfterDate"].isNull())
+			listObject.afterDate = valueListListItem["AfterDate"].asString();
+		if(!valueListListItem["Organization"].isNull())
+			listObject.organization = valueListListItem["Organization"].asString();
+		if(!valueListListItem["KeyExportable"].isNull())
+			listObject.keyExportable = valueListListItem["KeyExportable"].asString() == "true";
+		if(!valueListListItem["SubjectDn"].isNull())
+			listObject.subjectDn = valueListListItem["SubjectDn"].asString();
+		if(!valueListListItem["Algorithm"].isNull())
+			listObject.algorithm = valueListListItem["Algorithm"].asString();
+		if(!valueListListItem["CertificateType"].isNull())
+			listObject.certificateType = valueListListItem["CertificateType"].asString();
+		if(!valueListListItem["Identifier"].isNull())
+			listObject.identifier = valueListListItem["Identifier"].asString();
+		if(!valueListListItem["SerialNumber"].isNull())
+			listObject.serialNumber = valueListListItem["SerialNumber"].asString();
+		if(!valueListListItem["Extra"].isNull())
+			listObject.extra = valueListListItem["Extra"].asString();
+		if(!valueListListItem["OrganizationUnit"].isNull())
+			listObject.organizationUnit = valueListListItem["OrganizationUnit"].asString();
+		if(!valueListListItem["BeforeTime"].isNull())
+			listObject.beforeTime = std::stol(valueListListItem["BeforeTime"].asString());
+		if(!valueListListItem["AliasName"].isNull())
+			listObject.aliasName = valueListListItem["AliasName"].asString();
+		if(!valueListListItem["AfterTime"].isNull())
+			listObject.afterTime = std::stol(valueListListItem["AfterTime"].asString());
+		if(!valueListListItem["Id"].isNull())
+			listObject.id = valueListListItem["Id"].asString();
+		if(!valueListListItem["CommonName"].isNull())
+			listObject.commonName = valueListListItem["CommonName"].asString();
+		if(!valueListListItem["BeforeDate"].isNull())
+			listObject.beforeDate = valueListListItem["BeforeDate"].asString();
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+			listObject.tags.push_back(value.asString());
+		list_.push_back(listObject);
 	}
-	if(!value["ShowSize"].isNull())
-		showSize_ = std::stol(value["ShowSize"].asString());
-	if(!value["CurrentPage"].isNull())
-		currentPage_ = std::stol(value["CurrentPage"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["PageCount"].isNull())
+		pageCount_ = std::stoi(value["PageCount"].asString());
+	if(!value["CurrentPage"].isNull())
+		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["ShowSize"].isNull())
+		showSize_ = std::stoi(value["ShowSize"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
-}
-
-std::vector<ListCertResult::Cert> ListCertResult::getCertList()const
-{
-	return certList_;
 }
 
 long ListCertResult::getTotalCount()const
@@ -88,13 +102,33 @@ long ListCertResult::getTotalCount()const
 	return totalCount_;
 }
 
-long ListCertResult::getCurrentPage()const
+int ListCertResult::getPageCount()const
+{
+	return pageCount_;
+}
+
+std::string ListCertResult::getNextToken()const
+{
+	return nextToken_;
+}
+
+int ListCertResult::getCurrentPage()const
 {
 	return currentPage_;
 }
 
-long ListCertResult::getShowSize()const
+int ListCertResult::getMaxResults()const
+{
+	return maxResults_;
+}
+
+int ListCertResult::getShowSize()const
 {
 	return showSize_;
+}
+
+std::vector<ListCertResult::ListItem> ListCertResult::getList()const
+{
+	return list_;
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAS_MODEL_LISTCERTREQUEST_H_
-#define ALIBABACLOUD_CAS_MODEL_LISTCERTREQUEST_H_
+#ifndef ALIBABACLOUD_CAS_MODEL_DESCRIBECACERTIFICATELISTREQUEST_H_
+#define ALIBABACLOUD_CAS_MODEL_DESCRIBECACERTIFICATELISTREQUEST_H_
 
 #include <alibabacloud/cas/CasExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,35 @@
 namespace AlibabaCloud {
 namespace Cas {
 namespace Model {
-class ALIBABACLOUD_CAS_EXPORT ListCertRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CAS_EXPORT DescribeCACertificateListRequest : public RpcServiceRequest {
 public:
-	ListCertRequest();
-	~ListCertRequest();
-	std::string getBeforeDate() const;
-	void setBeforeDate(const std::string &beforeDate);
+	DescribeCACertificateListRequest();
+	~DescribeCACertificateListRequest();
+	std::string getCaStatus() const;
+	void setCaStatus(const std::string &caStatus);
+	std::string getCertType() const;
+	void setCertType(const std::string &certType);
+	std::string getValidStatus() const;
+	void setValidStatus(const std::string &validStatus);
+	std::string getIssuerType() const;
+	void setIssuerType(const std::string &issuerType);
+	std::string getIdentifier() const;
+	void setIdentifier(const std::string &identifier);
 	int getShowSize() const;
 	void setShowSize(int showSize);
-	std::string getInstanceUuid() const;
-	void setInstanceUuid(const std::string &instanceUuid);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
-	std::string getType() const;
-	void setType(const std::string &type);
-	std::string getAfterDate() const;
-	void setAfterDate(const std::string &afterDate);
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
-	int getMaxResults() const;
-	void setMaxResults(int maxResults);
-	std::string getStatus() const;
-	void setStatus(const std::string &status);
 
 private:
-	std::string beforeDate_;
+	std::string caStatus_;
+	std::string certType_;
+	std::string validStatus_;
+	std::string issuerType_;
+	std::string identifier_;
 	int showSize_;
-	std::string instanceUuid_;
 	int currentPage_;
-	std::string type_;
-	std::string afterDate_;
-	std::string nextToken_;
-	int maxResults_;
-	std::string status_;
 };
 } // namespace Model
 } // namespace Cas
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CAS_MODEL_LISTCERTREQUEST_H_
+#endif // !ALIBABACLOUD_CAS_MODEL_DESCRIBECACERTIFICATELISTREQUEST_H_
