@@ -52,6 +52,15 @@ void SendSmsVerifyCodeRequest::setPhoneNumber(const std::string &phoneNumber) {
   setParameter(std::string("PhoneNumber"), phoneNumber);
 }
 
+std::string SendSmsVerifyCodeRequest::getLowcodeTenantId() const {
+  return lowcodeTenantId_;
+}
+
+void SendSmsVerifyCodeRequest::setLowcodeTenantId(const std::string &lowcodeTenantId) {
+  lowcodeTenantId_ = lowcodeTenantId;
+  setParameter(std::string("LowcodeTenantId"), lowcodeTenantId);
+}
+
 std::string SendSmsVerifyCodeRequest::getExtendFunction() const {
   return extendFunction_;
 }
@@ -70,6 +79,15 @@ void SendSmsVerifyCodeRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string SendSmsVerifyCodeRequest::getLowcodePhysicAppName() const {
+  return lowcodePhysicAppName_;
+}
+
+void SendSmsVerifyCodeRequest::setLowcodePhysicAppName(const std::string &lowcodePhysicAppName) {
+  lowcodePhysicAppName_ = lowcodePhysicAppName;
+  setParameter(std::string("LowcodePhysicAppName"), lowcodePhysicAppName);
+}
+
 std::string SendSmsVerifyCodeRequest::getSmsUpExtendCode() const {
   return smsUpExtendCode_;
 }
@@ -86,6 +104,15 @@ std::string SendSmsVerifyCodeRequest::getSignName() const {
 void SendSmsVerifyCodeRequest::setSignName(const std::string &signName) {
   signName_ = signName;
   setParameter(std::string("SignName"), signName);
+}
+
+long SendSmsVerifyCodeRequest::getAutoRetry() const {
+  return autoRetry_;
+}
+
+void SendSmsVerifyCodeRequest::setAutoRetry(long autoRetry) {
+  autoRetry_ = autoRetry;
+  setParameter(std::string("AutoRetry"), std::to_string(autoRetry));
 }
 
 std::string SendSmsVerifyCodeRequest::getRouteName() const {
@@ -131,6 +158,15 @@ bool SendSmsVerifyCodeRequest::getReturnVerifyCode() const {
 void SendSmsVerifyCodeRequest::setReturnVerifyCode(bool returnVerifyCode) {
   returnVerifyCode_ = returnVerifyCode;
   setParameter(std::string("ReturnVerifyCode"), returnVerifyCode ? "true" : "false");
+}
+
+std::string SendSmsVerifyCodeRequest::getLowcodeLogicAppName() const {
+  return lowcodeLogicAppName_;
+}
+
+void SendSmsVerifyCodeRequest::setLowcodeLogicAppName(const std::string &lowcodeLogicAppName) {
+  lowcodeLogicAppName_ = lowcodeLogicAppName;
+  setParameter(std::string("LowcodeLogicAppName"), lowcodeLogicAppName);
 }
 
 long SendSmsVerifyCodeRequest::getCodeType() const {

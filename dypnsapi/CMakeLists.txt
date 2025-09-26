@@ -43,10 +43,6 @@ set(dypnsapi_public_header_model
 	include/alibabacloud/dypnsapi/model/GetPhoneWithTokenResult.h
 	include/alibabacloud/dypnsapi/model/GetSmsAuthTokensRequest.h
 	include/alibabacloud/dypnsapi/model/GetSmsAuthTokensResult.h
-	include/alibabacloud/dypnsapi/model/JyCreateVerifySchemeRequest.h
-	include/alibabacloud/dypnsapi/model/JyCreateVerifySchemeResult.h
-	include/alibabacloud/dypnsapi/model/JyQueryAppInfoBySceneCodeRequest.h
-	include/alibabacloud/dypnsapi/model/JyQueryAppInfoBySceneCodeResult.h
 	include/alibabacloud/dypnsapi/model/QueryGateVerifyBillingPublicRequest.h
 	include/alibabacloud/dypnsapi/model/QueryGateVerifyBillingPublicResult.h
 	include/alibabacloud/dypnsapi/model/QueryGateVerifyStatisticPublicRequest.h
@@ -88,10 +84,6 @@ set(dypnsapi_src
 	src/model/GetPhoneWithTokenResult.cc
 	src/model/GetSmsAuthTokensRequest.cc
 	src/model/GetSmsAuthTokensResult.cc
-	src/model/JyCreateVerifySchemeRequest.cc
-	src/model/JyCreateVerifySchemeResult.cc
-	src/model/JyQueryAppInfoBySceneCodeRequest.cc
-	src/model/JyQueryAppInfoBySceneCodeResult.cc
 	src/model/QueryGateVerifyBillingPublicRequest.cc
 	src/model/QueryGateVerifyBillingPublicResult.cc
 	src/model/QueryGateVerifyStatisticPublicRequest.cc

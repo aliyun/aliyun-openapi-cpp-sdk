@@ -44,10 +44,6 @@
 #include "model/GetPhoneWithTokenResult.h"
 #include "model/GetSmsAuthTokensRequest.h"
 #include "model/GetSmsAuthTokensResult.h"
-#include "model/JyCreateVerifySchemeRequest.h"
-#include "model/JyCreateVerifySchemeResult.h"
-#include "model/JyQueryAppInfoBySceneCodeRequest.h"
-#include "model/JyQueryAppInfoBySceneCodeResult.h"
 #include "model/QueryGateVerifyBillingPublicRequest.h"
 #include "model/QueryGateVerifyBillingPublicResult.h"
 #include "model/QueryGateVerifyStatisticPublicRequest.h"
@@ -106,12 +102,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetSmsAuthTokensResult> GetSmsAuthTokensOutcome;
 			typedef std::future<GetSmsAuthTokensOutcome> GetSmsAuthTokensOutcomeCallable;
 			typedef std::function<void(const DypnsapiClient*, const Model::GetSmsAuthTokensRequest&, const GetSmsAuthTokensOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSmsAuthTokensAsyncHandler;
-			typedef Outcome<Error, Model::JyCreateVerifySchemeResult> JyCreateVerifySchemeOutcome;
-			typedef std::future<JyCreateVerifySchemeOutcome> JyCreateVerifySchemeOutcomeCallable;
-			typedef std::function<void(const DypnsapiClient*, const Model::JyCreateVerifySchemeRequest&, const JyCreateVerifySchemeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> JyCreateVerifySchemeAsyncHandler;
-			typedef Outcome<Error, Model::JyQueryAppInfoBySceneCodeResult> JyQueryAppInfoBySceneCodeOutcome;
-			typedef std::future<JyQueryAppInfoBySceneCodeOutcome> JyQueryAppInfoBySceneCodeOutcomeCallable;
-			typedef std::function<void(const DypnsapiClient*, const Model::JyQueryAppInfoBySceneCodeRequest&, const JyQueryAppInfoBySceneCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> JyQueryAppInfoBySceneCodeAsyncHandler;
 			typedef Outcome<Error, Model::QueryGateVerifyBillingPublicResult> QueryGateVerifyBillingPublicOutcome;
 			typedef std::future<QueryGateVerifyBillingPublicOutcome> QueryGateVerifyBillingPublicOutcomeCallable;
 			typedef std::function<void(const DypnsapiClient*, const Model::QueryGateVerifyBillingPublicRequest&, const QueryGateVerifyBillingPublicOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryGateVerifyBillingPublicAsyncHandler;
@@ -174,12 +164,6 @@ namespace AlibabaCloud
 			GetSmsAuthTokensOutcome getSmsAuthTokens(const Model::GetSmsAuthTokensRequest &request)const;
 			void getSmsAuthTokensAsync(const Model::GetSmsAuthTokensRequest& request, const GetSmsAuthTokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSmsAuthTokensOutcomeCallable getSmsAuthTokensCallable(const Model::GetSmsAuthTokensRequest& request) const;
-			JyCreateVerifySchemeOutcome jyCreateVerifyScheme(const Model::JyCreateVerifySchemeRequest &request)const;
-			void jyCreateVerifySchemeAsync(const Model::JyCreateVerifySchemeRequest& request, const JyCreateVerifySchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			JyCreateVerifySchemeOutcomeCallable jyCreateVerifySchemeCallable(const Model::JyCreateVerifySchemeRequest& request) const;
-			JyQueryAppInfoBySceneCodeOutcome jyQueryAppInfoBySceneCode(const Model::JyQueryAppInfoBySceneCodeRequest &request)const;
-			void jyQueryAppInfoBySceneCodeAsync(const Model::JyQueryAppInfoBySceneCodeRequest& request, const JyQueryAppInfoBySceneCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			JyQueryAppInfoBySceneCodeOutcomeCallable jyQueryAppInfoBySceneCodeCallable(const Model::JyQueryAppInfoBySceneCodeRequest& request) const;
 			QueryGateVerifyBillingPublicOutcome queryGateVerifyBillingPublic(const Model::QueryGateVerifyBillingPublicRequest &request)const;
 			void queryGateVerifyBillingPublicAsync(const Model::QueryGateVerifyBillingPublicRequest& request, const QueryGateVerifyBillingPublicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryGateVerifyBillingPublicOutcomeCallable queryGateVerifyBillingPublicCallable(const Model::QueryGateVerifyBillingPublicRequest& request) const;
