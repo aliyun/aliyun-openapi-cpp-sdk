@@ -25,6 +25,15 @@ DescribeMaskingRulesRequest::DescribeMaskingRulesRequest()
 
 DescribeMaskingRulesRequest::~DescribeMaskingRulesRequest() {}
 
+std::string DescribeMaskingRulesRequest::getInterfaceVersion() const {
+  return interfaceVersion_;
+}
+
+void DescribeMaskingRulesRequest::setInterfaceVersion(const std::string &interfaceVersion) {
+  interfaceVersion_ = interfaceVersion;
+  setParameter(std::string("InterfaceVersion"), interfaceVersion);
+}
+
 std::string DescribeMaskingRulesRequest::getDBClusterId() const {
   return dBClusterId_;
 }

@@ -61,6 +61,15 @@ void ModifyDBClusterStorageSpaceRequest::setAccessKeyId(const std::string &acces
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBClusterStorageSpaceRequest::getCloudProvider() const {
+  return cloudProvider_;
+}
+
+void ModifyDBClusterStorageSpaceRequest::setCloudProvider(const std::string &cloudProvider) {
+  cloudProvider_ = cloudProvider;
+  setParameter(std::string("CloudProvider"), cloudProvider);
+}
+
 std::string ModifyDBClusterStorageSpaceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

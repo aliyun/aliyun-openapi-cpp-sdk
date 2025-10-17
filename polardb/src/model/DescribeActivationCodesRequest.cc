@@ -70,6 +70,24 @@ void DescribeActivationCodesRequest::setAliyunOrderId(const std::string &aliyunO
   setParameter(std::string("AliyunOrderId"), aliyunOrderId);
 }
 
+std::string DescribeActivationCodesRequest::getMacAddress() const {
+  return macAddress_;
+}
+
+void DescribeActivationCodesRequest::setMacAddress(const std::string &macAddress) {
+  macAddress_ = macAddress;
+  setParameter(std::string("MacAddress"), macAddress);
+}
+
+std::string DescribeActivationCodesRequest::getSystemIdentifier() const {
+  return systemIdentifier_;
+}
+
+void DescribeActivationCodesRequest::setSystemIdentifier(const std::string &systemIdentifier) {
+  systemIdentifier_ = systemIdentifier;
+  setParameter(std::string("SystemIdentifier"), systemIdentifier);
+}
+
 std::string DescribeActivationCodesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -178,6 +178,15 @@ void CreateDBClusterEndpointRequest::setVSwitchId(const std::string &vSwitchId) 
   setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
+std::string CreateDBClusterEndpointRequest::getPolarFsInstanceId() const {
+  return polarFsInstanceId_;
+}
+
+void CreateDBClusterEndpointRequest::setPolarFsInstanceId(const std::string &polarFsInstanceId) {
+  polarFsInstanceId_ = polarFsInstanceId;
+  setParameter(std::string("PolarFsInstanceId"), polarFsInstanceId);
+}
+
 std::string CreateDBClusterEndpointRequest::getNodes() const {
   return nodes_;
 }

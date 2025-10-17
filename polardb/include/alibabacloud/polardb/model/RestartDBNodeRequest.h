@@ -34,22 +34,34 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getDBNodeId() const;
 	void setDBNodeId(const std::string &dBNodeId);
+	std::string getPlannedEndTime() const;
+	void setPlannedEndTime(const std::string &plannedEndTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getPlannedStartTime() const;
+	void setPlannedStartTime(const std::string &plannedStartTime);
+	std::string getFromTimeService() const;
+	void setFromTimeService(const std::string &fromTimeService);
 
 private:
 	long resourceOwnerId_;
 	std::string dBNodeId_;
+	std::string plannedEndTime_;
 	std::string accessKeyId_;
+	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string plannedStartTime_;
+	std::string fromTimeService_;
 };
 } // namespace Model
 } // namespace Polardb

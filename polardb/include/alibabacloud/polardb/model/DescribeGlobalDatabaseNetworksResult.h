@@ -34,6 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct GlobalDatabaseNetwork
 				{
+					struct Labels
+					{
+						std::string gDNVersion;
+					};
 					struct DBCluster
 					{
 						std::string role;
@@ -53,6 +57,7 @@ namespace AlibabaCloud
 					std::string gDNId;
 					std::string zoneId;
 					std::string createTime;
+					Labels labels;
 					std::string dBType;
 					std::string gDNDescription;
 					std::vector<GlobalDatabaseNetwork::DBCluster> dBClusters;

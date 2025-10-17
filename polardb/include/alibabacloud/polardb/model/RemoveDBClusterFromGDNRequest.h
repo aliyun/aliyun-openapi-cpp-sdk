@@ -46,6 +46,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	bool getForce() const;
+	void setForce(bool force);
 
 private:
 	long resourceOwnerId_;
@@ -56,6 +58,7 @@ private:
 	std::string dBClusterId_;
 	std::string ownerAccount_;
 	long ownerId_;
+	bool force_;
 };
 } // namespace Model
 } // namespace Polardb

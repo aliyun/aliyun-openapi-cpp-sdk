@@ -70,6 +70,15 @@ void ModifyDBClusterRequest::setStandbyHAMode(const std::string &standbyHAMode) 
   setParameter(std::string("StandbyHAMode"), standbyHAMode);
 }
 
+std::string ModifyDBClusterRequest::getPlannedEscapeTime() const {
+  return plannedEscapeTime_;
+}
+
+void ModifyDBClusterRequest::setPlannedEscapeTime(const std::string &plannedEscapeTime) {
+  plannedEscapeTime_ = plannedEscapeTime;
+  setParameter(std::string("PlannedEscapeTime"), plannedEscapeTime);
+}
+
 std::string ModifyDBClusterRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

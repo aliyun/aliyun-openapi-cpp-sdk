@@ -43,6 +43,15 @@ void RestartDBNodeRequest::setDBNodeId(const std::string &dBNodeId) {
   setParameter(std::string("DBNodeId"), dBNodeId);
 }
 
+std::string RestartDBNodeRequest::getPlannedEndTime() const {
+  return plannedEndTime_;
+}
+
+void RestartDBNodeRequest::setPlannedEndTime(const std::string &plannedEndTime) {
+  plannedEndTime_ = plannedEndTime;
+  setParameter(std::string("PlannedEndTime"), plannedEndTime);
+}
+
 std::string RestartDBNodeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -50,6 +59,15 @@ std::string RestartDBNodeRequest::getAccessKeyId() const {
 void RestartDBNodeRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string RestartDBNodeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RestartDBNodeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string RestartDBNodeRequest::getResourceOwnerAccount() const {
@@ -77,5 +95,23 @@ long RestartDBNodeRequest::getOwnerId() const {
 void RestartDBNodeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string RestartDBNodeRequest::getPlannedStartTime() const {
+  return plannedStartTime_;
+}
+
+void RestartDBNodeRequest::setPlannedStartTime(const std::string &plannedStartTime) {
+  plannedStartTime_ = plannedStartTime;
+  setParameter(std::string("PlannedStartTime"), plannedStartTime);
+}
+
+std::string RestartDBNodeRequest::getFromTimeService() const {
+  return fromTimeService_;
+}
+
+void RestartDBNodeRequest::setFromTimeService(const std::string &fromTimeService) {
+  fromTimeService_ = fromTimeService;
+  setParameter(std::string("FromTimeService"), fromTimeService);
 }
 

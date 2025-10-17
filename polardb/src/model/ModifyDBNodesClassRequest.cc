@@ -61,6 +61,15 @@ void ModifyDBNodesClassRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBNodesClassRequest::getCloudProvider() const {
+  return cloudProvider_;
+}
+
+void ModifyDBNodesClassRequest::setCloudProvider(const std::string &cloudProvider) {
+  cloudProvider_ = cloudProvider;
+  setParameter(std::string("CloudProvider"), cloudProvider);
+}
+
 std::string ModifyDBNodesClassRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

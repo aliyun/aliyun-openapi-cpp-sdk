@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct Address
 					{
+						bool dashboardUsed;
 						std::string privateZoneConnectionString;
 						std::string vPCId;
 						std::string vSwitchId;
@@ -45,13 +46,16 @@ namespace AlibabaCloud
 						std::string iPAddress;
 						std::string netType;
 					};
+					std::string dBEndpointStatus;
 					std::string dBEndpointId;
 					std::string polarSccTimeoutAction;
+					std::string dBEndpointCreateTime;
 					std::string dBClusterId;
 					std::string nodes;
 					std::string readWriteMode;
 					std::string dBEndpointDescription;
 					std::string polarSccWaitTimeout;
+					std::string consistLevelControlVersion;
 					std::string nodeWithRoles;
 					std::string autoAddNewNodes;
 					std::string endpointType;

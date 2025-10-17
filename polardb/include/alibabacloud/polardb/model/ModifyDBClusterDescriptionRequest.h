@@ -36,6 +36,8 @@ public:
 	void setDBClusterDescription(const std::string &dBClusterDescription);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getSubGroupName() const;
+	void setSubGroupName(const std::string &subGroupName);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
@@ -49,6 +51,7 @@ private:
 	long resourceOwnerId_;
 	std::string dBClusterDescription_;
 	std::string accessKeyId_;
+	std::string subGroupName_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;

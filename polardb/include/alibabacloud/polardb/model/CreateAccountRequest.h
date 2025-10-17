@@ -32,6 +32,8 @@ public:
 	~CreateAccountRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getNodeType() const;
+	void setNodeType(const std::string &nodeType);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getAccountType() const;
@@ -63,6 +65,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string nodeType_;
 	std::string clientToken_;
 	std::string accountType_;
 	std::string accountDescription_;

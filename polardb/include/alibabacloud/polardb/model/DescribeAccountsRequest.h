@@ -32,6 +32,8 @@ public:
 	~DescribeAccountsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getNodeType() const;
+	void setNodeType(const std::string &nodeType);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
@@ -51,6 +53,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string nodeType_;
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string accountName_;

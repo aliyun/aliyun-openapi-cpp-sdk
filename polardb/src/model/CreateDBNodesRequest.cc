@@ -70,6 +70,15 @@ void CreateDBNodesRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateDBNodesRequest::getCloudProvider() const {
+  return cloudProvider_;
+}
+
+void CreateDBNodesRequest::setCloudProvider(const std::string &cloudProvider) {
+  cloudProvider_ = cloudProvider;
+  setParameter(std::string("CloudProvider"), cloudProvider);
+}
+
 std::string CreateDBNodesRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }

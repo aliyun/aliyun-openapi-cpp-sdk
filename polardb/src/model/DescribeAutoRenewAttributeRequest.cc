@@ -52,6 +52,15 @@ void DescribeAutoRenewAttributeRequest::setAccessKeyId(const std::string &access
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeAutoRenewAttributeRequest::getCloudProvider() const {
+  return cloudProvider_;
+}
+
+void DescribeAutoRenewAttributeRequest::setCloudProvider(const std::string &cloudProvider) {
+  cloudProvider_ = cloudProvider;
+  setParameter(std::string("CloudProvider"), cloudProvider);
+}
+
 std::string DescribeAutoRenewAttributeRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
@@ -104,6 +113,15 @@ long DescribeAutoRenewAttributeRequest::getOwnerId() const {
 void DescribeAutoRenewAttributeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeAutoRenewAttributeRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void DescribeAutoRenewAttributeRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
 std::string DescribeAutoRenewAttributeRequest::getDBClusterIds() const {

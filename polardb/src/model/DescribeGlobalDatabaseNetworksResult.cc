@@ -83,6 +83,9 @@ void DescribeGlobalDatabaseNetworksResult::parse(const std::string &payload)
 				outCloudDBClustersObject.regionId = valueItemsGlobalDatabaseNetworkOutCloudDBClustersOutCloudDBCluster["RegionId"].asString();
 			itemsObject.outCloudDBClusters.push_back(outCloudDBClustersObject);
 		}
+		auto labelsNode = value["Labels"];
+		if(!labelsNode["GDNVersion"].isNull())
+			itemsObject.labels.gDNVersion = labelsNode["GDNVersion"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

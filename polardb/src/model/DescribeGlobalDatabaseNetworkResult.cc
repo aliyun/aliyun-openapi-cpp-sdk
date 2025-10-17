@@ -113,6 +113,9 @@ void DescribeGlobalDatabaseNetworkResult::parse(const std::string &payload)
 		}
 		dBClusters_.push_back(dBClustersObject);
 	}
+	auto labelsNode = value["Labels"];
+	if(!labelsNode["GDNVersion"].isNull())
+		labels_.gDNVersion = labelsNode["GDNVersion"].asString();
 	if(!value["GDNStatus"].isNull())
 		gDNStatus_ = value["GDNStatus"].asString();
 	if(!value["DBVersion"].isNull())
@@ -167,6 +170,11 @@ std::string DescribeGlobalDatabaseNetworkResult::getCreateTime()const
 std::string DescribeGlobalDatabaseNetworkResult::getDBClusterId()const
 {
 	return dBClusterId_;
+}
+
+DescribeGlobalDatabaseNetworkResult::Labels DescribeGlobalDatabaseNetworkResult::getLabels()const
+{
+	return labels_;
 }
 
 std::string DescribeGlobalDatabaseNetworkResult::getDBType()const

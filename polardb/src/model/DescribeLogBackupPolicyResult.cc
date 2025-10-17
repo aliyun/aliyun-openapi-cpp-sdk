@@ -39,6 +39,28 @@ void DescribeLogBackupPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allAdvancedLogPoliciesNode = value["AdvancedLogPolicies"]["AdvancedLogPolicy"];
+	for (auto valueAdvancedLogPoliciesAdvancedLogPolicy : allAdvancedLogPoliciesNode)
+	{
+		AdvancedLogPolicy advancedLogPoliciesObject;
+		if(!valueAdvancedLogPoliciesAdvancedLogPolicy["LogRetentionType"].isNull())
+			advancedLogPoliciesObject.logRetentionType = valueAdvancedLogPoliciesAdvancedLogPolicy["LogRetentionType"].asString();
+		if(!valueAdvancedLogPoliciesAdvancedLogPolicy["DestType"].isNull())
+			advancedLogPoliciesObject.destType = valueAdvancedLogPoliciesAdvancedLogPolicy["DestType"].asString();
+		if(!valueAdvancedLogPoliciesAdvancedLogPolicy["SrcRegion"].isNull())
+			advancedLogPoliciesObject.srcRegion = valueAdvancedLogPoliciesAdvancedLogPolicy["SrcRegion"].asString();
+		if(!valueAdvancedLogPoliciesAdvancedLogPolicy["EnableLogBackup"].isNull())
+			advancedLogPoliciesObject.enableLogBackup = std::stoi(valueAdvancedLogPoliciesAdvancedLogPolicy["EnableLogBackup"].asString());
+		if(!valueAdvancedLogPoliciesAdvancedLogPolicy["SrcType"].isNull())
+			advancedLogPoliciesObject.srcType = valueAdvancedLogPoliciesAdvancedLogPolicy["SrcType"].asString();
+		if(!valueAdvancedLogPoliciesAdvancedLogPolicy["PolicyId"].isNull())
+			advancedLogPoliciesObject.policyId = valueAdvancedLogPoliciesAdvancedLogPolicy["PolicyId"].asString();
+		if(!valueAdvancedLogPoliciesAdvancedLogPolicy["LogRetentionValue"].isNull())
+			advancedLogPoliciesObject.logRetentionValue = valueAdvancedLogPoliciesAdvancedLogPolicy["LogRetentionValue"].asString();
+		if(!valueAdvancedLogPoliciesAdvancedLogPolicy["DestRegion"].isNull())
+			advancedLogPoliciesObject.destRegion = valueAdvancedLogPoliciesAdvancedLogPolicy["DestRegion"].asString();
+		advancedLogPolicies_.push_back(advancedLogPoliciesObject);
+	}
 	if(!value["LogBackupRetentionPeriod"].isNull())
 		logBackupRetentionPeriod_ = std::stoi(value["LogBackupRetentionPeriod"].asString());
 	if(!value["LogBackupAnotherRegionRetentionPeriod"].isNull())
@@ -68,5 +90,10 @@ std::string DescribeLogBackupPolicyResult::getLogBackupAnotherRegionRetentionPer
 int DescribeLogBackupPolicyResult::getEnableBackupLog()const
 {
 	return enableBackupLog_;
+}
+
+std::vector<DescribeLogBackupPolicyResult::AdvancedLogPolicy> DescribeLogBackupPolicyResult::getAdvancedLogPolicies()const
+{
+	return advancedLogPolicies_;
 }
 

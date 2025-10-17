@@ -38,6 +38,8 @@ public:
 	void setType(const std::string &type);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getSubGroupName() const;
+	void setSubGroupName(const std::string &subGroupName);
 	std::string getKey() const;
 	void setKey(const std::string &key);
 	std::string getResourceOwnerAccount() const;
@@ -60,6 +62,7 @@ private:
 	std::string startTime_;
 	std::string type_;
 	std::string accessKeyId_;
+	std::string subGroupName_;
 	std::string key_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;

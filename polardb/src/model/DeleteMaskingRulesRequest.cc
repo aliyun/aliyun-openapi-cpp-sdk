@@ -25,6 +25,15 @@ DeleteMaskingRulesRequest::DeleteMaskingRulesRequest()
 
 DeleteMaskingRulesRequest::~DeleteMaskingRulesRequest() {}
 
+std::string DeleteMaskingRulesRequest::getInterfaceVersion() const {
+  return interfaceVersion_;
+}
+
+void DeleteMaskingRulesRequest::setInterfaceVersion(const std::string &interfaceVersion) {
+  interfaceVersion_ = interfaceVersion;
+  setParameter(std::string("InterfaceVersion"), interfaceVersion);
+}
+
 std::string DeleteMaskingRulesRequest::getDBClusterId() const {
   return dBClusterId_;
 }

@@ -60,6 +60,15 @@ void DeleteDBNodesRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DeleteDBNodesRequest::getCloudProvider() const {
+  return cloudProvider_;
+}
+
+void DeleteDBNodesRequest::setCloudProvider(const std::string &cloudProvider) {
+  cloudProvider_ = cloudProvider;
+  setParameter(std::string("CloudProvider"), cloudProvider);
+}
+
 std::string DeleteDBNodesRequest::getDBNodeType() const {
   return dBNodeType_;
 }

@@ -52,6 +52,32 @@ void ModifyBackupPolicyRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::vector<ModifyBackupPolicyRequest::AdvancedDataPolicies> ModifyBackupPolicyRequest::getAdvancedDataPolicies() const {
+  return advancedDataPolicies_;
+}
+
+void ModifyBackupPolicyRequest::setAdvancedDataPolicies(const std::vector<ModifyBackupPolicyRequest::AdvancedDataPolicies> &advancedDataPolicies) {
+  advancedDataPolicies_ = advancedDataPolicies;
+  for(int dep1 = 0; dep1 != advancedDataPolicies.size(); dep1++) {
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".ActionType", advancedDataPolicies[dep1].actionType);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".SrcType", advancedDataPolicies[dep1].srcType);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".RetentionValue", advancedDataPolicies[dep1].retentionValue);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".DestRegion", advancedDataPolicies[dep1].destRegion);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".BakType", advancedDataPolicies[dep1].bakType);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".OnlyPreserveOneEachDay", advancedDataPolicies[dep1].onlyPreserveOneEachDay ? "true" : "false");
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".FilterValue", advancedDataPolicies[dep1].filterValue);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".DumpAction", advancedDataPolicies[dep1].dumpAction);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".OnlyPreserveOneEachHour", advancedDataPolicies[dep1].onlyPreserveOneEachHour ? "true" : "false");
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".SrcRegion", advancedDataPolicies[dep1].srcRegion);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".FilterType", advancedDataPolicies[dep1].filterType);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".RetentionType", advancedDataPolicies[dep1].retentionType);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".FilterKey", advancedDataPolicies[dep1].filterKey);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".AutoCreated", advancedDataPolicies[dep1].autoCreated ? "true" : "false");
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".PolicyId", advancedDataPolicies[dep1].policyId);
+    setParameter(std::string("AdvancedDataPolicies") + "." + std::to_string(dep1 + 1) + ".DestType", advancedDataPolicies[dep1].destType);
+  }
+}
+
 std::string ModifyBackupPolicyRequest::getDataLevel1BackupPeriod() const {
   return dataLevel1BackupPeriod_;
 }
@@ -131,6 +157,15 @@ std::string ModifyBackupPolicyRequest::getDataLevel2BackupAnotherRegionRetention
 void ModifyBackupPolicyRequest::setDataLevel2BackupAnotherRegionRetentionPeriod(const std::string &dataLevel2BackupAnotherRegionRetentionPeriod) {
   dataLevel2BackupAnotherRegionRetentionPeriod_ = dataLevel2BackupAnotherRegionRetentionPeriod;
   setParameter(std::string("DataLevel2BackupAnotherRegionRetentionPeriod"), dataLevel2BackupAnotherRegionRetentionPeriod);
+}
+
+std::string ModifyBackupPolicyRequest::getBackupPolicyLevel() const {
+  return backupPolicyLevel_;
+}
+
+void ModifyBackupPolicyRequest::setBackupPolicyLevel(const std::string &backupPolicyLevel) {
+  backupPolicyLevel_ = backupPolicyLevel;
+  setParameter(std::string("BackupPolicyLevel"), backupPolicyLevel);
 }
 
 long ModifyBackupPolicyRequest::getOwnerId() const {

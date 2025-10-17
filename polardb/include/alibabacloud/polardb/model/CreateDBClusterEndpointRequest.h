@@ -64,6 +64,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
+	std::string getPolarFsInstanceId() const;
+	void setPolarFsInstanceId(const std::string &polarFsInstanceId);
 	std::string getNodes() const;
 	void setNodes(const std::string &nodes);
 	std::string getSccMode() const;
@@ -89,6 +91,7 @@ private:
 	std::string dBEndpointDescription_;
 	long ownerId_;
 	std::string vSwitchId_;
+	std::string polarFsInstanceId_;
 	std::string nodes_;
 	std::string sccMode_;
 	std::string vPCId_;

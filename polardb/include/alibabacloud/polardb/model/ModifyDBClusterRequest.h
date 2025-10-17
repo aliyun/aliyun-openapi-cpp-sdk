@@ -40,6 +40,8 @@ public:
 	void setTableMeta(const std::string &tableMeta);
 	std::string getStandbyHAMode() const;
 	void setStandbyHAMode(const std::string &standbyHAMode);
+	std::string getPlannedEscapeTime() const;
+	void setPlannedEscapeTime(const std::string &plannedEscapeTime);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
@@ -73,6 +75,7 @@ private:
 	std::string accessKeyId_;
 	std::string tableMeta_;
 	std::string standbyHAMode_;
+	std::string plannedEscapeTime_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;

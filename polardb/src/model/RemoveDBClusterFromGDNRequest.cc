@@ -97,3 +97,12 @@ void RemoveDBClusterFromGDNRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+bool RemoveDBClusterFromGDNRequest::getForce() const {
+  return force_;
+}
+
+void RemoveDBClusterFromGDNRequest::setForce(bool force) {
+  force_ = force;
+  setParameter(std::string("Force"), force ? "true" : "false");
+}
+

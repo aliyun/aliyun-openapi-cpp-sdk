@@ -43,24 +43,24 @@ void DescribeParameterGroupResult::parse(const std::string &payload)
 	for (auto valueParameterGroupParameterGroupItem : allParameterGroupNode)
 	{
 		ParameterGroupItem parameterGroupObject;
-		if(!valueParameterGroupParameterGroupItem["DBType"].isNull())
-			parameterGroupObject.dBType = valueParameterGroupParameterGroupItem["DBType"].asString();
 		if(!valueParameterGroupParameterGroupItem["DBVersion"].isNull())
 			parameterGroupObject.dBVersion = valueParameterGroupParameterGroupItem["DBVersion"].asString();
+		if(!valueParameterGroupParameterGroupItem["ParameterGroupId"].isNull())
+			parameterGroupObject.parameterGroupId = valueParameterGroupParameterGroupItem["ParameterGroupId"].asString();
 		if(!valueParameterGroupParameterGroupItem["ParameterGroupName"].isNull())
 			parameterGroupObject.parameterGroupName = valueParameterGroupParameterGroupItem["ParameterGroupName"].asString();
 		if(!valueParameterGroupParameterGroupItem["ForceRestart"].isNull())
 			parameterGroupObject.forceRestart = valueParameterGroupParameterGroupItem["ForceRestart"].asString();
 		if(!valueParameterGroupParameterGroupItem["ParameterGroupType"].isNull())
 			parameterGroupObject.parameterGroupType = valueParameterGroupParameterGroupItem["ParameterGroupType"].asString();
-		if(!valueParameterGroupParameterGroupItem["ParameterCounts"].isNull())
-			parameterGroupObject.parameterCounts = std::stoi(valueParameterGroupParameterGroupItem["ParameterCounts"].asString());
 		if(!valueParameterGroupParameterGroupItem["ParameterGroupDesc"].isNull())
 			parameterGroupObject.parameterGroupDesc = valueParameterGroupParameterGroupItem["ParameterGroupDesc"].asString();
 		if(!valueParameterGroupParameterGroupItem["CreateTime"].isNull())
 			parameterGroupObject.createTime = valueParameterGroupParameterGroupItem["CreateTime"].asString();
-		if(!valueParameterGroupParameterGroupItem["ParameterGroupId"].isNull())
-			parameterGroupObject.parameterGroupId = valueParameterGroupParameterGroupItem["ParameterGroupId"].asString();
+		if(!valueParameterGroupParameterGroupItem["ParameterCounts"].isNull())
+			parameterGroupObject.parameterCounts = std::stoi(valueParameterGroupParameterGroupItem["ParameterCounts"].asString());
+		if(!valueParameterGroupParameterGroupItem["DBType"].isNull())
+			parameterGroupObject.dBType = valueParameterGroupParameterGroupItem["DBType"].asString();
 		auto allParameterDetailNode = valueParameterGroupParameterGroupItem["ParameterDetail"]["ParameterDetailItem"];
 		for (auto valueParameterGroupParameterGroupItemParameterDetailParameterDetailItem : allParameterDetailNode)
 		{

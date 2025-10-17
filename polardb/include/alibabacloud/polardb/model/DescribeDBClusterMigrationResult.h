@@ -76,12 +76,35 @@ namespace AlibabaCloud
 					std::string dtsJobName;
 					std::string dtsInstanceID;
 				};
+				struct SrcBidirectionalDtsJob
+				{
+					std::string status;
+					std::string dtsJobDirection;
+					std::string dtsJobId;
+					std::string destinationEndpoint;
+					std::string reverseDtsJobId;
+					std::string sourceEndpoint;
+					std::string dtsJobName;
+					std::string dtsInstanceId;
+				};
 				struct DstDtsJob
 				{
 					std::string status;
-					std::string dtsJobId;
 					std::string dtsJobDirection;
+					std::string dtsJobId;
 					std::string destinationEndpoint;
+					std::string reverseDtsJobId;
+					std::string sourceEndpoint;
+					std::string dtsJobName;
+					std::string dtsInstanceId;
+				};
+				struct DstBidirectionalDtsJob
+				{
+					std::string status;
+					std::string dtsJobDirection;
+					std::string dtsJobId;
+					std::string destinationEndpoint;
+					std::string reverseDtsJobId;
 					std::string sourceEndpoint;
 					std::string dtsJobName;
 					std::string dtsInstanceId;
@@ -99,6 +122,7 @@ namespace AlibabaCloud
 				std::string getSourceRDSDBInstanceId()const;
 				std::string getDBClusterReadWriteMode()const;
 				std::string getMigrationProgress()const;
+				std::vector<SrcBidirectionalDtsJob> getSrcBidirectionalDtsJobList()const;
 				std::string getMigrationStatus()const;
 				std::string getDtsInstanceId()const;
 				std::vector<RdsEndpoint> getRdsEndpointList()const;
@@ -111,6 +135,7 @@ namespace AlibabaCloud
 				std::string getRdsReadWriteMode()const;
 				std::vector<DstDtsJob> getDstDtsJobList()const;
 				int getDelayedSeconds()const;
+				std::vector<DstBidirectionalDtsJob> getDstBidirectionalDtsJobList()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -123,6 +148,7 @@ namespace AlibabaCloud
 				std::string sourceRDSDBInstanceId_;
 				std::string dBClusterReadWriteMode_;
 				std::string migrationProgress_;
+				std::vector<SrcBidirectionalDtsJob> srcBidirectionalDtsJobList_;
 				std::string migrationStatus_;
 				std::string dtsInstanceId_;
 				std::vector<RdsEndpoint> rdsEndpointList_;
@@ -135,6 +161,7 @@ namespace AlibabaCloud
 				std::string rdsReadWriteMode_;
 				std::vector<DstDtsJob> dstDtsJobList_;
 				int delayedSeconds_;
+				std::vector<DstBidirectionalDtsJob> dstBidirectionalDtsJobList_;
 
 			};
 		}

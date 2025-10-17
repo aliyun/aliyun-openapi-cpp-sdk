@@ -34,6 +34,25 @@ void ModifyLogBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::vector<ModifyLogBackupPolicyRequest::AdvancedLogPolicies> ModifyLogBackupPolicyRequest::getAdvancedLogPolicies() const {
+  return advancedLogPolicies_;
+}
+
+void ModifyLogBackupPolicyRequest::setAdvancedLogPolicies(const std::vector<ModifyLogBackupPolicyRequest::AdvancedLogPolicies> &advancedLogPolicies) {
+  advancedLogPolicies_ = advancedLogPolicies;
+  for(int dep1 = 0; dep1 != advancedLogPolicies.size(); dep1++) {
+    setParameter(std::string("AdvancedLogPolicies") + "." + std::to_string(dep1 + 1) + ".ActionType", advancedLogPolicies[dep1].actionType);
+    setParameter(std::string("AdvancedLogPolicies") + "." + std::to_string(dep1 + 1) + ".SrcType", advancedLogPolicies[dep1].srcType);
+    setParameter(std::string("AdvancedLogPolicies") + "." + std::to_string(dep1 + 1) + ".PolicyId", advancedLogPolicies[dep1].policyId);
+    setParameter(std::string("AdvancedLogPolicies") + "." + std::to_string(dep1 + 1) + ".DestRegion", advancedLogPolicies[dep1].destRegion);
+    setParameter(std::string("AdvancedLogPolicies") + "." + std::to_string(dep1 + 1) + ".LogRetentionValue", advancedLogPolicies[dep1].logRetentionValue);
+    setParameter(std::string("AdvancedLogPolicies") + "." + std::to_string(dep1 + 1) + ".LogRetentionType", advancedLogPolicies[dep1].logRetentionType);
+    setParameter(std::string("AdvancedLogPolicies") + "." + std::to_string(dep1 + 1) + ".SrcRegion", advancedLogPolicies[dep1].srcRegion);
+    setParameter(std::string("AdvancedLogPolicies") + "." + std::to_string(dep1 + 1) + ".DestType", advancedLogPolicies[dep1].destType);
+    setParameter(std::string("AdvancedLogPolicies") + "." + std::to_string(dep1 + 1) + ".EnableLogBackup", std::to_string(advancedLogPolicies[dep1].enableLogBackup));
+  }
+}
+
 std::string ModifyLogBackupPolicyRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

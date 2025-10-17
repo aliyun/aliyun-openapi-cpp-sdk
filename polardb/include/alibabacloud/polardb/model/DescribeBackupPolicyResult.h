@@ -32,6 +32,24 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_POLARDB_EXPORT DescribeBackupPolicyResult : public ServiceResult
 			{
 			public:
+				struct AdvancedDataPolicy
+				{
+					bool onlyPreserveOneEachHour;
+					std::string retentionValue;
+					std::string bakType;
+					std::string filterKey;
+					std::string filterValue;
+					std::string destType;
+					std::string filterType;
+					std::string srcRegion;
+					bool autoCreated;
+					std::string srcType;
+					bool onlyPreserveOneEachDay;
+					std::string dumpAction;
+					std::string policyId;
+					std::string destRegion;
+					std::string retentionType;
+				};
 
 
 				DescribeBackupPolicyResult();
@@ -44,11 +62,14 @@ namespace AlibabaCloud
 				std::string getBackupRetentionPolicyOnClusterDeletion()const;
 				std::string getBackupFrequency()const;
 				std::string getDataLevel1BackupTime()const;
+				std::vector<AdvancedDataPolicy> getAdvancedDataPolicies()const;
 				std::string getPreferredNextBackupTime()const;
+				std::string getAdvancedPolicyOption()const;
 				std::string getDataLevel2BackupRetentionPeriod()const;
 				std::string getPreferredBackupPeriod()const;
 				std::string getDataLevel1BackupFrequency()const;
 				std::string getDataLevel2BackupPeriod()const;
+				std::string getBackupPolicyLevel()const;
 				int getBackupRetentionPeriod()const;
 				std::string getDataLevel1BackupPeriod()const;
 
@@ -62,11 +83,14 @@ namespace AlibabaCloud
 				std::string backupRetentionPolicyOnClusterDeletion_;
 				std::string backupFrequency_;
 				std::string dataLevel1BackupTime_;
+				std::vector<AdvancedDataPolicy> advancedDataPolicies_;
 				std::string preferredNextBackupTime_;
+				std::string advancedPolicyOption_;
 				std::string dataLevel2BackupRetentionPeriod_;
 				std::string preferredBackupPeriod_;
 				std::string dataLevel1BackupFrequency_;
 				std::string dataLevel2BackupPeriod_;
+				std::string backupPolicyLevel_;
 				int backupRetentionPeriod_;
 				std::string dataLevel1BackupPeriod_;
 

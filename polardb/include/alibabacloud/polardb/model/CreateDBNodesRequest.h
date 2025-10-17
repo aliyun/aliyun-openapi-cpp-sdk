@@ -44,6 +44,8 @@ public:
 	void setPlannedEndTime(const std::string &plannedEndTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getCloudProvider() const;
+	void setCloudProvider(const std::string &cloudProvider);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getDBNodeType() const;
@@ -69,6 +71,7 @@ private:
 	std::string endpointBindList_;
 	std::string plannedEndTime_;
 	std::string accessKeyId_;
+	std::string cloudProvider_;
 	std::string resourceGroupId_;
 	std::string dBNodeType_;
 	std::string resourceOwnerAccount_;

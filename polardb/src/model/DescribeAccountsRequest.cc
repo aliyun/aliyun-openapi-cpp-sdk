@@ -34,6 +34,15 @@ void DescribeAccountsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeAccountsRequest::getNodeType() const {
+  return nodeType_;
+}
+
+void DescribeAccountsRequest::setNodeType(const std::string &nodeType) {
+  nodeType_ = nodeType;
+  setParameter(std::string("NodeType"), nodeType);
+}
+
 int DescribeAccountsRequest::getPageNumber() const {
   return pageNumber_;
 }

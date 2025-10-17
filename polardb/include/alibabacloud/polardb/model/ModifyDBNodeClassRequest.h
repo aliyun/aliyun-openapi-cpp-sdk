@@ -38,6 +38,8 @@ public:
 	void setPlannedEndTime(const std::string &plannedEndTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getCloudProvider() const;
+	void setCloudProvider(const std::string &cloudProvider);
 	std::string getDBNodeType() const;
 	void setDBNodeType(const std::string &dBNodeType);
 	std::string getDBNodeTargetClass() const;
@@ -64,6 +66,7 @@ private:
 	std::string clientToken_;
 	std::string plannedEndTime_;
 	std::string accessKeyId_;
+	std::string cloudProvider_;
 	std::string dBNodeType_;
 	std::string dBNodeTargetClass_;
 	std::string resourceOwnerAccount_;

@@ -48,10 +48,18 @@ public:
 	void setStorageType(const std::string &storageType);
 	std::string getCreationCategory() const;
 	void setCreationCategory(const std::string &creationCategory);
+	std::string getCloudProvider() const;
+	void setCloudProvider(const std::string &cloudProvider);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	long getSourceUid() const;
+	void setSourceUid(long sourceUid);
 	std::string getDBNodeClass() const;
 	void setDBNodeClass(const std::string &dBNodeClass);
+	std::string getAccountName() const;
+	void setAccountName(const std::string &accountName);
+	std::string getEnsRegionId() const;
+	void setEnsRegionId(const std::string &ensRegionId);
 	std::string getCreationOption() const;
 	void setCreationOption(const std::string &creationOption);
 	std::vector<Tag> getTag() const;
@@ -72,6 +80,8 @@ public:
 	void setSecurityIPList(const std::string &securityIPList);
 	std::string getDBMinorVersion() const;
 	void setDBMinorVersion(const std::string &dBMinorVersion);
+	std::string getDnNodeClass() const;
+	void setDnNodeClass(const std::string &dnNodeClass);
 	long getProvisionedIops() const;
 	void setProvisionedIops(long provisionedIops);
 	bool getAutoRenew() const;
@@ -82,6 +92,8 @@ public:
 	void setStoragePayType(const std::string &storagePayType);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	std::string getCnNodeNum() const;
+	void setCnNodeNum(const std::string &cnNodeNum);
 	std::string getStorageAutoScale() const;
 	void setStorageAutoScale(const std::string &storageAutoScale);
 	bool getTDEStatus() const;
@@ -106,6 +118,8 @@ public:
 	void setClusterNetworkType(const std::string &clusterNetworkType);
 	std::string getStorageEncryptionKey() const;
 	void setStorageEncryptionKey(const std::string &storageEncryptionKey);
+	std::string getCnNodeClass() const;
+	void setCnNodeClass(const std::string &cnNodeClass);
 	std::string getParameterGroupId() const;
 	void setParameterGroupId(const std::string &parameterGroupId);
 	std::string getRegionId() const;
@@ -134,6 +148,8 @@ public:
 	void setTargetMinorVersion(const std::string &targetMinorVersion);
 	int getDBNodeNum() const;
 	void setDBNodeNum(int dBNodeNum);
+	std::string getAccountPassword() const;
+	void setAccountPassword(const std::string &accountPassword);
 	long getStorageUpperBound() const;
 	void setStorageUpperBound(long storageUpperBound);
 	std::string getVPCId() const;
@@ -154,6 +170,8 @@ public:
 	void setStorageSpace(long storageSpace);
 	std::string getServerlessType() const;
 	void setServerlessType(const std::string &serverlessType);
+	std::string getDnNodeNum() const;
+	void setDnNodeNum(const std::string &dnNodeNum);
 
 private:
 	long resourceOwnerId_;
@@ -163,8 +181,12 @@ private:
 	std::string scaleMax_;
 	std::string storageType_;
 	std::string creationCategory_;
+	std::string cloudProvider_;
 	std::string resourceGroupId_;
+	long sourceUid_;
 	std::string dBNodeClass_;
+	std::string accountName_;
+	std::string ensRegionId_;
 	std::string creationOption_;
 	std::vector<Tag> tag_;
 	std::string sourceResourceId_;
@@ -175,11 +197,13 @@ private:
 	std::string vSwitchId_;
 	std::string securityIPList_;
 	std::string dBMinorVersion_;
+	std::string dnNodeClass_;
 	long provisionedIops_;
 	bool autoRenew_;
 	std::string hotStandbyCluster_;
 	std::string storagePayType_;
 	std::string zoneId_;
+	std::string cnNodeNum_;
 	std::string storageAutoScale_;
 	bool tDEStatus_;
 	std::string allowShutDown_;
@@ -192,6 +216,7 @@ private:
 	std::string accessKeyId_;
 	std::string clusterNetworkType_;
 	std::string storageEncryptionKey_;
+	std::string cnNodeClass_;
 	std::string parameterGroupId_;
 	std::string regionId_;
 	std::string engine_;
@@ -206,6 +231,7 @@ private:
 	std::string burstingEnabled_;
 	std::string targetMinorVersion_;
 	int dBNodeNum_;
+	std::string accountPassword_;
 	long storageUpperBound_;
 	std::string vPCId_;
 	std::string scaleRoNumMin_;
@@ -216,6 +242,7 @@ private:
 	std::string payType_;
 	long storageSpace_;
 	std::string serverlessType_;
+	std::string dnNodeNum_;
 };
 } // namespace Model
 } // namespace Polardb

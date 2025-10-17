@@ -40,6 +40,10 @@ public:
 	void setPageSize(int pageSize);
 	std::string getAliyunOrderId() const;
 	void setAliyunOrderId(const std::string &aliyunOrderId);
+	std::string getMacAddress() const;
+	void setMacAddress(const std::string &macAddress);
+	std::string getSystemIdentifier() const;
+	void setSystemIdentifier(const std::string &systemIdentifier);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -53,6 +57,8 @@ private:
 	std::string accessKeyId_;
 	int pageSize_;
 	std::string aliyunOrderId_;
+	std::string macAddress_;
+	std::string systemIdentifier_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

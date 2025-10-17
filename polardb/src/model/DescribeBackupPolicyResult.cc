@@ -39,6 +39,42 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allAdvancedDataPoliciesNode = value["AdvancedDataPolicies"]["AdvancedDataPolicy"];
+	for (auto valueAdvancedDataPoliciesAdvancedDataPolicy : allAdvancedDataPoliciesNode)
+	{
+		AdvancedDataPolicy advancedDataPoliciesObject;
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["OnlyPreserveOneEachHour"].isNull())
+			advancedDataPoliciesObject.onlyPreserveOneEachHour = valueAdvancedDataPoliciesAdvancedDataPolicy["OnlyPreserveOneEachHour"].asString() == "true";
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["RetentionValue"].isNull())
+			advancedDataPoliciesObject.retentionValue = valueAdvancedDataPoliciesAdvancedDataPolicy["RetentionValue"].asString();
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["BakType"].isNull())
+			advancedDataPoliciesObject.bakType = valueAdvancedDataPoliciesAdvancedDataPolicy["BakType"].asString();
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["FilterKey"].isNull())
+			advancedDataPoliciesObject.filterKey = valueAdvancedDataPoliciesAdvancedDataPolicy["FilterKey"].asString();
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["FilterValue"].isNull())
+			advancedDataPoliciesObject.filterValue = valueAdvancedDataPoliciesAdvancedDataPolicy["FilterValue"].asString();
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["DestType"].isNull())
+			advancedDataPoliciesObject.destType = valueAdvancedDataPoliciesAdvancedDataPolicy["DestType"].asString();
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["FilterType"].isNull())
+			advancedDataPoliciesObject.filterType = valueAdvancedDataPoliciesAdvancedDataPolicy["FilterType"].asString();
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["SrcRegion"].isNull())
+			advancedDataPoliciesObject.srcRegion = valueAdvancedDataPoliciesAdvancedDataPolicy["SrcRegion"].asString();
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["AutoCreated"].isNull())
+			advancedDataPoliciesObject.autoCreated = valueAdvancedDataPoliciesAdvancedDataPolicy["AutoCreated"].asString() == "true";
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["SrcType"].isNull())
+			advancedDataPoliciesObject.srcType = valueAdvancedDataPoliciesAdvancedDataPolicy["SrcType"].asString();
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["OnlyPreserveOneEachDay"].isNull())
+			advancedDataPoliciesObject.onlyPreserveOneEachDay = valueAdvancedDataPoliciesAdvancedDataPolicy["OnlyPreserveOneEachDay"].asString() == "true";
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["DumpAction"].isNull())
+			advancedDataPoliciesObject.dumpAction = valueAdvancedDataPoliciesAdvancedDataPolicy["DumpAction"].asString();
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["PolicyId"].isNull())
+			advancedDataPoliciesObject.policyId = valueAdvancedDataPoliciesAdvancedDataPolicy["PolicyId"].asString();
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["DestRegion"].isNull())
+			advancedDataPoliciesObject.destRegion = valueAdvancedDataPoliciesAdvancedDataPolicy["DestRegion"].asString();
+		if(!valueAdvancedDataPoliciesAdvancedDataPolicy["RetentionType"].isNull())
+			advancedDataPoliciesObject.retentionType = valueAdvancedDataPoliciesAdvancedDataPolicy["RetentionType"].asString();
+		advancedDataPolicies_.push_back(advancedDataPoliciesObject);
+	}
 	if(!value["PreferredBackupPeriod"].isNull())
 		preferredBackupPeriod_ = value["PreferredBackupPeriod"].asString();
 	if(!value["DataLevel1BackupRetentionPeriod"].isNull())
@@ -67,6 +103,10 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		dataLevel2BackupAnotherRegionRetentionPeriod_ = value["DataLevel2BackupAnotherRegionRetentionPeriod"].asString();
 	if(!value["DataLevel2BackupAnotherRegionRegion"].isNull())
 		dataLevel2BackupAnotherRegionRegion_ = value["DataLevel2BackupAnotherRegionRegion"].asString();
+	if(!value["BackupPolicyLevel"].isNull())
+		backupPolicyLevel_ = value["BackupPolicyLevel"].asString();
+	if(!value["AdvancedPolicyOption"].isNull())
+		advancedPolicyOption_ = value["AdvancedPolicyOption"].asString();
 
 }
 
@@ -105,9 +145,19 @@ std::string DescribeBackupPolicyResult::getDataLevel1BackupTime()const
 	return dataLevel1BackupTime_;
 }
 
+std::vector<DescribeBackupPolicyResult::AdvancedDataPolicy> DescribeBackupPolicyResult::getAdvancedDataPolicies()const
+{
+	return advancedDataPolicies_;
+}
+
 std::string DescribeBackupPolicyResult::getPreferredNextBackupTime()const
 {
 	return preferredNextBackupTime_;
+}
+
+std::string DescribeBackupPolicyResult::getAdvancedPolicyOption()const
+{
+	return advancedPolicyOption_;
 }
 
 std::string DescribeBackupPolicyResult::getDataLevel2BackupRetentionPeriod()const
@@ -128,6 +178,11 @@ std::string DescribeBackupPolicyResult::getDataLevel1BackupFrequency()const
 std::string DescribeBackupPolicyResult::getDataLevel2BackupPeriod()const
 {
 	return dataLevel2BackupPeriod_;
+}
+
+std::string DescribeBackupPolicyResult::getBackupPolicyLevel()const
+{
+	return backupPolicyLevel_;
 }
 
 int DescribeBackupPolicyResult::getBackupRetentionPeriod()const

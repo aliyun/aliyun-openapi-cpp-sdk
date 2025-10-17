@@ -25,13 +25,13 @@ ModifyMaskingRulesRequest::ModifyMaskingRulesRequest()
 
 ModifyMaskingRulesRequest::~ModifyMaskingRulesRequest() {}
 
-std::string ModifyMaskingRulesRequest::getDBClusterId() const {
-  return dBClusterId_;
+std::string ModifyMaskingRulesRequest::getMaskingAlgo() const {
+  return maskingAlgo_;
 }
 
-void ModifyMaskingRulesRequest::setDBClusterId(const std::string &dBClusterId) {
-  dBClusterId_ = dBClusterId;
-  setParameter(std::string("DBClusterId"), dBClusterId);
+void ModifyMaskingRulesRequest::setMaskingAlgo(const std::string &maskingAlgo) {
+  maskingAlgo_ = maskingAlgo;
+  setParameter(std::string("MaskingAlgo"), maskingAlgo);
 }
 
 std::string ModifyMaskingRulesRequest::getRuleName() const {
@@ -52,15 +52,6 @@ void ModifyMaskingRulesRequest::setRuleVersion(const std::string &ruleVersion) {
   setParameter(std::string("RuleVersion"), ruleVersion);
 }
 
-std::string ModifyMaskingRulesRequest::getRuleConfig() const {
-  return ruleConfig_;
-}
-
-void ModifyMaskingRulesRequest::setRuleConfig(const std::string &ruleConfig) {
-  ruleConfig_ = ruleConfig;
-  setParameter(std::string("RuleConfig"), ruleConfig);
-}
-
 std::string ModifyMaskingRulesRequest::getEnable() const {
   return enable_;
 }
@@ -68,6 +59,42 @@ std::string ModifyMaskingRulesRequest::getEnable() const {
 void ModifyMaskingRulesRequest::setEnable(const std::string &enable) {
   enable_ = enable;
   setParameter(std::string("Enable"), enable);
+}
+
+std::string ModifyMaskingRulesRequest::getInterfaceVersion() const {
+  return interfaceVersion_;
+}
+
+void ModifyMaskingRulesRequest::setInterfaceVersion(const std::string &interfaceVersion) {
+  interfaceVersion_ = interfaceVersion;
+  setParameter(std::string("InterfaceVersion"), interfaceVersion);
+}
+
+std::string ModifyMaskingRulesRequest::getDBClusterId() const {
+  return dBClusterId_;
+}
+
+void ModifyMaskingRulesRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
+}
+
+std::string ModifyMaskingRulesRequest::getDefaultAlgo() const {
+  return defaultAlgo_;
+}
+
+void ModifyMaskingRulesRequest::setDefaultAlgo(const std::string &defaultAlgo) {
+  defaultAlgo_ = defaultAlgo;
+  setParameter(std::string("DefaultAlgo"), defaultAlgo);
+}
+
+std::string ModifyMaskingRulesRequest::getRuleConfig() const {
+  return ruleConfig_;
+}
+
+void ModifyMaskingRulesRequest::setRuleConfig(const std::string &ruleConfig) {
+  ruleConfig_ = ruleConfig;
+  setParameter(std::string("RuleConfig"), ruleConfig);
 }
 
 std::string ModifyMaskingRulesRequest::getRuleNameList() const {

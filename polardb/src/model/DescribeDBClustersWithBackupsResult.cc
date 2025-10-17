@@ -83,6 +83,8 @@ void DescribeDBClustersWithBackupsResult::parse(const std::string &payload)
 			itemsObject.engine = valueItemsDBCluster["Engine"].asString();
 		if(!valueItemsDBCluster["Category"].isNull())
 			itemsObject.category = valueItemsDBCluster["Category"].asString();
+		if(!valueItemsDBCluster["CnClass"].isNull())
+			itemsObject.cnClass = valueItemsDBCluster["CnClass"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

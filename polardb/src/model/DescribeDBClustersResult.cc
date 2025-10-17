@@ -81,10 +81,10 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.dBClusterStatus = valueItemsDBCluster["DBClusterStatus"].asString();
 		if(!valueItemsDBCluster["ResourceGroupId"].isNull())
 			itemsObject.resourceGroupId = valueItemsDBCluster["ResourceGroupId"].asString();
-		if(!valueItemsDBCluster["StorageUsed"].isNull())
-			itemsObject.storageUsed = std::stol(valueItemsDBCluster["StorageUsed"].asString());
-		if(!valueItemsDBCluster["CompressStorageUsed"].isNull())
-			itemsObject.compressStorageUsed = std::stol(valueItemsDBCluster["CompressStorageUsed"].asString());
+		if(!valueItemsDBCluster["SearchStorageUsed"].isNull())
+			itemsObject.searchStorageUsed = std::stol(valueItemsDBCluster["SearchStorageUsed"].asString());
+		if(!valueItemsDBCluster["SearchCompressStorageUsed"].isNull())
+			itemsObject.searchCompressStorageUsed = std::stol(valueItemsDBCluster["SearchCompressStorageUsed"].asString());
 		if(!valueItemsDBCluster["StorageSpace"].isNull())
 			itemsObject.storageSpace = std::stol(valueItemsDBCluster["StorageSpace"].asString());
 		if(!valueItemsDBCluster["DBClusterNetworkType"].isNull())
@@ -105,8 +105,8 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.memorySize = valueItemsDBCluster["MemorySize"].asString();
 		if(!valueItemsDBCluster["RemoteMemorySize"].isNull())
 			itemsObject.remoteMemorySize = valueItemsDBCluster["RemoteMemorySize"].asString();
-		if(!valueItemsDBCluster["SubCategory"].isNull())
-			itemsObject.subCategory = valueItemsDBCluster["SubCategory"].asString();
+		if(!valueItemsDBCluster["CpuArch"].isNull())
+			itemsObject.cpuArch = valueItemsDBCluster["CpuArch"].asString();
 		if(!valueItemsDBCluster["DeployUnit"].isNull())
 			itemsObject.deployUnit = valueItemsDBCluster["DeployUnit"].asString();
 		if(!valueItemsDBCluster["StorageType"].isNull())
@@ -115,6 +115,22 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.hotStandbyCluster = valueItemsDBCluster["HotStandbyCluster"].asString();
 		if(!valueItemsDBCluster["EngineMigrationStatus"].isNull())
 			itemsObject.engineMigrationStatus = valueItemsDBCluster["EngineMigrationStatus"].asString();
+		if(!valueItemsDBCluster["CnNodeCount"].isNull())
+			itemsObject.cnNodeCount = std::stoi(valueItemsDBCluster["CnNodeCount"].asString());
+		if(!valueItemsDBCluster["DnNodeCount"].isNull())
+			itemsObject.dnNodeCount = std::stoi(valueItemsDBCluster["DnNodeCount"].asString());
+		if(!valueItemsDBCluster["CnClass"].isNull())
+			itemsObject.cnClass = valueItemsDBCluster["CnClass"].asString();
+		if(!valueItemsDBCluster["DnClass"].isNull())
+			itemsObject.dnClass = valueItemsDBCluster["DnClass"].asString();
+		if(!valueItemsDBCluster["CloudInstanceIp"].isNull())
+			itemsObject.cloudInstanceIp = valueItemsDBCluster["CloudInstanceIp"].asString();
+		if(!valueItemsDBCluster["SubCategory"].isNull())
+			itemsObject.subCategory = valueItemsDBCluster["SubCategory"].asString();
+		if(!valueItemsDBCluster["StorageUsed"].isNull())
+			itemsObject.storageUsed = std::stol(valueItemsDBCluster["StorageUsed"].asString());
+		if(!valueItemsDBCluster["CompressStorageUsed"].isNull())
+			itemsObject.compressStorageUsed = std::stol(valueItemsDBCluster["CompressStorageUsed"].asString());
 		auto allTagsNode = valueItemsDBCluster["Tags"]["Tag"];
 		for (auto valueItemsDBClusterTagsTag : allTagsNode)
 		{

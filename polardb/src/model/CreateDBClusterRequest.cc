@@ -88,6 +88,15 @@ void CreateDBClusterRequest::setCreationCategory(const std::string &creationCate
   setParameter(std::string("CreationCategory"), creationCategory);
 }
 
+std::string CreateDBClusterRequest::getCloudProvider() const {
+  return cloudProvider_;
+}
+
+void CreateDBClusterRequest::setCloudProvider(const std::string &cloudProvider) {
+  cloudProvider_ = cloudProvider;
+  setParameter(std::string("CloudProvider"), cloudProvider);
+}
+
 std::string CreateDBClusterRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
@@ -97,6 +106,15 @@ void CreateDBClusterRequest::setResourceGroupId(const std::string &resourceGroup
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+long CreateDBClusterRequest::getSourceUid() const {
+  return sourceUid_;
+}
+
+void CreateDBClusterRequest::setSourceUid(long sourceUid) {
+  sourceUid_ = sourceUid;
+  setParameter(std::string("SourceUid"), std::to_string(sourceUid));
+}
+
 std::string CreateDBClusterRequest::getDBNodeClass() const {
   return dBNodeClass_;
 }
@@ -104,6 +122,24 @@ std::string CreateDBClusterRequest::getDBNodeClass() const {
 void CreateDBClusterRequest::setDBNodeClass(const std::string &dBNodeClass) {
   dBNodeClass_ = dBNodeClass;
   setParameter(std::string("DBNodeClass"), dBNodeClass);
+}
+
+std::string CreateDBClusterRequest::getAccountName() const {
+  return accountName_;
+}
+
+void CreateDBClusterRequest::setAccountName(const std::string &accountName) {
+  accountName_ = accountName;
+  setParameter(std::string("AccountName"), accountName);
+}
+
+std::string CreateDBClusterRequest::getEnsRegionId() const {
+  return ensRegionId_;
+}
+
+void CreateDBClusterRequest::setEnsRegionId(const std::string &ensRegionId) {
+  ensRegionId_ = ensRegionId;
+  setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
 std::string CreateDBClusterRequest::getCreationOption() const {
@@ -201,6 +237,15 @@ void CreateDBClusterRequest::setDBMinorVersion(const std::string &dBMinorVersion
   setParameter(std::string("DBMinorVersion"), dBMinorVersion);
 }
 
+std::string CreateDBClusterRequest::getDnNodeClass() const {
+  return dnNodeClass_;
+}
+
+void CreateDBClusterRequest::setDnNodeClass(const std::string &dnNodeClass) {
+  dnNodeClass_ = dnNodeClass;
+  setParameter(std::string("DnNodeClass"), dnNodeClass);
+}
+
 long CreateDBClusterRequest::getProvisionedIops() const {
   return provisionedIops_;
 }
@@ -244,6 +289,15 @@ std::string CreateDBClusterRequest::getZoneId() const {
 void CreateDBClusterRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
   setParameter(std::string("ZoneId"), zoneId);
+}
+
+std::string CreateDBClusterRequest::getCnNodeNum() const {
+  return cnNodeNum_;
+}
+
+void CreateDBClusterRequest::setCnNodeNum(const std::string &cnNodeNum) {
+  cnNodeNum_ = cnNodeNum;
+  setParameter(std::string("CnNodeNum"), cnNodeNum);
 }
 
 std::string CreateDBClusterRequest::getStorageAutoScale() const {
@@ -352,6 +406,15 @@ std::string CreateDBClusterRequest::getStorageEncryptionKey() const {
 void CreateDBClusterRequest::setStorageEncryptionKey(const std::string &storageEncryptionKey) {
   storageEncryptionKey_ = storageEncryptionKey;
   setParameter(std::string("StorageEncryptionKey"), storageEncryptionKey);
+}
+
+std::string CreateDBClusterRequest::getCnNodeClass() const {
+  return cnNodeClass_;
+}
+
+void CreateDBClusterRequest::setCnNodeClass(const std::string &cnNodeClass) {
+  cnNodeClass_ = cnNodeClass;
+  setParameter(std::string("CnNodeClass"), cnNodeClass);
 }
 
 std::string CreateDBClusterRequest::getParameterGroupId() const {
@@ -480,6 +543,15 @@ void CreateDBClusterRequest::setDBNodeNum(int dBNodeNum) {
   setParameter(std::string("DBNodeNum"), std::to_string(dBNodeNum));
 }
 
+std::string CreateDBClusterRequest::getAccountPassword() const {
+  return accountPassword_;
+}
+
+void CreateDBClusterRequest::setAccountPassword(const std::string &accountPassword) {
+  accountPassword_ = accountPassword;
+  setParameter(std::string("AccountPassword"), accountPassword);
+}
+
 long CreateDBClusterRequest::getStorageUpperBound() const {
   return storageUpperBound_;
 }
@@ -568,5 +640,14 @@ std::string CreateDBClusterRequest::getServerlessType() const {
 void CreateDBClusterRequest::setServerlessType(const std::string &serverlessType) {
   serverlessType_ = serverlessType;
   setParameter(std::string("ServerlessType"), serverlessType);
+}
+
+std::string CreateDBClusterRequest::getDnNodeNum() const {
+  return dnNodeNum_;
+}
+
+void CreateDBClusterRequest::setDnNodeNum(const std::string &dnNodeNum) {
+  dnNodeNum_ = dnNodeNum;
+  setParameter(std::string("DnNodeNum"), dnNodeNum);
 }
 

@@ -34,6 +34,15 @@ void CreateAccountRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string CreateAccountRequest::getNodeType() const {
+  return nodeType_;
+}
+
+void CreateAccountRequest::setNodeType(const std::string &nodeType) {
+  nodeType_ = nodeType;
+  setParameter(std::string("NodeType"), nodeType);
+}
+
 std::string CreateAccountRequest::getClientToken() const {
   return clientToken_;
 }

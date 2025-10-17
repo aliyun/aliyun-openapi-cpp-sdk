@@ -28,10 +28,23 @@ namespace Polardb {
 namespace Model {
 class ALIBABACLOUD_POLARDB_EXPORT ModifyLogBackupPolicyRequest : public RpcServiceRequest {
 public:
+	struct AdvancedLogPolicies {
+		std::string actionType;
+		std::string srcType;
+		std::string policyId;
+		std::string destRegion;
+		std::string logRetentionValue;
+		std::string logRetentionType;
+		std::string srcRegion;
+		std::string destType;
+		int enableLogBackup;
+	};
 	ModifyLogBackupPolicyRequest();
 	~ModifyLogBackupPolicyRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::vector<AdvancedLogPolicies> getAdvancedLogPolicies() const;
+	void setAdvancedLogPolicies(const std::vector<AdvancedLogPolicies> &advancedLogPolicies);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getLogBackupAnotherRegionRegion() const;
@@ -51,6 +64,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::vector<AdvancedLogPolicies> advancedLogPolicies_;
 	std::string accessKeyId_;
 	std::string logBackupAnotherRegionRegion_;
 	std::string resourceOwnerAccount_;

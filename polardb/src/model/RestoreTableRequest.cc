@@ -61,6 +61,15 @@ void RestoreTableRequest::setTableMeta(const std::string &tableMeta) {
   setParameter(std::string("TableMeta"), tableMeta);
 }
 
+std::string RestoreTableRequest::getRestoreSpeed() const {
+  return restoreSpeed_;
+}
+
+void RestoreTableRequest::setRestoreSpeed(const std::string &restoreSpeed) {
+  restoreSpeed_ = restoreSpeed;
+  setParameter(std::string("RestoreSpeed"), restoreSpeed);
+}
+
 std::string RestoreTableRequest::getRestoreTime() const {
   return restoreTime_;
 }

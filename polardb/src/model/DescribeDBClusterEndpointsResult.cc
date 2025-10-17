@@ -43,8 +43,6 @@ void DescribeDBClusterEndpointsResult::parse(const std::string &payload)
 	for (auto valueItemsDBEndpoint : allItemsNode)
 	{
 		DBEndpoint itemsObject;
-		if(!valueItemsDBEndpoint["NodeWithRoles"].isNull())
-			itemsObject.nodeWithRoles = valueItemsDBEndpoint["NodeWithRoles"].asString();
 		if(!valueItemsDBEndpoint["Nodes"].isNull())
 			itemsObject.nodes = valueItemsDBEndpoint["Nodes"].asString();
 		if(!valueItemsDBEndpoint["ReadWriteMode"].isNull())
@@ -67,6 +65,14 @@ void DescribeDBClusterEndpointsResult::parse(const std::string &payload)
 			itemsObject.polarSccTimeoutAction = valueItemsDBEndpoint["PolarSccTimeoutAction"].asString();
 		if(!valueItemsDBEndpoint["PolarSccWaitTimeout"].isNull())
 			itemsObject.polarSccWaitTimeout = valueItemsDBEndpoint["PolarSccWaitTimeout"].asString();
+		if(!valueItemsDBEndpoint["NodeWithRoles"].isNull())
+			itemsObject.nodeWithRoles = valueItemsDBEndpoint["NodeWithRoles"].asString();
+		if(!valueItemsDBEndpoint["ConsistLevelControlVersion"].isNull())
+			itemsObject.consistLevelControlVersion = valueItemsDBEndpoint["ConsistLevelControlVersion"].asString();
+		if(!valueItemsDBEndpoint["DBEndpointCreateTime"].isNull())
+			itemsObject.dBEndpointCreateTime = valueItemsDBEndpoint["DBEndpointCreateTime"].asString();
+		if(!valueItemsDBEndpoint["DBEndpointStatus"].isNull())
+			itemsObject.dBEndpointStatus = valueItemsDBEndpoint["DBEndpointStatus"].asString();
 		auto allAddressItemsNode = valueItemsDBEndpoint["AddressItems"]["Address"];
 		for (auto valueItemsDBEndpointAddressItemsAddress : allAddressItemsNode)
 		{
@@ -87,6 +93,8 @@ void DescribeDBClusterEndpointsResult::parse(const std::string &payload)
 				addressItemsObject.vPCId = valueItemsDBEndpointAddressItemsAddress["VPCId"].asString();
 			if(!valueItemsDBEndpointAddressItemsAddress["IPAddress"].isNull())
 				addressItemsObject.iPAddress = valueItemsDBEndpointAddressItemsAddress["IPAddress"].asString();
+			if(!valueItemsDBEndpointAddressItemsAddress["DashboardUsed"].isNull())
+				addressItemsObject.dashboardUsed = valueItemsDBEndpointAddressItemsAddress["DashboardUsed"].asString() == "true";
 			itemsObject.addressItems.push_back(addressItemsObject);
 		}
 		items_.push_back(itemsObject);

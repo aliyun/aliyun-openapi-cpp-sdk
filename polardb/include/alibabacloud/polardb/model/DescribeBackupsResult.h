@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					std::string backupType;
 					std::string expectExpireType;
 					std::string backupStatus;
+					std::string shareType;
 				};
 
 
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 				explicit DescribeBackupsResult(const std::string &payload);
 				~DescribeBackupsResult();
 				std::string getTotalRecordCount()const;
+				bool getAllowShareBackup()const;
 				std::string getPageRecordCount()const;
 				std::string getPageNumber()const;
 				std::vector<Backup> getItems()const;
@@ -65,6 +67,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string totalRecordCount_;
+				bool allowShareBackup_;
 				std::string pageRecordCount_;
 				std::string pageNumber_;
 				std::vector<Backup> items_;

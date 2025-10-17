@@ -56,6 +56,8 @@ public:
 	void setAccountPassword(const std::string &accountPassword);
 	std::string getDBName() const;
 	void setDBName(const std::string &dBName);
+	std::string getGDNVersion() const;
+	void setGDNVersion(const std::string &gDNVersion);
 
 private:
 	long resourceOwnerId_;
@@ -71,6 +73,7 @@ private:
 	long ownerId_;
 	std::string accountPassword_;
 	std::string dBName_;
+	std::string gDNVersion_;
 };
 } // namespace Model
 } // namespace Polardb

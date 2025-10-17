@@ -97,3 +97,12 @@ void DescribeParameterGroupRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeParameterGroupRequest::getDBType() const {
+  return dBType_;
+}
+
+void DescribeParameterGroupRequest::setDBType(const std::string &dBType) {
+  dBType_ = dBType;
+  setParameter(std::string("DBType"), dBType);
+}
+

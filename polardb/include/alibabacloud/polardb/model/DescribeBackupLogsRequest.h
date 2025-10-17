@@ -40,6 +40,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getSubGroupName() const;
+	void setSubGroupName(const std::string &subGroupName);
 	std::string getBackupRegion() const;
 	void setBackupRegion(const std::string &backupRegion);
 	std::string getResourceOwnerAccount() const;
@@ -59,6 +61,7 @@ private:
 	int pageNumber_;
 	std::string accessKeyId_;
 	int pageSize_;
+	std::string subGroupName_;
 	std::string backupRegion_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;

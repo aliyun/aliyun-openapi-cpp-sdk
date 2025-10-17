@@ -32,6 +32,17 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_POLARDB_EXPORT DescribeLogBackupPolicyResult : public ServiceResult
 			{
 			public:
+				struct AdvancedLogPolicy
+				{
+					std::string logRetentionType;
+					std::string destType;
+					std::string srcRegion;
+					int enableLogBackup;
+					std::string srcType;
+					std::string policyId;
+					std::string logRetentionValue;
+					std::string destRegion;
+				};
 
 
 				DescribeLogBackupPolicyResult();
@@ -41,6 +52,7 @@ namespace AlibabaCloud
 				int getLogBackupRetentionPeriod()const;
 				std::string getLogBackupAnotherRegionRetentionPeriod()const;
 				int getEnableBackupLog()const;
+				std::vector<AdvancedLogPolicy> getAdvancedLogPolicies()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -49,6 +61,7 @@ namespace AlibabaCloud
 				int logBackupRetentionPeriod_;
 				std::string logBackupAnotherRegionRetentionPeriod_;
 				int enableBackupLog_;
+				std::vector<AdvancedLogPolicy> advancedLogPolicies_;
 
 			};
 		}

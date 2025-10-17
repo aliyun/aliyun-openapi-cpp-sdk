@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string accountDescription;
 					std::string accountStatus;
 					std::string privilegeExceeded;
+					std::string dynamoDBAuthPassword;
 					std::string accountLockState;
 					std::string accountPasswordValidTime;
 					std::string accountType;

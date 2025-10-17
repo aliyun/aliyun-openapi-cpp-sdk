@@ -51,6 +51,7 @@ namespace AlibabaCloud
 						std::string dBNodeClass;
 					};
 					int deletionLock;
+					long searchStorageUsed;
 					std::string category;
 					std::string resourceGroupId;
 					long compressStorageUsed;
@@ -61,8 +62,12 @@ namespace AlibabaCloud
 					std::string dBType;
 					std::string dBClusterNetworkType;
 					std::string remoteMemorySize;
+					std::string cpuArch;
+					std::string dnClass;
 					std::string dBVersion;
+					int dnNodeCount;
 					std::vector<DBCluster::DBNode> dBNodes;
+					long searchCompressStorageUsed;
 					std::vector<DBCluster::Tag> tags;
 					std::string engine;
 					std::string engineMigrationStatus;
@@ -79,12 +84,15 @@ namespace AlibabaCloud
 					std::string strictConsistency;
 					std::string dBNodeClass;
 					long storageUsed;
+					int cnNodeCount;
 					int dBNodeNumber;
 					std::string vpcId;
+					std::string cnClass;
 					long storageSpace;
 					std::string serverlessType;
 					std::string aiType;
 					std::string cpuCores;
+					std::string cloudInstanceIp;
 					std::string subCategory;
 					std::string regionId;
 					std::string expireTime;

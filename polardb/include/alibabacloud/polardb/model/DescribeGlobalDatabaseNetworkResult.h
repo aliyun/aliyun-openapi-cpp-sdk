@@ -32,6 +32,10 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_POLARDB_EXPORT DescribeGlobalDatabaseNetworkResult : public ServiceResult
 			{
 			public:
+				struct Labels
+				{
+					std::string gDNVersion;
+				};
 				struct Connection
 				{
 					std::string port;
@@ -82,6 +86,7 @@ namespace AlibabaCloud
 				std::string getResourceGroupId()const;
 				std::string getCreateTime()const;
 				std::string getDBClusterId()const;
+				Labels getLabels()const;
 				std::string getDBType()const;
 				std::string getGDNDescription()const;
 				std::vector<DBCluster> getDBClusters()const;
@@ -97,6 +102,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string createTime_;
 				std::string dBClusterId_;
+				Labels labels_;
 				std::string dBType_;
 				std::string gDNDescription_;
 				std::vector<DBCluster> dBClusters_;

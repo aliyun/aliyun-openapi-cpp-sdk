@@ -73,6 +73,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.backupMode = valueItemsBackup["BackupMode"].asString();
 		if(!valueItemsBackup["BackupMethod"].isNull())
 			itemsObject.backupMethod = valueItemsBackup["BackupMethod"].asString();
+		if(!valueItemsBackup["ShareType"].isNull())
+			itemsObject.shareType = valueItemsBackup["ShareType"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())
@@ -83,12 +85,19 @@ void DescribeBackupsResult::parse(const std::string &payload)
 		pageNumber_ = value["PageNumber"].asString();
 	if(!value["TotalLevel2BackupSize"].isNull())
 		totalLevel2BackupSize_ = value["TotalLevel2BackupSize"].asString();
+	if(!value["AllowShareBackup"].isNull())
+		allowShareBackup_ = value["AllowShareBackup"].asString() == "true";
 
 }
 
 std::string DescribeBackupsResult::getTotalRecordCount()const
 {
 	return totalRecordCount_;
+}
+
+bool DescribeBackupsResult::getAllowShareBackup()const
+{
+	return allowShareBackup_;
 }
 
 std::string DescribeBackupsResult::getPageRecordCount()const

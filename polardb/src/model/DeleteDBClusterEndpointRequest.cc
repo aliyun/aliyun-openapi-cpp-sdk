@@ -88,3 +88,12 @@ void DeleteDBClusterEndpointRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DeleteDBClusterEndpointRequest::getPolarFsInstanceId() const {
+  return polarFsInstanceId_;
+}
+
+void DeleteDBClusterEndpointRequest::setPolarFsInstanceId(const std::string &polarFsInstanceId) {
+  polarFsInstanceId_ = polarFsInstanceId;
+  setParameter(std::string("PolarFsInstanceId"), polarFsInstanceId);
+}
+

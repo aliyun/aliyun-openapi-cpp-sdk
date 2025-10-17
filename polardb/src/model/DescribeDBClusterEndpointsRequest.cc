@@ -97,3 +97,12 @@ void DescribeDBClusterEndpointsRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeDBClusterEndpointsRequest::getPolarFsInstanceId() const {
+  return polarFsInstanceId_;
+}
+
+void DescribeDBClusterEndpointsRequest::setPolarFsInstanceId(const std::string &polarFsInstanceId) {
+  polarFsInstanceId_ = polarFsInstanceId;
+  setParameter(std::string("PolarFsInstanceId"), polarFsInstanceId);
+}
+

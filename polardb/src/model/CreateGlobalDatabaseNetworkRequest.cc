@@ -142,3 +142,12 @@ void CreateGlobalDatabaseNetworkRequest::setDBName(const std::string &dBName) {
   setParameter(std::string("DBName"), dBName);
 }
 
+std::string CreateGlobalDatabaseNetworkRequest::getGDNVersion() const {
+  return gDNVersion_;
+}
+
+void CreateGlobalDatabaseNetworkRequest::setGDNVersion(const std::string &gDNVersion) {
+  gDNVersion_ = gDNVersion;
+  setParameter(std::string("GDNVersion"), gDNVersion);
+}
+

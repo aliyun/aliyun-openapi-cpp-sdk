@@ -30,25 +30,34 @@ class ALIBABACLOUD_POLARDB_EXPORT ModifyMaskingRulesRequest : public RpcServiceR
 public:
 	ModifyMaskingRulesRequest();
 	~ModifyMaskingRulesRequest();
-	std::string getDBClusterId() const;
-	void setDBClusterId(const std::string &dBClusterId);
+	std::string getMaskingAlgo() const;
+	void setMaskingAlgo(const std::string &maskingAlgo);
 	std::string getRuleName() const;
 	void setRuleName(const std::string &ruleName);
 	std::string getRuleVersion() const;
 	void setRuleVersion(const std::string &ruleVersion);
-	std::string getRuleConfig() const;
-	void setRuleConfig(const std::string &ruleConfig);
 	std::string getEnable() const;
 	void setEnable(const std::string &enable);
+	std::string getInterfaceVersion() const;
+	void setInterfaceVersion(const std::string &interfaceVersion);
+	std::string getDBClusterId() const;
+	void setDBClusterId(const std::string &dBClusterId);
+	std::string getDefaultAlgo() const;
+	void setDefaultAlgo(const std::string &defaultAlgo);
+	std::string getRuleConfig() const;
+	void setRuleConfig(const std::string &ruleConfig);
 	std::string getRuleNameList() const;
 	void setRuleNameList(const std::string &ruleNameList);
 
 private:
-	std::string dBClusterId_;
+	std::string maskingAlgo_;
 	std::string ruleName_;
 	std::string ruleVersion_;
-	std::string ruleConfig_;
 	std::string enable_;
+	std::string interfaceVersion_;
+	std::string dBClusterId_;
+	std::string defaultAlgo_;
+	std::string ruleConfig_;
 	std::string ruleNameList_;
 };
 } // namespace Model

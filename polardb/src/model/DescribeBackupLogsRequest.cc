@@ -70,6 +70,15 @@ void DescribeBackupLogsRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string DescribeBackupLogsRequest::getSubGroupName() const {
+  return subGroupName_;
+}
+
+void DescribeBackupLogsRequest::setSubGroupName(const std::string &subGroupName) {
+  subGroupName_ = subGroupName;
+  setParameter(std::string("SubGroupName"), subGroupName);
+}
+
 std::string DescribeBackupLogsRequest::getBackupRegion() const {
   return backupRegion_;
 }

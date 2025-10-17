@@ -52,6 +52,15 @@ void ModifyDBClusterDescriptionRequest::setAccessKeyId(const std::string &access
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBClusterDescriptionRequest::getSubGroupName() const {
+  return subGroupName_;
+}
+
+void ModifyDBClusterDescriptionRequest::setSubGroupName(const std::string &subGroupName) {
+  subGroupName_ = subGroupName;
+  setParameter(std::string("SubGroupName"), subGroupName);
+}
+
 std::string ModifyDBClusterDescriptionRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

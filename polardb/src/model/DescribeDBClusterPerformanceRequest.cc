@@ -61,6 +61,15 @@ void DescribeDBClusterPerformanceRequest::setAccessKeyId(const std::string &acce
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBClusterPerformanceRequest::getSubGroupName() const {
+  return subGroupName_;
+}
+
+void DescribeDBClusterPerformanceRequest::setSubGroupName(const std::string &subGroupName) {
+  subGroupName_ = subGroupName;
+  setParameter(std::string("SubGroupName"), subGroupName);
+}
+
 std::string DescribeDBClusterPerformanceRequest::getKey() const {
   return key_;
 }

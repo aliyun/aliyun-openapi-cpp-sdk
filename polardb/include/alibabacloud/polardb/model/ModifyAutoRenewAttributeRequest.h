@@ -36,6 +36,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getDuration() const;
 	void setDuration(const std::string &duration);
+	std::string getCloudProvider() const;
+	void setCloudProvider(const std::string &cloudProvider);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
@@ -57,6 +59,7 @@ private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string duration_;
+	std::string cloudProvider_;
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string renewalStatus_;

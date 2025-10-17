@@ -38,6 +38,8 @@ public:
 	void setSecurityToken(const std::string &securityToken);
 	std::string getTableMeta() const;
 	void setTableMeta(const std::string &tableMeta);
+	std::string getRestoreSpeed() const;
+	void setRestoreSpeed(const std::string &restoreSpeed);
 	std::string getRestoreTime() const;
 	void setRestoreTime(const std::string &restoreTime);
 	std::string getResourceOwnerAccount() const;
@@ -56,6 +58,7 @@ private:
 	std::string accessKeyId_;
 	std::string securityToken_;
 	std::string tableMeta_;
+	std::string restoreSpeed_;
 	std::string restoreTime_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;

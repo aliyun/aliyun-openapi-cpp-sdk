@@ -43,32 +43,34 @@ void DescribeAccountsResult::parse(const std::string &payload)
 	for (auto valueAccountsDBAccount : allAccountsNode)
 	{
 		DBAccount accountsObject;
-		if(!valueAccountsDBAccount["AccountStatus"].isNull())
-			accountsObject.accountStatus = valueAccountsDBAccount["AccountStatus"].asString();
 		if(!valueAccountsDBAccount["AccountDescription"].isNull())
 			accountsObject.accountDescription = valueAccountsDBAccount["AccountDescription"].asString();
+		if(!valueAccountsDBAccount["AccountStatus"].isNull())
+			accountsObject.accountStatus = valueAccountsDBAccount["AccountStatus"].asString();
 		if(!valueAccountsDBAccount["PrivilegeExceeded"].isNull())
 			accountsObject.privilegeExceeded = valueAccountsDBAccount["PrivilegeExceeded"].asString();
+		if(!valueAccountsDBAccount["DynamoDBAuthPassword"].isNull())
+			accountsObject.dynamoDBAuthPassword = valueAccountsDBAccount["DynamoDBAuthPassword"].asString();
+		if(!valueAccountsDBAccount["AccountLockState"].isNull())
+			accountsObject.accountLockState = valueAccountsDBAccount["AccountLockState"].asString();
 		if(!valueAccountsDBAccount["AccountPasswordValidTime"].isNull())
 			accountsObject.accountPasswordValidTime = valueAccountsDBAccount["AccountPasswordValidTime"].asString();
 		if(!valueAccountsDBAccount["AccountType"].isNull())
 			accountsObject.accountType = valueAccountsDBAccount["AccountType"].asString();
-		if(!valueAccountsDBAccount["AccountLockState"].isNull())
-			accountsObject.accountLockState = valueAccountsDBAccount["AccountLockState"].asString();
+		if(!valueAccountsDBAccount["TairPasswordSetted"].isNull())
+			accountsObject.tairPasswordSetted = valueAccountsDBAccount["TairPasswordSetted"].asString();
 		if(!valueAccountsDBAccount["AccountName"].isNull())
 			accountsObject.accountName = valueAccountsDBAccount["AccountName"].asString();
 		if(!valueAccountsDBAccount["AccountPassword"].isNull())
 			accountsObject.accountPassword = valueAccountsDBAccount["AccountPassword"].asString();
-		if(!valueAccountsDBAccount["TairPasswordSetted"].isNull())
-			accountsObject.tairPasswordSetted = valueAccountsDBAccount["TairPasswordSetted"].asString();
 		auto allDatabasePrivilegesNode = valueAccountsDBAccount["DatabasePrivileges"]["DatabasePrivilege"];
 		for (auto valueAccountsDBAccountDatabasePrivilegesDatabasePrivilege : allDatabasePrivilegesNode)
 		{
 			DBAccount::DatabasePrivilege databasePrivilegesObject;
-			if(!valueAccountsDBAccountDatabasePrivilegesDatabasePrivilege["DBName"].isNull())
-				databasePrivilegesObject.dBName = valueAccountsDBAccountDatabasePrivilegesDatabasePrivilege["DBName"].asString();
 			if(!valueAccountsDBAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].isNull())
 				databasePrivilegesObject.accountPrivilege = valueAccountsDBAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].asString();
+			if(!valueAccountsDBAccountDatabasePrivilegesDatabasePrivilege["DBName"].isNull())
+				databasePrivilegesObject.dBName = valueAccountsDBAccountDatabasePrivilegesDatabasePrivilege["DBName"].asString();
 			accountsObject.databasePrivileges.push_back(databasePrivilegesObject);
 		}
 		accounts_.push_back(accountsObject);

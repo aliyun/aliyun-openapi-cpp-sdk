@@ -59,6 +59,8 @@ void DescribeBackupLogsResult::parse(const std::string &payload)
 			itemsObject.backupLogSize = valueItemsBackupLog["BackupLogSize"].asString();
 		if(!valueItemsBackupLog["BackupLogName"].isNull())
 			itemsObject.backupLogName = valueItemsBackupLog["BackupLogName"].asString();
+		if(!valueItemsBackupLog["DBInstanceName"].isNull())
+			itemsObject.dBInstanceName = valueItemsBackupLog["DBInstanceName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

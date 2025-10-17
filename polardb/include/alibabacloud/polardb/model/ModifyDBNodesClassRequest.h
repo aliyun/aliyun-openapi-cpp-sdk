@@ -42,6 +42,8 @@ public:
 	void setPlannedEndTime(const std::string &plannedEndTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getCloudProvider() const;
+	void setCloudProvider(const std::string &cloudProvider);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
@@ -66,6 +68,7 @@ private:
 	std::string clientToken_;
 	std::string plannedEndTime_;
 	std::string accessKeyId_;
+	std::string cloudProvider_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;

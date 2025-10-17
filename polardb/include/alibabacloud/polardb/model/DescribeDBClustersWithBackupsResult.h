@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					std::string dBNodeClass;
 					std::string dBVersion;
 					std::string vpcId;
+					std::string cnClass;
 					std::string regionId;
 					std::string expireTime;
 					std::string engine;

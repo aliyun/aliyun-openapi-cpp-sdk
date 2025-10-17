@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string backupLogSize;
 					std::string intranetDownloadLink;
 					std::string backupLogStartTime;
+					std::string dBInstanceName;
 				};
 
 

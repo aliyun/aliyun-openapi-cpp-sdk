@@ -52,6 +52,15 @@ void ModifyAutoRenewAttributeRequest::setDuration(const std::string &duration) {
   setParameter(std::string("Duration"), duration);
 }
 
+std::string ModifyAutoRenewAttributeRequest::getCloudProvider() const {
+  return cloudProvider_;
+}
+
+void ModifyAutoRenewAttributeRequest::setCloudProvider(const std::string &cloudProvider) {
+  cloudProvider_ = cloudProvider;
+  setParameter(std::string("CloudProvider"), cloudProvider);
+}
+
 std::string ModifyAutoRenewAttributeRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }

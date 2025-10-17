@@ -30,12 +30,15 @@ class ALIBABACLOUD_POLARDB_EXPORT DescribeMaskingRulesRequest : public RpcServic
 public:
 	DescribeMaskingRulesRequest();
 	~DescribeMaskingRulesRequest();
+	std::string getInterfaceVersion() const;
+	void setInterfaceVersion(const std::string &interfaceVersion);
 	std::string getDBClusterId() const;
 	void setDBClusterId(const std::string &dBClusterId);
 	std::string getRuleNameList() const;
 	void setRuleNameList(const std::string &ruleNameList);
 
 private:
+	std::string interfaceVersion_;
 	std::string dBClusterId_;
 	std::string ruleNameList_;
 };

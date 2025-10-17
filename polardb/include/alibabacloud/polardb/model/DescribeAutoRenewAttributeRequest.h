@@ -36,6 +36,8 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getCloudProvider() const;
+	void setCloudProvider(const std::string &cloudProvider);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
@@ -48,6 +50,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 	std::string getDBClusterIds() const;
 	void setDBClusterIds(const std::string &dBClusterIds);
 
@@ -55,12 +59,14 @@ private:
 	long resourceOwnerId_;
 	int pageNumber_;
 	std::string accessKeyId_;
+	std::string cloudProvider_;
 	std::string resourceGroupId_;
 	std::string regionId_;
 	int pageSize_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string resourceType_;
 	std::string dBClusterIds_;
 };
 } // namespace Model

@@ -28,6 +28,24 @@ namespace Polardb {
 namespace Model {
 class ALIBABACLOUD_POLARDB_EXPORT ModifyBackupPolicyRequest : public RpcServiceRequest {
 public:
+	struct AdvancedDataPolicies {
+		std::string actionType;
+		std::string srcType;
+		std::string retentionValue;
+		std::string destRegion;
+		std::string bakType;
+		bool onlyPreserveOneEachDay;
+		std::string filterValue;
+		std::string dumpAction;
+		bool onlyPreserveOneEachHour;
+		std::string srcRegion;
+		std::string filterType;
+		std::string retentionType;
+		std::string filterKey;
+		bool autoCreated;
+		std::string policyId;
+		std::string destType;
+	};
 	ModifyBackupPolicyRequest();
 	~ModifyBackupPolicyRequest();
 	long getResourceOwnerId() const;
@@ -36,6 +54,8 @@ public:
 	void setDataLevel2BackupRetentionPeriod(const std::string &dataLevel2BackupRetentionPeriod);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::vector<AdvancedDataPolicies> getAdvancedDataPolicies() const;
+	void setAdvancedDataPolicies(const std::vector<AdvancedDataPolicies> &advancedDataPolicies);
 	std::string getDataLevel1BackupPeriod() const;
 	void setDataLevel1BackupPeriod(const std::string &dataLevel1BackupPeriod);
 	std::string getDataLevel2BackupPeriod() const;
@@ -54,6 +74,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	std::string getDataLevel2BackupAnotherRegionRetentionPeriod() const;
 	void setDataLevel2BackupAnotherRegionRetentionPeriod(const std::string &dataLevel2BackupAnotherRegionRetentionPeriod);
+	std::string getBackupPolicyLevel() const;
+	void setBackupPolicyLevel(const std::string &backupPolicyLevel);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getPreferredBackupTime() const;
@@ -73,6 +95,7 @@ private:
 	long resourceOwnerId_;
 	std::string dataLevel2BackupRetentionPeriod_;
 	std::string accessKeyId_;
+	std::vector<AdvancedDataPolicies> advancedDataPolicies_;
 	std::string dataLevel1BackupPeriod_;
 	std::string dataLevel2BackupPeriod_;
 	std::string preferredBackupPeriod_;
@@ -82,6 +105,7 @@ private:
 	std::string dBClusterId_;
 	std::string ownerAccount_;
 	std::string dataLevel2BackupAnotherRegionRetentionPeriod_;
+	std::string backupPolicyLevel_;
 	long ownerId_;
 	std::string preferredBackupTime_;
 	std::string backupRetentionPeriod_;
