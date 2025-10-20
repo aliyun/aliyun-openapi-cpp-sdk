@@ -51,6 +51,42 @@ EiamClient::EiamClient(const std::string & accessKeyId, const std::string & acce
 EiamClient::~EiamClient()
 {}
 
+EiamClient::AddApplicationAccountToUserOutcome EiamClient::addApplicationAccountToUser(const AddApplicationAccountToUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddApplicationAccountToUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddApplicationAccountToUserOutcome(AddApplicationAccountToUserResult(outcome.result()));
+	else
+		return AddApplicationAccountToUserOutcome(outcome.error());
+}
+
+void EiamClient::addApplicationAccountToUserAsync(const AddApplicationAccountToUserRequest& request, const AddApplicationAccountToUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addApplicationAccountToUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::AddApplicationAccountToUserOutcomeCallable EiamClient::addApplicationAccountToUserCallable(const AddApplicationAccountToUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddApplicationAccountToUserOutcome()>>(
+			[this, request]()
+			{
+			return this->addApplicationAccountToUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::AddUserToOrganizationalUnitsOutcome EiamClient::addUserToOrganizationalUnits(const AddUserToOrganizationalUnitsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -303,6 +339,114 @@ EiamClient::CreateApplicationClientSecretOutcomeCallable EiamClient::createAppli
 	return task->get_future();
 }
 
+EiamClient::CreateApplicationFederatedCredentialOutcome EiamClient::createApplicationFederatedCredential(const CreateApplicationFederatedCredentialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateApplicationFederatedCredentialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateApplicationFederatedCredentialOutcome(CreateApplicationFederatedCredentialResult(outcome.result()));
+	else
+		return CreateApplicationFederatedCredentialOutcome(outcome.error());
+}
+
+void EiamClient::createApplicationFederatedCredentialAsync(const CreateApplicationFederatedCredentialRequest& request, const CreateApplicationFederatedCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createApplicationFederatedCredential(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::CreateApplicationFederatedCredentialOutcomeCallable EiamClient::createApplicationFederatedCredentialCallable(const CreateApplicationFederatedCredentialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateApplicationFederatedCredentialOutcome()>>(
+			[this, request]()
+			{
+			return this->createApplicationFederatedCredential(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::CreateApplicationTokenOutcome EiamClient::createApplicationToken(const CreateApplicationTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateApplicationTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateApplicationTokenOutcome(CreateApplicationTokenResult(outcome.result()));
+	else
+		return CreateApplicationTokenOutcome(outcome.error());
+}
+
+void EiamClient::createApplicationTokenAsync(const CreateApplicationTokenRequest& request, const CreateApplicationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createApplicationToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::CreateApplicationTokenOutcomeCallable EiamClient::createApplicationTokenCallable(const CreateApplicationTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateApplicationTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->createApplicationToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::CreateBrandOutcome EiamClient::createBrand(const CreateBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateBrandOutcome(CreateBrandResult(outcome.result()));
+	else
+		return CreateBrandOutcome(outcome.error());
+}
+
+void EiamClient::createBrandAsync(const CreateBrandRequest& request, const CreateBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::CreateBrandOutcomeCallable EiamClient::createBrandCallable(const CreateBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->createBrand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::CreateConditionalAccessPolicyOutcome EiamClient::createConditionalAccessPolicy(const CreateConditionalAccessPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +549,42 @@ EiamClient::CreateDomainProxyTokenOutcomeCallable EiamClient::createDomainProxyT
 			[this, request]()
 			{
 			return this->createDomainProxyToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::CreateFederatedCredentialProviderOutcome EiamClient::createFederatedCredentialProvider(const CreateFederatedCredentialProviderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFederatedCredentialProviderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFederatedCredentialProviderOutcome(CreateFederatedCredentialProviderResult(outcome.result()));
+	else
+		return CreateFederatedCredentialProviderOutcome(outcome.error());
+}
+
+void EiamClient::createFederatedCredentialProviderAsync(const CreateFederatedCredentialProviderRequest& request, const CreateFederatedCredentialProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFederatedCredentialProvider(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::CreateFederatedCredentialProviderOutcomeCallable EiamClient::createFederatedCredentialProviderCallable(const CreateFederatedCredentialProviderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFederatedCredentialProviderOutcome()>>(
+			[this, request]()
+			{
+			return this->createFederatedCredentialProvider(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,6 +735,42 @@ EiamClient::CreateNetworkAccessEndpointOutcomeCallable EiamClient::createNetwork
 	return task->get_future();
 }
 
+EiamClient::CreateNetworkZoneOutcome EiamClient::createNetworkZone(const CreateNetworkZoneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNetworkZoneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNetworkZoneOutcome(CreateNetworkZoneResult(outcome.result()));
+	else
+		return CreateNetworkZoneOutcome(outcome.error());
+}
+
+void EiamClient::createNetworkZoneAsync(const CreateNetworkZoneRequest& request, const CreateNetworkZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNetworkZone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::CreateNetworkZoneOutcomeCallable EiamClient::createNetworkZoneCallable(const CreateNetworkZoneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNetworkZoneOutcome()>>(
+			[this, request]()
+			{
+			return this->createNetworkZone(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::CreateOrganizationalUnitOutcome EiamClient::createOrganizationalUnit(const CreateOrganizationalUnitRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -699,6 +915,114 @@ EiamClient::DeleteApplicationClientSecretOutcomeCallable EiamClient::deleteAppli
 	return task->get_future();
 }
 
+EiamClient::DeleteApplicationFederatedCredentialOutcome EiamClient::deleteApplicationFederatedCredential(const DeleteApplicationFederatedCredentialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteApplicationFederatedCredentialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteApplicationFederatedCredentialOutcome(DeleteApplicationFederatedCredentialResult(outcome.result()));
+	else
+		return DeleteApplicationFederatedCredentialOutcome(outcome.error());
+}
+
+void EiamClient::deleteApplicationFederatedCredentialAsync(const DeleteApplicationFederatedCredentialRequest& request, const DeleteApplicationFederatedCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteApplicationFederatedCredential(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DeleteApplicationFederatedCredentialOutcomeCallable EiamClient::deleteApplicationFederatedCredentialCallable(const DeleteApplicationFederatedCredentialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteApplicationFederatedCredentialOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteApplicationFederatedCredential(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::DeleteApplicationTokenOutcome EiamClient::deleteApplicationToken(const DeleteApplicationTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteApplicationTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteApplicationTokenOutcome(DeleteApplicationTokenResult(outcome.result()));
+	else
+		return DeleteApplicationTokenOutcome(outcome.error());
+}
+
+void EiamClient::deleteApplicationTokenAsync(const DeleteApplicationTokenRequest& request, const DeleteApplicationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteApplicationToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DeleteApplicationTokenOutcomeCallable EiamClient::deleteApplicationTokenCallable(const DeleteApplicationTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteApplicationTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteApplicationToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::DeleteBrandOutcome EiamClient::deleteBrand(const DeleteBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBrandOutcome(DeleteBrandResult(outcome.result()));
+	else
+		return DeleteBrandOutcome(outcome.error());
+}
+
+void EiamClient::deleteBrandAsync(const DeleteBrandRequest& request, const DeleteBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DeleteBrandOutcomeCallable EiamClient::deleteBrandCallable(const DeleteBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBrand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::DeleteConditionalAccessPolicyOutcome EiamClient::deleteConditionalAccessPolicy(const DeleteConditionalAccessPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,6 +1125,42 @@ EiamClient::DeleteDomainProxyTokenOutcomeCallable EiamClient::deleteDomainProxyT
 			[this, request]()
 			{
 			return this->deleteDomainProxyToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::DeleteFederatedCredentialProviderOutcome EiamClient::deleteFederatedCredentialProvider(const DeleteFederatedCredentialProviderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFederatedCredentialProviderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFederatedCredentialProviderOutcome(DeleteFederatedCredentialProviderResult(outcome.result()));
+	else
+		return DeleteFederatedCredentialProviderOutcome(outcome.error());
+}
+
+void EiamClient::deleteFederatedCredentialProviderAsync(const DeleteFederatedCredentialProviderRequest& request, const DeleteFederatedCredentialProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFederatedCredentialProvider(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DeleteFederatedCredentialProviderOutcomeCallable EiamClient::deleteFederatedCredentialProviderCallable(const DeleteFederatedCredentialProviderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFederatedCredentialProviderOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFederatedCredentialProvider(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -945,6 +1305,42 @@ EiamClient::DeleteNetworkAccessEndpointOutcomeCallable EiamClient::deleteNetwork
 			[this, request]()
 			{
 			return this->deleteNetworkAccessEndpoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::DeleteNetworkZoneOutcome EiamClient::deleteNetworkZone(const DeleteNetworkZoneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNetworkZoneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNetworkZoneOutcome(DeleteNetworkZoneResult(outcome.result()));
+	else
+		return DeleteNetworkZoneOutcome(outcome.error());
+}
+
+void EiamClient::deleteNetworkZoneAsync(const DeleteNetworkZoneRequest& request, const DeleteNetworkZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNetworkZone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DeleteNetworkZoneOutcomeCallable EiamClient::deleteNetworkZoneCallable(const DeleteNetworkZoneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNetworkZoneOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNetworkZone(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1167,6 +1563,42 @@ EiamClient::DisableApplicationClientSecretOutcomeCallable EiamClient::disableApp
 	return task->get_future();
 }
 
+EiamClient::DisableApplicationFederatedCredentialOutcome EiamClient::disableApplicationFederatedCredential(const DisableApplicationFederatedCredentialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableApplicationFederatedCredentialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableApplicationFederatedCredentialOutcome(DisableApplicationFederatedCredentialResult(outcome.result()));
+	else
+		return DisableApplicationFederatedCredentialOutcome(outcome.error());
+}
+
+void EiamClient::disableApplicationFederatedCredentialAsync(const DisableApplicationFederatedCredentialRequest& request, const DisableApplicationFederatedCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableApplicationFederatedCredential(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DisableApplicationFederatedCredentialOutcomeCallable EiamClient::disableApplicationFederatedCredentialCallable(const DisableApplicationFederatedCredentialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableApplicationFederatedCredentialOutcome()>>(
+			[this, request]()
+			{
+			return this->disableApplicationFederatedCredential(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::DisableApplicationProvisioningOutcome EiamClient::disableApplicationProvisioning(const DisableApplicationProvisioningRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1239,6 +1671,78 @@ EiamClient::DisableApplicationSsoOutcomeCallable EiamClient::disableApplicationS
 	return task->get_future();
 }
 
+EiamClient::DisableApplicationTokenOutcome EiamClient::disableApplicationToken(const DisableApplicationTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableApplicationTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableApplicationTokenOutcome(DisableApplicationTokenResult(outcome.result()));
+	else
+		return DisableApplicationTokenOutcome(outcome.error());
+}
+
+void EiamClient::disableApplicationTokenAsync(const DisableApplicationTokenRequest& request, const DisableApplicationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableApplicationToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DisableApplicationTokenOutcomeCallable EiamClient::disableApplicationTokenCallable(const DisableApplicationTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableApplicationTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->disableApplicationToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::DisableBrandOutcome EiamClient::disableBrand(const DisableBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableBrandOutcome(DisableBrandResult(outcome.result()));
+	else
+		return DisableBrandOutcome(outcome.error());
+}
+
+void EiamClient::disableBrandAsync(const DisableBrandRequest& request, const DisableBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DisableBrandOutcomeCallable EiamClient::disableBrandCallable(const DisableBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->disableBrand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::DisableConditionalAccessPolicyOutcome EiamClient::disableConditionalAccessPolicy(const DisableConditionalAccessPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1305,6 +1809,78 @@ EiamClient::DisableDomainProxyTokenOutcomeCallable EiamClient::disableDomainProx
 			[this, request]()
 			{
 			return this->disableDomainProxyToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::DisableFederatedCredentialProviderOutcome EiamClient::disableFederatedCredentialProvider(const DisableFederatedCredentialProviderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableFederatedCredentialProviderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableFederatedCredentialProviderOutcome(DisableFederatedCredentialProviderResult(outcome.result()));
+	else
+		return DisableFederatedCredentialProviderOutcome(outcome.error());
+}
+
+void EiamClient::disableFederatedCredentialProviderAsync(const DisableFederatedCredentialProviderRequest& request, const DisableFederatedCredentialProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableFederatedCredentialProvider(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DisableFederatedCredentialProviderOutcomeCallable EiamClient::disableFederatedCredentialProviderCallable(const DisableFederatedCredentialProviderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableFederatedCredentialProviderOutcome()>>(
+			[this, request]()
+			{
+			return this->disableFederatedCredentialProvider(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::DisableIdentityProviderAuthnOutcome EiamClient::disableIdentityProviderAuthn(const DisableIdentityProviderAuthnRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableIdentityProviderAuthnOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableIdentityProviderAuthnOutcome(DisableIdentityProviderAuthnResult(outcome.result()));
+	else
+		return DisableIdentityProviderAuthnOutcome(outcome.error());
+}
+
+void EiamClient::disableIdentityProviderAuthnAsync(const DisableIdentityProviderAuthnRequest& request, const DisableIdentityProviderAuthnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableIdentityProviderAuthn(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DisableIdentityProviderAuthnOutcomeCallable EiamClient::disableIdentityProviderAuthnCallable(const DisableIdentityProviderAuthnRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableIdentityProviderAuthnOutcome()>>(
+			[this, request]()
+			{
+			return this->disableIdentityProviderAuthn(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1527,6 +2103,42 @@ EiamClient::EnableApplicationClientSecretOutcomeCallable EiamClient::enableAppli
 	return task->get_future();
 }
 
+EiamClient::EnableApplicationFederatedCredentialOutcome EiamClient::enableApplicationFederatedCredential(const EnableApplicationFederatedCredentialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableApplicationFederatedCredentialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableApplicationFederatedCredentialOutcome(EnableApplicationFederatedCredentialResult(outcome.result()));
+	else
+		return EnableApplicationFederatedCredentialOutcome(outcome.error());
+}
+
+void EiamClient::enableApplicationFederatedCredentialAsync(const EnableApplicationFederatedCredentialRequest& request, const EnableApplicationFederatedCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableApplicationFederatedCredential(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::EnableApplicationFederatedCredentialOutcomeCallable EiamClient::enableApplicationFederatedCredentialCallable(const EnableApplicationFederatedCredentialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableApplicationFederatedCredentialOutcome()>>(
+			[this, request]()
+			{
+			return this->enableApplicationFederatedCredential(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::EnableApplicationProvisioningOutcome EiamClient::enableApplicationProvisioning(const EnableApplicationProvisioningRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1599,6 +2211,78 @@ EiamClient::EnableApplicationSsoOutcomeCallable EiamClient::enableApplicationSso
 	return task->get_future();
 }
 
+EiamClient::EnableApplicationTokenOutcome EiamClient::enableApplicationToken(const EnableApplicationTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableApplicationTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableApplicationTokenOutcome(EnableApplicationTokenResult(outcome.result()));
+	else
+		return EnableApplicationTokenOutcome(outcome.error());
+}
+
+void EiamClient::enableApplicationTokenAsync(const EnableApplicationTokenRequest& request, const EnableApplicationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableApplicationToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::EnableApplicationTokenOutcomeCallable EiamClient::enableApplicationTokenCallable(const EnableApplicationTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableApplicationTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->enableApplicationToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::EnableBrandOutcome EiamClient::enableBrand(const EnableBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableBrandOutcome(EnableBrandResult(outcome.result()));
+	else
+		return EnableBrandOutcome(outcome.error());
+}
+
+void EiamClient::enableBrandAsync(const EnableBrandRequest& request, const EnableBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::EnableBrandOutcomeCallable EiamClient::enableBrandCallable(const EnableBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->enableBrand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::EnableConditionalAccessPolicyOutcome EiamClient::enableConditionalAccessPolicy(const EnableConditionalAccessPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +2349,78 @@ EiamClient::EnableDomainProxyTokenOutcomeCallable EiamClient::enableDomainProxyT
 			[this, request]()
 			{
 			return this->enableDomainProxyToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::EnableFederatedCredentialProviderOutcome EiamClient::enableFederatedCredentialProvider(const EnableFederatedCredentialProviderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableFederatedCredentialProviderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableFederatedCredentialProviderOutcome(EnableFederatedCredentialProviderResult(outcome.result()));
+	else
+		return EnableFederatedCredentialProviderOutcome(outcome.error());
+}
+
+void EiamClient::enableFederatedCredentialProviderAsync(const EnableFederatedCredentialProviderRequest& request, const EnableFederatedCredentialProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableFederatedCredentialProvider(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::EnableFederatedCredentialProviderOutcomeCallable EiamClient::enableFederatedCredentialProviderCallable(const EnableFederatedCredentialProviderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableFederatedCredentialProviderOutcome()>>(
+			[this, request]()
+			{
+			return this->enableFederatedCredentialProvider(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::EnableIdentityProviderAuthnOutcome EiamClient::enableIdentityProviderAuthn(const EnableIdentityProviderAuthnRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableIdentityProviderAuthnOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableIdentityProviderAuthnOutcome(EnableIdentityProviderAuthnResult(outcome.result()));
+	else
+		return EnableIdentityProviderAuthnOutcome(outcome.error());
+}
+
+void EiamClient::enableIdentityProviderAuthnAsync(const EnableIdentityProviderAuthnRequest& request, const EnableIdentityProviderAuthnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableIdentityProviderAuthn(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::EnableIdentityProviderAuthnOutcomeCallable EiamClient::enableIdentityProviderAuthnCallable(const EnableIdentityProviderAuthnRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableIdentityProviderAuthnOutcome()>>(
+			[this, request]()
+			{
+			return this->enableIdentityProviderAuthn(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1815,6 +2571,42 @@ EiamClient::GetApplicationOutcomeCallable EiamClient::getApplicationCallable(con
 	return task->get_future();
 }
 
+EiamClient::GetApplicationFederatedCredentialOutcome EiamClient::getApplicationFederatedCredential(const GetApplicationFederatedCredentialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetApplicationFederatedCredentialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetApplicationFederatedCredentialOutcome(GetApplicationFederatedCredentialResult(outcome.result()));
+	else
+		return GetApplicationFederatedCredentialOutcome(outcome.error());
+}
+
+void EiamClient::getApplicationFederatedCredentialAsync(const GetApplicationFederatedCredentialRequest& request, const GetApplicationFederatedCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getApplicationFederatedCredential(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::GetApplicationFederatedCredentialOutcomeCallable EiamClient::getApplicationFederatedCredentialCallable(const GetApplicationFederatedCredentialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetApplicationFederatedCredentialOutcome()>>(
+			[this, request]()
+			{
+			return this->getApplicationFederatedCredential(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::GetApplicationGrantScopeOutcome EiamClient::getApplicationGrantScope(const GetApplicationGrantScopeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1959,6 +2751,78 @@ EiamClient::GetApplicationSsoConfigOutcomeCallable EiamClient::getApplicationSso
 	return task->get_future();
 }
 
+EiamClient::GetApplicationTemplateOutcome EiamClient::getApplicationTemplate(const GetApplicationTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetApplicationTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetApplicationTemplateOutcome(GetApplicationTemplateResult(outcome.result()));
+	else
+		return GetApplicationTemplateOutcome(outcome.error());
+}
+
+void EiamClient::getApplicationTemplateAsync(const GetApplicationTemplateRequest& request, const GetApplicationTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getApplicationTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::GetApplicationTemplateOutcomeCallable EiamClient::getApplicationTemplateCallable(const GetApplicationTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetApplicationTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->getApplicationTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::GetBrandOutcome EiamClient::getBrand(const GetBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetBrandOutcome(GetBrandResult(outcome.result()));
+	else
+		return GetBrandOutcome(outcome.error());
+}
+
+void EiamClient::getBrandAsync(const GetBrandRequest& request, const GetBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::GetBrandOutcomeCallable EiamClient::getBrandCallable(const GetBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->getBrand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::GetConditionalAccessPolicyOutcome EiamClient::getConditionalAccessPolicy(const GetConditionalAccessPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2061,6 +2925,42 @@ EiamClient::GetDomainDnsChallengeOutcomeCallable EiamClient::getDomainDnsChallen
 			[this, request]()
 			{
 			return this->getDomainDnsChallenge(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::GetFederatedCredentialProviderOutcome EiamClient::getFederatedCredentialProvider(const GetFederatedCredentialProviderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetFederatedCredentialProviderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetFederatedCredentialProviderOutcome(GetFederatedCredentialProviderResult(outcome.result()));
+	else
+		return GetFederatedCredentialProviderOutcome(outcome.error());
+}
+
+void EiamClient::getFederatedCredentialProviderAsync(const GetFederatedCredentialProviderRequest& request, const GetFederatedCredentialProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getFederatedCredentialProvider(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::GetFederatedCredentialProviderOutcomeCallable EiamClient::getFederatedCredentialProviderCallable(const GetFederatedCredentialProviderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetFederatedCredentialProviderOutcome()>>(
+			[this, request]()
+			{
+			return this->getFederatedCredentialProvider(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2283,6 +3183,42 @@ EiamClient::GetInstanceLicenseOutcomeCallable EiamClient::getInstanceLicenseCall
 	return task->get_future();
 }
 
+EiamClient::GetLoginRedirectApplicationForBrandOutcome EiamClient::getLoginRedirectApplicationForBrand(const GetLoginRedirectApplicationForBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetLoginRedirectApplicationForBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetLoginRedirectApplicationForBrandOutcome(GetLoginRedirectApplicationForBrandResult(outcome.result()));
+	else
+		return GetLoginRedirectApplicationForBrandOutcome(outcome.error());
+}
+
+void EiamClient::getLoginRedirectApplicationForBrandAsync(const GetLoginRedirectApplicationForBrandRequest& request, const GetLoginRedirectApplicationForBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getLoginRedirectApplicationForBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::GetLoginRedirectApplicationForBrandOutcomeCallable EiamClient::getLoginRedirectApplicationForBrandCallable(const GetLoginRedirectApplicationForBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetLoginRedirectApplicationForBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->getLoginRedirectApplicationForBrand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::GetNetworkAccessEndpointOutcome EiamClient::getNetworkAccessEndpoint(const GetNetworkAccessEndpointRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2313,6 +3249,42 @@ EiamClient::GetNetworkAccessEndpointOutcomeCallable EiamClient::getNetworkAccess
 			[this, request]()
 			{
 			return this->getNetworkAccessEndpoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::GetNetworkZoneOutcome EiamClient::getNetworkZone(const GetNetworkZoneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetNetworkZoneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetNetworkZoneOutcome(GetNetworkZoneResult(outcome.result()));
+	else
+		return GetNetworkZoneOutcome(outcome.error());
+}
+
+void EiamClient::getNetworkZoneAsync(const GetNetworkZoneRequest& request, const GetNetworkZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getNetworkZone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::GetNetworkZoneOutcomeCallable EiamClient::getNetworkZoneCallable(const GetNetworkZoneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetNetworkZoneOutcome()>>(
+			[this, request]()
+			{
+			return this->getNetworkZone(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2607,6 +3579,78 @@ EiamClient::GetUserOutcomeCallable EiamClient::getUserCallable(const GetUserRequ
 	return task->get_future();
 }
 
+EiamClient::ListApplicationAccountsOutcome EiamClient::listApplicationAccounts(const ListApplicationAccountsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationAccountsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationAccountsOutcome(ListApplicationAccountsResult(outcome.result()));
+	else
+		return ListApplicationAccountsOutcome(outcome.error());
+}
+
+void EiamClient::listApplicationAccountsAsync(const ListApplicationAccountsRequest& request, const ListApplicationAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationAccounts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListApplicationAccountsOutcomeCallable EiamClient::listApplicationAccountsCallable(const ListApplicationAccountsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationAccountsOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationAccounts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::ListApplicationAccountsForUserOutcome EiamClient::listApplicationAccountsForUser(const ListApplicationAccountsForUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationAccountsForUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationAccountsForUserOutcome(ListApplicationAccountsForUserResult(outcome.result()));
+	else
+		return ListApplicationAccountsForUserOutcome(outcome.error());
+}
+
+void EiamClient::listApplicationAccountsForUserAsync(const ListApplicationAccountsForUserRequest& request, const ListApplicationAccountsForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationAccountsForUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListApplicationAccountsForUserOutcomeCallable EiamClient::listApplicationAccountsForUserCallable(const ListApplicationAccountsForUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationAccountsForUserOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationAccountsForUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::ListApplicationClientSecretsOutcome EiamClient::listApplicationClientSecrets(const ListApplicationClientSecretsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2643,6 +3687,150 @@ EiamClient::ListApplicationClientSecretsOutcomeCallable EiamClient::listApplicat
 	return task->get_future();
 }
 
+EiamClient::ListApplicationFederatedCredentialsOutcome EiamClient::listApplicationFederatedCredentials(const ListApplicationFederatedCredentialsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationFederatedCredentialsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationFederatedCredentialsOutcome(ListApplicationFederatedCredentialsResult(outcome.result()));
+	else
+		return ListApplicationFederatedCredentialsOutcome(outcome.error());
+}
+
+void EiamClient::listApplicationFederatedCredentialsAsync(const ListApplicationFederatedCredentialsRequest& request, const ListApplicationFederatedCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationFederatedCredentials(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListApplicationFederatedCredentialsOutcomeCallable EiamClient::listApplicationFederatedCredentialsCallable(const ListApplicationFederatedCredentialsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationFederatedCredentialsOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationFederatedCredentials(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::ListApplicationFederatedCredentialsForProviderOutcome EiamClient::listApplicationFederatedCredentialsForProvider(const ListApplicationFederatedCredentialsForProviderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationFederatedCredentialsForProviderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationFederatedCredentialsForProviderOutcome(ListApplicationFederatedCredentialsForProviderResult(outcome.result()));
+	else
+		return ListApplicationFederatedCredentialsForProviderOutcome(outcome.error());
+}
+
+void EiamClient::listApplicationFederatedCredentialsForProviderAsync(const ListApplicationFederatedCredentialsForProviderRequest& request, const ListApplicationFederatedCredentialsForProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationFederatedCredentialsForProvider(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListApplicationFederatedCredentialsForProviderOutcomeCallable EiamClient::listApplicationFederatedCredentialsForProviderCallable(const ListApplicationFederatedCredentialsForProviderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationFederatedCredentialsForProviderOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationFederatedCredentialsForProvider(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::ListApplicationSupportedProvisionProtocolTypesOutcome EiamClient::listApplicationSupportedProvisionProtocolTypes(const ListApplicationSupportedProvisionProtocolTypesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationSupportedProvisionProtocolTypesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationSupportedProvisionProtocolTypesOutcome(ListApplicationSupportedProvisionProtocolTypesResult(outcome.result()));
+	else
+		return ListApplicationSupportedProvisionProtocolTypesOutcome(outcome.error());
+}
+
+void EiamClient::listApplicationSupportedProvisionProtocolTypesAsync(const ListApplicationSupportedProvisionProtocolTypesRequest& request, const ListApplicationSupportedProvisionProtocolTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationSupportedProvisionProtocolTypes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListApplicationSupportedProvisionProtocolTypesOutcomeCallable EiamClient::listApplicationSupportedProvisionProtocolTypesCallable(const ListApplicationSupportedProvisionProtocolTypesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationSupportedProvisionProtocolTypesOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationSupportedProvisionProtocolTypes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::ListApplicationTokensOutcome EiamClient::listApplicationTokens(const ListApplicationTokensRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationTokensOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationTokensOutcome(ListApplicationTokensResult(outcome.result()));
+	else
+		return ListApplicationTokensOutcome(outcome.error());
+}
+
+void EiamClient::listApplicationTokensAsync(const ListApplicationTokensRequest& request, const ListApplicationTokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationTokens(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListApplicationTokensOutcomeCallable EiamClient::listApplicationTokensCallable(const ListApplicationTokensRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationTokensOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationTokens(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::ListApplicationsOutcome EiamClient::listApplications(const ListApplicationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2673,6 +3861,114 @@ EiamClient::ListApplicationsOutcomeCallable EiamClient::listApplicationsCallable
 			[this, request]()
 			{
 			return this->listApplications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::ListApplicationsForGroupOutcome EiamClient::listApplicationsForGroup(const ListApplicationsForGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationsForGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationsForGroupOutcome(ListApplicationsForGroupResult(outcome.result()));
+	else
+		return ListApplicationsForGroupOutcome(outcome.error());
+}
+
+void EiamClient::listApplicationsForGroupAsync(const ListApplicationsForGroupRequest& request, const ListApplicationsForGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationsForGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListApplicationsForGroupOutcomeCallable EiamClient::listApplicationsForGroupCallable(const ListApplicationsForGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationsForGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationsForGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::ListApplicationsForNetworkAccessEndpointOutcome EiamClient::listApplicationsForNetworkAccessEndpoint(const ListApplicationsForNetworkAccessEndpointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationsForNetworkAccessEndpointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationsForNetworkAccessEndpointOutcome(ListApplicationsForNetworkAccessEndpointResult(outcome.result()));
+	else
+		return ListApplicationsForNetworkAccessEndpointOutcome(outcome.error());
+}
+
+void EiamClient::listApplicationsForNetworkAccessEndpointAsync(const ListApplicationsForNetworkAccessEndpointRequest& request, const ListApplicationsForNetworkAccessEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationsForNetworkAccessEndpoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListApplicationsForNetworkAccessEndpointOutcomeCallable EiamClient::listApplicationsForNetworkAccessEndpointCallable(const ListApplicationsForNetworkAccessEndpointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationsForNetworkAccessEndpointOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationsForNetworkAccessEndpoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::ListApplicationsForNetworkZoneOutcome EiamClient::listApplicationsForNetworkZone(const ListApplicationsForNetworkZoneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationsForNetworkZoneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationsForNetworkZoneOutcome(ListApplicationsForNetworkZoneResult(outcome.result()));
+	else
+		return ListApplicationsForNetworkZoneOutcome(outcome.error());
+}
+
+void EiamClient::listApplicationsForNetworkZoneAsync(const ListApplicationsForNetworkZoneRequest& request, const ListApplicationsForNetworkZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationsForNetworkZone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListApplicationsForNetworkZoneOutcomeCallable EiamClient::listApplicationsForNetworkZoneCallable(const ListApplicationsForNetworkZoneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationsForNetworkZoneOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationsForNetworkZone(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2751,6 +4047,42 @@ EiamClient::ListApplicationsForUserOutcomeCallable EiamClient::listApplicationsF
 	return task->get_future();
 }
 
+EiamClient::ListBrandsOutcome EiamClient::listBrands(const ListBrandsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListBrandsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListBrandsOutcome(ListBrandsResult(outcome.result()));
+	else
+		return ListBrandsOutcome(outcome.error());
+}
+
+void EiamClient::listBrandsAsync(const ListBrandsRequest& request, const ListBrandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listBrands(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListBrandsOutcomeCallable EiamClient::listBrandsCallable(const ListBrandsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListBrandsOutcome()>>(
+			[this, request]()
+			{
+			return this->listBrands(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::ListConditionalAccessPoliciesOutcome EiamClient::listConditionalAccessPolicies(const ListConditionalAccessPoliciesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2787,6 +4119,42 @@ EiamClient::ListConditionalAccessPoliciesOutcomeCallable EiamClient::listConditi
 	return task->get_future();
 }
 
+EiamClient::ListConditionalAccessPoliciesForApplicationOutcome EiamClient::listConditionalAccessPoliciesForApplication(const ListConditionalAccessPoliciesForApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListConditionalAccessPoliciesForApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListConditionalAccessPoliciesForApplicationOutcome(ListConditionalAccessPoliciesForApplicationResult(outcome.result()));
+	else
+		return ListConditionalAccessPoliciesForApplicationOutcome(outcome.error());
+}
+
+void EiamClient::listConditionalAccessPoliciesForApplicationAsync(const ListConditionalAccessPoliciesForApplicationRequest& request, const ListConditionalAccessPoliciesForApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listConditionalAccessPoliciesForApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListConditionalAccessPoliciesForApplicationOutcomeCallable EiamClient::listConditionalAccessPoliciesForApplicationCallable(const ListConditionalAccessPoliciesForApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListConditionalAccessPoliciesForApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->listConditionalAccessPoliciesForApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::ListConditionalAccessPoliciesForNetworkZoneOutcome EiamClient::listConditionalAccessPoliciesForNetworkZone(const ListConditionalAccessPoliciesForNetworkZoneRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2817,6 +4185,42 @@ EiamClient::ListConditionalAccessPoliciesForNetworkZoneOutcomeCallable EiamClien
 			[this, request]()
 			{
 			return this->listConditionalAccessPoliciesForNetworkZone(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::ListConditionalAccessPoliciesForUserOutcome EiamClient::listConditionalAccessPoliciesForUser(const ListConditionalAccessPoliciesForUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListConditionalAccessPoliciesForUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListConditionalAccessPoliciesForUserOutcome(ListConditionalAccessPoliciesForUserResult(outcome.result()));
+	else
+		return ListConditionalAccessPoliciesForUserOutcome(outcome.error());
+}
+
+void EiamClient::listConditionalAccessPoliciesForUserAsync(const ListConditionalAccessPoliciesForUserRequest& request, const ListConditionalAccessPoliciesForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listConditionalAccessPoliciesForUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListConditionalAccessPoliciesForUserOutcomeCallable EiamClient::listConditionalAccessPoliciesForUserCallable(const ListConditionalAccessPoliciesForUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListConditionalAccessPoliciesForUserOutcome()>>(
+			[this, request]()
+			{
+			return this->listConditionalAccessPoliciesForUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2967,6 +4371,42 @@ EiamClient::ListEiamRegionsOutcomeCallable EiamClient::listEiamRegionsCallable(c
 	return task->get_future();
 }
 
+EiamClient::ListFederatedCredentialProvidersOutcome EiamClient::listFederatedCredentialProviders(const ListFederatedCredentialProvidersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFederatedCredentialProvidersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFederatedCredentialProvidersOutcome(ListFederatedCredentialProvidersResult(outcome.result()));
+	else
+		return ListFederatedCredentialProvidersOutcome(outcome.error());
+}
+
+void EiamClient::listFederatedCredentialProvidersAsync(const ListFederatedCredentialProvidersRequest& request, const ListFederatedCredentialProvidersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFederatedCredentialProviders(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListFederatedCredentialProvidersOutcomeCallable EiamClient::listFederatedCredentialProvidersCallable(const ListFederatedCredentialProvidersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFederatedCredentialProvidersOutcome()>>(
+			[this, request]()
+			{
+			return this->listFederatedCredentialProviders(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::ListGroupsOutcome EiamClient::listGroups(const ListGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3105,6 +4545,42 @@ EiamClient::ListIdentityProvidersOutcomeCallable EiamClient::listIdentityProvide
 			[this, request]()
 			{
 			return this->listIdentityProviders(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::ListIdentityProvidersForNetworkAccessEndpointOutcome EiamClient::listIdentityProvidersForNetworkAccessEndpoint(const ListIdentityProvidersForNetworkAccessEndpointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListIdentityProvidersForNetworkAccessEndpointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListIdentityProvidersForNetworkAccessEndpointOutcome(ListIdentityProvidersForNetworkAccessEndpointResult(outcome.result()));
+	else
+		return ListIdentityProvidersForNetworkAccessEndpointOutcome(outcome.error());
+}
+
+void EiamClient::listIdentityProvidersForNetworkAccessEndpointAsync(const ListIdentityProvidersForNetworkAccessEndpointRequest& request, const ListIdentityProvidersForNetworkAccessEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listIdentityProvidersForNetworkAccessEndpoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListIdentityProvidersForNetworkAccessEndpointOutcomeCallable EiamClient::listIdentityProvidersForNetworkAccessEndpointCallable(const ListIdentityProvidersForNetworkAccessEndpointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListIdentityProvidersForNetworkAccessEndpointOutcome()>>(
+			[this, request]()
+			{
+			return this->listIdentityProvidersForNetworkAccessEndpoint(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3285,6 +4761,42 @@ EiamClient::ListNetworkAccessPathsOutcomeCallable EiamClient::listNetworkAccessP
 			[this, request]()
 			{
 			return this->listNetworkAccessPaths(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::ListNetworkZonesOutcome EiamClient::listNetworkZones(const ListNetworkZonesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListNetworkZonesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListNetworkZonesOutcome(ListNetworkZonesResult(outcome.result()));
+	else
+		return ListNetworkZonesOutcome(outcome.error());
+}
+
+void EiamClient::listNetworkZonesAsync(const ListNetworkZonesRequest& request, const ListNetworkZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listNetworkZones(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListNetworkZonesOutcomeCallable EiamClient::listNetworkZonesCallable(const ListNetworkZonesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListNetworkZonesOutcome()>>(
+			[this, request]()
+			{
+			return this->listNetworkZones(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3615,6 +5127,42 @@ EiamClient::ObtainApplicationClientSecretOutcomeCallable EiamClient::obtainAppli
 	return task->get_future();
 }
 
+EiamClient::ObtainApplicationTokenOutcome EiamClient::obtainApplicationToken(const ObtainApplicationTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ObtainApplicationTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ObtainApplicationTokenOutcome(ObtainApplicationTokenResult(outcome.result()));
+	else
+		return ObtainApplicationTokenOutcome(outcome.error());
+}
+
+void EiamClient::obtainApplicationTokenAsync(const ObtainApplicationTokenRequest& request, const ObtainApplicationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, obtainApplicationToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ObtainApplicationTokenOutcomeCallable EiamClient::obtainApplicationTokenCallable(const ObtainApplicationTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ObtainApplicationTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->obtainApplicationToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::ObtainDomainProxyTokenOutcome EiamClient::obtainDomainProxyToken(const ObtainDomainProxyTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3645,6 +5193,42 @@ EiamClient::ObtainDomainProxyTokenOutcomeCallable EiamClient::obtainDomainProxyT
 			[this, request]()
 			{
 			return this->obtainDomainProxyToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::RemoveApplicationAccountFromUserOutcome EiamClient::removeApplicationAccountFromUser(const RemoveApplicationAccountFromUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveApplicationAccountFromUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveApplicationAccountFromUserOutcome(RemoveApplicationAccountFromUserResult(outcome.result()));
+	else
+		return RemoveApplicationAccountFromUserOutcome(outcome.error());
+}
+
+void EiamClient::removeApplicationAccountFromUserAsync(const RemoveApplicationAccountFromUserRequest& request, const RemoveApplicationAccountFromUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeApplicationAccountFromUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::RemoveApplicationAccountFromUserOutcomeCallable EiamClient::removeApplicationAccountFromUserCallable(const RemoveApplicationAccountFromUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveApplicationAccountFromUserOutcome()>>(
+			[this, request]()
+			{
+			return this->removeApplicationAccountFromUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4119,6 +5703,42 @@ EiamClient::SetIdentityProviderUdPullConfigurationOutcomeCallable EiamClient::se
 	return task->get_future();
 }
 
+EiamClient::SetLoginRedirectApplicationForBrandOutcome EiamClient::setLoginRedirectApplicationForBrand(const SetLoginRedirectApplicationForBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetLoginRedirectApplicationForBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetLoginRedirectApplicationForBrandOutcome(SetLoginRedirectApplicationForBrandResult(outcome.result()));
+	else
+		return SetLoginRedirectApplicationForBrandOutcome(outcome.error());
+}
+
+void EiamClient::setLoginRedirectApplicationForBrandAsync(const SetLoginRedirectApplicationForBrandRequest& request, const SetLoginRedirectApplicationForBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setLoginRedirectApplicationForBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::SetLoginRedirectApplicationForBrandOutcomeCallable EiamClient::setLoginRedirectApplicationForBrandCallable(const SetLoginRedirectApplicationForBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetLoginRedirectApplicationForBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->setLoginRedirectApplicationForBrand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::SetPasswordComplexityConfigurationOutcome EiamClient::setPasswordComplexityConfiguration(const SetPasswordComplexityConfigurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4443,6 +6063,186 @@ EiamClient::UpdateApplicationDescriptionOutcomeCallable EiamClient::updateApplic
 	return task->get_future();
 }
 
+EiamClient::UpdateApplicationFederatedCredentialOutcome EiamClient::updateApplicationFederatedCredential(const UpdateApplicationFederatedCredentialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationFederatedCredentialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationFederatedCredentialOutcome(UpdateApplicationFederatedCredentialResult(outcome.result()));
+	else
+		return UpdateApplicationFederatedCredentialOutcome(outcome.error());
+}
+
+void EiamClient::updateApplicationFederatedCredentialAsync(const UpdateApplicationFederatedCredentialRequest& request, const UpdateApplicationFederatedCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplicationFederatedCredential(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateApplicationFederatedCredentialOutcomeCallable EiamClient::updateApplicationFederatedCredentialCallable(const UpdateApplicationFederatedCredentialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationFederatedCredentialOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplicationFederatedCredential(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UpdateApplicationFederatedCredentialDescriptionOutcome EiamClient::updateApplicationFederatedCredentialDescription(const UpdateApplicationFederatedCredentialDescriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationFederatedCredentialDescriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationFederatedCredentialDescriptionOutcome(UpdateApplicationFederatedCredentialDescriptionResult(outcome.result()));
+	else
+		return UpdateApplicationFederatedCredentialDescriptionOutcome(outcome.error());
+}
+
+void EiamClient::updateApplicationFederatedCredentialDescriptionAsync(const UpdateApplicationFederatedCredentialDescriptionRequest& request, const UpdateApplicationFederatedCredentialDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplicationFederatedCredentialDescription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateApplicationFederatedCredentialDescriptionOutcomeCallable EiamClient::updateApplicationFederatedCredentialDescriptionCallable(const UpdateApplicationFederatedCredentialDescriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationFederatedCredentialDescriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplicationFederatedCredentialDescription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UpdateApplicationInfoOutcome EiamClient::updateApplicationInfo(const UpdateApplicationInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationInfoOutcome(UpdateApplicationInfoResult(outcome.result()));
+	else
+		return UpdateApplicationInfoOutcome(outcome.error());
+}
+
+void EiamClient::updateApplicationInfoAsync(const UpdateApplicationInfoRequest& request, const UpdateApplicationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplicationInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateApplicationInfoOutcomeCallable EiamClient::updateApplicationInfoCallable(const UpdateApplicationInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplicationInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UpdateApplicationTokenExpirationTimeOutcome EiamClient::updateApplicationTokenExpirationTime(const UpdateApplicationTokenExpirationTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationTokenExpirationTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationTokenExpirationTimeOutcome(UpdateApplicationTokenExpirationTimeResult(outcome.result()));
+	else
+		return UpdateApplicationTokenExpirationTimeOutcome(outcome.error());
+}
+
+void EiamClient::updateApplicationTokenExpirationTimeAsync(const UpdateApplicationTokenExpirationTimeRequest& request, const UpdateApplicationTokenExpirationTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplicationTokenExpirationTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateApplicationTokenExpirationTimeOutcomeCallable EiamClient::updateApplicationTokenExpirationTimeCallable(const UpdateApplicationTokenExpirationTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationTokenExpirationTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplicationTokenExpirationTime(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UpdateBrandOutcome EiamClient::updateBrand(const UpdateBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateBrandOutcome(UpdateBrandResult(outcome.result()));
+	else
+		return UpdateBrandOutcome(outcome.error());
+}
+
+void EiamClient::updateBrandAsync(const UpdateBrandRequest& request, const UpdateBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateBrandOutcomeCallable EiamClient::updateBrandCallable(const UpdateBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->updateBrand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::UpdateConditionalAccessPolicyOutcome EiamClient::updateConditionalAccessPolicy(const UpdateConditionalAccessPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4509,6 +6309,150 @@ EiamClient::UpdateConditionalAccessPolicyDescriptionOutcomeCallable EiamClient::
 			[this, request]()
 			{
 			return this->updateConditionalAccessPolicyDescription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UpdateDomainBrandOutcome EiamClient::updateDomainBrand(const UpdateDomainBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDomainBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDomainBrandOutcome(UpdateDomainBrandResult(outcome.result()));
+	else
+		return UpdateDomainBrandOutcome(outcome.error());
+}
+
+void EiamClient::updateDomainBrandAsync(const UpdateDomainBrandRequest& request, const UpdateDomainBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDomainBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateDomainBrandOutcomeCallable EiamClient::updateDomainBrandCallable(const UpdateDomainBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDomainBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDomainBrand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UpdateDomainIcpNumberOutcome EiamClient::updateDomainIcpNumber(const UpdateDomainIcpNumberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDomainIcpNumberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDomainIcpNumberOutcome(UpdateDomainIcpNumberResult(outcome.result()));
+	else
+		return UpdateDomainIcpNumberOutcome(outcome.error());
+}
+
+void EiamClient::updateDomainIcpNumberAsync(const UpdateDomainIcpNumberRequest& request, const UpdateDomainIcpNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDomainIcpNumber(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateDomainIcpNumberOutcomeCallable EiamClient::updateDomainIcpNumberCallable(const UpdateDomainIcpNumberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDomainIcpNumberOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDomainIcpNumber(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UpdateFederatedCredentialProviderOutcome EiamClient::updateFederatedCredentialProvider(const UpdateFederatedCredentialProviderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateFederatedCredentialProviderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateFederatedCredentialProviderOutcome(UpdateFederatedCredentialProviderResult(outcome.result()));
+	else
+		return UpdateFederatedCredentialProviderOutcome(outcome.error());
+}
+
+void EiamClient::updateFederatedCredentialProviderAsync(const UpdateFederatedCredentialProviderRequest& request, const UpdateFederatedCredentialProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateFederatedCredentialProvider(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateFederatedCredentialProviderOutcomeCallable EiamClient::updateFederatedCredentialProviderCallable(const UpdateFederatedCredentialProviderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateFederatedCredentialProviderOutcome()>>(
+			[this, request]()
+			{
+			return this->updateFederatedCredentialProvider(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UpdateFederatedCredentialProviderDescriptionOutcome EiamClient::updateFederatedCredentialProviderDescription(const UpdateFederatedCredentialProviderDescriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateFederatedCredentialProviderDescriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateFederatedCredentialProviderDescriptionOutcome(UpdateFederatedCredentialProviderDescriptionResult(outcome.result()));
+	else
+		return UpdateFederatedCredentialProviderDescriptionOutcome(outcome.error());
+}
+
+void EiamClient::updateFederatedCredentialProviderDescriptionAsync(const UpdateFederatedCredentialProviderDescriptionRequest& request, const UpdateFederatedCredentialProviderDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateFederatedCredentialProviderDescription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateFederatedCredentialProviderDescriptionOutcomeCallable EiamClient::updateFederatedCredentialProviderDescriptionCallable(const UpdateFederatedCredentialProviderDescriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateFederatedCredentialProviderDescriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->updateFederatedCredentialProviderDescription(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4689,6 +6633,78 @@ EiamClient::UpdateNetworkAccessEndpointNameOutcomeCallable EiamClient::updateNet
 			[this, request]()
 			{
 			return this->updateNetworkAccessEndpointName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UpdateNetworkZoneOutcome EiamClient::updateNetworkZone(const UpdateNetworkZoneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNetworkZoneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNetworkZoneOutcome(UpdateNetworkZoneResult(outcome.result()));
+	else
+		return UpdateNetworkZoneOutcome(outcome.error());
+}
+
+void EiamClient::updateNetworkZoneAsync(const UpdateNetworkZoneRequest& request, const UpdateNetworkZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNetworkZone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateNetworkZoneOutcomeCallable EiamClient::updateNetworkZoneCallable(const UpdateNetworkZoneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNetworkZoneOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNetworkZone(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UpdateNetworkZoneDescriptionOutcome EiamClient::updateNetworkZoneDescription(const UpdateNetworkZoneDescriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNetworkZoneDescriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNetworkZoneDescriptionOutcome(UpdateNetworkZoneDescriptionResult(outcome.result()));
+	else
+		return UpdateNetworkZoneDescriptionOutcome(outcome.error());
+}
+
+void EiamClient::updateNetworkZoneDescriptionAsync(const UpdateNetworkZoneDescriptionRequest& request, const UpdateNetworkZoneDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNetworkZoneDescription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateNetworkZoneDescriptionOutcomeCallable EiamClient::updateNetworkZoneDescriptionCallable(const UpdateNetworkZoneDescriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNetworkZoneDescriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNetworkZoneDescription(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

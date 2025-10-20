@@ -56,6 +56,8 @@ void GetDomainResult::parse(const std::string &payload)
 		domain_.createTime = std::stol(domainNode["CreateTime"].asString());
 	if(!domainNode["UpdateTime"].isNull())
 		domain_.updateTime = std::stol(domainNode["UpdateTime"].asString());
+	if(!domainNode["BrandId"].isNull())
+		domain_.brandId = domainNode["BrandId"].asString();
 	auto filingNode = domainNode["Filing"];
 	if(!filingNode["IcpNumber"].isNull())
 		domain_.filing.icpNumber = filingNode["IcpNumber"].asString();

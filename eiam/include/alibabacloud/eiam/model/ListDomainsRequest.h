@@ -32,9 +32,12 @@ public:
 	~ListDomainsRequest();
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getBrandId() const;
+	void setBrandId(const std::string &brandId);
 
 private:
 	std::string instanceId_;
+	std::string brandId_;
 };
 } // namespace Model
 } // namespace Eiam

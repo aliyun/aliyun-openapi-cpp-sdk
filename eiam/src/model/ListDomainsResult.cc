@@ -59,6 +59,8 @@ void ListDomainsResult::parse(const std::string &payload)
 			domainsObject.createTime = std::stol(valueDomainsDomain["CreateTime"].asString());
 		if(!valueDomainsDomain["UpdateTime"].isNull())
 			domainsObject.updateTime = std::stol(valueDomainsDomain["UpdateTime"].asString());
+		if(!valueDomainsDomain["BrandId"].isNull())
+			domainsObject.brandId = valueDomainsDomain["BrandId"].asString();
 		auto filingNode = value["Filing"];
 		if(!filingNode["IcpNumber"].isNull())
 			domainsObject.filing.icpNumber = filingNode["IcpNumber"].asString();

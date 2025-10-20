@@ -34,3 +34,12 @@ void ListDomainsRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string ListDomainsRequest::getBrandId() const {
+  return brandId_;
+}
+
+void ListDomainsRequest::setBrandId(const std::string &brandId) {
+  brandId_ = brandId;
+  setParameter(std::string("BrandId"), brandId);
+}
+

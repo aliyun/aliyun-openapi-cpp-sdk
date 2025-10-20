@@ -21,6 +21,8 @@ set(eiam_public_header
 	include/alibabacloud/eiam/EiamExport.h )
 
 set(eiam_public_header_model 
+	include/alibabacloud/eiam/model/AddApplicationAccountToUserRequest.h
+	include/alibabacloud/eiam/model/AddApplicationAccountToUserResult.h
 	include/alibabacloud/eiam/model/AddUserToOrganizationalUnitsRequest.h
 	include/alibabacloud/eiam/model/AddUserToOrganizationalUnitsResult.h
 	include/alibabacloud/eiam/model/AddUsersToGroupRequest.h
@@ -35,12 +37,20 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/CreateApplicationResult.h
 	include/alibabacloud/eiam/model/CreateApplicationClientSecretRequest.h
 	include/alibabacloud/eiam/model/CreateApplicationClientSecretResult.h
+	include/alibabacloud/eiam/model/CreateApplicationFederatedCredentialRequest.h
+	include/alibabacloud/eiam/model/CreateApplicationFederatedCredentialResult.h
+	include/alibabacloud/eiam/model/CreateApplicationTokenRequest.h
+	include/alibabacloud/eiam/model/CreateApplicationTokenResult.h
+	include/alibabacloud/eiam/model/CreateBrandRequest.h
+	include/alibabacloud/eiam/model/CreateBrandResult.h
 	include/alibabacloud/eiam/model/CreateConditionalAccessPolicyRequest.h
 	include/alibabacloud/eiam/model/CreateConditionalAccessPolicyResult.h
 	include/alibabacloud/eiam/model/CreateDomainRequest.h
 	include/alibabacloud/eiam/model/CreateDomainResult.h
 	include/alibabacloud/eiam/model/CreateDomainProxyTokenRequest.h
 	include/alibabacloud/eiam/model/CreateDomainProxyTokenResult.h
+	include/alibabacloud/eiam/model/CreateFederatedCredentialProviderRequest.h
+	include/alibabacloud/eiam/model/CreateFederatedCredentialProviderResult.h
 	include/alibabacloud/eiam/model/CreateGroupRequest.h
 	include/alibabacloud/eiam/model/CreateGroupResult.h
 	include/alibabacloud/eiam/model/CreateIdentityProviderRequest.h
@@ -49,6 +59,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/CreateInstanceResult.h
 	include/alibabacloud/eiam/model/CreateNetworkAccessEndpointRequest.h
 	include/alibabacloud/eiam/model/CreateNetworkAccessEndpointResult.h
+	include/alibabacloud/eiam/model/CreateNetworkZoneRequest.h
+	include/alibabacloud/eiam/model/CreateNetworkZoneResult.h
 	include/alibabacloud/eiam/model/CreateOrganizationalUnitRequest.h
 	include/alibabacloud/eiam/model/CreateOrganizationalUnitResult.h
 	include/alibabacloud/eiam/model/CreateUserRequest.h
@@ -57,12 +69,20 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/DeleteApplicationResult.h
 	include/alibabacloud/eiam/model/DeleteApplicationClientSecretRequest.h
 	include/alibabacloud/eiam/model/DeleteApplicationClientSecretResult.h
+	include/alibabacloud/eiam/model/DeleteApplicationFederatedCredentialRequest.h
+	include/alibabacloud/eiam/model/DeleteApplicationFederatedCredentialResult.h
+	include/alibabacloud/eiam/model/DeleteApplicationTokenRequest.h
+	include/alibabacloud/eiam/model/DeleteApplicationTokenResult.h
+	include/alibabacloud/eiam/model/DeleteBrandRequest.h
+	include/alibabacloud/eiam/model/DeleteBrandResult.h
 	include/alibabacloud/eiam/model/DeleteConditionalAccessPolicyRequest.h
 	include/alibabacloud/eiam/model/DeleteConditionalAccessPolicyResult.h
 	include/alibabacloud/eiam/model/DeleteDomainRequest.h
 	include/alibabacloud/eiam/model/DeleteDomainResult.h
 	include/alibabacloud/eiam/model/DeleteDomainProxyTokenRequest.h
 	include/alibabacloud/eiam/model/DeleteDomainProxyTokenResult.h
+	include/alibabacloud/eiam/model/DeleteFederatedCredentialProviderRequest.h
+	include/alibabacloud/eiam/model/DeleteFederatedCredentialProviderResult.h
 	include/alibabacloud/eiam/model/DeleteGroupRequest.h
 	include/alibabacloud/eiam/model/DeleteGroupResult.h
 	include/alibabacloud/eiam/model/DeleteIdentityProviderRequest.h
@@ -71,6 +91,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/DeleteInstanceResult.h
 	include/alibabacloud/eiam/model/DeleteNetworkAccessEndpointRequest.h
 	include/alibabacloud/eiam/model/DeleteNetworkAccessEndpointResult.h
+	include/alibabacloud/eiam/model/DeleteNetworkZoneRequest.h
+	include/alibabacloud/eiam/model/DeleteNetworkZoneResult.h
 	include/alibabacloud/eiam/model/DeleteOrganizationalUnitRequest.h
 	include/alibabacloud/eiam/model/DeleteOrganizationalUnitResult.h
 	include/alibabacloud/eiam/model/DeleteOrganizationalUnitChildrenRequest.h
@@ -83,14 +105,24 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/DisableApplicationApiInvokeResult.h
 	include/alibabacloud/eiam/model/DisableApplicationClientSecretRequest.h
 	include/alibabacloud/eiam/model/DisableApplicationClientSecretResult.h
+	include/alibabacloud/eiam/model/DisableApplicationFederatedCredentialRequest.h
+	include/alibabacloud/eiam/model/DisableApplicationFederatedCredentialResult.h
 	include/alibabacloud/eiam/model/DisableApplicationProvisioningRequest.h
 	include/alibabacloud/eiam/model/DisableApplicationProvisioningResult.h
 	include/alibabacloud/eiam/model/DisableApplicationSsoRequest.h
 	include/alibabacloud/eiam/model/DisableApplicationSsoResult.h
+	include/alibabacloud/eiam/model/DisableApplicationTokenRequest.h
+	include/alibabacloud/eiam/model/DisableApplicationTokenResult.h
+	include/alibabacloud/eiam/model/DisableBrandRequest.h
+	include/alibabacloud/eiam/model/DisableBrandResult.h
 	include/alibabacloud/eiam/model/DisableConditionalAccessPolicyRequest.h
 	include/alibabacloud/eiam/model/DisableConditionalAccessPolicyResult.h
 	include/alibabacloud/eiam/model/DisableDomainProxyTokenRequest.h
 	include/alibabacloud/eiam/model/DisableDomainProxyTokenResult.h
+	include/alibabacloud/eiam/model/DisableFederatedCredentialProviderRequest.h
+	include/alibabacloud/eiam/model/DisableFederatedCredentialProviderResult.h
+	include/alibabacloud/eiam/model/DisableIdentityProviderAuthnRequest.h
+	include/alibabacloud/eiam/model/DisableIdentityProviderAuthnResult.h
 	include/alibabacloud/eiam/model/DisableIdentityProviderUdPullRequest.h
 	include/alibabacloud/eiam/model/DisableIdentityProviderUdPullResult.h
 	include/alibabacloud/eiam/model/DisableInitDomainAutoRedirectRequest.h
@@ -103,14 +135,24 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/EnableApplicationApiInvokeResult.h
 	include/alibabacloud/eiam/model/EnableApplicationClientSecretRequest.h
 	include/alibabacloud/eiam/model/EnableApplicationClientSecretResult.h
+	include/alibabacloud/eiam/model/EnableApplicationFederatedCredentialRequest.h
+	include/alibabacloud/eiam/model/EnableApplicationFederatedCredentialResult.h
 	include/alibabacloud/eiam/model/EnableApplicationProvisioningRequest.h
 	include/alibabacloud/eiam/model/EnableApplicationProvisioningResult.h
 	include/alibabacloud/eiam/model/EnableApplicationSsoRequest.h
 	include/alibabacloud/eiam/model/EnableApplicationSsoResult.h
+	include/alibabacloud/eiam/model/EnableApplicationTokenRequest.h
+	include/alibabacloud/eiam/model/EnableApplicationTokenResult.h
+	include/alibabacloud/eiam/model/EnableBrandRequest.h
+	include/alibabacloud/eiam/model/EnableBrandResult.h
 	include/alibabacloud/eiam/model/EnableConditionalAccessPolicyRequest.h
 	include/alibabacloud/eiam/model/EnableConditionalAccessPolicyResult.h
 	include/alibabacloud/eiam/model/EnableDomainProxyTokenRequest.h
 	include/alibabacloud/eiam/model/EnableDomainProxyTokenResult.h
+	include/alibabacloud/eiam/model/EnableFederatedCredentialProviderRequest.h
+	include/alibabacloud/eiam/model/EnableFederatedCredentialProviderResult.h
+	include/alibabacloud/eiam/model/EnableIdentityProviderAuthnRequest.h
+	include/alibabacloud/eiam/model/EnableIdentityProviderAuthnResult.h
 	include/alibabacloud/eiam/model/EnableIdentityProviderUdPullRequest.h
 	include/alibabacloud/eiam/model/EnableIdentityProviderUdPullResult.h
 	include/alibabacloud/eiam/model/EnableInitDomainAutoRedirectRequest.h
@@ -119,6 +161,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/EnableUserResult.h
 	include/alibabacloud/eiam/model/GetApplicationRequest.h
 	include/alibabacloud/eiam/model/GetApplicationResult.h
+	include/alibabacloud/eiam/model/GetApplicationFederatedCredentialRequest.h
+	include/alibabacloud/eiam/model/GetApplicationFederatedCredentialResult.h
 	include/alibabacloud/eiam/model/GetApplicationGrantScopeRequest.h
 	include/alibabacloud/eiam/model/GetApplicationGrantScopeResult.h
 	include/alibabacloud/eiam/model/GetApplicationProvisioningConfigRequest.h
@@ -127,12 +171,18 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/GetApplicationProvisioningScopeResult.h
 	include/alibabacloud/eiam/model/GetApplicationSsoConfigRequest.h
 	include/alibabacloud/eiam/model/GetApplicationSsoConfigResult.h
+	include/alibabacloud/eiam/model/GetApplicationTemplateRequest.h
+	include/alibabacloud/eiam/model/GetApplicationTemplateResult.h
+	include/alibabacloud/eiam/model/GetBrandRequest.h
+	include/alibabacloud/eiam/model/GetBrandResult.h
 	include/alibabacloud/eiam/model/GetConditionalAccessPolicyRequest.h
 	include/alibabacloud/eiam/model/GetConditionalAccessPolicyResult.h
 	include/alibabacloud/eiam/model/GetDomainRequest.h
 	include/alibabacloud/eiam/model/GetDomainResult.h
 	include/alibabacloud/eiam/model/GetDomainDnsChallengeRequest.h
 	include/alibabacloud/eiam/model/GetDomainDnsChallengeResult.h
+	include/alibabacloud/eiam/model/GetFederatedCredentialProviderRequest.h
+	include/alibabacloud/eiam/model/GetFederatedCredentialProviderResult.h
 	include/alibabacloud/eiam/model/GetForgetPasswordConfigurationRequest.h
 	include/alibabacloud/eiam/model/GetForgetPasswordConfigurationResult.h
 	include/alibabacloud/eiam/model/GetGroupRequest.h
@@ -145,8 +195,12 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/GetInstanceResult.h
 	include/alibabacloud/eiam/model/GetInstanceLicenseRequest.h
 	include/alibabacloud/eiam/model/GetInstanceLicenseResult.h
+	include/alibabacloud/eiam/model/GetLoginRedirectApplicationForBrandRequest.h
+	include/alibabacloud/eiam/model/GetLoginRedirectApplicationForBrandResult.h
 	include/alibabacloud/eiam/model/GetNetworkAccessEndpointRequest.h
 	include/alibabacloud/eiam/model/GetNetworkAccessEndpointResult.h
+	include/alibabacloud/eiam/model/GetNetworkZoneRequest.h
+	include/alibabacloud/eiam/model/GetNetworkZoneResult.h
 	include/alibabacloud/eiam/model/GetOrganizationalUnitRequest.h
 	include/alibabacloud/eiam/model/GetOrganizationalUnitResult.h
 	include/alibabacloud/eiam/model/GetPasswordComplexityConfigurationRequest.h
@@ -163,18 +217,42 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/GetSynchronizationJobResult.h
 	include/alibabacloud/eiam/model/GetUserRequest.h
 	include/alibabacloud/eiam/model/GetUserResult.h
+	include/alibabacloud/eiam/model/ListApplicationAccountsRequest.h
+	include/alibabacloud/eiam/model/ListApplicationAccountsResult.h
+	include/alibabacloud/eiam/model/ListApplicationAccountsForUserRequest.h
+	include/alibabacloud/eiam/model/ListApplicationAccountsForUserResult.h
 	include/alibabacloud/eiam/model/ListApplicationClientSecretsRequest.h
 	include/alibabacloud/eiam/model/ListApplicationClientSecretsResult.h
+	include/alibabacloud/eiam/model/ListApplicationFederatedCredentialsRequest.h
+	include/alibabacloud/eiam/model/ListApplicationFederatedCredentialsResult.h
+	include/alibabacloud/eiam/model/ListApplicationFederatedCredentialsForProviderRequest.h
+	include/alibabacloud/eiam/model/ListApplicationFederatedCredentialsForProviderResult.h
+	include/alibabacloud/eiam/model/ListApplicationSupportedProvisionProtocolTypesRequest.h
+	include/alibabacloud/eiam/model/ListApplicationSupportedProvisionProtocolTypesResult.h
+	include/alibabacloud/eiam/model/ListApplicationTokensRequest.h
+	include/alibabacloud/eiam/model/ListApplicationTokensResult.h
 	include/alibabacloud/eiam/model/ListApplicationsRequest.h
 	include/alibabacloud/eiam/model/ListApplicationsResult.h
+	include/alibabacloud/eiam/model/ListApplicationsForGroupRequest.h
+	include/alibabacloud/eiam/model/ListApplicationsForGroupResult.h
+	include/alibabacloud/eiam/model/ListApplicationsForNetworkAccessEndpointRequest.h
+	include/alibabacloud/eiam/model/ListApplicationsForNetworkAccessEndpointResult.h
+	include/alibabacloud/eiam/model/ListApplicationsForNetworkZoneRequest.h
+	include/alibabacloud/eiam/model/ListApplicationsForNetworkZoneResult.h
 	include/alibabacloud/eiam/model/ListApplicationsForOrganizationalUnitRequest.h
 	include/alibabacloud/eiam/model/ListApplicationsForOrganizationalUnitResult.h
 	include/alibabacloud/eiam/model/ListApplicationsForUserRequest.h
 	include/alibabacloud/eiam/model/ListApplicationsForUserResult.h
+	include/alibabacloud/eiam/model/ListBrandsRequest.h
+	include/alibabacloud/eiam/model/ListBrandsResult.h
 	include/alibabacloud/eiam/model/ListConditionalAccessPoliciesRequest.h
 	include/alibabacloud/eiam/model/ListConditionalAccessPoliciesResult.h
+	include/alibabacloud/eiam/model/ListConditionalAccessPoliciesForApplicationRequest.h
+	include/alibabacloud/eiam/model/ListConditionalAccessPoliciesForApplicationResult.h
 	include/alibabacloud/eiam/model/ListConditionalAccessPoliciesForNetworkZoneRequest.h
 	include/alibabacloud/eiam/model/ListConditionalAccessPoliciesForNetworkZoneResult.h
+	include/alibabacloud/eiam/model/ListConditionalAccessPoliciesForUserRequest.h
+	include/alibabacloud/eiam/model/ListConditionalAccessPoliciesForUserResult.h
 	include/alibabacloud/eiam/model/ListDomainProxyTokensRequest.h
 	include/alibabacloud/eiam/model/ListDomainProxyTokensResult.h
 	include/alibabacloud/eiam/model/ListDomainsRequest.h
@@ -183,6 +261,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/ListEiamInstancesResult.h
 	include/alibabacloud/eiam/model/ListEiamRegionsRequest.h
 	include/alibabacloud/eiam/model/ListEiamRegionsResult.h
+	include/alibabacloud/eiam/model/ListFederatedCredentialProvidersRequest.h
+	include/alibabacloud/eiam/model/ListFederatedCredentialProvidersResult.h
 	include/alibabacloud/eiam/model/ListGroupsRequest.h
 	include/alibabacloud/eiam/model/ListGroupsResult.h
 	include/alibabacloud/eiam/model/ListGroupsForApplicationRequest.h
@@ -191,6 +271,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/ListGroupsForUserResult.h
 	include/alibabacloud/eiam/model/ListIdentityProvidersRequest.h
 	include/alibabacloud/eiam/model/ListIdentityProvidersResult.h
+	include/alibabacloud/eiam/model/ListIdentityProvidersForNetworkAccessEndpointRequest.h
+	include/alibabacloud/eiam/model/ListIdentityProvidersForNetworkAccessEndpointResult.h
 	include/alibabacloud/eiam/model/ListInstancesRequest.h
 	include/alibabacloud/eiam/model/ListInstancesResult.h
 	include/alibabacloud/eiam/model/ListNetworkAccessEndpointAvailableRegionsRequest.h
@@ -201,6 +283,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/ListNetworkAccessEndpointsResult.h
 	include/alibabacloud/eiam/model/ListNetworkAccessPathsRequest.h
 	include/alibabacloud/eiam/model/ListNetworkAccessPathsResult.h
+	include/alibabacloud/eiam/model/ListNetworkZonesRequest.h
+	include/alibabacloud/eiam/model/ListNetworkZonesResult.h
 	include/alibabacloud/eiam/model/ListOrganizationalUnitParentsRequest.h
 	include/alibabacloud/eiam/model/ListOrganizationalUnitParentsResult.h
 	include/alibabacloud/eiam/model/ListOrganizationalUnitsRequest.h
@@ -219,8 +303,12 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/ListUsersForGroupResult.h
 	include/alibabacloud/eiam/model/ObtainApplicationClientSecretRequest.h
 	include/alibabacloud/eiam/model/ObtainApplicationClientSecretResult.h
+	include/alibabacloud/eiam/model/ObtainApplicationTokenRequest.h
+	include/alibabacloud/eiam/model/ObtainApplicationTokenResult.h
 	include/alibabacloud/eiam/model/ObtainDomainProxyTokenRequest.h
 	include/alibabacloud/eiam/model/ObtainDomainProxyTokenResult.h
+	include/alibabacloud/eiam/model/RemoveApplicationAccountFromUserRequest.h
+	include/alibabacloud/eiam/model/RemoveApplicationAccountFromUserResult.h
 	include/alibabacloud/eiam/model/RemoveUserFromOrganizationalUnitsRequest.h
 	include/alibabacloud/eiam/model/RemoveUserFromOrganizationalUnitsResult.h
 	include/alibabacloud/eiam/model/RemoveUsersFromGroupRequest.h
@@ -247,6 +335,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/SetForgetPasswordConfigurationResult.h
 	include/alibabacloud/eiam/model/SetIdentityProviderUdPullConfigurationRequest.h
 	include/alibabacloud/eiam/model/SetIdentityProviderUdPullConfigurationResult.h
+	include/alibabacloud/eiam/model/SetLoginRedirectApplicationForBrandRequest.h
+	include/alibabacloud/eiam/model/SetLoginRedirectApplicationForBrandResult.h
 	include/alibabacloud/eiam/model/SetPasswordComplexityConfigurationRequest.h
 	include/alibabacloud/eiam/model/SetPasswordComplexityConfigurationResult.h
 	include/alibabacloud/eiam/model/SetPasswordExpirationConfigurationRequest.h
@@ -265,10 +355,28 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/UpdateApplicationClientSecretExpirationTimeResult.h
 	include/alibabacloud/eiam/model/UpdateApplicationDescriptionRequest.h
 	include/alibabacloud/eiam/model/UpdateApplicationDescriptionResult.h
+	include/alibabacloud/eiam/model/UpdateApplicationFederatedCredentialRequest.h
+	include/alibabacloud/eiam/model/UpdateApplicationFederatedCredentialResult.h
+	include/alibabacloud/eiam/model/UpdateApplicationFederatedCredentialDescriptionRequest.h
+	include/alibabacloud/eiam/model/UpdateApplicationFederatedCredentialDescriptionResult.h
+	include/alibabacloud/eiam/model/UpdateApplicationInfoRequest.h
+	include/alibabacloud/eiam/model/UpdateApplicationInfoResult.h
+	include/alibabacloud/eiam/model/UpdateApplicationTokenExpirationTimeRequest.h
+	include/alibabacloud/eiam/model/UpdateApplicationTokenExpirationTimeResult.h
+	include/alibabacloud/eiam/model/UpdateBrandRequest.h
+	include/alibabacloud/eiam/model/UpdateBrandResult.h
 	include/alibabacloud/eiam/model/UpdateConditionalAccessPolicyRequest.h
 	include/alibabacloud/eiam/model/UpdateConditionalAccessPolicyResult.h
 	include/alibabacloud/eiam/model/UpdateConditionalAccessPolicyDescriptionRequest.h
 	include/alibabacloud/eiam/model/UpdateConditionalAccessPolicyDescriptionResult.h
+	include/alibabacloud/eiam/model/UpdateDomainBrandRequest.h
+	include/alibabacloud/eiam/model/UpdateDomainBrandResult.h
+	include/alibabacloud/eiam/model/UpdateDomainIcpNumberRequest.h
+	include/alibabacloud/eiam/model/UpdateDomainIcpNumberResult.h
+	include/alibabacloud/eiam/model/UpdateFederatedCredentialProviderRequest.h
+	include/alibabacloud/eiam/model/UpdateFederatedCredentialProviderResult.h
+	include/alibabacloud/eiam/model/UpdateFederatedCredentialProviderDescriptionRequest.h
+	include/alibabacloud/eiam/model/UpdateFederatedCredentialProviderDescriptionResult.h
 	include/alibabacloud/eiam/model/UpdateGroupRequest.h
 	include/alibabacloud/eiam/model/UpdateGroupResult.h
 	include/alibabacloud/eiam/model/UpdateGroupDescriptionRequest.h
@@ -279,6 +387,10 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/UpdateInstanceDescriptionResult.h
 	include/alibabacloud/eiam/model/UpdateNetworkAccessEndpointNameRequest.h
 	include/alibabacloud/eiam/model/UpdateNetworkAccessEndpointNameResult.h
+	include/alibabacloud/eiam/model/UpdateNetworkZoneRequest.h
+	include/alibabacloud/eiam/model/UpdateNetworkZoneResult.h
+	include/alibabacloud/eiam/model/UpdateNetworkZoneDescriptionRequest.h
+	include/alibabacloud/eiam/model/UpdateNetworkZoneDescriptionResult.h
 	include/alibabacloud/eiam/model/UpdateOrganizationalUnitRequest.h
 	include/alibabacloud/eiam/model/UpdateOrganizationalUnitResult.h
 	include/alibabacloud/eiam/model/UpdateOrganizationalUnitDescriptionRequest.h
@@ -294,6 +406,8 @@ set(eiam_public_header_model
 
 set(eiam_src 
 	src/EiamClient.cc
+	src/model/AddApplicationAccountToUserRequest.cc
+	src/model/AddApplicationAccountToUserResult.cc
 	src/model/AddUserToOrganizationalUnitsRequest.cc
 	src/model/AddUserToOrganizationalUnitsResult.cc
 	src/model/AddUsersToGroupRequest.cc
@@ -308,12 +422,20 @@ set(eiam_src
 	src/model/CreateApplicationResult.cc
 	src/model/CreateApplicationClientSecretRequest.cc
 	src/model/CreateApplicationClientSecretResult.cc
+	src/model/CreateApplicationFederatedCredentialRequest.cc
+	src/model/CreateApplicationFederatedCredentialResult.cc
+	src/model/CreateApplicationTokenRequest.cc
+	src/model/CreateApplicationTokenResult.cc
+	src/model/CreateBrandRequest.cc
+	src/model/CreateBrandResult.cc
 	src/model/CreateConditionalAccessPolicyRequest.cc
 	src/model/CreateConditionalAccessPolicyResult.cc
 	src/model/CreateDomainRequest.cc
 	src/model/CreateDomainResult.cc
 	src/model/CreateDomainProxyTokenRequest.cc
 	src/model/CreateDomainProxyTokenResult.cc
+	src/model/CreateFederatedCredentialProviderRequest.cc
+	src/model/CreateFederatedCredentialProviderResult.cc
 	src/model/CreateGroupRequest.cc
 	src/model/CreateGroupResult.cc
 	src/model/CreateIdentityProviderRequest.cc
@@ -322,6 +444,8 @@ set(eiam_src
 	src/model/CreateInstanceResult.cc
 	src/model/CreateNetworkAccessEndpointRequest.cc
 	src/model/CreateNetworkAccessEndpointResult.cc
+	src/model/CreateNetworkZoneRequest.cc
+	src/model/CreateNetworkZoneResult.cc
 	src/model/CreateOrganizationalUnitRequest.cc
 	src/model/CreateOrganizationalUnitResult.cc
 	src/model/CreateUserRequest.cc
@@ -330,12 +454,20 @@ set(eiam_src
 	src/model/DeleteApplicationResult.cc
 	src/model/DeleteApplicationClientSecretRequest.cc
 	src/model/DeleteApplicationClientSecretResult.cc
+	src/model/DeleteApplicationFederatedCredentialRequest.cc
+	src/model/DeleteApplicationFederatedCredentialResult.cc
+	src/model/DeleteApplicationTokenRequest.cc
+	src/model/DeleteApplicationTokenResult.cc
+	src/model/DeleteBrandRequest.cc
+	src/model/DeleteBrandResult.cc
 	src/model/DeleteConditionalAccessPolicyRequest.cc
 	src/model/DeleteConditionalAccessPolicyResult.cc
 	src/model/DeleteDomainRequest.cc
 	src/model/DeleteDomainResult.cc
 	src/model/DeleteDomainProxyTokenRequest.cc
 	src/model/DeleteDomainProxyTokenResult.cc
+	src/model/DeleteFederatedCredentialProviderRequest.cc
+	src/model/DeleteFederatedCredentialProviderResult.cc
 	src/model/DeleteGroupRequest.cc
 	src/model/DeleteGroupResult.cc
 	src/model/DeleteIdentityProviderRequest.cc
@@ -344,6 +476,8 @@ set(eiam_src
 	src/model/DeleteInstanceResult.cc
 	src/model/DeleteNetworkAccessEndpointRequest.cc
 	src/model/DeleteNetworkAccessEndpointResult.cc
+	src/model/DeleteNetworkZoneRequest.cc
+	src/model/DeleteNetworkZoneResult.cc
 	src/model/DeleteOrganizationalUnitRequest.cc
 	src/model/DeleteOrganizationalUnitResult.cc
 	src/model/DeleteOrganizationalUnitChildrenRequest.cc
@@ -356,14 +490,24 @@ set(eiam_src
 	src/model/DisableApplicationApiInvokeResult.cc
 	src/model/DisableApplicationClientSecretRequest.cc
 	src/model/DisableApplicationClientSecretResult.cc
+	src/model/DisableApplicationFederatedCredentialRequest.cc
+	src/model/DisableApplicationFederatedCredentialResult.cc
 	src/model/DisableApplicationProvisioningRequest.cc
 	src/model/DisableApplicationProvisioningResult.cc
 	src/model/DisableApplicationSsoRequest.cc
 	src/model/DisableApplicationSsoResult.cc
+	src/model/DisableApplicationTokenRequest.cc
+	src/model/DisableApplicationTokenResult.cc
+	src/model/DisableBrandRequest.cc
+	src/model/DisableBrandResult.cc
 	src/model/DisableConditionalAccessPolicyRequest.cc
 	src/model/DisableConditionalAccessPolicyResult.cc
 	src/model/DisableDomainProxyTokenRequest.cc
 	src/model/DisableDomainProxyTokenResult.cc
+	src/model/DisableFederatedCredentialProviderRequest.cc
+	src/model/DisableFederatedCredentialProviderResult.cc
+	src/model/DisableIdentityProviderAuthnRequest.cc
+	src/model/DisableIdentityProviderAuthnResult.cc
 	src/model/DisableIdentityProviderUdPullRequest.cc
 	src/model/DisableIdentityProviderUdPullResult.cc
 	src/model/DisableInitDomainAutoRedirectRequest.cc
@@ -376,14 +520,24 @@ set(eiam_src
 	src/model/EnableApplicationApiInvokeResult.cc
 	src/model/EnableApplicationClientSecretRequest.cc
 	src/model/EnableApplicationClientSecretResult.cc
+	src/model/EnableApplicationFederatedCredentialRequest.cc
+	src/model/EnableApplicationFederatedCredentialResult.cc
 	src/model/EnableApplicationProvisioningRequest.cc
 	src/model/EnableApplicationProvisioningResult.cc
 	src/model/EnableApplicationSsoRequest.cc
 	src/model/EnableApplicationSsoResult.cc
+	src/model/EnableApplicationTokenRequest.cc
+	src/model/EnableApplicationTokenResult.cc
+	src/model/EnableBrandRequest.cc
+	src/model/EnableBrandResult.cc
 	src/model/EnableConditionalAccessPolicyRequest.cc
 	src/model/EnableConditionalAccessPolicyResult.cc
 	src/model/EnableDomainProxyTokenRequest.cc
 	src/model/EnableDomainProxyTokenResult.cc
+	src/model/EnableFederatedCredentialProviderRequest.cc
+	src/model/EnableFederatedCredentialProviderResult.cc
+	src/model/EnableIdentityProviderAuthnRequest.cc
+	src/model/EnableIdentityProviderAuthnResult.cc
 	src/model/EnableIdentityProviderUdPullRequest.cc
 	src/model/EnableIdentityProviderUdPullResult.cc
 	src/model/EnableInitDomainAutoRedirectRequest.cc
@@ -392,6 +546,8 @@ set(eiam_src
 	src/model/EnableUserResult.cc
 	src/model/GetApplicationRequest.cc
 	src/model/GetApplicationResult.cc
+	src/model/GetApplicationFederatedCredentialRequest.cc
+	src/model/GetApplicationFederatedCredentialResult.cc
 	src/model/GetApplicationGrantScopeRequest.cc
 	src/model/GetApplicationGrantScopeResult.cc
 	src/model/GetApplicationProvisioningConfigRequest.cc
@@ -400,12 +556,18 @@ set(eiam_src
 	src/model/GetApplicationProvisioningScopeResult.cc
 	src/model/GetApplicationSsoConfigRequest.cc
 	src/model/GetApplicationSsoConfigResult.cc
+	src/model/GetApplicationTemplateRequest.cc
+	src/model/GetApplicationTemplateResult.cc
+	src/model/GetBrandRequest.cc
+	src/model/GetBrandResult.cc
 	src/model/GetConditionalAccessPolicyRequest.cc
 	src/model/GetConditionalAccessPolicyResult.cc
 	src/model/GetDomainRequest.cc
 	src/model/GetDomainResult.cc
 	src/model/GetDomainDnsChallengeRequest.cc
 	src/model/GetDomainDnsChallengeResult.cc
+	src/model/GetFederatedCredentialProviderRequest.cc
+	src/model/GetFederatedCredentialProviderResult.cc
 	src/model/GetForgetPasswordConfigurationRequest.cc
 	src/model/GetForgetPasswordConfigurationResult.cc
 	src/model/GetGroupRequest.cc
@@ -418,8 +580,12 @@ set(eiam_src
 	src/model/GetInstanceResult.cc
 	src/model/GetInstanceLicenseRequest.cc
 	src/model/GetInstanceLicenseResult.cc
+	src/model/GetLoginRedirectApplicationForBrandRequest.cc
+	src/model/GetLoginRedirectApplicationForBrandResult.cc
 	src/model/GetNetworkAccessEndpointRequest.cc
 	src/model/GetNetworkAccessEndpointResult.cc
+	src/model/GetNetworkZoneRequest.cc
+	src/model/GetNetworkZoneResult.cc
 	src/model/GetOrganizationalUnitRequest.cc
 	src/model/GetOrganizationalUnitResult.cc
 	src/model/GetPasswordComplexityConfigurationRequest.cc
@@ -436,18 +602,42 @@ set(eiam_src
 	src/model/GetSynchronizationJobResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
+	src/model/ListApplicationAccountsRequest.cc
+	src/model/ListApplicationAccountsResult.cc
+	src/model/ListApplicationAccountsForUserRequest.cc
+	src/model/ListApplicationAccountsForUserResult.cc
 	src/model/ListApplicationClientSecretsRequest.cc
 	src/model/ListApplicationClientSecretsResult.cc
+	src/model/ListApplicationFederatedCredentialsRequest.cc
+	src/model/ListApplicationFederatedCredentialsResult.cc
+	src/model/ListApplicationFederatedCredentialsForProviderRequest.cc
+	src/model/ListApplicationFederatedCredentialsForProviderResult.cc
+	src/model/ListApplicationSupportedProvisionProtocolTypesRequest.cc
+	src/model/ListApplicationSupportedProvisionProtocolTypesResult.cc
+	src/model/ListApplicationTokensRequest.cc
+	src/model/ListApplicationTokensResult.cc
 	src/model/ListApplicationsRequest.cc
 	src/model/ListApplicationsResult.cc
+	src/model/ListApplicationsForGroupRequest.cc
+	src/model/ListApplicationsForGroupResult.cc
+	src/model/ListApplicationsForNetworkAccessEndpointRequest.cc
+	src/model/ListApplicationsForNetworkAccessEndpointResult.cc
+	src/model/ListApplicationsForNetworkZoneRequest.cc
+	src/model/ListApplicationsForNetworkZoneResult.cc
 	src/model/ListApplicationsForOrganizationalUnitRequest.cc
 	src/model/ListApplicationsForOrganizationalUnitResult.cc
 	src/model/ListApplicationsForUserRequest.cc
 	src/model/ListApplicationsForUserResult.cc
+	src/model/ListBrandsRequest.cc
+	src/model/ListBrandsResult.cc
 	src/model/ListConditionalAccessPoliciesRequest.cc
 	src/model/ListConditionalAccessPoliciesResult.cc
+	src/model/ListConditionalAccessPoliciesForApplicationRequest.cc
+	src/model/ListConditionalAccessPoliciesForApplicationResult.cc
 	src/model/ListConditionalAccessPoliciesForNetworkZoneRequest.cc
 	src/model/ListConditionalAccessPoliciesForNetworkZoneResult.cc
+	src/model/ListConditionalAccessPoliciesForUserRequest.cc
+	src/model/ListConditionalAccessPoliciesForUserResult.cc
 	src/model/ListDomainProxyTokensRequest.cc
 	src/model/ListDomainProxyTokensResult.cc
 	src/model/ListDomainsRequest.cc
@@ -456,6 +646,8 @@ set(eiam_src
 	src/model/ListEiamInstancesResult.cc
 	src/model/ListEiamRegionsRequest.cc
 	src/model/ListEiamRegionsResult.cc
+	src/model/ListFederatedCredentialProvidersRequest.cc
+	src/model/ListFederatedCredentialProvidersResult.cc
 	src/model/ListGroupsRequest.cc
 	src/model/ListGroupsResult.cc
 	src/model/ListGroupsForApplicationRequest.cc
@@ -464,6 +656,8 @@ set(eiam_src
 	src/model/ListGroupsForUserResult.cc
 	src/model/ListIdentityProvidersRequest.cc
 	src/model/ListIdentityProvidersResult.cc
+	src/model/ListIdentityProvidersForNetworkAccessEndpointRequest.cc
+	src/model/ListIdentityProvidersForNetworkAccessEndpointResult.cc
 	src/model/ListInstancesRequest.cc
 	src/model/ListInstancesResult.cc
 	src/model/ListNetworkAccessEndpointAvailableRegionsRequest.cc
@@ -474,6 +668,8 @@ set(eiam_src
 	src/model/ListNetworkAccessEndpointsResult.cc
 	src/model/ListNetworkAccessPathsRequest.cc
 	src/model/ListNetworkAccessPathsResult.cc
+	src/model/ListNetworkZonesRequest.cc
+	src/model/ListNetworkZonesResult.cc
 	src/model/ListOrganizationalUnitParentsRequest.cc
 	src/model/ListOrganizationalUnitParentsResult.cc
 	src/model/ListOrganizationalUnitsRequest.cc
@@ -492,8 +688,12 @@ set(eiam_src
 	src/model/ListUsersForGroupResult.cc
 	src/model/ObtainApplicationClientSecretRequest.cc
 	src/model/ObtainApplicationClientSecretResult.cc
+	src/model/ObtainApplicationTokenRequest.cc
+	src/model/ObtainApplicationTokenResult.cc
 	src/model/ObtainDomainProxyTokenRequest.cc
 	src/model/ObtainDomainProxyTokenResult.cc
+	src/model/RemoveApplicationAccountFromUserRequest.cc
+	src/model/RemoveApplicationAccountFromUserResult.cc
 	src/model/RemoveUserFromOrganizationalUnitsRequest.cc
 	src/model/RemoveUserFromOrganizationalUnitsResult.cc
 	src/model/RemoveUsersFromGroupRequest.cc
@@ -520,6 +720,8 @@ set(eiam_src
 	src/model/SetForgetPasswordConfigurationResult.cc
 	src/model/SetIdentityProviderUdPullConfigurationRequest.cc
 	src/model/SetIdentityProviderUdPullConfigurationResult.cc
+	src/model/SetLoginRedirectApplicationForBrandRequest.cc
+	src/model/SetLoginRedirectApplicationForBrandResult.cc
 	src/model/SetPasswordComplexityConfigurationRequest.cc
 	src/model/SetPasswordComplexityConfigurationResult.cc
 	src/model/SetPasswordExpirationConfigurationRequest.cc
@@ -538,10 +740,28 @@ set(eiam_src
 	src/model/UpdateApplicationClientSecretExpirationTimeResult.cc
 	src/model/UpdateApplicationDescriptionRequest.cc
 	src/model/UpdateApplicationDescriptionResult.cc
+	src/model/UpdateApplicationFederatedCredentialRequest.cc
+	src/model/UpdateApplicationFederatedCredentialResult.cc
+	src/model/UpdateApplicationFederatedCredentialDescriptionRequest.cc
+	src/model/UpdateApplicationFederatedCredentialDescriptionResult.cc
+	src/model/UpdateApplicationInfoRequest.cc
+	src/model/UpdateApplicationInfoResult.cc
+	src/model/UpdateApplicationTokenExpirationTimeRequest.cc
+	src/model/UpdateApplicationTokenExpirationTimeResult.cc
+	src/model/UpdateBrandRequest.cc
+	src/model/UpdateBrandResult.cc
 	src/model/UpdateConditionalAccessPolicyRequest.cc
 	src/model/UpdateConditionalAccessPolicyResult.cc
 	src/model/UpdateConditionalAccessPolicyDescriptionRequest.cc
 	src/model/UpdateConditionalAccessPolicyDescriptionResult.cc
+	src/model/UpdateDomainBrandRequest.cc
+	src/model/UpdateDomainBrandResult.cc
+	src/model/UpdateDomainIcpNumberRequest.cc
+	src/model/UpdateDomainIcpNumberResult.cc
+	src/model/UpdateFederatedCredentialProviderRequest.cc
+	src/model/UpdateFederatedCredentialProviderResult.cc
+	src/model/UpdateFederatedCredentialProviderDescriptionRequest.cc
+	src/model/UpdateFederatedCredentialProviderDescriptionResult.cc
 	src/model/UpdateGroupRequest.cc
 	src/model/UpdateGroupResult.cc
 	src/model/UpdateGroupDescriptionRequest.cc
@@ -552,6 +772,10 @@ set(eiam_src
 	src/model/UpdateInstanceDescriptionResult.cc
 	src/model/UpdateNetworkAccessEndpointNameRequest.cc
 	src/model/UpdateNetworkAccessEndpointNameResult.cc
+	src/model/UpdateNetworkZoneRequest.cc
+	src/model/UpdateNetworkZoneResult.cc
+	src/model/UpdateNetworkZoneDescriptionRequest.cc
+	src/model/UpdateNetworkZoneDescriptionResult.cc
 	src/model/UpdateOrganizationalUnitRequest.cc
 	src/model/UpdateOrganizationalUnitResult.cc
 	src/model/UpdateOrganizationalUnitDescriptionRequest.cc

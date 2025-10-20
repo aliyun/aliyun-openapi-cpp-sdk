@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					long updateTime;
 					std::string lockMode;
 					std::string domain;
+					std::string brandId;
 					bool defaultDomain;
 				};
 
