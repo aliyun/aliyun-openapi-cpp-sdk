@@ -88,6 +88,8 @@ void DescribeLiveStreamTranscodeInfoResult::parse(const std::string &payload)
 			domainTranscodeListObject.customTranscodeParameters.audioProfile = customTranscodeParametersNode["AudioProfile"].asString();
 		if(!customTranscodeParametersNode["ResWithSource"].isNull())
 			domainTranscodeListObject.customTranscodeParameters.resWithSource = customTranscodeParametersNode["ResWithSource"].asString();
+		if(!customTranscodeParametersNode["DeInterlaced"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.deInterlaced = customTranscodeParametersNode["DeInterlaced"].asString() == "true";
 		auto encryptParametersNode = value["EncryptParameters"];
 		if(!encryptParametersNode["EncryptType"].isNull())
 			domainTranscodeListObject.encryptParameters.encryptType = encryptParametersNode["EncryptType"].asString();

@@ -49,6 +49,7 @@ namespace AlibabaCloud
 						int height;
 						std::string rtsFlag;
 						int audioChannelNum;
+						bool deInterlaced;
 						int width;
 						int audioRate;
 						std::string audioCodec;

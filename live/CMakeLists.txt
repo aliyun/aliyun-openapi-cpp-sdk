@@ -699,6 +699,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/PlayChoosenShowResult.h
 	include/alibabacloud/live/model/PublishLiveStagingConfigToProductionRequest.h
 	include/alibabacloud/live/model/PublishLiveStagingConfigToProductionResult.h
+	include/alibabacloud/live/model/PutRecordStorageLifeCycleRequest.h
+	include/alibabacloud/live/model/PutRecordStorageLifeCycleResult.h
 	include/alibabacloud/live/model/QueryLiveDomainMultiStreamListRequest.h
 	include/alibabacloud/live/model/QueryLiveDomainMultiStreamListResult.h
 	include/alibabacloud/live/model/QueryMessageAppRequest.h
@@ -1562,6 +1564,8 @@ set(live_src
 	src/model/PlayChoosenShowResult.cc
 	src/model/PublishLiveStagingConfigToProductionRequest.cc
 	src/model/PublishLiveStagingConfigToProductionResult.cc
+	src/model/PutRecordStorageLifeCycleRequest.cc
+	src/model/PutRecordStorageLifeCycleResult.cc
 	src/model/QueryLiveDomainMultiStreamListRequest.cc
 	src/model/QueryLiveDomainMultiStreamListResult.cc
 	src/model/QueryMessageAppRequest.cc

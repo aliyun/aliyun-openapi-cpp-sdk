@@ -700,6 +700,8 @@
 #include "model/PlayChoosenShowResult.h"
 #include "model/PublishLiveStagingConfigToProductionRequest.h"
 #include "model/PublishLiveStagingConfigToProductionResult.h"
+#include "model/PutRecordStorageLifeCycleRequest.h"
+#include "model/PutRecordStorageLifeCycleResult.h"
 #include "model/QueryLiveDomainMultiStreamListRequest.h"
 #include "model/QueryLiveDomainMultiStreamListResult.h"
 #include "model/QueryMessageAppRequest.h"
@@ -1908,6 +1910,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PublishLiveStagingConfigToProductionResult> PublishLiveStagingConfigToProductionOutcome;
 			typedef std::future<PublishLiveStagingConfigToProductionOutcome> PublishLiveStagingConfigToProductionOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::PublishLiveStagingConfigToProductionRequest&, const PublishLiveStagingConfigToProductionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishLiveStagingConfigToProductionAsyncHandler;
+			typedef Outcome<Error, Model::PutRecordStorageLifeCycleResult> PutRecordStorageLifeCycleOutcome;
+			typedef std::future<PutRecordStorageLifeCycleOutcome> PutRecordStorageLifeCycleOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::PutRecordStorageLifeCycleRequest&, const PutRecordStorageLifeCycleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutRecordStorageLifeCycleAsyncHandler;
 			typedef Outcome<Error, Model::QueryLiveDomainMultiStreamListResult> QueryLiveDomainMultiStreamListOutcome;
 			typedef std::future<QueryLiveDomainMultiStreamListOutcome> QueryLiveDomainMultiStreamListOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::QueryLiveDomainMultiStreamListRequest&, const QueryLiveDomainMultiStreamListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryLiveDomainMultiStreamListAsyncHandler;
@@ -3203,6 +3208,9 @@ namespace AlibabaCloud
 			PublishLiveStagingConfigToProductionOutcome publishLiveStagingConfigToProduction(const Model::PublishLiveStagingConfigToProductionRequest &request)const;
 			void publishLiveStagingConfigToProductionAsync(const Model::PublishLiveStagingConfigToProductionRequest& request, const PublishLiveStagingConfigToProductionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishLiveStagingConfigToProductionOutcomeCallable publishLiveStagingConfigToProductionCallable(const Model::PublishLiveStagingConfigToProductionRequest& request) const;
+			PutRecordStorageLifeCycleOutcome putRecordStorageLifeCycle(const Model::PutRecordStorageLifeCycleRequest &request)const;
+			void putRecordStorageLifeCycleAsync(const Model::PutRecordStorageLifeCycleRequest& request, const PutRecordStorageLifeCycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PutRecordStorageLifeCycleOutcomeCallable putRecordStorageLifeCycleCallable(const Model::PutRecordStorageLifeCycleRequest& request) const;
 			QueryLiveDomainMultiStreamListOutcome queryLiveDomainMultiStreamList(const Model::QueryLiveDomainMultiStreamListRequest &request)const;
 			void queryLiveDomainMultiStreamListAsync(const Model::QueryLiveDomainMultiStreamListRequest& request, const QueryLiveDomainMultiStreamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryLiveDomainMultiStreamListOutcomeCallable queryLiveDomainMultiStreamListCallable(const Model::QueryLiveDomainMultiStreamListRequest& request) const;

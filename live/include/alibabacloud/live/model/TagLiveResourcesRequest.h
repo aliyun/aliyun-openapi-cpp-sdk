@@ -29,8 +29,8 @@ namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT TagLiveResourcesRequest : public RpcServiceRequest {
 public:
 	struct Tag {
-		std::string key;
 		std::string value;
+		std::string key;
 	};
 	TagLiveResourcesRequest();
 	~TagLiveResourcesRequest();

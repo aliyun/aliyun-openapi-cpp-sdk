@@ -124,6 +124,15 @@ void AddCustomLiveStreamTranscodeRequest::setDomain(const std::string &domain) {
   setParameter(std::string("Domain"), domain);
 }
 
+bool AddCustomLiveStreamTranscodeRequest::getDeInterlaced() const {
+  return deInterlaced_;
+}
+
+void AddCustomLiveStreamTranscodeRequest::setDeInterlaced(bool deInterlaced) {
+  deInterlaced_ = deInterlaced;
+  setParameter(std::string("DeInterlaced"), deInterlaced ? "true" : "false");
+}
+
 std::string AddCustomLiveStreamTranscodeRequest::get_Template() const {
   return _template_;
 }

@@ -52,6 +52,8 @@ public:
 	void setBitrateWithSource(const std::string &bitrateWithSource);
 	std::string getDomain() const;
 	void setDomain(const std::string &domain);
+	bool getDeInterlaced() const;
+	void setDeInterlaced(bool deInterlaced);
 	std::string get_Template() const;
 	void set_Template(const std::string &_template);
 	std::string getLazy() const;
@@ -95,6 +97,7 @@ private:
 	std::string extWithSource_;
 	std::string bitrateWithSource_;
 	std::string domain_;
+	bool deInterlaced_;
 	std::string _template_;
 	std::string lazy_;
 	std::string kmsKeyExpireInterval_;

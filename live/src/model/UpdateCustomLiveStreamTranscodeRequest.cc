@@ -25,15 +25,6 @@ UpdateCustomLiveStreamTranscodeRequest::UpdateCustomLiveStreamTranscodeRequest()
 
 UpdateCustomLiveStreamTranscodeRequest::~UpdateCustomLiveStreamTranscodeRequest() {}
 
-std::string UpdateCustomLiveStreamTranscodeRequest::get_Template() const {
-  return _template_;
-}
-
-void UpdateCustomLiveStreamTranscodeRequest::set_Template(const std::string &_template) {
-  _template_ = _template;
-  setParameter(std::string("Template"), _template);
-}
-
 std::string UpdateCustomLiveStreamTranscodeRequest::getResWithSource() const {
   return resWithSource_;
 }
@@ -41,15 +32,6 @@ std::string UpdateCustomLiveStreamTranscodeRequest::getResWithSource() const {
 void UpdateCustomLiveStreamTranscodeRequest::setResWithSource(const std::string &resWithSource) {
   resWithSource_ = resWithSource;
   setParameter(std::string("ResWithSource"), resWithSource);
-}
-
-std::string UpdateCustomLiveStreamTranscodeRequest::getLazy() const {
-  return lazy_;
-}
-
-void UpdateCustomLiveStreamTranscodeRequest::setLazy(const std::string &lazy) {
-  lazy_ = lazy;
-  setParameter(std::string("Lazy"), lazy);
 }
 
 std::string UpdateCustomLiveStreamTranscodeRequest::getGop() const {
@@ -70,33 +52,6 @@ void UpdateCustomLiveStreamTranscodeRequest::setAudioCodec(const std::string &au
   setParameter(std::string("AudioCodec"), audioCodec);
 }
 
-std::string UpdateCustomLiveStreamTranscodeRequest::getRegionId() const {
-  return regionId_;
-}
-
-void UpdateCustomLiveStreamTranscodeRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string UpdateCustomLiveStreamTranscodeRequest::getTemplateType() const {
-  return templateType_;
-}
-
-void UpdateCustomLiveStreamTranscodeRequest::setTemplateType(const std::string &templateType) {
-  templateType_ = templateType;
-  setParameter(std::string("TemplateType"), templateType);
-}
-
-std::string UpdateCustomLiveStreamTranscodeRequest::getAudioProfile() const {
-  return audioProfile_;
-}
-
-void UpdateCustomLiveStreamTranscodeRequest::setAudioProfile(const std::string &audioProfile) {
-  audioProfile_ = audioProfile;
-  setParameter(std::string("AudioProfile"), audioProfile);
-}
-
 int UpdateCustomLiveStreamTranscodeRequest::getHeight() const {
   return height_;
 }
@@ -115,24 +70,6 @@ void UpdateCustomLiveStreamTranscodeRequest::setApp(const std::string &app) {
   setParameter(std::string("App"), app);
 }
 
-std::string UpdateCustomLiveStreamTranscodeRequest::getEncryptParameters() const {
-  return encryptParameters_;
-}
-
-void UpdateCustomLiveStreamTranscodeRequest::setEncryptParameters(const std::string &encryptParameters) {
-  encryptParameters_ = encryptParameters;
-  setParameter(std::string("EncryptParameters"), encryptParameters);
-}
-
-int UpdateCustomLiveStreamTranscodeRequest::getAudioChannelNum() const {
-  return audioChannelNum_;
-}
-
-void UpdateCustomLiveStreamTranscodeRequest::setAudioChannelNum(int audioChannelNum) {
-  audioChannelNum_ = audioChannelNum;
-  setParameter(std::string("AudioChannelNum"), std::to_string(audioChannelNum));
-}
-
 int UpdateCustomLiveStreamTranscodeRequest::getProfile() const {
   return profile_;
 }
@@ -140,15 +77,6 @@ int UpdateCustomLiveStreamTranscodeRequest::getProfile() const {
 void UpdateCustomLiveStreamTranscodeRequest::setProfile(int profile) {
   profile_ = profile;
   setParameter(std::string("Profile"), std::to_string(profile));
-}
-
-int UpdateCustomLiveStreamTranscodeRequest::getFPS() const {
-  return fPS_;
-}
-
-void UpdateCustomLiveStreamTranscodeRequest::setFPS(int fPS) {
-  fPS_ = fPS;
-  setParameter(std::string("FPS"), std::to_string(fPS));
 }
 
 long UpdateCustomLiveStreamTranscodeRequest::getOwnerId() const {
@@ -178,6 +106,96 @@ void UpdateCustomLiveStreamTranscodeRequest::setBitrateWithSource(const std::str
   setParameter(std::string("BitrateWithSource"), bitrateWithSource);
 }
 
+std::string UpdateCustomLiveStreamTranscodeRequest::getDomain() const {
+  return domain_;
+}
+
+void UpdateCustomLiveStreamTranscodeRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
+}
+
+bool UpdateCustomLiveStreamTranscodeRequest::getDeInterlaced() const {
+  return deInterlaced_;
+}
+
+void UpdateCustomLiveStreamTranscodeRequest::setDeInterlaced(bool deInterlaced) {
+  deInterlaced_ = deInterlaced;
+  setParameter(std::string("DeInterlaced"), deInterlaced ? "true" : "false");
+}
+
+std::string UpdateCustomLiveStreamTranscodeRequest::get_Template() const {
+  return _template_;
+}
+
+void UpdateCustomLiveStreamTranscodeRequest::set_Template(const std::string &_template) {
+  _template_ = _template;
+  setParameter(std::string("Template"), _template);
+}
+
+std::string UpdateCustomLiveStreamTranscodeRequest::getLazy() const {
+  return lazy_;
+}
+
+void UpdateCustomLiveStreamTranscodeRequest::setLazy(const std::string &lazy) {
+  lazy_ = lazy;
+  setParameter(std::string("Lazy"), lazy);
+}
+
+std::string UpdateCustomLiveStreamTranscodeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void UpdateCustomLiveStreamTranscodeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string UpdateCustomLiveStreamTranscodeRequest::getTemplateType() const {
+  return templateType_;
+}
+
+void UpdateCustomLiveStreamTranscodeRequest::setTemplateType(const std::string &templateType) {
+  templateType_ = templateType;
+  setParameter(std::string("TemplateType"), templateType);
+}
+
+std::string UpdateCustomLiveStreamTranscodeRequest::getAudioProfile() const {
+  return audioProfile_;
+}
+
+void UpdateCustomLiveStreamTranscodeRequest::setAudioProfile(const std::string &audioProfile) {
+  audioProfile_ = audioProfile;
+  setParameter(std::string("AudioProfile"), audioProfile);
+}
+
+std::string UpdateCustomLiveStreamTranscodeRequest::getEncryptParameters() const {
+  return encryptParameters_;
+}
+
+void UpdateCustomLiveStreamTranscodeRequest::setEncryptParameters(const std::string &encryptParameters) {
+  encryptParameters_ = encryptParameters;
+  setParameter(std::string("EncryptParameters"), encryptParameters);
+}
+
+int UpdateCustomLiveStreamTranscodeRequest::getAudioChannelNum() const {
+  return audioChannelNum_;
+}
+
+void UpdateCustomLiveStreamTranscodeRequest::setAudioChannelNum(int audioChannelNum) {
+  audioChannelNum_ = audioChannelNum;
+  setParameter(std::string("AudioChannelNum"), std::to_string(audioChannelNum));
+}
+
+int UpdateCustomLiveStreamTranscodeRequest::getFPS() const {
+  return fPS_;
+}
+
+void UpdateCustomLiveStreamTranscodeRequest::setFPS(int fPS) {
+  fPS_ = fPS;
+  setParameter(std::string("FPS"), std::to_string(fPS));
+}
+
 int UpdateCustomLiveStreamTranscodeRequest::getAudioRate() const {
   return audioRate_;
 }
@@ -203,15 +221,6 @@ int UpdateCustomLiveStreamTranscodeRequest::getAudioBitrate() const {
 void UpdateCustomLiveStreamTranscodeRequest::setAudioBitrate(int audioBitrate) {
   audioBitrate_ = audioBitrate;
   setParameter(std::string("AudioBitrate"), std::to_string(audioBitrate));
-}
-
-std::string UpdateCustomLiveStreamTranscodeRequest::getDomain() const {
-  return domain_;
-}
-
-void UpdateCustomLiveStreamTranscodeRequest::setDomain(const std::string &domain) {
-  domain_ = domain;
-  setParameter(std::string("Domain"), domain);
 }
 
 int UpdateCustomLiveStreamTranscodeRequest::getWidth() const {

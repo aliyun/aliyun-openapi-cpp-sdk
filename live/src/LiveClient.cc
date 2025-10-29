@@ -12255,6 +12255,42 @@ LiveClient::PublishLiveStagingConfigToProductionOutcomeCallable LiveClient::publ
 	return task->get_future();
 }
 
+LiveClient::PutRecordStorageLifeCycleOutcome LiveClient::putRecordStorageLifeCycle(const PutRecordStorageLifeCycleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutRecordStorageLifeCycleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutRecordStorageLifeCycleOutcome(PutRecordStorageLifeCycleResult(outcome.result()));
+	else
+		return PutRecordStorageLifeCycleOutcome(outcome.error());
+}
+
+void LiveClient::putRecordStorageLifeCycleAsync(const PutRecordStorageLifeCycleRequest& request, const PutRecordStorageLifeCycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putRecordStorageLifeCycle(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::PutRecordStorageLifeCycleOutcomeCallable LiveClient::putRecordStorageLifeCycleCallable(const PutRecordStorageLifeCycleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutRecordStorageLifeCycleOutcome()>>(
+			[this, request]()
+			{
+			return this->putRecordStorageLifeCycle(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::QueryLiveDomainMultiStreamListOutcome LiveClient::queryLiveDomainMultiStreamList(const QueryLiveDomainMultiStreamListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
