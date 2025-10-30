@@ -23,6 +23,8 @@ set(eiam_public_header
 set(eiam_public_header_model 
 	include/alibabacloud/eiam/model/AddApplicationAccountToUserRequest.h
 	include/alibabacloud/eiam/model/AddApplicationAccountToUserResult.h
+	include/alibabacloud/eiam/model/AddCustomPrivacyPoliciesToBrandRequest.h
+	include/alibabacloud/eiam/model/AddCustomPrivacyPoliciesToBrandResult.h
 	include/alibabacloud/eiam/model/AddUserToOrganizationalUnitsRequest.h
 	include/alibabacloud/eiam/model/AddUserToOrganizationalUnitsResult.h
 	include/alibabacloud/eiam/model/AddUsersToGroupRequest.h
@@ -45,6 +47,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/CreateBrandResult.h
 	include/alibabacloud/eiam/model/CreateConditionalAccessPolicyRequest.h
 	include/alibabacloud/eiam/model/CreateConditionalAccessPolicyResult.h
+	include/alibabacloud/eiam/model/CreateCustomPrivacyPolicyRequest.h
+	include/alibabacloud/eiam/model/CreateCustomPrivacyPolicyResult.h
 	include/alibabacloud/eiam/model/CreateDomainRequest.h
 	include/alibabacloud/eiam/model/CreateDomainResult.h
 	include/alibabacloud/eiam/model/CreateDomainProxyTokenRequest.h
@@ -77,6 +81,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/DeleteBrandResult.h
 	include/alibabacloud/eiam/model/DeleteConditionalAccessPolicyRequest.h
 	include/alibabacloud/eiam/model/DeleteConditionalAccessPolicyResult.h
+	include/alibabacloud/eiam/model/DeleteCustomPrivacyPolicyRequest.h
+	include/alibabacloud/eiam/model/DeleteCustomPrivacyPolicyResult.h
 	include/alibabacloud/eiam/model/DeleteDomainRequest.h
 	include/alibabacloud/eiam/model/DeleteDomainResult.h
 	include/alibabacloud/eiam/model/DeleteDomainProxyTokenRequest.h
@@ -117,6 +123,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/DisableBrandResult.h
 	include/alibabacloud/eiam/model/DisableConditionalAccessPolicyRequest.h
 	include/alibabacloud/eiam/model/DisableConditionalAccessPolicyResult.h
+	include/alibabacloud/eiam/model/DisableCustomPrivacyPolicyRequest.h
+	include/alibabacloud/eiam/model/DisableCustomPrivacyPolicyResult.h
 	include/alibabacloud/eiam/model/DisableDomainProxyTokenRequest.h
 	include/alibabacloud/eiam/model/DisableDomainProxyTokenResult.h
 	include/alibabacloud/eiam/model/DisableFederatedCredentialProviderRequest.h
@@ -147,6 +155,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/EnableBrandResult.h
 	include/alibabacloud/eiam/model/EnableConditionalAccessPolicyRequest.h
 	include/alibabacloud/eiam/model/EnableConditionalAccessPolicyResult.h
+	include/alibabacloud/eiam/model/EnableCustomPrivacyPolicyRequest.h
+	include/alibabacloud/eiam/model/EnableCustomPrivacyPolicyResult.h
 	include/alibabacloud/eiam/model/EnableDomainProxyTokenRequest.h
 	include/alibabacloud/eiam/model/EnableDomainProxyTokenResult.h
 	include/alibabacloud/eiam/model/EnableFederatedCredentialProviderRequest.h
@@ -177,6 +187,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/GetBrandResult.h
 	include/alibabacloud/eiam/model/GetConditionalAccessPolicyRequest.h
 	include/alibabacloud/eiam/model/GetConditionalAccessPolicyResult.h
+	include/alibabacloud/eiam/model/GetCustomPrivacyPolicyRequest.h
+	include/alibabacloud/eiam/model/GetCustomPrivacyPolicyResult.h
 	include/alibabacloud/eiam/model/GetDomainRequest.h
 	include/alibabacloud/eiam/model/GetDomainResult.h
 	include/alibabacloud/eiam/model/GetDomainDnsChallengeRequest.h
@@ -253,6 +265,10 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/ListConditionalAccessPoliciesForNetworkZoneResult.h
 	include/alibabacloud/eiam/model/ListConditionalAccessPoliciesForUserRequest.h
 	include/alibabacloud/eiam/model/ListConditionalAccessPoliciesForUserResult.h
+	include/alibabacloud/eiam/model/ListCustomPrivacyPoliciesRequest.h
+	include/alibabacloud/eiam/model/ListCustomPrivacyPoliciesResult.h
+	include/alibabacloud/eiam/model/ListCustomPrivacyPoliciesForBrandRequest.h
+	include/alibabacloud/eiam/model/ListCustomPrivacyPoliciesForBrandResult.h
 	include/alibabacloud/eiam/model/ListDomainProxyTokensRequest.h
 	include/alibabacloud/eiam/model/ListDomainProxyTokensResult.h
 	include/alibabacloud/eiam/model/ListDomainsRequest.h
@@ -309,6 +325,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/ObtainDomainProxyTokenResult.h
 	include/alibabacloud/eiam/model/RemoveApplicationAccountFromUserRequest.h
 	include/alibabacloud/eiam/model/RemoveApplicationAccountFromUserResult.h
+	include/alibabacloud/eiam/model/RemoveCustomPrivacyPoliciesFromBrandRequest.h
+	include/alibabacloud/eiam/model/RemoveCustomPrivacyPoliciesFromBrandResult.h
 	include/alibabacloud/eiam/model/RemoveUserFromOrganizationalUnitsRequest.h
 	include/alibabacloud/eiam/model/RemoveUserFromOrganizationalUnitsResult.h
 	include/alibabacloud/eiam/model/RemoveUsersFromGroupRequest.h
@@ -369,6 +387,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/UpdateConditionalAccessPolicyResult.h
 	include/alibabacloud/eiam/model/UpdateConditionalAccessPolicyDescriptionRequest.h
 	include/alibabacloud/eiam/model/UpdateConditionalAccessPolicyDescriptionResult.h
+	include/alibabacloud/eiam/model/UpdateCustomPrivacyPolicyRequest.h
+	include/alibabacloud/eiam/model/UpdateCustomPrivacyPolicyResult.h
 	include/alibabacloud/eiam/model/UpdateDomainBrandRequest.h
 	include/alibabacloud/eiam/model/UpdateDomainBrandResult.h
 	include/alibabacloud/eiam/model/UpdateDomainIcpNumberRequest.h
@@ -408,6 +428,8 @@ set(eiam_src
 	src/EiamClient.cc
 	src/model/AddApplicationAccountToUserRequest.cc
 	src/model/AddApplicationAccountToUserResult.cc
+	src/model/AddCustomPrivacyPoliciesToBrandRequest.cc
+	src/model/AddCustomPrivacyPoliciesToBrandResult.cc
 	src/model/AddUserToOrganizationalUnitsRequest.cc
 	src/model/AddUserToOrganizationalUnitsResult.cc
 	src/model/AddUsersToGroupRequest.cc
@@ -430,6 +452,8 @@ set(eiam_src
 	src/model/CreateBrandResult.cc
 	src/model/CreateConditionalAccessPolicyRequest.cc
 	src/model/CreateConditionalAccessPolicyResult.cc
+	src/model/CreateCustomPrivacyPolicyRequest.cc
+	src/model/CreateCustomPrivacyPolicyResult.cc
 	src/model/CreateDomainRequest.cc
 	src/model/CreateDomainResult.cc
 	src/model/CreateDomainProxyTokenRequest.cc
@@ -462,6 +486,8 @@ set(eiam_src
 	src/model/DeleteBrandResult.cc
 	src/model/DeleteConditionalAccessPolicyRequest.cc
 	src/model/DeleteConditionalAccessPolicyResult.cc
+	src/model/DeleteCustomPrivacyPolicyRequest.cc
+	src/model/DeleteCustomPrivacyPolicyResult.cc
 	src/model/DeleteDomainRequest.cc
 	src/model/DeleteDomainResult.cc
 	src/model/DeleteDomainProxyTokenRequest.cc
@@ -502,6 +528,8 @@ set(eiam_src
 	src/model/DisableBrandResult.cc
 	src/model/DisableConditionalAccessPolicyRequest.cc
 	src/model/DisableConditionalAccessPolicyResult.cc
+	src/model/DisableCustomPrivacyPolicyRequest.cc
+	src/model/DisableCustomPrivacyPolicyResult.cc
 	src/model/DisableDomainProxyTokenRequest.cc
 	src/model/DisableDomainProxyTokenResult.cc
 	src/model/DisableFederatedCredentialProviderRequest.cc
@@ -532,6 +560,8 @@ set(eiam_src
 	src/model/EnableBrandResult.cc
 	src/model/EnableConditionalAccessPolicyRequest.cc
 	src/model/EnableConditionalAccessPolicyResult.cc
+	src/model/EnableCustomPrivacyPolicyRequest.cc
+	src/model/EnableCustomPrivacyPolicyResult.cc
 	src/model/EnableDomainProxyTokenRequest.cc
 	src/model/EnableDomainProxyTokenResult.cc
 	src/model/EnableFederatedCredentialProviderRequest.cc
@@ -562,6 +592,8 @@ set(eiam_src
 	src/model/GetBrandResult.cc
 	src/model/GetConditionalAccessPolicyRequest.cc
 	src/model/GetConditionalAccessPolicyResult.cc
+	src/model/GetCustomPrivacyPolicyRequest.cc
+	src/model/GetCustomPrivacyPolicyResult.cc
 	src/model/GetDomainRequest.cc
 	src/model/GetDomainResult.cc
 	src/model/GetDomainDnsChallengeRequest.cc
@@ -638,6 +670,10 @@ set(eiam_src
 	src/model/ListConditionalAccessPoliciesForNetworkZoneResult.cc
 	src/model/ListConditionalAccessPoliciesForUserRequest.cc
 	src/model/ListConditionalAccessPoliciesForUserResult.cc
+	src/model/ListCustomPrivacyPoliciesRequest.cc
+	src/model/ListCustomPrivacyPoliciesResult.cc
+	src/model/ListCustomPrivacyPoliciesForBrandRequest.cc
+	src/model/ListCustomPrivacyPoliciesForBrandResult.cc
 	src/model/ListDomainProxyTokensRequest.cc
 	src/model/ListDomainProxyTokensResult.cc
 	src/model/ListDomainsRequest.cc
@@ -694,6 +730,8 @@ set(eiam_src
 	src/model/ObtainDomainProxyTokenResult.cc
 	src/model/RemoveApplicationAccountFromUserRequest.cc
 	src/model/RemoveApplicationAccountFromUserResult.cc
+	src/model/RemoveCustomPrivacyPoliciesFromBrandRequest.cc
+	src/model/RemoveCustomPrivacyPoliciesFromBrandResult.cc
 	src/model/RemoveUserFromOrganizationalUnitsRequest.cc
 	src/model/RemoveUserFromOrganizationalUnitsResult.cc
 	src/model/RemoveUsersFromGroupRequest.cc
@@ -754,6 +792,8 @@ set(eiam_src
 	src/model/UpdateConditionalAccessPolicyResult.cc
 	src/model/UpdateConditionalAccessPolicyDescriptionRequest.cc
 	src/model/UpdateConditionalAccessPolicyDescriptionResult.cc
+	src/model/UpdateCustomPrivacyPolicyRequest.cc
+	src/model/UpdateCustomPrivacyPolicyResult.cc
 	src/model/UpdateDomainBrandRequest.cc
 	src/model/UpdateDomainBrandResult.cc
 	src/model/UpdateDomainIcpNumberRequest.cc

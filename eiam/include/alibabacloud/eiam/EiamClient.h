@@ -24,6 +24,8 @@
 #include "EiamExport.h"
 #include "model/AddApplicationAccountToUserRequest.h"
 #include "model/AddApplicationAccountToUserResult.h"
+#include "model/AddCustomPrivacyPoliciesToBrandRequest.h"
+#include "model/AddCustomPrivacyPoliciesToBrandResult.h"
 #include "model/AddUserToOrganizationalUnitsRequest.h"
 #include "model/AddUserToOrganizationalUnitsResult.h"
 #include "model/AddUsersToGroupRequest.h"
@@ -46,6 +48,8 @@
 #include "model/CreateBrandResult.h"
 #include "model/CreateConditionalAccessPolicyRequest.h"
 #include "model/CreateConditionalAccessPolicyResult.h"
+#include "model/CreateCustomPrivacyPolicyRequest.h"
+#include "model/CreateCustomPrivacyPolicyResult.h"
 #include "model/CreateDomainRequest.h"
 #include "model/CreateDomainResult.h"
 #include "model/CreateDomainProxyTokenRequest.h"
@@ -78,6 +82,8 @@
 #include "model/DeleteBrandResult.h"
 #include "model/DeleteConditionalAccessPolicyRequest.h"
 #include "model/DeleteConditionalAccessPolicyResult.h"
+#include "model/DeleteCustomPrivacyPolicyRequest.h"
+#include "model/DeleteCustomPrivacyPolicyResult.h"
 #include "model/DeleteDomainRequest.h"
 #include "model/DeleteDomainResult.h"
 #include "model/DeleteDomainProxyTokenRequest.h"
@@ -118,6 +124,8 @@
 #include "model/DisableBrandResult.h"
 #include "model/DisableConditionalAccessPolicyRequest.h"
 #include "model/DisableConditionalAccessPolicyResult.h"
+#include "model/DisableCustomPrivacyPolicyRequest.h"
+#include "model/DisableCustomPrivacyPolicyResult.h"
 #include "model/DisableDomainProxyTokenRequest.h"
 #include "model/DisableDomainProxyTokenResult.h"
 #include "model/DisableFederatedCredentialProviderRequest.h"
@@ -148,6 +156,8 @@
 #include "model/EnableBrandResult.h"
 #include "model/EnableConditionalAccessPolicyRequest.h"
 #include "model/EnableConditionalAccessPolicyResult.h"
+#include "model/EnableCustomPrivacyPolicyRequest.h"
+#include "model/EnableCustomPrivacyPolicyResult.h"
 #include "model/EnableDomainProxyTokenRequest.h"
 #include "model/EnableDomainProxyTokenResult.h"
 #include "model/EnableFederatedCredentialProviderRequest.h"
@@ -178,6 +188,8 @@
 #include "model/GetBrandResult.h"
 #include "model/GetConditionalAccessPolicyRequest.h"
 #include "model/GetConditionalAccessPolicyResult.h"
+#include "model/GetCustomPrivacyPolicyRequest.h"
+#include "model/GetCustomPrivacyPolicyResult.h"
 #include "model/GetDomainRequest.h"
 #include "model/GetDomainResult.h"
 #include "model/GetDomainDnsChallengeRequest.h"
@@ -254,6 +266,10 @@
 #include "model/ListConditionalAccessPoliciesForNetworkZoneResult.h"
 #include "model/ListConditionalAccessPoliciesForUserRequest.h"
 #include "model/ListConditionalAccessPoliciesForUserResult.h"
+#include "model/ListCustomPrivacyPoliciesRequest.h"
+#include "model/ListCustomPrivacyPoliciesResult.h"
+#include "model/ListCustomPrivacyPoliciesForBrandRequest.h"
+#include "model/ListCustomPrivacyPoliciesForBrandResult.h"
 #include "model/ListDomainProxyTokensRequest.h"
 #include "model/ListDomainProxyTokensResult.h"
 #include "model/ListDomainsRequest.h"
@@ -310,6 +326,8 @@
 #include "model/ObtainDomainProxyTokenResult.h"
 #include "model/RemoveApplicationAccountFromUserRequest.h"
 #include "model/RemoveApplicationAccountFromUserResult.h"
+#include "model/RemoveCustomPrivacyPoliciesFromBrandRequest.h"
+#include "model/RemoveCustomPrivacyPoliciesFromBrandResult.h"
 #include "model/RemoveUserFromOrganizationalUnitsRequest.h"
 #include "model/RemoveUserFromOrganizationalUnitsResult.h"
 #include "model/RemoveUsersFromGroupRequest.h"
@@ -370,6 +388,8 @@
 #include "model/UpdateConditionalAccessPolicyResult.h"
 #include "model/UpdateConditionalAccessPolicyDescriptionRequest.h"
 #include "model/UpdateConditionalAccessPolicyDescriptionResult.h"
+#include "model/UpdateCustomPrivacyPolicyRequest.h"
+#include "model/UpdateCustomPrivacyPolicyResult.h"
 #include "model/UpdateDomainBrandRequest.h"
 #include "model/UpdateDomainBrandResult.h"
 #include "model/UpdateDomainIcpNumberRequest.h"
@@ -416,6 +436,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddApplicationAccountToUserResult> AddApplicationAccountToUserOutcome;
 			typedef std::future<AddApplicationAccountToUserOutcome> AddApplicationAccountToUserOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::AddApplicationAccountToUserRequest&, const AddApplicationAccountToUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddApplicationAccountToUserAsyncHandler;
+			typedef Outcome<Error, Model::AddCustomPrivacyPoliciesToBrandResult> AddCustomPrivacyPoliciesToBrandOutcome;
+			typedef std::future<AddCustomPrivacyPoliciesToBrandOutcome> AddCustomPrivacyPoliciesToBrandOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::AddCustomPrivacyPoliciesToBrandRequest&, const AddCustomPrivacyPoliciesToBrandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomPrivacyPoliciesToBrandAsyncHandler;
 			typedef Outcome<Error, Model::AddUserToOrganizationalUnitsResult> AddUserToOrganizationalUnitsOutcome;
 			typedef std::future<AddUserToOrganizationalUnitsOutcome> AddUserToOrganizationalUnitsOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::AddUserToOrganizationalUnitsRequest&, const AddUserToOrganizationalUnitsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUserToOrganizationalUnitsAsyncHandler;
@@ -449,6 +472,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateConditionalAccessPolicyResult> CreateConditionalAccessPolicyOutcome;
 			typedef std::future<CreateConditionalAccessPolicyOutcome> CreateConditionalAccessPolicyOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::CreateConditionalAccessPolicyRequest&, const CreateConditionalAccessPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConditionalAccessPolicyAsyncHandler;
+			typedef Outcome<Error, Model::CreateCustomPrivacyPolicyResult> CreateCustomPrivacyPolicyOutcome;
+			typedef std::future<CreateCustomPrivacyPolicyOutcome> CreateCustomPrivacyPolicyOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::CreateCustomPrivacyPolicyRequest&, const CreateCustomPrivacyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomPrivacyPolicyAsyncHandler;
 			typedef Outcome<Error, Model::CreateDomainResult> CreateDomainOutcome;
 			typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::CreateDomainRequest&, const CreateDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainAsyncHandler;
@@ -497,6 +523,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteConditionalAccessPolicyResult> DeleteConditionalAccessPolicyOutcome;
 			typedef std::future<DeleteConditionalAccessPolicyOutcome> DeleteConditionalAccessPolicyOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::DeleteConditionalAccessPolicyRequest&, const DeleteConditionalAccessPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConditionalAccessPolicyAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCustomPrivacyPolicyResult> DeleteCustomPrivacyPolicyOutcome;
+			typedef std::future<DeleteCustomPrivacyPolicyOutcome> DeleteCustomPrivacyPolicyOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::DeleteCustomPrivacyPolicyRequest&, const DeleteCustomPrivacyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomPrivacyPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDomainResult> DeleteDomainOutcome;
 			typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::DeleteDomainRequest&, const DeleteDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
@@ -557,6 +586,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableConditionalAccessPolicyResult> DisableConditionalAccessPolicyOutcome;
 			typedef std::future<DisableConditionalAccessPolicyOutcome> DisableConditionalAccessPolicyOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::DisableConditionalAccessPolicyRequest&, const DisableConditionalAccessPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableConditionalAccessPolicyAsyncHandler;
+			typedef Outcome<Error, Model::DisableCustomPrivacyPolicyResult> DisableCustomPrivacyPolicyOutcome;
+			typedef std::future<DisableCustomPrivacyPolicyOutcome> DisableCustomPrivacyPolicyOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::DisableCustomPrivacyPolicyRequest&, const DisableCustomPrivacyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableCustomPrivacyPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DisableDomainProxyTokenResult> DisableDomainProxyTokenOutcome;
 			typedef std::future<DisableDomainProxyTokenOutcome> DisableDomainProxyTokenOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::DisableDomainProxyTokenRequest&, const DisableDomainProxyTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableDomainProxyTokenAsyncHandler;
@@ -602,6 +634,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableConditionalAccessPolicyResult> EnableConditionalAccessPolicyOutcome;
 			typedef std::future<EnableConditionalAccessPolicyOutcome> EnableConditionalAccessPolicyOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::EnableConditionalAccessPolicyRequest&, const EnableConditionalAccessPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableConditionalAccessPolicyAsyncHandler;
+			typedef Outcome<Error, Model::EnableCustomPrivacyPolicyResult> EnableCustomPrivacyPolicyOutcome;
+			typedef std::future<EnableCustomPrivacyPolicyOutcome> EnableCustomPrivacyPolicyOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::EnableCustomPrivacyPolicyRequest&, const EnableCustomPrivacyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableCustomPrivacyPolicyAsyncHandler;
 			typedef Outcome<Error, Model::EnableDomainProxyTokenResult> EnableDomainProxyTokenOutcome;
 			typedef std::future<EnableDomainProxyTokenOutcome> EnableDomainProxyTokenOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::EnableDomainProxyTokenRequest&, const EnableDomainProxyTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableDomainProxyTokenAsyncHandler;
@@ -647,6 +682,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetConditionalAccessPolicyResult> GetConditionalAccessPolicyOutcome;
 			typedef std::future<GetConditionalAccessPolicyOutcome> GetConditionalAccessPolicyOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::GetConditionalAccessPolicyRequest&, const GetConditionalAccessPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConditionalAccessPolicyAsyncHandler;
+			typedef Outcome<Error, Model::GetCustomPrivacyPolicyResult> GetCustomPrivacyPolicyOutcome;
+			typedef std::future<GetCustomPrivacyPolicyOutcome> GetCustomPrivacyPolicyOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::GetCustomPrivacyPolicyRequest&, const GetCustomPrivacyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomPrivacyPolicyAsyncHandler;
 			typedef Outcome<Error, Model::GetDomainResult> GetDomainOutcome;
 			typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::GetDomainRequest&, const GetDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDomainAsyncHandler;
@@ -761,6 +799,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListConditionalAccessPoliciesForUserResult> ListConditionalAccessPoliciesForUserOutcome;
 			typedef std::future<ListConditionalAccessPoliciesForUserOutcome> ListConditionalAccessPoliciesForUserOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::ListConditionalAccessPoliciesForUserRequest&, const ListConditionalAccessPoliciesForUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConditionalAccessPoliciesForUserAsyncHandler;
+			typedef Outcome<Error, Model::ListCustomPrivacyPoliciesResult> ListCustomPrivacyPoliciesOutcome;
+			typedef std::future<ListCustomPrivacyPoliciesOutcome> ListCustomPrivacyPoliciesOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::ListCustomPrivacyPoliciesRequest&, const ListCustomPrivacyPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCustomPrivacyPoliciesAsyncHandler;
+			typedef Outcome<Error, Model::ListCustomPrivacyPoliciesForBrandResult> ListCustomPrivacyPoliciesForBrandOutcome;
+			typedef std::future<ListCustomPrivacyPoliciesForBrandOutcome> ListCustomPrivacyPoliciesForBrandOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::ListCustomPrivacyPoliciesForBrandRequest&, const ListCustomPrivacyPoliciesForBrandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCustomPrivacyPoliciesForBrandAsyncHandler;
 			typedef Outcome<Error, Model::ListDomainProxyTokensResult> ListDomainProxyTokensOutcome;
 			typedef std::future<ListDomainProxyTokensOutcome> ListDomainProxyTokensOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::ListDomainProxyTokensRequest&, const ListDomainProxyTokensOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDomainProxyTokensAsyncHandler;
@@ -845,6 +889,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RemoveApplicationAccountFromUserResult> RemoveApplicationAccountFromUserOutcome;
 			typedef std::future<RemoveApplicationAccountFromUserOutcome> RemoveApplicationAccountFromUserOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::RemoveApplicationAccountFromUserRequest&, const RemoveApplicationAccountFromUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveApplicationAccountFromUserAsyncHandler;
+			typedef Outcome<Error, Model::RemoveCustomPrivacyPoliciesFromBrandResult> RemoveCustomPrivacyPoliciesFromBrandOutcome;
+			typedef std::future<RemoveCustomPrivacyPoliciesFromBrandOutcome> RemoveCustomPrivacyPoliciesFromBrandOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::RemoveCustomPrivacyPoliciesFromBrandRequest&, const RemoveCustomPrivacyPoliciesFromBrandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveCustomPrivacyPoliciesFromBrandAsyncHandler;
 			typedef Outcome<Error, Model::RemoveUserFromOrganizationalUnitsResult> RemoveUserFromOrganizationalUnitsOutcome;
 			typedef std::future<RemoveUserFromOrganizationalUnitsOutcome> RemoveUserFromOrganizationalUnitsOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::RemoveUserFromOrganizationalUnitsRequest&, const RemoveUserFromOrganizationalUnitsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserFromOrganizationalUnitsAsyncHandler;
@@ -935,6 +982,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateConditionalAccessPolicyDescriptionResult> UpdateConditionalAccessPolicyDescriptionOutcome;
 			typedef std::future<UpdateConditionalAccessPolicyDescriptionOutcome> UpdateConditionalAccessPolicyDescriptionOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::UpdateConditionalAccessPolicyDescriptionRequest&, const UpdateConditionalAccessPolicyDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConditionalAccessPolicyDescriptionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCustomPrivacyPolicyResult> UpdateCustomPrivacyPolicyOutcome;
+			typedef std::future<UpdateCustomPrivacyPolicyOutcome> UpdateCustomPrivacyPolicyOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::UpdateCustomPrivacyPolicyRequest&, const UpdateCustomPrivacyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomPrivacyPolicyAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDomainBrandResult> UpdateDomainBrandOutcome;
 			typedef std::future<UpdateDomainBrandOutcome> UpdateDomainBrandOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::UpdateDomainBrandRequest&, const UpdateDomainBrandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDomainBrandAsyncHandler;
@@ -994,6 +1044,9 @@ namespace AlibabaCloud
 			AddApplicationAccountToUserOutcome addApplicationAccountToUser(const Model::AddApplicationAccountToUserRequest &request)const;
 			void addApplicationAccountToUserAsync(const Model::AddApplicationAccountToUserRequest& request, const AddApplicationAccountToUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddApplicationAccountToUserOutcomeCallable addApplicationAccountToUserCallable(const Model::AddApplicationAccountToUserRequest& request) const;
+			AddCustomPrivacyPoliciesToBrandOutcome addCustomPrivacyPoliciesToBrand(const Model::AddCustomPrivacyPoliciesToBrandRequest &request)const;
+			void addCustomPrivacyPoliciesToBrandAsync(const Model::AddCustomPrivacyPoliciesToBrandRequest& request, const AddCustomPrivacyPoliciesToBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCustomPrivacyPoliciesToBrandOutcomeCallable addCustomPrivacyPoliciesToBrandCallable(const Model::AddCustomPrivacyPoliciesToBrandRequest& request) const;
 			AddUserToOrganizationalUnitsOutcome addUserToOrganizationalUnits(const Model::AddUserToOrganizationalUnitsRequest &request)const;
 			void addUserToOrganizationalUnitsAsync(const Model::AddUserToOrganizationalUnitsRequest& request, const AddUserToOrganizationalUnitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUserToOrganizationalUnitsOutcomeCallable addUserToOrganizationalUnitsCallable(const Model::AddUserToOrganizationalUnitsRequest& request) const;
@@ -1027,6 +1080,9 @@ namespace AlibabaCloud
 			CreateConditionalAccessPolicyOutcome createConditionalAccessPolicy(const Model::CreateConditionalAccessPolicyRequest &request)const;
 			void createConditionalAccessPolicyAsync(const Model::CreateConditionalAccessPolicyRequest& request, const CreateConditionalAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateConditionalAccessPolicyOutcomeCallable createConditionalAccessPolicyCallable(const Model::CreateConditionalAccessPolicyRequest& request) const;
+			CreateCustomPrivacyPolicyOutcome createCustomPrivacyPolicy(const Model::CreateCustomPrivacyPolicyRequest &request)const;
+			void createCustomPrivacyPolicyAsync(const Model::CreateCustomPrivacyPolicyRequest& request, const CreateCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCustomPrivacyPolicyOutcomeCallable createCustomPrivacyPolicyCallable(const Model::CreateCustomPrivacyPolicyRequest& request) const;
 			CreateDomainOutcome createDomain(const Model::CreateDomainRequest &request)const;
 			void createDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDomainOutcomeCallable createDomainCallable(const Model::CreateDomainRequest& request) const;
@@ -1075,6 +1131,9 @@ namespace AlibabaCloud
 			DeleteConditionalAccessPolicyOutcome deleteConditionalAccessPolicy(const Model::DeleteConditionalAccessPolicyRequest &request)const;
 			void deleteConditionalAccessPolicyAsync(const Model::DeleteConditionalAccessPolicyRequest& request, const DeleteConditionalAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteConditionalAccessPolicyOutcomeCallable deleteConditionalAccessPolicyCallable(const Model::DeleteConditionalAccessPolicyRequest& request) const;
+			DeleteCustomPrivacyPolicyOutcome deleteCustomPrivacyPolicy(const Model::DeleteCustomPrivacyPolicyRequest &request)const;
+			void deleteCustomPrivacyPolicyAsync(const Model::DeleteCustomPrivacyPolicyRequest& request, const DeleteCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCustomPrivacyPolicyOutcomeCallable deleteCustomPrivacyPolicyCallable(const Model::DeleteCustomPrivacyPolicyRequest& request) const;
 			DeleteDomainOutcome deleteDomain(const Model::DeleteDomainRequest &request)const;
 			void deleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDomainOutcomeCallable deleteDomainCallable(const Model::DeleteDomainRequest& request) const;
@@ -1135,6 +1194,9 @@ namespace AlibabaCloud
 			DisableConditionalAccessPolicyOutcome disableConditionalAccessPolicy(const Model::DisableConditionalAccessPolicyRequest &request)const;
 			void disableConditionalAccessPolicyAsync(const Model::DisableConditionalAccessPolicyRequest& request, const DisableConditionalAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableConditionalAccessPolicyOutcomeCallable disableConditionalAccessPolicyCallable(const Model::DisableConditionalAccessPolicyRequest& request) const;
+			DisableCustomPrivacyPolicyOutcome disableCustomPrivacyPolicy(const Model::DisableCustomPrivacyPolicyRequest &request)const;
+			void disableCustomPrivacyPolicyAsync(const Model::DisableCustomPrivacyPolicyRequest& request, const DisableCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableCustomPrivacyPolicyOutcomeCallable disableCustomPrivacyPolicyCallable(const Model::DisableCustomPrivacyPolicyRequest& request) const;
 			DisableDomainProxyTokenOutcome disableDomainProxyToken(const Model::DisableDomainProxyTokenRequest &request)const;
 			void disableDomainProxyTokenAsync(const Model::DisableDomainProxyTokenRequest& request, const DisableDomainProxyTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableDomainProxyTokenOutcomeCallable disableDomainProxyTokenCallable(const Model::DisableDomainProxyTokenRequest& request) const;
@@ -1180,6 +1242,9 @@ namespace AlibabaCloud
 			EnableConditionalAccessPolicyOutcome enableConditionalAccessPolicy(const Model::EnableConditionalAccessPolicyRequest &request)const;
 			void enableConditionalAccessPolicyAsync(const Model::EnableConditionalAccessPolicyRequest& request, const EnableConditionalAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableConditionalAccessPolicyOutcomeCallable enableConditionalAccessPolicyCallable(const Model::EnableConditionalAccessPolicyRequest& request) const;
+			EnableCustomPrivacyPolicyOutcome enableCustomPrivacyPolicy(const Model::EnableCustomPrivacyPolicyRequest &request)const;
+			void enableCustomPrivacyPolicyAsync(const Model::EnableCustomPrivacyPolicyRequest& request, const EnableCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableCustomPrivacyPolicyOutcomeCallable enableCustomPrivacyPolicyCallable(const Model::EnableCustomPrivacyPolicyRequest& request) const;
 			EnableDomainProxyTokenOutcome enableDomainProxyToken(const Model::EnableDomainProxyTokenRequest &request)const;
 			void enableDomainProxyTokenAsync(const Model::EnableDomainProxyTokenRequest& request, const EnableDomainProxyTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableDomainProxyTokenOutcomeCallable enableDomainProxyTokenCallable(const Model::EnableDomainProxyTokenRequest& request) const;
@@ -1225,6 +1290,9 @@ namespace AlibabaCloud
 			GetConditionalAccessPolicyOutcome getConditionalAccessPolicy(const Model::GetConditionalAccessPolicyRequest &request)const;
 			void getConditionalAccessPolicyAsync(const Model::GetConditionalAccessPolicyRequest& request, const GetConditionalAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetConditionalAccessPolicyOutcomeCallable getConditionalAccessPolicyCallable(const Model::GetConditionalAccessPolicyRequest& request) const;
+			GetCustomPrivacyPolicyOutcome getCustomPrivacyPolicy(const Model::GetCustomPrivacyPolicyRequest &request)const;
+			void getCustomPrivacyPolicyAsync(const Model::GetCustomPrivacyPolicyRequest& request, const GetCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCustomPrivacyPolicyOutcomeCallable getCustomPrivacyPolicyCallable(const Model::GetCustomPrivacyPolicyRequest& request) const;
 			GetDomainOutcome getDomain(const Model::GetDomainRequest &request)const;
 			void getDomainAsync(const Model::GetDomainRequest& request, const GetDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDomainOutcomeCallable getDomainCallable(const Model::GetDomainRequest& request) const;
@@ -1339,6 +1407,12 @@ namespace AlibabaCloud
 			ListConditionalAccessPoliciesForUserOutcome listConditionalAccessPoliciesForUser(const Model::ListConditionalAccessPoliciesForUserRequest &request)const;
 			void listConditionalAccessPoliciesForUserAsync(const Model::ListConditionalAccessPoliciesForUserRequest& request, const ListConditionalAccessPoliciesForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConditionalAccessPoliciesForUserOutcomeCallable listConditionalAccessPoliciesForUserCallable(const Model::ListConditionalAccessPoliciesForUserRequest& request) const;
+			ListCustomPrivacyPoliciesOutcome listCustomPrivacyPolicies(const Model::ListCustomPrivacyPoliciesRequest &request)const;
+			void listCustomPrivacyPoliciesAsync(const Model::ListCustomPrivacyPoliciesRequest& request, const ListCustomPrivacyPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCustomPrivacyPoliciesOutcomeCallable listCustomPrivacyPoliciesCallable(const Model::ListCustomPrivacyPoliciesRequest& request) const;
+			ListCustomPrivacyPoliciesForBrandOutcome listCustomPrivacyPoliciesForBrand(const Model::ListCustomPrivacyPoliciesForBrandRequest &request)const;
+			void listCustomPrivacyPoliciesForBrandAsync(const Model::ListCustomPrivacyPoliciesForBrandRequest& request, const ListCustomPrivacyPoliciesForBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCustomPrivacyPoliciesForBrandOutcomeCallable listCustomPrivacyPoliciesForBrandCallable(const Model::ListCustomPrivacyPoliciesForBrandRequest& request) const;
 			ListDomainProxyTokensOutcome listDomainProxyTokens(const Model::ListDomainProxyTokensRequest &request)const;
 			void listDomainProxyTokensAsync(const Model::ListDomainProxyTokensRequest& request, const ListDomainProxyTokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDomainProxyTokensOutcomeCallable listDomainProxyTokensCallable(const Model::ListDomainProxyTokensRequest& request) const;
@@ -1423,6 +1497,9 @@ namespace AlibabaCloud
 			RemoveApplicationAccountFromUserOutcome removeApplicationAccountFromUser(const Model::RemoveApplicationAccountFromUserRequest &request)const;
 			void removeApplicationAccountFromUserAsync(const Model::RemoveApplicationAccountFromUserRequest& request, const RemoveApplicationAccountFromUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveApplicationAccountFromUserOutcomeCallable removeApplicationAccountFromUserCallable(const Model::RemoveApplicationAccountFromUserRequest& request) const;
+			RemoveCustomPrivacyPoliciesFromBrandOutcome removeCustomPrivacyPoliciesFromBrand(const Model::RemoveCustomPrivacyPoliciesFromBrandRequest &request)const;
+			void removeCustomPrivacyPoliciesFromBrandAsync(const Model::RemoveCustomPrivacyPoliciesFromBrandRequest& request, const RemoveCustomPrivacyPoliciesFromBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveCustomPrivacyPoliciesFromBrandOutcomeCallable removeCustomPrivacyPoliciesFromBrandCallable(const Model::RemoveCustomPrivacyPoliciesFromBrandRequest& request) const;
 			RemoveUserFromOrganizationalUnitsOutcome removeUserFromOrganizationalUnits(const Model::RemoveUserFromOrganizationalUnitsRequest &request)const;
 			void removeUserFromOrganizationalUnitsAsync(const Model::RemoveUserFromOrganizationalUnitsRequest& request, const RemoveUserFromOrganizationalUnitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveUserFromOrganizationalUnitsOutcomeCallable removeUserFromOrganizationalUnitsCallable(const Model::RemoveUserFromOrganizationalUnitsRequest& request) const;
@@ -1513,6 +1590,9 @@ namespace AlibabaCloud
 			UpdateConditionalAccessPolicyDescriptionOutcome updateConditionalAccessPolicyDescription(const Model::UpdateConditionalAccessPolicyDescriptionRequest &request)const;
 			void updateConditionalAccessPolicyDescriptionAsync(const Model::UpdateConditionalAccessPolicyDescriptionRequest& request, const UpdateConditionalAccessPolicyDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateConditionalAccessPolicyDescriptionOutcomeCallable updateConditionalAccessPolicyDescriptionCallable(const Model::UpdateConditionalAccessPolicyDescriptionRequest& request) const;
+			UpdateCustomPrivacyPolicyOutcome updateCustomPrivacyPolicy(const Model::UpdateCustomPrivacyPolicyRequest &request)const;
+			void updateCustomPrivacyPolicyAsync(const Model::UpdateCustomPrivacyPolicyRequest& request, const UpdateCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCustomPrivacyPolicyOutcomeCallable updateCustomPrivacyPolicyCallable(const Model::UpdateCustomPrivacyPolicyRequest& request) const;
 			UpdateDomainBrandOutcome updateDomainBrand(const Model::UpdateDomainBrandRequest &request)const;
 			void updateDomainBrandAsync(const Model::UpdateDomainBrandRequest& request, const UpdateDomainBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDomainBrandOutcomeCallable updateDomainBrandCallable(const Model::UpdateDomainBrandRequest& request) const;

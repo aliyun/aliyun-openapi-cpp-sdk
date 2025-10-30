@@ -87,6 +87,42 @@ EiamClient::AddApplicationAccountToUserOutcomeCallable EiamClient::addApplicatio
 	return task->get_future();
 }
 
+EiamClient::AddCustomPrivacyPoliciesToBrandOutcome EiamClient::addCustomPrivacyPoliciesToBrand(const AddCustomPrivacyPoliciesToBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddCustomPrivacyPoliciesToBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddCustomPrivacyPoliciesToBrandOutcome(AddCustomPrivacyPoliciesToBrandResult(outcome.result()));
+	else
+		return AddCustomPrivacyPoliciesToBrandOutcome(outcome.error());
+}
+
+void EiamClient::addCustomPrivacyPoliciesToBrandAsync(const AddCustomPrivacyPoliciesToBrandRequest& request, const AddCustomPrivacyPoliciesToBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addCustomPrivacyPoliciesToBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::AddCustomPrivacyPoliciesToBrandOutcomeCallable EiamClient::addCustomPrivacyPoliciesToBrandCallable(const AddCustomPrivacyPoliciesToBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddCustomPrivacyPoliciesToBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->addCustomPrivacyPoliciesToBrand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::AddUserToOrganizationalUnitsOutcome EiamClient::addUserToOrganizationalUnits(const AddUserToOrganizationalUnitsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +513,42 @@ EiamClient::CreateConditionalAccessPolicyOutcomeCallable EiamClient::createCondi
 			[this, request]()
 			{
 			return this->createConditionalAccessPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::CreateCustomPrivacyPolicyOutcome EiamClient::createCustomPrivacyPolicy(const CreateCustomPrivacyPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCustomPrivacyPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCustomPrivacyPolicyOutcome(CreateCustomPrivacyPolicyResult(outcome.result()));
+	else
+		return CreateCustomPrivacyPolicyOutcome(outcome.error());
+}
+
+void EiamClient::createCustomPrivacyPolicyAsync(const CreateCustomPrivacyPolicyRequest& request, const CreateCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCustomPrivacyPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::CreateCustomPrivacyPolicyOutcomeCallable EiamClient::createCustomPrivacyPolicyCallable(const CreateCustomPrivacyPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCustomPrivacyPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->createCustomPrivacyPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1053,6 +1125,42 @@ EiamClient::DeleteConditionalAccessPolicyOutcomeCallable EiamClient::deleteCondi
 			[this, request]()
 			{
 			return this->deleteConditionalAccessPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::DeleteCustomPrivacyPolicyOutcome EiamClient::deleteCustomPrivacyPolicy(const DeleteCustomPrivacyPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCustomPrivacyPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCustomPrivacyPolicyOutcome(DeleteCustomPrivacyPolicyResult(outcome.result()));
+	else
+		return DeleteCustomPrivacyPolicyOutcome(outcome.error());
+}
+
+void EiamClient::deleteCustomPrivacyPolicyAsync(const DeleteCustomPrivacyPolicyRequest& request, const DeleteCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCustomPrivacyPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DeleteCustomPrivacyPolicyOutcomeCallable EiamClient::deleteCustomPrivacyPolicyCallable(const DeleteCustomPrivacyPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCustomPrivacyPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCustomPrivacyPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,6 +1887,42 @@ EiamClient::DisableConditionalAccessPolicyOutcomeCallable EiamClient::disableCon
 	return task->get_future();
 }
 
+EiamClient::DisableCustomPrivacyPolicyOutcome EiamClient::disableCustomPrivacyPolicy(const DisableCustomPrivacyPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableCustomPrivacyPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableCustomPrivacyPolicyOutcome(DisableCustomPrivacyPolicyResult(outcome.result()));
+	else
+		return DisableCustomPrivacyPolicyOutcome(outcome.error());
+}
+
+void EiamClient::disableCustomPrivacyPolicyAsync(const DisableCustomPrivacyPolicyRequest& request, const DisableCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableCustomPrivacyPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::DisableCustomPrivacyPolicyOutcomeCallable EiamClient::disableCustomPrivacyPolicyCallable(const DisableCustomPrivacyPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableCustomPrivacyPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->disableCustomPrivacyPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::DisableDomainProxyTokenOutcome EiamClient::disableDomainProxyToken(const DisableDomainProxyTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2319,6 +2463,42 @@ EiamClient::EnableConditionalAccessPolicyOutcomeCallable EiamClient::enableCondi
 	return task->get_future();
 }
 
+EiamClient::EnableCustomPrivacyPolicyOutcome EiamClient::enableCustomPrivacyPolicy(const EnableCustomPrivacyPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableCustomPrivacyPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableCustomPrivacyPolicyOutcome(EnableCustomPrivacyPolicyResult(outcome.result()));
+	else
+		return EnableCustomPrivacyPolicyOutcome(outcome.error());
+}
+
+void EiamClient::enableCustomPrivacyPolicyAsync(const EnableCustomPrivacyPolicyRequest& request, const EnableCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableCustomPrivacyPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::EnableCustomPrivacyPolicyOutcomeCallable EiamClient::enableCustomPrivacyPolicyCallable(const EnableCustomPrivacyPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableCustomPrivacyPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->enableCustomPrivacyPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::EnableDomainProxyTokenOutcome EiamClient::enableDomainProxyToken(const EnableDomainProxyTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2853,6 +3033,42 @@ EiamClient::GetConditionalAccessPolicyOutcomeCallable EiamClient::getConditional
 			[this, request]()
 			{
 			return this->getConditionalAccessPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::GetCustomPrivacyPolicyOutcome EiamClient::getCustomPrivacyPolicy(const GetCustomPrivacyPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCustomPrivacyPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCustomPrivacyPolicyOutcome(GetCustomPrivacyPolicyResult(outcome.result()));
+	else
+		return GetCustomPrivacyPolicyOutcome(outcome.error());
+}
+
+void EiamClient::getCustomPrivacyPolicyAsync(const GetCustomPrivacyPolicyRequest& request, const GetCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCustomPrivacyPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::GetCustomPrivacyPolicyOutcomeCallable EiamClient::getCustomPrivacyPolicyCallable(const GetCustomPrivacyPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCustomPrivacyPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->getCustomPrivacyPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4227,6 +4443,78 @@ EiamClient::ListConditionalAccessPoliciesForUserOutcomeCallable EiamClient::list
 	return task->get_future();
 }
 
+EiamClient::ListCustomPrivacyPoliciesOutcome EiamClient::listCustomPrivacyPolicies(const ListCustomPrivacyPoliciesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCustomPrivacyPoliciesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCustomPrivacyPoliciesOutcome(ListCustomPrivacyPoliciesResult(outcome.result()));
+	else
+		return ListCustomPrivacyPoliciesOutcome(outcome.error());
+}
+
+void EiamClient::listCustomPrivacyPoliciesAsync(const ListCustomPrivacyPoliciesRequest& request, const ListCustomPrivacyPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCustomPrivacyPolicies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListCustomPrivacyPoliciesOutcomeCallable EiamClient::listCustomPrivacyPoliciesCallable(const ListCustomPrivacyPoliciesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCustomPrivacyPoliciesOutcome()>>(
+			[this, request]()
+			{
+			return this->listCustomPrivacyPolicies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::ListCustomPrivacyPoliciesForBrandOutcome EiamClient::listCustomPrivacyPoliciesForBrand(const ListCustomPrivacyPoliciesForBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCustomPrivacyPoliciesForBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCustomPrivacyPoliciesForBrandOutcome(ListCustomPrivacyPoliciesForBrandResult(outcome.result()));
+	else
+		return ListCustomPrivacyPoliciesForBrandOutcome(outcome.error());
+}
+
+void EiamClient::listCustomPrivacyPoliciesForBrandAsync(const ListCustomPrivacyPoliciesForBrandRequest& request, const ListCustomPrivacyPoliciesForBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCustomPrivacyPoliciesForBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListCustomPrivacyPoliciesForBrandOutcomeCallable EiamClient::listCustomPrivacyPoliciesForBrandCallable(const ListCustomPrivacyPoliciesForBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCustomPrivacyPoliciesForBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->listCustomPrivacyPoliciesForBrand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::ListDomainProxyTokensOutcome EiamClient::listDomainProxyTokens(const ListDomainProxyTokensRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5229,6 +5517,42 @@ EiamClient::RemoveApplicationAccountFromUserOutcomeCallable EiamClient::removeAp
 			[this, request]()
 			{
 			return this->removeApplicationAccountFromUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::RemoveCustomPrivacyPoliciesFromBrandOutcome EiamClient::removeCustomPrivacyPoliciesFromBrand(const RemoveCustomPrivacyPoliciesFromBrandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveCustomPrivacyPoliciesFromBrandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveCustomPrivacyPoliciesFromBrandOutcome(RemoveCustomPrivacyPoliciesFromBrandResult(outcome.result()));
+	else
+		return RemoveCustomPrivacyPoliciesFromBrandOutcome(outcome.error());
+}
+
+void EiamClient::removeCustomPrivacyPoliciesFromBrandAsync(const RemoveCustomPrivacyPoliciesFromBrandRequest& request, const RemoveCustomPrivacyPoliciesFromBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeCustomPrivacyPoliciesFromBrand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::RemoveCustomPrivacyPoliciesFromBrandOutcomeCallable EiamClient::removeCustomPrivacyPoliciesFromBrandCallable(const RemoveCustomPrivacyPoliciesFromBrandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveCustomPrivacyPoliciesFromBrandOutcome()>>(
+			[this, request]()
+			{
+			return this->removeCustomPrivacyPoliciesFromBrand(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6309,6 +6633,42 @@ EiamClient::UpdateConditionalAccessPolicyDescriptionOutcomeCallable EiamClient::
 			[this, request]()
 			{
 			return this->updateConditionalAccessPolicyDescription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UpdateCustomPrivacyPolicyOutcome EiamClient::updateCustomPrivacyPolicy(const UpdateCustomPrivacyPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCustomPrivacyPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCustomPrivacyPolicyOutcome(UpdateCustomPrivacyPolicyResult(outcome.result()));
+	else
+		return UpdateCustomPrivacyPolicyOutcome(outcome.error());
+}
+
+void EiamClient::updateCustomPrivacyPolicyAsync(const UpdateCustomPrivacyPolicyRequest& request, const UpdateCustomPrivacyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCustomPrivacyPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UpdateCustomPrivacyPolicyOutcomeCallable EiamClient::updateCustomPrivacyPolicyCallable(const UpdateCustomPrivacyPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCustomPrivacyPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCustomPrivacyPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
