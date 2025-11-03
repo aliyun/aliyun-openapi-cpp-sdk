@@ -93,6 +93,8 @@ void DescribeActiveOperationTasksResult::parse(const std::string &payload)
 			itemsObject.resultInfo = valueItemsItemsItem["ResultInfo"].asString();
 		if(!valueItemsItemsItem["Id"].isNull())
 			itemsObject.id = std::stoi(valueItemsItemsItem["Id"].asString());
+		if(!valueItemsItemsItem["TaskParams"].isNull())
+			itemsObject.taskParams = valueItemsItemsItem["TaskParams"].asString();
 		auto allSubInsNames = value["SubInsNames"]["SubInsNames"];
 		for (auto value : allSubInsNames)
 			itemsObject.subInsNames.push_back(value.asString());

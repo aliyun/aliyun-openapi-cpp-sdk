@@ -143,6 +143,12 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.provisionedIops = std::stol(valueDBInstancesDBInstance["ProvisionedIops"].asString());
 		if(!valueDBInstancesDBInstance["DisasterRecoveryInfo"].isNull())
 			dBInstancesObject.disasterRecoveryInfo = valueDBInstancesDBInstance["DisasterRecoveryInfo"].asString();
+		if(!valueDBInstancesDBInstance["SearchNodeClass"].isNull())
+			dBInstancesObject.searchNodeClass = valueDBInstancesDBInstance["SearchNodeClass"].asString();
+		if(!valueDBInstancesDBInstance["SearchNodeStorage"].isNull())
+			dBInstancesObject.searchNodeStorage = std::stoi(valueDBInstancesDBInstance["SearchNodeStorage"].asString());
+		if(!valueDBInstancesDBInstance["SearchNodeCount"].isNull())
+			dBInstancesObject.searchNodeCount = std::stoi(valueDBInstancesDBInstance["SearchNodeCount"].asString());
 		auto allReplicaSetsNode = valueDBInstancesDBInstance["ReplicaSets"]["ReplicaSet"];
 		for (auto valueDBInstancesDBInstanceReplicaSetsReplicaSet : allReplicaSetsNode)
 		{

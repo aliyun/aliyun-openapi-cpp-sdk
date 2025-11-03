@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "DdsExport.h"
+#include "model/AllocateDBInstanceSrvNetworkAddressRequest.h"
+#include "model/AllocateDBInstanceSrvNetworkAddressResult.h"
 #include "model/AllocateNodePrivateNetworkAddressRequest.h"
 #include "model/AllocateNodePrivateNetworkAddressResult.h"
 #include "model/AllocatePublicNetworkAddressRequest.h"
@@ -230,6 +232,8 @@
 #include "model/ModifySecurityGroupConfigurationResult.h"
 #include "model/ModifySecurityIpsRequest.h"
 #include "model/ModifySecurityIpsResult.h"
+#include "model/ModifySrvNetworkAddressRequest.h"
+#include "model/ModifySrvNetworkAddressResult.h"
 #include "model/ModifyTaskInfoRequest.h"
 #include "model/ModifyTaskInfoResult.h"
 #include "model/ReleaseNodePrivateNetworkAddressRequest.h"
@@ -269,6 +273,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_DDS_EXPORT DdsClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AllocateDBInstanceSrvNetworkAddressResult> AllocateDBInstanceSrvNetworkAddressOutcome;
+			typedef std::future<AllocateDBInstanceSrvNetworkAddressOutcome> AllocateDBInstanceSrvNetworkAddressOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::AllocateDBInstanceSrvNetworkAddressRequest&, const AllocateDBInstanceSrvNetworkAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateDBInstanceSrvNetworkAddressAsyncHandler;
 			typedef Outcome<Error, Model::AllocateNodePrivateNetworkAddressResult> AllocateNodePrivateNetworkAddressOutcome;
 			typedef std::future<AllocateNodePrivateNetworkAddressOutcome> AllocateNodePrivateNetworkAddressOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::AllocateNodePrivateNetworkAddressRequest&, const AllocateNodePrivateNetworkAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateNodePrivateNetworkAddressAsyncHandler;
@@ -581,6 +588,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySecurityIpsResult> ModifySecurityIpsOutcome;
 			typedef std::future<ModifySecurityIpsOutcome> ModifySecurityIpsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifySecurityIpsRequest&, const ModifySecurityIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityIpsAsyncHandler;
+			typedef Outcome<Error, Model::ModifySrvNetworkAddressResult> ModifySrvNetworkAddressOutcome;
+			typedef std::future<ModifySrvNetworkAddressOutcome> ModifySrvNetworkAddressOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::ModifySrvNetworkAddressRequest&, const ModifySrvNetworkAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySrvNetworkAddressAsyncHandler;
 			typedef Outcome<Error, Model::ModifyTaskInfoResult> ModifyTaskInfoOutcome;
 			typedef std::future<ModifyTaskInfoOutcome> ModifyTaskInfoOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyTaskInfoRequest&, const ModifyTaskInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskInfoAsyncHandler;
@@ -631,6 +641,9 @@ namespace AlibabaCloud
 			DdsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			DdsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~DdsClient();
+			AllocateDBInstanceSrvNetworkAddressOutcome allocateDBInstanceSrvNetworkAddress(const Model::AllocateDBInstanceSrvNetworkAddressRequest &request)const;
+			void allocateDBInstanceSrvNetworkAddressAsync(const Model::AllocateDBInstanceSrvNetworkAddressRequest& request, const AllocateDBInstanceSrvNetworkAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AllocateDBInstanceSrvNetworkAddressOutcomeCallable allocateDBInstanceSrvNetworkAddressCallable(const Model::AllocateDBInstanceSrvNetworkAddressRequest& request) const;
 			AllocateNodePrivateNetworkAddressOutcome allocateNodePrivateNetworkAddress(const Model::AllocateNodePrivateNetworkAddressRequest &request)const;
 			void allocateNodePrivateNetworkAddressAsync(const Model::AllocateNodePrivateNetworkAddressRequest& request, const AllocateNodePrivateNetworkAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocateNodePrivateNetworkAddressOutcomeCallable allocateNodePrivateNetworkAddressCallable(const Model::AllocateNodePrivateNetworkAddressRequest& request) const;
@@ -943,6 +956,9 @@ namespace AlibabaCloud
 			ModifySecurityIpsOutcome modifySecurityIps(const Model::ModifySecurityIpsRequest &request)const;
 			void modifySecurityIpsAsync(const Model::ModifySecurityIpsRequest& request, const ModifySecurityIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySecurityIpsOutcomeCallable modifySecurityIpsCallable(const Model::ModifySecurityIpsRequest& request) const;
+			ModifySrvNetworkAddressOutcome modifySrvNetworkAddress(const Model::ModifySrvNetworkAddressRequest &request)const;
+			void modifySrvNetworkAddressAsync(const Model::ModifySrvNetworkAddressRequest& request, const ModifySrvNetworkAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifySrvNetworkAddressOutcomeCallable modifySrvNetworkAddressCallable(const Model::ModifySrvNetworkAddressRequest& request) const;
 			ModifyTaskInfoOutcome modifyTaskInfo(const Model::ModifyTaskInfoRequest &request)const;
 			void modifyTaskInfoAsync(const Model::ModifyTaskInfoRequest& request, const ModifyTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyTaskInfoOutcomeCallable modifyTaskInfoCallable(const Model::ModifyTaskInfoRequest& request) const;

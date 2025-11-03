@@ -118,6 +118,7 @@ namespace AlibabaCloud
 					std::string dBInstanceType;
 					std::string replicaSetName;
 					std::vector<DBInstance::ReplicaSet> replicaSets;
+					int searchNodeCount;
 					std::string syncPercent;
 					std::string dBInstanceId;
 					std::string lastDowngradeTime;
@@ -160,12 +161,14 @@ namespace AlibabaCloud
 					std::vector<DBInstance::ShardAttribute> shardList;
 					int maxIOPS;
 					std::string secondaryZoneId;
+					int searchNodeStorage;
 					bool useClusterBackup;
 					std::string vpcAuthMode;
 					std::string protocolType;
 					std::string chargeType;
 					std::string regionId;
 					std::string kindCode;
+					std::string searchNodeClass;
 				};
 
 

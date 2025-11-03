@@ -51,6 +51,42 @@ DdsClient::DdsClient(const std::string & accessKeyId, const std::string & access
 DdsClient::~DdsClient()
 {}
 
+DdsClient::AllocateDBInstanceSrvNetworkAddressOutcome DdsClient::allocateDBInstanceSrvNetworkAddress(const AllocateDBInstanceSrvNetworkAddressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AllocateDBInstanceSrvNetworkAddressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AllocateDBInstanceSrvNetworkAddressOutcome(AllocateDBInstanceSrvNetworkAddressResult(outcome.result()));
+	else
+		return AllocateDBInstanceSrvNetworkAddressOutcome(outcome.error());
+}
+
+void DdsClient::allocateDBInstanceSrvNetworkAddressAsync(const AllocateDBInstanceSrvNetworkAddressRequest& request, const AllocateDBInstanceSrvNetworkAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, allocateDBInstanceSrvNetworkAddress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::AllocateDBInstanceSrvNetworkAddressOutcomeCallable DdsClient::allocateDBInstanceSrvNetworkAddressCallable(const AllocateDBInstanceSrvNetworkAddressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AllocateDBInstanceSrvNetworkAddressOutcome()>>(
+			[this, request]()
+			{
+			return this->allocateDBInstanceSrvNetworkAddress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::AllocateNodePrivateNetworkAddressOutcome DdsClient::allocateNodePrivateNetworkAddress(const AllocateNodePrivateNetworkAddressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3789,6 +3825,42 @@ DdsClient::ModifySecurityIpsOutcomeCallable DdsClient::modifySecurityIpsCallable
 			[this, request]()
 			{
 			return this->modifySecurityIps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::ModifySrvNetworkAddressOutcome DdsClient::modifySrvNetworkAddress(const ModifySrvNetworkAddressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySrvNetworkAddressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySrvNetworkAddressOutcome(ModifySrvNetworkAddressResult(outcome.result()));
+	else
+		return ModifySrvNetworkAddressOutcome(outcome.error());
+}
+
+void DdsClient::modifySrvNetworkAddressAsync(const ModifySrvNetworkAddressRequest& request, const ModifySrvNetworkAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySrvNetworkAddress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifySrvNetworkAddressOutcomeCallable DdsClient::modifySrvNetworkAddressCallable(const ModifySrvNetworkAddressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySrvNetworkAddressOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySrvNetworkAddress(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

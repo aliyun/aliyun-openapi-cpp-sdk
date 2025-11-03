@@ -30,6 +30,8 @@ class ALIBABACLOUD_DDS_EXPORT DescribeClusterBackupsRequest : public RpcServiceR
 public:
 	DescribeClusterBackupsRequest();
 	~DescribeClusterBackupsRequest();
+	std::string getBackupJobId() const;
+	void setBackupJobId(const std::string &backupJobId);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getStartTime() const;
@@ -38,6 +40,8 @@ public:
 	void setSrcRegion(const std::string &srcRegion);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
@@ -60,10 +64,12 @@ public:
 	void setPageNo(int pageNo);
 
 private:
+	std::string backupJobId_;
 	long resourceOwnerId_;
 	std::string startTime_;
 	std::string srcRegion_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	int pageSize_;
 	std::string dBInstanceId_;
 	std::string destRegion_;

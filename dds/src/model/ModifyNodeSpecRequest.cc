@@ -52,6 +52,15 @@ void ModifyNodeSpecRequest::setReadonlyReplicas(int readonlyReplicas) {
   setParameter(std::string("ReadonlyReplicas"), std::to_string(readonlyReplicas));
 }
 
+std::string ModifyNodeSpecRequest::getTargetSecondaryZoneId() const {
+  return targetSecondaryZoneId_;
+}
+
+void ModifyNodeSpecRequest::setTargetSecondaryZoneId(const std::string &targetSecondaryZoneId) {
+  targetSecondaryZoneId_ = targetSecondaryZoneId;
+  setParameter(std::string("TargetSecondaryZoneId"), targetSecondaryZoneId);
+}
+
 std::string ModifyNodeSpecRequest::getCouponNo() const {
   return couponNo_;
 }
@@ -77,6 +86,15 @@ std::string ModifyNodeSpecRequest::getAccessKeyId() const {
 void ModifyNodeSpecRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ModifyNodeSpecRequest::getTargetZoneId() const {
+  return targetZoneId_;
+}
+
+void ModifyNodeSpecRequest::setTargetZoneId(const std::string &targetZoneId) {
+  targetZoneId_ = targetZoneId;
+  setParameter(std::string("TargetZoneId"), targetZoneId);
 }
 
 std::string ModifyNodeSpecRequest::getEffectiveTime() const {
@@ -169,6 +187,15 @@ void ModifyNodeSpecRequest::setOwnerAccount(const std::string &ownerAccount) {
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::string ModifyNodeSpecRequest::getTargetVswitchId() const {
+  return targetVswitchId_;
+}
+
+void ModifyNodeSpecRequest::setTargetVswitchId(const std::string &targetVswitchId) {
+  targetVswitchId_ = targetVswitchId;
+  setParameter(std::string("TargetVswitchId"), targetVswitchId);
+}
+
 long ModifyNodeSpecRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -176,6 +203,15 @@ long ModifyNodeSpecRequest::getOwnerId() const {
 void ModifyNodeSpecRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ModifyNodeSpecRequest::getTargetHiddenZoneId() const {
+  return targetHiddenZoneId_;
+}
+
+void ModifyNodeSpecRequest::setTargetHiddenZoneId(const std::string &targetHiddenZoneId) {
+  targetHiddenZoneId_ = targetHiddenZoneId;
+  setParameter(std::string("TargetHiddenZoneId"), targetHiddenZoneId);
 }
 
 std::string ModifyNodeSpecRequest::getOrderType() const {

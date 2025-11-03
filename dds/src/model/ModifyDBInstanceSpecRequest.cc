@@ -61,6 +61,15 @@ void ModifyDBInstanceSpecRequest::setExtraParam(const std::string &extraParam) {
   setParameter(std::string("ExtraParam"), extraParam);
 }
 
+std::string ModifyDBInstanceSpecRequest::getTargetSecondaryZoneId() const {
+  return targetSecondaryZoneId_;
+}
+
+void ModifyDBInstanceSpecRequest::setTargetSecondaryZoneId(const std::string &targetSecondaryZoneId) {
+  targetSecondaryZoneId_ = targetSecondaryZoneId;
+  setParameter(std::string("TargetSecondaryZoneId"), targetSecondaryZoneId);
+}
+
 std::string ModifyDBInstanceSpecRequest::getCouponNo() const {
   return couponNo_;
 }
@@ -88,6 +97,15 @@ void ModifyDBInstanceSpecRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBInstanceSpecRequest::getTargetZoneId() const {
+  return targetZoneId_;
+}
+
+void ModifyDBInstanceSpecRequest::setTargetZoneId(const std::string &targetZoneId) {
+  targetZoneId_ = targetZoneId;
+  setParameter(std::string("TargetZoneId"), targetZoneId);
+}
+
 std::string ModifyDBInstanceSpecRequest::getEffectiveTime() const {
   return effectiveTime_;
 }
@@ -113,6 +131,15 @@ std::string ModifyDBInstanceSpecRequest::getBusinessInfo() const {
 void ModifyDBInstanceSpecRequest::setBusinessInfo(const std::string &businessInfo) {
   businessInfo_ = businessInfo;
   setParameter(std::string("BusinessInfo"), businessInfo);
+}
+
+std::string ModifyDBInstanceSpecRequest::getSearchNodeClass() const {
+  return searchNodeClass_;
+}
+
+void ModifyDBInstanceSpecRequest::setSearchNodeClass(const std::string &searchNodeClass) {
+  searchNodeClass_ = searchNodeClass;
+  setParameter(std::string("SearchNodeClass"), searchNodeClass);
 }
 
 bool ModifyDBInstanceSpecRequest::getAutoPay() const {
@@ -151,6 +178,24 @@ void ModifyDBInstanceSpecRequest::setOwnerAccount(const std::string &ownerAccoun
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+long ModifyDBInstanceSpecRequest::getSearchNodeStorage() const {
+  return searchNodeStorage_;
+}
+
+void ModifyDBInstanceSpecRequest::setSearchNodeStorage(long searchNodeStorage) {
+  searchNodeStorage_ = searchNodeStorage;
+  setParameter(std::string("SearchNodeStorage"), std::to_string(searchNodeStorage));
+}
+
+std::string ModifyDBInstanceSpecRequest::getTargetVswitchId() const {
+  return targetVswitchId_;
+}
+
+void ModifyDBInstanceSpecRequest::setTargetVswitchId(const std::string &targetVswitchId) {
+  targetVswitchId_ = targetVswitchId;
+  setParameter(std::string("TargetVswitchId"), targetVswitchId);
+}
+
 long ModifyDBInstanceSpecRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -167,6 +212,24 @@ std::string ModifyDBInstanceSpecRequest::getDBInstanceClass() const {
 void ModifyDBInstanceSpecRequest::setDBInstanceClass(const std::string &dBInstanceClass) {
   dBInstanceClass_ = dBInstanceClass;
   setParameter(std::string("DBInstanceClass"), dBInstanceClass);
+}
+
+long ModifyDBInstanceSpecRequest::getSearchNodeCount() const {
+  return searchNodeCount_;
+}
+
+void ModifyDBInstanceSpecRequest::setSearchNodeCount(long searchNodeCount) {
+  searchNodeCount_ = searchNodeCount;
+  setParameter(std::string("SearchNodeCount"), std::to_string(searchNodeCount));
+}
+
+std::string ModifyDBInstanceSpecRequest::getTargetHiddenZoneId() const {
+  return targetHiddenZoneId_;
+}
+
+void ModifyDBInstanceSpecRequest::setTargetHiddenZoneId(const std::string &targetHiddenZoneId) {
+  targetHiddenZoneId_ = targetHiddenZoneId;
+  setParameter(std::string("TargetHiddenZoneId"), targetHiddenZoneId);
 }
 
 std::string ModifyDBInstanceSpecRequest::getOrderType() const {

@@ -25,6 +25,15 @@ DescribeBackupsRequest::DescribeBackupsRequest()
 
 DescribeBackupsRequest::~DescribeBackupsRequest() {}
 
+std::string DescribeBackupsRequest::getBackupJobId() const {
+  return backupJobId_;
+}
+
+void DescribeBackupsRequest::setBackupJobId(const std::string &backupJobId) {
+  backupJobId_ = backupJobId;
+  setParameter(std::string("BackupJobId"), backupJobId);
+}
+
 long DescribeBackupsRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
@@ -68,6 +77,15 @@ std::string DescribeBackupsRequest::getAccessKeyId() const {
 void DescribeBackupsRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeBackupsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeBackupsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 int DescribeBackupsRequest::getPageSize() const {

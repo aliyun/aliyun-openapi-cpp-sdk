@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_CREATEBACKUPRESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_CREATEBACKUPRESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYSRVNETWORKADDRESSRESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_MODIFYSRVNETWORKADDRESSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT CreateBackupResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT ModifySrvNetworkAddressResult : public ServiceResult
 			{
 			public:
 
 
-				CreateBackupResult();
-				explicit CreateBackupResult(const std::string &payload);
-				~CreateBackupResult();
-				std::string getBackupId()const;
-				std::string getBackupJobId()const;
+				ModifySrvNetworkAddressResult();
+				explicit ModifySrvNetworkAddressResult(const std::string &payload);
+				~ModifySrvNetworkAddressResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string backupId_;
-				std::string backupJobId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_CREATEBACKUPRESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYSRVNETWORKADDRESSRESULT_H_

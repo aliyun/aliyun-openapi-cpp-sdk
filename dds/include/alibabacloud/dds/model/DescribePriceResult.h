@@ -162,6 +162,7 @@ namespace AlibabaCloud
 						std::string priceUnit;
 						bool pricingModule;
 						std::string moduleCode;
+						std::string unitPriceUnit4Buy;
 						DepreciateInfo1 depreciateInfo1;
 						double totalProductFee;
 						std::vector<ModuleInstanceItem::ModuleAttr> moduleAttrs;

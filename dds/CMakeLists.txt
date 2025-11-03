@@ -21,6 +21,8 @@ set(dds_public_header
 	include/alibabacloud/dds/DdsExport.h )
 
 set(dds_public_header_model 
+	include/alibabacloud/dds/model/AllocateDBInstanceSrvNetworkAddressRequest.h
+	include/alibabacloud/dds/model/AllocateDBInstanceSrvNetworkAddressResult.h
 	include/alibabacloud/dds/model/AllocateNodePrivateNetworkAddressRequest.h
 	include/alibabacloud/dds/model/AllocateNodePrivateNetworkAddressResult.h
 	include/alibabacloud/dds/model/AllocatePublicNetworkAddressRequest.h
@@ -229,6 +231,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifySecurityGroupConfigurationResult.h
 	include/alibabacloud/dds/model/ModifySecurityIpsRequest.h
 	include/alibabacloud/dds/model/ModifySecurityIpsResult.h
+	include/alibabacloud/dds/model/ModifySrvNetworkAddressRequest.h
+	include/alibabacloud/dds/model/ModifySrvNetworkAddressResult.h
 	include/alibabacloud/dds/model/ModifyTaskInfoRequest.h
 	include/alibabacloud/dds/model/ModifyTaskInfoResult.h
 	include/alibabacloud/dds/model/ReleaseNodePrivateNetworkAddressRequest.h
@@ -262,6 +266,8 @@ set(dds_public_header_model
 
 set(dds_src 
 	src/DdsClient.cc
+	src/model/AllocateDBInstanceSrvNetworkAddressRequest.cc
+	src/model/AllocateDBInstanceSrvNetworkAddressResult.cc
 	src/model/AllocateNodePrivateNetworkAddressRequest.cc
 	src/model/AllocateNodePrivateNetworkAddressResult.cc
 	src/model/AllocatePublicNetworkAddressRequest.cc
@@ -470,6 +476,8 @@ set(dds_src
 	src/model/ModifySecurityGroupConfigurationResult.cc
 	src/model/ModifySecurityIpsRequest.cc
 	src/model/ModifySecurityIpsResult.cc
+	src/model/ModifySrvNetworkAddressRequest.cc
+	src/model/ModifySrvNetworkAddressResult.cc
 	src/model/ModifyTaskInfoRequest.cc
 	src/model/ModifyTaskInfoResult.cc
 	src/model/ReleaseNodePrivateNetworkAddressRequest.cc

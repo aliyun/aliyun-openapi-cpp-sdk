@@ -32,12 +32,18 @@ public:
 	~DescribeInstanceRecoverTimeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getSrcRegion() const;
+	void setSrcRegion(const std::string &srcRegion);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getDestRegion() const;
+	void setDestRegion(const std::string &destRegion);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -47,9 +53,12 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string srcRegion_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string dBInstanceId_;
+	std::string destRegion_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

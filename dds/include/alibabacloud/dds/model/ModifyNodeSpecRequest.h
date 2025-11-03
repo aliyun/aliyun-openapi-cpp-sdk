@@ -36,12 +36,16 @@ public:
 	void setClientToken(const std::string &clientToken);
 	int getReadonlyReplicas() const;
 	void setReadonlyReplicas(int readonlyReplicas);
+	std::string getTargetSecondaryZoneId() const;
+	void setTargetSecondaryZoneId(const std::string &targetSecondaryZoneId);
 	std::string getCouponNo() const;
 	void setCouponNo(const std::string &couponNo);
 	std::string getNodeClass() const;
 	void setNodeClass(const std::string &nodeClass);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getTargetZoneId() const;
+	void setTargetZoneId(const std::string &targetZoneId);
 	std::string getEffectiveTime() const;
 	void setEffectiveTime(const std::string &effectiveTime);
 	std::string getDBInstanceId() const;
@@ -62,8 +66,12 @@ public:
 	void setNodeStorage(int nodeStorage);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getTargetVswitchId() const;
+	void setTargetVswitchId(const std::string &targetVswitchId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getTargetHiddenZoneId() const;
+	void setTargetHiddenZoneId(const std::string &targetHiddenZoneId);
 	std::string getOrderType() const;
 	void setOrderType(const std::string &orderType);
 
@@ -71,9 +79,11 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	int readonlyReplicas_;
+	std::string targetSecondaryZoneId_;
 	std::string couponNo_;
 	std::string nodeClass_;
 	std::string accessKeyId_;
+	std::string targetZoneId_;
 	std::string effectiveTime_;
 	std::string dBInstanceId_;
 	std::string switchTime_;
@@ -84,7 +94,9 @@ private:
 	std::string resourceOwnerAccount_;
 	int nodeStorage_;
 	std::string ownerAccount_;
+	std::string targetVswitchId_;
 	long ownerId_;
+	std::string targetHiddenZoneId_;
 	std::string orderType_;
 };
 } // namespace Model

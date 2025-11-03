@@ -36,10 +36,14 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getNodesInfo() const;
 	void setNodesInfo(const std::string &nodesInfo);
+	std::string getTargetSecondaryZoneId() const;
+	void setTargetSecondaryZoneId(const std::string &targetSecondaryZoneId);
 	std::string getCouponNo() const;
 	void setCouponNo(const std::string &couponNo);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getTargetZoneId() const;
+	void setTargetZoneId(const std::string &targetZoneId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getEffectiveTime() const;
@@ -56,8 +60,12 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getTargetVswitchId() const;
+	void setTargetVswitchId(const std::string &targetVswitchId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getTargetHiddenZoneId() const;
+	void setTargetHiddenZoneId(const std::string &targetHiddenZoneId);
 	std::string getOrderType() const;
 	void setOrderType(const std::string &orderType);
 
@@ -65,8 +73,10 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string nodesInfo_;
+	std::string targetSecondaryZoneId_;
 	std::string couponNo_;
 	std::string accessKeyId_;
+	std::string targetZoneId_;
 	std::string regionId_;
 	std::string effectiveTime_;
 	std::string dBInstanceId_;
@@ -75,7 +85,9 @@ private:
 	std::string fromApp_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::string targetVswitchId_;
 	long ownerId_;
+	std::string targetHiddenZoneId_;
 	std::string orderType_;
 };
 } // namespace Model

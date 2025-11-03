@@ -93,6 +93,8 @@ void DescribePriceResult::parse(const std::string &payload)
 				moduleInstanceObject.priceUnit = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["priceUnit"].asString();
 			if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["priceType"].isNull())
 				moduleInstanceObject.priceType = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["priceType"].asString();
+			if(!valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["UnitPriceUnit4Buy"].isNull())
+				moduleInstanceObject.unitPriceUnit4Buy = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["UnitPriceUnit4Buy"].asString();
 			auto allPromDetailList2Node = valueSubOrdersSubOrderModuleInstanceModuleInstanceItem["PromDetailList"]["PromDetail"];
 			for (auto valueSubOrdersSubOrderModuleInstanceModuleInstanceItemPromDetailListPromDetail : allPromDetailList2Node)
 			{

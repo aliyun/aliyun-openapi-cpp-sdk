@@ -52,6 +52,15 @@ void ModifyNodeSpecBatchRequest::setNodesInfo(const std::string &nodesInfo) {
   setParameter(std::string("NodesInfo"), nodesInfo);
 }
 
+std::string ModifyNodeSpecBatchRequest::getTargetSecondaryZoneId() const {
+  return targetSecondaryZoneId_;
+}
+
+void ModifyNodeSpecBatchRequest::setTargetSecondaryZoneId(const std::string &targetSecondaryZoneId) {
+  targetSecondaryZoneId_ = targetSecondaryZoneId;
+  setParameter(std::string("TargetSecondaryZoneId"), targetSecondaryZoneId);
+}
+
 std::string ModifyNodeSpecBatchRequest::getCouponNo() const {
   return couponNo_;
 }
@@ -68,6 +77,15 @@ std::string ModifyNodeSpecBatchRequest::getAccessKeyId() const {
 void ModifyNodeSpecBatchRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ModifyNodeSpecBatchRequest::getTargetZoneId() const {
+  return targetZoneId_;
+}
+
+void ModifyNodeSpecBatchRequest::setTargetZoneId(const std::string &targetZoneId) {
+  targetZoneId_ = targetZoneId;
+  setParameter(std::string("TargetZoneId"), targetZoneId);
 }
 
 std::string ModifyNodeSpecBatchRequest::getRegionId() const {
@@ -142,6 +160,15 @@ void ModifyNodeSpecBatchRequest::setOwnerAccount(const std::string &ownerAccount
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::string ModifyNodeSpecBatchRequest::getTargetVswitchId() const {
+  return targetVswitchId_;
+}
+
+void ModifyNodeSpecBatchRequest::setTargetVswitchId(const std::string &targetVswitchId) {
+  targetVswitchId_ = targetVswitchId;
+  setParameter(std::string("TargetVswitchId"), targetVswitchId);
+}
+
 long ModifyNodeSpecBatchRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -149,6 +176,15 @@ long ModifyNodeSpecBatchRequest::getOwnerId() const {
 void ModifyNodeSpecBatchRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ModifyNodeSpecBatchRequest::getTargetHiddenZoneId() const {
+  return targetHiddenZoneId_;
+}
+
+void ModifyNodeSpecBatchRequest::setTargetHiddenZoneId(const std::string &targetHiddenZoneId) {
+  targetHiddenZoneId_ = targetHiddenZoneId;
+  setParameter(std::string("TargetHiddenZoneId"), targetHiddenZoneId);
 }
 
 std::string ModifyNodeSpecBatchRequest::getOrderType() const {

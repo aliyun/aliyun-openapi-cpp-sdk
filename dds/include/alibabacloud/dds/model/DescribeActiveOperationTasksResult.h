@@ -54,6 +54,7 @@ namespace AlibabaCloud
 					std::string insComment;
 					std::string changeLevelEn;
 					std::string allowCancel;
+					std::string taskParams;
 					std::string allowChange;
 					std::vector<std::string> subInsNames;
 					std::string region;

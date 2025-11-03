@@ -34,6 +34,15 @@ void DescribeClusterRecoverTimeRequest::setResourceOwnerId(long resourceOwnerId)
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeClusterRecoverTimeRequest::getSrcRegion() const {
+  return srcRegion_;
+}
+
+void DescribeClusterRecoverTimeRequest::setSrcRegion(const std::string &srcRegion) {
+  srcRegion_ = srcRegion;
+  setParameter(std::string("SrcRegion"), srcRegion);
+}
+
 std::string DescribeClusterRecoverTimeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -43,6 +52,15 @@ void DescribeClusterRecoverTimeRequest::setAccessKeyId(const std::string &access
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeClusterRecoverTimeRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeClusterRecoverTimeRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeClusterRecoverTimeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }
@@ -50,6 +68,15 @@ std::string DescribeClusterRecoverTimeRequest::getDBInstanceId() const {
 void DescribeClusterRecoverTimeRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DescribeClusterRecoverTimeRequest::getDestRegion() const {
+  return destRegion_;
+}
+
+void DescribeClusterRecoverTimeRequest::setDestRegion(const std::string &destRegion) {
+  destRegion_ = destRegion;
+  setParameter(std::string("DestRegion"), destRegion);
 }
 
 std::string DescribeClusterRecoverTimeRequest::getResourceOwnerAccount() const {

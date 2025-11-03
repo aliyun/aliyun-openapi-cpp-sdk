@@ -79,6 +79,15 @@ void DescribeUserEncryptionKeyListRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeUserEncryptionKeyListRequest::getRoleARN() const {
+  return roleARN_;
+}
+
+void DescribeUserEncryptionKeyListRequest::setRoleARN(const std::string &roleARN) {
+  roleARN_ = roleARN;
+  setParameter(std::string("RoleARN"), roleARN);
+}
+
 std::string DescribeUserEncryptionKeyListRequest::getTargetRegionId() const {
   return targetRegionId_;
 }

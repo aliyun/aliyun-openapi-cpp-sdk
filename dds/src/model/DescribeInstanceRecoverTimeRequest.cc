@@ -34,6 +34,15 @@ void DescribeInstanceRecoverTimeRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeInstanceRecoverTimeRequest::getSrcRegion() const {
+  return srcRegion_;
+}
+
+void DescribeInstanceRecoverTimeRequest::setSrcRegion(const std::string &srcRegion) {
+  srcRegion_ = srcRegion;
+  setParameter(std::string("SrcRegion"), srcRegion);
+}
+
 std::string DescribeInstanceRecoverTimeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -41,6 +50,15 @@ std::string DescribeInstanceRecoverTimeRequest::getAccessKeyId() const {
 void DescribeInstanceRecoverTimeRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeInstanceRecoverTimeRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeInstanceRecoverTimeRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string DescribeInstanceRecoverTimeRequest::getSecurityToken() const {
@@ -59,6 +77,15 @@ std::string DescribeInstanceRecoverTimeRequest::getDBInstanceId() const {
 void DescribeInstanceRecoverTimeRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DescribeInstanceRecoverTimeRequest::getDestRegion() const {
+  return destRegion_;
+}
+
+void DescribeInstanceRecoverTimeRequest::setDestRegion(const std::string &destRegion) {
+  destRegion_ = destRegion;
+  setParameter(std::string("DestRegion"), destRegion);
 }
 
 std::string DescribeInstanceRecoverTimeRequest::getResourceOwnerAccount() const {

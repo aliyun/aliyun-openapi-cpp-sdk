@@ -14,45 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dds/model/CreateBackupResult.h>
+#include <alibabacloud/dds/model/AllocateDBInstanceSrvNetworkAddressResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dds;
 using namespace AlibabaCloud::Dds::Model;
 
-CreateBackupResult::CreateBackupResult() :
+AllocateDBInstanceSrvNetworkAddressResult::AllocateDBInstanceSrvNetworkAddressResult() :
 	ServiceResult()
 {}
 
-CreateBackupResult::CreateBackupResult(const std::string &payload) :
+AllocateDBInstanceSrvNetworkAddressResult::AllocateDBInstanceSrvNetworkAddressResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateBackupResult::~CreateBackupResult()
+AllocateDBInstanceSrvNetworkAddressResult::~AllocateDBInstanceSrvNetworkAddressResult()
 {}
 
-void CreateBackupResult::parse(const std::string &payload)
+void AllocateDBInstanceSrvNetworkAddressResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["BackupId"].isNull())
-		backupId_ = value["BackupId"].asString();
-	if(!value["BackupJobId"].isNull())
-		backupJobId_ = value["BackupJobId"].asString();
 
-}
-
-std::string CreateBackupResult::getBackupId()const
-{
-	return backupId_;
-}
-
-std::string CreateBackupResult::getBackupJobId()const
-{
-	return backupJobId_;
 }
 
