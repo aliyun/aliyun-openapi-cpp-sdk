@@ -36,6 +36,8 @@
 #include "model/AuthorizeApplicationToOrganizationalUnitsResult.h"
 #include "model/AuthorizeApplicationToUsersRequest.h"
 #include "model/AuthorizeApplicationToUsersResult.h"
+#include "model/BindUserAuthnSourceMappingRequest.h"
+#include "model/BindUserAuthnSourceMappingResult.h"
 #include "model/CreateApplicationRequest.h"
 #include "model/CreateApplicationResult.h"
 #include "model/CreateApplicationClientSecretRequest.h"
@@ -312,6 +314,8 @@
 #include "model/ListRegionsResult.h"
 #include "model/ListSynchronizationJobsRequest.h"
 #include "model/ListSynchronizationJobsResult.h"
+#include "model/ListUserAuthnSourceMappingsRequest.h"
+#include "model/ListUserAuthnSourceMappingsResult.h"
 #include "model/ListUsersRequest.h"
 #include "model/ListUsersResult.h"
 #include "model/ListUsersForApplicationRequest.h"
@@ -366,6 +370,8 @@
 #include "model/SetPasswordInitializationConfigurationResult.h"
 #include "model/SetUserPrimaryOrganizationalUnitRequest.h"
 #include "model/SetUserPrimaryOrganizationalUnitResult.h"
+#include "model/UnbindUserAuthnSourceMappingRequest.h"
+#include "model/UnbindUserAuthnSourceMappingResult.h"
 #include "model/UnlockUserRequest.h"
 #include "model/UnlockUserResult.h"
 #include "model/UpdateApplicationAuthorizationTypeRequest.h"
@@ -454,6 +460,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AuthorizeApplicationToUsersResult> AuthorizeApplicationToUsersOutcome;
 			typedef std::future<AuthorizeApplicationToUsersOutcome> AuthorizeApplicationToUsersOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::AuthorizeApplicationToUsersRequest&, const AuthorizeApplicationToUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AuthorizeApplicationToUsersAsyncHandler;
+			typedef Outcome<Error, Model::BindUserAuthnSourceMappingResult> BindUserAuthnSourceMappingOutcome;
+			typedef std::future<BindUserAuthnSourceMappingOutcome> BindUserAuthnSourceMappingOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::BindUserAuthnSourceMappingRequest&, const BindUserAuthnSourceMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindUserAuthnSourceMappingAsyncHandler;
 			typedef Outcome<Error, Model::CreateApplicationResult> CreateApplicationOutcome;
 			typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::CreateApplicationRequest&, const CreateApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAsyncHandler;
@@ -868,6 +877,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSynchronizationJobsResult> ListSynchronizationJobsOutcome;
 			typedef std::future<ListSynchronizationJobsOutcome> ListSynchronizationJobsOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::ListSynchronizationJobsRequest&, const ListSynchronizationJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSynchronizationJobsAsyncHandler;
+			typedef Outcome<Error, Model::ListUserAuthnSourceMappingsResult> ListUserAuthnSourceMappingsOutcome;
+			typedef std::future<ListUserAuthnSourceMappingsOutcome> ListUserAuthnSourceMappingsOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::ListUserAuthnSourceMappingsRequest&, const ListUserAuthnSourceMappingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserAuthnSourceMappingsAsyncHandler;
 			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
 			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
@@ -949,6 +961,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetUserPrimaryOrganizationalUnitResult> SetUserPrimaryOrganizationalUnitOutcome;
 			typedef std::future<SetUserPrimaryOrganizationalUnitOutcome> SetUserPrimaryOrganizationalUnitOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::SetUserPrimaryOrganizationalUnitRequest&, const SetUserPrimaryOrganizationalUnitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetUserPrimaryOrganizationalUnitAsyncHandler;
+			typedef Outcome<Error, Model::UnbindUserAuthnSourceMappingResult> UnbindUserAuthnSourceMappingOutcome;
+			typedef std::future<UnbindUserAuthnSourceMappingOutcome> UnbindUserAuthnSourceMappingOutcomeCallable;
+			typedef std::function<void(const EiamClient*, const Model::UnbindUserAuthnSourceMappingRequest&, const UnbindUserAuthnSourceMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindUserAuthnSourceMappingAsyncHandler;
 			typedef Outcome<Error, Model::UnlockUserResult> UnlockUserOutcome;
 			typedef std::future<UnlockUserOutcome> UnlockUserOutcomeCallable;
 			typedef std::function<void(const EiamClient*, const Model::UnlockUserRequest&, const UnlockUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnlockUserAsyncHandler;
@@ -1062,6 +1077,9 @@ namespace AlibabaCloud
 			AuthorizeApplicationToUsersOutcome authorizeApplicationToUsers(const Model::AuthorizeApplicationToUsersRequest &request)const;
 			void authorizeApplicationToUsersAsync(const Model::AuthorizeApplicationToUsersRequest& request, const AuthorizeApplicationToUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AuthorizeApplicationToUsersOutcomeCallable authorizeApplicationToUsersCallable(const Model::AuthorizeApplicationToUsersRequest& request) const;
+			BindUserAuthnSourceMappingOutcome bindUserAuthnSourceMapping(const Model::BindUserAuthnSourceMappingRequest &request)const;
+			void bindUserAuthnSourceMappingAsync(const Model::BindUserAuthnSourceMappingRequest& request, const BindUserAuthnSourceMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindUserAuthnSourceMappingOutcomeCallable bindUserAuthnSourceMappingCallable(const Model::BindUserAuthnSourceMappingRequest& request) const;
 			CreateApplicationOutcome createApplication(const Model::CreateApplicationRequest &request)const;
 			void createApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateApplicationOutcomeCallable createApplicationCallable(const Model::CreateApplicationRequest& request) const;
@@ -1476,6 +1494,9 @@ namespace AlibabaCloud
 			ListSynchronizationJobsOutcome listSynchronizationJobs(const Model::ListSynchronizationJobsRequest &request)const;
 			void listSynchronizationJobsAsync(const Model::ListSynchronizationJobsRequest& request, const ListSynchronizationJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSynchronizationJobsOutcomeCallable listSynchronizationJobsCallable(const Model::ListSynchronizationJobsRequest& request) const;
+			ListUserAuthnSourceMappingsOutcome listUserAuthnSourceMappings(const Model::ListUserAuthnSourceMappingsRequest &request)const;
+			void listUserAuthnSourceMappingsAsync(const Model::ListUserAuthnSourceMappingsRequest& request, const ListUserAuthnSourceMappingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserAuthnSourceMappingsOutcomeCallable listUserAuthnSourceMappingsCallable(const Model::ListUserAuthnSourceMappingsRequest& request) const;
 			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
 			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;
@@ -1557,6 +1578,9 @@ namespace AlibabaCloud
 			SetUserPrimaryOrganizationalUnitOutcome setUserPrimaryOrganizationalUnit(const Model::SetUserPrimaryOrganizationalUnitRequest &request)const;
 			void setUserPrimaryOrganizationalUnitAsync(const Model::SetUserPrimaryOrganizationalUnitRequest& request, const SetUserPrimaryOrganizationalUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetUserPrimaryOrganizationalUnitOutcomeCallable setUserPrimaryOrganizationalUnitCallable(const Model::SetUserPrimaryOrganizationalUnitRequest& request) const;
+			UnbindUserAuthnSourceMappingOutcome unbindUserAuthnSourceMapping(const Model::UnbindUserAuthnSourceMappingRequest &request)const;
+			void unbindUserAuthnSourceMappingAsync(const Model::UnbindUserAuthnSourceMappingRequest& request, const UnbindUserAuthnSourceMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindUserAuthnSourceMappingOutcomeCallable unbindUserAuthnSourceMappingCallable(const Model::UnbindUserAuthnSourceMappingRequest& request) const;
 			UnlockUserOutcome unlockUser(const Model::UnlockUserRequest &request)const;
 			void unlockUserAsync(const Model::UnlockUserRequest& request, const UnlockUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnlockUserOutcomeCallable unlockUserCallable(const Model::UnlockUserRequest& request) const;

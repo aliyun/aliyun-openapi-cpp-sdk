@@ -35,6 +35,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/AuthorizeApplicationToOrganizationalUnitsResult.h
 	include/alibabacloud/eiam/model/AuthorizeApplicationToUsersRequest.h
 	include/alibabacloud/eiam/model/AuthorizeApplicationToUsersResult.h
+	include/alibabacloud/eiam/model/BindUserAuthnSourceMappingRequest.h
+	include/alibabacloud/eiam/model/BindUserAuthnSourceMappingResult.h
 	include/alibabacloud/eiam/model/CreateApplicationRequest.h
 	include/alibabacloud/eiam/model/CreateApplicationResult.h
 	include/alibabacloud/eiam/model/CreateApplicationClientSecretRequest.h
@@ -311,6 +313,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/ListRegionsResult.h
 	include/alibabacloud/eiam/model/ListSynchronizationJobsRequest.h
 	include/alibabacloud/eiam/model/ListSynchronizationJobsResult.h
+	include/alibabacloud/eiam/model/ListUserAuthnSourceMappingsRequest.h
+	include/alibabacloud/eiam/model/ListUserAuthnSourceMappingsResult.h
 	include/alibabacloud/eiam/model/ListUsersRequest.h
 	include/alibabacloud/eiam/model/ListUsersResult.h
 	include/alibabacloud/eiam/model/ListUsersForApplicationRequest.h
@@ -365,6 +369,8 @@ set(eiam_public_header_model
 	include/alibabacloud/eiam/model/SetPasswordInitializationConfigurationResult.h
 	include/alibabacloud/eiam/model/SetUserPrimaryOrganizationalUnitRequest.h
 	include/alibabacloud/eiam/model/SetUserPrimaryOrganizationalUnitResult.h
+	include/alibabacloud/eiam/model/UnbindUserAuthnSourceMappingRequest.h
+	include/alibabacloud/eiam/model/UnbindUserAuthnSourceMappingResult.h
 	include/alibabacloud/eiam/model/UnlockUserRequest.h
 	include/alibabacloud/eiam/model/UnlockUserResult.h
 	include/alibabacloud/eiam/model/UpdateApplicationAuthorizationTypeRequest.h
@@ -440,6 +446,8 @@ set(eiam_src
 	src/model/AuthorizeApplicationToOrganizationalUnitsResult.cc
 	src/model/AuthorizeApplicationToUsersRequest.cc
 	src/model/AuthorizeApplicationToUsersResult.cc
+	src/model/BindUserAuthnSourceMappingRequest.cc
+	src/model/BindUserAuthnSourceMappingResult.cc
 	src/model/CreateApplicationRequest.cc
 	src/model/CreateApplicationResult.cc
 	src/model/CreateApplicationClientSecretRequest.cc
@@ -716,6 +724,8 @@ set(eiam_src
 	src/model/ListRegionsResult.cc
 	src/model/ListSynchronizationJobsRequest.cc
 	src/model/ListSynchronizationJobsResult.cc
+	src/model/ListUserAuthnSourceMappingsRequest.cc
+	src/model/ListUserAuthnSourceMappingsResult.cc
 	src/model/ListUsersRequest.cc
 	src/model/ListUsersResult.cc
 	src/model/ListUsersForApplicationRequest.cc
@@ -770,6 +780,8 @@ set(eiam_src
 	src/model/SetPasswordInitializationConfigurationResult.cc
 	src/model/SetUserPrimaryOrganizationalUnitRequest.cc
 	src/model/SetUserPrimaryOrganizationalUnitResult.cc
+	src/model/UnbindUserAuthnSourceMappingRequest.cc
+	src/model/UnbindUserAuthnSourceMappingResult.cc
 	src/model/UnlockUserRequest.cc
 	src/model/UnlockUserResult.cc
 	src/model/UpdateApplicationAuthorizationTypeRequest.cc

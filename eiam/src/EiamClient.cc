@@ -303,6 +303,42 @@ EiamClient::AuthorizeApplicationToUsersOutcomeCallable EiamClient::authorizeAppl
 	return task->get_future();
 }
 
+EiamClient::BindUserAuthnSourceMappingOutcome EiamClient::bindUserAuthnSourceMapping(const BindUserAuthnSourceMappingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindUserAuthnSourceMappingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindUserAuthnSourceMappingOutcome(BindUserAuthnSourceMappingResult(outcome.result()));
+	else
+		return BindUserAuthnSourceMappingOutcome(outcome.error());
+}
+
+void EiamClient::bindUserAuthnSourceMappingAsync(const BindUserAuthnSourceMappingRequest& request, const BindUserAuthnSourceMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindUserAuthnSourceMapping(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::BindUserAuthnSourceMappingOutcomeCallable EiamClient::bindUserAuthnSourceMappingCallable(const BindUserAuthnSourceMappingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindUserAuthnSourceMappingOutcome()>>(
+			[this, request]()
+			{
+			return this->bindUserAuthnSourceMapping(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::CreateApplicationOutcome EiamClient::createApplication(const CreateApplicationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5271,6 +5307,42 @@ EiamClient::ListSynchronizationJobsOutcomeCallable EiamClient::listSynchronizati
 	return task->get_future();
 }
 
+EiamClient::ListUserAuthnSourceMappingsOutcome EiamClient::listUserAuthnSourceMappings(const ListUserAuthnSourceMappingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUserAuthnSourceMappingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUserAuthnSourceMappingsOutcome(ListUserAuthnSourceMappingsResult(outcome.result()));
+	else
+		return ListUserAuthnSourceMappingsOutcome(outcome.error());
+}
+
+void EiamClient::listUserAuthnSourceMappingsAsync(const ListUserAuthnSourceMappingsRequest& request, const ListUserAuthnSourceMappingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUserAuthnSourceMappings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::ListUserAuthnSourceMappingsOutcomeCallable EiamClient::listUserAuthnSourceMappingsCallable(const ListUserAuthnSourceMappingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUserAuthnSourceMappingsOutcome()>>(
+			[this, request]()
+			{
+			return this->listUserAuthnSourceMappings(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EiamClient::ListUsersOutcome EiamClient::listUsers(const ListUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6237,6 +6309,42 @@ EiamClient::SetUserPrimaryOrganizationalUnitOutcomeCallable EiamClient::setUserP
 			[this, request]()
 			{
 			return this->setUserPrimaryOrganizationalUnit(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EiamClient::UnbindUserAuthnSourceMappingOutcome EiamClient::unbindUserAuthnSourceMapping(const UnbindUserAuthnSourceMappingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindUserAuthnSourceMappingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindUserAuthnSourceMappingOutcome(UnbindUserAuthnSourceMappingResult(outcome.result()));
+	else
+		return UnbindUserAuthnSourceMappingOutcome(outcome.error());
+}
+
+void EiamClient::unbindUserAuthnSourceMappingAsync(const UnbindUserAuthnSourceMappingRequest& request, const UnbindUserAuthnSourceMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindUserAuthnSourceMapping(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EiamClient::UnbindUserAuthnSourceMappingOutcomeCallable EiamClient::unbindUserAuthnSourceMappingCallable(const UnbindUserAuthnSourceMappingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindUserAuthnSourceMappingOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindUserAuthnSourceMapping(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
