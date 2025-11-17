@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYREQUEST_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYREQUEST_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_MODIFYDASHBOARDNL2SQLSTATUSREQUEST_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_MODIFYDASHBOARDNL2SQLSTATUSREQUEST_H_
 
 #include <alibabacloud/quickbi-public/Quickbi_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,26 @@
 namespace AlibabaCloud {
 namespace Quickbi_public {
 namespace Model {
-class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT SmartqQueryAbilityRequest : public RpcServiceRequest {
+class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT ModifyDashboardNl2sqlStatusRequest : public RpcServiceRequest {
 public:
-	SmartqQueryAbilityRequest();
-	~SmartqQueryAbilityRequest();
+	ModifyDashboardNl2sqlStatusRequest();
+	~ModifyDashboardNl2sqlStatusRequest();
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
-	std::string getUserQuestion() const;
-	void setUserQuestion(const std::string &userQuestion);
-	std::string getCubeId() const;
-	void setCubeId(const std::string &cubeId);
-	std::string getMultipleCubeIds() const;
-	void setMultipleCubeIds(const std::string &multipleCubeIds);
 	std::string getSignType() const;
 	void setSignType(const std::string &signType);
+	std::string getDashboardIds() const;
+	void setDashboardIds(const std::string &dashboardIds);
+	int getStatus() const;
+	void setStatus(int status);
 
 private:
 	std::string accessPoint_;
-	std::string userId_;
-	std::string userQuestion_;
-	std::string cubeId_;
-	std::string multipleCubeIds_;
 	std::string signType_;
+	std::string dashboardIds_;
+	int status_;
 };
 } // namespace Model
 } // namespace Quickbi_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYREQUEST_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_MODIFYDASHBOARDNL2SQLSTATUSREQUEST_H_

@@ -72,6 +72,8 @@
 #include "model/CreateTicket4CopilotResult.h"
 #include "model/CreateUserGroupRequest.h"
 #include "model/CreateUserGroupResult.h"
+#include "model/CreateWorkspaceRequest.h"
+#include "model/CreateWorkspaceResult.h"
 #include "model/DataInterpretationRequest.h"
 #include "model/DataInterpretationResult.h"
 #include "model/DataSetBloodRequest.h"
@@ -106,6 +108,8 @@
 #include "model/GetUserGroupInfoResult.h"
 #include "model/GetWorksEmbedListRequest.h"
 #include "model/GetWorksEmbedListResult.h"
+#include "model/ListAccelerationOfWorkspaceRequest.h"
+#include "model/ListAccelerationOfWorkspaceResult.h"
 #include "model/ListApiDatasourceRequest.h"
 #include "model/ListApiDatasourceResult.h"
 #include "model/ListByUserGroupIdRequest.h"
@@ -146,6 +150,10 @@
 #include "model/ModifyApiDatasourceParametersResult.h"
 #include "model/ModifyCopilotEmbedConfigRequest.h"
 #include "model/ModifyCopilotEmbedConfigResult.h"
+#include "model/ModifyDashboardNl2sqlStatusRequest.h"
+#include "model/ModifyDashboardNl2sqlStatusResult.h"
+#include "model/QueryAccelerationLogByCubeIdRequest.h"
+#include "model/QueryAccelerationLogByCubeIdResult.h"
 #include "model/QueryApprovalInfoRequest.h"
 #include "model/QueryApprovalInfoResult.h"
 #include "model/QueryAuditLogRequest.h"
@@ -356,6 +364,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateUserGroupResult> CreateUserGroupOutcome;
 			typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateUserGroupRequest&, const CreateUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateWorkspaceResult> CreateWorkspaceOutcome;
+			typedef std::future<CreateWorkspaceOutcome> CreateWorkspaceOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateWorkspaceRequest&, const CreateWorkspaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkspaceAsyncHandler;
 			typedef Outcome<Error, Model::DataInterpretationResult> DataInterpretationOutcome;
 			typedef std::future<DataInterpretationOutcome> DataInterpretationOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::DataInterpretationRequest&, const DataInterpretationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DataInterpretationAsyncHandler;
@@ -407,6 +418,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetWorksEmbedListResult> GetWorksEmbedListOutcome;
 			typedef std::future<GetWorksEmbedListOutcome> GetWorksEmbedListOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::GetWorksEmbedListRequest&, const GetWorksEmbedListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorksEmbedListAsyncHandler;
+			typedef Outcome<Error, Model::ListAccelerationOfWorkspaceResult> ListAccelerationOfWorkspaceOutcome;
+			typedef std::future<ListAccelerationOfWorkspaceOutcome> ListAccelerationOfWorkspaceOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListAccelerationOfWorkspaceRequest&, const ListAccelerationOfWorkspaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAccelerationOfWorkspaceAsyncHandler;
 			typedef Outcome<Error, Model::ListApiDatasourceResult> ListApiDatasourceOutcome;
 			typedef std::future<ListApiDatasourceOutcome> ListApiDatasourceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListApiDatasourceRequest&, const ListApiDatasourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApiDatasourceAsyncHandler;
@@ -467,6 +481,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyCopilotEmbedConfigResult> ModifyCopilotEmbedConfigOutcome;
 			typedef std::future<ModifyCopilotEmbedConfigOutcome> ModifyCopilotEmbedConfigOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ModifyCopilotEmbedConfigRequest&, const ModifyCopilotEmbedConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCopilotEmbedConfigAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDashboardNl2sqlStatusResult> ModifyDashboardNl2sqlStatusOutcome;
+			typedef std::future<ModifyDashboardNl2sqlStatusOutcome> ModifyDashboardNl2sqlStatusOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ModifyDashboardNl2sqlStatusRequest&, const ModifyDashboardNl2sqlStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDashboardNl2sqlStatusAsyncHandler;
+			typedef Outcome<Error, Model::QueryAccelerationLogByCubeIdResult> QueryAccelerationLogByCubeIdOutcome;
+			typedef std::future<QueryAccelerationLogByCubeIdOutcome> QueryAccelerationLogByCubeIdOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryAccelerationLogByCubeIdRequest&, const QueryAccelerationLogByCubeIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAccelerationLogByCubeIdAsyncHandler;
 			typedef Outcome<Error, Model::QueryApprovalInfoResult> QueryApprovalInfoOutcome;
 			typedef std::future<QueryApprovalInfoOutcome> QueryApprovalInfoOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryApprovalInfoRequest&, const QueryApprovalInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryApprovalInfoAsyncHandler;
@@ -736,6 +756,9 @@ namespace AlibabaCloud
 			CreateUserGroupOutcome createUserGroup(const Model::CreateUserGroupRequest &request)const;
 			void createUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUserGroupOutcomeCallable createUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
+			CreateWorkspaceOutcome createWorkspace(const Model::CreateWorkspaceRequest &request)const;
+			void createWorkspaceAsync(const Model::CreateWorkspaceRequest& request, const CreateWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateWorkspaceOutcomeCallable createWorkspaceCallable(const Model::CreateWorkspaceRequest& request) const;
 			DataInterpretationOutcome dataInterpretation(const Model::DataInterpretationRequest &request)const;
 			void dataInterpretationAsync(const Model::DataInterpretationRequest& request, const DataInterpretationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DataInterpretationOutcomeCallable dataInterpretationCallable(const Model::DataInterpretationRequest& request) const;
@@ -787,6 +810,9 @@ namespace AlibabaCloud
 			GetWorksEmbedListOutcome getWorksEmbedList(const Model::GetWorksEmbedListRequest &request)const;
 			void getWorksEmbedListAsync(const Model::GetWorksEmbedListRequest& request, const GetWorksEmbedListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWorksEmbedListOutcomeCallable getWorksEmbedListCallable(const Model::GetWorksEmbedListRequest& request) const;
+			ListAccelerationOfWorkspaceOutcome listAccelerationOfWorkspace(const Model::ListAccelerationOfWorkspaceRequest &request)const;
+			void listAccelerationOfWorkspaceAsync(const Model::ListAccelerationOfWorkspaceRequest& request, const ListAccelerationOfWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAccelerationOfWorkspaceOutcomeCallable listAccelerationOfWorkspaceCallable(const Model::ListAccelerationOfWorkspaceRequest& request) const;
 			ListApiDatasourceOutcome listApiDatasource(const Model::ListApiDatasourceRequest &request)const;
 			void listApiDatasourceAsync(const Model::ListApiDatasourceRequest& request, const ListApiDatasourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListApiDatasourceOutcomeCallable listApiDatasourceCallable(const Model::ListApiDatasourceRequest& request) const;
@@ -847,6 +873,12 @@ namespace AlibabaCloud
 			ModifyCopilotEmbedConfigOutcome modifyCopilotEmbedConfig(const Model::ModifyCopilotEmbedConfigRequest &request)const;
 			void modifyCopilotEmbedConfigAsync(const Model::ModifyCopilotEmbedConfigRequest& request, const ModifyCopilotEmbedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCopilotEmbedConfigOutcomeCallable modifyCopilotEmbedConfigCallable(const Model::ModifyCopilotEmbedConfigRequest& request) const;
+			ModifyDashboardNl2sqlStatusOutcome modifyDashboardNl2sqlStatus(const Model::ModifyDashboardNl2sqlStatusRequest &request)const;
+			void modifyDashboardNl2sqlStatusAsync(const Model::ModifyDashboardNl2sqlStatusRequest& request, const ModifyDashboardNl2sqlStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDashboardNl2sqlStatusOutcomeCallable modifyDashboardNl2sqlStatusCallable(const Model::ModifyDashboardNl2sqlStatusRequest& request) const;
+			QueryAccelerationLogByCubeIdOutcome queryAccelerationLogByCubeId(const Model::QueryAccelerationLogByCubeIdRequest &request)const;
+			void queryAccelerationLogByCubeIdAsync(const Model::QueryAccelerationLogByCubeIdRequest& request, const QueryAccelerationLogByCubeIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryAccelerationLogByCubeIdOutcomeCallable queryAccelerationLogByCubeIdCallable(const Model::QueryAccelerationLogByCubeIdRequest& request) const;
 			QueryApprovalInfoOutcome queryApprovalInfo(const Model::QueryApprovalInfoRequest &request)const;
 			void queryApprovalInfoAsync(const Model::QueryApprovalInfoRequest& request, const QueryApprovalInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryApprovalInfoOutcomeCallable queryApprovalInfoCallable(const Model::QueryApprovalInfoRequest& request) const;

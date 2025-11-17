@@ -71,6 +71,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/CreateTicket4CopilotResult.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupRequest.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupResult.h
+	include/alibabacloud/quickbi-public/model/CreateWorkspaceRequest.h
+	include/alibabacloud/quickbi-public/model/CreateWorkspaceResult.h
 	include/alibabacloud/quickbi-public/model/DataInterpretationRequest.h
 	include/alibabacloud/quickbi-public/model/DataInterpretationResult.h
 	include/alibabacloud/quickbi-public/model/DataSetBloodRequest.h
@@ -105,6 +107,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/GetUserGroupInfoResult.h
 	include/alibabacloud/quickbi-public/model/GetWorksEmbedListRequest.h
 	include/alibabacloud/quickbi-public/model/GetWorksEmbedListResult.h
+	include/alibabacloud/quickbi-public/model/ListAccelerationOfWorkspaceRequest.h
+	include/alibabacloud/quickbi-public/model/ListAccelerationOfWorkspaceResult.h
 	include/alibabacloud/quickbi-public/model/ListApiDatasourceRequest.h
 	include/alibabacloud/quickbi-public/model/ListApiDatasourceResult.h
 	include/alibabacloud/quickbi-public/model/ListByUserGroupIdRequest.h
@@ -145,6 +149,10 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersResult.h
 	include/alibabacloud/quickbi-public/model/ModifyCopilotEmbedConfigRequest.h
 	include/alibabacloud/quickbi-public/model/ModifyCopilotEmbedConfigResult.h
+	include/alibabacloud/quickbi-public/model/ModifyDashboardNl2sqlStatusRequest.h
+	include/alibabacloud/quickbi-public/model/ModifyDashboardNl2sqlStatusResult.h
+	include/alibabacloud/quickbi-public/model/QueryAccelerationLogByCubeIdRequest.h
+	include/alibabacloud/quickbi-public/model/QueryAccelerationLogByCubeIdResult.h
 	include/alibabacloud/quickbi-public/model/QueryApprovalInfoRequest.h
 	include/alibabacloud/quickbi-public/model/QueryApprovalInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryAuditLogRequest.h
@@ -324,6 +332,8 @@ set(quickbi-public_src
 	src/model/CreateTicket4CopilotResult.cc
 	src/model/CreateUserGroupRequest.cc
 	src/model/CreateUserGroupResult.cc
+	src/model/CreateWorkspaceRequest.cc
+	src/model/CreateWorkspaceResult.cc
 	src/model/DataInterpretationRequest.cc
 	src/model/DataInterpretationResult.cc
 	src/model/DataSetBloodRequest.cc
@@ -358,6 +368,8 @@ set(quickbi-public_src
 	src/model/GetUserGroupInfoResult.cc
 	src/model/GetWorksEmbedListRequest.cc
 	src/model/GetWorksEmbedListResult.cc
+	src/model/ListAccelerationOfWorkspaceRequest.cc
+	src/model/ListAccelerationOfWorkspaceResult.cc
 	src/model/ListApiDatasourceRequest.cc
 	src/model/ListApiDatasourceResult.cc
 	src/model/ListByUserGroupIdRequest.cc
@@ -398,6 +410,10 @@ set(quickbi-public_src
 	src/model/ModifyApiDatasourceParametersResult.cc
 	src/model/ModifyCopilotEmbedConfigRequest.cc
 	src/model/ModifyCopilotEmbedConfigResult.cc
+	src/model/ModifyDashboardNl2sqlStatusRequest.cc
+	src/model/ModifyDashboardNl2sqlStatusResult.cc
+	src/model/QueryAccelerationLogByCubeIdRequest.cc
+	src/model/QueryAccelerationLogByCubeIdResult.cc
 	src/model/QueryApprovalInfoRequest.cc
 	src/model/QueryApprovalInfoResult.cc
 	src/model/QueryAuditLogRequest.cc

@@ -951,6 +951,42 @@ Quickbi_publicClient::CreateUserGroupOutcomeCallable Quickbi_publicClient::creat
 	return task->get_future();
 }
 
+Quickbi_publicClient::CreateWorkspaceOutcome Quickbi_publicClient::createWorkspace(const CreateWorkspaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateWorkspaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateWorkspaceOutcome(CreateWorkspaceResult(outcome.result()));
+	else
+		return CreateWorkspaceOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::createWorkspaceAsync(const CreateWorkspaceRequest& request, const CreateWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createWorkspace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::CreateWorkspaceOutcomeCallable Quickbi_publicClient::createWorkspaceCallable(const CreateWorkspaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateWorkspaceOutcome()>>(
+			[this, request]()
+			{
+			return this->createWorkspace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::DataInterpretationOutcome Quickbi_publicClient::dataInterpretation(const DataInterpretationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,6 +1593,42 @@ Quickbi_publicClient::GetWorksEmbedListOutcomeCallable Quickbi_publicClient::get
 			[this, request]()
 			{
 			return this->getWorksEmbedList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ListAccelerationOfWorkspaceOutcome Quickbi_publicClient::listAccelerationOfWorkspace(const ListAccelerationOfWorkspaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAccelerationOfWorkspaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAccelerationOfWorkspaceOutcome(ListAccelerationOfWorkspaceResult(outcome.result()));
+	else
+		return ListAccelerationOfWorkspaceOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listAccelerationOfWorkspaceAsync(const ListAccelerationOfWorkspaceRequest& request, const ListAccelerationOfWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAccelerationOfWorkspace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListAccelerationOfWorkspaceOutcomeCallable Quickbi_publicClient::listAccelerationOfWorkspaceCallable(const ListAccelerationOfWorkspaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAccelerationOfWorkspaceOutcome()>>(
+			[this, request]()
+			{
+			return this->listAccelerationOfWorkspace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2277,6 +2349,78 @@ Quickbi_publicClient::ModifyCopilotEmbedConfigOutcomeCallable Quickbi_publicClie
 			[this, request]()
 			{
 			return this->modifyCopilotEmbedConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ModifyDashboardNl2sqlStatusOutcome Quickbi_publicClient::modifyDashboardNl2sqlStatus(const ModifyDashboardNl2sqlStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDashboardNl2sqlStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDashboardNl2sqlStatusOutcome(ModifyDashboardNl2sqlStatusResult(outcome.result()));
+	else
+		return ModifyDashboardNl2sqlStatusOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::modifyDashboardNl2sqlStatusAsync(const ModifyDashboardNl2sqlStatusRequest& request, const ModifyDashboardNl2sqlStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDashboardNl2sqlStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ModifyDashboardNl2sqlStatusOutcomeCallable Quickbi_publicClient::modifyDashboardNl2sqlStatusCallable(const ModifyDashboardNl2sqlStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDashboardNl2sqlStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDashboardNl2sqlStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryAccelerationLogByCubeIdOutcome Quickbi_publicClient::queryAccelerationLogByCubeId(const QueryAccelerationLogByCubeIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAccelerationLogByCubeIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAccelerationLogByCubeIdOutcome(QueryAccelerationLogByCubeIdResult(outcome.result()));
+	else
+		return QueryAccelerationLogByCubeIdOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryAccelerationLogByCubeIdAsync(const QueryAccelerationLogByCubeIdRequest& request, const QueryAccelerationLogByCubeIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAccelerationLogByCubeId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryAccelerationLogByCubeIdOutcomeCallable Quickbi_publicClient::queryAccelerationLogByCubeIdCallable(const QueryAccelerationLogByCubeIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAccelerationLogByCubeIdOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAccelerationLogByCubeId(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

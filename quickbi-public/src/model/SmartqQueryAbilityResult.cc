@@ -67,6 +67,9 @@ void SmartqQueryAbilityResult::parse(const std::string &payload)
 			valuesItemObject.row.push_back(value.asString());
 		result_.values.push_back(valuesItemObject);
 	}
+		auto allDataList = resultNode["DataList"]["DataList"];
+		for (auto value : allDataList)
+			result_.dataList.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYRESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYRESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYACCELERATIONLOGBYCUBEIDRESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYACCELERATIONLOGBYCUBEIDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT SmartqQueryAbilityResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryAccelerationLogByCubeIdResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
-					struct MetaTypeItem
+					struct DataItem
 					{
-						std::string type;
-						std::string value;
-						std::string key;
+						std::string jobStatus;
+						std::string jonStartDate;
+						std::string log;
+						std::string jobHistoryId;
+						std::string duration;
+						std::string jobId;
 					};
-					struct ValuesItem
-					{
-						std::vector<std::string> row;
-					};
-					std::vector<std::string> dataList;
-					std::string conclusionText;
-					std::string logicSql;
-					std::vector<ValuesItem> values;
-					std::string chartType;
-					std::vector<MetaTypeItem> metaType;
+					int pre;
+					int totalNum;
+					int pageNum;
+					int pageSize;
+					int next;
+					std::vector<DataItem> data;
+					int totalPages;
 				};
 
 
-				SmartqQueryAbilityResult();
-				explicit SmartqQueryAbilityResult(const std::string &payload);
-				~SmartqQueryAbilityResult();
+				QueryAccelerationLogByCubeIdResult();
+				explicit QueryAccelerationLogByCubeIdResult(const std::string &payload);
+				~QueryAccelerationLogByCubeIdResult();
 				bool getSuccess()const;
 				Result getResult()const;
 
@@ -69,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYRESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYACCELERATIONLOGBYCUBEIDRESULT_H_

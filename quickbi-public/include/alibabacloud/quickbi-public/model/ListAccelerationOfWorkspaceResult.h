@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYRESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYRESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTACCELERATIONOFWORKSPACERESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTACCELERATIONOFWORKSPACERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT SmartqQueryAbilityResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT ListAccelerationOfWorkspaceResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
-					struct MetaTypeItem
+					struct DataItem
 					{
-						std::string type;
-						std::string value;
-						std::string key;
+						int jobStatus;
+						std::string cubeId;
+						std::string cubeName;
+						std::string size;
+						std::string jobHistoryId;
+						std::string lastModifyTime;
+						std::string creatorName;
+						std::string jobId;
+						std::string enableQuickindexTime;
 					};
-					struct ValuesItem
-					{
-						std::vector<std::string> row;
-					};
-					std::vector<std::string> dataList;
-					std::string conclusionText;
-					std::string logicSql;
-					std::vector<ValuesItem> values;
-					std::string chartType;
-					std::vector<MetaTypeItem> metaType;
+					int pre;
+					int totalNum;
+					int pageNum;
+					int pageSize;
+					int next;
+					std::vector<DataItem> data;
+					int totalPages;
 				};
 
 
-				SmartqQueryAbilityResult();
-				explicit SmartqQueryAbilityResult(const std::string &payload);
-				~SmartqQueryAbilityResult();
+				ListAccelerationOfWorkspaceResult();
+				explicit ListAccelerationOfWorkspaceResult(const std::string &payload);
+				~ListAccelerationOfWorkspaceResult();
 				bool getSuccess()const;
 				Result getResult()const;
 
@@ -69,4 +72,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYRESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTACCELERATIONOFWORKSPACERESULT_H_

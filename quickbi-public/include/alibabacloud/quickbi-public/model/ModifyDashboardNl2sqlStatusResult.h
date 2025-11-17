@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYRESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYRESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_MODIFYDASHBOARDNL2SQLSTATUSRESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_MODIFYDASHBOARDNL2SQLSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT SmartqQueryAbilityResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT ModifyDashboardNl2sqlStatusResult : public ServiceResult
 			{
 			public:
-				struct Result
-				{
-					struct MetaTypeItem
-					{
-						std::string type;
-						std::string value;
-						std::string key;
-					};
-					struct ValuesItem
-					{
-						std::vector<std::string> row;
-					};
-					std::vector<std::string> dataList;
-					std::string conclusionText;
-					std::string logicSql;
-					std::vector<ValuesItem> values;
-					std::string chartType;
-					std::vector<MetaTypeItem> metaType;
-				};
 
 
-				SmartqQueryAbilityResult();
-				explicit SmartqQueryAbilityResult(const std::string &payload);
-				~SmartqQueryAbilityResult();
+				ModifyDashboardNl2sqlStatusResult();
+				explicit ModifyDashboardNl2sqlStatusResult(const std::string &payload);
+				~ModifyDashboardNl2sqlStatusResult();
 				bool getSuccess()const;
-				Result getResult()const;
+				std::vector<std::string> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				bool success_;
-				Result result_;
+				std::vector<std::string> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_SMARTQQUERYABILITYRESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_MODIFYDASHBOARDNL2SQLSTATUSRESULT_H_

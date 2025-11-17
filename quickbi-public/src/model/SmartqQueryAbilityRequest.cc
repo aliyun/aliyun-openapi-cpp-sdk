@@ -61,6 +61,15 @@ void SmartqQueryAbilityRequest::setCubeId(const std::string &cubeId) {
   setParameter(std::string("CubeId"), cubeId);
 }
 
+std::string SmartqQueryAbilityRequest::getMultipleCubeIds() const {
+  return multipleCubeIds_;
+}
+
+void SmartqQueryAbilityRequest::setMultipleCubeIds(const std::string &multipleCubeIds) {
+  multipleCubeIds_ = multipleCubeIds;
+  setParameter(std::string("MultipleCubeIds"), multipleCubeIds);
+}
+
 std::string SmartqQueryAbilityRequest::getSignType() const {
   return signType_;
 }
