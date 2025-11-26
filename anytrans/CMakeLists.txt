@@ -23,6 +23,8 @@ set(anytrans_public_header
 set(anytrans_public_header_model 
 	include/alibabacloud/anytrans/model/BatchTranslateRequest.h
 	include/alibabacloud/anytrans/model/BatchTranslateResult.h
+	include/alibabacloud/anytrans/model/BatchTranslateForHtmlRequest.h
+	include/alibabacloud/anytrans/model/BatchTranslateForHtmlResult.h
 	include/alibabacloud/anytrans/model/GetDocTranslateTaskRequest.h
 	include/alibabacloud/anytrans/model/GetDocTranslateTaskResult.h
 	include/alibabacloud/anytrans/model/GetHtmlTranslateTaskRequest.h
@@ -39,6 +41,10 @@ set(anytrans_public_header_model
 	include/alibabacloud/anytrans/model/SubmitImageTranslateTaskResult.h
 	include/alibabacloud/anytrans/model/SubmitLongTextTranslateTaskRequest.h
 	include/alibabacloud/anytrans/model/SubmitLongTextTranslateTaskResult.h
+	include/alibabacloud/anytrans/model/TermEditRequest.h
+	include/alibabacloud/anytrans/model/TermEditResult.h
+	include/alibabacloud/anytrans/model/TermQueryRequest.h
+	include/alibabacloud/anytrans/model/TermQueryResult.h
 	include/alibabacloud/anytrans/model/TextTranslateRequest.h
 	include/alibabacloud/anytrans/model/TextTranslateResult.h )
 
@@ -46,6 +52,8 @@ set(anytrans_src
 	src/AnyTransClient.cc
 	src/model/BatchTranslateRequest.cc
 	src/model/BatchTranslateResult.cc
+	src/model/BatchTranslateForHtmlRequest.cc
+	src/model/BatchTranslateForHtmlResult.cc
 	src/model/GetDocTranslateTaskRequest.cc
 	src/model/GetDocTranslateTaskResult.cc
 	src/model/GetHtmlTranslateTaskRequest.cc
@@ -62,6 +70,10 @@ set(anytrans_src
 	src/model/SubmitImageTranslateTaskResult.cc
 	src/model/SubmitLongTextTranslateTaskRequest.cc
 	src/model/SubmitLongTextTranslateTaskResult.cc
+	src/model/TermEditRequest.cc
+	src/model/TermEditResult.cc
+	src/model/TermQueryRequest.cc
+	src/model/TermQueryResult.cc
 	src/model/TextTranslateRequest.cc
 	src/model/TextTranslateResult.cc )
 

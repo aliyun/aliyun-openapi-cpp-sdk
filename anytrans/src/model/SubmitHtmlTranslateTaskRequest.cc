@@ -46,6 +46,8 @@ void SubmitHtmlTranslateTaskRequest::setExt(const SubmitHtmlTranslateTaskRequest
     setBodyParameter(std::string("ext") + ".examples." + std::to_string(dep1 + 1) + ".tgt", ext.examples[dep1].tgt);
     setBodyParameter(std::string("ext") + ".examples." + std::to_string(dep1 + 1) + ".src", ext.examples[dep1].src);
   }
+  setBodyParameter(std::string("ext") + ".config.skipCsiCheck", ext.config.skipCsiCheck ? "true" : "false");
+  setBodyParameter(std::string("ext") + ".config.callbackUrl", ext.config.callbackUrl);
   setBodyParameter(std::string("ext") + ".domainHint", ext.domainHint);
 }
 

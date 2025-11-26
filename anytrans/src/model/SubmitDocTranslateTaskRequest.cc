@@ -32,20 +32,11 @@ SubmitDocTranslateTaskRequest::ext SubmitDocTranslateTaskRequest::getExt() const
 
 void SubmitDocTranslateTaskRequest::setExt(const SubmitDocTranslateTaskRequest::ext &ext) {
   ext_ = ext;
-  for(int dep1 = 0; dep1 != ext.sensitives.size(); dep1++) {
-    setBodyParameter(std::string("ext") + ".sensitives." + std::to_string(dep1 + 1), ext.sensitives[dep1]);
-  }
   for(int dep1 = 0; dep1 != ext.terminologies.size(); dep1++) {
     setBodyParameter(std::string("ext") + ".terminologies." + std::to_string(dep1 + 1) + ".tgt", ext.terminologies[dep1].tgt);
     setBodyParameter(std::string("ext") + ".terminologies." + std::to_string(dep1 + 1) + ".src", ext.terminologies[dep1].src);
   }
-  setBodyParameter(std::string("ext") + ".textTransform.toLower", ext.textTransform.toLower ? "true" : "false");
-  setBodyParameter(std::string("ext") + ".textTransform.toUpper", ext.textTransform.toUpper ? "true" : "false");
-  setBodyParameter(std::string("ext") + ".textTransform.toTitle", ext.textTransform.toTitle ? "true" : "false");
-  for(int dep1 = 0; dep1 != ext.examples.size(); dep1++) {
-    setBodyParameter(std::string("ext") + ".examples." + std::to_string(dep1 + 1) + ".tgt", ext.examples[dep1].tgt);
-    setBodyParameter(std::string("ext") + ".examples." + std::to_string(dep1 + 1) + ".src", ext.examples[dep1].src);
-  }
+  setBodyParameter(std::string("ext") + ".config.skipImgTrans", ext.config.skipImgTrans ? "true" : "false");
   setBodyParameter(std::string("ext") + ".domainHint", ext.domainHint);
 }
 

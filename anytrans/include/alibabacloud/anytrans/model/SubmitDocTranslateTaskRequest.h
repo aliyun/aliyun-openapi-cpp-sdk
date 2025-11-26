@@ -29,26 +29,16 @@ namespace Model {
 class ALIBABACLOUD_ANYTRANS_EXPORT SubmitDocTranslateTaskRequest : public RoaServiceRequest {
 public:
 	struct Ext {
-		std::string string;
-		std::vector<std::string> sensitives;
 		struct TerminologiesItem {
 			std::string tgt;
 			std::string src;
 		};
 		terminologiesItem terminologiesItem;
 		std::vector<terminologiesItem> terminologies;
-		struct TextTransform {
-			bool toLower;
-			bool toUpper;
-			bool toTitle;
+		struct Config {
+			bool skipImgTrans;
 		};
-		textTransform textTransform;
-		struct ExamplesItem {
-			std::string tgt;
-			std::string src;
-		};
-		examplesItem examplesItem;
-		std::vector<examplesItem> examples;
+		config config;
 		std::string domainHint;
 	};
 	SubmitDocTranslateTaskRequest();

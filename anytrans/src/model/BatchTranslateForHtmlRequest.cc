@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/anytrans/model/SubmitLongTextTranslateTaskRequest.h>
+#include <alibabacloud/anytrans/model/BatchTranslateForHtmlRequest.h>
 
-using AlibabaCloud::AnyTrans::Model::SubmitLongTextTranslateTaskRequest;
+using AlibabaCloud::AnyTrans::Model::BatchTranslateForHtmlRequest;
 
-SubmitLongTextTranslateTaskRequest::SubmitLongTextTranslateTaskRequest()
+BatchTranslateForHtmlRequest::BatchTranslateForHtmlRequest()
     : RoaServiceRequest("anytrans", "2025-07-07") {
-  setResourcePath("/anytrans/translate/longText/submit"};
+  setResourcePath("/anytrans/translate/batchForHtml"};
   setMethod(HttpRequest::Method::Post);
 }
 
-SubmitLongTextTranslateTaskRequest::~SubmitLongTextTranslateTaskRequest() {}
+BatchTranslateForHtmlRequest::~BatchTranslateForHtmlRequest() {}
 
-SubmitLongTextTranslateTaskRequest::ext SubmitLongTextTranslateTaskRequest::getExt() const {
+BatchTranslateForHtmlRequest::ext BatchTranslateForHtmlRequest::getExt() const {
   return ext_;
 }
 
-void SubmitLongTextTranslateTaskRequest::setExt(const SubmitLongTextTranslateTaskRequest::ext &ext) {
+void BatchTranslateForHtmlRequest::setExt(const BatchTranslateForHtmlRequest::ext &ext) {
   ext_ = ext;
   for(int dep1 = 0; dep1 != ext.sensitives.size(); dep1++) {
     setBodyParameter(std::string("ext") + ".sensitives." + std::to_string(dep1 + 1), ext.sensitives[dep1]);
@@ -50,56 +50,67 @@ void SubmitLongTextTranslateTaskRequest::setExt(const SubmitLongTextTranslateTas
   setBodyParameter(std::string("ext") + ".domainHint", ext.domainHint);
 }
 
-std::string SubmitLongTextTranslateTaskRequest::getSourceLanguage() const {
+std::string BatchTranslateForHtmlRequest::getSourceLanguage() const {
   return sourceLanguage_;
 }
 
-void SubmitLongTextTranslateTaskRequest::setSourceLanguage(const std::string &sourceLanguage) {
+void BatchTranslateForHtmlRequest::setSourceLanguage(const std::string &sourceLanguage) {
   sourceLanguage_ = sourceLanguage;
   setBodyParameter(std::string("sourceLanguage"), sourceLanguage);
 }
 
-std::string SubmitLongTextTranslateTaskRequest::getFormat() const {
+std::string BatchTranslateForHtmlRequest::getFormat() const {
   return format_;
 }
 
-void SubmitLongTextTranslateTaskRequest::setFormat(const std::string &format) {
+void BatchTranslateForHtmlRequest::setFormat(const std::string &format) {
   format_ = format;
   setBodyParameter(std::string("format"), format);
 }
 
-std::string SubmitLongTextTranslateTaskRequest::getScene() const {
+std::string BatchTranslateForHtmlRequest::getScene() const {
   return scene_;
 }
 
-void SubmitLongTextTranslateTaskRequest::setScene(const std::string &scene) {
+void BatchTranslateForHtmlRequest::setScene(const std::string &scene) {
   scene_ = scene;
   setBodyParameter(std::string("scene"), scene);
 }
 
-std::string SubmitLongTextTranslateTaskRequest::getTargetLanguage() const {
+std::string BatchTranslateForHtmlRequest::getAppName() const {
+  return appName_;
+}
+
+void BatchTranslateForHtmlRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setBodyParameter(std::string("appName"), appName);
+}
+
+std::string BatchTranslateForHtmlRequest::getTargetLanguage() const {
   return targetLanguage_;
 }
 
-void SubmitLongTextTranslateTaskRequest::setTargetLanguage(const std::string &targetLanguage) {
+void BatchTranslateForHtmlRequest::setTargetLanguage(const std::string &targetLanguage) {
   targetLanguage_ = targetLanguage;
   setBodyParameter(std::string("targetLanguage"), targetLanguage);
 }
 
-std::string SubmitLongTextTranslateTaskRequest::getText() const {
+std::map<std::string, std::string> BatchTranslateForHtmlRequest::getText() const {
   return text_;
 }
 
-void SubmitLongTextTranslateTaskRequest::setText(const std::string &text) {
+void BatchTranslateForHtmlRequest::setText(const std::map<std::string, std::string> &text) {
   text_ = text;
-  setBodyParameter(std::string("text"), text);
+  for(auto const &iter1 : text) {
+    setBodyParameter(std::string("text") + "." + iter1.first, iter1.second);
+  }
 }
 
-std::string SubmitLongTextTranslateTaskRequest::getWorkspaceId() const {
+std::string BatchTranslateForHtmlRequest::getWorkspaceId() const {
   return workspaceId_;
 }
 
-void SubmitLongTextTranslateTaskRequest::setWorkspaceId(const std::string &workspaceId) {
+void BatchTranslateForHtmlRequest::setWorkspaceId(const std::string &workspaceId) {
   workspaceId_ = workspaceId;
   setBodyParameter(std::string("workspaceId"), workspaceId);
 }

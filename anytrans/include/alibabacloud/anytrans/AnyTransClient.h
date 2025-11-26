@@ -24,6 +24,8 @@
 #include "AnyTransExport.h"
 #include "model/BatchTranslateRequest.h"
 #include "model/BatchTranslateResult.h"
+#include "model/BatchTranslateForHtmlRequest.h"
+#include "model/BatchTranslateForHtmlResult.h"
 #include "model/GetDocTranslateTaskRequest.h"
 #include "model/GetDocTranslateTaskResult.h"
 #include "model/GetHtmlTranslateTaskRequest.h"
@@ -40,6 +42,10 @@
 #include "model/SubmitImageTranslateTaskResult.h"
 #include "model/SubmitLongTextTranslateTaskRequest.h"
 #include "model/SubmitLongTextTranslateTaskResult.h"
+#include "model/TermEditRequest.h"
+#include "model/TermEditResult.h"
+#include "model/TermQueryRequest.h"
+#include "model/TermQueryResult.h"
 #include "model/TextTranslateRequest.h"
 #include "model/TextTranslateResult.h"
 
@@ -54,6 +60,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchTranslateResult> BatchTranslateOutcome;
 			typedef std::future<BatchTranslateOutcome> BatchTranslateOutcomeCallable;
 			typedef std::function<void(const AnyTransClient*, const Model::BatchTranslateRequest&, const BatchTranslateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchTranslateAsyncHandler;
+			typedef Outcome<Error, Model::BatchTranslateForHtmlResult> BatchTranslateForHtmlOutcome;
+			typedef std::future<BatchTranslateForHtmlOutcome> BatchTranslateForHtmlOutcomeCallable;
+			typedef std::function<void(const AnyTransClient*, const Model::BatchTranslateForHtmlRequest&, const BatchTranslateForHtmlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchTranslateForHtmlAsyncHandler;
 			typedef Outcome<Error, Model::GetDocTranslateTaskResult> GetDocTranslateTaskOutcome;
 			typedef std::future<GetDocTranslateTaskOutcome> GetDocTranslateTaskOutcomeCallable;
 			typedef std::function<void(const AnyTransClient*, const Model::GetDocTranslateTaskRequest&, const GetDocTranslateTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDocTranslateTaskAsyncHandler;
@@ -78,6 +87,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitLongTextTranslateTaskResult> SubmitLongTextTranslateTaskOutcome;
 			typedef std::future<SubmitLongTextTranslateTaskOutcome> SubmitLongTextTranslateTaskOutcomeCallable;
 			typedef std::function<void(const AnyTransClient*, const Model::SubmitLongTextTranslateTaskRequest&, const SubmitLongTextTranslateTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitLongTextTranslateTaskAsyncHandler;
+			typedef Outcome<Error, Model::TermEditResult> TermEditOutcome;
+			typedef std::future<TermEditOutcome> TermEditOutcomeCallable;
+			typedef std::function<void(const AnyTransClient*, const Model::TermEditRequest&, const TermEditOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TermEditAsyncHandler;
+			typedef Outcome<Error, Model::TermQueryResult> TermQueryOutcome;
+			typedef std::future<TermQueryOutcome> TermQueryOutcomeCallable;
+			typedef std::function<void(const AnyTransClient*, const Model::TermQueryRequest&, const TermQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TermQueryAsyncHandler;
 			typedef Outcome<Error, Model::TextTranslateResult> TextTranslateOutcome;
 			typedef std::future<TextTranslateOutcome> TextTranslateOutcomeCallable;
 			typedef std::function<void(const AnyTransClient*, const Model::TextTranslateRequest&, const TextTranslateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TextTranslateAsyncHandler;
@@ -89,6 +104,9 @@ namespace AlibabaCloud
 			BatchTranslateOutcome batchTranslate(const Model::BatchTranslateRequest &request)const;
 			void batchTranslateAsync(const Model::BatchTranslateRequest& request, const BatchTranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchTranslateOutcomeCallable batchTranslateCallable(const Model::BatchTranslateRequest& request) const;
+			BatchTranslateForHtmlOutcome batchTranslateForHtml(const Model::BatchTranslateForHtmlRequest &request)const;
+			void batchTranslateForHtmlAsync(const Model::BatchTranslateForHtmlRequest& request, const BatchTranslateForHtmlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchTranslateForHtmlOutcomeCallable batchTranslateForHtmlCallable(const Model::BatchTranslateForHtmlRequest& request) const;
 			GetDocTranslateTaskOutcome getDocTranslateTask(const Model::GetDocTranslateTaskRequest &request)const;
 			void getDocTranslateTaskAsync(const Model::GetDocTranslateTaskRequest& request, const GetDocTranslateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDocTranslateTaskOutcomeCallable getDocTranslateTaskCallable(const Model::GetDocTranslateTaskRequest& request) const;
@@ -113,6 +131,12 @@ namespace AlibabaCloud
 			SubmitLongTextTranslateTaskOutcome submitLongTextTranslateTask(const Model::SubmitLongTextTranslateTaskRequest &request)const;
 			void submitLongTextTranslateTaskAsync(const Model::SubmitLongTextTranslateTaskRequest& request, const SubmitLongTextTranslateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitLongTextTranslateTaskOutcomeCallable submitLongTextTranslateTaskCallable(const Model::SubmitLongTextTranslateTaskRequest& request) const;
+			TermEditOutcome termEdit(const Model::TermEditRequest &request)const;
+			void termEditAsync(const Model::TermEditRequest& request, const TermEditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TermEditOutcomeCallable termEditCallable(const Model::TermEditRequest& request) const;
+			TermQueryOutcome termQuery(const Model::TermQueryRequest &request)const;
+			void termQueryAsync(const Model::TermQueryRequest& request, const TermQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TermQueryOutcomeCallable termQueryCallable(const Model::TermQueryRequest& request) const;
 			TextTranslateOutcome textTranslate(const Model::TextTranslateRequest &request)const;
 			void textTranslateAsync(const Model::TextTranslateRequest& request, const TextTranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TextTranslateOutcomeCallable textTranslateCallable(const Model::TextTranslateRequest& request) const;

@@ -87,6 +87,42 @@ AnyTransClient::BatchTranslateOutcomeCallable AnyTransClient::batchTranslateCall
 	return task->get_future();
 }
 
+AnyTransClient::BatchTranslateForHtmlOutcome AnyTransClient::batchTranslateForHtml(const BatchTranslateForHtmlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchTranslateForHtmlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchTranslateForHtmlOutcome(BatchTranslateForHtmlResult(outcome.result()));
+	else
+		return BatchTranslateForHtmlOutcome(outcome.error());
+}
+
+void AnyTransClient::batchTranslateForHtmlAsync(const BatchTranslateForHtmlRequest& request, const BatchTranslateForHtmlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchTranslateForHtml(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AnyTransClient::BatchTranslateForHtmlOutcomeCallable AnyTransClient::batchTranslateForHtmlCallable(const BatchTranslateForHtmlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchTranslateForHtmlOutcome()>>(
+			[this, request]()
+			{
+			return this->batchTranslateForHtml(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AnyTransClient::GetDocTranslateTaskOutcome AnyTransClient::getDocTranslateTask(const GetDocTranslateTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +405,78 @@ AnyTransClient::SubmitLongTextTranslateTaskOutcomeCallable AnyTransClient::submi
 			[this, request]()
 			{
 			return this->submitLongTextTranslateTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AnyTransClient::TermEditOutcome AnyTransClient::termEdit(const TermEditRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TermEditOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TermEditOutcome(TermEditResult(outcome.result()));
+	else
+		return TermEditOutcome(outcome.error());
+}
+
+void AnyTransClient::termEditAsync(const TermEditRequest& request, const TermEditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, termEdit(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AnyTransClient::TermEditOutcomeCallable AnyTransClient::termEditCallable(const TermEditRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TermEditOutcome()>>(
+			[this, request]()
+			{
+			return this->termEdit(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AnyTransClient::TermQueryOutcome AnyTransClient::termQuery(const TermQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TermQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TermQueryOutcome(TermQueryResult(outcome.result()));
+	else
+		return TermQueryOutcome(outcome.error());
+}
+
+void AnyTransClient::termQueryAsync(const TermQueryRequest& request, const TermQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, termQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AnyTransClient::TermQueryOutcomeCallable AnyTransClient::termQueryCallable(const TermQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TermQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->termQuery(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ANYTRANS_MODEL_BATCHTRANSLATEREQUEST_H_
-#define ALIBABACLOUD_ANYTRANS_MODEL_BATCHTRANSLATEREQUEST_H_
+#ifndef ALIBABACLOUD_ANYTRANS_MODEL_TERMEDITREQUEST_H_
+#define ALIBABACLOUD_ANYTRANS_MODEL_TERMEDITREQUEST_H_
 
 #include <alibabacloud/anytrans/AnyTransExport.h>
 #include <alibabacloud/core/RoaServiceRequest.h>
@@ -26,65 +26,41 @@
 namespace AlibabaCloud {
 namespace AnyTrans {
 namespace Model {
-class ALIBABACLOUD_ANYTRANS_EXPORT BatchTranslateRequest : public RoaServiceRequest {
+class ALIBABACLOUD_ANYTRANS_EXPORT TermEditRequest : public RoaServiceRequest {
 public:
 	struct Ext {
-		std::string string;
-		std::vector<std::string> sensitives;
-		struct TerminologiesItem {
+		struct TermsItem {
 			std::string tgt;
+			std::string termId;
 			std::string src;
 		};
-		terminologiesItem terminologiesItem;
-		std::vector<terminologiesItem> terminologies;
-		struct TextTransform {
-			bool toLower;
-			bool toUpper;
-			bool toTitle;
-		};
-		textTransform textTransform;
-		struct ExamplesItem {
-			std::string tgt;
-			std::string src;
-		};
-		examplesItem examplesItem;
-		std::vector<examplesItem> examples;
-		struct Config {
-			bool skipCsiCheck;
-		};
-		config config;
-		std::string domainHint;
+		termsItem termsItem;
+		std::vector<termsItem> terms;
 	};
-	BatchTranslateRequest();
-	~BatchTranslateRequest();
+	TermEditRequest();
+	~TermEditRequest();
 	ext getExt() const;
 	void setExt(const ext &ext);
 	std::string getSourceLanguage() const;
 	void setSourceLanguage(const std::string &sourceLanguage);
-	std::string getFormat() const;
-	void setFormat(const std::string &format);
 	std::string getScene() const;
 	void setScene(const std::string &scene);
-	std::string getAppName() const;
-	void setAppName(const std::string &appName);
+	std::string getAction() const;
+	void setAction(const std::string &action);
 	std::string getTargetLanguage() const;
 	void setTargetLanguage(const std::string &targetLanguage);
-	std::map<std::string, std::string> getText() const;
-	void setText(const std::map<std::string, std::string> &text);
 	std::string getWorkspaceId() const;
 	void setWorkspaceId(const std::string &workspaceId);
 
 private:
 	ext ext_;
 	std::string sourceLanguage_;
-	std::string format_;
 	std::string scene_;
-	std::string appName_;
+	std::string action_;
 	std::string targetLanguage_;
-	std::map<std::string, std::string> text_;
 	std::string workspaceId_;
 };
 } // namespace Model
 } // namespace AnyTrans
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ANYTRANS_MODEL_BATCHTRANSLATEREQUEST_H_
+#endif // !ALIBABACLOUD_ANYTRANS_MODEL_TERMEDITREQUEST_H_

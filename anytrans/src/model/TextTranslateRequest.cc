@@ -42,10 +42,12 @@ void TextTranslateRequest::setExt(const TextTranslateRequest::ext &ext) {
   setBodyParameter(std::string("ext") + ".textTransform.toLower", ext.textTransform.toLower ? "true" : "false");
   setBodyParameter(std::string("ext") + ".textTransform.toUpper", ext.textTransform.toUpper ? "true" : "false");
   setBodyParameter(std::string("ext") + ".textTransform.toTitle", ext.textTransform.toTitle ? "true" : "false");
+  setBodyParameter(std::string("ext") + ".agent", ext.agent);
   for(int dep1 = 0; dep1 != ext.examples.size(); dep1++) {
     setBodyParameter(std::string("ext") + ".examples." + std::to_string(dep1 + 1) + ".tgt", ext.examples[dep1].tgt);
     setBodyParameter(std::string("ext") + ".examples." + std::to_string(dep1 + 1) + ".src", ext.examples[dep1].src);
   }
+  setBodyParameter(std::string("ext") + ".config.skipCsiCheck", ext.config.skipCsiCheck ? "true" : "false");
   setBodyParameter(std::string("ext") + ".domainHint", ext.domainHint);
 }
 

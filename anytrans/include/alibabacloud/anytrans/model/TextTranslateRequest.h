@@ -43,12 +43,17 @@ public:
 			bool toTitle;
 		};
 		textTransform textTransform;
+		std::string agent;
 		struct ExamplesItem {
 			std::string tgt;
 			std::string src;
 		};
 		examplesItem examplesItem;
 		std::vector<examplesItem> examples;
+		struct Config {
+			bool skipCsiCheck;
+		};
+		config config;
 		std::string domainHint;
 	};
 	TextTranslateRequest();

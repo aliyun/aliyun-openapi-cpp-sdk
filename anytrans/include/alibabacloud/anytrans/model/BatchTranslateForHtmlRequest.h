@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ANYTRANS_MODEL_BATCHTRANSLATEREQUEST_H_
-#define ALIBABACLOUD_ANYTRANS_MODEL_BATCHTRANSLATEREQUEST_H_
+#ifndef ALIBABACLOUD_ANYTRANS_MODEL_BATCHTRANSLATEFORHTMLREQUEST_H_
+#define ALIBABACLOUD_ANYTRANS_MODEL_BATCHTRANSLATEFORHTMLREQUEST_H_
 
 #include <alibabacloud/anytrans/AnyTransExport.h>
 #include <alibabacloud/core/RoaServiceRequest.h>
@@ -26,7 +26,7 @@
 namespace AlibabaCloud {
 namespace AnyTrans {
 namespace Model {
-class ALIBABACLOUD_ANYTRANS_EXPORT BatchTranslateRequest : public RoaServiceRequest {
+class ALIBABACLOUD_ANYTRANS_EXPORT BatchTranslateForHtmlRequest : public RoaServiceRequest {
 public:
 	struct Ext {
 		std::string string;
@@ -55,8 +55,8 @@ public:
 		config config;
 		std::string domainHint;
 	};
-	BatchTranslateRequest();
-	~BatchTranslateRequest();
+	BatchTranslateForHtmlRequest();
+	~BatchTranslateForHtmlRequest();
 	ext getExt() const;
 	void setExt(const ext &ext);
 	std::string getSourceLanguage() const;
@@ -87,4 +87,4 @@ private:
 } // namespace Model
 } // namespace AnyTrans
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ANYTRANS_MODEL_BATCHTRANSLATEREQUEST_H_
+#endif // !ALIBABACLOUD_ANYTRANS_MODEL_BATCHTRANSLATEFORHTMLREQUEST_H_

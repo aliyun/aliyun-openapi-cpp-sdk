@@ -49,6 +49,11 @@ public:
 		};
 		examplesItem examplesItem;
 		std::vector<examplesItem> examples;
+		struct Config {
+			bool skipCsiCheck;
+			std::string callbackUrl;
+		};
+		config config;
 		std::string domainHint;
 	};
 	SubmitHtmlTranslateTaskRequest();

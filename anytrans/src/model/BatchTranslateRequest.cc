@@ -46,6 +46,7 @@ void BatchTranslateRequest::setExt(const BatchTranslateRequest::ext &ext) {
     setBodyParameter(std::string("ext") + ".examples." + std::to_string(dep1 + 1) + ".tgt", ext.examples[dep1].tgt);
     setBodyParameter(std::string("ext") + ".examples." + std::to_string(dep1 + 1) + ".src", ext.examples[dep1].src);
   }
+  setBodyParameter(std::string("ext") + ".config.skipCsiCheck", ext.config.skipCsiCheck ? "true" : "false");
   setBodyParameter(std::string("ext") + ".domainHint", ext.domainHint);
 }
 
@@ -74,6 +75,15 @@ std::string BatchTranslateRequest::getScene() const {
 void BatchTranslateRequest::setScene(const std::string &scene) {
   scene_ = scene;
   setBodyParameter(std::string("scene"), scene);
+}
+
+std::string BatchTranslateRequest::getAppName() const {
+  return appName_;
+}
+
+void BatchTranslateRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setBodyParameter(std::string("appName"), appName);
 }
 
 std::string BatchTranslateRequest::getTargetLanguage() const {
