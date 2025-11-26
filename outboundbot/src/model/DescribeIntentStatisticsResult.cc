@@ -57,12 +57,14 @@ void DescribeIntentStatisticsResult::parse(const std::string &payload)
 			processIntentsObject.intentId = valueProcessIntentsIntentStatisticsItem["IntentId"].asString();
 		if(!valueProcessIntentsIntentStatisticsItem["IntentName"].isNull())
 			processIntentsObject.intentName = valueProcessIntentsIntentStatisticsItem["IntentName"].asString();
+		if(!valueProcessIntentsIntentStatisticsItem["RateDisplay"].isNull())
+			processIntentsObject.rateDisplay = valueProcessIntentsIntentStatisticsItem["RateDisplay"].asString();
 		processIntents_.push_back(processIntentsObject);
 	}
 	auto allGlobalIntentsNode = value["GlobalIntents"]["IntentStatisticsItem"];
 	for (auto valueGlobalIntentsIntentStatisticsItem : allGlobalIntentsNode)
 	{
-		IntentStatisticsItem globalIntentsObject;
+		IntentStatisticsItem1 globalIntentsObject;
 		if(!valueGlobalIntentsIntentStatisticsItem["Type"].isNull())
 			globalIntentsObject.type = valueGlobalIntentsIntentStatisticsItem["Type"].asString();
 		if(!valueGlobalIntentsIntentStatisticsItem["GroupId"].isNull())
@@ -82,9 +84,17 @@ void DescribeIntentStatisticsResult::parse(const std::string &payload)
 	auto allIntentsAfterNoAnswerNode = value["IntentsAfterNoAnswer"]["IntentStatisticsItem"];
 	for (auto valueIntentsAfterNoAnswerIntentStatisticsItem : allIntentsAfterNoAnswerNode)
 	{
-		IntentStatisticsItem1 intentsAfterNoAnswerObject;
+		IntentStatisticsItem2 intentsAfterNoAnswerObject;
 		if(!valueIntentsAfterNoAnswerIntentStatisticsItem["InstanceId"].isNull())
 			intentsAfterNoAnswerObject.instanceId = valueIntentsAfterNoAnswerIntentStatisticsItem["InstanceId"].asString();
+		if(!valueIntentsAfterNoAnswerIntentStatisticsItem["GroupId"].isNull())
+			intentsAfterNoAnswerObject.groupId = valueIntentsAfterNoAnswerIntentStatisticsItem["GroupId"].asString();
+		if(!valueIntentsAfterNoAnswerIntentStatisticsItem["HitAfterNoAnswer"].isNull())
+			intentsAfterNoAnswerObject.hitAfterNoAnswer = std::stoi(valueIntentsAfterNoAnswerIntentStatisticsItem["HitAfterNoAnswer"].asString());
+		if(!valueIntentsAfterNoAnswerIntentStatisticsItem["IntentId"].isNull())
+			intentsAfterNoAnswerObject.intentId = valueIntentsAfterNoAnswerIntentStatisticsItem["IntentId"].asString();
+		if(!valueIntentsAfterNoAnswerIntentStatisticsItem["IntentName"].isNull())
+			intentsAfterNoAnswerObject.intentName = valueIntentsAfterNoAnswerIntentStatisticsItem["IntentName"].asString();
 		intentsAfterNoAnswer_.push_back(intentsAfterNoAnswerObject);
 	}
 	if(!value["HttpStatusCode"].isNull())
@@ -106,7 +116,7 @@ void DescribeIntentStatisticsResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeIntentStatisticsResult::IntentStatisticsItem1> DescribeIntentStatisticsResult::getIntentsAfterNoAnswer()const
+std::vector<DescribeIntentStatisticsResult::IntentStatisticsItem2> DescribeIntentStatisticsResult::getIntentsAfterNoAnswer()const
 {
 	return intentsAfterNoAnswer_;
 }
@@ -146,7 +156,7 @@ int DescribeIntentStatisticsResult::getProcessIntentNum()const
 	return processIntentNum_;
 }
 
-std::vector<DescribeIntentStatisticsResult::IntentStatisticsItem> DescribeIntentStatisticsResult::getGlobalIntents()const
+std::vector<DescribeIntentStatisticsResult::IntentStatisticsItem1> DescribeIntentStatisticsResult::getGlobalIntents()const
 {
 	return globalIntents_;
 }

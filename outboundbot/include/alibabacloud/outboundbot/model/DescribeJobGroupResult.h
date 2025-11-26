@@ -70,6 +70,7 @@ namespace AlibabaCloud
 						};
 						std::vector<TimeFrame> workingTime;
 						bool isTemplate;
+						bool repeatable;
 						int minAttemptInterval;
 						std::string repeatBy;
 						long endTime;
@@ -98,6 +99,11 @@ namespace AlibabaCloud
 						int clientHangupNum;
 						int timeoutHangupNum;
 					};
+					struct FlashSmsExtras
+					{
+						std::string configId;
+						std::string templateId;
+					};
 					std::string status;
 					std::string modifyTime;
 					Progress progress;
@@ -112,11 +118,13 @@ namespace AlibabaCloud
 					long ringingDuration;
 					long minConcurrency;
 					std::string jobGroupId;
+					FlashSmsExtras flashSmsExtras;
 					std::string scriptName;
 					long creationTime;
 					Strategy strategy;
 					std::string jobFilePath;
 					ExportProgress exportProgress;
+					std::vector<std::string> recallCallingNumbers;
 					RecallStrategy recallStrategy;
 					std::vector<std::string> callingNumbers;
 				};

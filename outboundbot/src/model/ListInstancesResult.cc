@@ -100,6 +100,12 @@ void ListInstancesResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
@@ -108,9 +114,24 @@ std::vector<ListInstancesResult::Instance> ListInstancesResult::getInstances()co
 	return instances_;
 }
 
+int ListInstancesResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
 std::string ListInstancesResult::getMessage()const
 {
 	return message_;
+}
+
+int ListInstancesResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int ListInstancesResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 
 int ListInstancesResult::getHttpStatusCode()const

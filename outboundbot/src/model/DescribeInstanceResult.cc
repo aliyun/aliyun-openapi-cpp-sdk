@@ -73,6 +73,14 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.nluProfile.endpoint = nluProfileNode["Endpoint"].asString();
 	if(!nluProfileNode["AgentId"].isNull())
 		instance_.nluProfile.agentId = nluProfileNode["AgentId"].asString();
+	if(!nluProfileNode["AgentKey"].isNull())
+		instance_.nluProfile.agentKey = nluProfileNode["AgentKey"].asString();
+	if(!nluProfileNode["LlmAgentId"].isNull())
+		instance_.nluProfile.llmAgentId = nluProfileNode["LlmAgentId"].asString();
+	if(!nluProfileNode["LlmAgentKey"].isNull())
+		instance_.nluProfile.llmAgentKey = nluProfileNode["LlmAgentKey"].asString();
+	if(!nluProfileNode["SupportBeebotPrompts"].isNull())
+		instance_.nluProfile.supportBeebotPrompts = nluProfileNode["SupportBeebotPrompts"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())

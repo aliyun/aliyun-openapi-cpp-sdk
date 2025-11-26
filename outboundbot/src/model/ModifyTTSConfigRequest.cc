@@ -88,3 +88,12 @@ void ModifyTTSConfigRequest::setSpeechRate(const std::string &speechRate) {
   setParameter(std::string("SpeechRate"), speechRate);
 }
 
+std::string ModifyTTSConfigRequest::getPitchRate() const {
+  return pitchRate_;
+}
+
+void ModifyTTSConfigRequest::setPitchRate(const std::string &pitchRate) {
+  pitchRate_ = pitchRate;
+  setParameter(std::string("PitchRate"), pitchRate);
+}
+

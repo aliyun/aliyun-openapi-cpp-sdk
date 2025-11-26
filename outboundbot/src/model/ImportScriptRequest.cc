@@ -34,6 +34,15 @@ void ImportScriptRequest::setSignatureUrl(const std::string &signatureUrl) {
   setParameter(std::string("SignatureUrl"), signatureUrl);
 }
 
+std::string ImportScriptRequest::getNluEngine() const {
+  return nluEngine_;
+}
+
+void ImportScriptRequest::setNluEngine(const std::string &nluEngine) {
+  nluEngine_ = nluEngine;
+  setParameter(std::string("NluEngine"), nluEngine);
+}
+
 std::string ImportScriptRequest::getInstanceId() const {
   return instanceId_;
 }

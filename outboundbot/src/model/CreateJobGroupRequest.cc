@@ -61,6 +61,14 @@ void CreateJobGroupRequest::setStrategyJson(const std::string &strategyJson) {
   setParameter(std::string("StrategyJson"), strategyJson);
 }
 
+std::vector<std::string> CreateJobGroupRequest::getRecallCallingNumber() const {
+  return recallCallingNumber_;
+}
+
+void CreateJobGroupRequest::setRecallCallingNumber(const std::vector<std::string> &recallCallingNumber) {
+  recallCallingNumber_ = recallCallingNumber;
+}
+
 long CreateJobGroupRequest::getRingingDuration() const {
   return ringingDuration_;
 }
@@ -95,6 +103,15 @@ std::string CreateJobGroupRequest::getJobGroupDescription() const {
 void CreateJobGroupRequest::setJobGroupDescription(const std::string &jobGroupDescription) {
   jobGroupDescription_ = jobGroupDescription;
   setParameter(std::string("JobGroupDescription"), jobGroupDescription);
+}
+
+std::string CreateJobGroupRequest::getFlashSmsExtras() const {
+  return flashSmsExtras_;
+}
+
+void CreateJobGroupRequest::setFlashSmsExtras(const std::string &flashSmsExtras) {
+  flashSmsExtras_ = flashSmsExtras;
+  setParameter(std::string("FlashSmsExtras"), flashSmsExtras);
 }
 
 std::vector<std::string> CreateJobGroupRequest::getCallingNumber() const {

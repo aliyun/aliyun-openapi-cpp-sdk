@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					std::string uuid;
 					int state;
 					long gmtUpload;
+					std::string refId;
 					int recordingDuration;
 				};
 

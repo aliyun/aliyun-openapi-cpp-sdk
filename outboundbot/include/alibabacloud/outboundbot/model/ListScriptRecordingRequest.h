@@ -30,6 +30,8 @@ class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ListScriptRecordingRequest : public RpcSer
 public:
 	ListScriptRecordingRequest();
 	~ListScriptRecordingRequest();
+	std::string getRefIdsJson() const;
+	void setRefIdsJson(const std::string &refIdsJson);
 	std::string getUuidsJson() const;
 	void setUuidsJson(const std::string &uuidsJson);
 	std::string getStatesJson() const;
@@ -46,6 +48,7 @@ public:
 	void setPageSize(int pageSize);
 
 private:
+	std::string refIdsJson_;
 	std::string uuidsJson_;
 	std::string statesJson_;
 	int pageNumber_;

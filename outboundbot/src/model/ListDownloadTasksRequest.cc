@@ -34,6 +34,15 @@ void ListDownloadTasksRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListDownloadTasksRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListDownloadTasksRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
 int ListDownloadTasksRequest::getPageSize() const {
   return pageSize_;
 }

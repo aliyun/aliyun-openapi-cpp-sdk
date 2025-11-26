@@ -30,15 +30,21 @@ class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ListScriptsRequest : public RpcServiceRequ
 public:
 	ListScriptsRequest();
 	~ListScriptsRequest();
+	std::string getScriptName() const;
+	void setScriptName(const std::string &scriptName);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getNluEngine() const;
+	void setNluEngine(const std::string &nluEngine);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 
 private:
+	std::string scriptName_;
 	int pageNumber_;
+	std::string nluEngine_;
 	std::string instanceId_;
 	int pageSize_;
 };

@@ -72,6 +72,8 @@ void ListJobGroupsResult::parse(const std::string &payload)
 			jobGroupObject.scriptVersion = jobGroupsNodeListJobGroup["ScriptVersion"].asString();
 		if(!jobGroupsNodeListJobGroup["ModifyTime"].isNull())
 			jobGroupObject.modifyTime = jobGroupsNodeListJobGroup["ModifyTime"].asString();
+		if(!jobGroupsNodeListJobGroup["MinConcurrency"].isNull())
+			jobGroupObject.minConcurrency = std::stoi(jobGroupsNodeListJobGroup["MinConcurrency"].asString());
 		auto progressNode = value["Progress"];
 		if(!progressNode["TotalNotAnswered"].isNull())
 			jobGroupObject.progress.totalNotAnswered = std::stoi(progressNode["TotalNotAnswered"].asString());

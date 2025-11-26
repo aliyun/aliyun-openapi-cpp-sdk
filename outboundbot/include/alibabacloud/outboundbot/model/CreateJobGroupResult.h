@@ -85,6 +85,7 @@ namespace AlibabaCloud
 					Strategy strategy;
 					std::string jobFilePath;
 					ExportProgress exportProgress;
+					std::vector<std::string> recallCallingNumbers;
 					RecallStrategy recallStrategy;
 					std::vector<std::string> callingNumbers;
 				};

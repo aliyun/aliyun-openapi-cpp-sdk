@@ -37,7 +37,9 @@ namespace AlibabaCloud
 					std::string status;
 					std::string industry;
 					bool isDrafted;
+					std::string nluAccessType;
 					std::string scriptName;
+					std::string nluEngine;
 					long updateTime;
 					std::string scriptDescription;
 					std::string scriptId;

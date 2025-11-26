@@ -34,6 +34,15 @@ void SaveBaseStrategyPeriodRequest::setStrategyLevel(int strategyLevel) {
   setParameter(std::string("StrategyLevel"), std::to_string(strategyLevel));
 }
 
+bool SaveBaseStrategyPeriodRequest::getOnlyWorkdays() const {
+  return onlyWorkdays_;
+}
+
+void SaveBaseStrategyPeriodRequest::setOnlyWorkdays(bool onlyWorkdays) {
+  onlyWorkdays_ = onlyWorkdays;
+  setParameter(std::string("OnlyWorkdays"), onlyWorkdays ? "true" : "false");
+}
+
 std::string SaveBaseStrategyPeriodRequest::getEntryId() const {
   return entryId_;
 }

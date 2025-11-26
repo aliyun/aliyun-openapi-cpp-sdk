@@ -31,61 +31,25 @@ OutboundBotClient::OutboundBotClient(const Credentials &credentials, const Clien
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "outboundbot");
 }
 
 OutboundBotClient::OutboundBotClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "outboundbot");
 }
 
 OutboundBotClient::OutboundBotClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "outboundbot");
 }
 
 OutboundBotClient::~OutboundBotClient()
 {}
-
-OutboundBotClient::ApplyNumberDistrictInfoParsingResultOutcome OutboundBotClient::applyNumberDistrictInfoParsingResult(const ApplyNumberDistrictInfoParsingResultRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ApplyNumberDistrictInfoParsingResultOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ApplyNumberDistrictInfoParsingResultOutcome(ApplyNumberDistrictInfoParsingResultResult(outcome.result()));
-	else
-		return ApplyNumberDistrictInfoParsingResultOutcome(outcome.error());
-}
-
-void OutboundBotClient::applyNumberDistrictInfoParsingResultAsync(const ApplyNumberDistrictInfoParsingResultRequest& request, const ApplyNumberDistrictInfoParsingResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, applyNumberDistrictInfoParsingResult(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OutboundBotClient::ApplyNumberDistrictInfoParsingResultOutcomeCallable OutboundBotClient::applyNumberDistrictInfoParsingResultCallable(const ApplyNumberDistrictInfoParsingResultRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ApplyNumberDistrictInfoParsingResultOutcome()>>(
-			[this, request]()
-			{
-			return this->applyNumberDistrictInfoParsingResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
 
 OutboundBotClient::AssignJobsOutcome OutboundBotClient::assignJobs(const AssignJobsRequest &request) const
 {
@@ -117,6 +81,42 @@ OutboundBotClient::AssignJobsOutcomeCallable OutboundBotClient::assignJobsCallab
 			[this, request]()
 			{
 			return this->assignJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::AssignJobsAsyncOutcome OutboundBotClient::assignJobsAsync(const AssignJobsAsyncRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AssignJobsAsyncOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AssignJobsAsyncOutcome(AssignJobsAsyncResult(outcome.result()));
+	else
+		return AssignJobsAsyncOutcome(outcome.error());
+}
+
+void OutboundBotClient::assignJobsAsyncAsync(const AssignJobsAsyncRequest& request, const AssignJobsAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, assignJobsAsync(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::AssignJobsAsyncOutcomeCallable OutboundBotClient::assignJobsAsyncCallable(const AssignJobsAsyncRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AssignJobsAsyncOutcome()>>(
+			[this, request]()
+			{
+			return this->assignJobsAsync(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -195,6 +195,78 @@ OutboundBotClient::ChangeResourceGroupOutcomeCallable OutboundBotClient::changeR
 	return task->get_future();
 }
 
+OutboundBotClient::CreateAgentProfileOutcome OutboundBotClient::createAgentProfile(const CreateAgentProfileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAgentProfileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAgentProfileOutcome(CreateAgentProfileResult(outcome.result()));
+	else
+		return CreateAgentProfileOutcome(outcome.error());
+}
+
+void OutboundBotClient::createAgentProfileAsync(const CreateAgentProfileRequest& request, const CreateAgentProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAgentProfile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::CreateAgentProfileOutcomeCallable OutboundBotClient::createAgentProfileCallable(const CreateAgentProfileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAgentProfileOutcome()>>(
+			[this, request]()
+			{
+			return this->createAgentProfile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::CreateAnnotationMissionOutcome OutboundBotClient::createAnnotationMission(const CreateAnnotationMissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAnnotationMissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAnnotationMissionOutcome(CreateAnnotationMissionResult(outcome.result()));
+	else
+		return CreateAnnotationMissionOutcome(outcome.error());
+}
+
+void OutboundBotClient::createAnnotationMissionAsync(const CreateAnnotationMissionRequest& request, const CreateAnnotationMissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAnnotationMission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::CreateAnnotationMissionOutcomeCallable OutboundBotClient::createAnnotationMissionCallable(const CreateAnnotationMissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAnnotationMissionOutcome()>>(
+			[this, request]()
+			{
+			return this->createAnnotationMission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::CreateBatchJobsOutcome OutboundBotClient::createBatchJobs(const CreateBatchJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +333,114 @@ OutboundBotClient::CreateBatchRepeatJobOutcomeCallable OutboundBotClient::create
 			[this, request]()
 			{
 			return this->createBatchRepeatJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::CreateBeebotIntentOutcome OutboundBotClient::createBeebotIntent(const CreateBeebotIntentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateBeebotIntentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateBeebotIntentOutcome(CreateBeebotIntentResult(outcome.result()));
+	else
+		return CreateBeebotIntentOutcome(outcome.error());
+}
+
+void OutboundBotClient::createBeebotIntentAsync(const CreateBeebotIntentRequest& request, const CreateBeebotIntentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createBeebotIntent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::CreateBeebotIntentOutcomeCallable OutboundBotClient::createBeebotIntentCallable(const CreateBeebotIntentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateBeebotIntentOutcome()>>(
+			[this, request]()
+			{
+			return this->createBeebotIntent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::CreateBeebotIntentLgfOutcome OutboundBotClient::createBeebotIntentLgf(const CreateBeebotIntentLgfRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateBeebotIntentLgfOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateBeebotIntentLgfOutcome(CreateBeebotIntentLgfResult(outcome.result()));
+	else
+		return CreateBeebotIntentLgfOutcome(outcome.error());
+}
+
+void OutboundBotClient::createBeebotIntentLgfAsync(const CreateBeebotIntentLgfRequest& request, const CreateBeebotIntentLgfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createBeebotIntentLgf(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::CreateBeebotIntentLgfOutcomeCallable OutboundBotClient::createBeebotIntentLgfCallable(const CreateBeebotIntentLgfRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateBeebotIntentLgfOutcome()>>(
+			[this, request]()
+			{
+			return this->createBeebotIntentLgf(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::CreateBeebotIntentUserSayOutcome OutboundBotClient::createBeebotIntentUserSay(const CreateBeebotIntentUserSayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateBeebotIntentUserSayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateBeebotIntentUserSayOutcome(CreateBeebotIntentUserSayResult(outcome.result()));
+	else
+		return CreateBeebotIntentUserSayOutcome(outcome.error());
+}
+
+void OutboundBotClient::createBeebotIntentUserSayAsync(const CreateBeebotIntentUserSayRequest& request, const CreateBeebotIntentUserSayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createBeebotIntentUserSay(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::CreateBeebotIntentUserSayOutcomeCallable OutboundBotClient::createBeebotIntentUserSayCallable(const CreateBeebotIntentUserSayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateBeebotIntentUserSayOutcome()>>(
+			[this, request]()
+			{
+			return this->createBeebotIntentUserSay(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,114 +771,6 @@ OutboundBotClient::CreateJobGroupExportTaskOutcomeCallable OutboundBotClient::cr
 	return task->get_future();
 }
 
-OutboundBotClient::CreateNumberDistrictInfoDownloadUrlOutcome OutboundBotClient::createNumberDistrictInfoDownloadUrl(const CreateNumberDistrictInfoDownloadUrlRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateNumberDistrictInfoDownloadUrlOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateNumberDistrictInfoDownloadUrlOutcome(CreateNumberDistrictInfoDownloadUrlResult(outcome.result()));
-	else
-		return CreateNumberDistrictInfoDownloadUrlOutcome(outcome.error());
-}
-
-void OutboundBotClient::createNumberDistrictInfoDownloadUrlAsync(const CreateNumberDistrictInfoDownloadUrlRequest& request, const CreateNumberDistrictInfoDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createNumberDistrictInfoDownloadUrl(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OutboundBotClient::CreateNumberDistrictInfoDownloadUrlOutcomeCallable OutboundBotClient::createNumberDistrictInfoDownloadUrlCallable(const CreateNumberDistrictInfoDownloadUrlRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateNumberDistrictInfoDownloadUrlOutcome()>>(
-			[this, request]()
-			{
-			return this->createNumberDistrictInfoDownloadUrl(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OutboundBotClient::CreateNumberDistrictInfoParsingTaskOutcome OutboundBotClient::createNumberDistrictInfoParsingTask(const CreateNumberDistrictInfoParsingTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateNumberDistrictInfoParsingTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateNumberDistrictInfoParsingTaskOutcome(CreateNumberDistrictInfoParsingTaskResult(outcome.result()));
-	else
-		return CreateNumberDistrictInfoParsingTaskOutcome(outcome.error());
-}
-
-void OutboundBotClient::createNumberDistrictInfoParsingTaskAsync(const CreateNumberDistrictInfoParsingTaskRequest& request, const CreateNumberDistrictInfoParsingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createNumberDistrictInfoParsingTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OutboundBotClient::CreateNumberDistrictInfoParsingTaskOutcomeCallable OutboundBotClient::createNumberDistrictInfoParsingTaskCallable(const CreateNumberDistrictInfoParsingTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateNumberDistrictInfoParsingTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->createNumberDistrictInfoParsingTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OutboundBotClient::CreateOutboundCallNumberOutcome OutboundBotClient::createOutboundCallNumber(const CreateOutboundCallNumberRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateOutboundCallNumberOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateOutboundCallNumberOutcome(CreateOutboundCallNumberResult(outcome.result()));
-	else
-		return CreateOutboundCallNumberOutcome(outcome.error());
-}
-
-void OutboundBotClient::createOutboundCallNumberAsync(const CreateOutboundCallNumberRequest& request, const CreateOutboundCallNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createOutboundCallNumber(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OutboundBotClient::CreateOutboundCallNumberOutcomeCallable OutboundBotClient::createOutboundCallNumberCallable(const CreateOutboundCallNumberRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateOutboundCallNumberOutcome()>>(
-			[this, request]()
-			{
-			return this->createOutboundCallNumber(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OutboundBotClient::CreateScriptOutcome OutboundBotClient::createScript(const CreateScriptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -843,6 +915,42 @@ OutboundBotClient::CreateTaskExportTaskOutcomeCallable OutboundBotClient::create
 	return task->get_future();
 }
 
+OutboundBotClient::DeleteAgentProfilesOutcome OutboundBotClient::deleteAgentProfiles(const DeleteAgentProfilesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAgentProfilesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAgentProfilesOutcome(DeleteAgentProfilesResult(outcome.result()));
+	else
+		return DeleteAgentProfilesOutcome(outcome.error());
+}
+
+void OutboundBotClient::deleteAgentProfilesAsync(const DeleteAgentProfilesRequest& request, const DeleteAgentProfilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAgentProfiles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DeleteAgentProfilesOutcomeCallable OutboundBotClient::deleteAgentProfilesCallable(const DeleteAgentProfilesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAgentProfilesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAgentProfiles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::DeleteAllNumberDistrictInfoOutcome OutboundBotClient::deleteAllNumberDistrictInfo(const DeleteAllNumberDistrictInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +981,114 @@ OutboundBotClient::DeleteAllNumberDistrictInfoOutcomeCallable OutboundBotClient:
 			[this, request]()
 			{
 			return this->deleteAllNumberDistrictInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::DeleteBeebotIntentOutcome OutboundBotClient::deleteBeebotIntent(const DeleteBeebotIntentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBeebotIntentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBeebotIntentOutcome(DeleteBeebotIntentResult(outcome.result()));
+	else
+		return DeleteBeebotIntentOutcome(outcome.error());
+}
+
+void OutboundBotClient::deleteBeebotIntentAsync(const DeleteBeebotIntentRequest& request, const DeleteBeebotIntentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBeebotIntent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DeleteBeebotIntentOutcomeCallable OutboundBotClient::deleteBeebotIntentCallable(const DeleteBeebotIntentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBeebotIntentOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBeebotIntent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::DeleteBeebotIntentLgfOutcome OutboundBotClient::deleteBeebotIntentLgf(const DeleteBeebotIntentLgfRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBeebotIntentLgfOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBeebotIntentLgfOutcome(DeleteBeebotIntentLgfResult(outcome.result()));
+	else
+		return DeleteBeebotIntentLgfOutcome(outcome.error());
+}
+
+void OutboundBotClient::deleteBeebotIntentLgfAsync(const DeleteBeebotIntentLgfRequest& request, const DeleteBeebotIntentLgfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBeebotIntentLgf(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DeleteBeebotIntentLgfOutcomeCallable OutboundBotClient::deleteBeebotIntentLgfCallable(const DeleteBeebotIntentLgfRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBeebotIntentLgfOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBeebotIntentLgf(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::DeleteBeebotIntentUserSayOutcome OutboundBotClient::deleteBeebotIntentUserSay(const DeleteBeebotIntentUserSayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBeebotIntentUserSayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBeebotIntentUserSayOutcome(DeleteBeebotIntentUserSayResult(outcome.result()));
+	else
+		return DeleteBeebotIntentUserSayOutcome(outcome.error());
+}
+
+void OutboundBotClient::deleteBeebotIntentUserSayAsync(const DeleteBeebotIntentUserSayRequest& request, const DeleteBeebotIntentUserSayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBeebotIntentUserSay(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DeleteBeebotIntentUserSayOutcomeCallable OutboundBotClient::deleteBeebotIntentUserSayCallable(const DeleteBeebotIntentUserSayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBeebotIntentUserSayOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBeebotIntentUserSay(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1275,6 +1491,42 @@ OutboundBotClient::DeleteScriptWaveformOutcomeCallable OutboundBotClient::delete
 	return task->get_future();
 }
 
+OutboundBotClient::DescribeBeebotIntentOutcome OutboundBotClient::describeBeebotIntent(const DescribeBeebotIntentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBeebotIntentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBeebotIntentOutcome(DescribeBeebotIntentResult(outcome.result()));
+	else
+		return DescribeBeebotIntentOutcome(outcome.error());
+}
+
+void OutboundBotClient::describeBeebotIntentAsync(const DescribeBeebotIntentRequest& request, const DescribeBeebotIntentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBeebotIntent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DescribeBeebotIntentOutcomeCallable OutboundBotClient::describeBeebotIntentCallable(const DescribeBeebotIntentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBeebotIntentOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBeebotIntent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::DescribeDialogueNodeStatisticsOutcome OutboundBotClient::describeDialogueNodeStatistics(const DescribeDialogueNodeStatisticsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1671,42 +1923,6 @@ OutboundBotClient::DescribeJobGroupExportTaskProgressOutcomeCallable OutboundBot
 	return task->get_future();
 }
 
-OutboundBotClient::DescribeNumberDistrictInfoStatusOutcome OutboundBotClient::describeNumberDistrictInfoStatus(const DescribeNumberDistrictInfoStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeNumberDistrictInfoStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeNumberDistrictInfoStatusOutcome(DescribeNumberDistrictInfoStatusResult(outcome.result()));
-	else
-		return DescribeNumberDistrictInfoStatusOutcome(outcome.error());
-}
-
-void OutboundBotClient::describeNumberDistrictInfoStatusAsync(const DescribeNumberDistrictInfoStatusRequest& request, const DescribeNumberDistrictInfoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeNumberDistrictInfoStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OutboundBotClient::DescribeNumberDistrictInfoStatusOutcomeCallable OutboundBotClient::describeNumberDistrictInfoStatusCallable(const DescribeNumberDistrictInfoStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeNumberDistrictInfoStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeNumberDistrictInfoStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OutboundBotClient::DescribeScriptOutcome OutboundBotClient::describeScript(const DescribeScriptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1959,42 +2175,6 @@ OutboundBotClient::DialogueOutcomeCallable OutboundBotClient::dialogueCallable(c
 	return task->get_future();
 }
 
-OutboundBotClient::DismissNumberDistrictInfoParsingResultOutcome OutboundBotClient::dismissNumberDistrictInfoParsingResult(const DismissNumberDistrictInfoParsingResultRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DismissNumberDistrictInfoParsingResultOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DismissNumberDistrictInfoParsingResultOutcome(DismissNumberDistrictInfoParsingResultResult(outcome.result()));
-	else
-		return DismissNumberDistrictInfoParsingResultOutcome(outcome.error());
-}
-
-void OutboundBotClient::dismissNumberDistrictInfoParsingResultAsync(const DismissNumberDistrictInfoParsingResultRequest& request, const DismissNumberDistrictInfoParsingResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, dismissNumberDistrictInfoParsingResult(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OutboundBotClient::DismissNumberDistrictInfoParsingResultOutcomeCallable OutboundBotClient::dismissNumberDistrictInfoParsingResultCallable(const DismissNumberDistrictInfoParsingResultRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DismissNumberDistrictInfoParsingResultOutcome()>>(
-			[this, request]()
-			{
-			return this->dismissNumberDistrictInfoParsingResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OutboundBotClient::DownloadRecordingOutcome OutboundBotClient::downloadRecording(const DownloadRecordingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2211,6 +2391,150 @@ OutboundBotClient::GetAfterAnswerDelayPlaybackOutcomeCallable OutboundBotClient:
 	return task->get_future();
 }
 
+OutboundBotClient::GetAgentProfileOutcome OutboundBotClient::getAgentProfile(const GetAgentProfileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAgentProfileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAgentProfileOutcome(GetAgentProfileResult(outcome.result()));
+	else
+		return GetAgentProfileOutcome(outcome.error());
+}
+
+void OutboundBotClient::getAgentProfileAsync(const GetAgentProfileRequest& request, const GetAgentProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAgentProfile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GetAgentProfileOutcomeCallable OutboundBotClient::getAgentProfileCallable(const GetAgentProfileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAgentProfileOutcome()>>(
+			[this, request]()
+			{
+			return this->getAgentProfile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::GetAgentProfileTemplateOutcome OutboundBotClient::getAgentProfileTemplate(const GetAgentProfileTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAgentProfileTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAgentProfileTemplateOutcome(GetAgentProfileTemplateResult(outcome.result()));
+	else
+		return GetAgentProfileTemplateOutcome(outcome.error());
+}
+
+void OutboundBotClient::getAgentProfileTemplateAsync(const GetAgentProfileTemplateRequest& request, const GetAgentProfileTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAgentProfileTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GetAgentProfileTemplateOutcomeCallable OutboundBotClient::getAgentProfileTemplateCallable(const GetAgentProfileTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAgentProfileTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->getAgentProfileTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::GetAnnotationMissionSummaryOutcome OutboundBotClient::getAnnotationMissionSummary(const GetAnnotationMissionSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAnnotationMissionSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAnnotationMissionSummaryOutcome(GetAnnotationMissionSummaryResult(outcome.result()));
+	else
+		return GetAnnotationMissionSummaryOutcome(outcome.error());
+}
+
+void OutboundBotClient::getAnnotationMissionSummaryAsync(const GetAnnotationMissionSummaryRequest& request, const GetAnnotationMissionSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAnnotationMissionSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GetAnnotationMissionSummaryOutcomeCallable OutboundBotClient::getAnnotationMissionSummaryCallable(const GetAnnotationMissionSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAnnotationMissionSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->getAnnotationMissionSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::GetAnnotationMissionTagInfoListOutcome OutboundBotClient::getAnnotationMissionTagInfoList(const GetAnnotationMissionTagInfoListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAnnotationMissionTagInfoListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAnnotationMissionTagInfoListOutcome(GetAnnotationMissionTagInfoListResult(outcome.result()));
+	else
+		return GetAnnotationMissionTagInfoListOutcome(outcome.error());
+}
+
+void OutboundBotClient::getAnnotationMissionTagInfoListAsync(const GetAnnotationMissionTagInfoListRequest& request, const GetAnnotationMissionTagInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAnnotationMissionTagInfoList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GetAnnotationMissionTagInfoListOutcomeCallable OutboundBotClient::getAnnotationMissionTagInfoListCallable(const GetAnnotationMissionTagInfoListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAnnotationMissionTagInfoListOutcome()>>(
+			[this, request]()
+			{
+			return this->getAnnotationMissionTagInfoList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::GetAsrServerInfoOutcome OutboundBotClient::getAsrServerInfo(const GetAsrServerInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2241,6 +2565,42 @@ OutboundBotClient::GetAsrServerInfoOutcomeCallable OutboundBotClient::getAsrServ
 			[this, request]()
 			{
 			return this->getAsrServerInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::GetAssignJobsAsyncResultOutcome OutboundBotClient::getAssignJobsAsyncResult(const GetAssignJobsAsyncResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAssignJobsAsyncResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAssignJobsAsyncResultOutcome(GetAssignJobsAsyncResultResult(outcome.result()));
+	else
+		return GetAssignJobsAsyncResultOutcome(outcome.error());
+}
+
+void OutboundBotClient::getAssignJobsAsyncResultAsync(const GetAssignJobsAsyncResultRequest& request, const GetAssignJobsAsyncResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAssignJobsAsyncResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GetAssignJobsAsyncResultOutcomeCallable OutboundBotClient::getAssignJobsAsyncResultCallable(const GetAssignJobsAsyncResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAssignJobsAsyncResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getAssignJobsAsyncResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2427,42 +2787,6 @@ OutboundBotClient::GetCurrentConcurrencyOutcomeCallable OutboundBotClient::getCu
 	return task->get_future();
 }
 
-OutboundBotClient::GetEffectiveDaysOutcome OutboundBotClient::getEffectiveDays(const GetEffectiveDaysRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetEffectiveDaysOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetEffectiveDaysOutcome(GetEffectiveDaysResult(outcome.result()));
-	else
-		return GetEffectiveDaysOutcome(outcome.error());
-}
-
-void OutboundBotClient::getEffectiveDaysAsync(const GetEffectiveDaysRequest& request, const GetEffectiveDaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getEffectiveDays(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OutboundBotClient::GetEffectiveDaysOutcomeCallable OutboundBotClient::getEffectiveDaysCallable(const GetEffectiveDaysRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetEffectiveDaysOutcome()>>(
-			[this, request]()
-			{
-			return this->getEffectiveDays(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OutboundBotClient::GetEmptyNumberNoMoreCallsInfoOutcome OutboundBotClient::getEmptyNumberNoMoreCallsInfo(const GetEmptyNumberNoMoreCallsInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2493,6 +2817,42 @@ OutboundBotClient::GetEmptyNumberNoMoreCallsInfoOutcomeCallable OutboundBotClien
 			[this, request]()
 			{
 			return this->getEmptyNumberNoMoreCallsInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::GetJobDataUploadParamsOutcome OutboundBotClient::getJobDataUploadParams(const GetJobDataUploadParamsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetJobDataUploadParamsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetJobDataUploadParamsOutcome(GetJobDataUploadParamsResult(outcome.result()));
+	else
+		return GetJobDataUploadParamsOutcome(outcome.error());
+}
+
+void OutboundBotClient::getJobDataUploadParamsAsync(const GetJobDataUploadParamsRequest& request, const GetJobDataUploadParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getJobDataUploadParams(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GetJobDataUploadParamsOutcomeCallable OutboundBotClient::getJobDataUploadParamsCallable(const GetJobDataUploadParamsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetJobDataUploadParamsOutcome()>>(
+			[this, request]()
+			{
+			return this->getJobDataUploadParams(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2565,6 +2925,42 @@ OutboundBotClient::GetNumberDistrictInfoTemplateDownloadUrlOutcomeCallable Outbo
 			[this, request]()
 			{
 			return this->getNumberDistrictInfoTemplateDownloadUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::GetRealtimeConcurrencyReportOutcome OutboundBotClient::getRealtimeConcurrencyReport(const GetRealtimeConcurrencyReportRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRealtimeConcurrencyReportOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRealtimeConcurrencyReportOutcome(GetRealtimeConcurrencyReportResult(outcome.result()));
+	else
+		return GetRealtimeConcurrencyReportOutcome(outcome.error());
+}
+
+void OutboundBotClient::getRealtimeConcurrencyReportAsync(const GetRealtimeConcurrencyReportRequest& request, const GetRealtimeConcurrencyReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRealtimeConcurrencyReport(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GetRealtimeConcurrencyReportOutcomeCallable OutboundBotClient::getRealtimeConcurrencyReportCallable(const GetRealtimeConcurrencyReportRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRealtimeConcurrencyReportOutcome()>>(
+			[this, request]()
+			{
+			return this->getRealtimeConcurrencyReport(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2751,6 +3147,42 @@ OutboundBotClient::InflightTaskTimeoutOutcomeCallable OutboundBotClient::infligh
 	return task->get_future();
 }
 
+OutboundBotClient::ListAgentProfilesOutcome OutboundBotClient::listAgentProfiles(const ListAgentProfilesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAgentProfilesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAgentProfilesOutcome(ListAgentProfilesResult(outcome.result()));
+	else
+		return ListAgentProfilesOutcome(outcome.error());
+}
+
+void OutboundBotClient::listAgentProfilesAsync(const ListAgentProfilesRequest& request, const ListAgentProfilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAgentProfiles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListAgentProfilesOutcomeCallable OutboundBotClient::listAgentProfilesCallable(const ListAgentProfilesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAgentProfilesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAgentProfiles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::ListAllTenantBindNumberBindingOutcome OutboundBotClient::listAllTenantBindNumberBinding(const ListAllTenantBindNumberBindingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2781,6 +3213,222 @@ OutboundBotClient::ListAllTenantBindNumberBindingOutcomeCallable OutboundBotClie
 			[this, request]()
 			{
 			return this->listAllTenantBindNumberBinding(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListAnnotationMissionOutcome OutboundBotClient::listAnnotationMission(const ListAnnotationMissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAnnotationMissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAnnotationMissionOutcome(ListAnnotationMissionResult(outcome.result()));
+	else
+		return ListAnnotationMissionOutcome(outcome.error());
+}
+
+void OutboundBotClient::listAnnotationMissionAsync(const ListAnnotationMissionRequest& request, const ListAnnotationMissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAnnotationMission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListAnnotationMissionOutcomeCallable OutboundBotClient::listAnnotationMissionCallable(const ListAnnotationMissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAnnotationMissionOutcome()>>(
+			[this, request]()
+			{
+			return this->listAnnotationMission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListAnnotationMissionSessionOutcome OutboundBotClient::listAnnotationMissionSession(const ListAnnotationMissionSessionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAnnotationMissionSessionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAnnotationMissionSessionOutcome(ListAnnotationMissionSessionResult(outcome.result()));
+	else
+		return ListAnnotationMissionSessionOutcome(outcome.error());
+}
+
+void OutboundBotClient::listAnnotationMissionSessionAsync(const ListAnnotationMissionSessionRequest& request, const ListAnnotationMissionSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAnnotationMissionSession(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListAnnotationMissionSessionOutcomeCallable OutboundBotClient::listAnnotationMissionSessionCallable(const ListAnnotationMissionSessionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAnnotationMissionSessionOutcome()>>(
+			[this, request]()
+			{
+			return this->listAnnotationMissionSession(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListApiPluginsOutcome OutboundBotClient::listApiPlugins(const ListApiPluginsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApiPluginsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApiPluginsOutcome(ListApiPluginsResult(outcome.result()));
+	else
+		return ListApiPluginsOutcome(outcome.error());
+}
+
+void OutboundBotClient::listApiPluginsAsync(const ListApiPluginsRequest& request, const ListApiPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApiPlugins(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListApiPluginsOutcomeCallable OutboundBotClient::listApiPluginsCallable(const ListApiPluginsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApiPluginsOutcome()>>(
+			[this, request]()
+			{
+			return this->listApiPlugins(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListBeebotIntentOutcome OutboundBotClient::listBeebotIntent(const ListBeebotIntentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListBeebotIntentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListBeebotIntentOutcome(ListBeebotIntentResult(outcome.result()));
+	else
+		return ListBeebotIntentOutcome(outcome.error());
+}
+
+void OutboundBotClient::listBeebotIntentAsync(const ListBeebotIntentRequest& request, const ListBeebotIntentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listBeebotIntent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListBeebotIntentOutcomeCallable OutboundBotClient::listBeebotIntentCallable(const ListBeebotIntentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListBeebotIntentOutcome()>>(
+			[this, request]()
+			{
+			return this->listBeebotIntent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListBeebotIntentLgfOutcome OutboundBotClient::listBeebotIntentLgf(const ListBeebotIntentLgfRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListBeebotIntentLgfOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListBeebotIntentLgfOutcome(ListBeebotIntentLgfResult(outcome.result()));
+	else
+		return ListBeebotIntentLgfOutcome(outcome.error());
+}
+
+void OutboundBotClient::listBeebotIntentLgfAsync(const ListBeebotIntentLgfRequest& request, const ListBeebotIntentLgfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listBeebotIntentLgf(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListBeebotIntentLgfOutcomeCallable OutboundBotClient::listBeebotIntentLgfCallable(const ListBeebotIntentLgfRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListBeebotIntentLgfOutcome()>>(
+			[this, request]()
+			{
+			return this->listBeebotIntentLgf(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListBeebotIntentUserSayOutcome OutboundBotClient::listBeebotIntentUserSay(const ListBeebotIntentUserSayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListBeebotIntentUserSayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListBeebotIntentUserSayOutcome(ListBeebotIntentUserSayResult(outcome.result()));
+	else
+		return ListBeebotIntentUserSayOutcome(outcome.error());
+}
+
+void OutboundBotClient::listBeebotIntentUserSayAsync(const ListBeebotIntentUserSayRequest& request, const ListBeebotIntentUserSayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listBeebotIntentUserSay(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListBeebotIntentUserSayOutcomeCallable OutboundBotClient::listBeebotIntentUserSayCallable(const ListBeebotIntentUserSayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListBeebotIntentUserSayOutcome()>>(
+			[this, request]()
+			{
+			return this->listBeebotIntentUserSay(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2895,6 +3543,42 @@ OutboundBotClient::ListDownloadTasksOutcomeCallable OutboundBotClient::listDownl
 	return task->get_future();
 }
 
+OutboundBotClient::ListFlashSmsTemplatesOutcome OutboundBotClient::listFlashSmsTemplates(const ListFlashSmsTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFlashSmsTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFlashSmsTemplatesOutcome(ListFlashSmsTemplatesResult(outcome.result()));
+	else
+		return ListFlashSmsTemplatesOutcome(outcome.error());
+}
+
+void OutboundBotClient::listFlashSmsTemplatesAsync(const ListFlashSmsTemplatesRequest& request, const ListFlashSmsTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFlashSmsTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListFlashSmsTemplatesOutcomeCallable OutboundBotClient::listFlashSmsTemplatesCallable(const ListFlashSmsTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFlashSmsTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listFlashSmsTemplates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::ListGlobalQuestionsOutcome OutboundBotClient::listGlobalQuestions(const ListGlobalQuestionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2961,6 +3645,42 @@ OutboundBotClient::ListInstancesOutcomeCallable OutboundBotClient::listInstances
 			[this, request]()
 			{
 			return this->listInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListIntentionsOutcome OutboundBotClient::listIntentions(const ListIntentionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListIntentionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListIntentionsOutcome(ListIntentionsResult(outcome.result()));
+	else
+		return ListIntentionsOutcome(outcome.error());
+}
+
+void OutboundBotClient::listIntentionsAsync(const ListIntentionsRequest& request, const ListIntentionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listIntentions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListIntentionsOutcomeCallable OutboundBotClient::listIntentionsCallable(const ListIntentionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListIntentionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listIntentions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3219,42 +3939,6 @@ OutboundBotClient::ListResourceTagsOutcomeCallable OutboundBotClient::listResour
 	return task->get_future();
 }
 
-OutboundBotClient::ListSchedulerInstancesOutcome OutboundBotClient::listSchedulerInstances(const ListSchedulerInstancesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListSchedulerInstancesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListSchedulerInstancesOutcome(ListSchedulerInstancesResult(outcome.result()));
-	else
-		return ListSchedulerInstancesOutcome(outcome.error());
-}
-
-void OutboundBotClient::listSchedulerInstancesAsync(const ListSchedulerInstancesRequest& request, const ListSchedulerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listSchedulerInstances(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OutboundBotClient::ListSchedulerInstancesOutcomeCallable OutboundBotClient::listSchedulerInstancesCallable(const ListSchedulerInstancesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListSchedulerInstancesOutcome()>>(
-			[this, request]()
-			{
-			return this->listSchedulerInstances(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OutboundBotClient::ListScriptPublishHistoriesOutcome OutboundBotClient::listScriptPublishHistories(const ListScriptPublishHistoriesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3471,6 +4155,78 @@ OutboundBotClient::ListTagsOutcomeCallable OutboundBotClient::listTagsCallable(c
 	return task->get_future();
 }
 
+OutboundBotClient::ModifyAgentProfileOutcome OutboundBotClient::modifyAgentProfile(const ModifyAgentProfileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAgentProfileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAgentProfileOutcome(ModifyAgentProfileResult(outcome.result()));
+	else
+		return ModifyAgentProfileOutcome(outcome.error());
+}
+
+void OutboundBotClient::modifyAgentProfileAsync(const ModifyAgentProfileRequest& request, const ModifyAgentProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAgentProfile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ModifyAgentProfileOutcomeCallable OutboundBotClient::modifyAgentProfileCallable(const ModifyAgentProfileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAgentProfileOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAgentProfile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ModifyAnnotationMissionOutcome OutboundBotClient::modifyAnnotationMission(const ModifyAnnotationMissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAnnotationMissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAnnotationMissionOutcome(ModifyAnnotationMissionResult(outcome.result()));
+	else
+		return ModifyAnnotationMissionOutcome(outcome.error());
+}
+
+void OutboundBotClient::modifyAnnotationMissionAsync(const ModifyAnnotationMissionRequest& request, const ModifyAnnotationMissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAnnotationMission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ModifyAnnotationMissionOutcomeCallable OutboundBotClient::modifyAnnotationMissionCallable(const ModifyAnnotationMissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAnnotationMissionOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAnnotationMission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::ModifyBatchJobsOutcome OutboundBotClient::modifyBatchJobs(const ModifyBatchJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3501,6 +4257,114 @@ OutboundBotClient::ModifyBatchJobsOutcomeCallable OutboundBotClient::modifyBatch
 			[this, request]()
 			{
 			return this->modifyBatchJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ModifyBeebotIntentOutcome OutboundBotClient::modifyBeebotIntent(const ModifyBeebotIntentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBeebotIntentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBeebotIntentOutcome(ModifyBeebotIntentResult(outcome.result()));
+	else
+		return ModifyBeebotIntentOutcome(outcome.error());
+}
+
+void OutboundBotClient::modifyBeebotIntentAsync(const ModifyBeebotIntentRequest& request, const ModifyBeebotIntentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBeebotIntent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ModifyBeebotIntentOutcomeCallable OutboundBotClient::modifyBeebotIntentCallable(const ModifyBeebotIntentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBeebotIntentOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBeebotIntent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ModifyBeebotIntentLgfOutcome OutboundBotClient::modifyBeebotIntentLgf(const ModifyBeebotIntentLgfRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBeebotIntentLgfOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBeebotIntentLgfOutcome(ModifyBeebotIntentLgfResult(outcome.result()));
+	else
+		return ModifyBeebotIntentLgfOutcome(outcome.error());
+}
+
+void OutboundBotClient::modifyBeebotIntentLgfAsync(const ModifyBeebotIntentLgfRequest& request, const ModifyBeebotIntentLgfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBeebotIntentLgf(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ModifyBeebotIntentLgfOutcomeCallable OutboundBotClient::modifyBeebotIntentLgfCallable(const ModifyBeebotIntentLgfRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBeebotIntentLgfOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBeebotIntentLgf(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ModifyBeebotIntentUserSayOutcome OutboundBotClient::modifyBeebotIntentUserSay(const ModifyBeebotIntentUserSayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBeebotIntentUserSayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBeebotIntentUserSayOutcome(ModifyBeebotIntentUserSayResult(outcome.result()));
+	else
+		return ModifyBeebotIntentUserSayOutcome(outcome.error());
+}
+
+void OutboundBotClient::modifyBeebotIntentUserSayAsync(const ModifyBeebotIntentUserSayRequest& request, const ModifyBeebotIntentUserSayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBeebotIntentUserSay(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ModifyBeebotIntentUserSayOutcomeCallable OutboundBotClient::modifyBeebotIntentUserSayCallable(const ModifyBeebotIntentUserSayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBeebotIntentUserSayOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBeebotIntentUserSay(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4257,6 +5121,78 @@ OutboundBotClient::SaveAfterAnswerDelayPlaybackOutcomeCallable OutboundBotClient
 			[this, request]()
 			{
 			return this->saveAfterAnswerDelayPlayback(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::SaveAnnotationMissionSessionListOutcome OutboundBotClient::saveAnnotationMissionSessionList(const SaveAnnotationMissionSessionListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveAnnotationMissionSessionListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveAnnotationMissionSessionListOutcome(SaveAnnotationMissionSessionListResult(outcome.result()));
+	else
+		return SaveAnnotationMissionSessionListOutcome(outcome.error());
+}
+
+void OutboundBotClient::saveAnnotationMissionSessionListAsync(const SaveAnnotationMissionSessionListRequest& request, const SaveAnnotationMissionSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveAnnotationMissionSessionList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::SaveAnnotationMissionSessionListOutcomeCallable OutboundBotClient::saveAnnotationMissionSessionListCallable(const SaveAnnotationMissionSessionListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveAnnotationMissionSessionListOutcome()>>(
+			[this, request]()
+			{
+			return this->saveAnnotationMissionSessionList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::SaveAnnotationMissionTagInfoListOutcome OutboundBotClient::saveAnnotationMissionTagInfoList(const SaveAnnotationMissionTagInfoListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveAnnotationMissionTagInfoListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveAnnotationMissionTagInfoListOutcome(SaveAnnotationMissionTagInfoListResult(outcome.result()));
+	else
+		return SaveAnnotationMissionTagInfoListOutcome(outcome.error());
+}
+
+void OutboundBotClient::saveAnnotationMissionTagInfoListAsync(const SaveAnnotationMissionTagInfoListRequest& request, const SaveAnnotationMissionTagInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveAnnotationMissionTagInfoList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::SaveAnnotationMissionTagInfoListOutcomeCallable OutboundBotClient::saveAnnotationMissionTagInfoListCallable(const SaveAnnotationMissionTagInfoListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveAnnotationMissionTagInfoListOutcome()>>(
+			[this, request]()
+			{
+			return this->saveAnnotationMissionTagInfoList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

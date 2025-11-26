@@ -34,13 +34,22 @@ public:
 	};
 	ListInstancesRequest();
 	~ListInstancesRequest();
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getName() const;
+	void setName(const std::string &name);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
 
 private:
+	int pageNumber_;
 	std::string resourceGroupId_;
+	std::string name_;
+	int pageSize_;
 	std::vector<Tag> tag_;
 };
 } // namespace Model

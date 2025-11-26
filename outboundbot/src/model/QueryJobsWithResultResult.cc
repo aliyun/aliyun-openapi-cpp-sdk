@@ -39,6 +39,17 @@ void QueryJobsWithResultResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allLabelsNode = value["Labels"]["label"];
+	for (auto valueLabelslabel : allLabelsNode)
+	{
+		Label labelsObject;
+		if(!valueLabelslabel["Name"].isNull())
+			labelsObject.name = valueLabelslabel["Name"].asString();
+		auto allValueList = value["ValueList"]["Value"];
+		for (auto value : allValueList)
+			labelsObject.valueList.push_back(value.asString());
+		labels_.push_back(labelsObject);
+	}
 	auto jobsNode = value["Jobs"];
 	if(!jobsNode["PageNumber"].isNull())
 		jobs_.pageNumber = std::stoi(jobsNode["PageNumber"].asString());
@@ -166,6 +177,11 @@ QueryJobsWithResultResult::Jobs QueryJobsWithResultResult::getJobs()const
 int QueryJobsWithResultResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
+}
+
+std::vector<QueryJobsWithResultResult::Label> QueryJobsWithResultResult::getLabels()const
+{
+	return labels_;
 }
 
 std::string QueryJobsWithResultResult::getCode()const

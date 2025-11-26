@@ -25,6 +25,15 @@ ListChatbotInstancesRequest::ListChatbotInstancesRequest()
 
 ListChatbotInstancesRequest::~ListChatbotInstancesRequest() {}
 
+std::string ListChatbotInstancesRequest::getAgentKey() const {
+  return agentKey_;
+}
+
+void ListChatbotInstancesRequest::setAgentKey(const std::string &agentKey) {
+  agentKey_ = agentKey;
+  setParameter(std::string("AgentKey"), agentKey);
+}
+
 int ListChatbotInstancesRequest::getPageNumber() const {
   return pageNumber_;
 }

@@ -90,9 +90,15 @@ namespace AlibabaCloud
 							Contact1 contact1;
 							std::string jobId;
 						};
+						struct TagHit
+						{
+							std::string tagName;
+							std::string tagGroup;
+						};
 						std::string status;
 						std::vector<Job::Task> tasks;
 						std::string scenarioId;
+						std::vector<Job::TagHit> tagHits;
 						int priority;
 						std::string strategyId;
 						std::vector<Job::KeyValuePair> extras;

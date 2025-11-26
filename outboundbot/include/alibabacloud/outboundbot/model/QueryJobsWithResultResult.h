@@ -93,6 +93,11 @@ namespace AlibabaCloud
 					std::vector<Job> list;
 					int rowCount;
 				};
+				struct Label
+				{
+					std::vector<std::string> valueList;
+					std::string name;
+				};
 
 
 				QueryJobsWithResultResult();
@@ -102,6 +107,7 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				Jobs getJobs()const;
 				int getHttpStatusCode()const;
+				std::vector<Label> getLabels()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -112,6 +118,7 @@ namespace AlibabaCloud
 				std::string message_;
 				Jobs jobs_;
 				int httpStatusCode_;
+				std::vector<Label> labels_;
 				std::string code_;
 				bool success_;
 

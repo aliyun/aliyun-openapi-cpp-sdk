@@ -65,6 +65,8 @@ void ListJobGroupsAsyncResult::parse(const std::string &payload)
 			jobGroupsObject.scriptVersion = valueJobGroupsJobGroup["ScriptVersion"].asString();
 		if(!valueJobGroupsJobGroup["ModifyTime"].isNull())
 			jobGroupsObject.modifyTime = valueJobGroupsJobGroup["ModifyTime"].asString();
+		if(!valueJobGroupsJobGroup["MinConcurrency"].isNull())
+			jobGroupsObject.minConcurrency = std::stoi(valueJobGroupsJobGroup["MinConcurrency"].asString());
 		auto strategyNode = value["Strategy"];
 		if(!strategyNode["EndTime"].isNull())
 			jobGroupsObject.strategy.endTime = std::stol(strategyNode["EndTime"].asString());

@@ -61,6 +61,20 @@ void DescribeDialogueNodeStatisticsResult::parse(const std::string &payload)
 			noAnswerDialogueNodesObject.nodeId = valueNoAnswerDialogueNodesNoAnswerDialogueNode["NodeId"].asString();
 		noAnswerDialogueNodes_.push_back(noAnswerDialogueNodesObject);
 	}
+	auto allHangUpDialogueNodesNode = value["HangUpDialogueNodes"]["HangUpDialogueNodesItem"];
+	for (auto valueHangUpDialogueNodesHangUpDialogueNodesItem : allHangUpDialogueNodesNode)
+	{
+		HangUpDialogueNodesItem hangUpDialogueNodesObject;
+		if(!valueHangUpDialogueNodesHangUpDialogueNodesItem["HangUpNum"].isNull())
+			hangUpDialogueNodesObject.hangUpNum = std::stoi(valueHangUpDialogueNodesHangUpDialogueNodesItem["HangUpNum"].asString());
+		if(!valueHangUpDialogueNodesHangUpDialogueNodesItem["NodeId"].isNull())
+			hangUpDialogueNodesObject.nodeId = valueHangUpDialogueNodesHangUpDialogueNodesItem["NodeId"].asString();
+		if(!valueHangUpDialogueNodesHangUpDialogueNodesItem["NodeName"].isNull())
+			hangUpDialogueNodesObject.nodeName = valueHangUpDialogueNodesHangUpDialogueNodesItem["NodeName"].asString();
+		if(!valueHangUpDialogueNodesHangUpDialogueNodesItem["RateDisplay"].isNull())
+			hangUpDialogueNodesObject.rateDisplay = valueHangUpDialogueNodesHangUpDialogueNodesItem["RateDisplay"].asString();
+		hangUpDialogueNodes_.push_back(hangUpDialogueNodesObject);
+	}
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["GroupId"].isNull())
@@ -96,6 +110,11 @@ std::string DescribeDialogueNodeStatisticsResult::getInstanceId()const
 int DescribeDialogueNodeStatisticsResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
+}
+
+std::vector<DescribeDialogueNodeStatisticsResult::HangUpDialogueNodesItem> DescribeDialogueNodeStatisticsResult::getHangUpDialogueNodes()const
+{
+	return hangUpDialogueNodes_;
 }
 
 int DescribeDialogueNodeStatisticsResult::getTotalCompleted()const

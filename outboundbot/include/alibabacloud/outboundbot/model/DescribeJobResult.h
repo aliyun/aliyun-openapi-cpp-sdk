@@ -118,7 +118,10 @@ namespace AlibabaCloud
 						long ringingDuration;
 						std::string endReason;
 						Contact3 contact3;
+						long realRingingDuration;
 						std::string hangUpDirection;
+						long sipDuration;
+						std::string sipCode;
 						std::string jobId;
 					};
 					std::string status;

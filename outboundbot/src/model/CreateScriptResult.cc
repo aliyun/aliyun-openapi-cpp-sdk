@@ -60,6 +60,10 @@ void CreateScriptResult::parse(const std::string &payload)
 		script_.scriptName = scriptNode["ScriptName"].asString();
 	if(!scriptNode["Scene"].isNull())
 		script_.scene = scriptNode["Scene"].asString();
+	if(!scriptNode["NluEngine"].isNull())
+		script_.nluEngine = scriptNode["NluEngine"].asString();
+	if(!scriptNode["NluAccessType"].isNull())
+		script_.nluAccessType = scriptNode["NluAccessType"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Success"].isNull())

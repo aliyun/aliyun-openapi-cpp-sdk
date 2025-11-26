@@ -22,18 +22,28 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "OutboundBotExport.h"
-#include "model/ApplyNumberDistrictInfoParsingResultRequest.h"
-#include "model/ApplyNumberDistrictInfoParsingResultResult.h"
 #include "model/AssignJobsRequest.h"
 #include "model/AssignJobsResult.h"
+#include "model/AssignJobsAsyncRequest.h"
+#include "model/AssignJobsAsyncResult.h"
 #include "model/CancelJobsRequest.h"
 #include "model/CancelJobsResult.h"
 #include "model/ChangeResourceGroupRequest.h"
 #include "model/ChangeResourceGroupResult.h"
+#include "model/CreateAgentProfileRequest.h"
+#include "model/CreateAgentProfileResult.h"
+#include "model/CreateAnnotationMissionRequest.h"
+#include "model/CreateAnnotationMissionResult.h"
 #include "model/CreateBatchJobsRequest.h"
 #include "model/CreateBatchJobsResult.h"
 #include "model/CreateBatchRepeatJobRequest.h"
 #include "model/CreateBatchRepeatJobResult.h"
+#include "model/CreateBeebotIntentRequest.h"
+#include "model/CreateBeebotIntentResult.h"
+#include "model/CreateBeebotIntentLgfRequest.h"
+#include "model/CreateBeebotIntentLgfResult.h"
+#include "model/CreateBeebotIntentUserSayRequest.h"
+#include "model/CreateBeebotIntentUserSayResult.h"
 #include "model/CreateDialogueFlowRequest.h"
 #include "model/CreateDialogueFlowResult.h"
 #include "model/CreateDownloadUrlRequest.h"
@@ -52,12 +62,6 @@
 #include "model/CreateJobGroupResult.h"
 #include "model/CreateJobGroupExportTaskRequest.h"
 #include "model/CreateJobGroupExportTaskResult.h"
-#include "model/CreateNumberDistrictInfoDownloadUrlRequest.h"
-#include "model/CreateNumberDistrictInfoDownloadUrlResult.h"
-#include "model/CreateNumberDistrictInfoParsingTaskRequest.h"
-#include "model/CreateNumberDistrictInfoParsingTaskResult.h"
-#include "model/CreateOutboundCallNumberRequest.h"
-#include "model/CreateOutboundCallNumberResult.h"
 #include "model/CreateScriptRequest.h"
 #include "model/CreateScriptResult.h"
 #include "model/CreateScriptWaveformRequest.h"
@@ -66,8 +70,16 @@
 #include "model/CreateTagResult.h"
 #include "model/CreateTaskExportTaskRequest.h"
 #include "model/CreateTaskExportTaskResult.h"
+#include "model/DeleteAgentProfilesRequest.h"
+#include "model/DeleteAgentProfilesResult.h"
 #include "model/DeleteAllNumberDistrictInfoRequest.h"
 #include "model/DeleteAllNumberDistrictInfoResult.h"
+#include "model/DeleteBeebotIntentRequest.h"
+#include "model/DeleteBeebotIntentResult.h"
+#include "model/DeleteBeebotIntentLgfRequest.h"
+#include "model/DeleteBeebotIntentLgfResult.h"
+#include "model/DeleteBeebotIntentUserSayRequest.h"
+#include "model/DeleteBeebotIntentUserSayResult.h"
 #include "model/DeleteContactBlockListRequest.h"
 #include "model/DeleteContactBlockListResult.h"
 #include "model/DeleteContactWhiteListRequest.h"
@@ -90,6 +102,8 @@
 #include "model/DeleteScriptRecordingResult.h"
 #include "model/DeleteScriptWaveformRequest.h"
 #include "model/DeleteScriptWaveformResult.h"
+#include "model/DescribeBeebotIntentRequest.h"
+#include "model/DescribeBeebotIntentResult.h"
 #include "model/DescribeDialogueNodeStatisticsRequest.h"
 #include "model/DescribeDialogueNodeStatisticsResult.h"
 #include "model/DescribeDsReportsRequest.h"
@@ -112,8 +126,6 @@
 #include "model/DescribeJobGroupResult.h"
 #include "model/DescribeJobGroupExportTaskProgressRequest.h"
 #include "model/DescribeJobGroupExportTaskProgressResult.h"
-#include "model/DescribeNumberDistrictInfoStatusRequest.h"
-#include "model/DescribeNumberDistrictInfoStatusResult.h"
 #include "model/DescribeScriptRequest.h"
 #include "model/DescribeScriptResult.h"
 #include "model/DescribeScriptVoiceConfigRequest.h"
@@ -128,8 +140,6 @@
 #include "model/DescribeTenantBindNumberResult.h"
 #include "model/DialogueRequest.h"
 #include "model/DialogueResult.h"
-#include "model/DismissNumberDistrictInfoParsingResultRequest.h"
-#include "model/DismissNumberDistrictInfoParsingResultResult.h"
 #include "model/DownloadRecordingRequest.h"
 #include "model/DownloadRecordingResult.h"
 #include "model/DownloadScriptRecordingRequest.h"
@@ -142,8 +152,18 @@
 #include "model/GenerateUploadUrlResult.h"
 #include "model/GetAfterAnswerDelayPlaybackRequest.h"
 #include "model/GetAfterAnswerDelayPlaybackResult.h"
+#include "model/GetAgentProfileRequest.h"
+#include "model/GetAgentProfileResult.h"
+#include "model/GetAgentProfileTemplateRequest.h"
+#include "model/GetAgentProfileTemplateResult.h"
+#include "model/GetAnnotationMissionSummaryRequest.h"
+#include "model/GetAnnotationMissionSummaryResult.h"
+#include "model/GetAnnotationMissionTagInfoListRequest.h"
+#include "model/GetAnnotationMissionTagInfoListResult.h"
 #include "model/GetAsrServerInfoRequest.h"
 #include "model/GetAsrServerInfoResult.h"
+#include "model/GetAssignJobsAsyncResultRequest.h"
+#include "model/GetAssignJobsAsyncResultResult.h"
 #include "model/GetBaseStrategyPeriodRequest.h"
 #include "model/GetBaseStrategyPeriodResult.h"
 #include "model/GetConcurrentConversationQuotaRequest.h"
@@ -154,14 +174,16 @@
 #include "model/GetContactWhiteListResult.h"
 #include "model/GetCurrentConcurrencyRequest.h"
 #include "model/GetCurrentConcurrencyResult.h"
-#include "model/GetEffectiveDaysRequest.h"
-#include "model/GetEffectiveDaysResult.h"
 #include "model/GetEmptyNumberNoMoreCallsInfoRequest.h"
 #include "model/GetEmptyNumberNoMoreCallsInfoResult.h"
+#include "model/GetJobDataUploadParamsRequest.h"
+#include "model/GetJobDataUploadParamsResult.h"
 #include "model/GetMaxAttemptsPerDayRequest.h"
 #include "model/GetMaxAttemptsPerDayResult.h"
 #include "model/GetNumberDistrictInfoTemplateDownloadUrlRequest.h"
 #include "model/GetNumberDistrictInfoTemplateDownloadUrlResult.h"
+#include "model/GetRealtimeConcurrencyReportRequest.h"
+#include "model/GetRealtimeConcurrencyReportResult.h"
 #include "model/GetSummaryInfoRequest.h"
 #include "model/GetSummaryInfoResult.h"
 #include "model/GetTaskByUuidRequest.h"
@@ -172,18 +194,36 @@
 #include "model/ImportScriptResult.h"
 #include "model/InflightTaskTimeoutRequest.h"
 #include "model/InflightTaskTimeoutResult.h"
+#include "model/ListAgentProfilesRequest.h"
+#include "model/ListAgentProfilesResult.h"
 #include "model/ListAllTenantBindNumberBindingRequest.h"
 #include "model/ListAllTenantBindNumberBindingResult.h"
+#include "model/ListAnnotationMissionRequest.h"
+#include "model/ListAnnotationMissionResult.h"
+#include "model/ListAnnotationMissionSessionRequest.h"
+#include "model/ListAnnotationMissionSessionResult.h"
+#include "model/ListApiPluginsRequest.h"
+#include "model/ListApiPluginsResult.h"
+#include "model/ListBeebotIntentRequest.h"
+#include "model/ListBeebotIntentResult.h"
+#include "model/ListBeebotIntentLgfRequest.h"
+#include "model/ListBeebotIntentLgfResult.h"
+#include "model/ListBeebotIntentUserSayRequest.h"
+#include "model/ListBeebotIntentUserSayResult.h"
 #include "model/ListChatbotInstancesRequest.h"
 #include "model/ListChatbotInstancesResult.h"
 #include "model/ListDialogueFlowsRequest.h"
 #include "model/ListDialogueFlowsResult.h"
 #include "model/ListDownloadTasksRequest.h"
 #include "model/ListDownloadTasksResult.h"
+#include "model/ListFlashSmsTemplatesRequest.h"
+#include "model/ListFlashSmsTemplatesResult.h"
 #include "model/ListGlobalQuestionsRequest.h"
 #include "model/ListGlobalQuestionsResult.h"
 #include "model/ListInstancesRequest.h"
 #include "model/ListInstancesResult.h"
+#include "model/ListIntentionsRequest.h"
+#include "model/ListIntentionsResult.h"
 #include "model/ListIntentsRequest.h"
 #include "model/ListIntentsResult.h"
 #include "model/ListJobGroupsRequest.h"
@@ -198,8 +238,6 @@
 #include "model/ListOutboundCallNumbersResult.h"
 #include "model/ListResourceTagsRequest.h"
 #include "model/ListResourceTagsResult.h"
-#include "model/ListSchedulerInstancesRequest.h"
-#include "model/ListSchedulerInstancesResult.h"
 #include "model/ListScriptPublishHistoriesRequest.h"
 #include "model/ListScriptPublishHistoriesResult.h"
 #include "model/ListScriptRecordingRequest.h"
@@ -212,8 +250,18 @@
 #include "model/ListTagResourcesResult.h"
 #include "model/ListTagsRequest.h"
 #include "model/ListTagsResult.h"
+#include "model/ModifyAgentProfileRequest.h"
+#include "model/ModifyAgentProfileResult.h"
+#include "model/ModifyAnnotationMissionRequest.h"
+#include "model/ModifyAnnotationMissionResult.h"
 #include "model/ModifyBatchJobsRequest.h"
 #include "model/ModifyBatchJobsResult.h"
+#include "model/ModifyBeebotIntentRequest.h"
+#include "model/ModifyBeebotIntentResult.h"
+#include "model/ModifyBeebotIntentLgfRequest.h"
+#include "model/ModifyBeebotIntentLgfResult.h"
+#include "model/ModifyBeebotIntentUserSayRequest.h"
+#include "model/ModifyBeebotIntentUserSayResult.h"
 #include "model/ModifyDialogueFlowRequest.h"
 #include "model/ModifyDialogueFlowResult.h"
 #include "model/ModifyEmptyNumberNoMoreCallsInfoRequest.h"
@@ -256,6 +304,10 @@
 #include "model/RollbackScriptResult.h"
 #include "model/SaveAfterAnswerDelayPlaybackRequest.h"
 #include "model/SaveAfterAnswerDelayPlaybackResult.h"
+#include "model/SaveAnnotationMissionSessionListRequest.h"
+#include "model/SaveAnnotationMissionSessionListResult.h"
+#include "model/SaveAnnotationMissionTagInfoListRequest.h"
+#include "model/SaveAnnotationMissionTagInfoListResult.h"
 #include "model/SaveBaseStrategyPeriodRequest.h"
 #include "model/SaveBaseStrategyPeriodResult.h"
 #include "model/SaveContactBlockListRequest.h"
@@ -303,24 +355,39 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_OUTBOUNDBOT_EXPORT OutboundBotClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::ApplyNumberDistrictInfoParsingResultResult> ApplyNumberDistrictInfoParsingResultOutcome;
-			typedef std::future<ApplyNumberDistrictInfoParsingResultOutcome> ApplyNumberDistrictInfoParsingResultOutcomeCallable;
-			typedef std::function<void(const OutboundBotClient*, const Model::ApplyNumberDistrictInfoParsingResultRequest&, const ApplyNumberDistrictInfoParsingResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyNumberDistrictInfoParsingResultAsyncHandler;
 			typedef Outcome<Error, Model::AssignJobsResult> AssignJobsOutcome;
 			typedef std::future<AssignJobsOutcome> AssignJobsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::AssignJobsRequest&, const AssignJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssignJobsAsyncHandler;
+			typedef Outcome<Error, Model::AssignJobsAsyncResult> AssignJobsAsyncOutcome;
+			typedef std::future<AssignJobsAsyncOutcome> AssignJobsAsyncOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::AssignJobsAsyncRequest&, const AssignJobsAsyncOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssignJobsAsyncAsyncHandler;
 			typedef Outcome<Error, Model::CancelJobsResult> CancelJobsOutcome;
 			typedef std::future<CancelJobsOutcome> CancelJobsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CancelJobsRequest&, const CancelJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelJobsAsyncHandler;
 			typedef Outcome<Error, Model::ChangeResourceGroupResult> ChangeResourceGroupOutcome;
 			typedef std::future<ChangeResourceGroupOutcome> ChangeResourceGroupOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ChangeResourceGroupRequest&, const ChangeResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeResourceGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateAgentProfileResult> CreateAgentProfileOutcome;
+			typedef std::future<CreateAgentProfileOutcome> CreateAgentProfileOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::CreateAgentProfileRequest&, const CreateAgentProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentProfileAsyncHandler;
+			typedef Outcome<Error, Model::CreateAnnotationMissionResult> CreateAnnotationMissionOutcome;
+			typedef std::future<CreateAnnotationMissionOutcome> CreateAnnotationMissionOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::CreateAnnotationMissionRequest&, const CreateAnnotationMissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAnnotationMissionAsyncHandler;
 			typedef Outcome<Error, Model::CreateBatchJobsResult> CreateBatchJobsOutcome;
 			typedef std::future<CreateBatchJobsOutcome> CreateBatchJobsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CreateBatchJobsRequest&, const CreateBatchJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchJobsAsyncHandler;
 			typedef Outcome<Error, Model::CreateBatchRepeatJobResult> CreateBatchRepeatJobOutcome;
 			typedef std::future<CreateBatchRepeatJobOutcome> CreateBatchRepeatJobOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CreateBatchRepeatJobRequest&, const CreateBatchRepeatJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchRepeatJobAsyncHandler;
+			typedef Outcome<Error, Model::CreateBeebotIntentResult> CreateBeebotIntentOutcome;
+			typedef std::future<CreateBeebotIntentOutcome> CreateBeebotIntentOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::CreateBeebotIntentRequest&, const CreateBeebotIntentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBeebotIntentAsyncHandler;
+			typedef Outcome<Error, Model::CreateBeebotIntentLgfResult> CreateBeebotIntentLgfOutcome;
+			typedef std::future<CreateBeebotIntentLgfOutcome> CreateBeebotIntentLgfOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::CreateBeebotIntentLgfRequest&, const CreateBeebotIntentLgfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBeebotIntentLgfAsyncHandler;
+			typedef Outcome<Error, Model::CreateBeebotIntentUserSayResult> CreateBeebotIntentUserSayOutcome;
+			typedef std::future<CreateBeebotIntentUserSayOutcome> CreateBeebotIntentUserSayOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::CreateBeebotIntentUserSayRequest&, const CreateBeebotIntentUserSayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBeebotIntentUserSayAsyncHandler;
 			typedef Outcome<Error, Model::CreateDialogueFlowResult> CreateDialogueFlowOutcome;
 			typedef std::future<CreateDialogueFlowOutcome> CreateDialogueFlowOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CreateDialogueFlowRequest&, const CreateDialogueFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDialogueFlowAsyncHandler;
@@ -348,15 +415,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateJobGroupExportTaskResult> CreateJobGroupExportTaskOutcome;
 			typedef std::future<CreateJobGroupExportTaskOutcome> CreateJobGroupExportTaskOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CreateJobGroupExportTaskRequest&, const CreateJobGroupExportTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobGroupExportTaskAsyncHandler;
-			typedef Outcome<Error, Model::CreateNumberDistrictInfoDownloadUrlResult> CreateNumberDistrictInfoDownloadUrlOutcome;
-			typedef std::future<CreateNumberDistrictInfoDownloadUrlOutcome> CreateNumberDistrictInfoDownloadUrlOutcomeCallable;
-			typedef std::function<void(const OutboundBotClient*, const Model::CreateNumberDistrictInfoDownloadUrlRequest&, const CreateNumberDistrictInfoDownloadUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNumberDistrictInfoDownloadUrlAsyncHandler;
-			typedef Outcome<Error, Model::CreateNumberDistrictInfoParsingTaskResult> CreateNumberDistrictInfoParsingTaskOutcome;
-			typedef std::future<CreateNumberDistrictInfoParsingTaskOutcome> CreateNumberDistrictInfoParsingTaskOutcomeCallable;
-			typedef std::function<void(const OutboundBotClient*, const Model::CreateNumberDistrictInfoParsingTaskRequest&, const CreateNumberDistrictInfoParsingTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNumberDistrictInfoParsingTaskAsyncHandler;
-			typedef Outcome<Error, Model::CreateOutboundCallNumberResult> CreateOutboundCallNumberOutcome;
-			typedef std::future<CreateOutboundCallNumberOutcome> CreateOutboundCallNumberOutcomeCallable;
-			typedef std::function<void(const OutboundBotClient*, const Model::CreateOutboundCallNumberRequest&, const CreateOutboundCallNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOutboundCallNumberAsyncHandler;
 			typedef Outcome<Error, Model::CreateScriptResult> CreateScriptOutcome;
 			typedef std::future<CreateScriptOutcome> CreateScriptOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CreateScriptRequest&, const CreateScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateScriptAsyncHandler;
@@ -369,9 +427,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateTaskExportTaskResult> CreateTaskExportTaskOutcome;
 			typedef std::future<CreateTaskExportTaskOutcome> CreateTaskExportTaskOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::CreateTaskExportTaskRequest&, const CreateTaskExportTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskExportTaskAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAgentProfilesResult> DeleteAgentProfilesOutcome;
+			typedef std::future<DeleteAgentProfilesOutcome> DeleteAgentProfilesOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::DeleteAgentProfilesRequest&, const DeleteAgentProfilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentProfilesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAllNumberDistrictInfoResult> DeleteAllNumberDistrictInfoOutcome;
 			typedef std::future<DeleteAllNumberDistrictInfoOutcome> DeleteAllNumberDistrictInfoOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DeleteAllNumberDistrictInfoRequest&, const DeleteAllNumberDistrictInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllNumberDistrictInfoAsyncHandler;
+			typedef Outcome<Error, Model::DeleteBeebotIntentResult> DeleteBeebotIntentOutcome;
+			typedef std::future<DeleteBeebotIntentOutcome> DeleteBeebotIntentOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::DeleteBeebotIntentRequest&, const DeleteBeebotIntentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBeebotIntentAsyncHandler;
+			typedef Outcome<Error, Model::DeleteBeebotIntentLgfResult> DeleteBeebotIntentLgfOutcome;
+			typedef std::future<DeleteBeebotIntentLgfOutcome> DeleteBeebotIntentLgfOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::DeleteBeebotIntentLgfRequest&, const DeleteBeebotIntentLgfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBeebotIntentLgfAsyncHandler;
+			typedef Outcome<Error, Model::DeleteBeebotIntentUserSayResult> DeleteBeebotIntentUserSayOutcome;
+			typedef std::future<DeleteBeebotIntentUserSayOutcome> DeleteBeebotIntentUserSayOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::DeleteBeebotIntentUserSayRequest&, const DeleteBeebotIntentUserSayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBeebotIntentUserSayAsyncHandler;
 			typedef Outcome<Error, Model::DeleteContactBlockListResult> DeleteContactBlockListOutcome;
 			typedef std::future<DeleteContactBlockListOutcome> DeleteContactBlockListOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DeleteContactBlockListRequest&, const DeleteContactBlockListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContactBlockListAsyncHandler;
@@ -405,6 +475,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteScriptWaveformResult> DeleteScriptWaveformOutcome;
 			typedef std::future<DeleteScriptWaveformOutcome> DeleteScriptWaveformOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DeleteScriptWaveformRequest&, const DeleteScriptWaveformOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScriptWaveformAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBeebotIntentResult> DescribeBeebotIntentOutcome;
+			typedef std::future<DescribeBeebotIntentOutcome> DescribeBeebotIntentOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::DescribeBeebotIntentRequest&, const DescribeBeebotIntentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBeebotIntentAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDialogueNodeStatisticsResult> DescribeDialogueNodeStatisticsOutcome;
 			typedef std::future<DescribeDialogueNodeStatisticsOutcome> DescribeDialogueNodeStatisticsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DescribeDialogueNodeStatisticsRequest&, const DescribeDialogueNodeStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDialogueNodeStatisticsAsyncHandler;
@@ -438,9 +511,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeJobGroupExportTaskProgressResult> DescribeJobGroupExportTaskProgressOutcome;
 			typedef std::future<DescribeJobGroupExportTaskProgressOutcome> DescribeJobGroupExportTaskProgressOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DescribeJobGroupExportTaskProgressRequest&, const DescribeJobGroupExportTaskProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobGroupExportTaskProgressAsyncHandler;
-			typedef Outcome<Error, Model::DescribeNumberDistrictInfoStatusResult> DescribeNumberDistrictInfoStatusOutcome;
-			typedef std::future<DescribeNumberDistrictInfoStatusOutcome> DescribeNumberDistrictInfoStatusOutcomeCallable;
-			typedef std::function<void(const OutboundBotClient*, const Model::DescribeNumberDistrictInfoStatusRequest&, const DescribeNumberDistrictInfoStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNumberDistrictInfoStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScriptResult> DescribeScriptOutcome;
 			typedef std::future<DescribeScriptOutcome> DescribeScriptOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DescribeScriptRequest&, const DescribeScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScriptAsyncHandler;
@@ -462,9 +532,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DialogueResult> DialogueOutcome;
 			typedef std::future<DialogueOutcome> DialogueOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DialogueRequest&, const DialogueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DialogueAsyncHandler;
-			typedef Outcome<Error, Model::DismissNumberDistrictInfoParsingResultResult> DismissNumberDistrictInfoParsingResultOutcome;
-			typedef std::future<DismissNumberDistrictInfoParsingResultOutcome> DismissNumberDistrictInfoParsingResultOutcomeCallable;
-			typedef std::function<void(const OutboundBotClient*, const Model::DismissNumberDistrictInfoParsingResultRequest&, const DismissNumberDistrictInfoParsingResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DismissNumberDistrictInfoParsingResultAsyncHandler;
 			typedef Outcome<Error, Model::DownloadRecordingResult> DownloadRecordingOutcome;
 			typedef std::future<DownloadRecordingOutcome> DownloadRecordingOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DownloadRecordingRequest&, const DownloadRecordingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DownloadRecordingAsyncHandler;
@@ -483,9 +550,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAfterAnswerDelayPlaybackResult> GetAfterAnswerDelayPlaybackOutcome;
 			typedef std::future<GetAfterAnswerDelayPlaybackOutcome> GetAfterAnswerDelayPlaybackOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetAfterAnswerDelayPlaybackRequest&, const GetAfterAnswerDelayPlaybackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAfterAnswerDelayPlaybackAsyncHandler;
+			typedef Outcome<Error, Model::GetAgentProfileResult> GetAgentProfileOutcome;
+			typedef std::future<GetAgentProfileOutcome> GetAgentProfileOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::GetAgentProfileRequest&, const GetAgentProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAgentProfileAsyncHandler;
+			typedef Outcome<Error, Model::GetAgentProfileTemplateResult> GetAgentProfileTemplateOutcome;
+			typedef std::future<GetAgentProfileTemplateOutcome> GetAgentProfileTemplateOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::GetAgentProfileTemplateRequest&, const GetAgentProfileTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAgentProfileTemplateAsyncHandler;
+			typedef Outcome<Error, Model::GetAnnotationMissionSummaryResult> GetAnnotationMissionSummaryOutcome;
+			typedef std::future<GetAnnotationMissionSummaryOutcome> GetAnnotationMissionSummaryOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::GetAnnotationMissionSummaryRequest&, const GetAnnotationMissionSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAnnotationMissionSummaryAsyncHandler;
+			typedef Outcome<Error, Model::GetAnnotationMissionTagInfoListResult> GetAnnotationMissionTagInfoListOutcome;
+			typedef std::future<GetAnnotationMissionTagInfoListOutcome> GetAnnotationMissionTagInfoListOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::GetAnnotationMissionTagInfoListRequest&, const GetAnnotationMissionTagInfoListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAnnotationMissionTagInfoListAsyncHandler;
 			typedef Outcome<Error, Model::GetAsrServerInfoResult> GetAsrServerInfoOutcome;
 			typedef std::future<GetAsrServerInfoOutcome> GetAsrServerInfoOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetAsrServerInfoRequest&, const GetAsrServerInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsrServerInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetAssignJobsAsyncResultResult> GetAssignJobsAsyncResultOutcome;
+			typedef std::future<GetAssignJobsAsyncResultOutcome> GetAssignJobsAsyncResultOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::GetAssignJobsAsyncResultRequest&, const GetAssignJobsAsyncResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAssignJobsAsyncResultAsyncHandler;
 			typedef Outcome<Error, Model::GetBaseStrategyPeriodResult> GetBaseStrategyPeriodOutcome;
 			typedef std::future<GetBaseStrategyPeriodOutcome> GetBaseStrategyPeriodOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetBaseStrategyPeriodRequest&, const GetBaseStrategyPeriodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBaseStrategyPeriodAsyncHandler;
@@ -501,18 +583,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCurrentConcurrencyResult> GetCurrentConcurrencyOutcome;
 			typedef std::future<GetCurrentConcurrencyOutcome> GetCurrentConcurrencyOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetCurrentConcurrencyRequest&, const GetCurrentConcurrencyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCurrentConcurrencyAsyncHandler;
-			typedef Outcome<Error, Model::GetEffectiveDaysResult> GetEffectiveDaysOutcome;
-			typedef std::future<GetEffectiveDaysOutcome> GetEffectiveDaysOutcomeCallable;
-			typedef std::function<void(const OutboundBotClient*, const Model::GetEffectiveDaysRequest&, const GetEffectiveDaysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEffectiveDaysAsyncHandler;
 			typedef Outcome<Error, Model::GetEmptyNumberNoMoreCallsInfoResult> GetEmptyNumberNoMoreCallsInfoOutcome;
 			typedef std::future<GetEmptyNumberNoMoreCallsInfoOutcome> GetEmptyNumberNoMoreCallsInfoOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetEmptyNumberNoMoreCallsInfoRequest&, const GetEmptyNumberNoMoreCallsInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEmptyNumberNoMoreCallsInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetJobDataUploadParamsResult> GetJobDataUploadParamsOutcome;
+			typedef std::future<GetJobDataUploadParamsOutcome> GetJobDataUploadParamsOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::GetJobDataUploadParamsRequest&, const GetJobDataUploadParamsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobDataUploadParamsAsyncHandler;
 			typedef Outcome<Error, Model::GetMaxAttemptsPerDayResult> GetMaxAttemptsPerDayOutcome;
 			typedef std::future<GetMaxAttemptsPerDayOutcome> GetMaxAttemptsPerDayOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetMaxAttemptsPerDayRequest&, const GetMaxAttemptsPerDayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMaxAttemptsPerDayAsyncHandler;
 			typedef Outcome<Error, Model::GetNumberDistrictInfoTemplateDownloadUrlResult> GetNumberDistrictInfoTemplateDownloadUrlOutcome;
 			typedef std::future<GetNumberDistrictInfoTemplateDownloadUrlOutcome> GetNumberDistrictInfoTemplateDownloadUrlOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetNumberDistrictInfoTemplateDownloadUrlRequest&, const GetNumberDistrictInfoTemplateDownloadUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNumberDistrictInfoTemplateDownloadUrlAsyncHandler;
+			typedef Outcome<Error, Model::GetRealtimeConcurrencyReportResult> GetRealtimeConcurrencyReportOutcome;
+			typedef std::future<GetRealtimeConcurrencyReportOutcome> GetRealtimeConcurrencyReportOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::GetRealtimeConcurrencyReportRequest&, const GetRealtimeConcurrencyReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRealtimeConcurrencyReportAsyncHandler;
 			typedef Outcome<Error, Model::GetSummaryInfoResult> GetSummaryInfoOutcome;
 			typedef std::future<GetSummaryInfoOutcome> GetSummaryInfoOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetSummaryInfoRequest&, const GetSummaryInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSummaryInfoAsyncHandler;
@@ -528,9 +613,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InflightTaskTimeoutResult> InflightTaskTimeoutOutcome;
 			typedef std::future<InflightTaskTimeoutOutcome> InflightTaskTimeoutOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::InflightTaskTimeoutRequest&, const InflightTaskTimeoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InflightTaskTimeoutAsyncHandler;
+			typedef Outcome<Error, Model::ListAgentProfilesResult> ListAgentProfilesOutcome;
+			typedef std::future<ListAgentProfilesOutcome> ListAgentProfilesOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListAgentProfilesRequest&, const ListAgentProfilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAgentProfilesAsyncHandler;
 			typedef Outcome<Error, Model::ListAllTenantBindNumberBindingResult> ListAllTenantBindNumberBindingOutcome;
 			typedef std::future<ListAllTenantBindNumberBindingOutcome> ListAllTenantBindNumberBindingOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListAllTenantBindNumberBindingRequest&, const ListAllTenantBindNumberBindingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAllTenantBindNumberBindingAsyncHandler;
+			typedef Outcome<Error, Model::ListAnnotationMissionResult> ListAnnotationMissionOutcome;
+			typedef std::future<ListAnnotationMissionOutcome> ListAnnotationMissionOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListAnnotationMissionRequest&, const ListAnnotationMissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAnnotationMissionAsyncHandler;
+			typedef Outcome<Error, Model::ListAnnotationMissionSessionResult> ListAnnotationMissionSessionOutcome;
+			typedef std::future<ListAnnotationMissionSessionOutcome> ListAnnotationMissionSessionOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListAnnotationMissionSessionRequest&, const ListAnnotationMissionSessionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAnnotationMissionSessionAsyncHandler;
+			typedef Outcome<Error, Model::ListApiPluginsResult> ListApiPluginsOutcome;
+			typedef std::future<ListApiPluginsOutcome> ListApiPluginsOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListApiPluginsRequest&, const ListApiPluginsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApiPluginsAsyncHandler;
+			typedef Outcome<Error, Model::ListBeebotIntentResult> ListBeebotIntentOutcome;
+			typedef std::future<ListBeebotIntentOutcome> ListBeebotIntentOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListBeebotIntentRequest&, const ListBeebotIntentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBeebotIntentAsyncHandler;
+			typedef Outcome<Error, Model::ListBeebotIntentLgfResult> ListBeebotIntentLgfOutcome;
+			typedef std::future<ListBeebotIntentLgfOutcome> ListBeebotIntentLgfOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListBeebotIntentLgfRequest&, const ListBeebotIntentLgfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBeebotIntentLgfAsyncHandler;
+			typedef Outcome<Error, Model::ListBeebotIntentUserSayResult> ListBeebotIntentUserSayOutcome;
+			typedef std::future<ListBeebotIntentUserSayOutcome> ListBeebotIntentUserSayOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListBeebotIntentUserSayRequest&, const ListBeebotIntentUserSayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBeebotIntentUserSayAsyncHandler;
 			typedef Outcome<Error, Model::ListChatbotInstancesResult> ListChatbotInstancesOutcome;
 			typedef std::future<ListChatbotInstancesOutcome> ListChatbotInstancesOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListChatbotInstancesRequest&, const ListChatbotInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListChatbotInstancesAsyncHandler;
@@ -540,12 +646,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDownloadTasksResult> ListDownloadTasksOutcome;
 			typedef std::future<ListDownloadTasksOutcome> ListDownloadTasksOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListDownloadTasksRequest&, const ListDownloadTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDownloadTasksAsyncHandler;
+			typedef Outcome<Error, Model::ListFlashSmsTemplatesResult> ListFlashSmsTemplatesOutcome;
+			typedef std::future<ListFlashSmsTemplatesOutcome> ListFlashSmsTemplatesOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListFlashSmsTemplatesRequest&, const ListFlashSmsTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFlashSmsTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::ListGlobalQuestionsResult> ListGlobalQuestionsOutcome;
 			typedef std::future<ListGlobalQuestionsOutcome> ListGlobalQuestionsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListGlobalQuestionsRequest&, const ListGlobalQuestionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGlobalQuestionsAsyncHandler;
 			typedef Outcome<Error, Model::ListInstancesResult> ListInstancesOutcome;
 			typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListInstancesRequest&, const ListInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListIntentionsResult> ListIntentionsOutcome;
+			typedef std::future<ListIntentionsOutcome> ListIntentionsOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListIntentionsRequest&, const ListIntentionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIntentionsAsyncHandler;
 			typedef Outcome<Error, Model::ListIntentsResult> ListIntentsOutcome;
 			typedef std::future<ListIntentsOutcome> ListIntentsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListIntentsRequest&, const ListIntentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIntentsAsyncHandler;
@@ -567,9 +679,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListResourceTagsResult> ListResourceTagsOutcome;
 			typedef std::future<ListResourceTagsOutcome> ListResourceTagsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListResourceTagsRequest&, const ListResourceTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceTagsAsyncHandler;
-			typedef Outcome<Error, Model::ListSchedulerInstancesResult> ListSchedulerInstancesOutcome;
-			typedef std::future<ListSchedulerInstancesOutcome> ListSchedulerInstancesOutcomeCallable;
-			typedef std::function<void(const OutboundBotClient*, const Model::ListSchedulerInstancesRequest&, const ListSchedulerInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSchedulerInstancesAsyncHandler;
 			typedef Outcome<Error, Model::ListScriptPublishHistoriesResult> ListScriptPublishHistoriesOutcome;
 			typedef std::future<ListScriptPublishHistoriesOutcome> ListScriptPublishHistoriesOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListScriptPublishHistoriesRequest&, const ListScriptPublishHistoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScriptPublishHistoriesAsyncHandler;
@@ -588,9 +697,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagsResult> ListTagsOutcome;
 			typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListTagsRequest&, const ListTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAgentProfileResult> ModifyAgentProfileOutcome;
+			typedef std::future<ModifyAgentProfileOutcome> ModifyAgentProfileOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ModifyAgentProfileRequest&, const ModifyAgentProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentProfileAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAnnotationMissionResult> ModifyAnnotationMissionOutcome;
+			typedef std::future<ModifyAnnotationMissionOutcome> ModifyAnnotationMissionOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ModifyAnnotationMissionRequest&, const ModifyAnnotationMissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAnnotationMissionAsyncHandler;
 			typedef Outcome<Error, Model::ModifyBatchJobsResult> ModifyBatchJobsOutcome;
 			typedef std::future<ModifyBatchJobsOutcome> ModifyBatchJobsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ModifyBatchJobsRequest&, const ModifyBatchJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBatchJobsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyBeebotIntentResult> ModifyBeebotIntentOutcome;
+			typedef std::future<ModifyBeebotIntentOutcome> ModifyBeebotIntentOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ModifyBeebotIntentRequest&, const ModifyBeebotIntentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBeebotIntentAsyncHandler;
+			typedef Outcome<Error, Model::ModifyBeebotIntentLgfResult> ModifyBeebotIntentLgfOutcome;
+			typedef std::future<ModifyBeebotIntentLgfOutcome> ModifyBeebotIntentLgfOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ModifyBeebotIntentLgfRequest&, const ModifyBeebotIntentLgfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBeebotIntentLgfAsyncHandler;
+			typedef Outcome<Error, Model::ModifyBeebotIntentUserSayResult> ModifyBeebotIntentUserSayOutcome;
+			typedef std::future<ModifyBeebotIntentUserSayOutcome> ModifyBeebotIntentUserSayOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ModifyBeebotIntentUserSayRequest&, const ModifyBeebotIntentUserSayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBeebotIntentUserSayAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDialogueFlowResult> ModifyDialogueFlowOutcome;
 			typedef std::future<ModifyDialogueFlowOutcome> ModifyDialogueFlowOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ModifyDialogueFlowRequest&, const ModifyDialogueFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDialogueFlowAsyncHandler;
@@ -654,6 +778,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SaveAfterAnswerDelayPlaybackResult> SaveAfterAnswerDelayPlaybackOutcome;
 			typedef std::future<SaveAfterAnswerDelayPlaybackOutcome> SaveAfterAnswerDelayPlaybackOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::SaveAfterAnswerDelayPlaybackRequest&, const SaveAfterAnswerDelayPlaybackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveAfterAnswerDelayPlaybackAsyncHandler;
+			typedef Outcome<Error, Model::SaveAnnotationMissionSessionListResult> SaveAnnotationMissionSessionListOutcome;
+			typedef std::future<SaveAnnotationMissionSessionListOutcome> SaveAnnotationMissionSessionListOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::SaveAnnotationMissionSessionListRequest&, const SaveAnnotationMissionSessionListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveAnnotationMissionSessionListAsyncHandler;
+			typedef Outcome<Error, Model::SaveAnnotationMissionTagInfoListResult> SaveAnnotationMissionTagInfoListOutcome;
+			typedef std::future<SaveAnnotationMissionTagInfoListOutcome> SaveAnnotationMissionTagInfoListOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::SaveAnnotationMissionTagInfoListRequest&, const SaveAnnotationMissionTagInfoListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveAnnotationMissionTagInfoListAsyncHandler;
 			typedef Outcome<Error, Model::SaveBaseStrategyPeriodResult> SaveBaseStrategyPeriodOutcome;
 			typedef std::future<SaveBaseStrategyPeriodOutcome> SaveBaseStrategyPeriodOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::SaveBaseStrategyPeriodRequest&, const SaveBaseStrategyPeriodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveBaseStrategyPeriodAsyncHandler;
@@ -716,24 +846,39 @@ namespace AlibabaCloud
 			OutboundBotClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			OutboundBotClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~OutboundBotClient();
-			ApplyNumberDistrictInfoParsingResultOutcome applyNumberDistrictInfoParsingResult(const Model::ApplyNumberDistrictInfoParsingResultRequest &request)const;
-			void applyNumberDistrictInfoParsingResultAsync(const Model::ApplyNumberDistrictInfoParsingResultRequest& request, const ApplyNumberDistrictInfoParsingResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ApplyNumberDistrictInfoParsingResultOutcomeCallable applyNumberDistrictInfoParsingResultCallable(const Model::ApplyNumberDistrictInfoParsingResultRequest& request) const;
 			AssignJobsOutcome assignJobs(const Model::AssignJobsRequest &request)const;
 			void assignJobsAsync(const Model::AssignJobsRequest& request, const AssignJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssignJobsOutcomeCallable assignJobsCallable(const Model::AssignJobsRequest& request) const;
+			AssignJobsAsyncOutcome assignJobsAsync(const Model::AssignJobsAsyncRequest &request)const;
+			void assignJobsAsyncAsync(const Model::AssignJobsAsyncRequest& request, const AssignJobsAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AssignJobsAsyncOutcomeCallable assignJobsAsyncCallable(const Model::AssignJobsAsyncRequest& request) const;
 			CancelJobsOutcome cancelJobs(const Model::CancelJobsRequest &request)const;
 			void cancelJobsAsync(const Model::CancelJobsRequest& request, const CancelJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelJobsOutcomeCallable cancelJobsCallable(const Model::CancelJobsRequest& request) const;
 			ChangeResourceGroupOutcome changeResourceGroup(const Model::ChangeResourceGroupRequest &request)const;
 			void changeResourceGroupAsync(const Model::ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeResourceGroupOutcomeCallable changeResourceGroupCallable(const Model::ChangeResourceGroupRequest& request) const;
+			CreateAgentProfileOutcome createAgentProfile(const Model::CreateAgentProfileRequest &request)const;
+			void createAgentProfileAsync(const Model::CreateAgentProfileRequest& request, const CreateAgentProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAgentProfileOutcomeCallable createAgentProfileCallable(const Model::CreateAgentProfileRequest& request) const;
+			CreateAnnotationMissionOutcome createAnnotationMission(const Model::CreateAnnotationMissionRequest &request)const;
+			void createAnnotationMissionAsync(const Model::CreateAnnotationMissionRequest& request, const CreateAnnotationMissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAnnotationMissionOutcomeCallable createAnnotationMissionCallable(const Model::CreateAnnotationMissionRequest& request) const;
 			CreateBatchJobsOutcome createBatchJobs(const Model::CreateBatchJobsRequest &request)const;
 			void createBatchJobsAsync(const Model::CreateBatchJobsRequest& request, const CreateBatchJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateBatchJobsOutcomeCallable createBatchJobsCallable(const Model::CreateBatchJobsRequest& request) const;
 			CreateBatchRepeatJobOutcome createBatchRepeatJob(const Model::CreateBatchRepeatJobRequest &request)const;
 			void createBatchRepeatJobAsync(const Model::CreateBatchRepeatJobRequest& request, const CreateBatchRepeatJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateBatchRepeatJobOutcomeCallable createBatchRepeatJobCallable(const Model::CreateBatchRepeatJobRequest& request) const;
+			CreateBeebotIntentOutcome createBeebotIntent(const Model::CreateBeebotIntentRequest &request)const;
+			void createBeebotIntentAsync(const Model::CreateBeebotIntentRequest& request, const CreateBeebotIntentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateBeebotIntentOutcomeCallable createBeebotIntentCallable(const Model::CreateBeebotIntentRequest& request) const;
+			CreateBeebotIntentLgfOutcome createBeebotIntentLgf(const Model::CreateBeebotIntentLgfRequest &request)const;
+			void createBeebotIntentLgfAsync(const Model::CreateBeebotIntentLgfRequest& request, const CreateBeebotIntentLgfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateBeebotIntentLgfOutcomeCallable createBeebotIntentLgfCallable(const Model::CreateBeebotIntentLgfRequest& request) const;
+			CreateBeebotIntentUserSayOutcome createBeebotIntentUserSay(const Model::CreateBeebotIntentUserSayRequest &request)const;
+			void createBeebotIntentUserSayAsync(const Model::CreateBeebotIntentUserSayRequest& request, const CreateBeebotIntentUserSayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateBeebotIntentUserSayOutcomeCallable createBeebotIntentUserSayCallable(const Model::CreateBeebotIntentUserSayRequest& request) const;
 			CreateDialogueFlowOutcome createDialogueFlow(const Model::CreateDialogueFlowRequest &request)const;
 			void createDialogueFlowAsync(const Model::CreateDialogueFlowRequest& request, const CreateDialogueFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDialogueFlowOutcomeCallable createDialogueFlowCallable(const Model::CreateDialogueFlowRequest& request) const;
@@ -761,15 +906,6 @@ namespace AlibabaCloud
 			CreateJobGroupExportTaskOutcome createJobGroupExportTask(const Model::CreateJobGroupExportTaskRequest &request)const;
 			void createJobGroupExportTaskAsync(const Model::CreateJobGroupExportTaskRequest& request, const CreateJobGroupExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateJobGroupExportTaskOutcomeCallable createJobGroupExportTaskCallable(const Model::CreateJobGroupExportTaskRequest& request) const;
-			CreateNumberDistrictInfoDownloadUrlOutcome createNumberDistrictInfoDownloadUrl(const Model::CreateNumberDistrictInfoDownloadUrlRequest &request)const;
-			void createNumberDistrictInfoDownloadUrlAsync(const Model::CreateNumberDistrictInfoDownloadUrlRequest& request, const CreateNumberDistrictInfoDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateNumberDistrictInfoDownloadUrlOutcomeCallable createNumberDistrictInfoDownloadUrlCallable(const Model::CreateNumberDistrictInfoDownloadUrlRequest& request) const;
-			CreateNumberDistrictInfoParsingTaskOutcome createNumberDistrictInfoParsingTask(const Model::CreateNumberDistrictInfoParsingTaskRequest &request)const;
-			void createNumberDistrictInfoParsingTaskAsync(const Model::CreateNumberDistrictInfoParsingTaskRequest& request, const CreateNumberDistrictInfoParsingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateNumberDistrictInfoParsingTaskOutcomeCallable createNumberDistrictInfoParsingTaskCallable(const Model::CreateNumberDistrictInfoParsingTaskRequest& request) const;
-			CreateOutboundCallNumberOutcome createOutboundCallNumber(const Model::CreateOutboundCallNumberRequest &request)const;
-			void createOutboundCallNumberAsync(const Model::CreateOutboundCallNumberRequest& request, const CreateOutboundCallNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateOutboundCallNumberOutcomeCallable createOutboundCallNumberCallable(const Model::CreateOutboundCallNumberRequest& request) const;
 			CreateScriptOutcome createScript(const Model::CreateScriptRequest &request)const;
 			void createScriptAsync(const Model::CreateScriptRequest& request, const CreateScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateScriptOutcomeCallable createScriptCallable(const Model::CreateScriptRequest& request) const;
@@ -782,9 +918,21 @@ namespace AlibabaCloud
 			CreateTaskExportTaskOutcome createTaskExportTask(const Model::CreateTaskExportTaskRequest &request)const;
 			void createTaskExportTaskAsync(const Model::CreateTaskExportTaskRequest& request, const CreateTaskExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTaskExportTaskOutcomeCallable createTaskExportTaskCallable(const Model::CreateTaskExportTaskRequest& request) const;
+			DeleteAgentProfilesOutcome deleteAgentProfiles(const Model::DeleteAgentProfilesRequest &request)const;
+			void deleteAgentProfilesAsync(const Model::DeleteAgentProfilesRequest& request, const DeleteAgentProfilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAgentProfilesOutcomeCallable deleteAgentProfilesCallable(const Model::DeleteAgentProfilesRequest& request) const;
 			DeleteAllNumberDistrictInfoOutcome deleteAllNumberDistrictInfo(const Model::DeleteAllNumberDistrictInfoRequest &request)const;
 			void deleteAllNumberDistrictInfoAsync(const Model::DeleteAllNumberDistrictInfoRequest& request, const DeleteAllNumberDistrictInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAllNumberDistrictInfoOutcomeCallable deleteAllNumberDistrictInfoCallable(const Model::DeleteAllNumberDistrictInfoRequest& request) const;
+			DeleteBeebotIntentOutcome deleteBeebotIntent(const Model::DeleteBeebotIntentRequest &request)const;
+			void deleteBeebotIntentAsync(const Model::DeleteBeebotIntentRequest& request, const DeleteBeebotIntentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteBeebotIntentOutcomeCallable deleteBeebotIntentCallable(const Model::DeleteBeebotIntentRequest& request) const;
+			DeleteBeebotIntentLgfOutcome deleteBeebotIntentLgf(const Model::DeleteBeebotIntentLgfRequest &request)const;
+			void deleteBeebotIntentLgfAsync(const Model::DeleteBeebotIntentLgfRequest& request, const DeleteBeebotIntentLgfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteBeebotIntentLgfOutcomeCallable deleteBeebotIntentLgfCallable(const Model::DeleteBeebotIntentLgfRequest& request) const;
+			DeleteBeebotIntentUserSayOutcome deleteBeebotIntentUserSay(const Model::DeleteBeebotIntentUserSayRequest &request)const;
+			void deleteBeebotIntentUserSayAsync(const Model::DeleteBeebotIntentUserSayRequest& request, const DeleteBeebotIntentUserSayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteBeebotIntentUserSayOutcomeCallable deleteBeebotIntentUserSayCallable(const Model::DeleteBeebotIntentUserSayRequest& request) const;
 			DeleteContactBlockListOutcome deleteContactBlockList(const Model::DeleteContactBlockListRequest &request)const;
 			void deleteContactBlockListAsync(const Model::DeleteContactBlockListRequest& request, const DeleteContactBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteContactBlockListOutcomeCallable deleteContactBlockListCallable(const Model::DeleteContactBlockListRequest& request) const;
@@ -818,6 +966,9 @@ namespace AlibabaCloud
 			DeleteScriptWaveformOutcome deleteScriptWaveform(const Model::DeleteScriptWaveformRequest &request)const;
 			void deleteScriptWaveformAsync(const Model::DeleteScriptWaveformRequest& request, const DeleteScriptWaveformAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteScriptWaveformOutcomeCallable deleteScriptWaveformCallable(const Model::DeleteScriptWaveformRequest& request) const;
+			DescribeBeebotIntentOutcome describeBeebotIntent(const Model::DescribeBeebotIntentRequest &request)const;
+			void describeBeebotIntentAsync(const Model::DescribeBeebotIntentRequest& request, const DescribeBeebotIntentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBeebotIntentOutcomeCallable describeBeebotIntentCallable(const Model::DescribeBeebotIntentRequest& request) const;
 			DescribeDialogueNodeStatisticsOutcome describeDialogueNodeStatistics(const Model::DescribeDialogueNodeStatisticsRequest &request)const;
 			void describeDialogueNodeStatisticsAsync(const Model::DescribeDialogueNodeStatisticsRequest& request, const DescribeDialogueNodeStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDialogueNodeStatisticsOutcomeCallable describeDialogueNodeStatisticsCallable(const Model::DescribeDialogueNodeStatisticsRequest& request) const;
@@ -851,9 +1002,6 @@ namespace AlibabaCloud
 			DescribeJobGroupExportTaskProgressOutcome describeJobGroupExportTaskProgress(const Model::DescribeJobGroupExportTaskProgressRequest &request)const;
 			void describeJobGroupExportTaskProgressAsync(const Model::DescribeJobGroupExportTaskProgressRequest& request, const DescribeJobGroupExportTaskProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeJobGroupExportTaskProgressOutcomeCallable describeJobGroupExportTaskProgressCallable(const Model::DescribeJobGroupExportTaskProgressRequest& request) const;
-			DescribeNumberDistrictInfoStatusOutcome describeNumberDistrictInfoStatus(const Model::DescribeNumberDistrictInfoStatusRequest &request)const;
-			void describeNumberDistrictInfoStatusAsync(const Model::DescribeNumberDistrictInfoStatusRequest& request, const DescribeNumberDistrictInfoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeNumberDistrictInfoStatusOutcomeCallable describeNumberDistrictInfoStatusCallable(const Model::DescribeNumberDistrictInfoStatusRequest& request) const;
 			DescribeScriptOutcome describeScript(const Model::DescribeScriptRequest &request)const;
 			void describeScriptAsync(const Model::DescribeScriptRequest& request, const DescribeScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScriptOutcomeCallable describeScriptCallable(const Model::DescribeScriptRequest& request) const;
@@ -875,9 +1023,6 @@ namespace AlibabaCloud
 			DialogueOutcome dialogue(const Model::DialogueRequest &request)const;
 			void dialogueAsync(const Model::DialogueRequest& request, const DialogueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DialogueOutcomeCallable dialogueCallable(const Model::DialogueRequest& request) const;
-			DismissNumberDistrictInfoParsingResultOutcome dismissNumberDistrictInfoParsingResult(const Model::DismissNumberDistrictInfoParsingResultRequest &request)const;
-			void dismissNumberDistrictInfoParsingResultAsync(const Model::DismissNumberDistrictInfoParsingResultRequest& request, const DismissNumberDistrictInfoParsingResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DismissNumberDistrictInfoParsingResultOutcomeCallable dismissNumberDistrictInfoParsingResultCallable(const Model::DismissNumberDistrictInfoParsingResultRequest& request) const;
 			DownloadRecordingOutcome downloadRecording(const Model::DownloadRecordingRequest &request)const;
 			void downloadRecordingAsync(const Model::DownloadRecordingRequest& request, const DownloadRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DownloadRecordingOutcomeCallable downloadRecordingCallable(const Model::DownloadRecordingRequest& request) const;
@@ -896,9 +1041,24 @@ namespace AlibabaCloud
 			GetAfterAnswerDelayPlaybackOutcome getAfterAnswerDelayPlayback(const Model::GetAfterAnswerDelayPlaybackRequest &request)const;
 			void getAfterAnswerDelayPlaybackAsync(const Model::GetAfterAnswerDelayPlaybackRequest& request, const GetAfterAnswerDelayPlaybackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAfterAnswerDelayPlaybackOutcomeCallable getAfterAnswerDelayPlaybackCallable(const Model::GetAfterAnswerDelayPlaybackRequest& request) const;
+			GetAgentProfileOutcome getAgentProfile(const Model::GetAgentProfileRequest &request)const;
+			void getAgentProfileAsync(const Model::GetAgentProfileRequest& request, const GetAgentProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAgentProfileOutcomeCallable getAgentProfileCallable(const Model::GetAgentProfileRequest& request) const;
+			GetAgentProfileTemplateOutcome getAgentProfileTemplate(const Model::GetAgentProfileTemplateRequest &request)const;
+			void getAgentProfileTemplateAsync(const Model::GetAgentProfileTemplateRequest& request, const GetAgentProfileTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAgentProfileTemplateOutcomeCallable getAgentProfileTemplateCallable(const Model::GetAgentProfileTemplateRequest& request) const;
+			GetAnnotationMissionSummaryOutcome getAnnotationMissionSummary(const Model::GetAnnotationMissionSummaryRequest &request)const;
+			void getAnnotationMissionSummaryAsync(const Model::GetAnnotationMissionSummaryRequest& request, const GetAnnotationMissionSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAnnotationMissionSummaryOutcomeCallable getAnnotationMissionSummaryCallable(const Model::GetAnnotationMissionSummaryRequest& request) const;
+			GetAnnotationMissionTagInfoListOutcome getAnnotationMissionTagInfoList(const Model::GetAnnotationMissionTagInfoListRequest &request)const;
+			void getAnnotationMissionTagInfoListAsync(const Model::GetAnnotationMissionTagInfoListRequest& request, const GetAnnotationMissionTagInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAnnotationMissionTagInfoListOutcomeCallable getAnnotationMissionTagInfoListCallable(const Model::GetAnnotationMissionTagInfoListRequest& request) const;
 			GetAsrServerInfoOutcome getAsrServerInfo(const Model::GetAsrServerInfoRequest &request)const;
 			void getAsrServerInfoAsync(const Model::GetAsrServerInfoRequest& request, const GetAsrServerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsrServerInfoOutcomeCallable getAsrServerInfoCallable(const Model::GetAsrServerInfoRequest& request) const;
+			GetAssignJobsAsyncResultOutcome getAssignJobsAsyncResult(const Model::GetAssignJobsAsyncResultRequest &request)const;
+			void getAssignJobsAsyncResultAsync(const Model::GetAssignJobsAsyncResultRequest& request, const GetAssignJobsAsyncResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAssignJobsAsyncResultOutcomeCallable getAssignJobsAsyncResultCallable(const Model::GetAssignJobsAsyncResultRequest& request) const;
 			GetBaseStrategyPeriodOutcome getBaseStrategyPeriod(const Model::GetBaseStrategyPeriodRequest &request)const;
 			void getBaseStrategyPeriodAsync(const Model::GetBaseStrategyPeriodRequest& request, const GetBaseStrategyPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBaseStrategyPeriodOutcomeCallable getBaseStrategyPeriodCallable(const Model::GetBaseStrategyPeriodRequest& request) const;
@@ -914,18 +1074,21 @@ namespace AlibabaCloud
 			GetCurrentConcurrencyOutcome getCurrentConcurrency(const Model::GetCurrentConcurrencyRequest &request)const;
 			void getCurrentConcurrencyAsync(const Model::GetCurrentConcurrencyRequest& request, const GetCurrentConcurrencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCurrentConcurrencyOutcomeCallable getCurrentConcurrencyCallable(const Model::GetCurrentConcurrencyRequest& request) const;
-			GetEffectiveDaysOutcome getEffectiveDays(const Model::GetEffectiveDaysRequest &request)const;
-			void getEffectiveDaysAsync(const Model::GetEffectiveDaysRequest& request, const GetEffectiveDaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetEffectiveDaysOutcomeCallable getEffectiveDaysCallable(const Model::GetEffectiveDaysRequest& request) const;
 			GetEmptyNumberNoMoreCallsInfoOutcome getEmptyNumberNoMoreCallsInfo(const Model::GetEmptyNumberNoMoreCallsInfoRequest &request)const;
 			void getEmptyNumberNoMoreCallsInfoAsync(const Model::GetEmptyNumberNoMoreCallsInfoRequest& request, const GetEmptyNumberNoMoreCallsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetEmptyNumberNoMoreCallsInfoOutcomeCallable getEmptyNumberNoMoreCallsInfoCallable(const Model::GetEmptyNumberNoMoreCallsInfoRequest& request) const;
+			GetJobDataUploadParamsOutcome getJobDataUploadParams(const Model::GetJobDataUploadParamsRequest &request)const;
+			void getJobDataUploadParamsAsync(const Model::GetJobDataUploadParamsRequest& request, const GetJobDataUploadParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetJobDataUploadParamsOutcomeCallable getJobDataUploadParamsCallable(const Model::GetJobDataUploadParamsRequest& request) const;
 			GetMaxAttemptsPerDayOutcome getMaxAttemptsPerDay(const Model::GetMaxAttemptsPerDayRequest &request)const;
 			void getMaxAttemptsPerDayAsync(const Model::GetMaxAttemptsPerDayRequest& request, const GetMaxAttemptsPerDayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMaxAttemptsPerDayOutcomeCallable getMaxAttemptsPerDayCallable(const Model::GetMaxAttemptsPerDayRequest& request) const;
 			GetNumberDistrictInfoTemplateDownloadUrlOutcome getNumberDistrictInfoTemplateDownloadUrl(const Model::GetNumberDistrictInfoTemplateDownloadUrlRequest &request)const;
 			void getNumberDistrictInfoTemplateDownloadUrlAsync(const Model::GetNumberDistrictInfoTemplateDownloadUrlRequest& request, const GetNumberDistrictInfoTemplateDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetNumberDistrictInfoTemplateDownloadUrlOutcomeCallable getNumberDistrictInfoTemplateDownloadUrlCallable(const Model::GetNumberDistrictInfoTemplateDownloadUrlRequest& request) const;
+			GetRealtimeConcurrencyReportOutcome getRealtimeConcurrencyReport(const Model::GetRealtimeConcurrencyReportRequest &request)const;
+			void getRealtimeConcurrencyReportAsync(const Model::GetRealtimeConcurrencyReportRequest& request, const GetRealtimeConcurrencyReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetRealtimeConcurrencyReportOutcomeCallable getRealtimeConcurrencyReportCallable(const Model::GetRealtimeConcurrencyReportRequest& request) const;
 			GetSummaryInfoOutcome getSummaryInfo(const Model::GetSummaryInfoRequest &request)const;
 			void getSummaryInfoAsync(const Model::GetSummaryInfoRequest& request, const GetSummaryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSummaryInfoOutcomeCallable getSummaryInfoCallable(const Model::GetSummaryInfoRequest& request) const;
@@ -941,9 +1104,30 @@ namespace AlibabaCloud
 			InflightTaskTimeoutOutcome inflightTaskTimeout(const Model::InflightTaskTimeoutRequest &request)const;
 			void inflightTaskTimeoutAsync(const Model::InflightTaskTimeoutRequest& request, const InflightTaskTimeoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InflightTaskTimeoutOutcomeCallable inflightTaskTimeoutCallable(const Model::InflightTaskTimeoutRequest& request) const;
+			ListAgentProfilesOutcome listAgentProfiles(const Model::ListAgentProfilesRequest &request)const;
+			void listAgentProfilesAsync(const Model::ListAgentProfilesRequest& request, const ListAgentProfilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAgentProfilesOutcomeCallable listAgentProfilesCallable(const Model::ListAgentProfilesRequest& request) const;
 			ListAllTenantBindNumberBindingOutcome listAllTenantBindNumberBinding(const Model::ListAllTenantBindNumberBindingRequest &request)const;
 			void listAllTenantBindNumberBindingAsync(const Model::ListAllTenantBindNumberBindingRequest& request, const ListAllTenantBindNumberBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAllTenantBindNumberBindingOutcomeCallable listAllTenantBindNumberBindingCallable(const Model::ListAllTenantBindNumberBindingRequest& request) const;
+			ListAnnotationMissionOutcome listAnnotationMission(const Model::ListAnnotationMissionRequest &request)const;
+			void listAnnotationMissionAsync(const Model::ListAnnotationMissionRequest& request, const ListAnnotationMissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAnnotationMissionOutcomeCallable listAnnotationMissionCallable(const Model::ListAnnotationMissionRequest& request) const;
+			ListAnnotationMissionSessionOutcome listAnnotationMissionSession(const Model::ListAnnotationMissionSessionRequest &request)const;
+			void listAnnotationMissionSessionAsync(const Model::ListAnnotationMissionSessionRequest& request, const ListAnnotationMissionSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAnnotationMissionSessionOutcomeCallable listAnnotationMissionSessionCallable(const Model::ListAnnotationMissionSessionRequest& request) const;
+			ListApiPluginsOutcome listApiPlugins(const Model::ListApiPluginsRequest &request)const;
+			void listApiPluginsAsync(const Model::ListApiPluginsRequest& request, const ListApiPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListApiPluginsOutcomeCallable listApiPluginsCallable(const Model::ListApiPluginsRequest& request) const;
+			ListBeebotIntentOutcome listBeebotIntent(const Model::ListBeebotIntentRequest &request)const;
+			void listBeebotIntentAsync(const Model::ListBeebotIntentRequest& request, const ListBeebotIntentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListBeebotIntentOutcomeCallable listBeebotIntentCallable(const Model::ListBeebotIntentRequest& request) const;
+			ListBeebotIntentLgfOutcome listBeebotIntentLgf(const Model::ListBeebotIntentLgfRequest &request)const;
+			void listBeebotIntentLgfAsync(const Model::ListBeebotIntentLgfRequest& request, const ListBeebotIntentLgfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListBeebotIntentLgfOutcomeCallable listBeebotIntentLgfCallable(const Model::ListBeebotIntentLgfRequest& request) const;
+			ListBeebotIntentUserSayOutcome listBeebotIntentUserSay(const Model::ListBeebotIntentUserSayRequest &request)const;
+			void listBeebotIntentUserSayAsync(const Model::ListBeebotIntentUserSayRequest& request, const ListBeebotIntentUserSayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListBeebotIntentUserSayOutcomeCallable listBeebotIntentUserSayCallable(const Model::ListBeebotIntentUserSayRequest& request) const;
 			ListChatbotInstancesOutcome listChatbotInstances(const Model::ListChatbotInstancesRequest &request)const;
 			void listChatbotInstancesAsync(const Model::ListChatbotInstancesRequest& request, const ListChatbotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListChatbotInstancesOutcomeCallable listChatbotInstancesCallable(const Model::ListChatbotInstancesRequest& request) const;
@@ -953,12 +1137,18 @@ namespace AlibabaCloud
 			ListDownloadTasksOutcome listDownloadTasks(const Model::ListDownloadTasksRequest &request)const;
 			void listDownloadTasksAsync(const Model::ListDownloadTasksRequest& request, const ListDownloadTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDownloadTasksOutcomeCallable listDownloadTasksCallable(const Model::ListDownloadTasksRequest& request) const;
+			ListFlashSmsTemplatesOutcome listFlashSmsTemplates(const Model::ListFlashSmsTemplatesRequest &request)const;
+			void listFlashSmsTemplatesAsync(const Model::ListFlashSmsTemplatesRequest& request, const ListFlashSmsTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFlashSmsTemplatesOutcomeCallable listFlashSmsTemplatesCallable(const Model::ListFlashSmsTemplatesRequest& request) const;
 			ListGlobalQuestionsOutcome listGlobalQuestions(const Model::ListGlobalQuestionsRequest &request)const;
 			void listGlobalQuestionsAsync(const Model::ListGlobalQuestionsRequest& request, const ListGlobalQuestionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListGlobalQuestionsOutcomeCallable listGlobalQuestionsCallable(const Model::ListGlobalQuestionsRequest& request) const;
 			ListInstancesOutcome listInstances(const Model::ListInstancesRequest &request)const;
 			void listInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstancesOutcomeCallable listInstancesCallable(const Model::ListInstancesRequest& request) const;
+			ListIntentionsOutcome listIntentions(const Model::ListIntentionsRequest &request)const;
+			void listIntentionsAsync(const Model::ListIntentionsRequest& request, const ListIntentionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListIntentionsOutcomeCallable listIntentionsCallable(const Model::ListIntentionsRequest& request) const;
 			ListIntentsOutcome listIntents(const Model::ListIntentsRequest &request)const;
 			void listIntentsAsync(const Model::ListIntentsRequest& request, const ListIntentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListIntentsOutcomeCallable listIntentsCallable(const Model::ListIntentsRequest& request) const;
@@ -980,9 +1170,6 @@ namespace AlibabaCloud
 			ListResourceTagsOutcome listResourceTags(const Model::ListResourceTagsRequest &request)const;
 			void listResourceTagsAsync(const Model::ListResourceTagsRequest& request, const ListResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListResourceTagsOutcomeCallable listResourceTagsCallable(const Model::ListResourceTagsRequest& request) const;
-			ListSchedulerInstancesOutcome listSchedulerInstances(const Model::ListSchedulerInstancesRequest &request)const;
-			void listSchedulerInstancesAsync(const Model::ListSchedulerInstancesRequest& request, const ListSchedulerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListSchedulerInstancesOutcomeCallable listSchedulerInstancesCallable(const Model::ListSchedulerInstancesRequest& request) const;
 			ListScriptPublishHistoriesOutcome listScriptPublishHistories(const Model::ListScriptPublishHistoriesRequest &request)const;
 			void listScriptPublishHistoriesAsync(const Model::ListScriptPublishHistoriesRequest& request, const ListScriptPublishHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListScriptPublishHistoriesOutcomeCallable listScriptPublishHistoriesCallable(const Model::ListScriptPublishHistoriesRequest& request) const;
@@ -1001,9 +1188,24 @@ namespace AlibabaCloud
 			ListTagsOutcome listTags(const Model::ListTagsRequest &request)const;
 			void listTagsAsync(const Model::ListTagsRequest& request, const ListTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagsOutcomeCallable listTagsCallable(const Model::ListTagsRequest& request) const;
+			ModifyAgentProfileOutcome modifyAgentProfile(const Model::ModifyAgentProfileRequest &request)const;
+			void modifyAgentProfileAsync(const Model::ModifyAgentProfileRequest& request, const ModifyAgentProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAgentProfileOutcomeCallable modifyAgentProfileCallable(const Model::ModifyAgentProfileRequest& request) const;
+			ModifyAnnotationMissionOutcome modifyAnnotationMission(const Model::ModifyAnnotationMissionRequest &request)const;
+			void modifyAnnotationMissionAsync(const Model::ModifyAnnotationMissionRequest& request, const ModifyAnnotationMissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAnnotationMissionOutcomeCallable modifyAnnotationMissionCallable(const Model::ModifyAnnotationMissionRequest& request) const;
 			ModifyBatchJobsOutcome modifyBatchJobs(const Model::ModifyBatchJobsRequest &request)const;
 			void modifyBatchJobsAsync(const Model::ModifyBatchJobsRequest& request, const ModifyBatchJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBatchJobsOutcomeCallable modifyBatchJobsCallable(const Model::ModifyBatchJobsRequest& request) const;
+			ModifyBeebotIntentOutcome modifyBeebotIntent(const Model::ModifyBeebotIntentRequest &request)const;
+			void modifyBeebotIntentAsync(const Model::ModifyBeebotIntentRequest& request, const ModifyBeebotIntentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyBeebotIntentOutcomeCallable modifyBeebotIntentCallable(const Model::ModifyBeebotIntentRequest& request) const;
+			ModifyBeebotIntentLgfOutcome modifyBeebotIntentLgf(const Model::ModifyBeebotIntentLgfRequest &request)const;
+			void modifyBeebotIntentLgfAsync(const Model::ModifyBeebotIntentLgfRequest& request, const ModifyBeebotIntentLgfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyBeebotIntentLgfOutcomeCallable modifyBeebotIntentLgfCallable(const Model::ModifyBeebotIntentLgfRequest& request) const;
+			ModifyBeebotIntentUserSayOutcome modifyBeebotIntentUserSay(const Model::ModifyBeebotIntentUserSayRequest &request)const;
+			void modifyBeebotIntentUserSayAsync(const Model::ModifyBeebotIntentUserSayRequest& request, const ModifyBeebotIntentUserSayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyBeebotIntentUserSayOutcomeCallable modifyBeebotIntentUserSayCallable(const Model::ModifyBeebotIntentUserSayRequest& request) const;
 			ModifyDialogueFlowOutcome modifyDialogueFlow(const Model::ModifyDialogueFlowRequest &request)const;
 			void modifyDialogueFlowAsync(const Model::ModifyDialogueFlowRequest& request, const ModifyDialogueFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDialogueFlowOutcomeCallable modifyDialogueFlowCallable(const Model::ModifyDialogueFlowRequest& request) const;
@@ -1067,6 +1269,12 @@ namespace AlibabaCloud
 			SaveAfterAnswerDelayPlaybackOutcome saveAfterAnswerDelayPlayback(const Model::SaveAfterAnswerDelayPlaybackRequest &request)const;
 			void saveAfterAnswerDelayPlaybackAsync(const Model::SaveAfterAnswerDelayPlaybackRequest& request, const SaveAfterAnswerDelayPlaybackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveAfterAnswerDelayPlaybackOutcomeCallable saveAfterAnswerDelayPlaybackCallable(const Model::SaveAfterAnswerDelayPlaybackRequest& request) const;
+			SaveAnnotationMissionSessionListOutcome saveAnnotationMissionSessionList(const Model::SaveAnnotationMissionSessionListRequest &request)const;
+			void saveAnnotationMissionSessionListAsync(const Model::SaveAnnotationMissionSessionListRequest& request, const SaveAnnotationMissionSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveAnnotationMissionSessionListOutcomeCallable saveAnnotationMissionSessionListCallable(const Model::SaveAnnotationMissionSessionListRequest& request) const;
+			SaveAnnotationMissionTagInfoListOutcome saveAnnotationMissionTagInfoList(const Model::SaveAnnotationMissionTagInfoListRequest &request)const;
+			void saveAnnotationMissionTagInfoListAsync(const Model::SaveAnnotationMissionTagInfoListRequest& request, const SaveAnnotationMissionTagInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveAnnotationMissionTagInfoListOutcomeCallable saveAnnotationMissionTagInfoListCallable(const Model::SaveAnnotationMissionTagInfoListRequest& request) const;
 			SaveBaseStrategyPeriodOutcome saveBaseStrategyPeriod(const Model::SaveBaseStrategyPeriodRequest &request)const;
 			void saveBaseStrategyPeriodAsync(const Model::SaveBaseStrategyPeriodRequest& request, const SaveBaseStrategyPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveBaseStrategyPeriodOutcomeCallable saveBaseStrategyPeriodCallable(const Model::SaveBaseStrategyPeriodRequest& request) const;

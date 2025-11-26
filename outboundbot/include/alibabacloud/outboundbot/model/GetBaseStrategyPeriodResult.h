@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				~GetBaseStrategyPeriodResult();
 				std::vector<TimeFrame> getWorkingTime()const;
 				std::string getMessage()const;
+				bool getOnlyWorkdays()const;
 				bool getOnlyWeekdays()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 			private:
 				std::vector<TimeFrame> workingTime_;
 				std::string message_;
+				bool onlyWorkdays_;
 				bool onlyWeekdays_;
 				int httpStatusCode_;
 				std::string code_;

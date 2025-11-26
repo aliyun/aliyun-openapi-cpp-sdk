@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct TTSConfig
 				{
+					std::string pitchRate;
 					std::string volume;
 					std::string instanceId;
 					std::string tTSConfigId;

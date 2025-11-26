@@ -167,6 +167,16 @@ void QueryJobsResult::parse(const std::string &payload)
 				tasksObject.contact1.referenceId = contact1Node["ReferenceId"].asString();
 			jobObject.tasks.push_back(tasksObject);
 		}
+		auto allTagHitsNode = jobsNodeListJob["TagHits"]["TagHit"];
+		for (auto jobsNodeListJobTagHitsTagHit : allTagHitsNode)
+		{
+			Jobs::Job::TagHit tagHitsObject;
+			if(!jobsNodeListJobTagHitsTagHit["TagName"].isNull())
+				tagHitsObject.tagName = jobsNodeListJobTagHitsTagHit["TagName"].asString();
+			if(!jobsNodeListJobTagHitsTagHit["TagGroup"].isNull())
+				tagHitsObject.tagGroup = jobsNodeListJobTagHitsTagHit["TagGroup"].asString();
+			jobObject.tagHits.push_back(tagHitsObject);
+		}
 		auto allCallingNumbers = value["CallingNumbers"]["String"];
 		for (auto value : allCallingNumbers)
 			jobObject.callingNumbers.push_back(value.asString());

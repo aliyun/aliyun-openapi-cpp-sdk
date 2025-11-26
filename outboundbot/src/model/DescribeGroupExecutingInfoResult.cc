@@ -58,6 +58,8 @@ void DescribeGroupExecutingInfoResult::parse(const std::string &payload)
 		executingInfo_.callNum = std::stoi(executingInfoNode["CallNum"].asString());
 	if(!executingInfoNode["CallFailedNum"].isNull())
 		executingInfo_.callFailedNum = std::stoi(executingInfoNode["CallFailedNum"].asString());
+	if(!executingInfoNode["NoInteractionNum"].isNull())
+		executingInfo_.noInteractionNum = std::stoi(executingInfoNode["NoInteractionNum"].asString());
 	auto jobsProgressNode = executingInfoNode["JobsProgress"];
 	if(!jobsProgressNode["SchedulingNum"].isNull())
 		executingInfo_.jobsProgress.schedulingNum = std::stoi(jobsProgressNode["SchedulingNum"].asString());

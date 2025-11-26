@@ -61,6 +61,14 @@ void ModifyJobGroupRequest::setStrategyJson(const std::string &strategyJson) {
   setParameter(std::string("StrategyJson"), strategyJson);
 }
 
+std::vector<std::string> ModifyJobGroupRequest::getRecallCallingNumber() const {
+  return recallCallingNumber_;
+}
+
+void ModifyJobGroupRequest::setRecallCallingNumber(const std::vector<std::string> &recallCallingNumber) {
+  recallCallingNumber_ = recallCallingNumber;
+}
+
 long ModifyJobGroupRequest::getRingingDuration() const {
   return ringingDuration_;
 }
@@ -95,6 +103,15 @@ std::string ModifyJobGroupRequest::getPriority() const {
 void ModifyJobGroupRequest::setPriority(const std::string &priority) {
   priority_ = priority;
   setParameter(std::string("Priority"), priority);
+}
+
+std::string ModifyJobGroupRequest::getFlashSmsExtras() const {
+  return flashSmsExtras_;
+}
+
+void ModifyJobGroupRequest::setFlashSmsExtras(const std::string &flashSmsExtras) {
+  flashSmsExtras_ = flashSmsExtras;
+  setParameter(std::string("FlashSmsExtras"), flashSmsExtras);
 }
 
 std::vector<std::string> ModifyJobGroupRequest::getCallingNumber() const {

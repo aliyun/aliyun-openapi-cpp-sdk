@@ -44,8 +44,6 @@ void GetTaskByUuidResult::parse(const std::string &payload)
 		task_.jobGroupId = taskNode["JobGroupId"].asString();
 	if(!taskNode["EndTime"].isNull())
 		task_.endTime = std::stol(taskNode["EndTime"].asString());
-	if(!taskNode["EndReason"].isNull())
-		task_.endReason = std::stoi(taskNode["EndReason"].asString());
 	if(!taskNode["PlannedTime"].isNull())
 		task_.plannedTime = std::stol(taskNode["PlannedTime"].asString());
 	if(!taskNode["JobId"].isNull())
@@ -62,11 +60,57 @@ void GetTaskByUuidResult::parse(const std::string &payload)
 		task_.calledNumber = taskNode["CalledNumber"].asString();
 	if(!taskNode["Id"].isNull())
 		task_.id = taskNode["Id"].asString();
+	if(!taskNode["EndReason"].isNull())
+		task_.endReason = taskNode["EndReason"].asString();
+	auto allConversationsNode = taskNode["Conversations"]["conversation"];
+	for (auto taskNodeConversationsconversation : allConversationsNode)
+	{
+		Task::Conversation conversationObject;
+		if(!taskNodeConversationsconversation["Speaker"].isNull())
+			conversationObject.speaker = taskNodeConversationsconversation["Speaker"].asString();
+		if(!taskNodeConversationsconversation["Script"].isNull())
+			conversationObject.script = taskNodeConversationsconversation["Script"].asString();
+		if(!taskNodeConversationsconversation["Timestamp"].isNull())
+			conversationObject.timestamp = std::stol(taskNodeConversationsconversation["Timestamp"].asString());
+		if(!taskNodeConversationsconversation["Action"].isNull())
+			conversationObject.action = taskNodeConversationsconversation["Action"].asString();
+		if(!taskNodeConversationsconversation["SequenceId"].isNull())
+			conversationObject.sequenceId = taskNodeConversationsconversation["SequenceId"].asString();
+		task_.conversations.push_back(conversationObject);
+	}
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 
 }
 
 GetTaskByUuidResult::Task GetTaskByUuidResult::getTask()const
 {
 	return task_;
+}
+
+std::string GetTaskByUuidResult::getMessage()const
+{
+	return message_;
+}
+
+int GetTaskByUuidResult::getHttpStatusCode()const
+{
+	return httpStatusCode_;
+}
+
+std::string GetTaskByUuidResult::getCode()const
+{
+	return code_;
+}
+
+bool GetTaskByUuidResult::getSuccess()const
+{
+	return success_;
 }
 

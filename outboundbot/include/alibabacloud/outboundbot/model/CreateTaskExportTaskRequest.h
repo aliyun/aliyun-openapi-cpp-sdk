@@ -64,6 +64,8 @@ public:
 	void setHasHangUpByRejection(bool hasHangUpByRejection);
 	bool getHasReachedEndOfFlow() const;
 	void setHasReachedEndOfFlow(bool hasReachedEndOfFlow);
+	std::string getCallingNumber() const;
+	void setCallingNumber(const std::string &callingNumber);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	long getRecordingDurationGte() const;
@@ -101,6 +103,7 @@ private:
 	std::string taskId_;
 	bool hasHangUpByRejection_;
 	bool hasReachedEndOfFlow_;
+	std::string callingNumber_;
 	std::string instanceId_;
 	long recordingDurationGte_;
 	long callDurationLte_;

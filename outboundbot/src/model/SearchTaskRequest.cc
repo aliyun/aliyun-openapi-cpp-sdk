@@ -151,6 +151,23 @@ void SearchTaskRequest::setTaskId(const std::string &taskId) {
   setParameter(std::string("TaskId"), taskId);
 }
 
+std::vector<std::string> SearchTaskRequest::getLabelsJson() const {
+  return labelsJson_;
+}
+
+void SearchTaskRequest::setLabelsJson(const std::vector<std::string> &labelsJson) {
+  labelsJson_ = labelsJson;
+}
+
+std::string SearchTaskRequest::getCallingNumber() const {
+  return callingNumber_;
+}
+
+void SearchTaskRequest::setCallingNumber(const std::string &callingNumber) {
+  callingNumber_ = callingNumber;
+  setParameter(std::string("CallingNumber"), callingNumber);
+}
+
 std::string SearchTaskRequest::getInstanceId() const {
   return instanceId_;
 }

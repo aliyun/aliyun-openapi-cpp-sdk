@@ -34,15 +34,24 @@ namespace AlibabaCloud
 			public:
 				struct Task
 				{
+					struct Conversation
+					{
+						std::string script;
+						std::string action;
+						long timestamp;
+						std::string speaker;
+						std::string sequenceId;
+					};
 					std::string jobGroupId;
 					std::string calledNumber;
-					int endReason;
 					long plannedTime;
+					std::string endReason;
 					long endTime;
 					std::string instanceId;
 					long actualTime;
 					std::string callId;
 					std::string id;
+					std::vector<Conversation> conversations;
 					std::string jobId;
 					std::string callingNumber;
 				};
@@ -52,11 +61,19 @@ namespace AlibabaCloud
 				explicit GetTaskByUuidResult(const std::string &payload);
 				~GetTaskByUuidResult();
 				Task getTask()const;
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				Task task_;
+				std::string message_;
+				int httpStatusCode_;
+				std::string code_;
+				bool success_;
 
 			};
 		}

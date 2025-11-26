@@ -80,6 +80,7 @@ namespace AlibabaCloud
 					long ringingDuration;
 					long minConcurrency;
 					std::string jobGroupId;
+					std::string flashSmsExtras;
 					std::string scriptName;
 					long creationTime;
 					Strategy strategy;

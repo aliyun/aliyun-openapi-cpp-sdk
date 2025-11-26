@@ -38,6 +38,8 @@ public:
 	void setScriptId(const std::string &scriptId);
 	std::string getStrategyJson() const;
 	void setStrategyJson(const std::string &strategyJson);
+	std::vector<std::string> getRecallCallingNumber() const;
+	void setRecallCallingNumber(const std::vector<std::string> &recallCallingNumber);
 	long getRingingDuration() const;
 	void setRingingDuration(long ringingDuration);
 	std::string getScenarioId() const;
@@ -46,6 +48,8 @@ public:
 	void setJobGroupStatus(const std::string &jobGroupStatus);
 	std::string getPriority() const;
 	void setPriority(const std::string &priority);
+	std::string getFlashSmsExtras() const;
+	void setFlashSmsExtras(const std::string &flashSmsExtras);
 	std::vector<std::string> getCallingNumber() const;
 	void setCallingNumber(const std::vector<std::string> &callingNumber);
 	std::string getInstanceId() const;
@@ -62,10 +66,12 @@ private:
 	std::string description_;
 	std::string scriptId_;
 	std::string strategyJson_;
+	std::vector<std::string> recallCallingNumber_;
 	long ringingDuration_;
 	std::string scenarioId_;
 	std::string jobGroupStatus_;
 	std::string priority_;
+	std::string flashSmsExtras_;
 	std::vector<std::string> callingNumber_;
 	std::string instanceId_;
 	std::string jobGroupId_;

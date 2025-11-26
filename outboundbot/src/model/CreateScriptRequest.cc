@@ -52,6 +52,15 @@ void CreateScriptRequest::setScriptName(const std::string &scriptName) {
   setParameter(std::string("ScriptName"), scriptName);
 }
 
+std::string CreateScriptRequest::getNluEngine() const {
+  return nluEngine_;
+}
+
+void CreateScriptRequest::setNluEngine(const std::string &nluEngine) {
+  nluEngine_ = nluEngine;
+  setParameter(std::string("NluEngine"), nluEngine);
+}
+
 std::string CreateScriptRequest::getScene() const {
   return scene_;
 }
@@ -59,6 +68,15 @@ std::string CreateScriptRequest::getScene() const {
 void CreateScriptRequest::setScene(const std::string &scene) {
   scene_ = scene;
   setParameter(std::string("Scene"), scene);
+}
+
+std::string CreateScriptRequest::getNluAccessType() const {
+  return nluAccessType_;
+}
+
+void CreateScriptRequest::setNluAccessType(const std::string &nluAccessType) {
+  nluAccessType_ = nluAccessType;
+  setParameter(std::string("NluAccessType"), nluAccessType);
 }
 
 std::vector<std::string> CreateScriptRequest::getScriptWaveform() const {
@@ -76,6 +94,15 @@ std::string CreateScriptRequest::getAsrConfig() const {
 void CreateScriptRequest::setAsrConfig(const std::string &asrConfig) {
   asrConfig_ = asrConfig;
   setParameter(std::string("AsrConfig"), asrConfig);
+}
+
+bool CreateScriptRequest::getAgentLlm() const {
+  return agentLlm_;
+}
+
+void CreateScriptRequest::setAgentLlm(bool agentLlm) {
+  agentLlm_ = agentLlm;
+  setParameter(std::string("AgentLlm"), agentLlm ? "true" : "false");
 }
 
 std::string CreateScriptRequest::getMiniPlaybackConfigListJsonString() const {
@@ -96,6 +123,15 @@ void CreateScriptRequest::setEmotionEnable(bool emotionEnable) {
   setParameter(std::string("EmotionEnable"), emotionEnable ? "true" : "false");
 }
 
+long CreateScriptRequest::getAgentId() const {
+  return agentId_;
+}
+
+void CreateScriptRequest::setAgentId(long agentId) {
+  agentId_ = agentId;
+  setParameter(std::string("AgentId"), std::to_string(agentId));
+}
+
 bool CreateScriptRequest::getNewBargeInEnable() const {
   return newBargeInEnable_;
 }
@@ -103,6 +139,24 @@ bool CreateScriptRequest::getNewBargeInEnable() const {
 void CreateScriptRequest::setNewBargeInEnable(bool newBargeInEnable) {
   newBargeInEnable_ = newBargeInEnable;
   setParameter(std::string("NewBargeInEnable"), newBargeInEnable ? "true" : "false");
+}
+
+std::string CreateScriptRequest::getAgentKey() const {
+  return agentKey_;
+}
+
+void CreateScriptRequest::setAgentKey(const std::string &agentKey) {
+  agentKey_ = agentKey;
+  setParameter(std::string("AgentKey"), agentKey);
+}
+
+std::string CreateScriptRequest::getScriptNluProfileJsonString() const {
+  return scriptNluProfileJsonString_;
+}
+
+void CreateScriptRequest::setScriptNluProfileJsonString(const std::string &scriptNluProfileJsonString) {
+  scriptNluProfileJsonString_ = scriptNluProfileJsonString;
+  setParameter(std::string("ScriptNluProfileJsonString"), scriptNluProfileJsonString);
 }
 
 bool CreateScriptRequest::getMiniPlaybackEnable() const {

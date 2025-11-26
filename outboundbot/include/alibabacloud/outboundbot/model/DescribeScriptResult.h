@@ -34,8 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct Script
 				{
+					struct NluProfile
+					{
+						std::string fcFunction;
+						bool supportBeebotPrompts;
+						std::string fcRegion;
+						std::string fcHttpTriggerUrl;
+					};
 					std::string status;
 					std::string chatbotId;
+					bool agentLlm;
 					std::string scriptDescription;
 					std::string scriptId;
 					bool newBargeInEnable;
@@ -44,11 +52,17 @@ namespace AlibabaCloud
 					bool isDebugDrafted;
 					std::string industry;
 					std::string asrConfig;
+					std::string agentKey;
+					std::string labelConfig;
 					bool isDrafted;
+					std::string chatConfig;
 					std::string scriptName;
+					std::string nluEngine;
 					long updateTime;
 					std::string ttsConfig;
 					bool longWaitEnable;
+					long agentId;
+					NluProfile nluProfile;
 					bool miniPlaybackEnable;
 					bool emotionEnable;
 				};

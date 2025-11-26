@@ -97,11 +97,37 @@ void SearchTaskResult::parse(const std::string &payload)
 			searchTaskInfoListObject.hasLastPlaybackCompleted = valueSearchTaskInfoListSearchTaskInfo["HasLastPlaybackCompleted"].asString() == "true";
 		if(!valueSearchTaskInfoListSearchTaskInfo["ScriptName"].isNull())
 			searchTaskInfoListObject.scriptName = valueSearchTaskInfoListSearchTaskInfo["ScriptName"].asString();
+		if(!valueSearchTaskInfoListSearchTaskInfo["CallingNumber"].isNull())
+			searchTaskInfoListObject.callingNumber = valueSearchTaskInfoListSearchTaskInfo["CallingNumber"].asString();
+		auto allLabels1Node = valueSearchTaskInfoListSearchTaskInfo["Labels"]["label"];
+		for (auto valueSearchTaskInfoListSearchTaskInfoLabelslabel : allLabels1Node)
+		{
+			SearchTaskInfo::Label labels1Object;
+			if(!valueSearchTaskInfoListSearchTaskInfoLabelslabel["K"].isNull())
+				labels1Object.k = valueSearchTaskInfoListSearchTaskInfoLabelslabel["K"].asString();
+			if(!valueSearchTaskInfoListSearchTaskInfoLabelslabel["V"].isNull())
+				labels1Object.v = valueSearchTaskInfoListSearchTaskInfoLabelslabel["V"].asString();
+			searchTaskInfoListObject.labels1.push_back(labels1Object);
+		}
 		auto allDialExceptionCodes = value["DialExceptionCodes"]["String"];
 		for (auto value : allDialExceptionCodes)
 			searchTaskInfoListObject.dialExceptionCodes.push_back(value.asString());
 		searchTaskInfoList_.push_back(searchTaskInfoListObject);
 	}
+	auto allLabelsNode = value["Labels"]["label"];
+	for (auto valueLabelslabel : allLabelsNode)
+	{
+		Label2 labelsObject;
+		if(!valueLabelslabel["Name"].isNull())
+			labelsObject.name = valueLabelslabel["Name"].asString();
+		auto allValueList = value["ValueList"]["Value"];
+		for (auto value : allValueList)
+			labelsObject.valueList.push_back(value.asString());
+		labels_.push_back(labelsObject);
+	}
+	auto allVariableNames = value["VariableNames"]["VariableName"];
+	for (const auto &item : allVariableNames)
+		variableNames_.push_back(item.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["PageIndex"].isNull())
@@ -117,6 +143,11 @@ void SearchTaskResult::parse(const std::string &payload)
 	if(!value["Total"].isNull())
 		total_ = std::stol(value["Total"].asString());
 
+}
+
+std::vector<std::string> SearchTaskResult::getVariableNames()const
+{
+	return variableNames_;
 }
 
 std::string SearchTaskResult::getMessage()const
@@ -137,6 +168,11 @@ long SearchTaskResult::getTotal()const
 int SearchTaskResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
+}
+
+std::vector<SearchTaskResult::Label2> SearchTaskResult::getLabels()const
+{
+	return labels_;
 }
 
 int SearchTaskResult::getPageIndex()const

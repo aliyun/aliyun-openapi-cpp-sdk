@@ -25,6 +25,15 @@ ListScriptRecordingRequest::ListScriptRecordingRequest()
 
 ListScriptRecordingRequest::~ListScriptRecordingRequest() {}
 
+std::string ListScriptRecordingRequest::getRefIdsJson() const {
+  return refIdsJson_;
+}
+
+void ListScriptRecordingRequest::setRefIdsJson(const std::string &refIdsJson) {
+  refIdsJson_ = refIdsJson;
+  setParameter(std::string("RefIdsJson"), refIdsJson);
+}
+
 std::string ListScriptRecordingRequest::getUuidsJson() const {
   return uuidsJson_;
 }

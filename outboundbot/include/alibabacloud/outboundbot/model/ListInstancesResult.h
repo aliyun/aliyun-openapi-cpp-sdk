@@ -69,7 +69,10 @@ namespace AlibabaCloud
 				explicit ListInstancesResult(const std::string &payload);
 				~ListInstancesResult();
 				std::vector<Instance> getInstances()const;
+				int getTotalCount()const;
 				std::string getMessage()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -78,7 +81,10 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<Instance> instances_;
+				int totalCount_;
 				std::string message_;
+				int pageSize_;
+				int pageNumber_;
 				int httpStatusCode_;
 				std::string code_;
 				bool success_;

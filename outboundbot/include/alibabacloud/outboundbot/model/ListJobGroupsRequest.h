@@ -36,6 +36,8 @@ public:
 	void setSearchText(const std::string &searchText);
 	long getEndTime() const;
 	void setEndTime(long endTime);
+	bool getOnlyMinConcurrencyEnabled() const;
+	void setOnlyMinConcurrencyEnabled(bool onlyMinConcurrencyEnabled);
 	long getStartTime() const;
 	void setStartTime(long startTime);
 	int getPageNumber() const;
@@ -51,6 +53,7 @@ private:
 	bool asyncQuery_;
 	std::string searchText_;
 	long endTime_;
+	bool onlyMinConcurrencyEnabled_;
 	long startTime_;
 	int pageNumber_;
 	std::string instanceId_;

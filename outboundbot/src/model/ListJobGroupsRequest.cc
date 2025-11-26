@@ -52,6 +52,15 @@ void ListJobGroupsRequest::setEndTime(long endTime) {
   setParameter(std::string("EndTime"), std::to_string(endTime));
 }
 
+bool ListJobGroupsRequest::getOnlyMinConcurrencyEnabled() const {
+  return onlyMinConcurrencyEnabled_;
+}
+
+void ListJobGroupsRequest::setOnlyMinConcurrencyEnabled(bool onlyMinConcurrencyEnabled) {
+  onlyMinConcurrencyEnabled_ = onlyMinConcurrencyEnabled;
+  setParameter(std::string("OnlyMinConcurrencyEnabled"), onlyMinConcurrencyEnabled ? "true" : "false");
+}
+
 long ListJobGroupsRequest::getStartTime() const {
   return startTime_;
 }

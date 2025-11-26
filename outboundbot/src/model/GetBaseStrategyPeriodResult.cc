@@ -55,14 +55,16 @@ void GetBaseStrategyPeriodResult::parse(const std::string &payload)
 	}
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["OnlyWeekdays"].isNull())
-		onlyWeekdays_ = value["OnlyWeekdays"].asString() == "true";
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["OnlyWeekdays"].isNull())
+		onlyWeekdays_ = value["OnlyWeekdays"].asString() == "true";
+	if(!value["OnlyWorkdays"].isNull())
+		onlyWorkdays_ = value["OnlyWorkdays"].asString() == "true";
 
 }
 
@@ -74,6 +76,11 @@ std::vector<GetBaseStrategyPeriodResult::TimeFrame> GetBaseStrategyPeriodResult:
 std::string GetBaseStrategyPeriodResult::getMessage()const
 {
 	return message_;
+}
+
+bool GetBaseStrategyPeriodResult::getOnlyWorkdays()const
+{
+	return onlyWorkdays_;
 }
 
 bool GetBaseStrategyPeriodResult::getOnlyWeekdays()const

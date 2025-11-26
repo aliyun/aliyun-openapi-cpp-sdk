@@ -70,6 +70,14 @@ void CreateBatchRepeatJobRequest::setStrategyJson(const std::string &strategyJso
   setParameter(std::string("StrategyJson"), strategyJson);
 }
 
+std::vector<std::string> CreateBatchRepeatJobRequest::getRecallCallingNumber() const {
+  return recallCallingNumber_;
+}
+
+void CreateBatchRepeatJobRequest::setRecallCallingNumber(const std::vector<std::string> &recallCallingNumber) {
+  recallCallingNumber_ = recallCallingNumber;
+}
+
 long CreateBatchRepeatJobRequest::getRingingDuration() const {
   return ringingDuration_;
 }
@@ -86,6 +94,15 @@ std::string CreateBatchRepeatJobRequest::getPriority() const {
 void CreateBatchRepeatJobRequest::setPriority(const std::string &priority) {
   priority_ = priority;
   setParameter(std::string("Priority"), priority);
+}
+
+std::string CreateBatchRepeatJobRequest::getFlashSmsExtras() const {
+  return flashSmsExtras_;
+}
+
+void CreateBatchRepeatJobRequest::setFlashSmsExtras(const std::string &flashSmsExtras) {
+  flashSmsExtras_ = flashSmsExtras;
+  setParameter(std::string("FlashSmsExtras"), flashSmsExtras);
 }
 
 std::vector<std::string> CreateBatchRepeatJobRequest::getCallingNumber() const {

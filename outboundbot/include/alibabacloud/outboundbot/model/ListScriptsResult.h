@@ -36,7 +36,15 @@ namespace AlibabaCloud
 				{
 					struct Script
 					{
+						struct NluProfile
+						{
+							std::string fcFunction;
+							std::string fcRegion;
+							std::string fcHttpTriggerUrl;
+						};
 						std::string status;
+						bool agentLlm;
+						long createTime;
 						std::string scriptDescription;
 						std::string scriptId;
 						bool newBargeInEnable;
@@ -45,12 +53,17 @@ namespace AlibabaCloud
 						std::string scene;
 						bool isDebugDrafted;
 						std::string industry;
+						std::string agentKey;
 						bool isDrafted;
 						bool isPreset;
+						std::string nluAccessType;
 						std::string scriptName;
+						std::string nluEngine;
 						long updateTime;
 						std::string rejectReason;
 						bool longWaitEnable;
+						long agentId;
+						NluProfile nluProfile;
 						bool miniPlaybackEnable;
 						bool emotionEnable;
 					};

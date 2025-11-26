@@ -36,8 +36,12 @@ namespace AlibabaCloud
 				{
 					struct NluProfile
 					{
+						std::string agentKey;
 						std::string secretKey;
 						std::string endpoint;
+						std::string llmAgentId;
+						std::string llmAgentKey;
+						bool supportBeebotPrompts;
 						std::string accessKey;
 						std::string agentId;
 					};

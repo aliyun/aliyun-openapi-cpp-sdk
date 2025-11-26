@@ -69,6 +69,8 @@ void ListScriptRecordingResult::parse(const std::string &payload)
 			scriptRecordingsObject.gmtCreate = std::stol(valueScriptRecordingsScriptRecording["GmtCreate"].asString());
 		if(!valueScriptRecordingsScriptRecording["InnerId"].isNull())
 			scriptRecordingsObject.innerId = valueScriptRecordingsScriptRecording["InnerId"].asString();
+		if(!valueScriptRecordingsScriptRecording["RefId"].isNull())
+			scriptRecordingsObject.refId = valueScriptRecordingsScriptRecording["RefId"].asString();
 		scriptRecordings_.push_back(scriptRecordingsObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

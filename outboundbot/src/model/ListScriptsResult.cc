@@ -84,6 +84,25 @@ void ListScriptsResult::parse(const std::string &payload)
 			scriptObject.emotionEnable = scriptsNodeListScript["EmotionEnable"].asString() == "true";
 		if(!scriptsNodeListScript["IsPreset"].isNull())
 			scriptObject.isPreset = scriptsNodeListScript["IsPreset"].asString() == "true";
+		if(!scriptsNodeListScript["AgentKey"].isNull())
+			scriptObject.agentKey = scriptsNodeListScript["AgentKey"].asString();
+		if(!scriptsNodeListScript["AgentLlm"].isNull())
+			scriptObject.agentLlm = scriptsNodeListScript["AgentLlm"].asString() == "true";
+		if(!scriptsNodeListScript["agentId"].isNull())
+			scriptObject.agentId = std::stol(scriptsNodeListScript["agentId"].asString());
+		if(!scriptsNodeListScript["NluEngine"].isNull())
+			scriptObject.nluEngine = scriptsNodeListScript["NluEngine"].asString();
+		if(!scriptsNodeListScript["NluAccessType"].isNull())
+			scriptObject.nluAccessType = scriptsNodeListScript["NluAccessType"].asString();
+		if(!scriptsNodeListScript["CreateTime"].isNull())
+			scriptObject.createTime = std::stol(scriptsNodeListScript["CreateTime"].asString());
+		auto nluProfileNode = value["NluProfile"];
+		if(!nluProfileNode["FcFunction"].isNull())
+			scriptObject.nluProfile.fcFunction = nluProfileNode["FcFunction"].asString();
+		if(!nluProfileNode["FcRegion"].isNull())
+			scriptObject.nluProfile.fcRegion = nluProfileNode["FcRegion"].asString();
+		if(!nluProfileNode["FcHttpTriggerUrl"].isNull())
+			scriptObject.nluProfile.fcHttpTriggerUrl = nluProfileNode["FcHttpTriggerUrl"].asString();
 		scripts_.list.push_back(scriptObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

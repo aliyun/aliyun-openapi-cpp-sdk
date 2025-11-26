@@ -32,11 +32,14 @@ public:
 	~ListDownloadTasksRequest();
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 
 private:
 	int pageNumber_;
+	std::string instanceId_;
 	int pageSize_;
 };
 } // namespace Model

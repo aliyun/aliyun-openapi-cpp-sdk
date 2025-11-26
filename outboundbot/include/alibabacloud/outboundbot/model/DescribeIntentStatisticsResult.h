@@ -38,20 +38,35 @@ namespace AlibabaCloud
 					std::string intentName;
 					std::string instanceId;
 					int hitNum;
+					std::string rateDisplay;
 					int hitAfterNoAnswer;
 					std::string groupId;
 					std::string intentId;
 				};
 				struct IntentStatisticsItem1
 				{
+					std::string type;
+					std::string intentName;
 					std::string instanceId;
+					int hitNum;
+					int hitAfterNoAnswer;
+					std::string groupId;
+					std::string intentId;
+				};
+				struct IntentStatisticsItem2
+				{
+					std::string intentName;
+					std::string instanceId;
+					int hitAfterNoAnswer;
+					std::string groupId;
+					std::string intentId;
 				};
 
 
 				DescribeIntentStatisticsResult();
 				explicit DescribeIntentStatisticsResult(const std::string &payload);
 				~DescribeIntentStatisticsResult();
-				std::vector<IntentStatisticsItem1> getIntentsAfterNoAnswer()const;
+				std::vector<IntentStatisticsItem2> getIntentsAfterNoAnswer()const;
 				int getGlobalIntentNum()const;
 				std::vector<IntentStatisticsItem> getProcessIntents()const;
 				std::string getMessage()const;
@@ -59,14 +74,14 @@ namespace AlibabaCloud
 				int getHttpStatusCode()const;
 				std::string getCode()const;
 				int getProcessIntentNum()const;
-				std::vector<IntentStatisticsItem> getGlobalIntents()const;
+				std::vector<IntentStatisticsItem1> getGlobalIntents()const;
 				bool getSuccess()const;
 				std::string getGroupId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<IntentStatisticsItem1> intentsAfterNoAnswer_;
+				std::vector<IntentStatisticsItem2> intentsAfterNoAnswer_;
 				int globalIntentNum_;
 				std::vector<IntentStatisticsItem> processIntents_;
 				std::string message_;
@@ -74,7 +89,7 @@ namespace AlibabaCloud
 				int httpStatusCode_;
 				std::string code_;
 				int processIntentNum_;
-				std::vector<IntentStatisticsItem> globalIntents_;
+				std::vector<IntentStatisticsItem1> globalIntents_;
 				bool success_;
 				std::string groupId_;
 

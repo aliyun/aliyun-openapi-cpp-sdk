@@ -30,12 +30,15 @@ class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ListChatbotInstancesRequest : public RpcSe
 public:
 	ListChatbotInstancesRequest();
 	~ListChatbotInstancesRequest();
+	std::string getAgentKey() const;
+	void setAgentKey(const std::string &agentKey);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 
 private:
+	std::string agentKey_;
 	int pageNumber_;
 	int pageSize_;
 };

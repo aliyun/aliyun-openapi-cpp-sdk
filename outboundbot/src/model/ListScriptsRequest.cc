@@ -25,6 +25,15 @@ ListScriptsRequest::ListScriptsRequest()
 
 ListScriptsRequest::~ListScriptsRequest() {}
 
+std::string ListScriptsRequest::getScriptName() const {
+  return scriptName_;
+}
+
+void ListScriptsRequest::setScriptName(const std::string &scriptName) {
+  scriptName_ = scriptName;
+  setParameter(std::string("ScriptName"), scriptName);
+}
+
 int ListScriptsRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -32,6 +41,15 @@ int ListScriptsRequest::getPageNumber() const {
 void ListScriptsRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+std::string ListScriptsRequest::getNluEngine() const {
+  return nluEngine_;
+}
+
+void ListScriptsRequest::setNluEngine(const std::string &nluEngine) {
+  nluEngine_ = nluEngine;
+  setParameter(std::string("NluEngine"), nluEngine);
 }
 
 std::string ListScriptsRequest::getInstanceId() const {

@@ -43,6 +43,13 @@ namespace AlibabaCloud
 					int noAnswerNum;
 					std::string groupId;
 				};
+				struct HangUpDialogueNodesItem
+				{
+					std::string nodeName;
+					std::string nodeId;
+					std::string rateDisplay;
+					int hangUpNum;
+				};
 
 
 				DescribeDialogueNodeStatisticsResult();
@@ -52,6 +59,7 @@ namespace AlibabaCloud
 				std::vector<NoAnswerDialogueNode> getNoAnswerDialogueNodes()const;
 				std::string getInstanceId()const;
 				int getHttpStatusCode()const;
+				std::vector<HangUpDialogueNodesItem> getHangUpDialogueNodes()const;
 				int getTotalCompleted()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -64,6 +72,7 @@ namespace AlibabaCloud
 				std::vector<NoAnswerDialogueNode> noAnswerDialogueNodes_;
 				std::string instanceId_;
 				int httpStatusCode_;
+				std::vector<HangUpDialogueNodesItem> hangUpDialogueNodes_;
 				int totalCompleted_;
 				std::string code_;
 				bool success_;

@@ -68,6 +68,8 @@ void ModifyJobGroupResult::parse(const std::string &payload)
 		jobGroup_.priority = jobGroupNode["Priority"].asString();
 	if(!jobGroupNode["MinConcurrency"].isNull())
 		jobGroup_.minConcurrency = std::stol(jobGroupNode["MinConcurrency"].asString());
+	if(!jobGroupNode["FlashSmsExtras"].isNull())
+		jobGroup_.flashSmsExtras = jobGroupNode["FlashSmsExtras"].asString();
 	auto exportProgressNode = jobGroupNode["ExportProgress"];
 	if(!exportProgressNode["Status"].isNull())
 		jobGroup_.exportProgress.status = exportProgressNode["Status"].asString();

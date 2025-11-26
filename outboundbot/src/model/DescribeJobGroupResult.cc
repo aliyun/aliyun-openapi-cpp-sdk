@@ -147,6 +147,8 @@ void DescribeJobGroupResult::parse(const std::string &payload)
 		jobGroup_.strategy.strategyDescription = strategyNode["StrategyDescription"].asString();
 	if(!strategyNode["RepeatBy"].isNull())
 		jobGroup_.strategy.repeatBy = strategyNode["RepeatBy"].asString();
+	if(!strategyNode["Repeatable"].isNull())
+		jobGroup_.strategy.repeatable = strategyNode["Repeatable"].asString() == "true";
 	auto allWorkingTimeNode = strategyNode["WorkingTime"]["TimeFrame"];
 	for (auto strategyNodeWorkingTimeTimeFrame : allWorkingTimeNode)
 	{
@@ -178,9 +180,17 @@ void DescribeJobGroupResult::parse(const std::string &payload)
 		jobGroup_.result.clientHangupNum = std::stoi(resultNode["ClientHangupNum"].asString());
 	if(!resultNode["UnrecognizedNum"].isNull())
 		jobGroup_.result.unrecognizedNum = std::stoi(resultNode["UnrecognizedNum"].asString());
+	auto flashSmsExtrasNode = jobGroupNode["FlashSmsExtras"];
+	if(!flashSmsExtrasNode["ConfigId"].isNull())
+		jobGroup_.flashSmsExtras.configId = flashSmsExtrasNode["ConfigId"].asString();
+	if(!flashSmsExtrasNode["TemplateId"].isNull())
+		jobGroup_.flashSmsExtras.templateId = flashSmsExtrasNode["TemplateId"].asString();
 		auto allCallingNumbers = jobGroupNode["CallingNumbers"]["String"];
 		for (auto value : allCallingNumbers)
 			jobGroup_.callingNumbers.push_back(value.asString());
+		auto allRecallCallingNumbers = jobGroupNode["RecallCallingNumbers"]["String"];
+		for (auto value : allRecallCallingNumbers)
+			jobGroup_.recallCallingNumbers.push_back(value.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())

@@ -32,11 +32,14 @@ public:
 	~ImportScriptRequest();
 	std::string getSignatureUrl() const;
 	void setSignatureUrl(const std::string &signatureUrl);
+	std::string getNluEngine() const;
+	void setNluEngine(const std::string &nluEngine);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
 private:
 	std::string signatureUrl_;
+	std::string nluEngine_;
 	std::string instanceId_;
 };
 } // namespace Model

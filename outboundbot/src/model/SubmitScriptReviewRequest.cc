@@ -52,3 +52,12 @@ void SubmitScriptReviewRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string SubmitScriptReviewRequest::getFrom() const {
+  return from_;
+}
+
+void SubmitScriptReviewRequest::setFrom(const std::string &from) {
+  from_ = from;
+  setParameter(std::string("From"), from);
+}
+

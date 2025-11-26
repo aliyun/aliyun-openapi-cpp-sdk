@@ -34,22 +34,13 @@ void QueryJobsWithResultRequest::setHasReachedEndOfFlowFilter(bool hasReachedEnd
   setParameter(std::string("HasReachedEndOfFlowFilter"), hasReachedEndOfFlowFilter ? "true" : "false");
 }
 
-bool QueryJobsWithResultRequest::getHasAnsweredFilter() const {
-  return hasAnsweredFilter_;
+long QueryJobsWithResultRequest::getEndActualTimeFilter() const {
+  return endActualTimeFilter_;
 }
 
-void QueryJobsWithResultRequest::setHasAnsweredFilter(bool hasAnsweredFilter) {
-  hasAnsweredFilter_ = hasAnsweredFilter;
-  setParameter(std::string("HasAnsweredFilter"), hasAnsweredFilter ? "true" : "false");
-}
-
-std::string QueryJobsWithResultRequest::getTaskStatusFilter() const {
-  return taskStatusFilter_;
-}
-
-void QueryJobsWithResultRequest::setTaskStatusFilter(const std::string &taskStatusFilter) {
-  taskStatusFilter_ = taskStatusFilter;
-  setParameter(std::string("TaskStatusFilter"), taskStatusFilter);
+void QueryJobsWithResultRequest::setEndActualTimeFilter(long endActualTimeFilter) {
+  endActualTimeFilter_ = endActualTimeFilter;
+  setParameter(std::string("EndActualTimeFilter"), std::to_string(endActualTimeFilter));
 }
 
 int QueryJobsWithResultRequest::getPageNumber() const {
@@ -61,6 +52,59 @@ void QueryJobsWithResultRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+bool QueryJobsWithResultRequest::getHasHangUpByRejectionFilter() const {
+  return hasHangUpByRejectionFilter_;
+}
+
+void QueryJobsWithResultRequest::setHasHangUpByRejectionFilter(bool hasHangUpByRejectionFilter) {
+  hasHangUpByRejectionFilter_ = hasHangUpByRejectionFilter;
+  setParameter(std::string("HasHangUpByRejectionFilter"), hasHangUpByRejectionFilter ? "true" : "false");
+}
+
+int QueryJobsWithResultRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void QueryJobsWithResultRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long QueryJobsWithResultRequest::getStartActualTimeFilter() const {
+  return startActualTimeFilter_;
+}
+
+void QueryJobsWithResultRequest::setStartActualTimeFilter(long startActualTimeFilter) {
+  startActualTimeFilter_ = startActualTimeFilter;
+  setParameter(std::string("StartActualTimeFilter"), std::to_string(startActualTimeFilter));
+}
+
+bool QueryJobsWithResultRequest::getHasAnsweredFilter() const {
+  return hasAnsweredFilter_;
+}
+
+void QueryJobsWithResultRequest::setHasAnsweredFilter(bool hasAnsweredFilter) {
+  hasAnsweredFilter_ = hasAnsweredFilter;
+  setParameter(std::string("HasAnsweredFilter"), hasAnsweredFilter ? "true" : "false");
+}
+
+std::vector<std::string> QueryJobsWithResultRequest::getLabelsJson() const {
+  return labelsJson_;
+}
+
+void QueryJobsWithResultRequest::setLabelsJson(const std::vector<std::string> &labelsJson) {
+  labelsJson_ = labelsJson;
+}
+
+std::string QueryJobsWithResultRequest::getTaskStatusFilter() const {
+  return taskStatusFilter_;
+}
+
+void QueryJobsWithResultRequest::setTaskStatusFilter(const std::string &taskStatusFilter) {
+  taskStatusFilter_ = taskStatusFilter;
+  setParameter(std::string("TaskStatusFilter"), taskStatusFilter);
+}
+
 std::string QueryJobsWithResultRequest::getQueryText() const {
   return queryText_;
 }
@@ -70,13 +114,13 @@ void QueryJobsWithResultRequest::setQueryText(const std::string &queryText) {
   setParameter(std::string("QueryText"), queryText);
 }
 
-bool QueryJobsWithResultRequest::getHasHangUpByRejectionFilter() const {
-  return hasHangUpByRejectionFilter_;
+std::string QueryJobsWithResultRequest::getJobFailureReasonsFilter() const {
+  return jobFailureReasonsFilter_;
 }
 
-void QueryJobsWithResultRequest::setHasHangUpByRejectionFilter(bool hasHangUpByRejectionFilter) {
-  hasHangUpByRejectionFilter_ = hasHangUpByRejectionFilter;
-  setParameter(std::string("HasHangUpByRejectionFilter"), hasHangUpByRejectionFilter ? "true" : "false");
+void QueryJobsWithResultRequest::setJobFailureReasonsFilter(const std::string &jobFailureReasonsFilter) {
+  jobFailureReasonsFilter_ = jobFailureReasonsFilter;
+  setParameter(std::string("JobFailureReasonsFilter"), jobFailureReasonsFilter);
 }
 
 std::string QueryJobsWithResultRequest::getInstanceId() const {
@@ -95,15 +139,6 @@ std::string QueryJobsWithResultRequest::getJobStatusFilter() const {
 void QueryJobsWithResultRequest::setJobStatusFilter(const std::string &jobStatusFilter) {
   jobStatusFilter_ = jobStatusFilter;
   setParameter(std::string("JobStatusFilter"), jobStatusFilter);
-}
-
-int QueryJobsWithResultRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void QueryJobsWithResultRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 std::string QueryJobsWithResultRequest::getJobGroupId() const {

@@ -74,6 +74,27 @@ void DescribeScriptResult::parse(const std::string &payload)
 		script_.longWaitEnable = scriptNode["LongWaitEnable"].asString() == "true";
 	if(!scriptNode["EmotionEnable"].isNull())
 		script_.emotionEnable = scriptNode["EmotionEnable"].asString() == "true";
+	if(!scriptNode["AgentId"].isNull())
+		script_.agentId = std::stol(scriptNode["AgentId"].asString());
+	if(!scriptNode["AgentKey"].isNull())
+		script_.agentKey = scriptNode["AgentKey"].asString();
+	if(!scriptNode["AgentLlm"].isNull())
+		script_.agentLlm = scriptNode["AgentLlm"].asString() == "true";
+	if(!scriptNode["ChatConfig"].isNull())
+		script_.chatConfig = scriptNode["ChatConfig"].asString();
+	if(!scriptNode["NluEngine"].isNull())
+		script_.nluEngine = scriptNode["NluEngine"].asString();
+	if(!scriptNode["LabelConfig"].isNull())
+		script_.labelConfig = scriptNode["LabelConfig"].asString();
+	auto nluProfileNode = scriptNode["NluProfile"];
+	if(!nluProfileNode["FcFunction"].isNull())
+		script_.nluProfile.fcFunction = nluProfileNode["FcFunction"].asString();
+	if(!nluProfileNode["FcRegion"].isNull())
+		script_.nluProfile.fcRegion = nluProfileNode["FcRegion"].asString();
+	if(!nluProfileNode["FcHttpTriggerUrl"].isNull())
+		script_.nluProfile.fcHttpTriggerUrl = nluProfileNode["FcHttpTriggerUrl"].asString();
+	if(!nluProfileNode["SupportBeebotPrompts"].isNull())
+		script_.nluProfile.supportBeebotPrompts = nluProfileNode["SupportBeebotPrompts"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Success"].isNull())

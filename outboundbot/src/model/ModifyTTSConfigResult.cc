@@ -52,6 +52,8 @@ void ModifyTTSConfigResult::parse(const std::string &payload)
 		tTSConfig_.instanceId = tTSConfigNode["InstanceId"].asString();
 	if(!tTSConfigNode["ScriptId"].isNull())
 		tTSConfig_.scriptId = tTSConfigNode["ScriptId"].asString();
+	if(!tTSConfigNode["PitchRate"].isNull())
+		tTSConfig_.pitchRate = tTSConfigNode["PitchRate"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())

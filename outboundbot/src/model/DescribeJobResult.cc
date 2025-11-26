@@ -150,6 +150,12 @@ void DescribeJobResult::parse(const std::string &payload)
 			taskObject.hangUpDirection = jobNodeTasksTask["HangUpDirection"].asString();
 		if(!jobNodeTasksTask["RingingDuration"].isNull())
 			taskObject.ringingDuration = std::stol(jobNodeTasksTask["RingingDuration"].asString());
+		if(!jobNodeTasksTask["SipCode"].isNull())
+			taskObject.sipCode = jobNodeTasksTask["SipCode"].asString();
+		if(!jobNodeTasksTask["RealRingingDuration"].isNull())
+			taskObject.realRingingDuration = std::stol(jobNodeTasksTask["RealRingingDuration"].asString());
+		if(!jobNodeTasksTask["SipDuration"].isNull())
+			taskObject.sipDuration = std::stol(jobNodeTasksTask["SipDuration"].asString());
 		auto allConversationNode = jobNodeTasksTask["Conversation"]["ConversationDetail"];
 		for (auto jobNodeTasksTaskConversationConversationDetail : allConversationNode)
 		{

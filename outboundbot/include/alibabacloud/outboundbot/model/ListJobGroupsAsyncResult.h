@@ -67,6 +67,7 @@ namespace AlibabaCloud
 					std::string scriptVersion;
 					std::string scriptId;
 					std::string jobGroupDescription;
+					int minConcurrency;
 					std::string jobGroupId;
 					int totalCallNum;
 					std::string scriptName;

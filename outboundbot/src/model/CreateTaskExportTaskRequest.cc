@@ -178,6 +178,15 @@ void CreateTaskExportTaskRequest::setHasReachedEndOfFlow(bool hasReachedEndOfFlo
   setParameter(std::string("HasReachedEndOfFlow"), hasReachedEndOfFlow ? "true" : "false");
 }
 
+std::string CreateTaskExportTaskRequest::getCallingNumber() const {
+  return callingNumber_;
+}
+
+void CreateTaskExportTaskRequest::setCallingNumber(const std::string &callingNumber) {
+  callingNumber_ = callingNumber;
+  setParameter(std::string("CallingNumber"), callingNumber);
+}
+
 std::string CreateTaskExportTaskRequest::getInstanceId() const {
   return instanceId_;
 }

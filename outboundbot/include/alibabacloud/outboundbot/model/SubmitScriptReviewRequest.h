@@ -36,11 +36,14 @@ public:
 	void setScriptId(const std::string &scriptId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getFrom() const;
+	void setFrom(const std::string &from);
 
 private:
 	std::string description_;
 	std::string scriptId_;
 	std::string instanceId_;
+	std::string from_;
 };
 } // namespace Model
 } // namespace OutboundBot

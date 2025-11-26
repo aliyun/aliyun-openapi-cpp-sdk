@@ -34,13 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct SearchTaskInfo
 				{
+					struct Label
+					{
+						std::string v;
+						std::string k;
+					};
 					bool hasAnswered;
 					bool hasHangUpByRejection;
 					std::string calledNumber;
 					std::string taskId;
 					std::string taskStatusName;
+					std::vector<SearchTaskInfo::Label> labels1;
 					std::vector<std::string> dialExceptionCodes;
 					bool hasReachedEndOfFlow;
+					std::string callingNumber;
 					int jobStatus;
 					std::string dialException;
 					std::string jobStatusName;
@@ -63,15 +70,22 @@ namespace AlibabaCloud
 					std::string jobStatusString;
 					int recordingDuration;
 				};
+				struct Label2
+				{
+					std::vector<std::string> valueList;
+					std::string name;
+				};
 
 
 				SearchTaskResult();
 				explicit SearchTaskResult(const std::string &payload);
 				~SearchTaskResult();
+				std::vector<std::string> getVariableNames()const;
 				std::string getMessage()const;
 				int getPageSize()const;
 				long getTotal()const;
 				int getHttpStatusCode()const;
+				std::vector<Label2> getLabels()const;
 				int getPageIndex()const;
 				std::string getCode()const;
 				std::vector<SearchTaskInfo> getSearchTaskInfoList()const;
@@ -80,10 +94,12 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> variableNames_;
 				std::string message_;
 				int pageSize_;
 				long total_;
 				int httpStatusCode_;
+				std::vector<Label2> labels_;
 				int pageIndex_;
 				std::string code_;
 				std::vector<SearchTaskInfo> searchTaskInfoList_;

@@ -25,6 +25,15 @@ ModifyScriptRequest::ModifyScriptRequest()
 
 ModifyScriptRequest::~ModifyScriptRequest() {}
 
+std::string ModifyScriptRequest::getChatConfig() const {
+  return chatConfig_;
+}
+
+void ModifyScriptRequest::setChatConfig(const std::string &chatConfig) {
+  chatConfig_ = chatConfig;
+  setParameter(std::string("ChatConfig"), chatConfig);
+}
+
 std::string ModifyScriptRequest::getTtsConfig() const {
   return ttsConfig_;
 }
@@ -52,6 +61,24 @@ void ModifyScriptRequest::setScriptName(const std::string &scriptName) {
   setParameter(std::string("ScriptName"), scriptName);
 }
 
+std::string ModifyScriptRequest::getNluEngine() const {
+  return nluEngine_;
+}
+
+void ModifyScriptRequest::setNluEngine(const std::string &nluEngine) {
+  nluEngine_ = nluEngine;
+  setParameter(std::string("NluEngine"), nluEngine);
+}
+
+std::string ModifyScriptRequest::getLabelConfig() const {
+  return labelConfig_;
+}
+
+void ModifyScriptRequest::setLabelConfig(const std::string &labelConfig) {
+  labelConfig_ = labelConfig;
+  setParameter(std::string("LabelConfig"), labelConfig);
+}
+
 std::string ModifyScriptRequest::getScene() const {
   return scene_;
 }
@@ -70,6 +97,15 @@ void ModifyScriptRequest::setScriptId(const std::string &scriptId) {
   setParameter(std::string("ScriptId"), scriptId);
 }
 
+std::string ModifyScriptRequest::getNluAccessType() const {
+  return nluAccessType_;
+}
+
+void ModifyScriptRequest::setNluAccessType(const std::string &nluAccessType) {
+  nluAccessType_ = nluAccessType;
+  setParameter(std::string("NluAccessType"), nluAccessType);
+}
+
 std::vector<std::string> ModifyScriptRequest::getScriptWaveform() const {
   return scriptWaveform_;
 }
@@ -85,6 +121,15 @@ std::string ModifyScriptRequest::getAsrConfig() const {
 void ModifyScriptRequest::setAsrConfig(const std::string &asrConfig) {
   asrConfig_ = asrConfig;
   setParameter(std::string("AsrConfig"), asrConfig);
+}
+
+bool ModifyScriptRequest::getAgentLlm() const {
+  return agentLlm_;
+}
+
+void ModifyScriptRequest::setAgentLlm(bool agentLlm) {
+  agentLlm_ = agentLlm;
+  setParameter(std::string("AgentLlm"), agentLlm ? "true" : "false");
 }
 
 std::string ModifyScriptRequest::getMiniPlaybackConfigListJsonString() const {
@@ -105,6 +150,15 @@ void ModifyScriptRequest::setEmotionEnable(bool emotionEnable) {
   setParameter(std::string("EmotionEnable"), emotionEnable ? "true" : "false");
 }
 
+long ModifyScriptRequest::getAgentId() const {
+  return agentId_;
+}
+
+void ModifyScriptRequest::setAgentId(long agentId) {
+  agentId_ = agentId;
+  setParameter(std::string("AgentId"), std::to_string(agentId));
+}
+
 std::string ModifyScriptRequest::getNlsConfig() const {
   return nlsConfig_;
 }
@@ -121,6 +175,15 @@ bool ModifyScriptRequest::getNewBargeInEnable() const {
 void ModifyScriptRequest::setNewBargeInEnable(bool newBargeInEnable) {
   newBargeInEnable_ = newBargeInEnable;
   setParameter(std::string("NewBargeInEnable"), newBargeInEnable ? "true" : "false");
+}
+
+std::string ModifyScriptRequest::getAgentKey() const {
+  return agentKey_;
+}
+
+void ModifyScriptRequest::setAgentKey(const std::string &agentKey) {
+  agentKey_ = agentKey;
+  setParameter(std::string("AgentKey"), agentKey);
 }
 
 bool ModifyScriptRequest::getMiniPlaybackEnable() const {

@@ -44,6 +44,8 @@ public:
 	void setAppKey(const std::string &appKey);
 	std::string getSpeechRate() const;
 	void setSpeechRate(const std::string &speechRate);
+	std::string getPitchRate() const;
+	void setPitchRate(const std::string &pitchRate);
 
 private:
 	std::string voice_;
@@ -53,6 +55,7 @@ private:
 	std::string instanceId_;
 	std::string appKey_;
 	std::string speechRate_;
+	std::string pitchRate_;
 };
 } // namespace Model
 } // namespace OutboundBot

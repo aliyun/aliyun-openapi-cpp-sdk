@@ -58,6 +58,10 @@ public:
 	void setJobGroupNameQuery(const std::string &jobGroupNameQuery);
 	std::string getTaskId() const;
 	void setTaskId(const std::string &taskId);
+	std::vector<std::string> getLabelsJson() const;
+	void setLabelsJson(const std::vector<std::string> &labelsJson);
+	std::string getCallingNumber() const;
+	void setCallingNumber(const std::string &callingNumber);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	long getRecordingDurationGte() const;
@@ -92,6 +96,8 @@ private:
 	std::string taskStatusStringList_;
 	std::string jobGroupNameQuery_;
 	std::string taskId_;
+	std::vector<std::string> labelsJson_;
+	std::string callingNumber_;
 	std::string instanceId_;
 	long recordingDurationGte_;
 	long callDurationLte_;

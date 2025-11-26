@@ -125,6 +125,9 @@ void CreateJobGroupResult::parse(const std::string &payload)
 		auto allCallingNumbers = jobGroupNode["CallingNumbers"]["String"];
 		for (auto value : allCallingNumbers)
 			jobGroup_.callingNumbers.push_back(value.asString());
+		auto allRecallCallingNumbers = jobGroupNode["RecallCallingNumbers"]["String"];
+		for (auto value : allRecallCallingNumbers)
+			jobGroup_.recallCallingNumbers.push_back(value.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())

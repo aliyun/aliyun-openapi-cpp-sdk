@@ -32,6 +32,8 @@ public:
 	~SaveBaseStrategyPeriodRequest();
 	int getStrategyLevel() const;
 	void setStrategyLevel(int strategyLevel);
+	bool getOnlyWorkdays() const;
+	void setOnlyWorkdays(bool onlyWorkdays);
 	std::string getEntryId() const;
 	void setEntryId(const std::string &entryId);
 	bool getOnlyWeekdays() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	int strategyLevel_;
+	bool onlyWorkdays_;
 	std::string entryId_;
 	bool onlyWeekdays_;
 	std::string workingTimeFramesJson_;
