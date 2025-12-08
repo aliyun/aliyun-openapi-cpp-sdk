@@ -32,6 +32,8 @@ public:
 	~GetAIVideoTagResultRequest();
 	std::string getResourceOwnerId() const;
 	void setResourceOwnerId(const std::string &resourceOwnerId);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -40,16 +42,14 @@ public:
 	void setOwnerId(const std::string &ownerId);
 	std::string getMediaId() const;
 	void setMediaId(const std::string &mediaId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 
 private:
 	std::string resourceOwnerId_;
+	std::string accessKeyId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string ownerId_;
 	std::string mediaId_;
-	std::string accessKeyId_;
 };
 } // namespace Model
 } // namespace Vod

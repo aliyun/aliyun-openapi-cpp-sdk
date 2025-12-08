@@ -30,6 +30,8 @@ class ALIBABACLOUD_VOD_EXPORT GetVideoListRequest : public RpcServiceRequest {
 public:
 	GetVideoListRequest();
 	~GetVideoListRequest();
+	std::string getReferenceIds() const;
+	void setReferenceIds(const std::string &referenceIds);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
 	std::string getStorageLocation() const;
@@ -48,6 +50,7 @@ public:
 	void setStatus(const std::string &status);
 
 private:
+	std::string referenceIds_;
 	std::string startTime_;
 	std::string storageLocation_;
 	long cateId_;

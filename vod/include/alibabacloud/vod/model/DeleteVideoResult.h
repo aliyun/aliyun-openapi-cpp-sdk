@@ -39,12 +39,14 @@ namespace AlibabaCloud
 				~DeleteVideoResult();
 				std::vector<std::string> getForbiddenVideoIds()const;
 				std::vector<std::string> getNonExistVideoIds()const;
+				std::vector<std::string> getNonExistReferenceIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<std::string> forbiddenVideoIds_;
 				std::vector<std::string> nonExistVideoIds_;
+				std::vector<std::string> nonExistReferenceIds_;
 
 			};
 		}

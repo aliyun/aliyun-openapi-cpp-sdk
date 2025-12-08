@@ -151,6 +151,15 @@ void GetPlayInfoRequest::setResultType(const std::string &resultType) {
   setParameter(std::string("ResultType"), resultType);
 }
 
+std::string GetPlayInfoRequest::getReferenceId() const {
+  return referenceId_;
+}
+
+void GetPlayInfoRequest::setReferenceId(const std::string &referenceId) {
+  referenceId_ = referenceId;
+  setParameter(std::string("ReferenceId"), referenceId);
+}
+
 std::string GetPlayInfoRequest::getAdditionType() const {
   return additionType_;
 }

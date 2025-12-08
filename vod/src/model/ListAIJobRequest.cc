@@ -34,6 +34,15 @@ void ListAIJobRequest::setResourceOwnerId(const std::string &resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), resourceOwnerId);
 }
 
+std::string ListAIJobRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void ListAIJobRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
 std::string ListAIJobRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -59,15 +68,6 @@ std::string ListAIJobRequest::getOwnerId() const {
 void ListAIJobRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string ListAIJobRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void ListAIJobRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
 std::string ListAIJobRequest::getJobIds() const {

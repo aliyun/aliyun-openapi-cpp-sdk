@@ -89,6 +89,8 @@ void GetVideoInfosResult::parse(const std::string &payload)
 			videoListObject.restoreExpiration = valueVideoListVideo["RestoreExpiration"].asString();
 		if(!valueVideoListVideo["UserData"].isNull())
 			videoListObject.userData = valueVideoListVideo["UserData"].asString();
+		if(!valueVideoListVideo["ReferenceId"].isNull())
+			videoListObject.referenceId = valueVideoListVideo["ReferenceId"].asString();
 		auto allThumbnailListNode = valueVideoListVideo["ThumbnailList"]["Thumbnail"];
 		for (auto valueVideoListVideoThumbnailListThumbnail : allThumbnailListNode)
 		{
@@ -105,6 +107,9 @@ void GetVideoInfosResult::parse(const std::string &payload)
 	auto allNonExistVideoIds = value["NonExistVideoIds"]["VideoId"];
 	for (const auto &item : allNonExistVideoIds)
 		nonExistVideoIds_.push_back(item.asString());
+	auto allNonExistReferenceIds = value["NonExistReferenceIds"]["ReferenceId"];
+	for (const auto &item : allNonExistReferenceIds)
+		nonExistReferenceIds_.push_back(item.asString());
 
 }
 
@@ -116,5 +121,10 @@ std::vector<GetVideoInfosResult::Video> GetVideoInfosResult::getVideoList()const
 std::vector<std::string> GetVideoInfosResult::getNonExistVideoIds()const
 {
 	return nonExistVideoIds_;
+}
+
+std::vector<std::string> GetVideoInfosResult::getNonExistReferenceIds()const
+{
+	return nonExistReferenceIds_;
 }
 

@@ -108,6 +108,15 @@ void SubmitSnapshotJobRequest::setVideoId(const std::string &videoId) {
   setParameter(std::string("VideoId"), videoId);
 }
 
+std::string SubmitSnapshotJobRequest::getReferenceId() const {
+  return referenceId_;
+}
+
+void SubmitSnapshotJobRequest::setReferenceId(const std::string &referenceId) {
+  referenceId_ = referenceId;
+  setParameter(std::string("ReferenceId"), referenceId);
+}
+
 std::string SubmitSnapshotJobRequest::getWidth() const {
   return width_;
 }

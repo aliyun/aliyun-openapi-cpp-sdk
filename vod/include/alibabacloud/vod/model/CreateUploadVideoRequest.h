@@ -52,6 +52,8 @@ public:
 	void setCustomMediaInfo(const std::string &customMediaInfo);
 	std::string getIP() const;
 	void setIP(const std::string &iP);
+	std::string getReferenceId() const;
+	void setReferenceId(const std::string &referenceId);
 	std::string getTags() const;
 	void setTags(const std::string &tags);
 	std::string getFileName() const;
@@ -73,6 +75,7 @@ private:
 	std::string workflowId_;
 	std::string customMediaInfo_;
 	std::string iP_;
+	std::string referenceId_;
 	std::string tags_;
 	std::string fileName_;
 	std::string templateGroupId_;

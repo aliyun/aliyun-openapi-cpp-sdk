@@ -59,6 +59,16 @@ void GetAppInfosResult::parse(const std::string &payload)
 			appInfoListObject.modificationTime = valueAppInfoListAppInfo["ModificationTime"].asString();
 		if(!valueAppInfoListAppInfo["ResourceGroupId"].isNull())
 			appInfoListObject.resourceGroupId = valueAppInfoListAppInfo["ResourceGroupId"].asString();
+		auto allTagsNode = valueAppInfoListAppInfo["Tags"]["Tag"];
+		for (auto valueAppInfoListAppInfoTagsTag : allTagsNode)
+		{
+			AppInfo::Tag tagsObject;
+			if(!valueAppInfoListAppInfoTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueAppInfoListAppInfoTagsTag["TagKey"].asString();
+			if(!valueAppInfoListAppInfoTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueAppInfoListAppInfoTagsTag["TagValue"].asString();
+			appInfoListObject.tags.push_back(tagsObject);
+		}
 		appInfoList_.push_back(appInfoListObject);
 	}
 	auto allNonExistAppIds = value["NonExistAppIds"]["AppId"];

@@ -25,6 +25,15 @@ GetVideoListRequest::GetVideoListRequest()
 
 GetVideoListRequest::~GetVideoListRequest() {}
 
+std::string GetVideoListRequest::getReferenceIds() const {
+  return referenceIds_;
+}
+
+void GetVideoListRequest::setReferenceIds(const std::string &referenceIds) {
+  referenceIds_ = referenceIds;
+  setParameter(std::string("ReferenceIds"), referenceIds);
+}
+
 std::string GetVideoListRequest::getStartTime() const {
   return startTime_;
 }

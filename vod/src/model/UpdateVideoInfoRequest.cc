@@ -97,6 +97,15 @@ void UpdateVideoInfoRequest::setVideoId(const std::string &videoId) {
   setParameter(std::string("VideoId"), videoId);
 }
 
+std::string UpdateVideoInfoRequest::getReferenceId() const {
+  return referenceId_;
+}
+
+void UpdateVideoInfoRequest::setReferenceId(const std::string &referenceId) {
+  referenceId_ = referenceId;
+  setParameter(std::string("ReferenceId"), referenceId);
+}
+
 std::string UpdateVideoInfoRequest::getTags() const {
   return tags_;
 }

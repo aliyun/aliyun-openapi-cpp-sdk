@@ -34,6 +34,15 @@ void DeleteStreamRequest::setVideoId(const std::string &videoId) {
   setParameter(std::string("VideoId"), videoId);
 }
 
+std::string DeleteStreamRequest::getReferenceId() const {
+  return referenceId_;
+}
+
+void DeleteStreamRequest::setReferenceId(const std::string &referenceId) {
+  referenceId_ = referenceId;
+  setParameter(std::string("ReferenceId"), referenceId);
+}
+
 std::string DeleteStreamRequest::getJobIds() const {
   return jobIds_;
 }

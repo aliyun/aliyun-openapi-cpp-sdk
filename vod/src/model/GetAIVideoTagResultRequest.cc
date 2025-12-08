@@ -34,6 +34,15 @@ void GetAIVideoTagResultRequest::setResourceOwnerId(const std::string &resourceO
   setParameter(std::string("ResourceOwnerId"), resourceOwnerId);
 }
 
+std::string GetAIVideoTagResultRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void GetAIVideoTagResultRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
 std::string GetAIVideoTagResultRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -68,14 +77,5 @@ std::string GetAIVideoTagResultRequest::getMediaId() const {
 void GetAIVideoTagResultRequest::setMediaId(const std::string &mediaId) {
   mediaId_ = mediaId;
   setParameter(std::string("MediaId"), mediaId);
-}
-
-std::string GetAIVideoTagResultRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void GetAIVideoTagResultRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

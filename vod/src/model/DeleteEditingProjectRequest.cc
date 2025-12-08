@@ -34,6 +34,15 @@ void DeleteEditingProjectRequest::setResourceOwnerId(const std::string &resource
   setParameter(std::string("ResourceOwnerId"), resourceOwnerId);
 }
 
+std::string DeleteEditingProjectRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DeleteEditingProjectRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
 std::string DeleteEditingProjectRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -68,14 +77,5 @@ std::string DeleteEditingProjectRequest::getOwnerId() const {
 void DeleteEditingProjectRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string DeleteEditingProjectRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DeleteEditingProjectRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

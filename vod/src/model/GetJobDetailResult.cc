@@ -94,6 +94,36 @@ void GetJobDetailResult::parse(const std::string &payload)
 		aIJobDetail_.createTime = aIJobDetailNode["CreateTime"].asString();
 	if(!aIJobDetailNode["CompleteTime"].isNull())
 		aIJobDetail_.completeTime = aIJobDetailNode["CompleteTime"].asString();
+	auto workflowTaskDetailNode = value["WorkflowTaskDetail"];
+	if(!workflowTaskDetailNode["TaskId"].isNull())
+		workflowTaskDetail_.taskId = workflowTaskDetailNode["TaskId"].asString();
+	if(!workflowTaskDetailNode["Status"].isNull())
+		workflowTaskDetail_.status = workflowTaskDetailNode["Status"].asString();
+	if(!workflowTaskDetailNode["TaskInput"].isNull())
+		workflowTaskDetail_.taskInput = workflowTaskDetailNode["TaskInput"].asString();
+	if(!workflowTaskDetailNode["CreateTime"].isNull())
+		workflowTaskDetail_.createTime = workflowTaskDetailNode["CreateTime"].asString();
+	if(!workflowTaskDetailNode["FinishTime"].isNull())
+		workflowTaskDetail_.finishTime = workflowTaskDetailNode["FinishTime"].asString();
+	if(!workflowTaskDetailNode["ActivityResults"].isNull())
+		workflowTaskDetail_.activityResults = workflowTaskDetailNode["ActivityResults"].asString();
+	if(!workflowTaskDetailNode["UserData"].isNull())
+		workflowTaskDetail_.userData = workflowTaskDetailNode["UserData"].asString();
+	auto workflowNode = workflowTaskDetailNode["Workflow"];
+	if(!workflowNode["WorkflowId"].isNull())
+		workflowTaskDetail_.workflow.workflowId = workflowNode["WorkflowId"].asString();
+	if(!workflowNode["Name"].isNull())
+		workflowTaskDetail_.workflow.name = workflowNode["Name"].asString();
+	if(!workflowNode["Status"].isNull())
+		workflowTaskDetail_.workflow.status = workflowNode["Status"].asString();
+	if(!workflowNode["Type"].isNull())
+		workflowTaskDetail_.workflow.type = workflowNode["Type"].asString();
+	if(!workflowNode["CreateTime"].isNull())
+		workflowTaskDetail_.workflow.createTime = workflowNode["CreateTime"].asString();
+	if(!workflowNode["ModifiedTime"].isNull())
+		workflowTaskDetail_.workflow.modifiedTime = workflowNode["ModifiedTime"].asString();
+	if(!workflowNode["AppId"].isNull())
+		workflowTaskDetail_.workflow.appId = workflowNode["AppId"].asString();
 	if(!value["JobType"].isNull())
 		jobType_ = value["JobType"].asString();
 
@@ -117,5 +147,10 @@ GetJobDetailResult::TranscodeJobDetail GetJobDetailResult::getTranscodeJobDetail
 GetJobDetailResult::AIJobDetail GetJobDetailResult::getAIJobDetail()const
 {
 	return aIJobDetail_;
+}
+
+GetJobDetailResult::WorkflowTaskDetail GetJobDetailResult::getWorkflowTaskDetail()const
+{
+	return workflowTaskDetail_;
 }
 

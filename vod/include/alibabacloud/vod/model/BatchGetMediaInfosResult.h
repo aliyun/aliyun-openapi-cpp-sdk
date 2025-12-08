@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						std::string restoreExpiration;
 						std::string mediaId;
 						std::string appId;
+						std::string referenceId;
 						std::string creationTime;
 						std::string coverURL;
 						std::string regionId;
@@ -107,6 +108,7 @@ namespace AlibabaCloud
 							std::string width;
 						};
 						std::string status;
+						std::string fileMD5;
 						std::string cRC64;
 						long size;
 						std::string fileName;
@@ -167,6 +169,7 @@ namespace AlibabaCloud
 				~BatchGetMediaInfosResult();
 				std::vector<std::string> getNonExistMediaIds()const;
 				std::vector<MediaBasicInfo> getMediaInfos()const;
+				std::vector<std::string> getNonExistReferenceIds()const;
 				std::vector<std::string> getForbiddenMediaIds()const;
 
 			protected:
@@ -174,6 +177,7 @@ namespace AlibabaCloud
 			private:
 				std::vector<std::string> nonExistMediaIds_;
 				std::vector<MediaBasicInfo> mediaInfos_;
+				std::vector<std::string> nonExistReferenceIds_;
 				std::vector<std::string> forbiddenMediaIds_;
 
 			};

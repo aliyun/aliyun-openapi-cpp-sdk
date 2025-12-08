@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct AppInfo
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					std::string type;
 					std::string description;
@@ -41,6 +46,7 @@ namespace AlibabaCloud
 					std::string resourceGroupId;
 					std::string creationTime;
 					std::string modificationTime;
+					std::vector<AppInfo::Tag> tags;
 					std::string appName;
 				};
 

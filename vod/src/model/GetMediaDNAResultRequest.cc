@@ -34,6 +34,15 @@ void GetMediaDNAResultRequest::setResourceOwnerId(const std::string &resourceOwn
   setParameter(std::string("ResourceOwnerId"), resourceOwnerId);
 }
 
+std::string GetMediaDNAResultRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void GetMediaDNAResultRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
 std::string GetMediaDNAResultRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -68,14 +77,5 @@ std::string GetMediaDNAResultRequest::getMediaId() const {
 void GetMediaDNAResultRequest::setMediaId(const std::string &mediaId) {
   mediaId_ = mediaId;
   setParameter(std::string("MediaId"), mediaId);
-}
-
-std::string GetMediaDNAResultRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void GetMediaDNAResultRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

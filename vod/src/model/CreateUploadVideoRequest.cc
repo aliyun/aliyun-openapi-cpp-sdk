@@ -124,6 +124,15 @@ void CreateUploadVideoRequest::setIP(const std::string &iP) {
   setParameter(std::string("IP"), iP);
 }
 
+std::string CreateUploadVideoRequest::getReferenceId() const {
+  return referenceId_;
+}
+
+void CreateUploadVideoRequest::setReferenceId(const std::string &referenceId) {
+  referenceId_ = referenceId;
+  setParameter(std::string("ReferenceId"), referenceId);
+}
+
 std::string CreateUploadVideoRequest::getTags() const {
   return tags_;
 }

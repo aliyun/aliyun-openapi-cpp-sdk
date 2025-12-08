@@ -34,15 +34,6 @@ void MoveAppResourceRequest::setResourceRealOwnerId(long resourceRealOwnerId) {
   setParameter(std::string("ResourceRealOwnerId"), std::to_string(resourceRealOwnerId));
 }
 
-std::string MoveAppResourceRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void MoveAppResourceRequest::setResourceType(const std::string &resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), resourceType);
-}
-
 std::string MoveAppResourceRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -59,6 +50,15 @@ std::string MoveAppResourceRequest::getTargetAppId() const {
 void MoveAppResourceRequest::setTargetAppId(const std::string &targetAppId) {
   targetAppId_ = targetAppId;
   setParameter(std::string("TargetAppId"), targetAppId);
+}
+
+std::string MoveAppResourceRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void MoveAppResourceRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
 std::string MoveAppResourceRequest::getResourceIds() const {

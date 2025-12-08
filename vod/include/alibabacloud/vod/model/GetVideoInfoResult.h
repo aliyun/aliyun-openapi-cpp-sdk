@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string cateName;
 					std::string restoreStatus;
 					std::string preprocessStatus;
+					std::string referenceId;
 					std::string storageLocation;
 					std::vector<std::string> snapshots;
 					std::string tags;

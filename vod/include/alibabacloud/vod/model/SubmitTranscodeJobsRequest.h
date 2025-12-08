@@ -42,6 +42,8 @@ public:
 	void setOverrideParams(const std::string &overrideParams);
 	std::string getPriority() const;
 	void setPriority(const std::string &priority);
+	std::string getReferenceId() const;
+	void setReferenceId(const std::string &referenceId);
 	std::string getPipelineId() const;
 	void setPipelineId(const std::string &pipelineId);
 	std::string getTemplateGroupId() const;
@@ -58,6 +60,7 @@ private:
 	std::string videoId_;
 	std::string overrideParams_;
 	std::string priority_;
+	std::string referenceId_;
 	std::string pipelineId_;
 	std::string templateGroupId_;
 	std::string fileUrl_;

@@ -52,6 +52,15 @@ void GetMezzanineInfoRequest::setVideoId(const std::string &videoId) {
   setParameter(std::string("VideoId"), videoId);
 }
 
+std::string GetMezzanineInfoRequest::getReferenceId() const {
+  return referenceId_;
+}
+
+void GetMezzanineInfoRequest::setReferenceId(const std::string &referenceId) {
+  referenceId_ = referenceId;
+  setParameter(std::string("ReferenceId"), referenceId);
+}
+
 bool GetMezzanineInfoRequest::getPreviewSegment() const {
   return previewSegment_;
 }

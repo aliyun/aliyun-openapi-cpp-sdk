@@ -67,6 +67,27 @@ namespace AlibabaCloud
 					std::string completeTime;
 					std::string jobId;
 				};
+				struct WorkflowTaskDetail
+				{
+					struct Workflow
+					{
+						std::string status;
+						std::string type;
+						std::string modifiedTime;
+						std::string appId;
+						std::string createTime;
+						std::string workflowId;
+						std::string name;
+					};
+					std::string status;
+					std::string taskId;
+					std::string activityResults;
+					std::string taskInput;
+					std::string finishTime;
+					std::string userData;
+					std::string createTime;
+					Workflow workflow;
+				};
 
 
 				GetJobDetailResult();
@@ -76,6 +97,7 @@ namespace AlibabaCloud
 				SnapshotJobDetail getSnapshotJobDetail()const;
 				TranscodeJobDetail getTranscodeJobDetail()const;
 				AIJobDetail getAIJobDetail()const;
+				WorkflowTaskDetail getWorkflowTaskDetail()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -84,6 +106,7 @@ namespace AlibabaCloud
 				SnapshotJobDetail snapshotJobDetail_;
 				TranscodeJobDetail transcodeJobDetail_;
 				AIJobDetail aIJobDetail_;
+				WorkflowTaskDetail workflowTaskDetail_;
 
 			};
 		}

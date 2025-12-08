@@ -112,6 +112,8 @@ void SearchMediaResult::parse(const std::string &payload)
 			mediaListObject.video.duration = std::stof(videoNode["Duration"].asString());
 		if(!videoNode["Title"].isNull())
 			mediaListObject.video.title = videoNode["Title"].asString();
+		if(!videoNode["ReferenceId"].isNull())
+			mediaListObject.video.referenceId = videoNode["ReferenceId"].asString();
 		auto allPlayInfoListNode = videoNode["PlayInfoList"]["PlayInfo"];
 		for (auto videoNodePlayInfoListPlayInfo : allPlayInfoListNode)
 		{
@@ -211,6 +213,8 @@ void SearchMediaResult::parse(const std::string &payload)
 			mediaListObject.audio.duration = std::stof(audioNode["Duration"].asString());
 		if(!audioNode["Title"].isNull())
 			mediaListObject.audio.title = audioNode["Title"].asString();
+		if(!audioNode["ReferenceId"].isNull())
+			mediaListObject.audio.referenceId = audioNode["ReferenceId"].asString();
 		auto allPlayInfoList3Node = audioNode["PlayInfoList"]["PlayInfo"];
 		for (auto audioNodePlayInfoListPlayInfo : allPlayInfoList3Node)
 		{

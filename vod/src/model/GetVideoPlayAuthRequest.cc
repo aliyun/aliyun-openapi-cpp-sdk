@@ -61,6 +61,15 @@ void GetVideoPlayAuthRequest::setApiVersion(const std::string &apiVersion) {
   setParameter(std::string("ApiVersion"), apiVersion);
 }
 
+std::string GetVideoPlayAuthRequest::getReferenceId() const {
+  return referenceId_;
+}
+
+void GetVideoPlayAuthRequest::setReferenceId(const std::string &referenceId) {
+  referenceId_ = referenceId;
+  setParameter(std::string("ReferenceId"), referenceId);
+}
+
 long GetVideoPlayAuthRequest::getAuthInfoTimeout() const {
   return authInfoTimeout_;
 }

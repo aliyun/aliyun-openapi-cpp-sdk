@@ -61,3 +61,12 @@ void RefreshUploadVideoRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string RefreshUploadVideoRequest::getReferenceId() const {
+  return referenceId_;
+}
+
+void RefreshUploadVideoRequest::setReferenceId(const std::string &referenceId) {
+  referenceId_ = referenceId;
+  setParameter(std::string("ReferenceId"), referenceId);
+}
+

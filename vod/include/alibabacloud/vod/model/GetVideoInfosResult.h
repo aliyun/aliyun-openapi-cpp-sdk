@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					std::string cateName;
 					std::string restoreStatus;
 					std::string preprocessStatus;
+					std::string referenceId;
 					std::string storageLocation;
 					std::vector<std::string> snapshots;
 					std::string tags;
@@ -71,12 +72,14 @@ namespace AlibabaCloud
 				~GetVideoInfosResult();
 				std::vector<Video> getVideoList()const;
 				std::vector<std::string> getNonExistVideoIds()const;
+				std::vector<std::string> getNonExistReferenceIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<Video> videoList_;
 				std::vector<std::string> nonExistVideoIds_;
+				std::vector<std::string> nonExistReferenceIds_;
 
 			};
 		}

@@ -44,8 +44,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
-	Tag getTag() const;
-	void setTag(const Tag &tag);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
 	std::string description_;
@@ -53,7 +53,7 @@ private:
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string appName_;
-	Tag tag_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace Vod

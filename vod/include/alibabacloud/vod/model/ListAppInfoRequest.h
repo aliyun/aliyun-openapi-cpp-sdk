@@ -42,8 +42,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	Tag getTag() const;
-	void setTag(const Tag &tag);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	int getPageNo() const;
 	void setPageNo(int pageNo);
 	std::string getStatus() const;
@@ -54,7 +54,7 @@ private:
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	int pageSize_;
-	Tag tag_;
+	std::vector<Tag> tag_;
 	int pageNo_;
 	std::string status_;
 };

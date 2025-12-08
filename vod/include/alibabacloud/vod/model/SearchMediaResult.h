@@ -64,6 +64,7 @@ namespace AlibabaCloud
 						std::string restoreStatus;
 						std::string preprocessStatus;
 						std::string auditAIResult;
+						std::string referenceId;
 						std::string mediaType;
 						std::string auditTemplateId;
 						std::string auditManualStatus;
@@ -118,6 +119,7 @@ namespace AlibabaCloud
 						std::string restoreStatus;
 						std::string preprocessStatus;
 						std::string auditAIResult;
+						std::string referenceId;
 						std::vector<std::string> spriteSnapshots1;
 						std::string auditTemplateId;
 						std::string auditManualStatus;

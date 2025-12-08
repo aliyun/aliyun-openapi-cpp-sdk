@@ -30,19 +30,19 @@ class ALIBABACLOUD_VOD_EXPORT DetachAppPolicyFromIdentityRequest : public RpcSer
 public:
 	DetachAppPolicyFromIdentityRequest();
 	~DetachAppPolicyFromIdentityRequest();
-	std::string getIdentityType() const;
-	void setIdentityType(const std::string &identityType);
 	std::string getPolicyNames() const;
 	void setPolicyNames(const std::string &policyNames);
 	std::string getIdentityName() const;
 	void setIdentityName(const std::string &identityName);
+	std::string getIdentityType() const;
+	void setIdentityType(const std::string &identityType);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
 
 private:
-	std::string identityType_;
 	std::string policyNames_;
 	std::string identityName_;
+	std::string identityType_;
 	std::string appId_;
 };
 } // namespace Model

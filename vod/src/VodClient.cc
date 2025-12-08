@@ -2607,6 +2607,114 @@ VodClient::DescribeVodMediaPlayDataOutcomeCallable VodClient::describeVodMediaPl
 	return task->get_future();
 }
 
+VodClient::DescribeVodPlayerCollectDataOutcome VodClient::describeVodPlayerCollectData(const DescribeVodPlayerCollectDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodPlayerCollectDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodPlayerCollectDataOutcome(DescribeVodPlayerCollectDataResult(outcome.result()));
+	else
+		return DescribeVodPlayerCollectDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodPlayerCollectDataAsync(const DescribeVodPlayerCollectDataRequest& request, const DescribeVodPlayerCollectDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodPlayerCollectData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodPlayerCollectDataOutcomeCallable VodClient::describeVodPlayerCollectDataCallable(const DescribeVodPlayerCollectDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodPlayerCollectDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodPlayerCollectData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodPlayerDimensionDataOutcome VodClient::describeVodPlayerDimensionData(const DescribeVodPlayerDimensionDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodPlayerDimensionDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodPlayerDimensionDataOutcome(DescribeVodPlayerDimensionDataResult(outcome.result()));
+	else
+		return DescribeVodPlayerDimensionDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodPlayerDimensionDataAsync(const DescribeVodPlayerDimensionDataRequest& request, const DescribeVodPlayerDimensionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodPlayerDimensionData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodPlayerDimensionDataOutcomeCallable VodClient::describeVodPlayerDimensionDataCallable(const DescribeVodPlayerDimensionDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodPlayerDimensionDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodPlayerDimensionData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodPlayerMetricDataOutcome VodClient::describeVodPlayerMetricData(const DescribeVodPlayerMetricDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodPlayerMetricDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodPlayerMetricDataOutcome(DescribeVodPlayerMetricDataResult(outcome.result()));
+	else
+		return DescribeVodPlayerMetricDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodPlayerMetricDataAsync(const DescribeVodPlayerMetricDataRequest& request, const DescribeVodPlayerMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodPlayerMetricData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodPlayerMetricDataOutcomeCallable VodClient::describeVodPlayerMetricDataCallable(const DescribeVodPlayerMetricDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodPlayerMetricDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodPlayerMetricData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DescribeVodRangeDataByLocateAndIspServiceOutcome VodClient::describeVodRangeDataByLocateAndIspService(const DescribeVodRangeDataByLocateAndIspServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2931,6 +3039,42 @@ VodClient::DescribeVodUserDomainsOutcomeCallable VodClient::describeVodUserDomai
 	return task->get_future();
 }
 
+VodClient::DescribeVodUserVipsByDomainOutcome VodClient::describeVodUserVipsByDomain(const DescribeVodUserVipsByDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodUserVipsByDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodUserVipsByDomainOutcome(DescribeVodUserVipsByDomainResult(outcome.result()));
+	else
+		return DescribeVodUserVipsByDomainOutcome(outcome.error());
+}
+
+void VodClient::describeVodUserVipsByDomainAsync(const DescribeVodUserVipsByDomainRequest& request, const DescribeVodUserVipsByDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodUserVipsByDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodUserVipsByDomainOutcomeCallable VodClient::describeVodUserVipsByDomainCallable(const DescribeVodUserVipsByDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodUserVipsByDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodUserVipsByDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DescribeVodVerifyContentOutcome VodClient::describeVodVerifyContent(const DescribeVodVerifyContentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3249,6 +3393,42 @@ VodClient::GetAppInfosOutcomeCallable VodClient::getAppInfosCallable(const GetAp
 			[this, request]()
 			{
 			return this->getAppInfos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::GetAppPlayKeyOutcome VodClient::getAppPlayKey(const GetAppPlayKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAppPlayKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAppPlayKeyOutcome(GetAppPlayKeyResult(outcome.result()));
+	else
+		return GetAppPlayKeyOutcome(outcome.error());
+}
+
+void VodClient::getAppPlayKeyAsync(const GetAppPlayKeyRequest& request, const GetAppPlayKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAppPlayKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetAppPlayKeyOutcomeCallable VodClient::getAppPlayKeyCallable(const GetAppPlayKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAppPlayKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->getAppPlayKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5229,6 +5409,42 @@ VodClient::SearchMediaOutcomeCallable VodClient::searchMediaCallable(const Searc
 			[this, request]()
 			{
 			return this->searchMedia(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::SetAppPlayKeyOutcome VodClient::setAppPlayKey(const SetAppPlayKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetAppPlayKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetAppPlayKeyOutcome(SetAppPlayKeyResult(outcome.result()));
+	else
+		return SetAppPlayKeyOutcome(outcome.error());
+}
+
+void VodClient::setAppPlayKeyAsync(const SetAppPlayKeyRequest& request, const SetAppPlayKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setAppPlayKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SetAppPlayKeyOutcomeCallable VodClient::setAppPlayKeyCallable(const SetAppPlayKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetAppPlayKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->setAppPlayKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

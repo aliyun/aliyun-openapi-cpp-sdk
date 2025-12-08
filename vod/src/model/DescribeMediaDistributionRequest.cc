@@ -25,15 +25,6 @@ DescribeMediaDistributionRequest::DescribeMediaDistributionRequest()
 
 DescribeMediaDistributionRequest::~DescribeMediaDistributionRequest() {}
 
-std::string DescribeMediaDistributionRequest::getEndTime() const {
-  return endTime_;
-}
-
-void DescribeMediaDistributionRequest::setEndTime(const std::string &endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), endTime);
-}
-
 std::string DescribeMediaDistributionRequest::getStartTime() const {
   return startTime_;
 }
@@ -41,6 +32,15 @@ std::string DescribeMediaDistributionRequest::getStartTime() const {
 void DescribeMediaDistributionRequest::setStartTime(const std::string &startTime) {
   startTime_ = startTime;
   setParameter(std::string("StartTime"), startTime);
+}
+
+std::string DescribeMediaDistributionRequest::getEndTime() const {
+  return endTime_;
+}
+
+void DescribeMediaDistributionRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
 std::string DescribeMediaDistributionRequest::getStorageClass() const {

@@ -34,19 +34,19 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
-	std::string getTemplateGroupId() const;
-	void setTemplateGroupId(const std::string &templateGroupId);
 	std::string getRegisterMetadatas() const;
 	void setRegisterMetadatas(const std::string &registerMetadatas);
 	std::string getWorkflowId() const;
 	void setWorkflowId(const std::string &workflowId);
+	std::string getTemplateGroupId() const;
+	void setTemplateGroupId(const std::string &templateGroupId);
 
 private:
 	std::string accessKeyId_;
 	std::string userData_;
-	std::string templateGroupId_;
 	std::string registerMetadatas_;
 	std::string workflowId_;
+	std::string templateGroupId_;
 };
 } // namespace Model
 } // namespace Vod

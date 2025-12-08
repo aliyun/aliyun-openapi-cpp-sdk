@@ -30,12 +30,15 @@ class ALIBABACLOUD_VOD_EXPORT DeleteMezzaninesRequest : public RpcServiceRequest
 public:
 	DeleteMezzaninesRequest();
 	~DeleteMezzaninesRequest();
+	std::string getReferenceIds() const;
+	void setReferenceIds(const std::string &referenceIds);
 	bool getForce() const;
 	void setForce(bool force);
 	std::string getVideoIds() const;
 	void setVideoIds(const std::string &videoIds);
 
 private:
+	std::string referenceIds_;
 	bool force_;
 	std::string videoIds_;
 };

@@ -25,6 +25,15 @@ BatchGetMediaInfosRequest::BatchGetMediaInfosRequest()
 
 BatchGetMediaInfosRequest::~BatchGetMediaInfosRequest() {}
 
+std::string BatchGetMediaInfosRequest::getReferenceIds() const {
+  return referenceIds_;
+}
+
+void BatchGetMediaInfosRequest::setReferenceIds(const std::string &referenceIds) {
+  referenceIds_ = referenceIds;
+  setParameter(std::string("ReferenceIds"), referenceIds);
+}
+
 std::string BatchGetMediaInfosRequest::getMediaIds() const {
   return mediaIds_;
 }

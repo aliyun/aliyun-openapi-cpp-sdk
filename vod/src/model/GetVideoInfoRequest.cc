@@ -25,6 +25,15 @@ GetVideoInfoRequest::GetVideoInfoRequest()
 
 GetVideoInfoRequest::~GetVideoInfoRequest() {}
 
+std::string GetVideoInfoRequest::getResultTypes() const {
+  return resultTypes_;
+}
+
+void GetVideoInfoRequest::setResultTypes(const std::string &resultTypes) {
+  resultTypes_ = resultTypes;
+  setParameter(std::string("ResultTypes"), resultTypes);
+}
+
 std::string GetVideoInfoRequest::getVideoId() const {
   return videoId_;
 }
@@ -34,6 +43,15 @@ void GetVideoInfoRequest::setVideoId(const std::string &videoId) {
   setParameter(std::string("VideoId"), videoId);
 }
 
+std::string GetVideoInfoRequest::getReferenceId() const {
+  return referenceId_;
+}
+
+void GetVideoInfoRequest::setReferenceId(const std::string &referenceId) {
+  referenceId_ = referenceId;
+  setParameter(std::string("ReferenceId"), referenceId);
+}
+
 std::string GetVideoInfoRequest::getAdditionType() const {
   return additionType_;
 }
@@ -41,14 +59,5 @@ std::string GetVideoInfoRequest::getAdditionType() const {
 void GetVideoInfoRequest::setAdditionType(const std::string &additionType) {
   additionType_ = additionType;
   setParameter(std::string("AdditionType"), additionType);
-}
-
-std::string GetVideoInfoRequest::getResultTypes() const {
-  return resultTypes_;
-}
-
-void GetVideoInfoRequest::setResultTypes(const std::string &resultTypes) {
-  resultTypes_ = resultTypes;
-  setParameter(std::string("ResultTypes"), resultTypes);
 }
 

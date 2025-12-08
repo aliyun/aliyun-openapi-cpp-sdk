@@ -25,15 +25,6 @@ DetachAppPolicyFromIdentityRequest::DetachAppPolicyFromIdentityRequest()
 
 DetachAppPolicyFromIdentityRequest::~DetachAppPolicyFromIdentityRequest() {}
 
-std::string DetachAppPolicyFromIdentityRequest::getIdentityType() const {
-  return identityType_;
-}
-
-void DetachAppPolicyFromIdentityRequest::setIdentityType(const std::string &identityType) {
-  identityType_ = identityType;
-  setParameter(std::string("IdentityType"), identityType);
-}
-
 std::string DetachAppPolicyFromIdentityRequest::getPolicyNames() const {
   return policyNames_;
 }
@@ -50,6 +41,15 @@ std::string DetachAppPolicyFromIdentityRequest::getIdentityName() const {
 void DetachAppPolicyFromIdentityRequest::setIdentityName(const std::string &identityName) {
   identityName_ = identityName;
   setParameter(std::string("IdentityName"), identityName);
+}
+
+std::string DetachAppPolicyFromIdentityRequest::getIdentityType() const {
+  return identityType_;
+}
+
+void DetachAppPolicyFromIdentityRequest::setIdentityType(const std::string &identityType) {
+  identityType_ = identityType;
+  setParameter(std::string("IdentityType"), identityType);
 }
 
 std::string DetachAppPolicyFromIdentityRequest::getAppId() const {

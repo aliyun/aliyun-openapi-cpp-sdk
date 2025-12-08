@@ -30,22 +30,22 @@ class ALIBABACLOUD_VOD_EXPORT DeleteMultipartUploadRequest : public RpcServiceRe
 public:
 	DeleteMultipartUploadRequest();
 	~DeleteMultipartUploadRequest();
-	std::string getOwnerAccount() const;
-	void setOwnerAccount(const std::string &ownerAccount);
 	long getResourceRealOwnerId() const;
 	void setResourceRealOwnerId(long resourceRealOwnerId);
-	std::string getMediaId() const;
-	void setMediaId(const std::string &mediaId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getMediaId() const;
+	void setMediaId(const std::string &mediaId);
 	std::string getMediaType() const;
 	void setMediaType(const std::string &mediaType);
 
 private:
-	std::string ownerAccount_;
 	long resourceRealOwnerId_;
-	std::string mediaId_;
 	std::string accessKeyId_;
+	std::string ownerAccount_;
+	std::string mediaId_;
 	std::string mediaType_;
 };
 } // namespace Model

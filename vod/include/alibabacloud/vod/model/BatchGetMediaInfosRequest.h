@@ -30,10 +30,13 @@ class ALIBABACLOUD_VOD_EXPORT BatchGetMediaInfosRequest : public RpcServiceReque
 public:
 	BatchGetMediaInfosRequest();
 	~BatchGetMediaInfosRequest();
+	std::string getReferenceIds() const;
+	void setReferenceIds(const std::string &referenceIds);
 	std::string getMediaIds() const;
 	void setMediaIds(const std::string &mediaIds);
 
 private:
+	std::string referenceIds_;
 	std::string mediaIds_;
 };
 } // namespace Model

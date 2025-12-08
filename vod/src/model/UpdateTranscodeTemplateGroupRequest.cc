@@ -43,6 +43,15 @@ void UpdateTranscodeTemplateGroupRequest::setAccessKeyId(const std::string &acce
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string UpdateTranscodeTemplateGroupRequest::getLocked() const {
+  return locked_;
+}
+
+void UpdateTranscodeTemplateGroupRequest::setLocked(const std::string &locked) {
+  locked_ = locked;
+  setParameter(std::string("Locked"), locked);
+}
+
 std::string UpdateTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId() const {
   return transcodeTemplateGroupId_;
 }
@@ -59,14 +68,5 @@ std::string UpdateTranscodeTemplateGroupRequest::getName() const {
 void UpdateTranscodeTemplateGroupRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
-}
-
-std::string UpdateTranscodeTemplateGroupRequest::getLocked() const {
-  return locked_;
-}
-
-void UpdateTranscodeTemplateGroupRequest::setLocked(const std::string &locked) {
-  locked_ = locked;
-  setParameter(std::string("Locked"), locked);
 }
 

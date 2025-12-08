@@ -38,6 +38,8 @@ public:
 	void setVideoId(const std::string &videoId);
 	std::string getApiVersion() const;
 	void setApiVersion(const std::string &apiVersion);
+	std::string getReferenceId() const;
+	void setReferenceId(const std::string &referenceId);
 	long getAuthInfoTimeout() const;
 	void setAuthInfoTimeout(long authInfoTimeout);
 
@@ -46,6 +48,7 @@ private:
 	std::string playConfig_;
 	std::string videoId_;
 	std::string apiVersion_;
+	std::string referenceId_;
 	long authInfoTimeout_;
 };
 } // namespace Model

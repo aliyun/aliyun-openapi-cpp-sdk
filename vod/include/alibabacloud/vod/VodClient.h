@@ -164,6 +164,12 @@
 #include "model/DescribeVodEditingUsageDataResult.h"
 #include "model/DescribeVodMediaPlayDataRequest.h"
 #include "model/DescribeVodMediaPlayDataResult.h"
+#include "model/DescribeVodPlayerCollectDataRequest.h"
+#include "model/DescribeVodPlayerCollectDataResult.h"
+#include "model/DescribeVodPlayerDimensionDataRequest.h"
+#include "model/DescribeVodPlayerDimensionDataResult.h"
+#include "model/DescribeVodPlayerMetricDataRequest.h"
+#include "model/DescribeVodPlayerMetricDataResult.h"
 #include "model/DescribeVodRangeDataByLocateAndIspServiceRequest.h"
 #include "model/DescribeVodRangeDataByLocateAndIspServiceResult.h"
 #include "model/DescribeVodRefreshQuotaRequest.h"
@@ -182,6 +188,8 @@
 #include "model/DescribeVodTranscodeDataResult.h"
 #include "model/DescribeVodUserDomainsRequest.h"
 #include "model/DescribeVodUserDomainsResult.h"
+#include "model/DescribeVodUserVipsByDomainRequest.h"
+#include "model/DescribeVodUserVipsByDomainResult.h"
 #include "model/DescribeVodVerifyContentRequest.h"
 #include "model/DescribeVodVerifyContentResult.h"
 #include "model/DetachAppPolicyFromIdentityRequest.h"
@@ -200,6 +208,8 @@
 #include "model/GetAIVideoTagResultResult.h"
 #include "model/GetAppInfosRequest.h"
 #include "model/GetAppInfosResult.h"
+#include "model/GetAppPlayKeyRequest.h"
+#include "model/GetAppPlayKeyResult.h"
 #include "model/GetAttachedMediaInfoRequest.h"
 #include "model/GetAttachedMediaInfoResult.h"
 #include "model/GetAuditHistoryRequest.h"
@@ -310,6 +320,8 @@
 #include "model/SearchEditingProjectResult.h"
 #include "model/SearchMediaRequest.h"
 #include "model/SearchMediaResult.h"
+#include "model/SetAppPlayKeyRequest.h"
+#include "model/SetAppPlayKeyResult.h"
 #include "model/SetAuditSecurityIpRequest.h"
 #include "model/SetAuditSecurityIpResult.h"
 #include "model/SetCrossdomainContentRequest.h"
@@ -604,6 +616,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVodMediaPlayDataResult> DescribeVodMediaPlayDataOutcome;
 			typedef std::future<DescribeVodMediaPlayDataOutcome> DescribeVodMediaPlayDataOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodMediaPlayDataRequest&, const DescribeVodMediaPlayDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodMediaPlayDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodPlayerCollectDataResult> DescribeVodPlayerCollectDataOutcome;
+			typedef std::future<DescribeVodPlayerCollectDataOutcome> DescribeVodPlayerCollectDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodPlayerCollectDataRequest&, const DescribeVodPlayerCollectDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodPlayerCollectDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodPlayerDimensionDataResult> DescribeVodPlayerDimensionDataOutcome;
+			typedef std::future<DescribeVodPlayerDimensionDataOutcome> DescribeVodPlayerDimensionDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodPlayerDimensionDataRequest&, const DescribeVodPlayerDimensionDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodPlayerDimensionDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodPlayerMetricDataResult> DescribeVodPlayerMetricDataOutcome;
+			typedef std::future<DescribeVodPlayerMetricDataOutcome> DescribeVodPlayerMetricDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodPlayerMetricDataRequest&, const DescribeVodPlayerMetricDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodPlayerMetricDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVodRangeDataByLocateAndIspServiceResult> DescribeVodRangeDataByLocateAndIspServiceOutcome;
 			typedef std::future<DescribeVodRangeDataByLocateAndIspServiceOutcome> DescribeVodRangeDataByLocateAndIspServiceOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodRangeDataByLocateAndIspServiceRequest&, const DescribeVodRangeDataByLocateAndIspServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodRangeDataByLocateAndIspServiceAsyncHandler;
@@ -631,6 +652,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVodUserDomainsResult> DescribeVodUserDomainsOutcome;
 			typedef std::future<DescribeVodUserDomainsOutcome> DescribeVodUserDomainsOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodUserDomainsRequest&, const DescribeVodUserDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodUserDomainsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodUserVipsByDomainResult> DescribeVodUserVipsByDomainOutcome;
+			typedef std::future<DescribeVodUserVipsByDomainOutcome> DescribeVodUserVipsByDomainOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodUserVipsByDomainRequest&, const DescribeVodUserVipsByDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodUserVipsByDomainAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVodVerifyContentResult> DescribeVodVerifyContentOutcome;
 			typedef std::future<DescribeVodVerifyContentOutcome> DescribeVodVerifyContentOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodVerifyContentRequest&, const DescribeVodVerifyContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodVerifyContentAsyncHandler;
@@ -658,6 +682,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAppInfosResult> GetAppInfosOutcome;
 			typedef std::future<GetAppInfosOutcome> GetAppInfosOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetAppInfosRequest&, const GetAppInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAppInfosAsyncHandler;
+			typedef Outcome<Error, Model::GetAppPlayKeyResult> GetAppPlayKeyOutcome;
+			typedef std::future<GetAppPlayKeyOutcome> GetAppPlayKeyOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::GetAppPlayKeyRequest&, const GetAppPlayKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAppPlayKeyAsyncHandler;
 			typedef Outcome<Error, Model::GetAttachedMediaInfoResult> GetAttachedMediaInfoOutcome;
 			typedef std::future<GetAttachedMediaInfoOutcome> GetAttachedMediaInfoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetAttachedMediaInfoRequest&, const GetAttachedMediaInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAttachedMediaInfoAsyncHandler;
@@ -823,6 +850,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchMediaResult> SearchMediaOutcome;
 			typedef std::future<SearchMediaOutcome> SearchMediaOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SearchMediaRequest&, const SearchMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaAsyncHandler;
+			typedef Outcome<Error, Model::SetAppPlayKeyResult> SetAppPlayKeyOutcome;
+			typedef std::future<SetAppPlayKeyOutcome> SetAppPlayKeyOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::SetAppPlayKeyRequest&, const SetAppPlayKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetAppPlayKeyAsyncHandler;
 			typedef Outcome<Error, Model::SetAuditSecurityIpResult> SetAuditSecurityIpOutcome;
 			typedef std::future<SetAuditSecurityIpOutcome> SetAuditSecurityIpOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SetAuditSecurityIpRequest&, const SetAuditSecurityIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetAuditSecurityIpAsyncHandler;
@@ -1149,6 +1179,15 @@ namespace AlibabaCloud
 			DescribeVodMediaPlayDataOutcome describeVodMediaPlayData(const Model::DescribeVodMediaPlayDataRequest &request)const;
 			void describeVodMediaPlayDataAsync(const Model::DescribeVodMediaPlayDataRequest& request, const DescribeVodMediaPlayDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodMediaPlayDataOutcomeCallable describeVodMediaPlayDataCallable(const Model::DescribeVodMediaPlayDataRequest& request) const;
+			DescribeVodPlayerCollectDataOutcome describeVodPlayerCollectData(const Model::DescribeVodPlayerCollectDataRequest &request)const;
+			void describeVodPlayerCollectDataAsync(const Model::DescribeVodPlayerCollectDataRequest& request, const DescribeVodPlayerCollectDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodPlayerCollectDataOutcomeCallable describeVodPlayerCollectDataCallable(const Model::DescribeVodPlayerCollectDataRequest& request) const;
+			DescribeVodPlayerDimensionDataOutcome describeVodPlayerDimensionData(const Model::DescribeVodPlayerDimensionDataRequest &request)const;
+			void describeVodPlayerDimensionDataAsync(const Model::DescribeVodPlayerDimensionDataRequest& request, const DescribeVodPlayerDimensionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodPlayerDimensionDataOutcomeCallable describeVodPlayerDimensionDataCallable(const Model::DescribeVodPlayerDimensionDataRequest& request) const;
+			DescribeVodPlayerMetricDataOutcome describeVodPlayerMetricData(const Model::DescribeVodPlayerMetricDataRequest &request)const;
+			void describeVodPlayerMetricDataAsync(const Model::DescribeVodPlayerMetricDataRequest& request, const DescribeVodPlayerMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodPlayerMetricDataOutcomeCallable describeVodPlayerMetricDataCallable(const Model::DescribeVodPlayerMetricDataRequest& request) const;
 			DescribeVodRangeDataByLocateAndIspServiceOutcome describeVodRangeDataByLocateAndIspService(const Model::DescribeVodRangeDataByLocateAndIspServiceRequest &request)const;
 			void describeVodRangeDataByLocateAndIspServiceAsync(const Model::DescribeVodRangeDataByLocateAndIspServiceRequest& request, const DescribeVodRangeDataByLocateAndIspServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodRangeDataByLocateAndIspServiceOutcomeCallable describeVodRangeDataByLocateAndIspServiceCallable(const Model::DescribeVodRangeDataByLocateAndIspServiceRequest& request) const;
@@ -1176,6 +1215,9 @@ namespace AlibabaCloud
 			DescribeVodUserDomainsOutcome describeVodUserDomains(const Model::DescribeVodUserDomainsRequest &request)const;
 			void describeVodUserDomainsAsync(const Model::DescribeVodUserDomainsRequest& request, const DescribeVodUserDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodUserDomainsOutcomeCallable describeVodUserDomainsCallable(const Model::DescribeVodUserDomainsRequest& request) const;
+			DescribeVodUserVipsByDomainOutcome describeVodUserVipsByDomain(const Model::DescribeVodUserVipsByDomainRequest &request)const;
+			void describeVodUserVipsByDomainAsync(const Model::DescribeVodUserVipsByDomainRequest& request, const DescribeVodUserVipsByDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodUserVipsByDomainOutcomeCallable describeVodUserVipsByDomainCallable(const Model::DescribeVodUserVipsByDomainRequest& request) const;
 			DescribeVodVerifyContentOutcome describeVodVerifyContent(const Model::DescribeVodVerifyContentRequest &request)const;
 			void describeVodVerifyContentAsync(const Model::DescribeVodVerifyContentRequest& request, const DescribeVodVerifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodVerifyContentOutcomeCallable describeVodVerifyContentCallable(const Model::DescribeVodVerifyContentRequest& request) const;
@@ -1203,6 +1245,9 @@ namespace AlibabaCloud
 			GetAppInfosOutcome getAppInfos(const Model::GetAppInfosRequest &request)const;
 			void getAppInfosAsync(const Model::GetAppInfosRequest& request, const GetAppInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAppInfosOutcomeCallable getAppInfosCallable(const Model::GetAppInfosRequest& request) const;
+			GetAppPlayKeyOutcome getAppPlayKey(const Model::GetAppPlayKeyRequest &request)const;
+			void getAppPlayKeyAsync(const Model::GetAppPlayKeyRequest& request, const GetAppPlayKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAppPlayKeyOutcomeCallable getAppPlayKeyCallable(const Model::GetAppPlayKeyRequest& request) const;
 			GetAttachedMediaInfoOutcome getAttachedMediaInfo(const Model::GetAttachedMediaInfoRequest &request)const;
 			void getAttachedMediaInfoAsync(const Model::GetAttachedMediaInfoRequest& request, const GetAttachedMediaInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAttachedMediaInfoOutcomeCallable getAttachedMediaInfoCallable(const Model::GetAttachedMediaInfoRequest& request) const;
@@ -1368,6 +1413,9 @@ namespace AlibabaCloud
 			SearchMediaOutcome searchMedia(const Model::SearchMediaRequest &request)const;
 			void searchMediaAsync(const Model::SearchMediaRequest& request, const SearchMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchMediaOutcomeCallable searchMediaCallable(const Model::SearchMediaRequest& request) const;
+			SetAppPlayKeyOutcome setAppPlayKey(const Model::SetAppPlayKeyRequest &request)const;
+			void setAppPlayKeyAsync(const Model::SetAppPlayKeyRequest& request, const SetAppPlayKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetAppPlayKeyOutcomeCallable setAppPlayKeyCallable(const Model::SetAppPlayKeyRequest& request) const;
 			SetAuditSecurityIpOutcome setAuditSecurityIp(const Model::SetAuditSecurityIpRequest &request)const;
 			void setAuditSecurityIpAsync(const Model::SetAuditSecurityIpRequest& request, const SetAuditSecurityIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetAuditSecurityIpOutcomeCallable setAuditSecurityIpCallable(const Model::SetAuditSecurityIpRequest& request) const;

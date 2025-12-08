@@ -36,6 +36,8 @@ public:
 	void setAuthTimeout(long authTimeout);
 	std::string getVideoId() const;
 	void setVideoId(const std::string &videoId);
+	std::string getReferenceId() const;
+	void setReferenceId(const std::string &referenceId);
 	bool getPreviewSegment() const;
 	void setPreviewSegment(bool previewSegment);
 	std::string getAdditionType() const;
@@ -45,6 +47,7 @@ private:
 	std::string outputType_;
 	long authTimeout_;
 	std::string videoId_;
+	std::string referenceId_;
 	bool previewSegment_;
 	std::string additionType_;
 };

@@ -25,6 +25,15 @@ GetVideoInfosRequest::GetVideoInfosRequest()
 
 GetVideoInfosRequest::~GetVideoInfosRequest() {}
 
+std::string GetVideoInfosRequest::getReferenceIds() const {
+  return referenceIds_;
+}
+
+void GetVideoInfosRequest::setReferenceIds(const std::string &referenceIds) {
+  referenceIds_ = referenceIds;
+  setParameter(std::string("ReferenceIds"), referenceIds);
+}
+
 std::string GetVideoInfosRequest::getAdditionType() const {
   return additionType_;
 }

@@ -43,15 +43,6 @@ void RegisterMediaRequest::setUserData(const std::string &userData) {
   setParameter(std::string("UserData"), userData);
 }
 
-std::string RegisterMediaRequest::getTemplateGroupId() const {
-  return templateGroupId_;
-}
-
-void RegisterMediaRequest::setTemplateGroupId(const std::string &templateGroupId) {
-  templateGroupId_ = templateGroupId;
-  setParameter(std::string("TemplateGroupId"), templateGroupId);
-}
-
 std::string RegisterMediaRequest::getRegisterMetadatas() const {
   return registerMetadatas_;
 }
@@ -68,5 +59,14 @@ std::string RegisterMediaRequest::getWorkflowId() const {
 void RegisterMediaRequest::setWorkflowId(const std::string &workflowId) {
   workflowId_ = workflowId;
   setParameter(std::string("WorkflowId"), workflowId);
+}
+
+std::string RegisterMediaRequest::getTemplateGroupId() const {
+  return templateGroupId_;
+}
+
+void RegisterMediaRequest::setTemplateGroupId(const std::string &templateGroupId) {
+  templateGroupId_ = templateGroupId;
+  setParameter(std::string("TemplateGroupId"), templateGroupId);
 }
 

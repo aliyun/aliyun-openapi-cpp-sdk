@@ -61,14 +61,18 @@ void ListAppInfoRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-ListAppInfoRequest::Tag ListAppInfoRequest::getTag() const {
+std::vector<ListAppInfoRequest::Tag> ListAppInfoRequest::getTag() const {
   return tag_;
 }
 
-void ListAppInfoRequest::setTag(const ListAppInfoRequest::Tag &tag) {
+void ListAppInfoRequest::setTag(const std::vector<ListAppInfoRequest::Tag> &tag) {
   tag_ = tag;
-  setParameter(std::string("Tag") + ".Value", tag.value);
-  setParameter(std::string("Tag") + ".Key", tag.key);
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 int ListAppInfoRequest::getPageNo() const {

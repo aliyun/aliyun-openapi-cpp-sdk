@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::string restoreStatus;
 					std::string restoreExpiration;
 					std::string appId;
+					std::string referenceId;
 					std::string creationTime;
 					std::string coverURL;
 					std::string storageLocation;

@@ -58,6 +58,8 @@ public:
 	void setVideoId(const std::string &videoId);
 	std::string getResultType() const;
 	void setResultType(const std::string &resultType);
+	std::string getReferenceId() const;
+	void setReferenceId(const std::string &referenceId);
 	std::string getAdditionType() const;
 	void setAdditionType(const std::string &additionType);
 	std::string getAuthInfo() const;
@@ -78,6 +80,7 @@ private:
 	std::string streamType_;
 	std::string videoId_;
 	std::string resultType_;
+	std::string referenceId_;
 	std::string additionType_;
 	std::string authInfo_;
 };

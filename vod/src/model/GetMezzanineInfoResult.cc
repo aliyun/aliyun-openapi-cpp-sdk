@@ -74,6 +74,8 @@ void GetMezzanineInfoResult::parse(const std::string &payload)
 		mezzanine_.restoreStatus = mezzanineNode["RestoreStatus"].asString();
 	if(!mezzanineNode["RestoreExpiration"].isNull())
 		mezzanine_.restoreExpiration = mezzanineNode["RestoreExpiration"].asString();
+	if(!mezzanineNode["FileMD5"].isNull())
+		mezzanine_.fileMD5 = mezzanineNode["FileMD5"].asString();
 	auto allAudioStreamListNode = mezzanineNode["AudioStreamList"]["AudioStream"];
 	for (auto mezzanineNodeAudioStreamListAudioStream : allAudioStreamListNode)
 	{

@@ -25,6 +25,15 @@ DeleteMezzaninesRequest::DeleteMezzaninesRequest()
 
 DeleteMezzaninesRequest::~DeleteMezzaninesRequest() {}
 
+std::string DeleteMezzaninesRequest::getReferenceIds() const {
+  return referenceIds_;
+}
+
+void DeleteMezzaninesRequest::setReferenceIds(const std::string &referenceIds) {
+  referenceIds_ = referenceIds;
+  setParameter(std::string("ReferenceIds"), referenceIds);
+}
+
 bool DeleteMezzaninesRequest::getForce() const {
   return force_;
 }

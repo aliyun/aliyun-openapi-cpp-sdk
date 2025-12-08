@@ -25,6 +25,15 @@ DeleteVideoRequest::DeleteVideoRequest()
 
 DeleteVideoRequest::~DeleteVideoRequest() {}
 
+std::string DeleteVideoRequest::getReferenceIds() const {
+  return referenceIds_;
+}
+
+void DeleteVideoRequest::setReferenceIds(const std::string &referenceIds) {
+  referenceIds_ = referenceIds;
+  setParameter(std::string("ReferenceIds"), referenceIds);
+}
+
 std::string DeleteVideoRequest::getVideoIds() const {
   return videoIds_;
 }

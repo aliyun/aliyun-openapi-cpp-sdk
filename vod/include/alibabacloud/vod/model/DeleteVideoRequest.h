@@ -30,10 +30,13 @@ class ALIBABACLOUD_VOD_EXPORT DeleteVideoRequest : public RpcServiceRequest {
 public:
 	DeleteVideoRequest();
 	~DeleteVideoRequest();
+	std::string getReferenceIds() const;
+	void setReferenceIds(const std::string &referenceIds);
 	std::string getVideoIds() const;
 	void setVideoIds(const std::string &videoIds);
 
 private:
+	std::string referenceIds_;
 	std::string videoIds_;
 };
 } // namespace Model

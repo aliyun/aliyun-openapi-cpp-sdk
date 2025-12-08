@@ -79,6 +79,15 @@ void SubmitTranscodeJobsRequest::setPriority(const std::string &priority) {
   setParameter(std::string("Priority"), priority);
 }
 
+std::string SubmitTranscodeJobsRequest::getReferenceId() const {
+  return referenceId_;
+}
+
+void SubmitTranscodeJobsRequest::setReferenceId(const std::string &referenceId) {
+  referenceId_ = referenceId;
+  setParameter(std::string("ReferenceId"), referenceId);
+}
+
 std::string SubmitTranscodeJobsRequest::getPipelineId() const {
   return pipelineId_;
 }

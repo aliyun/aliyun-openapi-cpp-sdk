@@ -163,6 +163,12 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodEditingUsageDataResult.h
 	include/alibabacloud/vod/model/DescribeVodMediaPlayDataRequest.h
 	include/alibabacloud/vod/model/DescribeVodMediaPlayDataResult.h
+	include/alibabacloud/vod/model/DescribeVodPlayerCollectDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodPlayerCollectDataResult.h
+	include/alibabacloud/vod/model/DescribeVodPlayerDimensionDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodPlayerDimensionDataResult.h
+	include/alibabacloud/vod/model/DescribeVodPlayerMetricDataRequest.h
+	include/alibabacloud/vod/model/DescribeVodPlayerMetricDataResult.h
 	include/alibabacloud/vod/model/DescribeVodRangeDataByLocateAndIspServiceRequest.h
 	include/alibabacloud/vod/model/DescribeVodRangeDataByLocateAndIspServiceResult.h
 	include/alibabacloud/vod/model/DescribeVodRefreshQuotaRequest.h
@@ -181,6 +187,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/DescribeVodTranscodeDataResult.h
 	include/alibabacloud/vod/model/DescribeVodUserDomainsRequest.h
 	include/alibabacloud/vod/model/DescribeVodUserDomainsResult.h
+	include/alibabacloud/vod/model/DescribeVodUserVipsByDomainRequest.h
+	include/alibabacloud/vod/model/DescribeVodUserVipsByDomainResult.h
 	include/alibabacloud/vod/model/DescribeVodVerifyContentRequest.h
 	include/alibabacloud/vod/model/DescribeVodVerifyContentResult.h
 	include/alibabacloud/vod/model/DetachAppPolicyFromIdentityRequest.h
@@ -199,6 +207,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetAIVideoTagResultResult.h
 	include/alibabacloud/vod/model/GetAppInfosRequest.h
 	include/alibabacloud/vod/model/GetAppInfosResult.h
+	include/alibabacloud/vod/model/GetAppPlayKeyRequest.h
+	include/alibabacloud/vod/model/GetAppPlayKeyResult.h
 	include/alibabacloud/vod/model/GetAttachedMediaInfoRequest.h
 	include/alibabacloud/vod/model/GetAttachedMediaInfoResult.h
 	include/alibabacloud/vod/model/GetAuditHistoryRequest.h
@@ -309,6 +319,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SearchEditingProjectResult.h
 	include/alibabacloud/vod/model/SearchMediaRequest.h
 	include/alibabacloud/vod/model/SearchMediaResult.h
+	include/alibabacloud/vod/model/SetAppPlayKeyRequest.h
+	include/alibabacloud/vod/model/SetAppPlayKeyResult.h
 	include/alibabacloud/vod/model/SetAuditSecurityIpRequest.h
 	include/alibabacloud/vod/model/SetAuditSecurityIpResult.h
 	include/alibabacloud/vod/model/SetCrossdomainContentRequest.h
@@ -526,6 +538,12 @@ set(vod_src
 	src/model/DescribeVodEditingUsageDataResult.cc
 	src/model/DescribeVodMediaPlayDataRequest.cc
 	src/model/DescribeVodMediaPlayDataResult.cc
+	src/model/DescribeVodPlayerCollectDataRequest.cc
+	src/model/DescribeVodPlayerCollectDataResult.cc
+	src/model/DescribeVodPlayerDimensionDataRequest.cc
+	src/model/DescribeVodPlayerDimensionDataResult.cc
+	src/model/DescribeVodPlayerMetricDataRequest.cc
+	src/model/DescribeVodPlayerMetricDataResult.cc
 	src/model/DescribeVodRangeDataByLocateAndIspServiceRequest.cc
 	src/model/DescribeVodRangeDataByLocateAndIspServiceResult.cc
 	src/model/DescribeVodRefreshQuotaRequest.cc
@@ -544,6 +562,8 @@ set(vod_src
 	src/model/DescribeVodTranscodeDataResult.cc
 	src/model/DescribeVodUserDomainsRequest.cc
 	src/model/DescribeVodUserDomainsResult.cc
+	src/model/DescribeVodUserVipsByDomainRequest.cc
+	src/model/DescribeVodUserVipsByDomainResult.cc
 	src/model/DescribeVodVerifyContentRequest.cc
 	src/model/DescribeVodVerifyContentResult.cc
 	src/model/DetachAppPolicyFromIdentityRequest.cc
@@ -562,6 +582,8 @@ set(vod_src
 	src/model/GetAIVideoTagResultResult.cc
 	src/model/GetAppInfosRequest.cc
 	src/model/GetAppInfosResult.cc
+	src/model/GetAppPlayKeyRequest.cc
+	src/model/GetAppPlayKeyResult.cc
 	src/model/GetAttachedMediaInfoRequest.cc
 	src/model/GetAttachedMediaInfoResult.cc
 	src/model/GetAuditHistoryRequest.cc
@@ -672,6 +694,8 @@ set(vod_src
 	src/model/SearchEditingProjectResult.cc
 	src/model/SearchMediaRequest.cc
 	src/model/SearchMediaResult.cc
+	src/model/SetAppPlayKeyRequest.cc
+	src/model/SetAppPlayKeyResult.cc
 	src/model/SetAuditSecurityIpRequest.cc
 	src/model/SetAuditSecurityIpResult.cc
 	src/model/SetCrossdomainContentRequest.cc

@@ -45,6 +45,9 @@ void UpdateVideoInfosResult::parse(const std::string &payload)
 	auto allNonExistVideoIds = value["NonExistVideoIds"]["VideoId"];
 	for (const auto &item : allNonExistVideoIds)
 		nonExistVideoIds_.push_back(item.asString());
+	auto allNonExistReferenceIds = value["NonExistReferenceIds"]["ReferenceId"];
+	for (const auto &item : allNonExistReferenceIds)
+		nonExistReferenceIds_.push_back(item.asString());
 
 }
 
@@ -56,5 +59,10 @@ std::vector<std::string> UpdateVideoInfosResult::getForbiddenVideoIds()const
 std::vector<std::string> UpdateVideoInfosResult::getNonExistVideoIds()const
 {
 	return nonExistVideoIds_;
+}
+
+std::vector<std::string> UpdateVideoInfosResult::getNonExistReferenceIds()const
+{
+	return nonExistReferenceIds_;
 }
 

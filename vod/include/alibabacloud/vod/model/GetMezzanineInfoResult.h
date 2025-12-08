@@ -81,6 +81,7 @@ namespace AlibabaCloud
 						std::string width;
 					};
 					std::string status;
+					std::string fileMD5;
 					std::string videoId;
 					std::string cRC64;
 					long size;

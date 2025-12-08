@@ -38,12 +38,15 @@ public:
 	void setVideoId(const std::string &videoId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getReferenceId() const;
+	void setReferenceId(const std::string &referenceId);
 
 private:
 	long resourceOwnerId_;
 	std::string resourceOwnerAccount_;
 	std::string videoId_;
 	long ownerId_;
+	std::string referenceId_;
 };
 } // namespace Model
 } // namespace Vod

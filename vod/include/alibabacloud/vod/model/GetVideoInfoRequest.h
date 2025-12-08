@@ -30,17 +30,20 @@ class ALIBABACLOUD_VOD_EXPORT GetVideoInfoRequest : public RpcServiceRequest {
 public:
 	GetVideoInfoRequest();
 	~GetVideoInfoRequest();
-	std::string getVideoId() const;
-	void setVideoId(const std::string &videoId);
-	std::string getAdditionType() const;
-	void setAdditionType(const std::string &additionType);
 	std::string getResultTypes() const;
 	void setResultTypes(const std::string &resultTypes);
+	std::string getVideoId() const;
+	void setVideoId(const std::string &videoId);
+	std::string getReferenceId() const;
+	void setReferenceId(const std::string &referenceId);
+	std::string getAdditionType() const;
+	void setAdditionType(const std::string &additionType);
 
 private:
-	std::string videoId_;
-	std::string additionType_;
 	std::string resultTypes_;
+	std::string videoId_;
+	std::string referenceId_;
+	std::string additionType_;
 };
 } // namespace Model
 } // namespace Vod

@@ -48,6 +48,8 @@ public:
 	void setCount(long count);
 	std::string getVideoId() const;
 	void setVideoId(const std::string &videoId);
+	std::string getReferenceId() const;
+	void setReferenceId(const std::string &referenceId);
 	std::string getWidth() const;
 	void setWidth(const std::string &width);
 	std::string getFileUrl() const;
@@ -65,6 +67,7 @@ private:
 	std::string height_;
 	long count_;
 	std::string videoId_;
+	std::string referenceId_;
 	std::string width_;
 	std::string fileUrl_;
 	long interval_;

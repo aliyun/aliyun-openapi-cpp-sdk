@@ -32,11 +32,14 @@ public:
 	~DeleteStreamRequest();
 	std::string getVideoId() const;
 	void setVideoId(const std::string &videoId);
+	std::string getReferenceId() const;
+	void setReferenceId(const std::string &referenceId);
 	std::string getJobIds() const;
 	void setJobIds(const std::string &jobIds);
 
 private:
 	std::string videoId_;
+	std::string referenceId_;
 	std::string jobIds_;
 };
 } // namespace Model

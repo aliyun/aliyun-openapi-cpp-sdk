@@ -30,18 +30,18 @@ class ALIBABACLOUD_VOD_EXPORT DescribeMediaDistributionRequest : public RpcServi
 public:
 	DescribeMediaDistributionRequest();
 	~DescribeMediaDistributionRequest();
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
 	std::string getStorageClass() const;
 	void setStorageClass(const std::string &storageClass);
 	std::string getInterval() const;
 	void setInterval(const std::string &interval);
 
 private:
-	std::string endTime_;
 	std::string startTime_;
+	std::string endTime_;
 	std::string storageClass_;
 	std::string interval_;
 };

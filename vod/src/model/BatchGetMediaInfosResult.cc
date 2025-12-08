@@ -154,6 +154,8 @@ void BatchGetMediaInfosResult::parse(const std::string &payload)
 			mediaInfosObject.mediaInfo.restoreExpiration = mediaInfoNode["RestoreExpiration"].asString();
 		if(!mediaInfoNode["UserData"].isNull())
 			mediaInfosObject.mediaInfo.userData = mediaInfoNode["UserData"].asString();
+		if(!mediaInfoNode["ReferenceId"].isNull())
+			mediaInfosObject.mediaInfo.referenceId = mediaInfoNode["ReferenceId"].asString();
 			auto allSnapshots = mediaInfoNode["Snapshots"]["Snapshot"];
 			for (auto value : allSnapshots)
 				mediaInfosObject.mediaInfo.snapshots.push_back(value.asString());
@@ -182,6 +184,8 @@ void BatchGetMediaInfosResult::parse(const std::string &payload)
 			mediaInfosObject.mezzanineInfo.duration = mezzanineInfoNode["Duration"].asString();
 		if(!mezzanineInfoNode["Fps"].isNull())
 			mediaInfosObject.mezzanineInfo.fps = mezzanineInfoNode["Fps"].asString();
+		if(!mezzanineInfoNode["FileMD5"].isNull())
+			mediaInfosObject.mezzanineInfo.fileMD5 = mezzanineInfoNode["FileMD5"].asString();
 		auto allAudioStreamListNode = mezzanineInfoNode["AudioStreamList"]["AudioStream"];
 		for (auto mezzanineInfoNodeAudioStreamListAudioStream : allAudioStreamListNode)
 		{
@@ -279,6 +283,9 @@ void BatchGetMediaInfosResult::parse(const std::string &payload)
 	auto allNonExistMediaIds = value["NonExistMediaIds"]["MediaId"];
 	for (const auto &item : allNonExistMediaIds)
 		nonExistMediaIds_.push_back(item.asString());
+	auto allNonExistReferenceIds = value["NonExistReferenceIds"]["ReferenceId"];
+	for (const auto &item : allNonExistReferenceIds)
+		nonExistReferenceIds_.push_back(item.asString());
 	auto allForbiddenMediaIds = value["ForbiddenMediaIds"]["MediaId"];
 	for (const auto &item : allForbiddenMediaIds)
 		forbiddenMediaIds_.push_back(item.asString());
@@ -293,6 +300,11 @@ std::vector<std::string> BatchGetMediaInfosResult::getNonExistMediaIds()const
 std::vector<BatchGetMediaInfosResult::MediaBasicInfo> BatchGetMediaInfosResult::getMediaInfos()const
 {
 	return mediaInfos_;
+}
+
+std::vector<std::string> BatchGetMediaInfosResult::getNonExistReferenceIds()const
+{
+	return nonExistReferenceIds_;
 }
 
 std::vector<std::string> BatchGetMediaInfosResult::getForbiddenMediaIds()const

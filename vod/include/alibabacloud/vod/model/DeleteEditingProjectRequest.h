@@ -32,6 +32,8 @@ public:
 	~DeleteEditingProjectRequest();
 	std::string getResourceOwnerId() const;
 	void setResourceOwnerId(const std::string &resourceOwnerId);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -40,16 +42,14 @@ public:
 	void setProjectIds(const std::string &projectIds);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 
 private:
 	std::string resourceOwnerId_;
+	std::string accessKeyId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string projectIds_;
 	std::string ownerId_;
-	std::string accessKeyId_;
 };
 } // namespace Model
 } // namespace Vod

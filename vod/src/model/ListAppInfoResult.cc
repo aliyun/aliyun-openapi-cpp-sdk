@@ -61,14 +61,14 @@ void ListAppInfoResult::parse(const std::string &payload)
 			appInfoListObject.regionId = valueAppInfoListAppInfo["RegionId"].asString();
 		if(!valueAppInfoListAppInfo["ResourceGroupId"].isNull())
 			appInfoListObject.resourceGroupId = valueAppInfoListAppInfo["ResourceGroupId"].asString();
-		auto allTagsNode = valueAppInfoListAppInfo["Tags"]["tagsItem"];
-		for (auto valueAppInfoListAppInfoTagstagsItem : allTagsNode)
+		auto allTagsNode = valueAppInfoListAppInfo["Tags"]["Tag"];
+		for (auto valueAppInfoListAppInfoTagsTag : allTagsNode)
 		{
-			AppInfo::TagsItem tagsObject;
-			if(!valueAppInfoListAppInfoTagstagsItem["TagKey"].isNull())
-				tagsObject.tagKey = valueAppInfoListAppInfoTagstagsItem["TagKey"].asString();
-			if(!valueAppInfoListAppInfoTagstagsItem["TagValue"].isNull())
-				tagsObject.tagValue = valueAppInfoListAppInfoTagstagsItem["TagValue"].asString();
+			AppInfo::Tag tagsObject;
+			if(!valueAppInfoListAppInfoTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueAppInfoListAppInfoTagsTag["TagKey"].asString();
+			if(!valueAppInfoListAppInfoTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueAppInfoListAppInfoTagsTag["TagValue"].asString();
 			appInfoListObject.tags.push_back(tagsObject);
 		}
 		appInfoList_.push_back(appInfoListObject);
