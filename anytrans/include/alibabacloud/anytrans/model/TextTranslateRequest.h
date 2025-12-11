@@ -50,6 +50,7 @@ public:
 		};
 		examplesItem examplesItem;
 		std::vector<examplesItem> examples;
+		std::string prefix;
 		struct Config {
 			bool skipCsiCheck;
 		};
