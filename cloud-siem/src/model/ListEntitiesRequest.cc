@@ -106,6 +106,15 @@ void ListEntitiesRequest::setCurrentPage(int currentPage) {
   setBodyParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
+std::string ListEntitiesRequest::getTags() const {
+  return tags_;
+}
+
+void ListEntitiesRequest::setTags(const std::string &tags) {
+  tags_ = tags;
+  setBodyParameter(std::string("Tags"), tags);
+}
+
 std::string ListEntitiesRequest::getIsMalwareEntity() const {
   return isMalwareEntity_;
 }

@@ -70,8 +70,6 @@
 #include "model/DescribeAutomateResponseConfigCounterResult.h"
 #include "model/DescribeAutomateResponseConfigFeatureRequest.h"
 #include "model/DescribeAutomateResponseConfigFeatureResult.h"
-#include "model/DescribeAutomateResponseConfigPlayBooksRequest.h"
-#include "model/DescribeAutomateResponseConfigPlayBooksResult.h"
 #include "model/DescribeCloudSiemAssetsRequest.h"
 #include "model/DescribeCloudSiemAssetsResult.h"
 #include "model/DescribeCloudSiemAssetsCounterRequest.h"
@@ -279,9 +277,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAutomateResponseConfigFeatureResult> DescribeAutomateResponseConfigFeatureOutcome;
 			typedef std::future<DescribeAutomateResponseConfigFeatureOutcome> DescribeAutomateResponseConfigFeatureOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAutomateResponseConfigFeatureRequest&, const DescribeAutomateResponseConfigFeatureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutomateResponseConfigFeatureAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAutomateResponseConfigPlayBooksResult> DescribeAutomateResponseConfigPlayBooksOutcome;
-			typedef std::future<DescribeAutomateResponseConfigPlayBooksOutcome> DescribeAutomateResponseConfigPlayBooksOutcomeCallable;
-			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeAutomateResponseConfigPlayBooksRequest&, const DescribeAutomateResponseConfigPlayBooksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutomateResponseConfigPlayBooksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCloudSiemAssetsResult> DescribeCloudSiemAssetsOutcome;
 			typedef std::future<DescribeCloudSiemAssetsOutcome> DescribeCloudSiemAssetsOutcomeCallable;
 			typedef std::function<void(const Cloud_siemClient*, const Model::DescribeCloudSiemAssetsRequest&, const DescribeCloudSiemAssetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudSiemAssetsAsyncHandler;
@@ -548,9 +543,6 @@ namespace AlibabaCloud
 			DescribeAutomateResponseConfigFeatureOutcome describeAutomateResponseConfigFeature(const Model::DescribeAutomateResponseConfigFeatureRequest &request)const;
 			void describeAutomateResponseConfigFeatureAsync(const Model::DescribeAutomateResponseConfigFeatureRequest& request, const DescribeAutomateResponseConfigFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAutomateResponseConfigFeatureOutcomeCallable describeAutomateResponseConfigFeatureCallable(const Model::DescribeAutomateResponseConfigFeatureRequest& request) const;
-			DescribeAutomateResponseConfigPlayBooksOutcome describeAutomateResponseConfigPlayBooks(const Model::DescribeAutomateResponseConfigPlayBooksRequest &request)const;
-			void describeAutomateResponseConfigPlayBooksAsync(const Model::DescribeAutomateResponseConfigPlayBooksRequest& request, const DescribeAutomateResponseConfigPlayBooksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAutomateResponseConfigPlayBooksOutcomeCallable describeAutomateResponseConfigPlayBooksCallable(const Model::DescribeAutomateResponseConfigPlayBooksRequest& request) const;
 			DescribeCloudSiemAssetsOutcome describeCloudSiemAssets(const Model::DescribeCloudSiemAssetsRequest &request)const;
 			void describeCloudSiemAssetsAsync(const Model::DescribeCloudSiemAssetsRequest& request, const DescribeCloudSiemAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudSiemAssetsOutcomeCallable describeCloudSiemAssetsCallable(const Model::DescribeCloudSiemAssetsRequest& request) const;

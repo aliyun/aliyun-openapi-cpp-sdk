@@ -68,6 +68,8 @@ void ListAutomateResponseConfigsResult::parse(const std::string &payload)
 			responseDataItemObject.status = std::stoi(dataNodeResponseDataResponseDataItem["Status"].asString());
 		if(!dataNodeResponseDataResponseDataItem["DataType"].isNull())
 			responseDataItemObject.dataType = std::stoi(dataNodeResponseDataResponseDataItem["DataType"].asString());
+		if(!dataNodeResponseDataResponseDataItem["ResponseRuleType"].isNull())
+			responseDataItemObject.responseRuleType = dataNodeResponseDataResponseDataItem["ResponseRuleType"].asString();
 		data_.responseData.push_back(responseDataItemObject);
 	}
 	auto pageInfoNode = dataNode["PageInfo"];

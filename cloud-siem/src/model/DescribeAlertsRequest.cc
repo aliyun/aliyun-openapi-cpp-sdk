@@ -43,6 +43,14 @@ void DescribeAlertsRequest::setAlertName(const std::string &alertName) {
   setBodyParameter(std::string("AlertName"), alertName);
 }
 
+std::vector<std::string> DescribeAlertsRequest::getAlertStatus() const {
+  return alertStatus_;
+}
+
+void DescribeAlertsRequest::setAlertStatus(const std::vector<std::string> &alertStatus) {
+  alertStatus_ = alertStatus;
+}
+
 std::string DescribeAlertsRequest::getEntityName() const {
   return entityName_;
 }

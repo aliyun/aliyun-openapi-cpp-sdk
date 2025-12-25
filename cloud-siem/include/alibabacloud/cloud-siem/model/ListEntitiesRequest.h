@@ -48,6 +48,8 @@ public:
 	void setAssetUuid(const std::string &assetUuid);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
+	std::string getTags() const;
+	void setTags(const std::string &tags);
 	std::string getIsMalwareEntity() const;
 	void setIsMalwareEntity(const std::string &isMalwareEntity);
 	std::string getEntityType() const;
@@ -69,6 +71,7 @@ private:
 	int roleType_;
 	std::string assetUuid_;
 	int currentPage_;
+	std::string tags_;
 	std::string isMalwareEntity_;
 	std::string entityType_;
 	std::string entityUuid_;

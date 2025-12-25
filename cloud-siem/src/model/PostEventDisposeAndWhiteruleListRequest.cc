@@ -79,6 +79,15 @@ void PostEventDisposeAndWhiteruleListRequest::setRoleType(int roleType) {
   setBodyParameter(std::string("RoleType"), std::to_string(roleType));
 }
 
+std::string PostEventDisposeAndWhiteruleListRequest::getOwner() const {
+  return owner_;
+}
+
+void PostEventDisposeAndWhiteruleListRequest::setOwner(const std::string &owner) {
+  owner_ = owner;
+  setBodyParameter(std::string("Owner"), owner);
+}
+
 std::string PostEventDisposeAndWhiteruleListRequest::getThreatLevel() const {
   return threatLevel_;
 }

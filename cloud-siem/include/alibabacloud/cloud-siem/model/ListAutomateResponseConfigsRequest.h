@@ -48,6 +48,8 @@ public:
 	void setRoleType(int roleType);
 	long getId() const;
 	void setId(long id);
+	std::string getResponseRuleType() const;
+	void setResponseRuleType(const std::string &responseRuleType);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	std::string getPlaybookUuid() const;
@@ -65,6 +67,7 @@ private:
 	std::string autoResponseType_;
 	int roleType_;
 	long id_;
+	std::string responseRuleType_;
 	int currentPage_;
 	std::string playbookUuid_;
 	int status_;

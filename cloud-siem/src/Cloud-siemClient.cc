@@ -915,42 +915,6 @@ Cloud_siemClient::DescribeAutomateResponseConfigFeatureOutcomeCallable Cloud_sie
 	return task->get_future();
 }
 
-Cloud_siemClient::DescribeAutomateResponseConfigPlayBooksOutcome Cloud_siemClient::describeAutomateResponseConfigPlayBooks(const DescribeAutomateResponseConfigPlayBooksRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAutomateResponseConfigPlayBooksOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAutomateResponseConfigPlayBooksOutcome(DescribeAutomateResponseConfigPlayBooksResult(outcome.result()));
-	else
-		return DescribeAutomateResponseConfigPlayBooksOutcome(outcome.error());
-}
-
-void Cloud_siemClient::describeAutomateResponseConfigPlayBooksAsync(const DescribeAutomateResponseConfigPlayBooksRequest& request, const DescribeAutomateResponseConfigPlayBooksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAutomateResponseConfigPlayBooks(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cloud_siemClient::DescribeAutomateResponseConfigPlayBooksOutcomeCallable Cloud_siemClient::describeAutomateResponseConfigPlayBooksCallable(const DescribeAutomateResponseConfigPlayBooksRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAutomateResponseConfigPlayBooksOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAutomateResponseConfigPlayBooks(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Cloud_siemClient::DescribeCloudSiemAssetsOutcome Cloud_siemClient::describeCloudSiemAssets(const DescribeCloudSiemAssetsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

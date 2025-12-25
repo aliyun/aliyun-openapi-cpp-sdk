@@ -53,12 +53,15 @@ namespace AlibabaCloud
 						std::string endTime;
 						std::string alertTypeEn;
 						std::string logTime;
+						std::string vendorId;
 						std::string gmtModified;
 						std::string alertTypeCode;
 						long subUserId;
+						std::string productId;
 						std::string isDefend;
 						std::vector<ResponseDataItem::AlertInfoListItem> alertInfoList;
 						std::string alertType;
+						std::string detectionRuleId;
 						std::string alertTitle;
 						std::string alertDetail;
 						std::string alertTitleEn;

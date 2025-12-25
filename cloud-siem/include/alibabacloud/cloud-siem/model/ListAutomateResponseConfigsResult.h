@@ -44,12 +44,13 @@ namespace AlibabaCloud
 					{
 						int status;
 						std::string actionConfig;
-						std::string gmtCreate;
 						std::string actionType;
 						std::string executionCondition;
 						std::string gmtModified;
-						int dataType;
 						long subUserId;
+						std::string gmtCreate;
+						std::string responseRuleType;
+						int dataType;
 						long id;
 						long aliuid;
 						std::string ruleName;

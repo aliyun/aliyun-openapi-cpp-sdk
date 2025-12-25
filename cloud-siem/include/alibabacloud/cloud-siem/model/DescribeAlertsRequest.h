@@ -34,6 +34,8 @@ public:
 	void setRoleFor(long roleFor);
 	std::string getAlertName() const;
 	void setAlertName(const std::string &alertName);
+	std::vector<std::string> getAlertStatus() const;
+	void setAlertStatus(const std::vector<std::string> &alertStatus);
 	std::string getEntityName() const;
 	void setEntityName(const std::string &entityName);
 	std::string getAssetName() const;
@@ -74,6 +76,7 @@ public:
 private:
 	long roleFor_;
 	std::string alertName_;
+	std::vector<std::string> alertStatus_;
 	std::string entityName_;
 	std::string assetName_;
 	std::string entityId_;

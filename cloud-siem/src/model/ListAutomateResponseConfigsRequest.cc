@@ -106,6 +106,15 @@ void ListAutomateResponseConfigsRequest::setId(long id) {
   setBodyParameter(std::string("Id"), std::to_string(id));
 }
 
+std::string ListAutomateResponseConfigsRequest::getResponseRuleType() const {
+  return responseRuleType_;
+}
+
+void ListAutomateResponseConfigsRequest::setResponseRuleType(const std::string &responseRuleType) {
+  responseRuleType_ = responseRuleType;
+  setBodyParameter(std::string("ResponseRuleType"), responseRuleType);
+}
+
 int ListAutomateResponseConfigsRequest::getCurrentPage() const {
   return currentPage_;
 }

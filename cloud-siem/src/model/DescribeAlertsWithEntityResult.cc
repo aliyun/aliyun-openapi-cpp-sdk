@@ -106,10 +106,16 @@ void DescribeAlertsWithEntityResult::parse(const std::string &payload)
 			responseDataItemObject.subUserId = std::stol(dataNodeResponseDataResponseDataItem["SubUserId"].asString());
 		if(!dataNodeResponseDataResponseDataItem["SubUserName"].isNull())
 			responseDataItemObject.subUserName = dataNodeResponseDataResponseDataItem["SubUserName"].asString();
-		if(!dataNodeResponseDataResponseDataItem["CloudCode"].isNull())
-			responseDataItemObject.cloudCode = dataNodeResponseDataResponseDataItem["CloudCode"].asString();
 		if(!dataNodeResponseDataResponseDataItem["IsDefend"].isNull())
 			responseDataItemObject.isDefend = dataNodeResponseDataResponseDataItem["IsDefend"].asString();
+		if(!dataNodeResponseDataResponseDataItem["CloudCode"].isNull())
+			responseDataItemObject.cloudCode = dataNodeResponseDataResponseDataItem["CloudCode"].asString();
+		if(!dataNodeResponseDataResponseDataItem["ProductId"].isNull())
+			responseDataItemObject.productId = dataNodeResponseDataResponseDataItem["ProductId"].asString();
+		if(!dataNodeResponseDataResponseDataItem["VendorId"].isNull())
+			responseDataItemObject.vendorId = dataNodeResponseDataResponseDataItem["VendorId"].asString();
+		if(!dataNodeResponseDataResponseDataItem["DetectionRuleId"].isNull())
+			responseDataItemObject.detectionRuleId = dataNodeResponseDataResponseDataItem["DetectionRuleId"].asString();
 		auto allAlertInfoListNode = dataNodeResponseDataResponseDataItem["AlertInfoList"]["AlertInfoListItem"];
 		for (auto dataNodeResponseDataResponseDataItemAlertInfoListAlertInfoListItem : allAlertInfoListNode)
 		{

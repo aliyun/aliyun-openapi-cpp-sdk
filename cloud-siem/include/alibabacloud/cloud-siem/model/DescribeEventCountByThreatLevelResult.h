@@ -36,7 +36,9 @@ namespace AlibabaCloud
 				{
 					long eventNum;
 					long undealEventNum;
+					long infoLevelEventNum;
 					long mediumLevelEventNum;
+					long seriousLevelEventNum;
 					long highLevelEventNum;
 					long lowLevelEventNum;
 				};

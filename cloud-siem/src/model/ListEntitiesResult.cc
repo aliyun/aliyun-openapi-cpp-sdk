@@ -76,6 +76,12 @@ void ListEntitiesResult::parse(const std::string &payload)
 			responseDataItemObject.entityUuid = dataNodeResponseDataResponseDataItem["EntityUuid"].asString();
 		if(!dataNodeResponseDataResponseDataItem["MalwareType"].isNull())
 			responseDataItemObject.malwareType = dataNodeResponseDataResponseDataItem["MalwareType"].asString();
+		if(!dataNodeResponseDataResponseDataItem["IsAsset"].isNull())
+			responseDataItemObject.isAsset = dataNodeResponseDataResponseDataItem["IsAsset"].asString();
+		if(!dataNodeResponseDataResponseDataItem["IsMalware"].isNull())
+			responseDataItemObject.isMalware = dataNodeResponseDataResponseDataItem["IsMalware"].asString();
+		if(!dataNodeResponseDataResponseDataItem["Tags"].isNull())
+			responseDataItemObject.tags = dataNodeResponseDataResponseDataItem["Tags"].asString();
 		data_.responseData.push_back(responseDataItemObject);
 	}
 	auto pageInfoNode = dataNode["PageInfo"];

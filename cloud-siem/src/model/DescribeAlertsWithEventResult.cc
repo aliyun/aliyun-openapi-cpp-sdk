@@ -110,6 +110,14 @@ void DescribeAlertsWithEventResult::parse(const std::string &payload)
 			responseDataItemObject.cloudCode = dataNodeResponseDataResponseDataItem["CloudCode"].asString();
 		if(!dataNodeResponseDataResponseDataItem["IsDefend"].isNull())
 			responseDataItemObject.isDefend = dataNodeResponseDataResponseDataItem["IsDefend"].asString();
+		if(!dataNodeResponseDataResponseDataItem["ExtendContent"].isNull())
+			responseDataItemObject.extendContent = dataNodeResponseDataResponseDataItem["ExtendContent"].asString();
+		if(!dataNodeResponseDataResponseDataItem["ProductId"].isNull())
+			responseDataItemObject.productId = dataNodeResponseDataResponseDataItem["ProductId"].asString();
+		if(!dataNodeResponseDataResponseDataItem["VendorId"].isNull())
+			responseDataItemObject.vendorId = dataNodeResponseDataResponseDataItem["VendorId"].asString();
+		if(!dataNodeResponseDataResponseDataItem["DetectionRuleId"].isNull())
+			responseDataItemObject.detectionRuleId = dataNodeResponseDataResponseDataItem["DetectionRuleId"].asString();
 		auto allAlertInfoListNode = dataNodeResponseDataResponseDataItem["AlertInfoList"]["AlertInfoListItem"];
 		for (auto dataNodeResponseDataResponseDataItemAlertInfoListAlertInfoListItem : allAlertInfoListNode)
 		{

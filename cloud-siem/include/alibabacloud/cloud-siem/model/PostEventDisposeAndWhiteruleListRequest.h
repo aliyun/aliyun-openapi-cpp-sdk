@@ -42,6 +42,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	int getRoleType() const;
 	void setRoleType(int roleType);
+	std::string getOwner() const;
+	void setOwner(const std::string &owner);
 	std::string getThreatLevel() const;
 	void setThreatLevel(const std::string &threatLevel);
 	std::string getIncidentUuid() const;
@@ -56,6 +58,7 @@ private:
 	std::string receiverInfo_;
 	std::string regionId_;
 	int roleType_;
+	std::string owner_;
 	std::string threatLevel_;
 	std::string incidentUuid_;
 	int status_;

@@ -69,8 +69,6 @@ set(cloud-siem_public_header_model
 	include/alibabacloud/cloud-siem/model/DescribeAutomateResponseConfigCounterResult.h
 	include/alibabacloud/cloud-siem/model/DescribeAutomateResponseConfigFeatureRequest.h
 	include/alibabacloud/cloud-siem/model/DescribeAutomateResponseConfigFeatureResult.h
-	include/alibabacloud/cloud-siem/model/DescribeAutomateResponseConfigPlayBooksRequest.h
-	include/alibabacloud/cloud-siem/model/DescribeAutomateResponseConfigPlayBooksResult.h
 	include/alibabacloud/cloud-siem/model/DescribeCloudSiemAssetsRequest.h
 	include/alibabacloud/cloud-siem/model/DescribeCloudSiemAssetsResult.h
 	include/alibabacloud/cloud-siem/model/DescribeCloudSiemAssetsCounterRequest.h
@@ -248,8 +246,6 @@ set(cloud-siem_src
 	src/model/DescribeAutomateResponseConfigCounterResult.cc
 	src/model/DescribeAutomateResponseConfigFeatureRequest.cc
 	src/model/DescribeAutomateResponseConfigFeatureResult.cc
-	src/model/DescribeAutomateResponseConfigPlayBooksRequest.cc
-	src/model/DescribeAutomateResponseConfigPlayBooksResult.cc
 	src/model/DescribeCloudSiemAssetsRequest.cc
 	src/model/DescribeCloudSiemAssetsResult.cc
 	src/model/DescribeCloudSiemAssetsCounterRequest.cc

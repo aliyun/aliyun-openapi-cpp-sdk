@@ -50,6 +50,10 @@ void DescribeEventCountByThreatLevelResult::parse(const std::string &payload)
 		data_.mediumLevelEventNum = std::stol(dataNode["MediumLevelEventNum"].asString());
 	if(!dataNode["LowLevelEventNum"].isNull())
 		data_.lowLevelEventNum = std::stol(dataNode["LowLevelEventNum"].asString());
+	if(!dataNode["SeriousLevelEventNum"].isNull())
+		data_.seriousLevelEventNum = std::stol(dataNode["SeriousLevelEventNum"].asString());
+	if(!dataNode["InfoLevelEventNum"].isNull())
+		data_.infoLevelEventNum = std::stol(dataNode["InfoLevelEventNum"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
