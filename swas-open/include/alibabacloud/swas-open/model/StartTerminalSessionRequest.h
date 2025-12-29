@@ -30,12 +30,15 @@ class ALIBABACLOUD_SWAS_OPEN_EXPORT StartTerminalSessionRequest : public RpcServ
 public:
 	StartTerminalSessionRequest();
 	~StartTerminalSessionRequest();
+	std::string getCommandLine() const;
+	void setCommandLine(const std::string &commandLine);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 
 private:
+	std::string commandLine_;
 	std::string instanceId_;
 	std::string regionId_;
 };

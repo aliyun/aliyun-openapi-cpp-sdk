@@ -25,6 +25,15 @@ StartTerminalSessionRequest::StartTerminalSessionRequest()
 
 StartTerminalSessionRequest::~StartTerminalSessionRequest() {}
 
+std::string StartTerminalSessionRequest::getCommandLine() const {
+  return commandLine_;
+}
+
+void StartTerminalSessionRequest::setCommandLine(const std::string &commandLine) {
+  commandLine_ = commandLine;
+  setParameter(std::string("CommandLine"), commandLine);
+}
+
 std::string StartTerminalSessionRequest::getInstanceId() const {
   return instanceId_;
 }
