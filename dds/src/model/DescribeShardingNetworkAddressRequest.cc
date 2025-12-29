@@ -34,6 +34,15 @@ void DescribeShardingNetworkAddressRequest::setResourceOwnerId(long resourceOwne
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeShardingNetworkAddressRequest::getNetworkType() const {
+  return networkType_;
+}
+
+void DescribeShardingNetworkAddressRequest::setNetworkType(const std::string &networkType) {
+  networkType_ = networkType;
+  setParameter(std::string("NetworkType"), networkType);
+}
+
 std::string DescribeShardingNetworkAddressRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

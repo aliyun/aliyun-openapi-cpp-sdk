@@ -20,7 +20,7 @@ using AlibabaCloud::Dds::Model::DescribeInstanceRecoverTimeRequest;
 
 DescribeInstanceRecoverTimeRequest::DescribeInstanceRecoverTimeRequest()
     : RpcServiceRequest("dds", "2015-12-01", "DescribeInstanceRecoverTime") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 DescribeInstanceRecoverTimeRequest::~DescribeInstanceRecoverTimeRequest() {}

@@ -45,6 +45,8 @@ void DescribeDBInstanceSSLResult::parse(const std::string &payload)
 		sSLStatus_ = value["SSLStatus"].asString();
 	if(!value["CertCommonName"].isNull())
 		certCommonName_ = value["CertCommonName"].asString();
+	if(!value["ForceEncryption"].isNull())
+		forceEncryption_ = value["ForceEncryption"].asString();
 
 }
 
@@ -56,6 +58,11 @@ std::string DescribeDBInstanceSSLResult::getSSLExpiredTime()const
 std::string DescribeDBInstanceSSLResult::getSSLStatus()const
 {
 	return sSLStatus_;
+}
+
+std::string DescribeDBInstanceSSLResult::getForceEncryption()const
+{
+	return forceEncryption_;
 }
 
 std::string DescribeDBInstanceSSLResult::getCertCommonName()const

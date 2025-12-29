@@ -32,6 +32,8 @@ public:
 	~DescribeShardingNetworkAddressRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getNetworkType() const;
+	void setNetworkType(const std::string &networkType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getDBInstanceId() const;
@@ -47,6 +49,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string networkType_;
 	std::string accessKeyId_;
 	std::string dBInstanceId_;
 	std::string nodeId_;

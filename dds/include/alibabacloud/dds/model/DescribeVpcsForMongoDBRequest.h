@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCESSLREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCESSLREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEVPCSFORMONGODBREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBEVPCSFORMONGODBREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,44 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT ModifyDBInstanceSSLRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT DescribeVpcsForMongoDBRequest : public RpcServiceRequest {
 public:
-	ModifyDBInstanceSSLRequest();
-	~ModifyDBInstanceSSLRequest();
+	DescribeVpcsForMongoDBRequest();
+	~DescribeVpcsForMongoDBRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSwitchMode() const;
-	void setSwitchMode(const std::string &switchMode);
-	std::string getDBInstanceId() const;
-	void setDBInstanceId(const std::string &dBInstanceId);
-	std::string getForceEncryption() const;
-	void setForceEncryption(const std::string &forceEncryption);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getSSLAction() const;
-	void setSSLAction(const std::string &sSLAction);
+	std::string getZoneId() const;
+	void setZoneId(const std::string &zoneId);
 
 private:
 	long resourceOwnerId_;
+	int pageNumber_;
 	std::string accessKeyId_;
-	std::string switchMode_;
-	std::string dBInstanceId_;
-	std::string forceEncryption_;
+	std::string resourceGroupId_;
+	std::string regionId_;
+	int pageSize_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string sSLAction_;
+	std::string zoneId_;
 };
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCESSLREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEVPCSFORMONGODBREQUEST_H_

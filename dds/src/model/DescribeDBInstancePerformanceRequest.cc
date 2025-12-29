@@ -133,6 +133,15 @@ void DescribeDBInstancePerformanceRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeDBInstancePerformanceRequest::getSearchId() const {
+  return searchId_;
+}
+
+void DescribeDBInstancePerformanceRequest::setSearchId(const std::string &searchId) {
+  searchId_ = searchId;
+  setParameter(std::string("SearchId"), searchId);
+}
+
 std::string DescribeDBInstancePerformanceRequest::getInterval() const {
   return interval_;
 }

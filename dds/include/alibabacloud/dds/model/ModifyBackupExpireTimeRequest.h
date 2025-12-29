@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCESSLREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCESSLREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYBACKUPEXPIRETIMEREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_MODIFYBACKUPEXPIRETIMEREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,38 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT ModifyDBInstanceSSLRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT ModifyBackupExpireTimeRequest : public RpcServiceRequest {
 public:
-	ModifyDBInstanceSSLRequest();
-	~ModifyDBInstanceSSLRequest();
+	ModifyBackupExpireTimeRequest();
+	~ModifyBackupExpireTimeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSwitchMode() const;
-	void setSwitchMode(const std::string &switchMode);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
-	std::string getForceEncryption() const;
-	void setForceEncryption(const std::string &forceEncryption);
+	std::string getBackupExpireTime() const;
+	void setBackupExpireTime(const std::string &backupExpireTime);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getBackupId() const;
+	void setBackupId(const std::string &backupId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getSSLAction() const;
-	void setSSLAction(const std::string &sSLAction);
 
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
-	std::string switchMode_;
 	std::string dBInstanceId_;
-	std::string forceEncryption_;
+	std::string backupExpireTime_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::string backupId_;
 	long ownerId_;
-	std::string sSLAction_;
 };
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCESSLREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYBACKUPEXPIRETIMEREQUEST_H_

@@ -54,6 +54,8 @@ public:
 	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getSearchId() const;
+	void setSearchId(const std::string &searchId);
 	std::string getInterval() const;
 	void setInterval(const std::string &interval);
 
@@ -70,6 +72,7 @@ private:
 	std::string ownerAccount_;
 	std::string endTime_;
 	long ownerId_;
+	std::string searchId_;
 	std::string interval_;
 };
 } // namespace Model

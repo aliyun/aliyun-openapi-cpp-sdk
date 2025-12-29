@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCESSLRESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCESSLRESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBERDSVSWITCHSRESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBERDSVSWITCHSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT DescribeDBInstanceSSLResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT DescribeRdsVSwitchsResult : public ServiceResult
 			{
 			public:
+				struct VSwitches
+				{
+					struct VSwitchItem
+					{
+						std::string status;
+						bool isDefault;
+						std::string regionNo;
+						std::string izNo;
+						std::string gmtCreate;
+						std::string vSwitchId;
+						std::string gmtModified;
+						std::string cidrBlock;
+						std::string vSwitchName;
+						std::string bid;
+						std::string aliUid;
+					};
+					std::vector<VSwitchItem> vSwitch;
+				};
 
 
-				DescribeDBInstanceSSLResult();
-				explicit DescribeDBInstanceSSLResult(const std::string &payload);
-				~DescribeDBInstanceSSLResult();
-				std::string getSSLExpiredTime()const;
-				std::string getSSLStatus()const;
-				std::string getForceEncryption()const;
-				std::string getCertCommonName()const;
+				DescribeRdsVSwitchsResult();
+				explicit DescribeRdsVSwitchsResult(const std::string &payload);
+				~DescribeRdsVSwitchsResult();
+				VSwitches getVSwitches()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string sSLExpiredTime_;
-				std::string sSLStatus_;
-				std::string forceEncryption_;
-				std::string certCommonName_;
+				VSwitches vSwitches_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCESSLRESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBERDSVSWITCHSRESULT_H_

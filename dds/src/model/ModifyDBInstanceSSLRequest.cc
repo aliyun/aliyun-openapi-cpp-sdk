@@ -61,6 +61,15 @@ void ModifyDBInstanceSSLRequest::setDBInstanceId(const std::string &dBInstanceId
   setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
+std::string ModifyDBInstanceSSLRequest::getForceEncryption() const {
+  return forceEncryption_;
+}
+
+void ModifyDBInstanceSSLRequest::setForceEncryption(const std::string &forceEncryption) {
+  forceEncryption_ = forceEncryption;
+  setParameter(std::string("ForceEncryption"), forceEncryption);
+}
+
 std::string ModifyDBInstanceSSLRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCESSLRESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCESSLRESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYACTIVEOPERATIONMAINTENANCECONFIGRESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_MODIFYACTIVEOPERATIONMAINTENANCECONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT DescribeDBInstanceSSLResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT ModifyActiveOperationMaintenanceConfigResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeDBInstanceSSLResult();
-				explicit DescribeDBInstanceSSLResult(const std::string &payload);
-				~DescribeDBInstanceSSLResult();
-				std::string getSSLExpiredTime()const;
-				std::string getSSLStatus()const;
-				std::string getForceEncryption()const;
-				std::string getCertCommonName()const;
+				ModifyActiveOperationMaintenanceConfigResult();
+				explicit ModifyActiveOperationMaintenanceConfigResult(const std::string &payload);
+				~ModifyActiveOperationMaintenanceConfigResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string sSLExpiredTime_;
-				std::string sSLStatus_;
-				std::string forceEncryption_;
-				std::string certCommonName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCESSLRESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYACTIVEOPERATIONMAINTENANCECONFIGRESULT_H_

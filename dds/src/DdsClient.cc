@@ -159,6 +159,42 @@ DdsClient::AllocatePublicNetworkAddressOutcomeCallable DdsClient::allocatePublic
 	return task->get_future();
 }
 
+DdsClient::CancelActiveOperationTasksOutcome DdsClient::cancelActiveOperationTasks(const CancelActiveOperationTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelActiveOperationTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelActiveOperationTasksOutcome(CancelActiveOperationTasksResult(outcome.result()));
+	else
+		return CancelActiveOperationTasksOutcome(outcome.error());
+}
+
+void DdsClient::cancelActiveOperationTasksAsync(const CancelActiveOperationTasksRequest& request, const CancelActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelActiveOperationTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::CancelActiveOperationTasksOutcomeCallable DdsClient::cancelActiveOperationTasksCallable(const CancelActiveOperationTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelActiveOperationTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelActiveOperationTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::CheckCloudResourceAuthorizedOutcome DdsClient::checkCloudResourceAuthorized(const CheckCloudResourceAuthorizedRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,6 +519,42 @@ DdsClient::CreateNodeBatchOutcomeCallable DdsClient::createNodeBatchCallable(con
 	return task->get_future();
 }
 
+DdsClient::CreateNodeRoleTagOutcome DdsClient::createNodeRoleTag(const CreateNodeRoleTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNodeRoleTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNodeRoleTagOutcome(CreateNodeRoleTagResult(outcome.result()));
+	else
+		return CreateNodeRoleTagOutcome(outcome.error());
+}
+
+void DdsClient::createNodeRoleTagAsync(const CreateNodeRoleTagRequest& request, const CreateNodeRoleTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNodeRoleTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::CreateNodeRoleTagOutcomeCallable DdsClient::createNodeRoleTagCallable(const CreateNodeRoleTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNodeRoleTagOutcome()>>(
+			[this, request]()
+			{
+			return this->createNodeRoleTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::CreateShardingDBInstanceOutcome DdsClient::createShardingDBInstance(const CreateShardingDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +585,42 @@ DdsClient::CreateShardingDBInstanceOutcomeCallable DdsClient::createShardingDBIn
 			[this, request]()
 			{
 			return this->createShardingDBInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DeleteBackupOutcome DdsClient::deleteBackup(const DeleteBackupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBackupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBackupOutcome(DeleteBackupResult(outcome.result()));
+	else
+		return DeleteBackupOutcome(outcome.error());
+}
+
+void DdsClient::deleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBackup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DeleteBackupOutcomeCallable DdsClient::deleteBackupCallable(const DeleteBackupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBackupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBackup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2211,6 +2319,78 @@ DdsClient::DescribePriceOutcomeCallable DdsClient::describePriceCallable(const D
 	return task->get_future();
 }
 
+DdsClient::DescribeRdsVSwitchsOutcome DdsClient::describeRdsVSwitchs(const DescribeRdsVSwitchsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRdsVSwitchsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRdsVSwitchsOutcome(DescribeRdsVSwitchsResult(outcome.result()));
+	else
+		return DescribeRdsVSwitchsOutcome(outcome.error());
+}
+
+void DdsClient::describeRdsVSwitchsAsync(const DescribeRdsVSwitchsRequest& request, const DescribeRdsVSwitchsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRdsVSwitchs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeRdsVSwitchsOutcomeCallable DdsClient::describeRdsVSwitchsCallable(const DescribeRdsVSwitchsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRdsVSwitchsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRdsVSwitchs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeRdsVpcsOutcome DdsClient::describeRdsVpcs(const DescribeRdsVpcsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRdsVpcsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRdsVpcsOutcome(DescribeRdsVpcsResult(outcome.result()));
+	else
+		return DescribeRdsVpcsOutcome(outcome.error());
+}
+
+void DdsClient::describeRdsVpcsAsync(const DescribeRdsVpcsRequest& request, const DescribeRdsVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRdsVpcs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeRdsVpcsOutcomeCallable DdsClient::describeRdsVpcsCallable(const DescribeRdsVpcsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRdsVpcsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRdsVpcs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeRegionsOutcome DdsClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2349,6 +2529,42 @@ DdsClient::DescribeRestoreDBInstanceListOutcomeCallable DdsClient::describeResto
 			[this, request]()
 			{
 			return this->describeRestoreDBInstanceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeRoleTagStatusOutcome DdsClient::describeRoleTagStatus(const DescribeRoleTagStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRoleTagStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRoleTagStatusOutcome(DescribeRoleTagStatusResult(outcome.result()));
+	else
+		return DescribeRoleTagStatusOutcome(outcome.error());
+}
+
+void DdsClient::describeRoleTagStatusAsync(const DescribeRoleTagStatusRequest& request, const DescribeRoleTagStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRoleTagStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeRoleTagStatusOutcomeCallable DdsClient::describeRoleTagStatusCallable(const DescribeRoleTagStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRoleTagStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRoleTagStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2643,6 +2859,42 @@ DdsClient::DescribeUserEncryptionKeyListOutcomeCallable DdsClient::describeUserE
 	return task->get_future();
 }
 
+DdsClient::DescribeVpcsForMongoDBOutcome DdsClient::describeVpcsForMongoDB(const DescribeVpcsForMongoDBRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVpcsForMongoDBOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVpcsForMongoDBOutcome(DescribeVpcsForMongoDBResult(outcome.result()));
+	else
+		return DescribeVpcsForMongoDBOutcome(outcome.error());
+}
+
+void DdsClient::describeVpcsForMongoDBAsync(const DescribeVpcsForMongoDBRequest& request, const DescribeVpcsForMongoDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVpcsForMongoDB(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeVpcsForMongoDBOutcomeCallable DdsClient::describeVpcsForMongoDBCallable(const DescribeVpcsForMongoDBRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVpcsForMongoDBOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVpcsForMongoDB(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DestroyInstanceOutcome DdsClient::destroyInstance(const DestroyInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2859,6 +3111,42 @@ DdsClient::ModifyAccountDescriptionOutcomeCallable DdsClient::modifyAccountDescr
 	return task->get_future();
 }
 
+DdsClient::ModifyActiveOperationMaintenanceConfigOutcome DdsClient::modifyActiveOperationMaintenanceConfig(const ModifyActiveOperationMaintenanceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyActiveOperationMaintenanceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyActiveOperationMaintenanceConfigOutcome(ModifyActiveOperationMaintenanceConfigResult(outcome.result()));
+	else
+		return ModifyActiveOperationMaintenanceConfigOutcome(outcome.error());
+}
+
+void DdsClient::modifyActiveOperationMaintenanceConfigAsync(const ModifyActiveOperationMaintenanceConfigRequest& request, const ModifyActiveOperationMaintenanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyActiveOperationMaintenanceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifyActiveOperationMaintenanceConfigOutcomeCallable DdsClient::modifyActiveOperationMaintenanceConfigCallable(const ModifyActiveOperationMaintenanceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyActiveOperationMaintenanceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyActiveOperationMaintenanceConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::ModifyActiveOperationTasksOutcome DdsClient::modifyActiveOperationTasks(const ModifyActiveOperationTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2961,6 +3249,42 @@ DdsClient::ModifyAuditPolicyOutcomeCallable DdsClient::modifyAuditPolicyCallable
 			[this, request]()
 			{
 			return this->modifyAuditPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::ModifyBackupExpireTimeOutcome DdsClient::modifyBackupExpireTime(const ModifyBackupExpireTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBackupExpireTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBackupExpireTimeOutcome(ModifyBackupExpireTimeResult(outcome.result()));
+	else
+		return ModifyBackupExpireTimeOutcome(outcome.error());
+}
+
+void DdsClient::modifyBackupExpireTimeAsync(const ModifyBackupExpireTimeRequest& request, const ModifyBackupExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBackupExpireTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifyBackupExpireTimeOutcomeCallable DdsClient::modifyBackupExpireTimeCallable(const ModifyBackupExpireTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBackupExpireTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBackupExpireTime(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

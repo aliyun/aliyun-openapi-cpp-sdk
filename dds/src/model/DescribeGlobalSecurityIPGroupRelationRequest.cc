@@ -20,7 +20,7 @@ using AlibabaCloud::Dds::Model::DescribeGlobalSecurityIPGroupRelationRequest;
 
 DescribeGlobalSecurityIPGroupRelationRequest::DescribeGlobalSecurityIPGroupRelationRequest()
     : RpcServiceRequest("dds", "2015-12-01", "DescribeGlobalSecurityIPGroupRelation") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 DescribeGlobalSecurityIPGroupRelationRequest::~DescribeGlobalSecurityIPGroupRelationRequest() {}

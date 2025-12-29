@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCESSLREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCESSLREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYACTIVEOPERATIONMAINTENANCECONFIGREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_MODIFYACTIVEOPERATIONMAINTENANCECONFIGREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,47 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT ModifyDBInstanceSSLRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT ModifyActiveOperationMaintenanceConfigRequest : public RpcServiceRequest {
 public:
-	ModifyDBInstanceSSLRequest();
-	~ModifyDBInstanceSSLRequest();
+	ModifyActiveOperationMaintenanceConfigRequest();
+	~ModifyActiveOperationMaintenanceConfigRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getCycleTime() const;
+	void setCycleTime(const std::string &cycleTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSwitchMode() const;
-	void setSwitchMode(const std::string &switchMode);
-	std::string getDBInstanceId() const;
-	void setDBInstanceId(const std::string &dBInstanceId);
-	std::string getForceEncryption() const;
-	void setForceEncryption(const std::string &forceEncryption);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getMaintainStartTime() const;
+	void setMaintainStartTime(const std::string &maintainStartTime);
+	std::string getCycleType() const;
+	void setCycleType(const std::string &cycleType);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getSSLAction() const;
-	void setSSLAction(const std::string &sSLAction);
+	std::string getMaintainEndTime() const;
+	void setMaintainEndTime(const std::string &maintainEndTime);
+	int getStatus() const;
+	void setStatus(int status);
 
 private:
 	long resourceOwnerId_;
+	std::string cycleTime_;
 	std::string accessKeyId_;
-	std::string switchMode_;
-	std::string dBInstanceId_;
-	std::string forceEncryption_;
+	std::string regionId_;
+	std::string maintainStartTime_;
+	std::string cycleType_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string sSLAction_;
+	std::string maintainEndTime_;
+	int status_;
 };
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCESSLREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYACTIVEOPERATIONMAINTENANCECONFIGREQUEST_H_
