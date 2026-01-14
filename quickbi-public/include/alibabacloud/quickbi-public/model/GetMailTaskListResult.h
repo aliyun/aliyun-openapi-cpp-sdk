@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYORGANIZATIONWORKSPACELISTRESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYORGANIZATIONWORKSPACELISTRESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_GETMAILTASKLISTRESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_GETMAILTASKLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryOrganizationWorkspaceListResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT GetMailTaskListResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
 					struct DataItem
 					{
-						std::string workspaceDescription;
-						std::string realOwnerAccountName;
-						std::string owner;
-						std::string modifyUser;
-						std::string createTime;
-						std::string ownerAccountName;
-						std::string workspaceId;
-						std::string createUser;
-						std::string organizationId;
-						std::string modifyUserAccountName;
-						std::string modifiedTime;
-						bool allowShareOperation;
-						std::string workspaceName;
-						bool allowPublishOperation;
-						std::string createUserAccountName;
+						std::string subscribeName;
+						std::string bizOwnerUserId;
+						std::string bizOwnerName;
+						std::string mailId;
+						bool paused;
 					};
+					int pre;
 					int totalNum;
 					int pageNum;
 					int pageSize;
+					int next;
 					std::vector<DataItem> data;
 					int totalPages;
 				};
 
 
-				QueryOrganizationWorkspaceListResult();
-				explicit QueryOrganizationWorkspaceListResult(const std::string &payload);
-				~QueryOrganizationWorkspaceListResult();
+				GetMailTaskListResult();
+				explicit GetMailTaskListResult(const std::string &payload);
+				~GetMailTaskListResult();
 				bool getSuccess()const;
 				Result getResult()const;
 
@@ -76,4 +68,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYORGANIZATIONWORKSPACELISTRESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_GETMAILTASKLISTRESULT_H_

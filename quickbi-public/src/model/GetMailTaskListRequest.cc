@@ -1,0 +1,81 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/quickbi-public/model/GetMailTaskListRequest.h>
+
+using AlibabaCloud::Quickbi_public::Model::GetMailTaskListRequest;
+
+GetMailTaskListRequest::GetMailTaskListRequest()
+    : RpcServiceRequest("quickbi-public", "2022-01-01", "GetMailTaskList") {
+  setMethod(HttpRequest::Method::Post);
+}
+
+GetMailTaskListRequest::~GetMailTaskListRequest() {}
+
+bool GetMailTaskListRequest::getPaused() const {
+  return paused_;
+}
+
+void GetMailTaskListRequest::setPaused(bool paused) {
+  paused_ = paused;
+  setParameter(std::string("Paused"), paused ? "true" : "false");
+}
+
+std::string GetMailTaskListRequest::getUserNick() const {
+  return userNick_;
+}
+
+void GetMailTaskListRequest::setUserNick(const std::string &userNick) {
+  userNick_ = userNick;
+  setParameter(std::string("UserNick"), userNick);
+}
+
+std::string GetMailTaskListRequest::getAccessPoint() const {
+  return accessPoint_;
+}
+
+void GetMailTaskListRequest::setAccessPoint(const std::string &accessPoint) {
+  accessPoint_ = accessPoint;
+  setParameter(std::string("AccessPoint"), accessPoint);
+}
+
+int GetMailTaskListRequest::getPageNum() const {
+  return pageNum_;
+}
+
+void GetMailTaskListRequest::setPageNum(int pageNum) {
+  pageNum_ = pageNum;
+  setParameter(std::string("PageNum"), std::to_string(pageNum));
+}
+
+int GetMailTaskListRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void GetMailTaskListRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string GetMailTaskListRequest::getSignType() const {
+  return signType_;
+}
+
+void GetMailTaskListRequest::setSignType(const std::string &signType) {
+  signType_ = signType;
+  setParameter(std::string("SignType"), signType);
+}
+

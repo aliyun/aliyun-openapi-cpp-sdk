@@ -101,6 +101,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/DeleteUserTagMetaResult.h
 	include/alibabacloud/quickbi-public/model/GetDataSourceConnectionInfoRequest.h
 	include/alibabacloud/quickbi-public/model/GetDataSourceConnectionInfoResult.h
+	include/alibabacloud/quickbi-public/model/GetMailTaskListRequest.h
+	include/alibabacloud/quickbi-public/model/GetMailTaskListResult.h
 	include/alibabacloud/quickbi-public/model/GetMailTaskStatusRequest.h
 	include/alibabacloud/quickbi-public/model/GetMailTaskStatusResult.h
 	include/alibabacloud/quickbi-public/model/GetUserGroupInfoRequest.h
@@ -137,6 +139,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListSharedReportsResult.h
 	include/alibabacloud/quickbi-public/model/ListUserGroupsByUserIdRequest.h
 	include/alibabacloud/quickbi-public/model/ListUserGroupsByUserIdResult.h
+	include/alibabacloud/quickbi-public/model/ListWhitePortalMenuRequest.h
+	include/alibabacloud/quickbi-public/model/ListWhitePortalMenuResult.h
 	include/alibabacloud/quickbi-public/model/ListWorkspaceRoleUsersRequest.h
 	include/alibabacloud/quickbi-public/model/ListWorkspaceRoleUsersResult.h
 	include/alibabacloud/quickbi-public/model/ListWorkspaceRolesRequest.h
@@ -211,6 +215,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QuerySmartqPermissionByCubeIdResult.h
 	include/alibabacloud/quickbi-public/model/QueryTicketInfoRequest.h
 	include/alibabacloud/quickbi-public/model/QueryTicketInfoResult.h
+	include/alibabacloud/quickbi-public/model/QueryUserByMobileAccountRequest.h
+	include/alibabacloud/quickbi-public/model/QueryUserByMobileAccountResult.h
 	include/alibabacloud/quickbi-public/model/QueryUserGroupListByParentIdRequest.h
 	include/alibabacloud/quickbi-public/model/QueryUserGroupListByParentIdResult.h
 	include/alibabacloud/quickbi-public/model/QueryUserGroupMemberRequest.h
@@ -362,6 +368,8 @@ set(quickbi-public_src
 	src/model/DeleteUserTagMetaResult.cc
 	src/model/GetDataSourceConnectionInfoRequest.cc
 	src/model/GetDataSourceConnectionInfoResult.cc
+	src/model/GetMailTaskListRequest.cc
+	src/model/GetMailTaskListResult.cc
 	src/model/GetMailTaskStatusRequest.cc
 	src/model/GetMailTaskStatusResult.cc
 	src/model/GetUserGroupInfoRequest.cc
@@ -398,6 +406,8 @@ set(quickbi-public_src
 	src/model/ListSharedReportsResult.cc
 	src/model/ListUserGroupsByUserIdRequest.cc
 	src/model/ListUserGroupsByUserIdResult.cc
+	src/model/ListWhitePortalMenuRequest.cc
+	src/model/ListWhitePortalMenuResult.cc
 	src/model/ListWorkspaceRoleUsersRequest.cc
 	src/model/ListWorkspaceRoleUsersResult.cc
 	src/model/ListWorkspaceRolesRequest.cc
@@ -472,6 +482,8 @@ set(quickbi-public_src
 	src/model/QuerySmartqPermissionByCubeIdResult.cc
 	src/model/QueryTicketInfoRequest.cc
 	src/model/QueryTicketInfoResult.cc
+	src/model/QueryUserByMobileAccountRequest.cc
+	src/model/QueryUserByMobileAccountResult.cc
 	src/model/QueryUserGroupListByParentIdRequest.cc
 	src/model/QueryUserGroupListByParentIdResult.cc
 	src/model/QueryUserGroupMemberRequest.cc

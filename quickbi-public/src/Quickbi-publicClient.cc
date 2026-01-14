@@ -1491,6 +1491,42 @@ Quickbi_publicClient::GetDataSourceConnectionInfoOutcomeCallable Quickbi_publicC
 	return task->get_future();
 }
 
+Quickbi_publicClient::GetMailTaskListOutcome Quickbi_publicClient::getMailTaskList(const GetMailTaskListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMailTaskListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMailTaskListOutcome(GetMailTaskListResult(outcome.result()));
+	else
+		return GetMailTaskListOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::getMailTaskListAsync(const GetMailTaskListRequest& request, const GetMailTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMailTaskList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::GetMailTaskListOutcomeCallable Quickbi_publicClient::getMailTaskListCallable(const GetMailTaskListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMailTaskListOutcome()>>(
+			[this, request]()
+			{
+			return this->getMailTaskList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::GetMailTaskStatusOutcome Quickbi_publicClient::getMailTaskStatus(const GetMailTaskStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2133,6 +2169,42 @@ Quickbi_publicClient::ListUserGroupsByUserIdOutcomeCallable Quickbi_publicClient
 			[this, request]()
 			{
 			return this->listUserGroupsByUserId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ListWhitePortalMenuOutcome Quickbi_publicClient::listWhitePortalMenu(const ListWhitePortalMenuRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListWhitePortalMenuOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListWhitePortalMenuOutcome(ListWhitePortalMenuResult(outcome.result()));
+	else
+		return ListWhitePortalMenuOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listWhitePortalMenuAsync(const ListWhitePortalMenuRequest& request, const ListWhitePortalMenuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listWhitePortalMenu(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListWhitePortalMenuOutcomeCallable Quickbi_publicClient::listWhitePortalMenuCallable(const ListWhitePortalMenuRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListWhitePortalMenuOutcome()>>(
+			[this, request]()
+			{
+			return this->listWhitePortalMenu(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3465,6 +3537,42 @@ Quickbi_publicClient::QueryTicketInfoOutcomeCallable Quickbi_publicClient::query
 			[this, request]()
 			{
 			return this->queryTicketInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryUserByMobileAccountOutcome Quickbi_publicClient::queryUserByMobileAccount(const QueryUserByMobileAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryUserByMobileAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryUserByMobileAccountOutcome(QueryUserByMobileAccountResult(outcome.result()));
+	else
+		return QueryUserByMobileAccountOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryUserByMobileAccountAsync(const QueryUserByMobileAccountRequest& request, const QueryUserByMobileAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryUserByMobileAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryUserByMobileAccountOutcomeCallable Quickbi_publicClient::queryUserByMobileAccountCallable(const QueryUserByMobileAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryUserByMobileAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->queryUserByMobileAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

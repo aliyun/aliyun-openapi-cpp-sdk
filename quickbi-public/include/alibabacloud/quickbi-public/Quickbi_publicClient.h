@@ -102,6 +102,8 @@
 #include "model/DeleteUserTagMetaResult.h"
 #include "model/GetDataSourceConnectionInfoRequest.h"
 #include "model/GetDataSourceConnectionInfoResult.h"
+#include "model/GetMailTaskListRequest.h"
+#include "model/GetMailTaskListResult.h"
 #include "model/GetMailTaskStatusRequest.h"
 #include "model/GetMailTaskStatusResult.h"
 #include "model/GetUserGroupInfoRequest.h"
@@ -138,6 +140,8 @@
 #include "model/ListSharedReportsResult.h"
 #include "model/ListUserGroupsByUserIdRequest.h"
 #include "model/ListUserGroupsByUserIdResult.h"
+#include "model/ListWhitePortalMenuRequest.h"
+#include "model/ListWhitePortalMenuResult.h"
 #include "model/ListWorkspaceRoleUsersRequest.h"
 #include "model/ListWorkspaceRoleUsersResult.h"
 #include "model/ListWorkspaceRolesRequest.h"
@@ -212,6 +216,8 @@
 #include "model/QuerySmartqPermissionByCubeIdResult.h"
 #include "model/QueryTicketInfoRequest.h"
 #include "model/QueryTicketInfoResult.h"
+#include "model/QueryUserByMobileAccountRequest.h"
+#include "model/QueryUserByMobileAccountResult.h"
 #include "model/QueryUserGroupListByParentIdRequest.h"
 #include "model/QueryUserGroupListByParentIdResult.h"
 #include "model/QueryUserGroupMemberRequest.h"
@@ -409,6 +415,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDataSourceConnectionInfoResult> GetDataSourceConnectionInfoOutcome;
 			typedef std::future<GetDataSourceConnectionInfoOutcome> GetDataSourceConnectionInfoOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::GetDataSourceConnectionInfoRequest&, const GetDataSourceConnectionInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataSourceConnectionInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetMailTaskListResult> GetMailTaskListOutcome;
+			typedef std::future<GetMailTaskListOutcome> GetMailTaskListOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::GetMailTaskListRequest&, const GetMailTaskListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMailTaskListAsyncHandler;
 			typedef Outcome<Error, Model::GetMailTaskStatusResult> GetMailTaskStatusOutcome;
 			typedef std::future<GetMailTaskStatusOutcome> GetMailTaskStatusOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::GetMailTaskStatusRequest&, const GetMailTaskStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMailTaskStatusAsyncHandler;
@@ -463,6 +472,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListUserGroupsByUserIdResult> ListUserGroupsByUserIdOutcome;
 			typedef std::future<ListUserGroupsByUserIdOutcome> ListUserGroupsByUserIdOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListUserGroupsByUserIdRequest&, const ListUserGroupsByUserIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserGroupsByUserIdAsyncHandler;
+			typedef Outcome<Error, Model::ListWhitePortalMenuResult> ListWhitePortalMenuOutcome;
+			typedef std::future<ListWhitePortalMenuOutcome> ListWhitePortalMenuOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListWhitePortalMenuRequest&, const ListWhitePortalMenuOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWhitePortalMenuAsyncHandler;
 			typedef Outcome<Error, Model::ListWorkspaceRoleUsersResult> ListWorkspaceRoleUsersOutcome;
 			typedef std::future<ListWorkspaceRoleUsersOutcome> ListWorkspaceRoleUsersOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListWorkspaceRoleUsersRequest&, const ListWorkspaceRoleUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkspaceRoleUsersAsyncHandler;
@@ -574,6 +586,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryTicketInfoResult> QueryTicketInfoOutcome;
 			typedef std::future<QueryTicketInfoOutcome> QueryTicketInfoOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryTicketInfoRequest&, const QueryTicketInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTicketInfoAsyncHandler;
+			typedef Outcome<Error, Model::QueryUserByMobileAccountResult> QueryUserByMobileAccountOutcome;
+			typedef std::future<QueryUserByMobileAccountOutcome> QueryUserByMobileAccountOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryUserByMobileAccountRequest&, const QueryUserByMobileAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserByMobileAccountAsyncHandler;
 			typedef Outcome<Error, Model::QueryUserGroupListByParentIdResult> QueryUserGroupListByParentIdOutcome;
 			typedef std::future<QueryUserGroupListByParentIdOutcome> QueryUserGroupListByParentIdOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryUserGroupListByParentIdRequest&, const QueryUserGroupListByParentIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserGroupListByParentIdAsyncHandler;
@@ -801,6 +816,9 @@ namespace AlibabaCloud
 			GetDataSourceConnectionInfoOutcome getDataSourceConnectionInfo(const Model::GetDataSourceConnectionInfoRequest &request)const;
 			void getDataSourceConnectionInfoAsync(const Model::GetDataSourceConnectionInfoRequest& request, const GetDataSourceConnectionInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataSourceConnectionInfoOutcomeCallable getDataSourceConnectionInfoCallable(const Model::GetDataSourceConnectionInfoRequest& request) const;
+			GetMailTaskListOutcome getMailTaskList(const Model::GetMailTaskListRequest &request)const;
+			void getMailTaskListAsync(const Model::GetMailTaskListRequest& request, const GetMailTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMailTaskListOutcomeCallable getMailTaskListCallable(const Model::GetMailTaskListRequest& request) const;
 			GetMailTaskStatusOutcome getMailTaskStatus(const Model::GetMailTaskStatusRequest &request)const;
 			void getMailTaskStatusAsync(const Model::GetMailTaskStatusRequest& request, const GetMailTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMailTaskStatusOutcomeCallable getMailTaskStatusCallable(const Model::GetMailTaskStatusRequest& request) const;
@@ -855,6 +873,9 @@ namespace AlibabaCloud
 			ListUserGroupsByUserIdOutcome listUserGroupsByUserId(const Model::ListUserGroupsByUserIdRequest &request)const;
 			void listUserGroupsByUserIdAsync(const Model::ListUserGroupsByUserIdRequest& request, const ListUserGroupsByUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserGroupsByUserIdOutcomeCallable listUserGroupsByUserIdCallable(const Model::ListUserGroupsByUserIdRequest& request) const;
+			ListWhitePortalMenuOutcome listWhitePortalMenu(const Model::ListWhitePortalMenuRequest &request)const;
+			void listWhitePortalMenuAsync(const Model::ListWhitePortalMenuRequest& request, const ListWhitePortalMenuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListWhitePortalMenuOutcomeCallable listWhitePortalMenuCallable(const Model::ListWhitePortalMenuRequest& request) const;
 			ListWorkspaceRoleUsersOutcome listWorkspaceRoleUsers(const Model::ListWorkspaceRoleUsersRequest &request)const;
 			void listWorkspaceRoleUsersAsync(const Model::ListWorkspaceRoleUsersRequest& request, const ListWorkspaceRoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListWorkspaceRoleUsersOutcomeCallable listWorkspaceRoleUsersCallable(const Model::ListWorkspaceRoleUsersRequest& request) const;
@@ -966,6 +987,9 @@ namespace AlibabaCloud
 			QueryTicketInfoOutcome queryTicketInfo(const Model::QueryTicketInfoRequest &request)const;
 			void queryTicketInfoAsync(const Model::QueryTicketInfoRequest& request, const QueryTicketInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryTicketInfoOutcomeCallable queryTicketInfoCallable(const Model::QueryTicketInfoRequest& request) const;
+			QueryUserByMobileAccountOutcome queryUserByMobileAccount(const Model::QueryUserByMobileAccountRequest &request)const;
+			void queryUserByMobileAccountAsync(const Model::QueryUserByMobileAccountRequest& request, const QueryUserByMobileAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryUserByMobileAccountOutcomeCallable queryUserByMobileAccountCallable(const Model::QueryUserByMobileAccountRequest& request) const;
 			QueryUserGroupListByParentIdOutcome queryUserGroupListByParentId(const Model::QueryUserGroupListByParentIdRequest &request)const;
 			void queryUserGroupListByParentIdAsync(const Model::QueryUserGroupListByParentIdRequest& request, const QueryUserGroupListByParentIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryUserGroupListByParentIdOutcomeCallable queryUserGroupListByParentIdCallable(const Model::QueryUserGroupListByParentIdRequest& request) const;

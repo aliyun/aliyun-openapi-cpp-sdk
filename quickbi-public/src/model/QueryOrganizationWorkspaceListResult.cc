@@ -80,6 +80,8 @@ void QueryOrganizationWorkspaceListResult::parse(const std::string &payload)
 			dataItemObject.workspaceId = resultNodeDataDataItem["WorkspaceId"].asString();
 		if(!resultNodeDataDataItem["WorkspaceName"].isNull())
 			dataItemObject.workspaceName = resultNodeDataDataItem["WorkspaceName"].asString();
+		if(!resultNodeDataDataItem["RealOwnerAccountName"].isNull())
+			dataItemObject.realOwnerAccountName = resultNodeDataDataItem["RealOwnerAccountName"].asString();
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())
