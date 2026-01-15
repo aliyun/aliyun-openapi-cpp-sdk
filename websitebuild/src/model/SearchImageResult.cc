@@ -48,26 +48,26 @@ void SearchImageResult::parse(const std::string &payload)
 	for (auto imageResponseNodeImageListimage : allImageListNode)
 	{
 		ImageResponse::Image imageObject;
-		if(!imageResponseNodeImageListimage["ImageRatio"].isNull())
-			imageObject.imageRatio = imageResponseNodeImageListimage["ImageRatio"].asString();
-		if(!imageResponseNodeImageListimage["DescriptiveTones"].isNull())
-			imageObject.descriptiveTones = imageResponseNodeImageListimage["DescriptiveTones"].asString();
-		if(!imageResponseNodeImageListimage["OssKey"].isNull())
-			imageObject.ossKey = imageResponseNodeImageListimage["OssKey"].asString();
-		if(!imageResponseNodeImageListimage["ImageCategory"].isNull())
-			imageObject.imageCategory = imageResponseNodeImageListimage["ImageCategory"].asString();
-		if(!imageResponseNodeImageListimage["Height"].isNull())
-			imageObject.height = std::stoi(imageResponseNodeImageListimage["Height"].asString());
-		if(!imageResponseNodeImageListimage["QuantitativePalette"].isNull())
-			imageObject.quantitativePalette = imageResponseNodeImageListimage["QuantitativePalette"].asString();
 		if(!imageResponseNodeImageListimage["ImageUuid"].isNull())
 			imageObject.imageUuid = imageResponseNodeImageListimage["ImageUuid"].asString();
-		if(!imageResponseNodeImageListimage["Width"].isNull())
-			imageObject.width = std::stoi(imageResponseNodeImageListimage["Width"].asString());
+		if(!imageResponseNodeImageListimage["OssKey"].isNull())
+			imageObject.ossKey = imageResponseNodeImageListimage["OssKey"].asString();
 		if(!imageResponseNodeImageListimage["Url"].isNull())
 			imageObject.url = imageResponseNodeImageListimage["Url"].asString();
+		if(!imageResponseNodeImageListimage["Width"].isNull())
+			imageObject.width = std::stoi(imageResponseNodeImageListimage["Width"].asString());
+		if(!imageResponseNodeImageListimage["Height"].isNull())
+			imageObject.height = std::stoi(imageResponseNodeImageListimage["Height"].asString());
+		if(!imageResponseNodeImageListimage["ImageRatio"].isNull())
+			imageObject.imageRatio = imageResponseNodeImageListimage["ImageRatio"].asString();
+		if(!imageResponseNodeImageListimage["ImageCategory"].isNull())
+			imageObject.imageCategory = imageResponseNodeImageListimage["ImageCategory"].asString();
 		if(!imageResponseNodeImageListimage["TagsFromImage"].isNull())
 			imageObject.tagsFromImage = imageResponseNodeImageListimage["TagsFromImage"].asString();
+		if(!imageResponseNodeImageListimage["DescriptiveTones"].isNull())
+			imageObject.descriptiveTones = imageResponseNodeImageListimage["DescriptiveTones"].asString();
+		if(!imageResponseNodeImageListimage["QuantitativePalette"].isNull())
+			imageObject.quantitativePalette = imageResponseNodeImageListimage["QuantitativePalette"].asString();
 		imageResponse_.imageList.push_back(imageObject);
 	}
 	if(!value["ErrorMsg"].isNull())

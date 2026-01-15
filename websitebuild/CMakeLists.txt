@@ -21,33 +21,117 @@ set(websitebuild_public_header
 	include/alibabacloud/websitebuild/WebsiteBuildExport.h )
 
 set(websitebuild_public_header_model 
+	include/alibabacloud/websitebuild/model/BindAppDomainRequest.h
+	include/alibabacloud/websitebuild/model/BindAppDomainResult.h
+	include/alibabacloud/websitebuild/model/CreateAppInstanceRequest.h
+	include/alibabacloud/websitebuild/model/CreateAppInstanceResult.h
+	include/alibabacloud/websitebuild/model/CreateAppInstanceTicketRequest.h
+	include/alibabacloud/websitebuild/model/CreateAppInstanceTicketResult.h
 	include/alibabacloud/websitebuild/model/CreateLogoTaskRequest.h
 	include/alibabacloud/websitebuild/model/CreateLogoTaskResult.h
+	include/alibabacloud/websitebuild/model/DeleteAppDomainCertificateRequest.h
+	include/alibabacloud/websitebuild/model/DeleteAppDomainCertificateResult.h
+	include/alibabacloud/websitebuild/model/DeleteAppDomainRedirectRequest.h
+	include/alibabacloud/websitebuild/model/DeleteAppDomainRedirectResult.h
+	include/alibabacloud/websitebuild/model/DescribeAppDomainDnsRecordRequest.h
+	include/alibabacloud/websitebuild/model/DescribeAppDomainDnsRecordResult.h
+	include/alibabacloud/websitebuild/model/DispatchConsoleAPIForPartnerRequest.h
+	include/alibabacloud/websitebuild/model/DispatchConsoleAPIForPartnerResult.h
+	include/alibabacloud/websitebuild/model/GetAppInstanceRequest.h
+	include/alibabacloud/websitebuild/model/GetAppInstanceResult.h
 	include/alibabacloud/websitebuild/model/GetCreateLogoTaskRequest.h
 	include/alibabacloud/websitebuild/model/GetCreateLogoTaskResult.h
+	include/alibabacloud/websitebuild/model/GetDomainInfoForPartnerRequest.h
+	include/alibabacloud/websitebuild/model/GetDomainInfoForPartnerResult.h
+	include/alibabacloud/websitebuild/model/GetIcpFilingInfoForPartnerRequest.h
+	include/alibabacloud/websitebuild/model/GetIcpFilingInfoForPartnerResult.h
+	include/alibabacloud/websitebuild/model/GetUserAccessTokenForPartnerRequest.h
+	include/alibabacloud/websitebuild/model/GetUserAccessTokenForPartnerResult.h
+	include/alibabacloud/websitebuild/model/GetUserTmpIdentityForPartnerRequest.h
+	include/alibabacloud/websitebuild/model/GetUserTmpIdentityForPartnerResult.h
+	include/alibabacloud/websitebuild/model/ListAppDomainRedirectRecordsRequest.h
+	include/alibabacloud/websitebuild/model/ListAppDomainRedirectRecordsResult.h
+	include/alibabacloud/websitebuild/model/ListAppInstanceDomainsRequest.h
+	include/alibabacloud/websitebuild/model/ListAppInstanceDomainsResult.h
+	include/alibabacloud/websitebuild/model/ListAppInstancesRequest.h
+	include/alibabacloud/websitebuild/model/ListAppInstancesResult.h
+	include/alibabacloud/websitebuild/model/ModifyAppInstanceSpecRequest.h
+	include/alibabacloud/websitebuild/model/ModifyAppInstanceSpecResult.h
 	include/alibabacloud/websitebuild/model/OperateAppInstanceForPartnerRequest.h
 	include/alibabacloud/websitebuild/model/OperateAppInstanceForPartnerResult.h
 	include/alibabacloud/websitebuild/model/OperateAppServiceForPartnerRequest.h
 	include/alibabacloud/websitebuild/model/OperateAppServiceForPartnerResult.h
+	include/alibabacloud/websitebuild/model/RefreshAppInstanceTicketRequest.h
+	include/alibabacloud/websitebuild/model/RefreshAppInstanceTicketResult.h
+	include/alibabacloud/websitebuild/model/RefundAppInstanceForPartnerRequest.h
+	include/alibabacloud/websitebuild/model/RefundAppInstanceForPartnerResult.h
+	include/alibabacloud/websitebuild/model/RenewAppInstanceRequest.h
+	include/alibabacloud/websitebuild/model/RenewAppInstanceResult.h
 	include/alibabacloud/websitebuild/model/SearchImageRequest.h
 	include/alibabacloud/websitebuild/model/SearchImageResult.h
+	include/alibabacloud/websitebuild/model/SetAppDomainCertificateRequest.h
+	include/alibabacloud/websitebuild/model/SetAppDomainCertificateResult.h
 	include/alibabacloud/websitebuild/model/SyncAppInstanceForPartnerRequest.h
-	include/alibabacloud/websitebuild/model/SyncAppInstanceForPartnerResult.h )
+	include/alibabacloud/websitebuild/model/SyncAppInstanceForPartnerResult.h
+	include/alibabacloud/websitebuild/model/UnbindAppDomainRequest.h
+	include/alibabacloud/websitebuild/model/UnbindAppDomainResult.h )
 
 set(websitebuild_src 
 	src/WebsiteBuildClient.cc
+	src/model/BindAppDomainRequest.cc
+	src/model/BindAppDomainResult.cc
+	src/model/CreateAppInstanceRequest.cc
+	src/model/CreateAppInstanceResult.cc
+	src/model/CreateAppInstanceTicketRequest.cc
+	src/model/CreateAppInstanceTicketResult.cc
 	src/model/CreateLogoTaskRequest.cc
 	src/model/CreateLogoTaskResult.cc
+	src/model/DeleteAppDomainCertificateRequest.cc
+	src/model/DeleteAppDomainCertificateResult.cc
+	src/model/DeleteAppDomainRedirectRequest.cc
+	src/model/DeleteAppDomainRedirectResult.cc
+	src/model/DescribeAppDomainDnsRecordRequest.cc
+	src/model/DescribeAppDomainDnsRecordResult.cc
+	src/model/DispatchConsoleAPIForPartnerRequest.cc
+	src/model/DispatchConsoleAPIForPartnerResult.cc
+	src/model/GetAppInstanceRequest.cc
+	src/model/GetAppInstanceResult.cc
 	src/model/GetCreateLogoTaskRequest.cc
 	src/model/GetCreateLogoTaskResult.cc
+	src/model/GetDomainInfoForPartnerRequest.cc
+	src/model/GetDomainInfoForPartnerResult.cc
+	src/model/GetIcpFilingInfoForPartnerRequest.cc
+	src/model/GetIcpFilingInfoForPartnerResult.cc
+	src/model/GetUserAccessTokenForPartnerRequest.cc
+	src/model/GetUserAccessTokenForPartnerResult.cc
+	src/model/GetUserTmpIdentityForPartnerRequest.cc
+	src/model/GetUserTmpIdentityForPartnerResult.cc
+	src/model/ListAppDomainRedirectRecordsRequest.cc
+	src/model/ListAppDomainRedirectRecordsResult.cc
+	src/model/ListAppInstanceDomainsRequest.cc
+	src/model/ListAppInstanceDomainsResult.cc
+	src/model/ListAppInstancesRequest.cc
+	src/model/ListAppInstancesResult.cc
+	src/model/ModifyAppInstanceSpecRequest.cc
+	src/model/ModifyAppInstanceSpecResult.cc
 	src/model/OperateAppInstanceForPartnerRequest.cc
 	src/model/OperateAppInstanceForPartnerResult.cc
 	src/model/OperateAppServiceForPartnerRequest.cc
 	src/model/OperateAppServiceForPartnerResult.cc
+	src/model/RefreshAppInstanceTicketRequest.cc
+	src/model/RefreshAppInstanceTicketResult.cc
+	src/model/RefundAppInstanceForPartnerRequest.cc
+	src/model/RefundAppInstanceForPartnerResult.cc
+	src/model/RenewAppInstanceRequest.cc
+	src/model/RenewAppInstanceResult.cc
 	src/model/SearchImageRequest.cc
 	src/model/SearchImageResult.cc
+	src/model/SetAppDomainCertificateRequest.cc
+	src/model/SetAppDomainCertificateResult.cc
 	src/model/SyncAppInstanceForPartnerRequest.cc
-	src/model/SyncAppInstanceForPartnerResult.cc )
+	src/model/SyncAppInstanceForPartnerResult.cc
+	src/model/UnbindAppDomainRequest.cc
+	src/model/UnbindAppDomainResult.cc )
 
 add_library(websitebuild ${LIB_TYPE}
 	${websitebuild_public_header}

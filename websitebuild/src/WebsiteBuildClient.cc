@@ -51,6 +51,114 @@ WebsiteBuildClient::WebsiteBuildClient(const std::string & accessKeyId, const st
 WebsiteBuildClient::~WebsiteBuildClient()
 {}
 
+WebsiteBuildClient::BindAppDomainOutcome WebsiteBuildClient::bindAppDomain(const BindAppDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindAppDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindAppDomainOutcome(BindAppDomainResult(outcome.result()));
+	else
+		return BindAppDomainOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::bindAppDomainAsync(const BindAppDomainRequest& request, const BindAppDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindAppDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::BindAppDomainOutcomeCallable WebsiteBuildClient::bindAppDomainCallable(const BindAppDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindAppDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->bindAppDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::CreateAppInstanceOutcome WebsiteBuildClient::createAppInstance(const CreateAppInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAppInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAppInstanceOutcome(CreateAppInstanceResult(outcome.result()));
+	else
+		return CreateAppInstanceOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::createAppInstanceAsync(const CreateAppInstanceRequest& request, const CreateAppInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAppInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::CreateAppInstanceOutcomeCallable WebsiteBuildClient::createAppInstanceCallable(const CreateAppInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAppInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->createAppInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::CreateAppInstanceTicketOutcome WebsiteBuildClient::createAppInstanceTicket(const CreateAppInstanceTicketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAppInstanceTicketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAppInstanceTicketOutcome(CreateAppInstanceTicketResult(outcome.result()));
+	else
+		return CreateAppInstanceTicketOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::createAppInstanceTicketAsync(const CreateAppInstanceTicketRequest& request, const CreateAppInstanceTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAppInstanceTicket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::CreateAppInstanceTicketOutcomeCallable WebsiteBuildClient::createAppInstanceTicketCallable(const CreateAppInstanceTicketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAppInstanceTicketOutcome()>>(
+			[this, request]()
+			{
+			return this->createAppInstanceTicket(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 WebsiteBuildClient::CreateLogoTaskOutcome WebsiteBuildClient::createLogoTask(const CreateLogoTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -87,6 +195,186 @@ WebsiteBuildClient::CreateLogoTaskOutcomeCallable WebsiteBuildClient::createLogo
 	return task->get_future();
 }
 
+WebsiteBuildClient::DeleteAppDomainCertificateOutcome WebsiteBuildClient::deleteAppDomainCertificate(const DeleteAppDomainCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAppDomainCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAppDomainCertificateOutcome(DeleteAppDomainCertificateResult(outcome.result()));
+	else
+		return DeleteAppDomainCertificateOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::deleteAppDomainCertificateAsync(const DeleteAppDomainCertificateRequest& request, const DeleteAppDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAppDomainCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::DeleteAppDomainCertificateOutcomeCallable WebsiteBuildClient::deleteAppDomainCertificateCallable(const DeleteAppDomainCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAppDomainCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAppDomainCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::DeleteAppDomainRedirectOutcome WebsiteBuildClient::deleteAppDomainRedirect(const DeleteAppDomainRedirectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAppDomainRedirectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAppDomainRedirectOutcome(DeleteAppDomainRedirectResult(outcome.result()));
+	else
+		return DeleteAppDomainRedirectOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::deleteAppDomainRedirectAsync(const DeleteAppDomainRedirectRequest& request, const DeleteAppDomainRedirectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAppDomainRedirect(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::DeleteAppDomainRedirectOutcomeCallable WebsiteBuildClient::deleteAppDomainRedirectCallable(const DeleteAppDomainRedirectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAppDomainRedirectOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAppDomainRedirect(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::DescribeAppDomainDnsRecordOutcome WebsiteBuildClient::describeAppDomainDnsRecord(const DescribeAppDomainDnsRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAppDomainDnsRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAppDomainDnsRecordOutcome(DescribeAppDomainDnsRecordResult(outcome.result()));
+	else
+		return DescribeAppDomainDnsRecordOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::describeAppDomainDnsRecordAsync(const DescribeAppDomainDnsRecordRequest& request, const DescribeAppDomainDnsRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAppDomainDnsRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::DescribeAppDomainDnsRecordOutcomeCallable WebsiteBuildClient::describeAppDomainDnsRecordCallable(const DescribeAppDomainDnsRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAppDomainDnsRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAppDomainDnsRecord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::DispatchConsoleAPIForPartnerOutcome WebsiteBuildClient::dispatchConsoleAPIForPartner(const DispatchConsoleAPIForPartnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DispatchConsoleAPIForPartnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DispatchConsoleAPIForPartnerOutcome(DispatchConsoleAPIForPartnerResult(outcome.result()));
+	else
+		return DispatchConsoleAPIForPartnerOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::dispatchConsoleAPIForPartnerAsync(const DispatchConsoleAPIForPartnerRequest& request, const DispatchConsoleAPIForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, dispatchConsoleAPIForPartner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::DispatchConsoleAPIForPartnerOutcomeCallable WebsiteBuildClient::dispatchConsoleAPIForPartnerCallable(const DispatchConsoleAPIForPartnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DispatchConsoleAPIForPartnerOutcome()>>(
+			[this, request]()
+			{
+			return this->dispatchConsoleAPIForPartner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::GetAppInstanceOutcome WebsiteBuildClient::getAppInstance(const GetAppInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAppInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAppInstanceOutcome(GetAppInstanceResult(outcome.result()));
+	else
+		return GetAppInstanceOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::getAppInstanceAsync(const GetAppInstanceRequest& request, const GetAppInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAppInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::GetAppInstanceOutcomeCallable WebsiteBuildClient::getAppInstanceCallable(const GetAppInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAppInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->getAppInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 WebsiteBuildClient::GetCreateLogoTaskOutcome WebsiteBuildClient::getCreateLogoTask(const GetCreateLogoTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +405,294 @@ WebsiteBuildClient::GetCreateLogoTaskOutcomeCallable WebsiteBuildClient::getCrea
 			[this, request]()
 			{
 			return this->getCreateLogoTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::GetDomainInfoForPartnerOutcome WebsiteBuildClient::getDomainInfoForPartner(const GetDomainInfoForPartnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDomainInfoForPartnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDomainInfoForPartnerOutcome(GetDomainInfoForPartnerResult(outcome.result()));
+	else
+		return GetDomainInfoForPartnerOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::getDomainInfoForPartnerAsync(const GetDomainInfoForPartnerRequest& request, const GetDomainInfoForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDomainInfoForPartner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::GetDomainInfoForPartnerOutcomeCallable WebsiteBuildClient::getDomainInfoForPartnerCallable(const GetDomainInfoForPartnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDomainInfoForPartnerOutcome()>>(
+			[this, request]()
+			{
+			return this->getDomainInfoForPartner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::GetIcpFilingInfoForPartnerOutcome WebsiteBuildClient::getIcpFilingInfoForPartner(const GetIcpFilingInfoForPartnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetIcpFilingInfoForPartnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetIcpFilingInfoForPartnerOutcome(GetIcpFilingInfoForPartnerResult(outcome.result()));
+	else
+		return GetIcpFilingInfoForPartnerOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::getIcpFilingInfoForPartnerAsync(const GetIcpFilingInfoForPartnerRequest& request, const GetIcpFilingInfoForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getIcpFilingInfoForPartner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::GetIcpFilingInfoForPartnerOutcomeCallable WebsiteBuildClient::getIcpFilingInfoForPartnerCallable(const GetIcpFilingInfoForPartnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetIcpFilingInfoForPartnerOutcome()>>(
+			[this, request]()
+			{
+			return this->getIcpFilingInfoForPartner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::GetUserAccessTokenForPartnerOutcome WebsiteBuildClient::getUserAccessTokenForPartner(const GetUserAccessTokenForPartnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserAccessTokenForPartnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserAccessTokenForPartnerOutcome(GetUserAccessTokenForPartnerResult(outcome.result()));
+	else
+		return GetUserAccessTokenForPartnerOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::getUserAccessTokenForPartnerAsync(const GetUserAccessTokenForPartnerRequest& request, const GetUserAccessTokenForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserAccessTokenForPartner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::GetUserAccessTokenForPartnerOutcomeCallable WebsiteBuildClient::getUserAccessTokenForPartnerCallable(const GetUserAccessTokenForPartnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserAccessTokenForPartnerOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserAccessTokenForPartner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::GetUserTmpIdentityForPartnerOutcome WebsiteBuildClient::getUserTmpIdentityForPartner(const GetUserTmpIdentityForPartnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserTmpIdentityForPartnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserTmpIdentityForPartnerOutcome(GetUserTmpIdentityForPartnerResult(outcome.result()));
+	else
+		return GetUserTmpIdentityForPartnerOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::getUserTmpIdentityForPartnerAsync(const GetUserTmpIdentityForPartnerRequest& request, const GetUserTmpIdentityForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserTmpIdentityForPartner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::GetUserTmpIdentityForPartnerOutcomeCallable WebsiteBuildClient::getUserTmpIdentityForPartnerCallable(const GetUserTmpIdentityForPartnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserTmpIdentityForPartnerOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserTmpIdentityForPartner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::ListAppDomainRedirectRecordsOutcome WebsiteBuildClient::listAppDomainRedirectRecords(const ListAppDomainRedirectRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAppDomainRedirectRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAppDomainRedirectRecordsOutcome(ListAppDomainRedirectRecordsResult(outcome.result()));
+	else
+		return ListAppDomainRedirectRecordsOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::listAppDomainRedirectRecordsAsync(const ListAppDomainRedirectRecordsRequest& request, const ListAppDomainRedirectRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAppDomainRedirectRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::ListAppDomainRedirectRecordsOutcomeCallable WebsiteBuildClient::listAppDomainRedirectRecordsCallable(const ListAppDomainRedirectRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAppDomainRedirectRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAppDomainRedirectRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::ListAppInstanceDomainsOutcome WebsiteBuildClient::listAppInstanceDomains(const ListAppInstanceDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAppInstanceDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAppInstanceDomainsOutcome(ListAppInstanceDomainsResult(outcome.result()));
+	else
+		return ListAppInstanceDomainsOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::listAppInstanceDomainsAsync(const ListAppInstanceDomainsRequest& request, const ListAppInstanceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAppInstanceDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::ListAppInstanceDomainsOutcomeCallable WebsiteBuildClient::listAppInstanceDomainsCallable(const ListAppInstanceDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAppInstanceDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAppInstanceDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::ListAppInstancesOutcome WebsiteBuildClient::listAppInstances(const ListAppInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAppInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAppInstancesOutcome(ListAppInstancesResult(outcome.result()));
+	else
+		return ListAppInstancesOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::listAppInstancesAsync(const ListAppInstancesRequest& request, const ListAppInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAppInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::ListAppInstancesOutcomeCallable WebsiteBuildClient::listAppInstancesCallable(const ListAppInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAppInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAppInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::ModifyAppInstanceSpecOutcome WebsiteBuildClient::modifyAppInstanceSpec(const ModifyAppInstanceSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAppInstanceSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAppInstanceSpecOutcome(ModifyAppInstanceSpecResult(outcome.result()));
+	else
+		return ModifyAppInstanceSpecOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::modifyAppInstanceSpecAsync(const ModifyAppInstanceSpecRequest& request, const ModifyAppInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAppInstanceSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::ModifyAppInstanceSpecOutcomeCallable WebsiteBuildClient::modifyAppInstanceSpecCallable(const ModifyAppInstanceSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAppInstanceSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAppInstanceSpec(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -195,6 +771,114 @@ WebsiteBuildClient::OperateAppServiceForPartnerOutcomeCallable WebsiteBuildClien
 	return task->get_future();
 }
 
+WebsiteBuildClient::RefreshAppInstanceTicketOutcome WebsiteBuildClient::refreshAppInstanceTicket(const RefreshAppInstanceTicketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshAppInstanceTicketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshAppInstanceTicketOutcome(RefreshAppInstanceTicketResult(outcome.result()));
+	else
+		return RefreshAppInstanceTicketOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::refreshAppInstanceTicketAsync(const RefreshAppInstanceTicketRequest& request, const RefreshAppInstanceTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshAppInstanceTicket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::RefreshAppInstanceTicketOutcomeCallable WebsiteBuildClient::refreshAppInstanceTicketCallable(const RefreshAppInstanceTicketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshAppInstanceTicketOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshAppInstanceTicket(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::RefundAppInstanceForPartnerOutcome WebsiteBuildClient::refundAppInstanceForPartner(const RefundAppInstanceForPartnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefundAppInstanceForPartnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefundAppInstanceForPartnerOutcome(RefundAppInstanceForPartnerResult(outcome.result()));
+	else
+		return RefundAppInstanceForPartnerOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::refundAppInstanceForPartnerAsync(const RefundAppInstanceForPartnerRequest& request, const RefundAppInstanceForPartnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refundAppInstanceForPartner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::RefundAppInstanceForPartnerOutcomeCallable WebsiteBuildClient::refundAppInstanceForPartnerCallable(const RefundAppInstanceForPartnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefundAppInstanceForPartnerOutcome()>>(
+			[this, request]()
+			{
+			return this->refundAppInstanceForPartner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::RenewAppInstanceOutcome WebsiteBuildClient::renewAppInstance(const RenewAppInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RenewAppInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RenewAppInstanceOutcome(RenewAppInstanceResult(outcome.result()));
+	else
+		return RenewAppInstanceOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::renewAppInstanceAsync(const RenewAppInstanceRequest& request, const RenewAppInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, renewAppInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::RenewAppInstanceOutcomeCallable WebsiteBuildClient::renewAppInstanceCallable(const RenewAppInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RenewAppInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->renewAppInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 WebsiteBuildClient::SearchImageOutcome WebsiteBuildClient::searchImage(const SearchImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -231,6 +915,42 @@ WebsiteBuildClient::SearchImageOutcomeCallable WebsiteBuildClient::searchImageCa
 	return task->get_future();
 }
 
+WebsiteBuildClient::SetAppDomainCertificateOutcome WebsiteBuildClient::setAppDomainCertificate(const SetAppDomainCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetAppDomainCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetAppDomainCertificateOutcome(SetAppDomainCertificateResult(outcome.result()));
+	else
+		return SetAppDomainCertificateOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::setAppDomainCertificateAsync(const SetAppDomainCertificateRequest& request, const SetAppDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setAppDomainCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::SetAppDomainCertificateOutcomeCallable WebsiteBuildClient::setAppDomainCertificateCallable(const SetAppDomainCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetAppDomainCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->setAppDomainCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 WebsiteBuildClient::SyncAppInstanceForPartnerOutcome WebsiteBuildClient::syncAppInstanceForPartner(const SyncAppInstanceForPartnerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +981,42 @@ WebsiteBuildClient::SyncAppInstanceForPartnerOutcomeCallable WebsiteBuildClient:
 			[this, request]()
 			{
 			return this->syncAppInstanceForPartner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WebsiteBuildClient::UnbindAppDomainOutcome WebsiteBuildClient::unbindAppDomain(const UnbindAppDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindAppDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindAppDomainOutcome(UnbindAppDomainResult(outcome.result()));
+	else
+		return UnbindAppDomainOutcome(outcome.error());
+}
+
+void WebsiteBuildClient::unbindAppDomainAsync(const UnbindAppDomainRequest& request, const UnbindAppDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindAppDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WebsiteBuildClient::UnbindAppDomainOutcomeCallable WebsiteBuildClient::unbindAppDomainCallable(const UnbindAppDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindAppDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindAppDomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
