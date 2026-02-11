@@ -11,7 +11,7 @@
 <a href="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk/branch/master/graph/badge.svg" alt="codecov"></a>
 </p>
 
-阿里云 V1.0 SDK 即将进入基础安全维护阶段，不再建议使用，建议使用 V2.0 SDK。
+阿里云 V1.0 C++ SDK 已进入终止支持状态，不再建议使用。新用户请直接使用 V2.0 C++ SDK；已经集成 V1.0 C++ SDK 的用户也建议迁移至 V2.0 C++ SDK。V2.0 C++ SDK 获取地址：https://github.com/aliyun/alibabacloud-cpp-sdk，使用方法请参见[阿里云 OpenAPI 开发者门户](https://api.alibabacloud.com/)和具体产品文档。
 
 如果您在使用的过程中遇到任何问题，可在当前 GitHub [提交 Issues](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new)。
 

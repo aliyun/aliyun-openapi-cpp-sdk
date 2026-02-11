@@ -11,7 +11,7 @@ English | [简体中文](./README-CN.md)
 <a href="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk/branch/master/graph/badge.svg" alt="codecov"></a>
 </p>
 
-The Alibaba Cloud V1.0 SDK will soon enter the Basic Security Maintenance phase and is no longer recommended for use. It is suggested to use the V2.0 SDK instead.
+The Alibaba Cloud V1.0 C++ SDK has entered End-of-Support and is no longer recommended for use. New users should directly use the V2.0 C++ SDK; users who have already integrated the V1.0 C++ SDK are also advised to migrate to the V2.0 C++ SDK. V2.0 C++ SDK is available here: https://github.com/aliyun/alibabacloud-cpp-sdk, for usage, please refer to [Alibaba Cloud OpenAPI Developer Portal](https://api.alibabacloud.com/) and product-specific documentation.
 
 If you have any problem while using Alibaba Cloud SDK for C++, please submit an [issue](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new).
 
