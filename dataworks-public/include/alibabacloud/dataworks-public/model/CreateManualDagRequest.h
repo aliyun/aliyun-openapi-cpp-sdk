@@ -30,32 +30,23 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateManualDagRequest : public RpcSe
 public:
 	CreateManualDagRequest();
 	~CreateManualDagRequest();
-	std::string getProjectEnv() const;
-	void setProjectEnv(const std::string &projectEnv);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
-	std::string getDagParameters() const;
-	void setDagParameters(const std::string &dagParameters);
-	std::string getIncludeNodeIds() const;
-	void setIncludeNodeIds(const std::string &includeNodeIds);
-	std::string getBizDate() const;
-	void setBizDate(const std::string &bizDate);
-	std::string getExcludeNodeIds() const;
-	void setExcludeNodeIds(const std::string &excludeNodeIds);
+	std::string getBizdate() const;
+	void setBizdate(const std::string &bizdate);
 	std::string getFlowName() const;
 	void setFlowName(const std::string &flowName);
-	std::string getNodeParameters() const;
-	void setNodeParameters(const std::string &nodeParameters);
+	std::string getDagPara() const;
+	void setDagPara(const std::string &dagPara);
+	std::string getNodePara() const;
+	void setNodePara(const std::string &nodePara);
 
 private:
-	std::string projectEnv_;
 	std::string projectName_;
-	std::string dagParameters_;
-	std::string includeNodeIds_;
-	std::string bizDate_;
-	std::string excludeNodeIds_;
+	std::string bizdate_;
 	std::string flowName_;
-	std::string nodeParameters_;
+	std::string dagPara_;
+	std::string nodePara_;
 };
 } // namespace Model
 } // namespace Dataworks_public

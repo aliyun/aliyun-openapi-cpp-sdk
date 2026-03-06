@@ -41,20 +41,13 @@ void DeleteFileResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["DeploymentId"].isNull())
-		deploymentId_ = std::stol(value["DeploymentId"].asString());
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
-}
-
-long DeleteFileResult::getDeploymentId()const
-{
-	return deploymentId_;
 }
 
 int DeleteFileResult::getHttpStatusCode()const

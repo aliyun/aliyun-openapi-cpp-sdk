@@ -19,20 +19,11 @@
 using AlibabaCloud::Dataworks_public::Model::CreateManualDagRequest;
 
 CreateManualDagRequest::CreateManualDagRequest()
-    : RpcServiceRequest("dataworks-public", "2020-05-18", "CreateManualDag") {
+    : RpcServiceRequest("dataworks-public", "2018-06-01", "CreateManualDag") {
   setMethod(HttpRequest::Method::Post);
 }
 
 CreateManualDagRequest::~CreateManualDagRequest() {}
-
-std::string CreateManualDagRequest::getProjectEnv() const {
-  return projectEnv_;
-}
-
-void CreateManualDagRequest::setProjectEnv(const std::string &projectEnv) {
-  projectEnv_ = projectEnv;
-  setBodyParameter(std::string("ProjectEnv"), projectEnv);
-}
 
 std::string CreateManualDagRequest::getProjectName() const {
   return projectName_;
@@ -40,43 +31,16 @@ std::string CreateManualDagRequest::getProjectName() const {
 
 void CreateManualDagRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
-  setBodyParameter(std::string("ProjectName"), projectName);
+  setParameter(std::string("ProjectName"), projectName);
 }
 
-std::string CreateManualDagRequest::getDagParameters() const {
-  return dagParameters_;
+std::string CreateManualDagRequest::getBizdate() const {
+  return bizdate_;
 }
 
-void CreateManualDagRequest::setDagParameters(const std::string &dagParameters) {
-  dagParameters_ = dagParameters;
-  setBodyParameter(std::string("DagParameters"), dagParameters);
-}
-
-std::string CreateManualDagRequest::getIncludeNodeIds() const {
-  return includeNodeIds_;
-}
-
-void CreateManualDagRequest::setIncludeNodeIds(const std::string &includeNodeIds) {
-  includeNodeIds_ = includeNodeIds;
-  setBodyParameter(std::string("IncludeNodeIds"), includeNodeIds);
-}
-
-std::string CreateManualDagRequest::getBizDate() const {
-  return bizDate_;
-}
-
-void CreateManualDagRequest::setBizDate(const std::string &bizDate) {
-  bizDate_ = bizDate;
-  setBodyParameter(std::string("BizDate"), bizDate);
-}
-
-std::string CreateManualDagRequest::getExcludeNodeIds() const {
-  return excludeNodeIds_;
-}
-
-void CreateManualDagRequest::setExcludeNodeIds(const std::string &excludeNodeIds) {
-  excludeNodeIds_ = excludeNodeIds;
-  setBodyParameter(std::string("ExcludeNodeIds"), excludeNodeIds);
+void CreateManualDagRequest::setBizdate(const std::string &bizdate) {
+  bizdate_ = bizdate;
+  setParameter(std::string("Bizdate"), bizdate);
 }
 
 std::string CreateManualDagRequest::getFlowName() const {
@@ -85,15 +49,24 @@ std::string CreateManualDagRequest::getFlowName() const {
 
 void CreateManualDagRequest::setFlowName(const std::string &flowName) {
   flowName_ = flowName;
-  setBodyParameter(std::string("FlowName"), flowName);
+  setParameter(std::string("FlowName"), flowName);
 }
 
-std::string CreateManualDagRequest::getNodeParameters() const {
-  return nodeParameters_;
+std::string CreateManualDagRequest::getDagPara() const {
+  return dagPara_;
 }
 
-void CreateManualDagRequest::setNodeParameters(const std::string &nodeParameters) {
-  nodeParameters_ = nodeParameters;
-  setBodyParameter(std::string("NodeParameters"), nodeParameters);
+void CreateManualDagRequest::setDagPara(const std::string &dagPara) {
+  dagPara_ = dagPara;
+  setParameter(std::string("DagPara"), dagPara);
+}
+
+std::string CreateManualDagRequest::getNodePara() const {
+  return nodePara_;
+}
+
+void CreateManualDagRequest::setNodePara(const std::string &nodePara) {
+  nodePara_ = nodePara;
+  setParameter(std::string("NodePara"), nodePara);
 }
 
