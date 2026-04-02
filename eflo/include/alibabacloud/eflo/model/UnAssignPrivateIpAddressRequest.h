@@ -30,24 +30,24 @@ class ALIBABACLOUD_EFLO_EXPORT UnAssignPrivateIpAddressRequest : public RpcServi
 public:
 	UnAssignPrivateIpAddressRequest();
 	~UnAssignPrivateIpAddressRequest();
-	std::string getSubnetId() const;
-	void setSubnetId(const std::string &subnetId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getPrivateIpAddress() const;
-	void setPrivateIpAddress(const std::string &privateIpAddress);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getSubnetId() const;
+	void setSubnetId(const std::string &subnetId);
+	std::string getPrivateIpAddress() const;
+	void setPrivateIpAddress(const std::string &privateIpAddress);
 	std::string getIpName() const;
 	void setIpName(const std::string &ipName);
 	std::string getNetworkInterfaceId() const;
 	void setNetworkInterfaceId(const std::string &networkInterfaceId);
 
 private:
-	std::string subnetId_;
 	std::string clientToken_;
-	std::string privateIpAddress_;
 	std::string regionId_;
+	std::string subnetId_;
+	std::string privateIpAddress_;
 	std::string ipName_;
 	std::string networkInterfaceId_;
 };

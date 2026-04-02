@@ -102,6 +102,8 @@ void GetVccResult::parse(const std::string &payload)
 		content_.cenOwnerId = contentNode["CenOwnerId"].asString();
 	if(!contentNode["BgpAsn"].isNull())
 		content_.bgpAsn = contentNode["BgpAsn"].asString();
+	if(!contentNode["Bandwidth"].isNull())
+		content_.bandwidth = std::stoi(contentNode["Bandwidth"].asString());
 	auto allErInfosNode = contentNode["ErInfos"]["ErInfo"];
 	for (auto contentNodeErInfosErInfo : allErInfosNode)
 	{
@@ -231,7 +233,14 @@ void GetVccResult::parse(const std::string &payload)
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string GetVccResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string GetVccResult::getMessage()const

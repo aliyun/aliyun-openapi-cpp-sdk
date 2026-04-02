@@ -72,63 +72,82 @@ void GetElasticNetworkInterfaceResult::parse(const std::string &payload)
 		content_.gmtModified = contentNode["GmtModified"].asString();
 	if(!contentNode["Description"].isNull())
 		content_.description = contentNode["Description"].asString();
+	if(!contentNode["ResourceGroupId"].isNull())
+		content_.resourceGroupId = contentNode["ResourceGroupId"].asString();
 	if(!contentNode["SecurityGroupId"].isNull())
 		content_.securityGroupId = contentNode["SecurityGroupId"].asString();
 	if(!contentNode["EnableJumboFrame"].isNull())
 		content_.enableJumboFrame = contentNode["EnableJumboFrame"].asString() == "true";
+	auto allTagsNode = contentNode["Tags"]["Tag"];
+	for (auto contentNodeTagsTag : allTagsNode)
+	{
+		Content::Tag tagObject;
+		if(!contentNodeTagsTag["TagKey"].isNull())
+			tagObject.tagKey = contentNodeTagsTag["TagKey"].asString();
+		if(!contentNodeTagsTag["TagValue"].isNull())
+			tagObject.tagValue = contentNodeTagsTag["TagValue"].asString();
+		content_.tags.push_back(tagObject);
+	}
 	auto allPrivateIpAddressesNode = contentNode["PrivateIpAddresses"]["PrivateIpAddress"];
 	for (auto contentNodePrivateIpAddressesPrivateIpAddress : allPrivateIpAddressesNode)
 	{
 		Content::PrivateIpAddress privateIpAddressObject;
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["Status"].isNull())
+			privateIpAddressObject.status = contentNodePrivateIpAddressesPrivateIpAddress["Status"].asString();
 		if(!contentNodePrivateIpAddressesPrivateIpAddress["ElasticNetworkInterfaceId"].isNull())
 			privateIpAddressObject.elasticNetworkInterfaceId = contentNodePrivateIpAddressesPrivateIpAddress["ElasticNetworkInterfaceId"].asString();
-		if(!contentNodePrivateIpAddressesPrivateIpAddress["RegionId"].isNull())
-			privateIpAddressObject.regionId = contentNodePrivateIpAddressesPrivateIpAddress["RegionId"].asString();
 		if(!contentNodePrivateIpAddressesPrivateIpAddress["GmtCreate"].isNull())
 			privateIpAddressObject.gmtCreate = contentNodePrivateIpAddressesPrivateIpAddress["GmtCreate"].asString();
-		if(!contentNodePrivateIpAddressesPrivateIpAddress["GmtModified"].isNull())
-			privateIpAddressObject.gmtModified = contentNodePrivateIpAddressesPrivateIpAddress["GmtModified"].asString();
 		if(!contentNodePrivateIpAddressesPrivateIpAddress["IpName"].isNull())
 			privateIpAddressObject.ipName = contentNodePrivateIpAddressesPrivateIpAddress["IpName"].asString();
 		if(!contentNodePrivateIpAddressesPrivateIpAddress["PrivateIpAddress"].isNull())
 			privateIpAddressObject.privateIpAddress = contentNodePrivateIpAddressesPrivateIpAddress["PrivateIpAddress"].asString();
-		if(!contentNodePrivateIpAddressesPrivateIpAddress["Status"].isNull())
-			privateIpAddressObject.status = contentNodePrivateIpAddressesPrivateIpAddress["Status"].asString();
 		if(!contentNodePrivateIpAddressesPrivateIpAddress["Description"].isNull())
 			privateIpAddressObject.description = contentNodePrivateIpAddressesPrivateIpAddress["Description"].asString();
 		if(!contentNodePrivateIpAddressesPrivateIpAddress["Message"].isNull())
 			privateIpAddressObject.message = contentNodePrivateIpAddressesPrivateIpAddress["Message"].asString();
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["GmtModified"].isNull())
+			privateIpAddressObject.gmtModified = contentNodePrivateIpAddressesPrivateIpAddress["GmtModified"].asString();
+		if(!contentNodePrivateIpAddressesPrivateIpAddress["RegionId"].isNull())
+			privateIpAddressObject.regionId = contentNodePrivateIpAddressesPrivateIpAddress["RegionId"].asString();
 		content_.privateIpAddresses.push_back(privateIpAddressObject);
 	}
 	auto allIpv6AddressesNode = contentNode["Ipv6Addresses"]["Ipv6Addresse"];
 	for (auto contentNodeIpv6AddressesIpv6Addresse : allIpv6AddressesNode)
 	{
 		Content::Ipv6Addresse ipv6AddresseObject;
+		if(!contentNodeIpv6AddressesIpv6Addresse["Status"].isNull())
+			ipv6AddresseObject.status = contentNodeIpv6AddressesIpv6Addresse["Status"].asString();
 		if(!contentNodeIpv6AddressesIpv6Addresse["ElasticNetworkInterfaceId"].isNull())
 			ipv6AddresseObject.elasticNetworkInterfaceId = contentNodeIpv6AddressesIpv6Addresse["ElasticNetworkInterfaceId"].asString();
 		if(!contentNodeIpv6AddressesIpv6Addresse["IpName"].isNull())
 			ipv6AddresseObject.ipName = contentNodeIpv6AddressesIpv6Addresse["IpName"].asString();
-		if(!contentNodeIpv6AddressesIpv6Addresse["Ipv6Address"].isNull())
-			ipv6AddresseObject.ipv6Address = contentNodeIpv6AddressesIpv6Addresse["Ipv6Address"].asString();
-		if(!contentNodeIpv6AddressesIpv6Addresse["Status"].isNull())
-			ipv6AddresseObject.status = contentNodeIpv6AddressesIpv6Addresse["Status"].asString();
+		if(!contentNodeIpv6AddressesIpv6Addresse["GmtCreate"].isNull())
+			ipv6AddresseObject.gmtCreate = contentNodeIpv6AddressesIpv6Addresse["GmtCreate"].asString();
 		if(!contentNodeIpv6AddressesIpv6Addresse["Description"].isNull())
 			ipv6AddresseObject.description = contentNodeIpv6AddressesIpv6Addresse["Description"].asString();
 		if(!contentNodeIpv6AddressesIpv6Addresse["Message"].isNull())
 			ipv6AddresseObject.message = contentNodeIpv6AddressesIpv6Addresse["Message"].asString();
-		if(!contentNodeIpv6AddressesIpv6Addresse["RegionId"].isNull())
-			ipv6AddresseObject.regionId = contentNodeIpv6AddressesIpv6Addresse["RegionId"].asString();
-		if(!contentNodeIpv6AddressesIpv6Addresse["GmtCreate"].isNull())
-			ipv6AddresseObject.gmtCreate = contentNodeIpv6AddressesIpv6Addresse["GmtCreate"].asString();
 		if(!contentNodeIpv6AddressesIpv6Addresse["GmtModified"].isNull())
 			ipv6AddresseObject.gmtModified = contentNodeIpv6AddressesIpv6Addresse["GmtModified"].asString();
+		if(!contentNodeIpv6AddressesIpv6Addresse["RegionId"].isNull())
+			ipv6AddresseObject.regionId = contentNodeIpv6AddressesIpv6Addresse["RegionId"].asString();
+		if(!contentNodeIpv6AddressesIpv6Addresse["Ipv6Address"].isNull())
+			ipv6AddresseObject.ipv6Address = contentNodeIpv6AddressesIpv6Addresse["Ipv6Address"].asString();
 		content_.ipv6Addresses.push_back(ipv6AddresseObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string GetElasticNetworkInterfaceResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string GetElasticNetworkInterfaceResult::getMessage()const

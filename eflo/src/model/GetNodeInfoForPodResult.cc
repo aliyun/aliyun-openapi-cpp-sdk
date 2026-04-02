@@ -58,6 +58,12 @@ void GetNodeInfoForPodResult::parse(const std::string &payload)
 		content_.leniSipQuota = std::stoi(contentNode["LeniSipQuota"].asString());
 	if(!contentNode["HdeniQuota"].isNull())
 		content_.hdeniQuota = std::stoi(contentNode["HdeniQuota"].asString());
+	if(!contentNode["LeniIpv6SipQuota"].isNull())
+		content_.leniIpv6SipQuota = std::stoi(contentNode["LeniIpv6SipQuota"].asString());
+	if(!contentNode["HdeniSipQuota"].isNull())
+		content_.hdeniSipQuota = std::stoi(contentNode["HdeniSipQuota"].asString());
+	if(!contentNode["HdeniIpv6SipQuota"].isNull())
+		content_.hdeniIpv6SipQuota = std::stoi(contentNode["HdeniIpv6SipQuota"].asString());
 		auto allVSwitches = contentNode["VSwitches"]["VSwitche"];
 		for (auto value : allVSwitches)
 			content_.vSwitches.push_back(value.asString());
@@ -65,7 +71,14 @@ void GetNodeInfoForPodResult::parse(const std::string &payload)
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string GetNodeInfoForPodResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string GetNodeInfoForPodResult::getMessage()const

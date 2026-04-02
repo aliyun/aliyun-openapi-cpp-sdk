@@ -42,6 +42,8 @@ void ListLeniPrivateIpAddressesResult::parse(const std::string &payload)
 	auto contentNode = value["Content"];
 	if(!contentNode["Total"].isNull())
 		content_.total = std::stol(contentNode["Total"].asString());
+	if(!contentNode["ResourceGroupId"].isNull())
+		content_.resourceGroupId = contentNode["ResourceGroupId"].asString();
 	auto allDataNode = contentNode["Data"]["DataItem"];
 	for (auto contentNodeDataDataItem : allDataNode)
 	{
@@ -64,13 +66,22 @@ void ListLeniPrivateIpAddressesResult::parse(const std::string &payload)
 			dataItemObject.description = contentNodeDataDataItem["Description"].asString();
 		if(!contentNodeDataDataItem["Message"].isNull())
 			dataItemObject.message = contentNodeDataDataItem["Message"].asString();
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string ListLeniPrivateIpAddressesResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string ListLeniPrivateIpAddressesResult::getMessage()const

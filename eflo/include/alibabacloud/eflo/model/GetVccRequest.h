@@ -36,20 +36,20 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	bool getEnablePage() const;
-	void setEnablePage(bool enablePage);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getVccId() const;
 	void setVccId(const std::string &vccId);
+	bool getEnablePage() const;
+	void setEnablePage(bool enablePage);
 
 private:
 	std::string clientToken_;
 	int pageNumber_;
 	std::string regionId_;
-	bool enablePage_;
 	int pageSize_;
 	std::string vccId_;
+	bool enablePage_;
 };
 } // namespace Model
 } // namespace Eflo

@@ -108,6 +108,7 @@ namespace AlibabaCloud
 					std::string currentNode;
 					std::string gmtModified;
 					std::string bgpCidr;
+					int bandwidth;
 					std::string commodityCode;
 					std::string vccId;
 					std::vector<Tag> tags;
@@ -144,6 +145,7 @@ namespace AlibabaCloud
 				GetVccResult();
 				explicit GetVccResult(const std::string &payload);
 				~GetVccResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				Content getContent()const;
 				int getCode()const;
@@ -151,6 +153,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				Content content_;
 				int code_;

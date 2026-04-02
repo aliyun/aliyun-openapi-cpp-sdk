@@ -80,13 +80,32 @@ void ListElasticNetworkInterfacesResult::parse(const std::string &payload)
 			dataItemObject.description = contentNodeDataDataItem["Description"].asString();
 		if(!contentNodeDataDataItem["SecurityGroupId"].isNull())
 			dataItemObject.securityGroupId = contentNodeDataDataItem["SecurityGroupId"].asString();
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
+		auto allTagsNode = contentNodeDataDataItem["Tags"]["Tag"];
+		for (auto contentNodeDataDataItemTagsTag : allTagsNode)
+		{
+			Content::DataItem::Tag tagsObject;
+			if(!contentNodeDataDataItemTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = contentNodeDataDataItemTagsTag["TagKey"].asString();
+			if(!contentNodeDataDataItemTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = contentNodeDataDataItemTagsTag["TagValue"].asString();
+			dataItemObject.tags.push_back(tagsObject);
+		}
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string ListElasticNetworkInterfacesResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string ListElasticNetworkInterfacesResult::getMessage()const

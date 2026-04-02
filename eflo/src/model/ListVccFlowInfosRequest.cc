@@ -43,15 +43,6 @@ void ListVccFlowInfosRequest::setFrom(long from) {
   setBodyParameter(std::string("From"), std::to_string(from));
 }
 
-long ListVccFlowInfosRequest::getTo() const {
-  return to_;
-}
-
-void ListVccFlowInfosRequest::setTo(long to) {
-  to_ = to;
-  setBodyParameter(std::string("To"), std::to_string(to));
-}
-
 std::string ListVccFlowInfosRequest::getVccId() const {
   return vccId_;
 }
@@ -77,5 +68,14 @@ std::string ListVccFlowInfosRequest::getDirection() const {
 void ListVccFlowInfosRequest::setDirection(const std::string &direction) {
   direction_ = direction;
   setBodyParameter(std::string("Direction"), direction);
+}
+
+long ListVccFlowInfosRequest::getTo() const {
+  return to_;
+}
+
+void ListVccFlowInfosRequest::setTo(long to) {
+  to_ = to;
+  setBodyParameter(std::string("To"), std::to_string(to));
 }
 

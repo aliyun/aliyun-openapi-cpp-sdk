@@ -28,6 +28,8 @@
 #include "model/AssignPrivateIpAddressResult.h"
 #include "model/AssociateVpdCidrBlockRequest.h"
 #include "model/AssociateVpdCidrBlockResult.h"
+#include "model/AttachElasticNetworkInterfaceRequest.h"
+#include "model/AttachElasticNetworkInterfaceResult.h"
 #include "model/CreateElasticNetworkInterfaceRequest.h"
 #include "model/CreateElasticNetworkInterfaceResult.h"
 #include "model/CreateErRequest.h"
@@ -68,6 +70,10 @@
 #include "model/DeleteVpdGrantRuleResult.h"
 #include "model/DescribeSlrRequest.h"
 #include "model/DescribeSlrResult.h"
+#include "model/DetachElasticNetworkInterfaceRequest.h"
+#include "model/DetachElasticNetworkInterfaceResult.h"
+#include "model/GetDestinationCidrBlockRequest.h"
+#include "model/GetDestinationCidrBlockResult.h"
 #include "model/GetElasticNetworkInterfaceRequest.h"
 #include "model/GetElasticNetworkInterfaceResult.h"
 #include "model/GetErRequest.h"
@@ -142,6 +148,12 @@
 #include "model/ListVpdsResult.h"
 #include "model/QueryInstanceNcdRequest.h"
 #include "model/QueryInstanceNcdResult.h"
+#include "model/RefundVccRequest.h"
+#include "model/RefundVccResult.h"
+#include "model/RetryVccRequest.h"
+#include "model/RetryVccResult.h"
+#include "model/SwitchVccConnectionRequest.h"
+#include "model/SwitchVccConnectionResult.h"
 #include "model/UnAssignPrivateIpAddressRequest.h"
 #include "model/UnAssignPrivateIpAddressResult.h"
 #include "model/UnAssociateVpdCidrBlockRequest.h"
@@ -182,6 +194,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AssociateVpdCidrBlockResult> AssociateVpdCidrBlockOutcome;
 			typedef std::future<AssociateVpdCidrBlockOutcome> AssociateVpdCidrBlockOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::AssociateVpdCidrBlockRequest&, const AssociateVpdCidrBlockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateVpdCidrBlockAsyncHandler;
+			typedef Outcome<Error, Model::AttachElasticNetworkInterfaceResult> AttachElasticNetworkInterfaceOutcome;
+			typedef std::future<AttachElasticNetworkInterfaceOutcome> AttachElasticNetworkInterfaceOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::AttachElasticNetworkInterfaceRequest&, const AttachElasticNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachElasticNetworkInterfaceAsyncHandler;
 			typedef Outcome<Error, Model::CreateElasticNetworkInterfaceResult> CreateElasticNetworkInterfaceOutcome;
 			typedef std::future<CreateElasticNetworkInterfaceOutcome> CreateElasticNetworkInterfaceOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::CreateElasticNetworkInterfaceRequest&, const CreateElasticNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateElasticNetworkInterfaceAsyncHandler;
@@ -242,6 +257,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSlrResult> DescribeSlrOutcome;
 			typedef std::future<DescribeSlrOutcome> DescribeSlrOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::DescribeSlrRequest&, const DescribeSlrOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlrAsyncHandler;
+			typedef Outcome<Error, Model::DetachElasticNetworkInterfaceResult> DetachElasticNetworkInterfaceOutcome;
+			typedef std::future<DetachElasticNetworkInterfaceOutcome> DetachElasticNetworkInterfaceOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::DetachElasticNetworkInterfaceRequest&, const DetachElasticNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachElasticNetworkInterfaceAsyncHandler;
+			typedef Outcome<Error, Model::GetDestinationCidrBlockResult> GetDestinationCidrBlockOutcome;
+			typedef std::future<GetDestinationCidrBlockOutcome> GetDestinationCidrBlockOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::GetDestinationCidrBlockRequest&, const GetDestinationCidrBlockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDestinationCidrBlockAsyncHandler;
 			typedef Outcome<Error, Model::GetElasticNetworkInterfaceResult> GetElasticNetworkInterfaceOutcome;
 			typedef std::future<GetElasticNetworkInterfaceOutcome> GetElasticNetworkInterfaceOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::GetElasticNetworkInterfaceRequest&, const GetElasticNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetElasticNetworkInterfaceAsyncHandler;
@@ -353,6 +374,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryInstanceNcdResult> QueryInstanceNcdOutcome;
 			typedef std::future<QueryInstanceNcdOutcome> QueryInstanceNcdOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::QueryInstanceNcdRequest&, const QueryInstanceNcdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryInstanceNcdAsyncHandler;
+			typedef Outcome<Error, Model::RefundVccResult> RefundVccOutcome;
+			typedef std::future<RefundVccOutcome> RefundVccOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::RefundVccRequest&, const RefundVccOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefundVccAsyncHandler;
+			typedef Outcome<Error, Model::RetryVccResult> RetryVccOutcome;
+			typedef std::future<RetryVccOutcome> RetryVccOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::RetryVccRequest&, const RetryVccOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RetryVccAsyncHandler;
+			typedef Outcome<Error, Model::SwitchVccConnectionResult> SwitchVccConnectionOutcome;
+			typedef std::future<SwitchVccConnectionOutcome> SwitchVccConnectionOutcomeCallable;
+			typedef std::function<void(const EfloClient*, const Model::SwitchVccConnectionRequest&, const SwitchVccConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchVccConnectionAsyncHandler;
 			typedef Outcome<Error, Model::UnAssignPrivateIpAddressResult> UnAssignPrivateIpAddressOutcome;
 			typedef std::future<UnAssignPrivateIpAddressOutcome> UnAssignPrivateIpAddressOutcomeCallable;
 			typedef std::function<void(const EfloClient*, const Model::UnAssignPrivateIpAddressRequest&, const UnAssignPrivateIpAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnAssignPrivateIpAddressAsyncHandler;
@@ -400,6 +430,9 @@ namespace AlibabaCloud
 			AssociateVpdCidrBlockOutcome associateVpdCidrBlock(const Model::AssociateVpdCidrBlockRequest &request)const;
 			void associateVpdCidrBlockAsync(const Model::AssociateVpdCidrBlockRequest& request, const AssociateVpdCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssociateVpdCidrBlockOutcomeCallable associateVpdCidrBlockCallable(const Model::AssociateVpdCidrBlockRequest& request) const;
+			AttachElasticNetworkInterfaceOutcome attachElasticNetworkInterface(const Model::AttachElasticNetworkInterfaceRequest &request)const;
+			void attachElasticNetworkInterfaceAsync(const Model::AttachElasticNetworkInterfaceRequest& request, const AttachElasticNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachElasticNetworkInterfaceOutcomeCallable attachElasticNetworkInterfaceCallable(const Model::AttachElasticNetworkInterfaceRequest& request) const;
 			CreateElasticNetworkInterfaceOutcome createElasticNetworkInterface(const Model::CreateElasticNetworkInterfaceRequest &request)const;
 			void createElasticNetworkInterfaceAsync(const Model::CreateElasticNetworkInterfaceRequest& request, const CreateElasticNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateElasticNetworkInterfaceOutcomeCallable createElasticNetworkInterfaceCallable(const Model::CreateElasticNetworkInterfaceRequest& request) const;
@@ -460,6 +493,12 @@ namespace AlibabaCloud
 			DescribeSlrOutcome describeSlr(const Model::DescribeSlrRequest &request)const;
 			void describeSlrAsync(const Model::DescribeSlrRequest& request, const DescribeSlrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlrOutcomeCallable describeSlrCallable(const Model::DescribeSlrRequest& request) const;
+			DetachElasticNetworkInterfaceOutcome detachElasticNetworkInterface(const Model::DetachElasticNetworkInterfaceRequest &request)const;
+			void detachElasticNetworkInterfaceAsync(const Model::DetachElasticNetworkInterfaceRequest& request, const DetachElasticNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachElasticNetworkInterfaceOutcomeCallable detachElasticNetworkInterfaceCallable(const Model::DetachElasticNetworkInterfaceRequest& request) const;
+			GetDestinationCidrBlockOutcome getDestinationCidrBlock(const Model::GetDestinationCidrBlockRequest &request)const;
+			void getDestinationCidrBlockAsync(const Model::GetDestinationCidrBlockRequest& request, const GetDestinationCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDestinationCidrBlockOutcomeCallable getDestinationCidrBlockCallable(const Model::GetDestinationCidrBlockRequest& request) const;
 			GetElasticNetworkInterfaceOutcome getElasticNetworkInterface(const Model::GetElasticNetworkInterfaceRequest &request)const;
 			void getElasticNetworkInterfaceAsync(const Model::GetElasticNetworkInterfaceRequest& request, const GetElasticNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetElasticNetworkInterfaceOutcomeCallable getElasticNetworkInterfaceCallable(const Model::GetElasticNetworkInterfaceRequest& request) const;
@@ -571,6 +610,15 @@ namespace AlibabaCloud
 			QueryInstanceNcdOutcome queryInstanceNcd(const Model::QueryInstanceNcdRequest &request)const;
 			void queryInstanceNcdAsync(const Model::QueryInstanceNcdRequest& request, const QueryInstanceNcdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryInstanceNcdOutcomeCallable queryInstanceNcdCallable(const Model::QueryInstanceNcdRequest& request) const;
+			RefundVccOutcome refundVcc(const Model::RefundVccRequest &request)const;
+			void refundVccAsync(const Model::RefundVccRequest& request, const RefundVccAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefundVccOutcomeCallable refundVccCallable(const Model::RefundVccRequest& request) const;
+			RetryVccOutcome retryVcc(const Model::RetryVccRequest &request)const;
+			void retryVccAsync(const Model::RetryVccRequest& request, const RetryVccAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RetryVccOutcomeCallable retryVccCallable(const Model::RetryVccRequest& request) const;
+			SwitchVccConnectionOutcome switchVccConnection(const Model::SwitchVccConnectionRequest &request)const;
+			void switchVccConnectionAsync(const Model::SwitchVccConnectionRequest& request, const SwitchVccConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SwitchVccConnectionOutcomeCallable switchVccConnectionCallable(const Model::SwitchVccConnectionRequest& request) const;
 			UnAssignPrivateIpAddressOutcome unAssignPrivateIpAddress(const Model::UnAssignPrivateIpAddressRequest &request)const;
 			void unAssignPrivateIpAddressAsync(const Model::UnAssignPrivateIpAddressRequest& request, const UnAssignPrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnAssignPrivateIpAddressOutcomeCallable unAssignPrivateIpAddressCallable(const Model::UnAssignPrivateIpAddressRequest& request) const;

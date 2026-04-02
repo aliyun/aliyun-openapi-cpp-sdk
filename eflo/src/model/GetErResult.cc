@@ -66,125 +66,142 @@ void GetErResult::parse(const std::string &payload)
 	for (auto contentNodeErAttachmentsErAttachment : allErAttachmentsNode)
 	{
 		Content::ErAttachment erAttachmentObject;
+		if(!contentNodeErAttachmentsErAttachment["Status"].isNull())
+			erAttachmentObject.status = contentNodeErAttachmentsErAttachment["Status"].asString();
+		if(!contentNodeErAttachmentsErAttachment["Message"].isNull())
+			erAttachmentObject.message = contentNodeErAttachmentsErAttachment["Message"].asString();
+		if(!contentNodeErAttachmentsErAttachment["ResourceGroupId"].isNull())
+			erAttachmentObject.resourceGroupId = contentNodeErAttachmentsErAttachment["ResourceGroupId"].asString();
+		if(!contentNodeErAttachmentsErAttachment["InstanceId"].isNull())
+			erAttachmentObject.instanceId = contentNodeErAttachmentsErAttachment["InstanceId"].asString();
 		if(!contentNodeErAttachmentsErAttachment["CreateTime"].isNull())
 			erAttachmentObject.createTime = contentNodeErAttachmentsErAttachment["CreateTime"].asString();
 		if(!contentNodeErAttachmentsErAttachment["GmtModified"].isNull())
 			erAttachmentObject.gmtModified = contentNodeErAttachmentsErAttachment["GmtModified"].asString();
-		if(!contentNodeErAttachmentsErAttachment["Message"].isNull())
-			erAttachmentObject.message = contentNodeErAttachmentsErAttachment["Message"].asString();
-		if(!contentNodeErAttachmentsErAttachment["Status"].isNull())
-			erAttachmentObject.status = contentNodeErAttachmentsErAttachment["Status"].asString();
-		if(!contentNodeErAttachmentsErAttachment["RegionId"].isNull())
-			erAttachmentObject.regionId = contentNodeErAttachmentsErAttachment["RegionId"].asString();
+		if(!contentNodeErAttachmentsErAttachment["ErId"].isNull())
+			erAttachmentObject.erId = contentNodeErAttachmentsErAttachment["ErId"].asString();
+		if(!contentNodeErAttachmentsErAttachment["Across"].isNull())
+			erAttachmentObject.across = contentNodeErAttachmentsErAttachment["Across"].asString() == "true";
+		if(!contentNodeErAttachmentsErAttachment["InstanceName"].isNull())
+			erAttachmentObject.instanceName = contentNodeErAttachmentsErAttachment["InstanceName"].asString();
 		if(!contentNodeErAttachmentsErAttachment["TenantId"].isNull())
 			erAttachmentObject.tenantId = contentNodeErAttachmentsErAttachment["TenantId"].asString();
+		if(!contentNodeErAttachmentsErAttachment["ResourceTenantId"].isNull())
+			erAttachmentObject.resourceTenantId = contentNodeErAttachmentsErAttachment["ResourceTenantId"].asString();
+		if(!contentNodeErAttachmentsErAttachment["AutoReceiveAllRoute"].isNull())
+			erAttachmentObject.autoReceiveAllRoute = contentNodeErAttachmentsErAttachment["AutoReceiveAllRoute"].asString() == "true";
 		if(!contentNodeErAttachmentsErAttachment["ErAttachmentName"].isNull())
 			erAttachmentObject.erAttachmentName = contentNodeErAttachmentsErAttachment["ErAttachmentName"].asString();
 		if(!contentNodeErAttachmentsErAttachment["ErAttachmentId"].isNull())
 			erAttachmentObject.erAttachmentId = contentNodeErAttachmentsErAttachment["ErAttachmentId"].asString();
-		if(!contentNodeErAttachmentsErAttachment["ErId"].isNull())
-			erAttachmentObject.erId = contentNodeErAttachmentsErAttachment["ErId"].asString();
+		if(!contentNodeErAttachmentsErAttachment["RegionId"].isNull())
+			erAttachmentObject.regionId = contentNodeErAttachmentsErAttachment["RegionId"].asString();
 		if(!contentNodeErAttachmentsErAttachment["InstanceType"].isNull())
 			erAttachmentObject.instanceType = contentNodeErAttachmentsErAttachment["InstanceType"].asString();
-		if(!contentNodeErAttachmentsErAttachment["InstanceId"].isNull())
-			erAttachmentObject.instanceId = contentNodeErAttachmentsErAttachment["InstanceId"].asString();
-		if(!contentNodeErAttachmentsErAttachment["InstanceName"].isNull())
-			erAttachmentObject.instanceName = contentNodeErAttachmentsErAttachment["InstanceName"].asString();
-		if(!contentNodeErAttachmentsErAttachment["AutoReceiveAllRoute"].isNull())
-			erAttachmentObject.autoReceiveAllRoute = contentNodeErAttachmentsErAttachment["AutoReceiveAllRoute"].asString() == "true";
-		if(!contentNodeErAttachmentsErAttachment["Across"].isNull())
-			erAttachmentObject.across = contentNodeErAttachmentsErAttachment["Across"].asString() == "true";
-		if(!contentNodeErAttachmentsErAttachment["ResourceTenantId"].isNull())
-			erAttachmentObject.resourceTenantId = contentNodeErAttachmentsErAttachment["ResourceTenantId"].asString();
-		if(!contentNodeErAttachmentsErAttachment["ResourceGroupId"].isNull())
-			erAttachmentObject.resourceGroupId = contentNodeErAttachmentsErAttachment["ResourceGroupId"].asString();
 		content_.erAttachments.push_back(erAttachmentObject);
 	}
 	auto allErRouteMapsNode = contentNode["ErRouteMaps"]["ErRouteMap"];
 	for (auto contentNodeErRouteMapsErRouteMap : allErRouteMapsNode)
 	{
 		Content::ErRouteMap erRouteMapObject;
-		if(!contentNodeErRouteMapsErRouteMap["RegionId"].isNull())
-			erRouteMapObject.regionId = contentNodeErRouteMapsErRouteMap["RegionId"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["TenantId"].isNull())
-			erRouteMapObject.tenantId = contentNodeErRouteMapsErRouteMap["TenantId"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["Status"].isNull())
+			erRouteMapObject.status = contentNodeErRouteMapsErRouteMap["Status"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["TransmissionInstanceType"].isNull())
+			erRouteMapObject.transmissionInstanceType = contentNodeErRouteMapsErRouteMap["TransmissionInstanceType"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["Action"].isNull())
+			erRouteMapObject.action = contentNodeErRouteMapsErRouteMap["Action"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["Description"].isNull())
+			erRouteMapObject.description = contentNodeErRouteMapsErRouteMap["Description"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["ReceptionInstanceType"].isNull())
+			erRouteMapObject.receptionInstanceType = contentNodeErRouteMapsErRouteMap["ReceptionInstanceType"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["Message"].isNull())
+			erRouteMapObject.message = contentNodeErRouteMapsErRouteMap["Message"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["ErRouteMapName"].isNull())
+			erRouteMapObject.erRouteMapName = contentNodeErRouteMapsErRouteMap["ErRouteMapName"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["ReceptionInstanceId"].isNull())
+			erRouteMapObject.receptionInstanceId = contentNodeErRouteMapsErRouteMap["ReceptionInstanceId"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["ResourceGroupId"].isNull())
+			erRouteMapObject.resourceGroupId = contentNodeErRouteMapsErRouteMap["ResourceGroupId"].asString();
 		if(!contentNodeErRouteMapsErRouteMap["CreateTime"].isNull())
 			erRouteMapObject.createTime = contentNodeErRouteMapsErRouteMap["CreateTime"].asString();
 		if(!contentNodeErRouteMapsErRouteMap["GmtModified"].isNull())
 			erRouteMapObject.gmtModified = contentNodeErRouteMapsErRouteMap["GmtModified"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["Message"].isNull())
-			erRouteMapObject.message = contentNodeErRouteMapsErRouteMap["Message"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["Status"].isNull())
-			erRouteMapObject.status = contentNodeErRouteMapsErRouteMap["Status"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["ErRouteMapId"].isNull())
-			erRouteMapObject.erRouteMapId = contentNodeErRouteMapsErRouteMap["ErRouteMapId"].asString();
 		if(!contentNodeErRouteMapsErRouteMap["ErId"].isNull())
 			erRouteMapObject.erId = contentNodeErRouteMapsErRouteMap["ErId"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["RouteMapNum"].isNull())
-			erRouteMapObject.routeMapNum = std::stoi(contentNodeErRouteMapsErRouteMap["RouteMapNum"].asString());
-		if(!contentNodeErRouteMapsErRouteMap["Description"].isNull())
-			erRouteMapObject.description = contentNodeErRouteMapsErRouteMap["Description"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["DestinationCidrBlock"].isNull())
-			erRouteMapObject.destinationCidrBlock = contentNodeErRouteMapsErRouteMap["DestinationCidrBlock"].asString();
 		if(!contentNodeErRouteMapsErRouteMap["TransmissionInstanceName"].isNull())
 			erRouteMapObject.transmissionInstanceName = contentNodeErRouteMapsErRouteMap["TransmissionInstanceName"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["TransmissionInstanceId"].isNull())
-			erRouteMapObject.transmissionInstanceId = contentNodeErRouteMapsErRouteMap["TransmissionInstanceId"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["TransmissionInstanceType"].isNull())
-			erRouteMapObject.transmissionInstanceType = contentNodeErRouteMapsErRouteMap["TransmissionInstanceType"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["ReceptionInstanceName"].isNull())
-			erRouteMapObject.receptionInstanceName = contentNodeErRouteMapsErRouteMap["ReceptionInstanceName"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["ReceptionInstanceId"].isNull())
-			erRouteMapObject.receptionInstanceId = contentNodeErRouteMapsErRouteMap["ReceptionInstanceId"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["ReceptionInstanceType"].isNull())
-			erRouteMapObject.receptionInstanceType = contentNodeErRouteMapsErRouteMap["ReceptionInstanceType"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["Action"].isNull())
-			erRouteMapObject.action = contentNodeErRouteMapsErRouteMap["Action"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["TransmissionInstanceOwner"].isNull())
-			erRouteMapObject.transmissionInstanceOwner = contentNodeErRouteMapsErRouteMap["TransmissionInstanceOwner"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["DestinationCidrBlock"].isNull())
+			erRouteMapObject.destinationCidrBlock = contentNodeErRouteMapsErRouteMap["DestinationCidrBlock"].asString();
 		if(!contentNodeErRouteMapsErRouteMap["ReceptionInstanceOwner"].isNull())
 			erRouteMapObject.receptionInstanceOwner = contentNodeErRouteMapsErRouteMap["ReceptionInstanceOwner"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["ResourceGroupId"].isNull())
-			erRouteMapObject.resourceGroupId = contentNodeErRouteMapsErRouteMap["ResourceGroupId"].asString();
-		if(!contentNodeErRouteMapsErRouteMap["ErRouteMapName"].isNull())
-			erRouteMapObject.erRouteMapName = contentNodeErRouteMapsErRouteMap["ErRouteMapName"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["TenantId"].isNull())
+			erRouteMapObject.tenantId = contentNodeErRouteMapsErRouteMap["TenantId"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["ReceptionInstanceName"].isNull())
+			erRouteMapObject.receptionInstanceName = contentNodeErRouteMapsErRouteMap["ReceptionInstanceName"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["ErRouteMapId"].isNull())
+			erRouteMapObject.erRouteMapId = contentNodeErRouteMapsErRouteMap["ErRouteMapId"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["TransmissionInstanceOwner"].isNull())
+			erRouteMapObject.transmissionInstanceOwner = contentNodeErRouteMapsErRouteMap["TransmissionInstanceOwner"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["RegionId"].isNull())
+			erRouteMapObject.regionId = contentNodeErRouteMapsErRouteMap["RegionId"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["TransmissionInstanceId"].isNull())
+			erRouteMapObject.transmissionInstanceId = contentNodeErRouteMapsErRouteMap["TransmissionInstanceId"].asString();
+		if(!contentNodeErRouteMapsErRouteMap["RouteMapNum"].isNull())
+			erRouteMapObject.routeMapNum = std::stoi(contentNodeErRouteMapsErRouteMap["RouteMapNum"].asString());
 		content_.erRouteMaps.push_back(erRouteMapObject);
 	}
 	auto allErRouteEntrysNode = contentNode["ErRouteEntrys"]["ErRouteEntry"];
 	for (auto contentNodeErRouteEntrysErRouteEntry : allErRouteEntrysNode)
 	{
 		Content::ErRouteEntry erRouteEntryObject;
-		if(!contentNodeErRouteEntrysErRouteEntry["ErId"].isNull())
-			erRouteEntryObject.erId = contentNodeErRouteEntrysErRouteEntry["ErId"].asString();
+		if(!contentNodeErRouteEntrysErRouteEntry["Status"].isNull())
+			erRouteEntryObject.status = contentNodeErRouteEntrysErRouteEntry["Status"].asString();
+		if(!contentNodeErRouteEntrysErRouteEntry["NextHopType"].isNull())
+			erRouteEntryObject.nextHopType = contentNodeErRouteEntrysErRouteEntry["NextHopType"].asString();
 		if(!contentNodeErRouteEntrysErRouteEntry["TenantId"].isNull())
 			erRouteEntryObject.tenantId = contentNodeErRouteEntrysErRouteEntry["TenantId"].asString();
 		if(!contentNodeErRouteEntrysErRouteEntry["ResourceTenantId"].isNull())
 			erRouteEntryObject.resourceTenantId = contentNodeErRouteEntrysErRouteEntry["ResourceTenantId"].asString();
-		if(!contentNodeErRouteEntrysErRouteEntry["RegionId"].isNull())
-			erRouteEntryObject.regionId = contentNodeErRouteEntrysErRouteEntry["RegionId"].asString();
-		if(!contentNodeErRouteEntrysErRouteEntry["ErRouteEntryId"].isNull())
-			erRouteEntryObject.erRouteEntryId = contentNodeErRouteEntrysErRouteEntry["ErRouteEntryId"].asString();
-		if(!contentNodeErRouteEntrysErRouteEntry["DestinationCidrBlock"].isNull())
-			erRouteEntryObject.destinationCidrBlock = contentNodeErRouteEntrysErRouteEntry["DestinationCidrBlock"].asString();
-		if(!contentNodeErRouteEntrysErRouteEntry["NextHopType"].isNull())
-			erRouteEntryObject.nextHopType = contentNodeErRouteEntrysErRouteEntry["NextHopType"].asString();
-		if(!contentNodeErRouteEntrysErRouteEntry["NextHopId"].isNull())
-			erRouteEntryObject.nextHopId = contentNodeErRouteEntrysErRouteEntry["NextHopId"].asString();
 		if(!contentNodeErRouteEntrysErRouteEntry["RouteType"].isNull())
 			erRouteEntryObject.routeType = contentNodeErRouteEntrysErRouteEntry["RouteType"].asString();
-		if(!contentNodeErRouteEntrysErRouteEntry["Status"].isNull())
-			erRouteEntryObject.status = contentNodeErRouteEntrysErRouteEntry["Status"].asString();
-		if(!contentNodeErRouteEntrysErRouteEntry["GmtModified"].isNull())
-			erRouteEntryObject.gmtModified = contentNodeErRouteEntrysErRouteEntry["GmtModified"].asString();
+		if(!contentNodeErRouteEntrysErRouteEntry["ErRouteEntryId"].isNull())
+			erRouteEntryObject.erRouteEntryId = contentNodeErRouteEntrysErRouteEntry["ErRouteEntryId"].asString();
 		if(!contentNodeErRouteEntrysErRouteEntry["ResourceGroupId"].isNull())
 			erRouteEntryObject.resourceGroupId = contentNodeErRouteEntrysErRouteEntry["ResourceGroupId"].asString();
+		if(!contentNodeErRouteEntrysErRouteEntry["NextHopId"].isNull())
+			erRouteEntryObject.nextHopId = contentNodeErRouteEntrysErRouteEntry["NextHopId"].asString();
+		if(!contentNodeErRouteEntrysErRouteEntry["GmtModified"].isNull())
+			erRouteEntryObject.gmtModified = contentNodeErRouteEntrysErRouteEntry["GmtModified"].asString();
+		if(!contentNodeErRouteEntrysErRouteEntry["ErId"].isNull())
+			erRouteEntryObject.erId = contentNodeErRouteEntrysErRouteEntry["ErId"].asString();
+		if(!contentNodeErRouteEntrysErRouteEntry["RegionId"].isNull())
+			erRouteEntryObject.regionId = contentNodeErRouteEntrysErRouteEntry["RegionId"].asString();
+		if(!contentNodeErRouteEntrysErRouteEntry["DestinationCidrBlock"].isNull())
+			erRouteEntryObject.destinationCidrBlock = contentNodeErRouteEntrysErRouteEntry["DestinationCidrBlock"].asString();
 		content_.erRouteEntrys.push_back(erRouteEntryObject);
+	}
+	auto allTagsNode = contentNode["Tags"]["Tag"];
+	for (auto contentNodeTagsTag : allTagsNode)
+	{
+		Content::Tag tagObject;
+		if(!contentNodeTagsTag["TagKey"].isNull())
+			tagObject.tagKey = contentNodeTagsTag["TagKey"].asString();
+		if(!contentNodeTagsTag["TagValue"].isNull())
+			tagObject.tagValue = contentNodeTagsTag["TagValue"].asString();
+		content_.tags.push_back(tagObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string GetErResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string GetErResult::getMessage()const

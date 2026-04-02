@@ -57,9 +57,15 @@ namespace AlibabaCloud
 						std::string ipAddressMac;
 						std::string message;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					VpdBaseInfo vpdBaseInfo;
 					std::string zoneId;
+					std::string resourceGroupId;
 					std::string ip;
 					std::string createTime;
 					std::string networkInterfaceName;
@@ -74,12 +80,14 @@ namespace AlibabaCloud
 					std::string ncType;
 					std::vector<PrivateIpAddressMacGroupItem> privateIpAddressMacGroup;
 					std::string regionId;
+					std::vector<Tag> tags;
 				};
 
 
 				GetNetworkInterfaceResult();
 				explicit GetNetworkInterfaceResult(const std::string &payload);
 				~GetNetworkInterfaceResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				Content getContent()const;
 				int getCode()const;
@@ -87,6 +95,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				Content content_;
 				int code_;

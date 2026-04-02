@@ -34,6 +34,15 @@ void DeleteErRouteMapRequest::setErId(const std::string &erId) {
   setBodyParameter(std::string("ErId"), erId);
 }
 
+std::string DeleteErRouteMapRequest::getErRouteMapId() const {
+  return erRouteMapId_;
+}
+
+void DeleteErRouteMapRequest::setErRouteMapId(const std::string &erRouteMapId) {
+  erRouteMapId_ = erRouteMapId;
+  setBodyParameter(std::string("ErRouteMapId"), erRouteMapId);
+}
+
 std::vector<std::string> DeleteErRouteMapRequest::getErRouteMapIds() const {
   return erRouteMapIds_;
 }

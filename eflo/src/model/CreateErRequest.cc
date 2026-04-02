@@ -34,15 +34,6 @@ void CreateErRequest::setDescription(const std::string &description) {
   setBodyParameter(std::string("Description"), description);
 }
 
-std::string CreateErRequest::getErName() const {
-  return erName_;
-}
-
-void CreateErRequest::setErName(const std::string &erName) {
-  erName_ = erName;
-  setBodyParameter(std::string("ErName"), erName);
-}
-
 std::string CreateErRequest::getMasterZoneId() const {
   return masterZoneId_;
 }
@@ -68,5 +59,28 @@ std::string CreateErRequest::getRegionId() const {
 void CreateErRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+std::vector<CreateErRequest::Tag> CreateErRequest::getTag() const {
+  return tag_;
+}
+
+void CreateErRequest::setTag(const std::vector<CreateErRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(tagObjStr + ".Value", tagObj.value);
+    setBodyParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
+std::string CreateErRequest::getErName() const {
+  return erName_;
+}
+
+void CreateErRequest::setErName(const std::string &erName) {
+  erName_ = erName;
+  setBodyParameter(std::string("ErName"), erName);
 }
 

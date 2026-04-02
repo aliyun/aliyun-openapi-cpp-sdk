@@ -52,6 +52,15 @@ void CreateElasticNetworkInterfaceRequest::setDescription(const std::string &des
   setBodyParameter(std::string("Description"), description);
 }
 
+std::string CreateElasticNetworkInterfaceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateElasticNetworkInterfaceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateElasticNetworkInterfaceRequest::getRegionId() const {
   return regionId_;
 }
@@ -59,6 +68,20 @@ std::string CreateElasticNetworkInterfaceRequest::getRegionId() const {
 void CreateElasticNetworkInterfaceRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+std::vector<CreateElasticNetworkInterfaceRequest::Tag> CreateElasticNetworkInterfaceRequest::getTag() const {
+  return tag_;
+}
+
+void CreateElasticNetworkInterfaceRequest::setTag(const std::vector<CreateElasticNetworkInterfaceRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(tagObjStr + ".Value", tagObj.value);
+    setBodyParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string CreateElasticNetworkInterfaceRequest::getNodeId() const {

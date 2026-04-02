@@ -36,10 +36,16 @@ namespace AlibabaCloud
 				{
 					struct DataItem
 					{
+						struct Tag
+						{
+							std::string tagKey;
+							std::string tagValue;
+						};
 						std::string status;
 						std::string description;
 						std::string zoneId;
 						std::string message;
+						std::string resourceGroupId;
 						std::string ip;
 						std::string vSwitchId;
 						std::string createTime;
@@ -53,6 +59,7 @@ namespace AlibabaCloud
 						std::string gateway;
 						std::string nodeId;
 						std::string regionId;
+						std::vector<DataItem::Tag> tags;
 					};
 					long total;
 					std::vector<DataItem> data;
@@ -62,6 +69,7 @@ namespace AlibabaCloud
 				ListElasticNetworkInterfacesResult();
 				explicit ListElasticNetworkInterfacesResult(const std::string &payload);
 				~ListElasticNetworkInterfacesResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				Content getContent()const;
 				int getCode()const;
@@ -69,6 +77,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				Content content_;
 				int code_;

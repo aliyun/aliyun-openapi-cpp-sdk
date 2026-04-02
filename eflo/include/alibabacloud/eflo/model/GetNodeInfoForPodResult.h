@@ -36,20 +36,24 @@ namespace AlibabaCloud
 				{
 					int leniSipQuota;
 					std::string zoneId;
-					std::string vpcId;
-					int hdeniQuota;
 					std::string clusterId;
 					int lniSipQuota;
-					std::string nodeId;
 					int leniQuota;
+					std::string vpcId;
+					int hdeniQuota;
+					int hdeniSipQuota;
+					std::string nodeId;
+					int leniIpv6SipQuota;
 					std::vector<std::string> vSwitches;
 					std::string regionId;
+					int hdeniIpv6SipQuota;
 				};
 
 
 				GetNodeInfoForPodResult();
 				explicit GetNodeInfoForPodResult(const std::string &payload);
 				~GetNodeInfoForPodResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				Content getContent()const;
 				int getCode()const;
@@ -57,6 +61,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				Content content_;
 				int code_;

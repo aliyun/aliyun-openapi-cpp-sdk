@@ -61,9 +61,9 @@ namespace AlibabaCloud
 						std::string description;
 						std::string receptionInstanceType;
 						std::string message;
+						std::string erRouteMapName;
 						std::string receptionInstanceId;
 						std::string resourceGroupId;
-						std::string erRouteMapName;
 						std::string createTime;
 						std::string gmtModified;
 						std::string erId;
@@ -93,6 +93,11 @@ namespace AlibabaCloud
 						std::string regionId;
 						std::string destinationCidrBlock;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					std::string description;
 					std::string message;
@@ -106,6 +111,7 @@ namespace AlibabaCloud
 					std::string tenantId;
 					std::vector<ErRouteMap> erRouteMaps;
 					std::string regionId;
+					std::vector<Tag> tags;
 					std::string masterZoneId;
 				};
 
@@ -113,6 +119,7 @@ namespace AlibabaCloud
 				GetErResult();
 				explicit GetErResult(const std::string &payload);
 				~GetErResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				Content getContent()const;
 				int getCode()const;
@@ -120,6 +127,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				Content content_;
 				int code_;

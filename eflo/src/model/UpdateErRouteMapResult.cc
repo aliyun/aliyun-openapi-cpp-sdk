@@ -45,7 +45,14 @@ void UpdateErRouteMapResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Content"].isNull())
 		content_ = value["Content"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string UpdateErRouteMapResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string UpdateErRouteMapResult::getMessage()const

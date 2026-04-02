@@ -25,15 +25,6 @@ GetFabricTopologyRequest::GetFabricTopologyRequest()
 
 GetFabricTopologyRequest::~GetFabricTopologyRequest() {}
 
-std::string GetFabricTopologyRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void GetFabricTopologyRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setBodyParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string GetFabricTopologyRequest::getRegionId() const {
   return regionId_;
 }
@@ -41,6 +32,15 @@ std::string GetFabricTopologyRequest::getRegionId() const {
 void GetFabricTopologyRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+std::string GetFabricTopologyRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void GetFabricTopologyRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setBodyParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string GetFabricTopologyRequest::getVpdId() const {

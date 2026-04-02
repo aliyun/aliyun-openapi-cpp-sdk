@@ -28,6 +28,10 @@ namespace Eflo {
 namespace Model {
 class ALIBABACLOUD_EFLO_EXPORT ListErsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListErsRequest();
 	~ListErsRequest();
 	std::string getMasterZoneId() const;
@@ -42,6 +46,8 @@ public:
 	void setPageSize(int pageSize);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getErId() const;
 	void setErId(const std::string &erId);
 	std::string getErName() const;
@@ -58,6 +64,7 @@ private:
 	std::string regionId_;
 	int pageSize_;
 	std::string instanceType_;
+	std::vector<Tag> tag_;
 	std::string erId_;
 	std::string erName_;
 	std::string instanceId_;

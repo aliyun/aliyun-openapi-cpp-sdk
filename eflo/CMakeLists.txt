@@ -27,6 +27,8 @@ set(eflo_public_header_model
 	include/alibabacloud/eflo/model/AssignPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/AssociateVpdCidrBlockRequest.h
 	include/alibabacloud/eflo/model/AssociateVpdCidrBlockResult.h
+	include/alibabacloud/eflo/model/AttachElasticNetworkInterfaceRequest.h
+	include/alibabacloud/eflo/model/AttachElasticNetworkInterfaceResult.h
 	include/alibabacloud/eflo/model/CreateElasticNetworkInterfaceRequest.h
 	include/alibabacloud/eflo/model/CreateElasticNetworkInterfaceResult.h
 	include/alibabacloud/eflo/model/CreateErRequest.h
@@ -67,6 +69,10 @@ set(eflo_public_header_model
 	include/alibabacloud/eflo/model/DeleteVpdGrantRuleResult.h
 	include/alibabacloud/eflo/model/DescribeSlrRequest.h
 	include/alibabacloud/eflo/model/DescribeSlrResult.h
+	include/alibabacloud/eflo/model/DetachElasticNetworkInterfaceRequest.h
+	include/alibabacloud/eflo/model/DetachElasticNetworkInterfaceResult.h
+	include/alibabacloud/eflo/model/GetDestinationCidrBlockRequest.h
+	include/alibabacloud/eflo/model/GetDestinationCidrBlockResult.h
 	include/alibabacloud/eflo/model/GetElasticNetworkInterfaceRequest.h
 	include/alibabacloud/eflo/model/GetElasticNetworkInterfaceResult.h
 	include/alibabacloud/eflo/model/GetErRequest.h
@@ -141,6 +147,12 @@ set(eflo_public_header_model
 	include/alibabacloud/eflo/model/ListVpdsResult.h
 	include/alibabacloud/eflo/model/QueryInstanceNcdRequest.h
 	include/alibabacloud/eflo/model/QueryInstanceNcdResult.h
+	include/alibabacloud/eflo/model/RefundVccRequest.h
+	include/alibabacloud/eflo/model/RefundVccResult.h
+	include/alibabacloud/eflo/model/RetryVccRequest.h
+	include/alibabacloud/eflo/model/RetryVccResult.h
+	include/alibabacloud/eflo/model/SwitchVccConnectionRequest.h
+	include/alibabacloud/eflo/model/SwitchVccConnectionResult.h
 	include/alibabacloud/eflo/model/UnAssignPrivateIpAddressRequest.h
 	include/alibabacloud/eflo/model/UnAssignPrivateIpAddressResult.h
 	include/alibabacloud/eflo/model/UnAssociateVpdCidrBlockRequest.h
@@ -172,6 +184,8 @@ set(eflo_src
 	src/model/AssignPrivateIpAddressResult.cc
 	src/model/AssociateVpdCidrBlockRequest.cc
 	src/model/AssociateVpdCidrBlockResult.cc
+	src/model/AttachElasticNetworkInterfaceRequest.cc
+	src/model/AttachElasticNetworkInterfaceResult.cc
 	src/model/CreateElasticNetworkInterfaceRequest.cc
 	src/model/CreateElasticNetworkInterfaceResult.cc
 	src/model/CreateErRequest.cc
@@ -212,6 +226,10 @@ set(eflo_src
 	src/model/DeleteVpdGrantRuleResult.cc
 	src/model/DescribeSlrRequest.cc
 	src/model/DescribeSlrResult.cc
+	src/model/DetachElasticNetworkInterfaceRequest.cc
+	src/model/DetachElasticNetworkInterfaceResult.cc
+	src/model/GetDestinationCidrBlockRequest.cc
+	src/model/GetDestinationCidrBlockResult.cc
 	src/model/GetElasticNetworkInterfaceRequest.cc
 	src/model/GetElasticNetworkInterfaceResult.cc
 	src/model/GetErRequest.cc
@@ -286,6 +304,12 @@ set(eflo_src
 	src/model/ListVpdsResult.cc
 	src/model/QueryInstanceNcdRequest.cc
 	src/model/QueryInstanceNcdResult.cc
+	src/model/RefundVccRequest.cc
+	src/model/RefundVccResult.cc
+	src/model/RetryVccRequest.cc
+	src/model/RetryVccResult.cc
+	src/model/SwitchVccConnectionRequest.cc
+	src/model/SwitchVccConnectionResult.cc
 	src/model/UnAssignPrivateIpAddressRequest.cc
 	src/model/UnAssignPrivateIpAddressResult.cc
 	src/model/UnAssociateVpdCidrBlockRequest.cc

@@ -72,6 +72,7 @@ namespace AlibabaCloud
 				GetSubnetResult();
 				explicit GetSubnetResult(const std::string &payload);
 				~GetSubnetResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				Content getContent()const;
 				int getCode()const;
@@ -79,6 +80,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				Content content_;
 				int code_;

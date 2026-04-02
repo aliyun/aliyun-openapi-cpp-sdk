@@ -52,15 +52,6 @@ void GetVccRequest::setRegionId(const std::string &regionId) {
   setBodyParameter(std::string("RegionId"), regionId);
 }
 
-bool GetVccRequest::getEnablePage() const {
-  return enablePage_;
-}
-
-void GetVccRequest::setEnablePage(bool enablePage) {
-  enablePage_ = enablePage;
-  setBodyParameter(std::string("EnablePage"), enablePage ? "true" : "false");
-}
-
 int GetVccRequest::getPageSize() const {
   return pageSize_;
 }
@@ -77,5 +68,14 @@ std::string GetVccRequest::getVccId() const {
 void GetVccRequest::setVccId(const std::string &vccId) {
   vccId_ = vccId;
   setBodyParameter(std::string("VccId"), vccId);
+}
+
+bool GetVccRequest::getEnablePage() const {
+  return enablePage_;
+}
+
+void GetVccRequest::setEnablePage(bool enablePage) {
+  enablePage_ = enablePage;
+  setBodyParameter(std::string("EnablePage"), enablePage ? "true" : "false");
 }
 

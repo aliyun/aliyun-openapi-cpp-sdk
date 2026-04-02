@@ -46,39 +46,56 @@ void ListErsResult::parse(const std::string &payload)
 	for (auto contentNodeDataDataItem : allDataNode)
 	{
 		Content::DataItem dataItemObject;
+		if(!contentNodeDataDataItem["Status"].isNull())
+			dataItemObject.status = contentNodeDataDataItem["Status"].asString();
+		if(!contentNodeDataDataItem["Connections"].isNull())
+			dataItemObject.connections = std::stol(contentNodeDataDataItem["Connections"].asString());
+		if(!contentNodeDataDataItem["Description"].isNull())
+			dataItemObject.description = contentNodeDataDataItem["Description"].asString();
+		if(!contentNodeDataDataItem["Message"].isNull())
+			dataItemObject.message = contentNodeDataDataItem["Message"].asString();
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
 		if(!contentNodeDataDataItem["CreateTime"].isNull())
 			dataItemObject.createTime = contentNodeDataDataItem["CreateTime"].asString();
 		if(!contentNodeDataDataItem["GmtModified"].isNull())
 			dataItemObject.gmtModified = contentNodeDataDataItem["GmtModified"].asString();
-		if(!contentNodeDataDataItem["Message"].isNull())
-			dataItemObject.message = contentNodeDataDataItem["Message"].asString();
 		if(!contentNodeDataDataItem["ErId"].isNull())
 			dataItemObject.erId = contentNodeDataDataItem["ErId"].asString();
-		if(!contentNodeDataDataItem["RegionId"].isNull())
-			dataItemObject.regionId = contentNodeDataDataItem["RegionId"].asString();
-		if(!contentNodeDataDataItem["TenantId"].isNull())
-			dataItemObject.tenantId = contentNodeDataDataItem["TenantId"].asString();
-		if(!contentNodeDataDataItem["Status"].isNull())
-			dataItemObject.status = contentNodeDataDataItem["Status"].asString();
-		if(!contentNodeDataDataItem["ErName"].isNull())
-			dataItemObject.erName = contentNodeDataDataItem["ErName"].asString();
-		if(!contentNodeDataDataItem["MasterZoneId"].isNull())
-			dataItemObject.masterZoneId = contentNodeDataDataItem["MasterZoneId"].asString();
-		if(!contentNodeDataDataItem["Description"].isNull())
-			dataItemObject.description = contentNodeDataDataItem["Description"].asString();
-		if(!contentNodeDataDataItem["Connections"].isNull())
-			dataItemObject.connections = std::stol(contentNodeDataDataItem["Connections"].asString());
 		if(!contentNodeDataDataItem["RouteMaps"].isNull())
 			dataItemObject.routeMaps = std::stol(contentNodeDataDataItem["RouteMaps"].asString());
-		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
-			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
+		if(!contentNodeDataDataItem["ErName"].isNull())
+			dataItemObject.erName = contentNodeDataDataItem["ErName"].asString();
+		if(!contentNodeDataDataItem["TenantId"].isNull())
+			dataItemObject.tenantId = contentNodeDataDataItem["TenantId"].asString();
+		if(!contentNodeDataDataItem["RegionId"].isNull())
+			dataItemObject.regionId = contentNodeDataDataItem["RegionId"].asString();
+		if(!contentNodeDataDataItem["MasterZoneId"].isNull())
+			dataItemObject.masterZoneId = contentNodeDataDataItem["MasterZoneId"].asString();
+		auto allTagsNode = contentNodeDataDataItem["Tags"]["Tag"];
+		for (auto contentNodeDataDataItemTagsTag : allTagsNode)
+		{
+			Content::DataItem::Tag tagsObject;
+			if(!contentNodeDataDataItemTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = contentNodeDataDataItemTagsTag["TagKey"].asString();
+			if(!contentNodeDataDataItemTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = contentNodeDataDataItemTagsTag["TagValue"].asString();
+			dataItemObject.tags.push_back(tagsObject);
+		}
 		content_.data.push_back(dataItemObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string ListErsResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string ListErsResult::getMessage()const

@@ -32,6 +32,8 @@ public:
 	~DeleteErRouteMapRequest();
 	std::string getErId() const;
 	void setErId(const std::string &erId);
+	std::string getErRouteMapId() const;
+	void setErRouteMapId(const std::string &erRouteMapId);
 	std::vector<std::string> getErRouteMapIds() const;
 	void setErRouteMapIds(const std::vector<std::string> &erRouteMapIds);
 	std::string getRegionId() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string erId_;
+	std::string erRouteMapId_;
 	std::vector<std::string> erRouteMapIds_;
 	std::string regionId_;
 };

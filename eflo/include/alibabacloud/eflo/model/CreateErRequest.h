@@ -28,25 +28,32 @@ namespace Eflo {
 namespace Model {
 class ALIBABACLOUD_EFLO_EXPORT CreateErRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateErRequest();
 	~CreateErRequest();
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	std::string getErName() const;
-	void setErName(const std::string &erName);
 	std::string getMasterZoneId() const;
 	void setMasterZoneId(const std::string &masterZoneId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::string getErName() const;
+	void setErName(const std::string &erName);
 
 private:
 	std::string description_;
-	std::string erName_;
 	std::string masterZoneId_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::vector<Tag> tag_;
+	std::string erName_;
 };
 } // namespace Model
 } // namespace Eflo

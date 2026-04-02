@@ -52,6 +52,15 @@ void ListElasticNetworkInterfacesRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListElasticNetworkInterfacesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListElasticNetworkInterfacesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListElasticNetworkInterfacesRequest::getRegionId() const {
   return regionId_;
 }
@@ -68,6 +77,20 @@ int ListElasticNetworkInterfacesRequest::getPageSize() const {
 void ListElasticNetworkInterfacesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::vector<ListElasticNetworkInterfacesRequest::Tag> ListElasticNetworkInterfacesRequest::getTag() const {
+  return tag_;
+}
+
+void ListElasticNetworkInterfacesRequest::setTag(const std::vector<ListElasticNetworkInterfacesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(tagObjStr + ".Value", tagObj.value);
+    setBodyParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string ListElasticNetworkInterfacesRequest::getNodeId() const {

@@ -79,6 +79,20 @@ void ListErsRequest::setInstanceType(const std::string &instanceType) {
   setBodyParameter(std::string("InstanceType"), instanceType);
 }
 
+std::vector<ListErsRequest::Tag> ListErsRequest::getTag() const {
+  return tag_;
+}
+
+void ListErsRequest::setTag(const std::vector<ListErsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(tagObjStr + ".Value", tagObj.value);
+    setBodyParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string ListErsRequest::getErId() const {
   return erId_;
 }

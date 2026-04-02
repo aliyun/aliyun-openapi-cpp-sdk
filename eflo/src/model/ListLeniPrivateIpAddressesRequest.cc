@@ -34,6 +34,15 @@ void ListLeniPrivateIpAddressesRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListLeniPrivateIpAddressesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListLeniPrivateIpAddressesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListLeniPrivateIpAddressesRequest::getRegionId() const {
   return regionId_;
 }

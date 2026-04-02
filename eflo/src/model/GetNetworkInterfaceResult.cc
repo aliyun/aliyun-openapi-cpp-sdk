@@ -66,6 +66,8 @@ void GetNetworkInterfaceResult::parse(const std::string &payload)
 		content_.ncType = contentNode["NcType"].asString();
 	if(!contentNode["NetworkInterfaceName"].isNull())
 		content_.networkInterfaceName = contentNode["NetworkInterfaceName"].asString();
+	if(!contentNode["ResourceGroupId"].isNull())
+		content_.resourceGroupId = contentNode["ResourceGroupId"].asString();
 	auto allPrivateIpAddressMacGroupNode = contentNode["PrivateIpAddressMacGroup"]["PrivateIpAddressMacGroupItem"];
 	for (auto contentNodePrivateIpAddressMacGroupPrivateIpAddressMacGroupItem : allPrivateIpAddressMacGroupNode)
 	{
@@ -83,6 +85,16 @@ void GetNetworkInterfaceResult::parse(const std::string &payload)
 		if(!contentNodePrivateIpAddressMacGroupPrivateIpAddressMacGroupItem["Message"].isNull())
 			privateIpAddressMacGroupItemObject.message = contentNodePrivateIpAddressMacGroupPrivateIpAddressMacGroupItem["Message"].asString();
 		content_.privateIpAddressMacGroup.push_back(privateIpAddressMacGroupItemObject);
+	}
+	auto allTagsNode = contentNode["Tags"]["Tag"];
+	for (auto contentNodeTagsTag : allTagsNode)
+	{
+		Content::Tag tagObject;
+		if(!contentNodeTagsTag["TagKey"].isNull())
+			tagObject.tagKey = contentNodeTagsTag["TagKey"].asString();
+		if(!contentNodeTagsTag["TagValue"].isNull())
+			tagObject.tagValue = contentNodeTagsTag["TagValue"].asString();
+		content_.tags.push_back(tagObject);
 	}
 	auto vpdBaseInfoNode = contentNode["VpdBaseInfo"];
 	if(!vpdBaseInfoNode["VpdId"].isNull())
@@ -109,7 +121,14 @@ void GetNetworkInterfaceResult::parse(const std::string &payload)
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string GetNetworkInterfaceResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string GetNetworkInterfaceResult::getMessage()const

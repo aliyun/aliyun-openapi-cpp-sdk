@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				UpdateErResult();
 				explicit UpdateErResult(const std::string &payload);
 				~UpdateErResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				std::string getContent()const;
 				int getCode()const;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				std::string content_;
 				int code_;

@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Content
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					struct PrivateIpAddress
 					{
 						std::string status;
@@ -63,6 +68,7 @@ namespace AlibabaCloud
 					std::vector<PrivateIpAddress> privateIpAddresses;
 					std::string zoneId;
 					std::string message;
+					std::string resourceGroupId;
 					std::string ip;
 					std::string vSwitchId;
 					std::string createTime;
@@ -78,12 +84,14 @@ namespace AlibabaCloud
 					std::string gateway;
 					std::string nodeId;
 					std::string regionId;
+					std::vector<Tag> tags;
 				};
 
 
 				GetElasticNetworkInterfaceResult();
 				explicit GetElasticNetworkInterfaceResult(const std::string &payload);
 				~GetElasticNetworkInterfaceResult();
+				std::string getAccessDeniedDetail()const;
 				std::string getMessage()const;
 				Content getContent()const;
 				int getCode()const;
@@ -91,6 +99,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string accessDeniedDetail_;
 				std::string message_;
 				Content content_;
 				int code_;

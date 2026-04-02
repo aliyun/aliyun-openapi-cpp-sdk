@@ -28,6 +28,10 @@ namespace Eflo {
 namespace Model {
 class ALIBABACLOUD_EFLO_EXPORT CreateElasticNetworkInterfaceRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateElasticNetworkInterfaceRequest();
 	~CreateElasticNetworkInterfaceRequest();
 	std::string getClientToken() const;
@@ -36,8 +40,12 @@ public:
 	void setSecurityGroupId(const std::string &securityGroupId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getNodeId() const;
 	void setNodeId(const std::string &nodeId);
 	bool getEnableJumboFrame() const;
@@ -53,7 +61,9 @@ private:
 	std::string clientToken_;
 	std::string securityGroupId_;
 	std::string description_;
+	std::string resourceGroupId_;
 	std::string regionId_;
+	std::vector<Tag> tag_;
 	std::string nodeId_;
 	bool enableJumboFrame_;
 	std::string vSwitchId_;

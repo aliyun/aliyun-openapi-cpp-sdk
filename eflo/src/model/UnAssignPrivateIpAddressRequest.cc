@@ -25,15 +25,6 @@ UnAssignPrivateIpAddressRequest::UnAssignPrivateIpAddressRequest()
 
 UnAssignPrivateIpAddressRequest::~UnAssignPrivateIpAddressRequest() {}
 
-std::string UnAssignPrivateIpAddressRequest::getSubnetId() const {
-  return subnetId_;
-}
-
-void UnAssignPrivateIpAddressRequest::setSubnetId(const std::string &subnetId) {
-  subnetId_ = subnetId;
-  setBodyParameter(std::string("SubnetId"), subnetId);
-}
-
 std::string UnAssignPrivateIpAddressRequest::getClientToken() const {
   return clientToken_;
 }
@@ -43,15 +34,6 @@ void UnAssignPrivateIpAddressRequest::setClientToken(const std::string &clientTo
   setBodyParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string UnAssignPrivateIpAddressRequest::getPrivateIpAddress() const {
-  return privateIpAddress_;
-}
-
-void UnAssignPrivateIpAddressRequest::setPrivateIpAddress(const std::string &privateIpAddress) {
-  privateIpAddress_ = privateIpAddress;
-  setBodyParameter(std::string("PrivateIpAddress"), privateIpAddress);
-}
-
 std::string UnAssignPrivateIpAddressRequest::getRegionId() const {
   return regionId_;
 }
@@ -59,6 +41,24 @@ std::string UnAssignPrivateIpAddressRequest::getRegionId() const {
 void UnAssignPrivateIpAddressRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setBodyParameter(std::string("RegionId"), regionId);
+}
+
+std::string UnAssignPrivateIpAddressRequest::getSubnetId() const {
+  return subnetId_;
+}
+
+void UnAssignPrivateIpAddressRequest::setSubnetId(const std::string &subnetId) {
+  subnetId_ = subnetId;
+  setBodyParameter(std::string("SubnetId"), subnetId);
+}
+
+std::string UnAssignPrivateIpAddressRequest::getPrivateIpAddress() const {
+  return privateIpAddress_;
+}
+
+void UnAssignPrivateIpAddressRequest::setPrivateIpAddress(const std::string &privateIpAddress) {
+  privateIpAddress_ = privateIpAddress;
+  setBodyParameter(std::string("PrivateIpAddress"), privateIpAddress);
 }
 
 std::string UnAssignPrivateIpAddressRequest::getIpName() const {

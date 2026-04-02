@@ -72,6 +72,8 @@ void ListNetworkInterfacesResult::parse(const std::string &payload)
 			dataItemObject.ncType = contentNodeDataDataItem["NcType"].asString();
 		if(!contentNodeDataDataItem["NetworkInterfaceName"].isNull())
 			dataItemObject.networkInterfaceName = contentNodeDataDataItem["NetworkInterfaceName"].asString();
+		if(!contentNodeDataDataItem["ResourceGroupId"].isNull())
+			dataItemObject.resourceGroupId = contentNodeDataDataItem["ResourceGroupId"].asString();
 		auto allPrivateIpAddressMacGroupNode = contentNodeDataDataItem["PrivateIpAddressMacGroup"]["PrivateIpAddressMacGroupItem"];
 		for (auto contentNodeDataDataItemPrivateIpAddressMacGroupPrivateIpAddressMacGroupItem : allPrivateIpAddressMacGroupNode)
 		{
@@ -89,6 +91,16 @@ void ListNetworkInterfacesResult::parse(const std::string &payload)
 			if(!contentNodeDataDataItemPrivateIpAddressMacGroupPrivateIpAddressMacGroupItem["Message"].isNull())
 				privateIpAddressMacGroupObject.message = contentNodeDataDataItemPrivateIpAddressMacGroupPrivateIpAddressMacGroupItem["Message"].asString();
 			dataItemObject.privateIpAddressMacGroup.push_back(privateIpAddressMacGroupObject);
+		}
+		auto allTagsNode = contentNodeDataDataItem["Tags"]["Tag"];
+		for (auto contentNodeDataDataItemTagsTag : allTagsNode)
+		{
+			Content::DataItem::Tag tagsObject;
+			if(!contentNodeDataDataItemTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = contentNodeDataDataItemTagsTag["TagKey"].asString();
+			if(!contentNodeDataDataItemTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = contentNodeDataDataItemTagsTag["TagValue"].asString();
+			dataItemObject.tags.push_back(tagsObject);
 		}
 		auto vpdBaseInfoNode = value["VpdBaseInfo"];
 		if(!vpdBaseInfoNode["VpdId"].isNull())
@@ -117,7 +129,14 @@ void ListNetworkInterfacesResult::parse(const std::string &payload)
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string ListNetworkInterfacesResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string ListNetworkInterfacesResult::getMessage()const

@@ -48,7 +48,14 @@ void UnassignLeniPrivateIpAddressResult::parse(const std::string &payload)
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string UnassignLeniPrivateIpAddressResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string UnassignLeniPrivateIpAddressResult::getMessage()const

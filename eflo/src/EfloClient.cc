@@ -159,6 +159,42 @@ EfloClient::AssociateVpdCidrBlockOutcomeCallable EfloClient::associateVpdCidrBlo
 	return task->get_future();
 }
 
+EfloClient::AttachElasticNetworkInterfaceOutcome EfloClient::attachElasticNetworkInterface(const AttachElasticNetworkInterfaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachElasticNetworkInterfaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachElasticNetworkInterfaceOutcome(AttachElasticNetworkInterfaceResult(outcome.result()));
+	else
+		return AttachElasticNetworkInterfaceOutcome(outcome.error());
+}
+
+void EfloClient::attachElasticNetworkInterfaceAsync(const AttachElasticNetworkInterfaceRequest& request, const AttachElasticNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachElasticNetworkInterface(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::AttachElasticNetworkInterfaceOutcomeCallable EfloClient::attachElasticNetworkInterfaceCallable(const AttachElasticNetworkInterfaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachElasticNetworkInterfaceOutcome()>>(
+			[this, request]()
+			{
+			return this->attachElasticNetworkInterface(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EfloClient::CreateElasticNetworkInterfaceOutcome EfloClient::createElasticNetworkInterface(const CreateElasticNetworkInterfaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +909,78 @@ EfloClient::DescribeSlrOutcomeCallable EfloClient::describeSlrCallable(const Des
 			[this, request]()
 			{
 			return this->describeSlr(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EfloClient::DetachElasticNetworkInterfaceOutcome EfloClient::detachElasticNetworkInterface(const DetachElasticNetworkInterfaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachElasticNetworkInterfaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachElasticNetworkInterfaceOutcome(DetachElasticNetworkInterfaceResult(outcome.result()));
+	else
+		return DetachElasticNetworkInterfaceOutcome(outcome.error());
+}
+
+void EfloClient::detachElasticNetworkInterfaceAsync(const DetachElasticNetworkInterfaceRequest& request, const DetachElasticNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachElasticNetworkInterface(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::DetachElasticNetworkInterfaceOutcomeCallable EfloClient::detachElasticNetworkInterfaceCallable(const DetachElasticNetworkInterfaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachElasticNetworkInterfaceOutcome()>>(
+			[this, request]()
+			{
+			return this->detachElasticNetworkInterface(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EfloClient::GetDestinationCidrBlockOutcome EfloClient::getDestinationCidrBlock(const GetDestinationCidrBlockRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDestinationCidrBlockOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDestinationCidrBlockOutcome(GetDestinationCidrBlockResult(outcome.result()));
+	else
+		return GetDestinationCidrBlockOutcome(outcome.error());
+}
+
+void EfloClient::getDestinationCidrBlockAsync(const GetDestinationCidrBlockRequest& request, const GetDestinationCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDestinationCidrBlock(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::GetDestinationCidrBlockOutcomeCallable EfloClient::getDestinationCidrBlockCallable(const GetDestinationCidrBlockRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDestinationCidrBlockOutcome()>>(
+			[this, request]()
+			{
+			return this->getDestinationCidrBlock(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2205,6 +2313,114 @@ EfloClient::QueryInstanceNcdOutcomeCallable EfloClient::queryInstanceNcdCallable
 			[this, request]()
 			{
 			return this->queryInstanceNcd(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EfloClient::RefundVccOutcome EfloClient::refundVcc(const RefundVccRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefundVccOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefundVccOutcome(RefundVccResult(outcome.result()));
+	else
+		return RefundVccOutcome(outcome.error());
+}
+
+void EfloClient::refundVccAsync(const RefundVccRequest& request, const RefundVccAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refundVcc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::RefundVccOutcomeCallable EfloClient::refundVccCallable(const RefundVccRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefundVccOutcome()>>(
+			[this, request]()
+			{
+			return this->refundVcc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EfloClient::RetryVccOutcome EfloClient::retryVcc(const RetryVccRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RetryVccOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RetryVccOutcome(RetryVccResult(outcome.result()));
+	else
+		return RetryVccOutcome(outcome.error());
+}
+
+void EfloClient::retryVccAsync(const RetryVccRequest& request, const RetryVccAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, retryVcc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::RetryVccOutcomeCallable EfloClient::retryVccCallable(const RetryVccRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RetryVccOutcome()>>(
+			[this, request]()
+			{
+			return this->retryVcc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EfloClient::SwitchVccConnectionOutcome EfloClient::switchVccConnection(const SwitchVccConnectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SwitchVccConnectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SwitchVccConnectionOutcome(SwitchVccConnectionResult(outcome.result()));
+	else
+		return SwitchVccConnectionOutcome(outcome.error());
+}
+
+void EfloClient::switchVccConnectionAsync(const SwitchVccConnectionRequest& request, const SwitchVccConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, switchVccConnection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EfloClient::SwitchVccConnectionOutcomeCallable EfloClient::switchVccConnectionCallable(const SwitchVccConnectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SwitchVccConnectionOutcome()>>(
+			[this, request]()
+			{
+			return this->switchVccConnection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

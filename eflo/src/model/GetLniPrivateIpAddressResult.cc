@@ -58,11 +58,22 @@ void GetLniPrivateIpAddressResult::parse(const std::string &payload)
 		content_.description = contentNode["Description"].asString();
 	if(!contentNode["Message"].isNull())
 		content_.message = contentNode["Message"].asString();
+	if(!contentNode["SubnetId"].isNull())
+		content_.subnetId = contentNode["SubnetId"].asString();
+	if(!contentNode["ResourceGroupId"].isNull())
+		content_.resourceGroupId = contentNode["ResourceGroupId"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["AccessDeniedDetail"].isNull())
+		accessDeniedDetail_ = value["AccessDeniedDetail"].asString();
 
+}
+
+std::string GetLniPrivateIpAddressResult::getAccessDeniedDetail()const
+{
+	return accessDeniedDetail_;
 }
 
 std::string GetLniPrivateIpAddressResult::getMessage()const

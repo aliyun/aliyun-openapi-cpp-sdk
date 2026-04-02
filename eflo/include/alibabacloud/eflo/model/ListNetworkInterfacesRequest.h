@@ -28,14 +28,22 @@ namespace Eflo {
 namespace Model {
 class ALIBABACLOUD_EFLO_EXPORT ListNetworkInterfacesRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListNetworkInterfacesRequest();
 	~ListNetworkInterfacesRequest();
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getNodeId() const;
 	void setNodeId(const std::string &nodeId);
 	std::string getSubnetId() const;
@@ -51,8 +59,10 @@ public:
 
 private:
 	int pageNumber_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	int pageSize_;
+	std::vector<Tag> tag_;
 	std::string nodeId_;
 	std::string subnetId_;
 	std::string ip_;

@@ -34,22 +34,22 @@ public:
 	void setRegionId(const std::string &regionId);
 	long getFrom() const;
 	void setFrom(long from);
-	long getTo() const;
-	void setTo(long to);
 	std::string getVccId() const;
 	void setVccId(const std::string &vccId);
 	std::string getMetricName() const;
 	void setMetricName(const std::string &metricName);
 	std::string getDirection() const;
 	void setDirection(const std::string &direction);
+	long getTo() const;
+	void setTo(long to);
 
 private:
 	std::string regionId_;
 	long from_;
-	long to_;
 	std::string vccId_;
 	std::string metricName_;
 	std::string direction_;
+	long to_;
 };
 } // namespace Model
 } // namespace Eflo
