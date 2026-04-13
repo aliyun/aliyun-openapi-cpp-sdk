@@ -39,7 +39,9 @@ namespace AlibabaCloud
 						std::string couponNo;
 						std::string description;
 						std::string isSelected;
+						std::string activityExtInfo;
 						std::string name;
+						bool effective;
 					};
 					std::vector<std::string> ruleIds1;
 					std::string currency;

@@ -96,6 +96,8 @@
 #include "model/DescribeBackupTasksResult.h"
 #include "model/DescribeBackupsRequest.h"
 #include "model/DescribeBackupsResult.h"
+#include "model/DescribeBinlogFilesRequest.h"
+#include "model/DescribeBinlogFilesResult.h"
 #include "model/DescribeClusterBackupsRequest.h"
 #include "model/DescribeClusterBackupsResult.h"
 #include "model/DescribeClusterRecoverTimeRequest.h"
@@ -402,6 +404,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBackupsResult> DescribeBackupsOutcome;
 			typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeBackupsRequest&, const DescribeBackupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBinlogFilesResult> DescribeBinlogFilesOutcome;
+			typedef std::future<DescribeBinlogFilesOutcome> DescribeBinlogFilesOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeBinlogFilesRequest&, const DescribeBinlogFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogFilesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeClusterBackupsResult> DescribeClusterBackupsOutcome;
 			typedef std::future<DescribeClusterBackupsOutcome> DescribeClusterBackupsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeClusterBackupsRequest&, const DescribeClusterBackupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterBackupsAsyncHandler;
@@ -797,6 +802,9 @@ namespace AlibabaCloud
 			DescribeBackupsOutcome describeBackups(const Model::DescribeBackupsRequest &request)const;
 			void describeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupsOutcomeCallable describeBackupsCallable(const Model::DescribeBackupsRequest& request) const;
+			DescribeBinlogFilesOutcome describeBinlogFiles(const Model::DescribeBinlogFilesRequest &request)const;
+			void describeBinlogFilesAsync(const Model::DescribeBinlogFilesRequest& request, const DescribeBinlogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBinlogFilesOutcomeCallable describeBinlogFilesCallable(const Model::DescribeBinlogFilesRequest& request) const;
 			DescribeClusterBackupsOutcome describeClusterBackups(const Model::DescribeClusterBackupsRequest &request)const;
 			void describeClusterBackupsAsync(const Model::DescribeClusterBackupsRequest& request, const DescribeClusterBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeClusterBackupsOutcomeCallable describeClusterBackupsCallable(const Model::DescribeClusterBackupsRequest& request) const;

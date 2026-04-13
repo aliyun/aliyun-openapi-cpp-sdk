@@ -66,9 +66,11 @@ namespace AlibabaCloud
 						double canPromFee;
 						std::string promotionOptionCode;
 						std::string isSelected;
+						std::string activityExtInfo;
 						std::string optionCode;
 						std::vector<std::string> targetArticleItemCodes7;
 						std::string name;
+						bool effective;
 						double priceBreakThreshold;
 						double lackForPriceBreak;
 						std::vector<std::string> promotionRuleIdList6;

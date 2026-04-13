@@ -1383,6 +1383,42 @@ DdsClient::DescribeBackupsOutcomeCallable DdsClient::describeBackupsCallable(con
 	return task->get_future();
 }
 
+DdsClient::DescribeBinlogFilesOutcome DdsClient::describeBinlogFiles(const DescribeBinlogFilesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBinlogFilesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBinlogFilesOutcome(DescribeBinlogFilesResult(outcome.result()));
+	else
+		return DescribeBinlogFilesOutcome(outcome.error());
+}
+
+void DdsClient::describeBinlogFilesAsync(const DescribeBinlogFilesRequest& request, const DescribeBinlogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBinlogFiles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeBinlogFilesOutcomeCallable DdsClient::describeBinlogFilesCallable(const DescribeBinlogFilesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBinlogFilesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBinlogFiles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeClusterBackupsOutcome DdsClient::describeClusterBackups(const DescribeClusterBackupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

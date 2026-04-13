@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYAUDITPOLICYREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_MODIFYAUDITPOLICYREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEBINLOGFILESREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBEBINLOGFILESREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,47 +26,62 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT ModifyAuditPolicyRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT DescribeBinlogFilesRequest : public RpcServiceRequest {
 public:
-	ModifyAuditPolicyRequest();
-	~ModifyAuditPolicyRequest();
+	DescribeBinlogFilesRequest();
+	~DescribeBinlogFilesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getStoragePeriod() const;
-	void setStoragePeriod(int storagePeriod);
+	std::string getBinlogId() const;
+	void setBinlogId(const std::string &binlogId);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getSrcRegion() const;
+	void setSrcRegion(const std::string &srcRegion);
+	long getPageNumber() const;
+	void setPageNumber(long pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	int getHotStoragePeriod() const;
-	void setHotStoragePeriod(int hotStoragePeriod);
-	std::string getAuditLogSwitchSource() const;
-	void setAuditLogSwitchSource(const std::string &auditLogSwitchSource);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	long getPageSize() const;
+	void setPageSize(long pageSize);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
-	std::string getAuditStatus() const;
-	void setAuditStatus(const std::string &auditStatus);
+	std::string getNodeId() const;
+	void setNodeId(const std::string &nodeId);
+	std::string getDestRegion() const;
+	void setDestRegion(const std::string &destRegion);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getServiceType() const;
-	void setServiceType(const std::string &serviceType);
 
 private:
 	long resourceOwnerId_;
-	int storagePeriod_;
+	std::string binlogId_;
+	std::string startTime_;
+	std::string srcRegion_;
+	long pageNumber_;
 	std::string accessKeyId_;
-	int hotStoragePeriod_;
-	std::string auditLogSwitchSource_;
+	std::string resourceGroupId_;
+	std::string regionId_;
+	long pageSize_;
 	std::string dBInstanceId_;
-	std::string auditStatus_;
+	std::string nodeId_;
+	std::string destRegion_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::string endTime_;
 	long ownerId_;
-	std::string serviceType_;
 };
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYAUDITPOLICYREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEBINLOGFILESREQUEST_H_

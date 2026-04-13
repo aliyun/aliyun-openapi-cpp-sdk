@@ -95,6 +95,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeBackupTasksResult.h
 	include/alibabacloud/dds/model/DescribeBackupsRequest.h
 	include/alibabacloud/dds/model/DescribeBackupsResult.h
+	include/alibabacloud/dds/model/DescribeBinlogFilesRequest.h
+	include/alibabacloud/dds/model/DescribeBinlogFilesResult.h
 	include/alibabacloud/dds/model/DescribeClusterBackupsRequest.h
 	include/alibabacloud/dds/model/DescribeClusterBackupsResult.h
 	include/alibabacloud/dds/model/DescribeClusterRecoverTimeRequest.h
@@ -358,6 +360,8 @@ set(dds_src
 	src/model/DescribeBackupTasksResult.cc
 	src/model/DescribeBackupsRequest.cc
 	src/model/DescribeBackupsResult.cc
+	src/model/DescribeBinlogFilesRequest.cc
+	src/model/DescribeBinlogFilesResult.cc
 	src/model/DescribeClusterBackupsRequest.cc
 	src/model/DescribeClusterBackupsResult.cc
 	src/model/DescribeClusterRecoverTimeRequest.cc

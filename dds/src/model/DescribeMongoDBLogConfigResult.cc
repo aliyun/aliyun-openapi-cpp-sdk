@@ -61,12 +61,36 @@ void DescribeMongoDBLogConfigResult::parse(const std::string &payload)
 		usedStorageForStandard_ = std::stol(value["UsedStorageForStandard"].asString());
 	if(!value["PreserveStorageForStandard"].isNull())
 		preserveStorageForStandard_ = std::stol(value["PreserveStorageForStandard"].asString());
+	if(!value["HotTtlForV2Standard"].isNull())
+		hotTtlForV2Standard_ = std::stol(value["HotTtlForV2Standard"].asString());
+	if(!value["TtlForV2Standard"].isNull())
+		ttlForV2Standard_ = std::stol(value["TtlForV2Standard"].asString());
 
 }
 
 bool DescribeMongoDBLogConfigResult::getEnableAudit()const
 {
 	return enableAudit_;
+}
+
+int DescribeMongoDBLogConfigResult::getIsUserProjectLogstoreExist()const
+{
+	return isUserProjectLogstoreExist_;
+}
+
+long DescribeMongoDBLogConfigResult::getPreserveStorageForTrail()const
+{
+	return preserveStorageForTrail_;
+}
+
+long DescribeMongoDBLogConfigResult::getUsedStorageForStandard()const
+{
+	return usedStorageForStandard_;
+}
+
+long DescribeMongoDBLogConfigResult::getHotTtlForV2Standard()const
+{
+	return hotTtlForV2Standard_;
 }
 
 long DescribeMongoDBLogConfigResult::getTtlForStandard()const
@@ -89,19 +113,14 @@ std::string DescribeMongoDBLogConfigResult::getServiceType()const
 	return serviceType_;
 }
 
-int DescribeMongoDBLogConfigResult::getIsUserProjectLogstoreExist()const
-{
-	return isUserProjectLogstoreExist_;
-}
-
 long DescribeMongoDBLogConfigResult::getUsedStorageForTrail()const
 {
 	return usedStorageForTrail_;
 }
 
-long DescribeMongoDBLogConfigResult::getPreserveStorageForTrail()const
+long DescribeMongoDBLogConfigResult::getTtlForV2Standard()const
 {
-	return preserveStorageForTrail_;
+	return ttlForV2Standard_;
 }
 
 int DescribeMongoDBLogConfigResult::getIsEtlMetaExist()const
@@ -112,10 +131,5 @@ int DescribeMongoDBLogConfigResult::getIsEtlMetaExist()const
 long DescribeMongoDBLogConfigResult::getTtlForTrail()const
 {
 	return ttlForTrail_;
-}
-
-long DescribeMongoDBLogConfigResult::getUsedStorageForStandard()const
-{
-	return usedStorageForStandard_;
 }
 

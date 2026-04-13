@@ -311,6 +311,10 @@ void DescribePriceResult::parse(const std::string &payload)
 			couponObject.optionCode = orderNodeCouponsCoupon["OptionCode"].asString();
 		if(!orderNodeCouponsCoupon["ActivityCategory"].isNull())
 			couponObject.activityCategory = orderNodeCouponsCoupon["ActivityCategory"].asString();
+		if(!orderNodeCouponsCoupon["Effective"].isNull())
+			couponObject.effective = orderNodeCouponsCoupon["Effective"].asString() == "true";
+		if(!orderNodeCouponsCoupon["ActivityExtInfo"].isNull())
+			couponObject.activityExtInfo = orderNodeCouponsCoupon["ActivityExtInfo"].asString();
 		auto allPromotionRuleIdList6 = value["PromotionRuleIdList"]["PromotionRuleId"];
 		for (auto value : allPromotionRuleIdList6)
 			couponObject.promotionRuleIdList6.push_back(value.asString());

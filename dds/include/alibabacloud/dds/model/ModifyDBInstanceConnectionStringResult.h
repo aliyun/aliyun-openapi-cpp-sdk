@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				ModifyDBInstanceConnectionStringResult();
 				explicit ModifyDBInstanceConnectionStringResult(const std::string &payload);
 				~ModifyDBInstanceConnectionStringResult();
+				std::string getModifiedConnectionString()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string modifiedConnectionString_;
 
 			};
 		}

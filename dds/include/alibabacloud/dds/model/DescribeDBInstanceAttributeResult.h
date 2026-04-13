@@ -153,6 +153,7 @@ namespace AlibabaCloud
 					std::string paymentType;
 					std::string maintainStartTime;
 					bool burstingEnabled;
+					bool coldDataEnabled;
 					std::string zoneId;
 					std::string readonlyReplicas;
 					std::string replicationFactor;

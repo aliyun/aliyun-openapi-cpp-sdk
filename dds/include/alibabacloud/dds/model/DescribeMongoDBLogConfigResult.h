@@ -38,31 +38,35 @@ namespace AlibabaCloud
 				explicit DescribeMongoDBLogConfigResult(const std::string &payload);
 				~DescribeMongoDBLogConfigResult();
 				bool getEnableAudit()const;
+				int getIsUserProjectLogstoreExist()const;
+				long getPreserveStorageForTrail()const;
+				long getUsedStorageForStandard()const;
+				long getHotTtlForV2Standard()const;
 				long getTtlForStandard()const;
 				long getPreserveStorageForStandard()const;
 				std::string getUserProjectName()const;
 				std::string getServiceType()const;
-				int getIsUserProjectLogstoreExist()const;
 				long getUsedStorageForTrail()const;
-				long getPreserveStorageForTrail()const;
+				long getTtlForV2Standard()const;
 				int getIsEtlMetaExist()const;
 				long getTtlForTrail()const;
-				long getUsedStorageForStandard()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				bool enableAudit_;
+				int isUserProjectLogstoreExist_;
+				long preserveStorageForTrail_;
+				long usedStorageForStandard_;
+				long hotTtlForV2Standard_;
 				long ttlForStandard_;
 				long preserveStorageForStandard_;
 				std::string userProjectName_;
 				std::string serviceType_;
-				int isUserProjectLogstoreExist_;
 				long usedStorageForTrail_;
-				long preserveStorageForTrail_;
+				long ttlForV2Standard_;
 				int isEtlMetaExist_;
 				long ttlForTrail_;
-				long usedStorageForStandard_;
 
 			};
 		}

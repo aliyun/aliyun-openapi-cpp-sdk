@@ -39,6 +39,13 @@ void ModifyDBInstanceConnectionStringResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ModifiedConnectionString"].isNull())
+		modifiedConnectionString_ = value["ModifiedConnectionString"].asString();
 
+}
+
+std::string ModifyDBInstanceConnectionStringResult::getModifiedConnectionString()const
+{
+	return modifiedConnectionString_;
 }
 

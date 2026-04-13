@@ -63,12 +63,14 @@ namespace AlibabaCloud
 				explicit DescribeShardingNetworkAddressResult(const std::string &payload);
 				~DescribeShardingNetworkAddressResult();
 				std::vector<CompatibleConnection> getCompatibleConnections()const;
+				std::string getConnectionStringSuffix()const;
 				std::vector<NetworkAddress> getNetworkAddresses()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<CompatibleConnection> compatibleConnections_;
+				std::string connectionStringSuffix_;
 				std::vector<NetworkAddress> networkAddresses_;
 
 			};

@@ -34,6 +34,15 @@ void ModifyDBInstanceConnectionStringRequest::setResourceOwnerId(long resourceOw
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBInstanceConnectionStringRequest::getNetworkType() const {
+  return networkType_;
+}
+
+void ModifyDBInstanceConnectionStringRequest::setNetworkType(const std::string &networkType) {
+  networkType_ = networkType;
+  setParameter(std::string("NetworkType"), networkType);
+}
+
 std::string ModifyDBInstanceConnectionStringRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -113,5 +122,23 @@ std::string ModifyDBInstanceConnectionStringRequest::getCurrentConnectionString(
 void ModifyDBInstanceConnectionStringRequest::setCurrentConnectionString(const std::string &currentConnectionString) {
   currentConnectionString_ = currentConnectionString;
   setParameter(std::string("CurrentConnectionString"), currentConnectionString);
+}
+
+bool ModifyDBInstanceConnectionStringRequest::getPortModifyOnly() const {
+  return portModifyOnly_;
+}
+
+void ModifyDBInstanceConnectionStringRequest::setPortModifyOnly(bool portModifyOnly) {
+  portModifyOnly_ = portModifyOnly;
+  setParameter(std::string("PortModifyOnly"), portModifyOnly ? "true" : "false");
+}
+
+bool ModifyDBInstanceConnectionStringRequest::getForceModifySuffix() const {
+  return forceModifySuffix_;
+}
+
+void ModifyDBInstanceConnectionStringRequest::setForceModifySuffix(bool forceModifySuffix) {
+  forceModifySuffix_ = forceModifySuffix;
+  setParameter(std::string("ForceModifySuffix"), forceModifySuffix ? "true" : "false");
 }
 

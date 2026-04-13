@@ -149,6 +149,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.searchNodeStorage = std::stoi(valueDBInstancesDBInstance["SearchNodeStorage"].asString());
 		if(!valueDBInstancesDBInstance["SearchNodeCount"].isNull())
 			dBInstancesObject.searchNodeCount = std::stoi(valueDBInstancesDBInstance["SearchNodeCount"].asString());
+		if(!valueDBInstancesDBInstance["ColdDataEnabled"].isNull())
+			dBInstancesObject.coldDataEnabled = valueDBInstancesDBInstance["ColdDataEnabled"].asString() == "true";
 		auto allReplicaSetsNode = valueDBInstancesDBInstance["ReplicaSets"]["ReplicaSet"];
 		for (auto valueDBInstancesDBInstanceReplicaSetsReplicaSet : allReplicaSetsNode)
 		{

@@ -32,6 +32,8 @@ public:
 	~ModifyDBInstanceConnectionStringRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getNetworkType() const;
+	void setNetworkType(const std::string &networkType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getDBInstanceId() const;
@@ -50,9 +52,14 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getCurrentConnectionString() const;
 	void setCurrentConnectionString(const std::string &currentConnectionString);
+	bool getPortModifyOnly() const;
+	void setPortModifyOnly(bool portModifyOnly);
+	bool getForceModifySuffix() const;
+	void setForceModifySuffix(bool forceModifySuffix);
 
 private:
 	long resourceOwnerId_;
+	std::string networkType_;
 	std::string accessKeyId_;
 	std::string dBInstanceId_;
 	std::string nodeId_;
@@ -62,6 +69,8 @@ private:
 	std::string newConnectionString_;
 	long ownerId_;
 	std::string currentConnectionString_;
+	bool portModifyOnly_;
+	bool forceModifySuffix_;
 };
 } // namespace Model
 } // namespace Dds

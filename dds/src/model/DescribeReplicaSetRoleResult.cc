@@ -61,12 +61,19 @@ void DescribeReplicaSetRoleResult::parse(const std::string &payload)
 	}
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["ConnectionStringSuffix"].isNull())
+		connectionStringSuffix_ = value["ConnectionStringSuffix"].asString();
 
 }
 
 std::string DescribeReplicaSetRoleResult::getDBInstanceId()const
 {
 	return dBInstanceId_;
+}
+
+std::string DescribeReplicaSetRoleResult::getConnectionStringSuffix()const
+{
+	return connectionStringSuffix_;
 }
 
 std::vector<DescribeReplicaSetRoleResult::ReplicaSet> DescribeReplicaSetRoleResult::getReplicaSets()const

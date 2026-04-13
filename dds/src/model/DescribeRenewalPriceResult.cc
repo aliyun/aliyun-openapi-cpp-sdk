@@ -89,6 +89,10 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 			couponObject.couponNo = orderNodeCouponsCoupon["CouponNo"].asString();
 		if(!orderNodeCouponsCoupon["Name"].isNull())
 			couponObject.name = orderNodeCouponsCoupon["Name"].asString();
+		if(!orderNodeCouponsCoupon["Effective"].isNull())
+			couponObject.effective = orderNodeCouponsCoupon["Effective"].asString() == "true";
+		if(!orderNodeCouponsCoupon["ActivityExtInfo"].isNull())
+			couponObject.activityExtInfo = orderNodeCouponsCoupon["ActivityExtInfo"].asString();
 		order_.coupons.push_back(couponObject);
 	}
 		auto allRuleIds1 = orderNode["RuleIds"]["RuleId"];

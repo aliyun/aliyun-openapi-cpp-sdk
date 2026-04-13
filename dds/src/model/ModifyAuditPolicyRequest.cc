@@ -52,6 +52,15 @@ void ModifyAuditPolicyRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+int ModifyAuditPolicyRequest::getHotStoragePeriod() const {
+  return hotStoragePeriod_;
+}
+
+void ModifyAuditPolicyRequest::setHotStoragePeriod(int hotStoragePeriod) {
+  hotStoragePeriod_ = hotStoragePeriod;
+  setParameter(std::string("HotStoragePeriod"), std::to_string(hotStoragePeriod));
+}
+
 std::string ModifyAuditPolicyRequest::getAuditLogSwitchSource() const {
   return auditLogSwitchSource_;
 }

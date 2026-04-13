@@ -89,12 +89,19 @@ void DescribeShardingNetworkAddressResult::parse(const std::string &payload)
 			networkAddressesObject.txtRecord = valueNetworkAddressesNetworkAddress["TxtRecord"].asString();
 		networkAddresses_.push_back(networkAddressesObject);
 	}
+	if(!value["ConnectionStringSuffix"].isNull())
+		connectionStringSuffix_ = value["ConnectionStringSuffix"].asString();
 
 }
 
 std::vector<DescribeShardingNetworkAddressResult::CompatibleConnection> DescribeShardingNetworkAddressResult::getCompatibleConnections()const
 {
 	return compatibleConnections_;
+}
+
+std::string DescribeShardingNetworkAddressResult::getConnectionStringSuffix()const
+{
+	return connectionStringSuffix_;
 }
 
 std::vector<DescribeShardingNetworkAddressResult::NetworkAddress> DescribeShardingNetworkAddressResult::getNetworkAddresses()const

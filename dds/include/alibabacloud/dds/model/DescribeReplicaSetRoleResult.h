@@ -48,12 +48,14 @@ namespace AlibabaCloud
 				explicit DescribeReplicaSetRoleResult(const std::string &payload);
 				~DescribeReplicaSetRoleResult();
 				std::string getDBInstanceId()const;
+				std::string getConnectionStringSuffix()const;
 				std::vector<ReplicaSet> getReplicaSets()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string dBInstanceId_;
+				std::string connectionStringSuffix_;
 				std::vector<ReplicaSet> replicaSets_;
 
 			};
