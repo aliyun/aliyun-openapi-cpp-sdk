@@ -61,6 +61,15 @@ void AddUserRequest::setAccountType(int accountType) {
   setParameter(std::string("AccountType"), std::to_string(accountType));
 }
 
+std::string AddUserRequest::getCopilotModules() const {
+  return copilotModules_;
+}
+
+void AddUserRequest::setCopilotModules(const std::string &copilotModules) {
+  copilotModules_ = copilotModules;
+  setParameter(std::string("CopilotModules"), copilotModules);
+}
+
 std::string AddUserRequest::getAccountId() const {
   return accountId_;
 }

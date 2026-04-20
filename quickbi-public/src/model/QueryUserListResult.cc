@@ -79,6 +79,9 @@ void QueryUserListResult::parse(const std::string &payload)
 		auto allRoleIdList = value["RoleIdList"]["roleIdList"];
 		for (auto value : allRoleIdList)
 			dataItemObject.roleIdList.push_back(value.asString());
+		auto allCopilotModules = value["CopilotModules"]["CopilotModules"];
+		for (auto value : allCopilotModules)
+			dataItemObject.copilotModules.push_back(value.asString());
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

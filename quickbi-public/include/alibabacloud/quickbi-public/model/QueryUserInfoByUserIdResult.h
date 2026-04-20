@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string email;
 					std::string phone;
 					std::string userId;
+					std::vector<std::string> copilotModules;
 					bool adminUser;
 					std::string nickName;
 					int userType;

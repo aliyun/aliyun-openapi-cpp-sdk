@@ -36,6 +36,8 @@ public:
 	void setAccountType(int accountType);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	std::string getCopilotModules() const;
+	void setCopilotModules(const std::string &copilotModules);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
 	bool getIsDeleted() const;
@@ -59,6 +61,7 @@ private:
 	bool adminUser_;
 	int accountType_;
 	std::string accessPoint_;
+	std::string copilotModules_;
 	std::string userId_;
 	bool isDeleted_;
 	std::string roleIds_;

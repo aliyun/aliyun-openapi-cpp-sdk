@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYUSERLISTRESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYUSERLISTRESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_ADDWORKSAUTHORIZATIONRESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_ADDWORKSAUTHORIZATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,50 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT QueryUserListResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT AddWorksAuthorizationResult : public ServiceResult
 			{
 			public:
-				struct Result
-				{
-					struct DataItem
-					{
-						bool isDeleted;
-						std::string accountId;
-						std::string email;
-						std::vector<std::string> copilotModules;
-						std::string nickName;
-						long lastLoginTime;
-						std::vector<std::string> roleIdList;
-						std::string phone;
-						std::string userId;
-						bool adminUser;
-						long joinedDate;
-						int userType;
-						bool authAdminUser;
-						std::string accountName;
-					};
-					int totalNum;
-					int pageNum;
-					int pageSize;
-					std::vector<DataItem> data;
-					int totalPages;
-				};
 
 
-				QueryUserListResult();
-				explicit QueryUserListResult(const std::string &payload);
-				~QueryUserListResult();
+				AddWorksAuthorizationResult();
+				explicit AddWorksAuthorizationResult(const std::string &payload);
+				~AddWorksAuthorizationResult();
 				bool getSuccess()const;
-				Result getResult()const;
+				std::string getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				bool success_;
-				Result result_;
+				std::string result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_QUERYUSERLISTRESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_ADDWORKSAUTHORIZATIONRESULT_H_

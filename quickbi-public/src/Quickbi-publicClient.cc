@@ -375,6 +375,42 @@ Quickbi_publicClient::AddUserToWorkspaceOutcomeCallable Quickbi_publicClient::ad
 	return task->get_future();
 }
 
+Quickbi_publicClient::AddWorksAuthorizationOutcome Quickbi_publicClient::addWorksAuthorization(const AddWorksAuthorizationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddWorksAuthorizationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddWorksAuthorizationOutcome(AddWorksAuthorizationResult(outcome.result()));
+	else
+		return AddWorksAuthorizationOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::addWorksAuthorizationAsync(const AddWorksAuthorizationRequest& request, const AddWorksAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addWorksAuthorization(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::AddWorksAuthorizationOutcomeCallable Quickbi_publicClient::addWorksAuthorizationCallable(const AddWorksAuthorizationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddWorksAuthorizationOutcome()>>(
+			[this, request]()
+			{
+			return this->addWorksAuthorization(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::AddWorkspaceUsersOutcome Quickbi_publicClient::addWorkspaceUsers(const AddWorkspaceUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

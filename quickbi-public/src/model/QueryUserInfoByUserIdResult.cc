@@ -61,6 +61,9 @@ void QueryUserInfoByUserIdResult::parse(const std::string &payload)
 		auto allRoleIdList = resultNode["RoleIdList"]["RoleIdList"];
 		for (auto value : allRoleIdList)
 			result_.roleIdList.push_back(value.asString());
+		auto allCopilotModules = resultNode["CopilotModules"]["CopilotModules"];
+		for (auto value : allCopilotModules)
+			result_.copilotModules.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

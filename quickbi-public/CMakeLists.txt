@@ -39,6 +39,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/AddUserTagMetaResult.h
 	include/alibabacloud/quickbi-public/model/AddUserToWorkspaceRequest.h
 	include/alibabacloud/quickbi-public/model/AddUserToWorkspaceResult.h
+	include/alibabacloud/quickbi-public/model/AddWorksAuthorizationRequest.h
+	include/alibabacloud/quickbi-public/model/AddWorksAuthorizationResult.h
 	include/alibabacloud/quickbi-public/model/AddWorkspaceUsersRequest.h
 	include/alibabacloud/quickbi-public/model/AddWorkspaceUsersResult.h
 	include/alibabacloud/quickbi-public/model/AllotDatasetAccelerationTaskRequest.h
@@ -306,6 +308,8 @@ set(quickbi-public_src
 	src/model/AddUserTagMetaResult.cc
 	src/model/AddUserToWorkspaceRequest.cc
 	src/model/AddUserToWorkspaceResult.cc
+	src/model/AddWorksAuthorizationRequest.cc
+	src/model/AddWorksAuthorizationResult.cc
 	src/model/AddWorkspaceUsersRequest.cc
 	src/model/AddWorkspaceUsersResult.cc
 	src/model/AllotDatasetAccelerationTaskRequest.cc

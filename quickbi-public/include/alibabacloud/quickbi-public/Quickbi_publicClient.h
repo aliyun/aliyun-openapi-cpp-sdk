@@ -40,6 +40,8 @@
 #include "model/AddUserTagMetaResult.h"
 #include "model/AddUserToWorkspaceRequest.h"
 #include "model/AddUserToWorkspaceResult.h"
+#include "model/AddWorksAuthorizationRequest.h"
+#include "model/AddWorksAuthorizationResult.h"
 #include "model/AddWorkspaceUsersRequest.h"
 #include "model/AddWorkspaceUsersResult.h"
 #include "model/AllotDatasetAccelerationTaskRequest.h"
@@ -322,6 +324,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddUserToWorkspaceResult> AddUserToWorkspaceOutcome;
 			typedef std::future<AddUserToWorkspaceOutcome> AddUserToWorkspaceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::AddUserToWorkspaceRequest&, const AddUserToWorkspaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUserToWorkspaceAsyncHandler;
+			typedef Outcome<Error, Model::AddWorksAuthorizationResult> AddWorksAuthorizationOutcome;
+			typedef std::future<AddWorksAuthorizationOutcome> AddWorksAuthorizationOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::AddWorksAuthorizationRequest&, const AddWorksAuthorizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddWorksAuthorizationAsyncHandler;
 			typedef Outcome<Error, Model::AddWorkspaceUsersResult> AddWorkspaceUsersOutcome;
 			typedef std::future<AddWorkspaceUsersOutcome> AddWorkspaceUsersOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::AddWorkspaceUsersRequest&, const AddWorkspaceUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddWorkspaceUsersAsyncHandler;
@@ -723,6 +728,9 @@ namespace AlibabaCloud
 			AddUserToWorkspaceOutcome addUserToWorkspace(const Model::AddUserToWorkspaceRequest &request)const;
 			void addUserToWorkspaceAsync(const Model::AddUserToWorkspaceRequest& request, const AddUserToWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUserToWorkspaceOutcomeCallable addUserToWorkspaceCallable(const Model::AddUserToWorkspaceRequest& request) const;
+			AddWorksAuthorizationOutcome addWorksAuthorization(const Model::AddWorksAuthorizationRequest &request)const;
+			void addWorksAuthorizationAsync(const Model::AddWorksAuthorizationRequest& request, const AddWorksAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddWorksAuthorizationOutcomeCallable addWorksAuthorizationCallable(const Model::AddWorksAuthorizationRequest& request) const;
 			AddWorkspaceUsersOutcome addWorkspaceUsers(const Model::AddWorkspaceUsersRequest &request)const;
 			void addWorkspaceUsersAsync(const Model::AddWorkspaceUsersRequest& request, const AddWorkspaceUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddWorkspaceUsersOutcomeCallable addWorkspaceUsersCallable(const Model::AddWorkspaceUsersRequest& request) const;

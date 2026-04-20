@@ -52,6 +52,15 @@ void UpdateUserRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+std::string UpdateUserRequest::getCopilotModules() const {
+  return copilotModules_;
+}
+
+void UpdateUserRequest::setCopilotModules(const std::string &copilotModules) {
+  copilotModules_ = copilotModules;
+  setParameter(std::string("CopilotModules"), copilotModules);
+}
+
 std::string UpdateUserRequest::getUserId() const {
   return userId_;
 }
