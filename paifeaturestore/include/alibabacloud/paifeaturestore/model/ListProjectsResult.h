@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string projectId;
 					std::string offlineDatasourceName;
+					std::string workspaceId;
 					std::string gmtModifiedTime;
 					std::string name;
 					std::string offlineDatasourceId;

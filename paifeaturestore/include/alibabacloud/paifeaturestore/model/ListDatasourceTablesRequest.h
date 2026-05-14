@@ -30,6 +30,8 @@ class ALIBABACLOUD_PAIFEATURESTORE_EXPORT ListDatasourceTablesRequest : public R
 public:
 	ListDatasourceTablesRequest();
 	~ListDatasourceTablesRequest();
+	std::string getSchemaName() const;
+	void setSchemaName(const std::string &schemaName);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getDatasourceId() const;
@@ -38,6 +40,7 @@ public:
 	void setTableName(const std::string &tableName);
 
 private:
+	std::string schemaName_;
 	std::string instanceId_;
 	std::string datasourceId_;
 	std::string tableName_;

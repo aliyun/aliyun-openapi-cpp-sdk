@@ -40,14 +40,17 @@ namespace AlibabaCloud
 				int getBatchSize()const;
 				std::string getApiKey()const;
 				std::string getLLMConfigId()const;
-				int getRps()const;
 				int getMaxTokens()const;
-				std::string getModel()const;
 				std::string getWorkspaceId()const;
-				std::string getBaseUrl()const;
-				std::string getGmtCreateTime()const;
 				std::string getGmtModifiedTime()const;
 				std::string getName()const;
+				int getRps()const;
+				int getEmbeddingDimension()const;
+				std::string getModel()const;
+				std::string getModelType()const;
+				std::string getBaseUrl()const;
+				bool getEnableFusion()const;
+				std::string getGmtCreateTime()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -55,14 +58,17 @@ namespace AlibabaCloud
 				int batchSize_;
 				std::string apiKey_;
 				std::string lLMConfigId_;
-				int rps_;
 				int maxTokens_;
-				std::string model_;
 				std::string workspaceId_;
-				std::string baseUrl_;
-				std::string gmtCreateTime_;
 				std::string gmtModifiedTime_;
 				std::string name_;
+				int rps_;
+				int embeddingDimension_;
+				std::string model_;
+				std::string modelType_;
+				std::string baseUrl_;
+				bool enableFusion_;
+				std::string gmtCreateTime_;
 
 			};
 		}

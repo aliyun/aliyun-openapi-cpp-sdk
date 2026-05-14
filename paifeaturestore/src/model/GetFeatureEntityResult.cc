@@ -51,6 +51,12 @@ void GetFeatureEntityResult::parse(const std::string &payload)
 		owner_ = value["Owner"].asString();
 	if(!value["GmtCreateTime"].isNull())
 		gmtCreateTime_ = value["GmtCreateTime"].asString();
+	if(!value["ParentFeatureEntityId"].isNull())
+		parentFeatureEntityId_ = value["ParentFeatureEntityId"].asString();
+	if(!value["ParentFeatureEntityName"].isNull())
+		parentFeatureEntityName_ = value["ParentFeatureEntityName"].asString();
+	if(!value["ParentJoinId"].isNull())
+		parentJoinId_ = value["ParentJoinId"].asString();
 
 }
 
@@ -69,9 +75,24 @@ std::string GetFeatureEntityResult::getProjectName()const
 	return projectName_;
 }
 
+std::string GetFeatureEntityResult::getParentFeatureEntityId()const
+{
+	return parentFeatureEntityId_;
+}
+
 std::string GetFeatureEntityResult::getProjectId()const
 {
 	return projectId_;
+}
+
+std::string GetFeatureEntityResult::getParentJoinId()const
+{
+	return parentJoinId_;
+}
+
+std::string GetFeatureEntityResult::getParentFeatureEntityName()const
+{
+	return parentFeatureEntityName_;
 }
 
 std::string GetFeatureEntityResult::getGmtCreateTime()const

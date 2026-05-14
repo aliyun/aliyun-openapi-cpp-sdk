@@ -61,6 +61,12 @@ void GetLLMConfigResult::parse(const std::string &payload)
 		batchSize_ = std::stoi(value["BatchSize"].asString());
 	if(!value["WorkspaceId"].isNull())
 		workspaceId_ = value["WorkspaceId"].asString();
+	if(!value["EmbeddingDimension"].isNull())
+		embeddingDimension_ = std::stoi(value["EmbeddingDimension"].asString());
+	if(!value["ModelType"].isNull())
+		modelType_ = value["ModelType"].asString();
+	if(!value["EnableFusion"].isNull())
+		enableFusion_ = value["EnableFusion"].asString() == "true";
 
 }
 
@@ -79,34 +85,14 @@ std::string GetLLMConfigResult::getLLMConfigId()const
 	return lLMConfigId_;
 }
 
-int GetLLMConfigResult::getRps()const
-{
-	return rps_;
-}
-
 int GetLLMConfigResult::getMaxTokens()const
 {
 	return maxTokens_;
 }
 
-std::string GetLLMConfigResult::getModel()const
-{
-	return model_;
-}
-
 std::string GetLLMConfigResult::getWorkspaceId()const
 {
 	return workspaceId_;
-}
-
-std::string GetLLMConfigResult::getBaseUrl()const
-{
-	return baseUrl_;
-}
-
-std::string GetLLMConfigResult::getGmtCreateTime()const
-{
-	return gmtCreateTime_;
 }
 
 std::string GetLLMConfigResult::getGmtModifiedTime()const
@@ -117,5 +103,40 @@ std::string GetLLMConfigResult::getGmtModifiedTime()const
 std::string GetLLMConfigResult::getName()const
 {
 	return name_;
+}
+
+int GetLLMConfigResult::getRps()const
+{
+	return rps_;
+}
+
+int GetLLMConfigResult::getEmbeddingDimension()const
+{
+	return embeddingDimension_;
+}
+
+std::string GetLLMConfigResult::getModel()const
+{
+	return model_;
+}
+
+std::string GetLLMConfigResult::getModelType()const
+{
+	return modelType_;
+}
+
+std::string GetLLMConfigResult::getBaseUrl()const
+{
+	return baseUrl_;
+}
+
+bool GetLLMConfigResult::getEnableFusion()const
+{
+	return enableFusion_;
+}
+
+std::string GetLLMConfigResult::getGmtCreateTime()const
+{
+	return gmtCreateTime_;
 }
 

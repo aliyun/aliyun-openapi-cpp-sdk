@@ -129,6 +129,8 @@ set(paifeaturestore_public_header_model
 	include/alibabacloud/paifeaturestore/model/StopTaskResult.h
 	include/alibabacloud/paifeaturestore/model/UpdateDatasourceRequest.h
 	include/alibabacloud/paifeaturestore/model/UpdateDatasourceResult.h
+	include/alibabacloud/paifeaturestore/model/UpdateFeatureViewRequest.h
+	include/alibabacloud/paifeaturestore/model/UpdateFeatureViewResult.h
 	include/alibabacloud/paifeaturestore/model/UpdateLLMConfigRequest.h
 	include/alibabacloud/paifeaturestore/model/UpdateLLMConfigResult.h
 	include/alibabacloud/paifeaturestore/model/UpdateLabelTableRequest.h
@@ -252,6 +254,8 @@ set(paifeaturestore_src
 	src/model/StopTaskResult.cc
 	src/model/UpdateDatasourceRequest.cc
 	src/model/UpdateDatasourceResult.cc
+	src/model/UpdateFeatureViewRequest.cc
+	src/model/UpdateFeatureViewResult.cc
 	src/model/UpdateLLMConfigRequest.cc
 	src/model/UpdateLLMConfigResult.cc
 	src/model/UpdateLabelTableRequest.cc

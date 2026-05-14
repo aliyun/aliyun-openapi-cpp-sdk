@@ -63,6 +63,8 @@ void GetFeatureViewResult::parse(const std::string &payload)
 					inputObject.name = valueFieldsFieldsItemTransformTransformItemInputInputItem["Name"].asString();
 				if(!valueFieldsFieldsItemTransformTransformItemInputInputItem["Type"].isNull())
 					inputObject.type = valueFieldsFieldsItemTransformTransformItemInputInputItem["Type"].asString();
+				if(!valueFieldsFieldsItemTransformTransformItemInputInputItem["Modality"].isNull())
+					inputObject.modality = valueFieldsFieldsItemTransformTransformItemInputInputItem["Modality"].asString();
 				transformObject.input.push_back(inputObject);
 			}
 			fieldsObject.transform.push_back(transformObject);

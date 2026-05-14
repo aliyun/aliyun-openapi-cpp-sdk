@@ -57,6 +57,12 @@ void ListFeatureEntitiesResult::parse(const std::string &payload)
 			featureEntitiesObject.projectId = valueFeatureEntitiesFeatureEntitiesItem["ProjectId"].asString();
 		if(!valueFeatureEntitiesFeatureEntitiesItem["ProjectName"].isNull())
 			featureEntitiesObject.projectName = valueFeatureEntitiesFeatureEntitiesItem["ProjectName"].asString();
+		if(!valueFeatureEntitiesFeatureEntitiesItem["ParentFeatureEntityId"].isNull())
+			featureEntitiesObject.parentFeatureEntityId = valueFeatureEntitiesFeatureEntitiesItem["ParentFeatureEntityId"].asString();
+		if(!valueFeatureEntitiesFeatureEntitiesItem["ParentFeatureEntityName"].isNull())
+			featureEntitiesObject.parentFeatureEntityName = valueFeatureEntitiesFeatureEntitiesItem["ParentFeatureEntityName"].asString();
+		if(!valueFeatureEntitiesFeatureEntitiesItem["ParentJoinId"].isNull())
+			featureEntitiesObject.parentJoinId = valueFeatureEntitiesFeatureEntitiesItem["ParentJoinId"].asString();
 		featureEntities_.push_back(featureEntitiesObject);
 	}
 	if(!value["TotalCount"].isNull())

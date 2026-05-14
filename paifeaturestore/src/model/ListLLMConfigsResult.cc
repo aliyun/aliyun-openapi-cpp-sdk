@@ -67,6 +67,12 @@ void ListLLMConfigsResult::parse(const std::string &payload)
 			lLMConfigsObject.batchSize = std::stoi(valueLLMConfigsllmConfigsItem["BatchSize"].asString());
 		if(!valueLLMConfigsllmConfigsItem["WorkspaceId"].isNull())
 			lLMConfigsObject.workspaceId = valueLLMConfigsllmConfigsItem["WorkspaceId"].asString();
+		if(!valueLLMConfigsllmConfigsItem["EmbeddingDimension"].isNull())
+			lLMConfigsObject.embeddingDimension = std::stoi(valueLLMConfigsllmConfigsItem["EmbeddingDimension"].asString());
+		if(!valueLLMConfigsllmConfigsItem["ModelType"].isNull())
+			lLMConfigsObject.modelType = valueLLMConfigsllmConfigsItem["ModelType"].asString();
+		if(!valueLLMConfigsllmConfigsItem["EnableFusion"].isNull())
+			lLMConfigsObject.enableFusion = valueLLMConfigsllmConfigsItem["EnableFusion"].asString() == "true";
 		lLMConfigs_.push_back(lLMConfigsObject);
 	}
 	if(!value["TotalCount"].isNull())

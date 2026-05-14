@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREENTITIESRESULT_H_
-#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREENTITIESRESULT_H_
+#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_UPDATEFEATUREVIEWRESULT_H_
+#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_UPDATEFEATUREVIEWRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT ListFeatureEntitiesResult : public ServiceResult
+			class ALIBABACLOUD_PAIFEATURESTORE_EXPORT UpdateFeatureViewResult : public ServiceResult
 			{
 			public:
-				struct FeatureEntitiesItem
-				{
-					std::string joinId;
-					std::string owner;
-					std::string projectName;
-					std::string parentFeatureEntityId;
-					std::string featureEntityId;
-					std::string projectId;
-					std::string parentJoinId;
-					std::string parentFeatureEntityName;
-					std::string gmtCreateTime;
-					std::string name;
-				};
 
 
-				ListFeatureEntitiesResult();
-				explicit ListFeatureEntitiesResult(const std::string &payload);
-				~ListFeatureEntitiesResult();
-				int getTotalCount()const;
-				std::vector<FeatureEntitiesItem> getFeatureEntities()const;
+				UpdateFeatureViewResult();
+				explicit UpdateFeatureViewResult(const std::string &payload);
+				~UpdateFeatureViewResult();
+				std::string getRequestId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				std::vector<FeatureEntitiesItem> featureEntities_;
+				std::string requestId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREENTITIESRESULT_H_
+#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_UPDATEFEATUREVIEWRESULT_H_

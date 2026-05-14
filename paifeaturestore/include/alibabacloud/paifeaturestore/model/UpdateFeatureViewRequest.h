@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREVIEWONLINEFEATURESREQUEST_H_
-#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREVIEWONLINEFEATURESREQUEST_H_
+#ifndef ALIBABACLOUD_PAIFEATURESTORE_MODEL_UPDATEFEATUREVIEWREQUEST_H_
+#define ALIBABACLOUD_PAIFEATURESTORE_MODEL_UPDATEFEATUREVIEWREQUEST_H_
 
 #include <alibabacloud/paifeaturestore/PaiFeatureStoreExport.h>
 #include <alibabacloud/core/RoaServiceRequest.h>
@@ -26,26 +26,23 @@
 namespace AlibabaCloud {
 namespace PaiFeatureStore {
 namespace Model {
-class ALIBABACLOUD_PAIFEATURESTORE_EXPORT ListFeatureViewOnlineFeaturesRequest : public RoaServiceRequest {
+class ALIBABACLOUD_PAIFEATURESTORE_EXPORT UpdateFeatureViewRequest : public RoaServiceRequest {
 public:
-	ListFeatureViewOnlineFeaturesRequest();
-	~ListFeatureViewOnlineFeaturesRequest();
+	UpdateFeatureViewRequest();
+	~UpdateFeatureViewRequest();
+	std::string getBody() const;
+	void setBody(const std::string &body);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getJoinIds() const;
-	void setJoinIds(const std::string &joinIds);
 	std::string getFeatureViewId() const;
 	void setFeatureViewId(const std::string &featureViewId);
-	std::string getConfig() const;
-	void setConfig(const std::string &config);
 
 private:
+	std::string body_;
 	std::string instanceId_;
-	std::string joinIds_;
 	std::string featureViewId_;
-	std::string config_;
 };
 } // namespace Model
 } // namespace PaiFeatureStore
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_LISTFEATUREVIEWONLINEFEATURESREQUEST_H_
+#endif // !ALIBABACLOUD_PAIFEATURESTORE_MODEL_UPDATEFEATUREVIEWREQUEST_H_

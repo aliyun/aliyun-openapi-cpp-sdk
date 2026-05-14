@@ -40,7 +40,10 @@ namespace AlibabaCloud
 				std::string getJoinId()const;
 				std::string getOwner()const;
 				std::string getProjectName()const;
+				std::string getParentFeatureEntityId()const;
 				std::string getProjectId()const;
+				std::string getParentJoinId()const;
+				std::string getParentFeatureEntityName()const;
 				std::string getGmtCreateTime()const;
 				std::string getName()const;
 
@@ -50,7 +53,10 @@ namespace AlibabaCloud
 				std::string joinId_;
 				std::string owner_;
 				std::string projectName_;
+				std::string parentFeatureEntityId_;
 				std::string projectId_;
+				std::string parentJoinId_;
+				std::string parentFeatureEntityName_;
 				std::string gmtCreateTime_;
 				std::string name_;
 

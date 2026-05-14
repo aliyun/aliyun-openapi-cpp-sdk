@@ -53,3 +53,12 @@ void ListFeatureViewOnlineFeaturesRequest::setFeatureViewId(const std::string &f
   setParameter(std::string("FeatureViewId"), featureViewId);
 }
 
+std::string ListFeatureViewOnlineFeaturesRequest::getConfig() const {
+  return config_;
+}
+
+void ListFeatureViewOnlineFeaturesRequest::setConfig(const std::string &config) {
+  config_ = config;
+  setParameter(std::string("Config"), config);
+}
+

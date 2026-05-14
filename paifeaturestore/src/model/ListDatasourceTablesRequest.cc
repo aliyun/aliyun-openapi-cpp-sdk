@@ -26,6 +26,15 @@ ListDatasourceTablesRequest::ListDatasourceTablesRequest()
 
 ListDatasourceTablesRequest::~ListDatasourceTablesRequest() {}
 
+std::string ListDatasourceTablesRequest::getSchemaName() const {
+  return schemaName_;
+}
+
+void ListDatasourceTablesRequest::setSchemaName(const std::string &schemaName) {
+  schemaName_ = schemaName;
+  setParameter(std::string("SchemaName"), schemaName);
+}
+
 std::string ListDatasourceTablesRequest::getInstanceId() const {
   return instanceId_;
 }

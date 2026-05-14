@@ -37,15 +37,18 @@ namespace AlibabaCloud
 					int batchSize;
 					std::string apiKey;
 					std::string lLMConfigId;
-					int rps;
 					std::string resourceGroupId;
 					int maxTokens;
-					std::string model;
 					std::string workspaceId;
-					std::string baseUrl;
-					std::string gmtCreateTime;
 					std::string gmtModifiedTime;
 					std::string name;
+					int rps;
+					int embeddingDimension;
+					std::string model;
+					std::string modelType;
+					std::string baseUrl;
+					bool enableFusion;
+					std::string gmtCreateTime;
 				};
 
 

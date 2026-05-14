@@ -40,8 +40,10 @@ namespace AlibabaCloud
 						std::vector<std::string> attributes;
 						std::string name;
 					};
+					std::string joinId;
 					std::string type;
 					std::string featureViewId;
+					std::string parentJoinId;
 					std::vector<FeatureViewsItem::FeaturesItem> features;
 					std::string name;
 				};

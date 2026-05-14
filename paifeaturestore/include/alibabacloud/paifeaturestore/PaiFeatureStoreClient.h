@@ -130,6 +130,8 @@
 #include "model/StopTaskResult.h"
 #include "model/UpdateDatasourceRequest.h"
 #include "model/UpdateDatasourceResult.h"
+#include "model/UpdateFeatureViewRequest.h"
+#include "model/UpdateFeatureViewResult.h"
 #include "model/UpdateLLMConfigRequest.h"
 #include "model/UpdateLLMConfigResult.h"
 #include "model/UpdateLabelTableRequest.h"
@@ -313,6 +315,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDatasourceResult> UpdateDatasourceOutcome;
 			typedef std::future<UpdateDatasourceOutcome> UpdateDatasourceOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::UpdateDatasourceRequest&, const UpdateDatasourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDatasourceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateFeatureViewResult> UpdateFeatureViewOutcome;
+			typedef std::future<UpdateFeatureViewOutcome> UpdateFeatureViewOutcomeCallable;
+			typedef std::function<void(const PaiFeatureStoreClient*, const Model::UpdateFeatureViewRequest&, const UpdateFeatureViewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFeatureViewAsyncHandler;
 			typedef Outcome<Error, Model::UpdateLLMConfigResult> UpdateLLMConfigOutcome;
 			typedef std::future<UpdateLLMConfigOutcome> UpdateLLMConfigOutcomeCallable;
 			typedef std::function<void(const PaiFeatureStoreClient*, const Model::UpdateLLMConfigRequest&, const UpdateLLMConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLLMConfigAsyncHandler;
@@ -498,6 +503,9 @@ namespace AlibabaCloud
 			UpdateDatasourceOutcome updateDatasource(const Model::UpdateDatasourceRequest &request)const;
 			void updateDatasourceAsync(const Model::UpdateDatasourceRequest& request, const UpdateDatasourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDatasourceOutcomeCallable updateDatasourceCallable(const Model::UpdateDatasourceRequest& request) const;
+			UpdateFeatureViewOutcome updateFeatureView(const Model::UpdateFeatureViewRequest &request)const;
+			void updateFeatureViewAsync(const Model::UpdateFeatureViewRequest& request, const UpdateFeatureViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateFeatureViewOutcomeCallable updateFeatureViewCallable(const Model::UpdateFeatureViewRequest& request) const;
 			UpdateLLMConfigOutcome updateLLMConfig(const Model::UpdateLLMConfigRequest &request)const;
 			void updateLLMConfigAsync(const Model::UpdateLLMConfigRequest& request, const UpdateLLMConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLLMConfigOutcomeCallable updateLLMConfigCallable(const Model::UpdateLLMConfigRequest& request) const;

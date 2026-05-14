@@ -41,6 +41,7 @@ namespace AlibabaCloud
 				std::string getOwner()const;
 				std::string getDescription()const;
 				std::string getOfflineDatasourceName()const;
+				std::string getWorkspaceId()const;
 				std::string getGmtModifiedTime()const;
 				std::string getName()const;
 				std::string getOfflineDatasourceId()const;
@@ -60,6 +61,7 @@ namespace AlibabaCloud
 				std::string owner_;
 				std::string description_;
 				std::string offlineDatasourceName_;
+				std::string workspaceId_;
 				std::string gmtModifiedTime_;
 				std::string name_;
 				std::string offlineDatasourceId_;

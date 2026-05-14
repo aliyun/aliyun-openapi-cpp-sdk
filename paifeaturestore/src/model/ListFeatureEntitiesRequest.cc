@@ -26,13 +26,13 @@ ListFeatureEntitiesRequest::ListFeatureEntitiesRequest()
 
 ListFeatureEntitiesRequest::~ListFeatureEntitiesRequest() {}
 
-std::string ListFeatureEntitiesRequest::getOwner() const {
-  return owner_;
+std::string ListFeatureEntitiesRequest::getParentFeatureEntityId() const {
+  return parentFeatureEntityId_;
 }
 
-void ListFeatureEntitiesRequest::setOwner(const std::string &owner) {
-  owner_ = owner;
-  setParameter(std::string("Owner"), owner);
+void ListFeatureEntitiesRequest::setParentFeatureEntityId(const std::string &parentFeatureEntityId) {
+  parentFeatureEntityId_ = parentFeatureEntityId;
+  setParameter(std::string("ParentFeatureEntityId"), parentFeatureEntityId);
 }
 
 int ListFeatureEntitiesRequest::getPageNumber() const {
@@ -42,6 +42,42 @@ int ListFeatureEntitiesRequest::getPageNumber() const {
 void ListFeatureEntitiesRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+int ListFeatureEntitiesRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListFeatureEntitiesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListFeatureEntitiesRequest::getProjectId() const {
+  return projectId_;
+}
+
+void ListFeatureEntitiesRequest::setProjectId(const std::string &projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), projectId);
+}
+
+std::string ListFeatureEntitiesRequest::getOrder() const {
+  return order_;
+}
+
+void ListFeatureEntitiesRequest::setOrder(const std::string &order) {
+  order_ = order;
+  setParameter(std::string("Order"), order);
+}
+
+std::string ListFeatureEntitiesRequest::getOwner() const {
+  return owner_;
+}
+
+void ListFeatureEntitiesRequest::setOwner(const std::string &owner) {
+  owner_ = owner;
+  setParameter(std::string("Owner"), owner);
 }
 
 std::string ListFeatureEntitiesRequest::getInstanceId() const {
@@ -62,15 +98,6 @@ void ListFeatureEntitiesRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
-int ListFeatureEntitiesRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListFeatureEntitiesRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 std::string ListFeatureEntitiesRequest::getSortBy() const {
   return sortBy_;
 }
@@ -78,23 +105,5 @@ std::string ListFeatureEntitiesRequest::getSortBy() const {
 void ListFeatureEntitiesRequest::setSortBy(const std::string &sortBy) {
   sortBy_ = sortBy;
   setParameter(std::string("SortBy"), sortBy);
-}
-
-std::string ListFeatureEntitiesRequest::getProjectId() const {
-  return projectId_;
-}
-
-void ListFeatureEntitiesRequest::setProjectId(const std::string &projectId) {
-  projectId_ = projectId;
-  setParameter(std::string("ProjectId"), projectId);
-}
-
-std::string ListFeatureEntitiesRequest::getOrder() const {
-  return order_;
-}
-
-void ListFeatureEntitiesRequest::setOrder(const std::string &order) {
-  order_ = order;
-  setParameter(std::string("Order"), order);
 }
 

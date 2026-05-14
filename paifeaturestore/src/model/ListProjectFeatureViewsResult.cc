@@ -49,6 +49,10 @@ void ListProjectFeatureViewsResult::parse(const std::string &payload)
 			featureViewsObject.featureViewId = valueFeatureViewsFeatureViewsItem["FeatureViewId"].asString();
 		if(!valueFeatureViewsFeatureViewsItem["Type"].isNull())
 			featureViewsObject.type = valueFeatureViewsFeatureViewsItem["Type"].asString();
+		if(!valueFeatureViewsFeatureViewsItem["JoinId"].isNull())
+			featureViewsObject.joinId = valueFeatureViewsFeatureViewsItem["JoinId"].asString();
+		if(!valueFeatureViewsFeatureViewsItem["ParentJoinId"].isNull())
+			featureViewsObject.parentJoinId = valueFeatureViewsFeatureViewsItem["ParentJoinId"].asString();
 		auto allFeaturesNode = valueFeatureViewsFeatureViewsItem["Features"]["FeaturesItem"];
 		for (auto valueFeatureViewsFeatureViewsItemFeaturesFeaturesItem : allFeaturesNode)
 		{

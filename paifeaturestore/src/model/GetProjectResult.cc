@@ -69,6 +69,8 @@ void GetProjectResult::parse(const std::string &payload)
 		gmtCreateTime_ = value["GmtCreateTime"].asString();
 	if(!value["GmtModifiedTime"].isNull())
 		gmtModifiedTime_ = value["GmtModifiedTime"].asString();
+	if(!value["WorkspaceId"].isNull())
+		workspaceId_ = value["WorkspaceId"].asString();
 
 }
 
@@ -90,6 +92,11 @@ std::string GetProjectResult::getDescription()const
 std::string GetProjectResult::getOfflineDatasourceName()const
 {
 	return offlineDatasourceName_;
+}
+
+std::string GetProjectResult::getWorkspaceId()const
+{
+	return workspaceId_;
 }
 
 std::string GetProjectResult::getGmtModifiedTime()const

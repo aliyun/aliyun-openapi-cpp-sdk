@@ -30,32 +30,35 @@ class ALIBABACLOUD_PAIFEATURESTORE_EXPORT ListFeatureEntitiesRequest : public Ro
 public:
 	ListFeatureEntitiesRequest();
 	~ListFeatureEntitiesRequest();
-	std::string getOwner() const;
-	void setOwner(const std::string &owner);
+	std::string getParentFeatureEntityId() const;
+	void setParentFeatureEntityId(const std::string &parentFeatureEntityId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
-	std::string getName() const;
-	void setName(const std::string &name);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getSortBy() const;
-	void setSortBy(const std::string &sortBy);
 	std::string getProjectId() const;
 	void setProjectId(const std::string &projectId);
 	std::string getOrder() const;
 	void setOrder(const std::string &order);
+	std::string getOwner() const;
+	void setOwner(const std::string &owner);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getName() const;
+	void setName(const std::string &name);
+	std::string getSortBy() const;
+	void setSortBy(const std::string &sortBy);
 
 private:
-	std::string owner_;
+	std::string parentFeatureEntityId_;
 	int pageNumber_;
-	std::string instanceId_;
-	std::string name_;
 	int pageSize_;
-	std::string sortBy_;
 	std::string projectId_;
 	std::string order_;
+	std::string owner_;
+	std::string instanceId_;
+	std::string name_;
+	std::string sortBy_;
 };
 } // namespace Model
 } // namespace PaiFeatureStore

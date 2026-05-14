@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						struct InputItem
 						{
 							std::string type;
+							std::string modality;
 							std::string name;
 						};
 						std::vector<TransformItem::InputItem> input;

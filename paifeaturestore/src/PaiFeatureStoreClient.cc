@@ -1995,6 +1995,42 @@ PaiFeatureStoreClient::UpdateDatasourceOutcomeCallable PaiFeatureStoreClient::up
 	return task->get_future();
 }
 
+PaiFeatureStoreClient::UpdateFeatureViewOutcome PaiFeatureStoreClient::updateFeatureView(const UpdateFeatureViewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateFeatureViewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateFeatureViewOutcome(UpdateFeatureViewResult(outcome.result()));
+	else
+		return UpdateFeatureViewOutcome(outcome.error());
+}
+
+void PaiFeatureStoreClient::updateFeatureViewAsync(const UpdateFeatureViewRequest& request, const UpdateFeatureViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateFeatureView(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PaiFeatureStoreClient::UpdateFeatureViewOutcomeCallable PaiFeatureStoreClient::updateFeatureViewCallable(const UpdateFeatureViewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateFeatureViewOutcome()>>(
+			[this, request]()
+			{
+			return this->updateFeatureView(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PaiFeatureStoreClient::UpdateLLMConfigOutcome PaiFeatureStoreClient::updateLLMConfig(const UpdateLLMConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

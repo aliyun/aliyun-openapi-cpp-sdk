@@ -75,6 +75,8 @@ void ListProjectsResult::parse(const std::string &payload)
 			projectsObject.gmtCreateTime = valueProjectsProjectsItem["GmtCreateTime"].asString();
 		if(!valueProjectsProjectsItem["GmtModifiedTime"].isNull())
 			projectsObject.gmtModifiedTime = valueProjectsProjectsItem["GmtModifiedTime"].asString();
+		if(!valueProjectsProjectsItem["WorkspaceId"].isNull())
+			projectsObject.workspaceId = valueProjectsProjectsItem["WorkspaceId"].asString();
 		projects_.push_back(projectsObject);
 	}
 	if(!value["TotalCount"].isNull())
