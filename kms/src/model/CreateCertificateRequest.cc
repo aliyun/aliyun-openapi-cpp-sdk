@@ -76,6 +76,6 @@ std::map<std::string, std::string> CreateCertificateRequest::getSubjectAlternati
 
 void CreateCertificateRequest::setSubjectAlternativeNames(std::map<std::string, std::string> subjectAlternativeNames) {
   subjectAlternativeNames_ = subjectAlternativeNames;
-  setParameter(std::string("SubjectAlternativeNames"), subjectAlternativeNames);
+  setJsonParameters(std::string("SubjectAlternativeNames"), subjectAlternativeNames);
 }
 
