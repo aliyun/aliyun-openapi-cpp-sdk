@@ -63,6 +63,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/CheckOrganizationMemberResult.h
 	include/alibabacloud/quickbi-public/model/CheckReadableRequest.h
 	include/alibabacloud/quickbi-public/model/CheckReadableResult.h
+	include/alibabacloud/quickbi-public/model/ClearDynamicTagCacheRequest.h
+	include/alibabacloud/quickbi-public/model/ClearDynamicTagCacheResult.h
 	include/alibabacloud/quickbi-public/model/CreateCubeBySqlRequest.h
 	include/alibabacloud/quickbi-public/model/CreateCubeBySqlResult.h
 	include/alibabacloud/quickbi-public/model/CreateDatasetRequest.h
@@ -125,6 +127,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListDataLevelPermissionWhiteListResult.h
 	include/alibabacloud/quickbi-public/model/ListDataSourceRequest.h
 	include/alibabacloud/quickbi-public/model/ListDataSourceResult.h
+	include/alibabacloud/quickbi-public/model/ListDynamicTagRequest.h
+	include/alibabacloud/quickbi-public/model/ListDynamicTagResult.h
 	include/alibabacloud/quickbi-public/model/ListFavoriteReportsRequest.h
 	include/alibabacloud/quickbi-public/model/ListFavoriteReportsResult.h
 	include/alibabacloud/quickbi-public/model/ListOrganizationRoleUsersRequest.h
@@ -332,6 +336,8 @@ set(quickbi-public_src
 	src/model/CheckOrganizationMemberResult.cc
 	src/model/CheckReadableRequest.cc
 	src/model/CheckReadableResult.cc
+	src/model/ClearDynamicTagCacheRequest.cc
+	src/model/ClearDynamicTagCacheResult.cc
 	src/model/CreateCubeBySqlRequest.cc
 	src/model/CreateCubeBySqlResult.cc
 	src/model/CreateDatasetRequest.cc
@@ -394,6 +400,8 @@ set(quickbi-public_src
 	src/model/ListDataLevelPermissionWhiteListResult.cc
 	src/model/ListDataSourceRequest.cc
 	src/model/ListDataSourceResult.cc
+	src/model/ListDynamicTagRequest.cc
+	src/model/ListDynamicTagResult.cc
 	src/model/ListFavoriteReportsRequest.cc
 	src/model/ListFavoriteReportsResult.cc
 	src/model/ListOrganizationRoleUsersRequest.cc

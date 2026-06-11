@@ -64,6 +64,8 @@
 #include "model/CheckOrganizationMemberResult.h"
 #include "model/CheckReadableRequest.h"
 #include "model/CheckReadableResult.h"
+#include "model/ClearDynamicTagCacheRequest.h"
+#include "model/ClearDynamicTagCacheResult.h"
 #include "model/CreateCubeBySqlRequest.h"
 #include "model/CreateCubeBySqlResult.h"
 #include "model/CreateDatasetRequest.h"
@@ -126,6 +128,8 @@
 #include "model/ListDataLevelPermissionWhiteListResult.h"
 #include "model/ListDataSourceRequest.h"
 #include "model/ListDataSourceResult.h"
+#include "model/ListDynamicTagRequest.h"
+#include "model/ListDynamicTagResult.h"
 #include "model/ListFavoriteReportsRequest.h"
 #include "model/ListFavoriteReportsResult.h"
 #include "model/ListOrganizationRoleUsersRequest.h"
@@ -360,6 +364,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckReadableResult> CheckReadableOutcome;
 			typedef std::future<CheckReadableOutcome> CheckReadableOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CheckReadableRequest&, const CheckReadableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckReadableAsyncHandler;
+			typedef Outcome<Error, Model::ClearDynamicTagCacheResult> ClearDynamicTagCacheOutcome;
+			typedef std::future<ClearDynamicTagCacheOutcome> ClearDynamicTagCacheOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ClearDynamicTagCacheRequest&, const ClearDynamicTagCacheOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ClearDynamicTagCacheAsyncHandler;
 			typedef Outcome<Error, Model::CreateCubeBySqlResult> CreateCubeBySqlOutcome;
 			typedef std::future<CreateCubeBySqlOutcome> CreateCubeBySqlOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateCubeBySqlRequest&, const CreateCubeBySqlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCubeBySqlAsyncHandler;
@@ -453,6 +460,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDataSourceResult> ListDataSourceOutcome;
 			typedef std::future<ListDataSourceOutcome> ListDataSourceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListDataSourceRequest&, const ListDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataSourceAsyncHandler;
+			typedef Outcome<Error, Model::ListDynamicTagResult> ListDynamicTagOutcome;
+			typedef std::future<ListDynamicTagOutcome> ListDynamicTagOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListDynamicTagRequest&, const ListDynamicTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDynamicTagAsyncHandler;
 			typedef Outcome<Error, Model::ListFavoriteReportsResult> ListFavoriteReportsOutcome;
 			typedef std::future<ListFavoriteReportsOutcome> ListFavoriteReportsOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListFavoriteReportsRequest&, const ListFavoriteReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFavoriteReportsAsyncHandler;
@@ -764,6 +774,9 @@ namespace AlibabaCloud
 			CheckReadableOutcome checkReadable(const Model::CheckReadableRequest &request)const;
 			void checkReadableAsync(const Model::CheckReadableRequest& request, const CheckReadableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckReadableOutcomeCallable checkReadableCallable(const Model::CheckReadableRequest& request) const;
+			ClearDynamicTagCacheOutcome clearDynamicTagCache(const Model::ClearDynamicTagCacheRequest &request)const;
+			void clearDynamicTagCacheAsync(const Model::ClearDynamicTagCacheRequest& request, const ClearDynamicTagCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ClearDynamicTagCacheOutcomeCallable clearDynamicTagCacheCallable(const Model::ClearDynamicTagCacheRequest& request) const;
 			CreateCubeBySqlOutcome createCubeBySql(const Model::CreateCubeBySqlRequest &request)const;
 			void createCubeBySqlAsync(const Model::CreateCubeBySqlRequest& request, const CreateCubeBySqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCubeBySqlOutcomeCallable createCubeBySqlCallable(const Model::CreateCubeBySqlRequest& request) const;
@@ -857,6 +870,9 @@ namespace AlibabaCloud
 			ListDataSourceOutcome listDataSource(const Model::ListDataSourceRequest &request)const;
 			void listDataSourceAsync(const Model::ListDataSourceRequest& request, const ListDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDataSourceOutcomeCallable listDataSourceCallable(const Model::ListDataSourceRequest& request) const;
+			ListDynamicTagOutcome listDynamicTag(const Model::ListDynamicTagRequest &request)const;
+			void listDynamicTagAsync(const Model::ListDynamicTagRequest& request, const ListDynamicTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDynamicTagOutcomeCallable listDynamicTagCallable(const Model::ListDynamicTagRequest& request) const;
 			ListFavoriteReportsOutcome listFavoriteReports(const Model::ListFavoriteReportsRequest &request)const;
 			void listFavoriteReportsAsync(const Model::ListFavoriteReportsRequest& request, const ListFavoriteReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFavoriteReportsOutcomeCallable listFavoriteReportsCallable(const Model::ListFavoriteReportsRequest& request) const;

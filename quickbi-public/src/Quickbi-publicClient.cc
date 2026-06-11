@@ -807,6 +807,42 @@ Quickbi_publicClient::CheckReadableOutcomeCallable Quickbi_publicClient::checkRe
 	return task->get_future();
 }
 
+Quickbi_publicClient::ClearDynamicTagCacheOutcome Quickbi_publicClient::clearDynamicTagCache(const ClearDynamicTagCacheRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ClearDynamicTagCacheOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ClearDynamicTagCacheOutcome(ClearDynamicTagCacheResult(outcome.result()));
+	else
+		return ClearDynamicTagCacheOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::clearDynamicTagCacheAsync(const ClearDynamicTagCacheRequest& request, const ClearDynamicTagCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, clearDynamicTagCache(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ClearDynamicTagCacheOutcomeCallable Quickbi_publicClient::clearDynamicTagCacheCallable(const ClearDynamicTagCacheRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ClearDynamicTagCacheOutcome()>>(
+			[this, request]()
+			{
+			return this->clearDynamicTagCache(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::CreateCubeBySqlOutcome Quickbi_publicClient::createCubeBySql(const CreateCubeBySqlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1917,6 +1953,42 @@ Quickbi_publicClient::ListDataSourceOutcomeCallable Quickbi_publicClient::listDa
 			[this, request]()
 			{
 			return this->listDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ListDynamicTagOutcome Quickbi_publicClient::listDynamicTag(const ListDynamicTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDynamicTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDynamicTagOutcome(ListDynamicTagResult(outcome.result()));
+	else
+		return ListDynamicTagOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listDynamicTagAsync(const ListDynamicTagRequest& request, const ListDynamicTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDynamicTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListDynamicTagOutcomeCallable Quickbi_publicClient::listDynamicTagCallable(const ListDynamicTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDynamicTagOutcome()>>(
+			[this, request]()
+			{
+			return this->listDynamicTag(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
