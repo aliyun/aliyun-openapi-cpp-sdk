@@ -34,6 +34,8 @@ public:
 	void setDsId(const std::string &dsId);
 	std::string getAccessPoint() const;
 	void setAccessPoint(const std::string &accessPoint);
+	std::string getPlaceholders() const;
+	void setPlaceholders(const std::string &placeholders);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
 	std::string getCubeId() const;
@@ -48,6 +50,7 @@ public:
 private:
 	std::string dsId_;
 	std::string accessPoint_;
+	std::string placeholders_;
 	std::string userId_;
 	std::string cubeId_;
 	std::string signType_;

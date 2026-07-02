@@ -94,7 +94,7 @@ std::string CreateTicketRequest::getGlobalParam() const {
 
 void CreateTicketRequest::setGlobalParam(const std::string &globalParam) {
   globalParam_ = globalParam;
-  setParameter(std::string("GlobalParam"), globalParam);
+  setBodyParameter(std::string("GlobalParam"), globalParam);
 }
 
 std::string CreateTicketRequest::getWorksId() const {

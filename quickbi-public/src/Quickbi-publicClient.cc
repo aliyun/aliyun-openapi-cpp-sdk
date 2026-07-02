@@ -1203,6 +1203,42 @@ Quickbi_publicClient::DelayTicketExpireTimeOutcomeCallable Quickbi_publicClient:
 	return task->get_future();
 }
 
+Quickbi_publicClient::DeleteAuthorizationByUserIdOutcome Quickbi_publicClient::deleteAuthorizationByUserId(const DeleteAuthorizationByUserIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAuthorizationByUserIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAuthorizationByUserIdOutcome(DeleteAuthorizationByUserIdResult(outcome.result()));
+	else
+		return DeleteAuthorizationByUserIdOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::deleteAuthorizationByUserIdAsync(const DeleteAuthorizationByUserIdRequest& request, const DeleteAuthorizationByUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAuthorizationByUserId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::DeleteAuthorizationByUserIdOutcomeCallable Quickbi_publicClient::deleteAuthorizationByUserIdCallable(const DeleteAuthorizationByUserIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAuthorizationByUserIdOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAuthorizationByUserId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::DeleteDataLevelPermissionRuleUsersOutcome Quickbi_publicClient::deleteDataLevelPermissionRuleUsers(const DeleteDataLevelPermissionRuleUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1701,6 +1737,42 @@ Quickbi_publicClient::GetWorksEmbedListOutcomeCallable Quickbi_publicClient::get
 			[this, request]()
 			{
 			return this->getWorksEmbedList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::IpWhiteListConfigOutcome Quickbi_publicClient::ipWhiteListConfig(const IpWhiteListConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return IpWhiteListConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return IpWhiteListConfigOutcome(IpWhiteListConfigResult(outcome.result()));
+	else
+		return IpWhiteListConfigOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::ipWhiteListConfigAsync(const IpWhiteListConfigRequest& request, const IpWhiteListConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, ipWhiteListConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::IpWhiteListConfigOutcomeCallable Quickbi_publicClient::ipWhiteListConfigCallable(const IpWhiteListConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<IpWhiteListConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->ipWhiteListConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4473,6 +4545,42 @@ Quickbi_publicClient::SmartqQueryAbilityOutcomeCallable Quickbi_publicClient::sm
 			[this, request]()
 			{
 			return this->smartqQueryAbility(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::TransferUsergroupOutcome Quickbi_publicClient::transferUsergroup(const TransferUsergroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TransferUsergroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TransferUsergroupOutcome(TransferUsergroupResult(outcome.result()));
+	else
+		return TransferUsergroupOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::transferUsergroupAsync(const TransferUsergroupRequest& request, const TransferUsergroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, transferUsergroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::TransferUsergroupOutcomeCallable Quickbi_publicClient::transferUsergroupCallable(const TransferUsergroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TransferUsergroupOutcome()>>(
+			[this, request]()
+			{
+			return this->transferUsergroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

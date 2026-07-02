@@ -85,6 +85,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/DataSourceBloodResult.h
 	include/alibabacloud/quickbi-public/model/DelayTicketExpireTimeRequest.h
 	include/alibabacloud/quickbi-public/model/DelayTicketExpireTimeResult.h
+	include/alibabacloud/quickbi-public/model/DeleteAuthorizationByUserIdRequest.h
+	include/alibabacloud/quickbi-public/model/DeleteAuthorizationByUserIdResult.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelPermissionRuleUsersRequest.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelPermissionRuleUsersResult.h
 	include/alibabacloud/quickbi-public/model/DeleteDataLevelRuleConfigRequest.h
@@ -113,6 +115,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/GetUserGroupInfoResult.h
 	include/alibabacloud/quickbi-public/model/GetWorksEmbedListRequest.h
 	include/alibabacloud/quickbi-public/model/GetWorksEmbedListResult.h
+	include/alibabacloud/quickbi-public/model/IpWhiteListConfigRequest.h
+	include/alibabacloud/quickbi-public/model/IpWhiteListConfigResult.h
 	include/alibabacloud/quickbi-public/model/ListAccelerationOfWorkspaceRequest.h
 	include/alibabacloud/quickbi-public/model/ListAccelerationOfWorkspaceResult.h
 	include/alibabacloud/quickbi-public/model/ListApiDatasourceRequest.h
@@ -267,6 +271,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/SmartqAuthorizeResult.h
 	include/alibabacloud/quickbi-public/model/SmartqQueryAbilityRequest.h
 	include/alibabacloud/quickbi-public/model/SmartqQueryAbilityResult.h
+	include/alibabacloud/quickbi-public/model/TransferUsergroupRequest.h
+	include/alibabacloud/quickbi-public/model/TransferUsergroupResult.h
 	include/alibabacloud/quickbi-public/model/UpdateCubeBySqlRequest.h
 	include/alibabacloud/quickbi-public/model/UpdateCubeBySqlResult.h
 	include/alibabacloud/quickbi-public/model/UpdateDataLevelPermissionStatusRequest.h
@@ -358,6 +364,8 @@ set(quickbi-public_src
 	src/model/DataSourceBloodResult.cc
 	src/model/DelayTicketExpireTimeRequest.cc
 	src/model/DelayTicketExpireTimeResult.cc
+	src/model/DeleteAuthorizationByUserIdRequest.cc
+	src/model/DeleteAuthorizationByUserIdResult.cc
 	src/model/DeleteDataLevelPermissionRuleUsersRequest.cc
 	src/model/DeleteDataLevelPermissionRuleUsersResult.cc
 	src/model/DeleteDataLevelRuleConfigRequest.cc
@@ -386,6 +394,8 @@ set(quickbi-public_src
 	src/model/GetUserGroupInfoResult.cc
 	src/model/GetWorksEmbedListRequest.cc
 	src/model/GetWorksEmbedListResult.cc
+	src/model/IpWhiteListConfigRequest.cc
+	src/model/IpWhiteListConfigResult.cc
 	src/model/ListAccelerationOfWorkspaceRequest.cc
 	src/model/ListAccelerationOfWorkspaceResult.cc
 	src/model/ListApiDatasourceRequest.cc
@@ -540,6 +550,8 @@ set(quickbi-public_src
 	src/model/SmartqAuthorizeResult.cc
 	src/model/SmartqQueryAbilityRequest.cc
 	src/model/SmartqQueryAbilityResult.cc
+	src/model/TransferUsergroupRequest.cc
+	src/model/TransferUsergroupResult.cc
 	src/model/UpdateCubeBySqlRequest.cc
 	src/model/UpdateCubeBySqlResult.cc
 	src/model/UpdateDataLevelPermissionStatusRequest.cc

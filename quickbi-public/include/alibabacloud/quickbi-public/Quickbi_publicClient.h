@@ -86,6 +86,8 @@
 #include "model/DataSourceBloodResult.h"
 #include "model/DelayTicketExpireTimeRequest.h"
 #include "model/DelayTicketExpireTimeResult.h"
+#include "model/DeleteAuthorizationByUserIdRequest.h"
+#include "model/DeleteAuthorizationByUserIdResult.h"
 #include "model/DeleteDataLevelPermissionRuleUsersRequest.h"
 #include "model/DeleteDataLevelPermissionRuleUsersResult.h"
 #include "model/DeleteDataLevelRuleConfigRequest.h"
@@ -114,6 +116,8 @@
 #include "model/GetUserGroupInfoResult.h"
 #include "model/GetWorksEmbedListRequest.h"
 #include "model/GetWorksEmbedListResult.h"
+#include "model/IpWhiteListConfigRequest.h"
+#include "model/IpWhiteListConfigResult.h"
 #include "model/ListAccelerationOfWorkspaceRequest.h"
 #include "model/ListAccelerationOfWorkspaceResult.h"
 #include "model/ListApiDatasourceRequest.h"
@@ -268,6 +272,8 @@
 #include "model/SmartqAuthorizeResult.h"
 #include "model/SmartqQueryAbilityRequest.h"
 #include "model/SmartqQueryAbilityResult.h"
+#include "model/TransferUsergroupRequest.h"
+#include "model/TransferUsergroupResult.h"
 #include "model/UpdateCubeBySqlRequest.h"
 #include "model/UpdateCubeBySqlResult.h"
 #include "model/UpdateDataLevelPermissionStatusRequest.h"
@@ -397,6 +403,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DelayTicketExpireTimeResult> DelayTicketExpireTimeOutcome;
 			typedef std::future<DelayTicketExpireTimeOutcome> DelayTicketExpireTimeOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::DelayTicketExpireTimeRequest&, const DelayTicketExpireTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DelayTicketExpireTimeAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAuthorizationByUserIdResult> DeleteAuthorizationByUserIdOutcome;
+			typedef std::future<DeleteAuthorizationByUserIdOutcome> DeleteAuthorizationByUserIdOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::DeleteAuthorizationByUserIdRequest&, const DeleteAuthorizationByUserIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuthorizationByUserIdAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDataLevelPermissionRuleUsersResult> DeleteDataLevelPermissionRuleUsersOutcome;
 			typedef std::future<DeleteDataLevelPermissionRuleUsersOutcome> DeleteDataLevelPermissionRuleUsersOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::DeleteDataLevelPermissionRuleUsersRequest&, const DeleteDataLevelPermissionRuleUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataLevelPermissionRuleUsersAsyncHandler;
@@ -439,6 +448,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetWorksEmbedListResult> GetWorksEmbedListOutcome;
 			typedef std::future<GetWorksEmbedListOutcome> GetWorksEmbedListOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::GetWorksEmbedListRequest&, const GetWorksEmbedListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorksEmbedListAsyncHandler;
+			typedef Outcome<Error, Model::IpWhiteListConfigResult> IpWhiteListConfigOutcome;
+			typedef std::future<IpWhiteListConfigOutcome> IpWhiteListConfigOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::IpWhiteListConfigRequest&, const IpWhiteListConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> IpWhiteListConfigAsyncHandler;
 			typedef Outcome<Error, Model::ListAccelerationOfWorkspaceResult> ListAccelerationOfWorkspaceOutcome;
 			typedef std::future<ListAccelerationOfWorkspaceOutcome> ListAccelerationOfWorkspaceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListAccelerationOfWorkspaceRequest&, const ListAccelerationOfWorkspaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAccelerationOfWorkspaceAsyncHandler;
@@ -670,6 +682,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SmartqQueryAbilityResult> SmartqQueryAbilityOutcome;
 			typedef std::future<SmartqQueryAbilityOutcome> SmartqQueryAbilityOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::SmartqQueryAbilityRequest&, const SmartqQueryAbilityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SmartqQueryAbilityAsyncHandler;
+			typedef Outcome<Error, Model::TransferUsergroupResult> TransferUsergroupOutcome;
+			typedef std::future<TransferUsergroupOutcome> TransferUsergroupOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::TransferUsergroupRequest&, const TransferUsergroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransferUsergroupAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCubeBySqlResult> UpdateCubeBySqlOutcome;
 			typedef std::future<UpdateCubeBySqlOutcome> UpdateCubeBySqlOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateCubeBySqlRequest&, const UpdateCubeBySqlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCubeBySqlAsyncHandler;
@@ -807,6 +822,9 @@ namespace AlibabaCloud
 			DelayTicketExpireTimeOutcome delayTicketExpireTime(const Model::DelayTicketExpireTimeRequest &request)const;
 			void delayTicketExpireTimeAsync(const Model::DelayTicketExpireTimeRequest& request, const DelayTicketExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DelayTicketExpireTimeOutcomeCallable delayTicketExpireTimeCallable(const Model::DelayTicketExpireTimeRequest& request) const;
+			DeleteAuthorizationByUserIdOutcome deleteAuthorizationByUserId(const Model::DeleteAuthorizationByUserIdRequest &request)const;
+			void deleteAuthorizationByUserIdAsync(const Model::DeleteAuthorizationByUserIdRequest& request, const DeleteAuthorizationByUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAuthorizationByUserIdOutcomeCallable deleteAuthorizationByUserIdCallable(const Model::DeleteAuthorizationByUserIdRequest& request) const;
 			DeleteDataLevelPermissionRuleUsersOutcome deleteDataLevelPermissionRuleUsers(const Model::DeleteDataLevelPermissionRuleUsersRequest &request)const;
 			void deleteDataLevelPermissionRuleUsersAsync(const Model::DeleteDataLevelPermissionRuleUsersRequest& request, const DeleteDataLevelPermissionRuleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDataLevelPermissionRuleUsersOutcomeCallable deleteDataLevelPermissionRuleUsersCallable(const Model::DeleteDataLevelPermissionRuleUsersRequest& request) const;
@@ -849,6 +867,9 @@ namespace AlibabaCloud
 			GetWorksEmbedListOutcome getWorksEmbedList(const Model::GetWorksEmbedListRequest &request)const;
 			void getWorksEmbedListAsync(const Model::GetWorksEmbedListRequest& request, const GetWorksEmbedListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWorksEmbedListOutcomeCallable getWorksEmbedListCallable(const Model::GetWorksEmbedListRequest& request) const;
+			IpWhiteListConfigOutcome ipWhiteListConfig(const Model::IpWhiteListConfigRequest &request)const;
+			void ipWhiteListConfigAsync(const Model::IpWhiteListConfigRequest& request, const IpWhiteListConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			IpWhiteListConfigOutcomeCallable ipWhiteListConfigCallable(const Model::IpWhiteListConfigRequest& request) const;
 			ListAccelerationOfWorkspaceOutcome listAccelerationOfWorkspace(const Model::ListAccelerationOfWorkspaceRequest &request)const;
 			void listAccelerationOfWorkspaceAsync(const Model::ListAccelerationOfWorkspaceRequest& request, const ListAccelerationOfWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAccelerationOfWorkspaceOutcomeCallable listAccelerationOfWorkspaceCallable(const Model::ListAccelerationOfWorkspaceRequest& request) const;
@@ -1080,6 +1101,9 @@ namespace AlibabaCloud
 			SmartqQueryAbilityOutcome smartqQueryAbility(const Model::SmartqQueryAbilityRequest &request)const;
 			void smartqQueryAbilityAsync(const Model::SmartqQueryAbilityRequest& request, const SmartqQueryAbilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SmartqQueryAbilityOutcomeCallable smartqQueryAbilityCallable(const Model::SmartqQueryAbilityRequest& request) const;
+			TransferUsergroupOutcome transferUsergroup(const Model::TransferUsergroupRequest &request)const;
+			void transferUsergroupAsync(const Model::TransferUsergroupRequest& request, const TransferUsergroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TransferUsergroupOutcomeCallable transferUsergroupCallable(const Model::TransferUsergroupRequest& request) const;
 			UpdateCubeBySqlOutcome updateCubeBySql(const Model::UpdateCubeBySqlRequest &request)const;
 			void updateCubeBySqlAsync(const Model::UpdateCubeBySqlRequest& request, const UpdateCubeBySqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCubeBySqlOutcomeCallable updateCubeBySqlCallable(const Model::UpdateCubeBySqlRequest& request) const;

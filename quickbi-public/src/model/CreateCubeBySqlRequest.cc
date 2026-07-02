@@ -43,6 +43,15 @@ void CreateCubeBySqlRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+std::string CreateCubeBySqlRequest::getPlaceholders() const {
+  return placeholders_;
+}
+
+void CreateCubeBySqlRequest::setPlaceholders(const std::string &placeholders) {
+  placeholders_ = placeholders;
+  setBodyParameter(std::string("Placeholders"), placeholders);
+}
+
 std::string CreateCubeBySqlRequest::getCaption() const {
   return caption_;
 }

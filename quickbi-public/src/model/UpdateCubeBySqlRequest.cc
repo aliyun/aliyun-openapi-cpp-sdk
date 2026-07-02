@@ -43,6 +43,15 @@ void UpdateCubeBySqlRequest::setAccessPoint(const std::string &accessPoint) {
   setParameter(std::string("AccessPoint"), accessPoint);
 }
 
+std::string UpdateCubeBySqlRequest::getPlaceholders() const {
+  return placeholders_;
+}
+
+void UpdateCubeBySqlRequest::setPlaceholders(const std::string &placeholders) {
+  placeholders_ = placeholders;
+  setParameter(std::string("Placeholders"), placeholders);
+}
+
 std::string UpdateCubeBySqlRequest::getUserId() const {
   return userId_;
 }
