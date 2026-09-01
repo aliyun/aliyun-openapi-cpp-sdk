@@ -40,12 +40,12 @@ void GetWorksEmbedListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["PageNo"].isNull())
-		result_.pageNo = std::stol(resultNode["PageNo"].asString());
-	if(!resultNode["PageSize"].isNull())
-		result_.pageSize = std::stol(resultNode["PageSize"].asString());
 	if(!resultNode["TotalNum"].isNull())
 		result_.totalNum = std::stol(resultNode["TotalNum"].asString());
+	if(!resultNode["PageSize"].isNull())
+		result_.pageSize = std::stol(resultNode["PageSize"].asString());
+	if(!resultNode["PageNo"].isNull())
+		result_.pageNo = std::stol(resultNode["PageNo"].asString());
 	if(!resultNode["TotalPages"].isNull())
 		result_.totalPages = std::stol(resultNode["TotalPages"].asString());
 	auto allDataNode = resultNode["Data"]["DataItem"];
@@ -54,14 +54,14 @@ void GetWorksEmbedListResult::parse(const std::string &payload)
 		Result::DataItem dataItemObject;
 		if(!resultNodeDataDataItem["EmbedTime"].isNull())
 			dataItemObject.embedTime = resultNodeDataDataItem["EmbedTime"].asString();
-		if(!resultNodeDataDataItem["WorksId"].isNull())
-			dataItemObject.worksId = resultNodeDataDataItem["WorksId"].asString();
-		if(!resultNodeDataDataItem["WorksName"].isNull())
-			dataItemObject.worksName = resultNodeDataDataItem["WorksName"].asString();
 		if(!resultNodeDataDataItem["WorksType"].isNull())
 			dataItemObject.worksType = resultNodeDataDataItem["WorksType"].asString();
+		if(!resultNodeDataDataItem["WorksName"].isNull())
+			dataItemObject.worksName = resultNodeDataDataItem["WorksName"].asString();
 		if(!resultNodeDataDataItem["WorkspaceId"].isNull())
 			dataItemObject.workspaceId = resultNodeDataDataItem["WorkspaceId"].asString();
+		if(!resultNodeDataDataItem["WorksId"].isNull())
+			dataItemObject.worksId = resultNodeDataDataItem["WorksId"].asString();
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

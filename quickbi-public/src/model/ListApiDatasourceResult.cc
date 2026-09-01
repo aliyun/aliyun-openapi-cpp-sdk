@@ -40,36 +40,36 @@ void ListApiDatasourceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
+	if(!resultNode["TotalNum"].isNull())
+		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
 	if(!resultNode["PageNum"].isNull())
 		result_.pageNum = std::stoi(resultNode["PageNum"].asString());
 	if(!resultNode["PageSize"].isNull())
 		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
-	if(!resultNode["TotalNum"].isNull())
-		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
 	auto allDataNode = resultNode["Data"]["DataItem"];
 	for (auto resultNodeDataDataItem : allDataNode)
 	{
 		Result::DataItem dataItemObject;
-		if(!resultNodeDataDataItem["ApiId"].isNull())
-			dataItemObject.apiId = resultNodeDataDataItem["ApiId"].asString();
-		if(!resultNodeDataDataItem["Body"].isNull())
-			dataItemObject.body = resultNodeDataDataItem["Body"].asString();
-		if(!resultNodeDataDataItem["DataSize"].isNull())
-			dataItemObject.dataSize = std::stof(resultNodeDataDataItem["DataSize"].asString());
 		if(!resultNodeDataDataItem["DateUpdateTime"].isNull())
 			dataItemObject.dateUpdateTime = resultNodeDataDataItem["DateUpdateTime"].asString();
 		if(!resultNodeDataDataItem["GmtCreate"].isNull())
 			dataItemObject.gmtCreate = resultNodeDataDataItem["GmtCreate"].asString();
-		if(!resultNodeDataDataItem["GmtModified"].isNull())
-			dataItemObject.gmtModified = resultNodeDataDataItem["GmtModified"].asString();
-		if(!resultNodeDataDataItem["JobId"].isNull())
-			dataItemObject.jobId = resultNodeDataDataItem["JobId"].asString();
 		if(!resultNodeDataDataItem["Parameters"].isNull())
 			dataItemObject.parameters = resultNodeDataDataItem["Parameters"].asString();
-		if(!resultNodeDataDataItem["ShowName"].isNull())
-			dataItemObject.showName = resultNodeDataDataItem["ShowName"].asString();
 		if(!resultNodeDataDataItem["StatusType"].isNull())
 			dataItemObject.statusType = std::stoi(resultNodeDataDataItem["StatusType"].asString());
+		if(!resultNodeDataDataItem["DataSize"].isNull())
+			dataItemObject.dataSize = std::stof(resultNodeDataDataItem["DataSize"].asString());
+		if(!resultNodeDataDataItem["GmtModified"].isNull())
+			dataItemObject.gmtModified = resultNodeDataDataItem["GmtModified"].asString();
+		if(!resultNodeDataDataItem["ApiId"].isNull())
+			dataItemObject.apiId = resultNodeDataDataItem["ApiId"].asString();
+		if(!resultNodeDataDataItem["Body"].isNull())
+			dataItemObject.body = resultNodeDataDataItem["Body"].asString();
+		if(!resultNodeDataDataItem["ShowName"].isNull())
+			dataItemObject.showName = resultNodeDataDataItem["ShowName"].asString();
+		if(!resultNodeDataDataItem["JobId"].isNull())
+			dataItemObject.jobId = resultNodeDataDataItem["JobId"].asString();
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

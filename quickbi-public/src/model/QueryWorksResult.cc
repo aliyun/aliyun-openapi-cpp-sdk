@@ -40,47 +40,61 @@ void QueryWorksResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["Auth3rdFlag"].isNull())
-		result_.auth3rdFlag = std::stoi(resultNode["Auth3rdFlag"].asString());
-	if(!resultNode["Description"].isNull())
-		result_.description = resultNode["Description"].asString();
-	if(!resultNode["GmtCreate"].isNull())
-		result_.gmtCreate = resultNode["GmtCreate"].asString();
-	if(!resultNode["GmtModify"].isNull())
-		result_.gmtModify = resultNode["GmtModify"].asString();
-	if(!resultNode["ModifyName"].isNull())
-		result_.modifyName = resultNode["ModifyName"].asString();
-	if(!resultNode["OwnerId"].isNull())
-		result_.ownerId = resultNode["OwnerId"].asString();
-	if(!resultNode["OwnerName"].isNull())
-		result_.ownerName = resultNode["OwnerName"].asString();
-	if(!resultNode["PublicFlag"].isNull())
-		result_.publicFlag = resultNode["PublicFlag"].asString() == "true";
-	if(!resultNode["PublicInvalidTime"].isNull())
-		result_.publicInvalidTime = std::stol(resultNode["PublicInvalidTime"].asString());
-	if(!resultNode["SecurityLevel"].isNull())
-		result_.securityLevel = resultNode["SecurityLevel"].asString();
 	if(!resultNode["Status"].isNull())
 		result_.status = std::stoi(resultNode["Status"].asString());
-	if(!resultNode["WorkName"].isNull())
-		result_.workName = resultNode["WorkName"].asString();
+	if(!resultNode["OwnerName"].isNull())
+		result_.ownerName = resultNode["OwnerName"].asString();
+	if(!resultNode["PublicInvalidTime"].isNull())
+		result_.publicInvalidTime = std::stol(resultNode["PublicInvalidTime"].asString());
+	if(!resultNode["Description"].isNull())
+		result_.description = resultNode["Description"].asString();
 	if(!resultNode["WorkType"].isNull())
 		result_.workType = resultNode["WorkType"].asString();
-	if(!resultNode["WorksId"].isNull())
-		result_.worksId = resultNode["WorksId"].asString();
+	if(!resultNode["ModifyName"].isNull())
+		result_.modifyName = resultNode["ModifyName"].asString();
 	if(!resultNode["WorkspaceId"].isNull())
 		result_.workspaceId = resultNode["WorkspaceId"].asString();
+	if(!resultNode["Auth3rdFlag"].isNull())
+		result_.auth3rdFlag = std::stoi(resultNode["Auth3rdFlag"].asString());
+	if(!resultNode["GmtCreate"].isNull())
+		result_.gmtCreate = resultNode["GmtCreate"].asString();
+	if(!resultNode["OwnerId"].isNull())
+		result_.ownerId = resultNode["OwnerId"].asString();
+	if(!resultNode["GmtModify"].isNull())
+		result_.gmtModify = resultNode["GmtModify"].asString();
+	if(!resultNode["SecurityLevel"].isNull())
+		result_.securityLevel = resultNode["SecurityLevel"].asString();
+	if(!resultNode["WorkName"].isNull())
+		result_.workName = resultNode["WorkName"].asString();
 	if(!resultNode["WorkspaceName"].isNull())
 		result_.workspaceName = resultNode["WorkspaceName"].asString();
+	if(!resultNode["PublicFlag"].isNull())
+		result_.publicFlag = resultNode["PublicFlag"].asString() == "true";
+	if(!resultNode["WorksId"].isNull())
+		result_.worksId = resultNode["WorksId"].asString();
+	auto allGlobalParamVoListNode = resultNode["GlobalParamVoList"]["GlobalParamVoListItem"];
+	for (auto resultNodeGlobalParamVoListGlobalParamVoListItem : allGlobalParamVoListNode)
+	{
+		Result::GlobalParamVoListItem globalParamVoListItemObject;
+		if(!resultNodeGlobalParamVoListGlobalParamVoListItem["Required"].isNull())
+			globalParamVoListItemObject.required = resultNodeGlobalParamVoListGlobalParamVoListItem["Required"].asString() == "true";
+		if(!resultNodeGlobalParamVoListGlobalParamVoListItem["DataType"].isNull())
+			globalParamVoListItemObject.dataType = resultNodeGlobalParamVoListGlobalParamVoListItem["DataType"].asString();
+		if(!resultNodeGlobalParamVoListGlobalParamVoListItem["ParamAlias"].isNull())
+			globalParamVoListItemObject.paramAlias = resultNodeGlobalParamVoListGlobalParamVoListItem["ParamAlias"].asString();
+		if(!resultNodeGlobalParamVoListGlobalParamVoListItem["ParamName"].isNull())
+			globalParamVoListItemObject.paramName = resultNodeGlobalParamVoListGlobalParamVoListItem["ParamName"].asString();
+		result_.globalParamVoList.push_back(globalParamVoListItemObject);
+	}
 	auto directoryNode = resultNode["Directory"];
-	if(!directoryNode["Id"].isNull())
-		result_.directory.id = directoryNode["Id"].asString();
-	if(!directoryNode["Name"].isNull())
-		result_.directory.name = directoryNode["Name"].asString();
 	if(!directoryNode["PathId"].isNull())
 		result_.directory.pathId = directoryNode["PathId"].asString();
+	if(!directoryNode["Id"].isNull())
+		result_.directory.id = directoryNode["Id"].asString();
 	if(!directoryNode["PathName"].isNull())
 		result_.directory.pathName = directoryNode["PathName"].asString();
+	if(!directoryNode["Name"].isNull())
+		result_.directory.name = directoryNode["Name"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

@@ -40,12 +40,12 @@ void QuerySmartqPermissionByCubeIdResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["HasPerssion"].isNull())
-		result_.hasPerssion = resultNode["HasPerssion"].asString() == "true";
 	if(!resultNode["CubeId"].isNull())
 		result_.cubeId = resultNode["CubeId"].asString();
 	if(!resultNode["CubeName"].isNull())
 		result_.cubeName = resultNode["CubeName"].asString();
+	if(!resultNode["HasPerssion"].isNull())
+		result_.hasPerssion = resultNode["HasPerssion"].asString() == "true";
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

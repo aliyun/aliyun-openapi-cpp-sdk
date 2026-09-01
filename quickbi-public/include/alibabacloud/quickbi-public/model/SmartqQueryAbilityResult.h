@@ -34,15 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
+					struct ValuesItem
+					{
+						std::vector<std::string> row;
+					};
 					struct MetaTypeItem
 					{
 						std::string type;
 						std::string value;
 						std::string key;
-					};
-					struct ValuesItem
-					{
-						std::vector<std::string> row;
 					};
 					std::vector<std::string> dataList;
 					std::string conclusionText;

@@ -40,32 +40,32 @@ void GetMailTaskListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
+	if(!resultNode["Pre"].isNull())
+		result_.pre = std::stoi(resultNode["Pre"].asString());
+	if(!resultNode["TotalNum"].isNull())
+		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
 	if(!resultNode["PageNum"].isNull())
 		result_.pageNum = std::stoi(resultNode["PageNum"].asString());
 	if(!resultNode["PageSize"].isNull())
 		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
-	if(!resultNode["TotalNum"].isNull())
-		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
-	if(!resultNode["TotalPages"].isNull())
-		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
-	if(!resultNode["Pre"].isNull())
-		result_.pre = std::stoi(resultNode["Pre"].asString());
 	if(!resultNode["Next"].isNull())
 		result_.next = std::stoi(resultNode["Next"].asString());
+	if(!resultNode["TotalPages"].isNull())
+		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
 	auto allDataNode = resultNode["Data"]["DataItem"];
 	for (auto resultNodeDataDataItem : allDataNode)
 	{
 		Result::DataItem dataItemObject;
-		if(!resultNodeDataDataItem["MailId"].isNull())
-			dataItemObject.mailId = resultNodeDataDataItem["MailId"].asString();
-		if(!resultNodeDataDataItem["Paused"].isNull())
-			dataItemObject.paused = resultNodeDataDataItem["Paused"].asString() == "true";
+		if(!resultNodeDataDataItem["SubscribeName"].isNull())
+			dataItemObject.subscribeName = resultNodeDataDataItem["SubscribeName"].asString();
 		if(!resultNodeDataDataItem["BizOwnerUserId"].isNull())
 			dataItemObject.bizOwnerUserId = resultNodeDataDataItem["BizOwnerUserId"].asString();
 		if(!resultNodeDataDataItem["BizOwnerName"].isNull())
 			dataItemObject.bizOwnerName = resultNodeDataDataItem["BizOwnerName"].asString();
-		if(!resultNodeDataDataItem["SubscribeName"].isNull())
-			dataItemObject.subscribeName = resultNodeDataDataItem["SubscribeName"].asString();
+		if(!resultNodeDataDataItem["MailId"].isNull())
+			dataItemObject.mailId = resultNodeDataDataItem["MailId"].asString();
+		if(!resultNodeDataDataItem["Paused"].isNull())
+			dataItemObject.paused = resultNodeDataDataItem["Paused"].asString() == "true";
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

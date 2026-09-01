@@ -41,16 +41,17 @@ namespace AlibabaCloud
 						std::string pathName;
 						std::string name;
 					};
-					struct CubeTableListItem
+					struct MeasureListItem
 					{
-						std::string tableName;
-						std::string uniqueId;
-						bool factTable;
-						std::string datasourceId;
-						bool customsql;
+						std::string uid;
+						std::string expression;
+						std::string expressionV2;
+						std::string dataType;
+						std::string measureType;
+						std::string tableUniqueId;
 						std::string caption;
-						std::string dsType;
-						std::string sql;
+						std::string fieldDescription;
+						std::string factColumn;
 					};
 					struct DimensionListItem
 					{
@@ -66,17 +67,16 @@ namespace AlibabaCloud
 						std::string fieldDescription;
 						std::string factColumn;
 					};
-					struct MeasureListItem
+					struct CubeTableListItem
 					{
-						std::string uid;
-						std::string expression;
-						std::string expressionV2;
-						std::string dataType;
-						std::string measureType;
-						std::string tableUniqueId;
+						std::string tableName;
+						std::string uniqueId;
+						bool factTable;
+						std::string datasourceId;
+						bool customsql;
 						std::string caption;
-						std::string fieldDescription;
-						std::string factColumn;
+						std::string dsType;
+						std::string sql;
 					};
 					bool openOfflineAcceleration;
 					std::string ownerName;

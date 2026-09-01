@@ -47,10 +47,10 @@ void SmartqAuthorizeResult::parse(const std::string &payload)
 			resultObject.userId = valueResultData["UserId"].asString();
 		if(!valueResultData["LlmCube"].isNull())
 			resultObject.llmCube = valueResultData["LlmCube"].asString();
-		if(!valueResultData["LlmCubeTheme"].isNull())
-			resultObject.llmCubeTheme = valueResultData["LlmCubeTheme"].asString();
 		if(!valueResultData["DetailMessage"].isNull())
 			resultObject.detailMessage = valueResultData["DetailMessage"].asString();
+		if(!valueResultData["LlmCubeTheme"].isNull())
+			resultObject.llmCubeTheme = valueResultData["LlmCubeTheme"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

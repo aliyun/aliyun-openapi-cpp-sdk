@@ -34,15 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
-					struct ApiCopilotLlmCubeModelsItem
-					{
-						std::string alias;
-						std::string llmCubeId;
-						std::string createUser;
-					};
 					struct ApiCopilotThemeModelsItem
 					{
-						struct ApiCopilotLlmCubeModelsItem2
+						struct ApiCopilotLlmCubeModelsItem
 						{
 							std::string alias;
 							std::string llmCubeId;
@@ -50,11 +44,17 @@ namespace AlibabaCloud
 						};
 						std::string themeId;
 						std::string createUser;
-						std::vector<ApiCopilotThemeModelsItem::ApiCopilotLlmCubeModelsItem2> apiCopilotLlmCubeModels1;
+						std::vector<ApiCopilotThemeModelsItem::ApiCopilotLlmCubeModelsItem> apiCopilotLlmCubeModels1;
 						std::string themeName;
 					};
+					struct ApiCopilotLlmCubeModelsItem2
+					{
+						std::string alias;
+						std::string llmCubeId;
+						std::string createUser;
+					};
 					std::vector<ApiCopilotThemeModelsItem> apiCopilotThemeModels;
-					std::vector<ApiCopilotLlmCubeModelsItem> apiCopilotLlmCubeModels;
+					std::vector<ApiCopilotLlmCubeModelsItem2> apiCopilotLlmCubeModels;
 				};
 
 

@@ -36,6 +36,18 @@ namespace AlibabaCloud
 				{
 					struct DataItem
 					{
+						struct WorkspaceExportConfig
+						{
+							bool defaultExportType;
+							bool pdfExport;
+							bool imageExport;
+							bool exportToServer;
+							bool exportToLocal;
+							bool exportMainSwitch;
+							bool allowExcelImageFile;
+							bool dataExport;
+							bool exportToPublicWork;
+						};
 						std::string workspaceDescription;
 						std::string realOwnerAccountName;
 						std::string owner;
@@ -45,6 +57,7 @@ namespace AlibabaCloud
 						std::string workspaceId;
 						std::string createUser;
 						std::string organizationId;
+						WorkspaceExportConfig workspaceExportConfig;
 						std::string modifyUserAccountName;
 						std::string modifiedTime;
 						bool allowShareOperation;

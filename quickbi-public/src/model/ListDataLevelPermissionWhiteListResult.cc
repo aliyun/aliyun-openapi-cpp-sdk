@@ -45,12 +45,12 @@ void ListDataLevelPermissionWhiteListResult::parse(const std::string &payload)
 	if(!resultNode["RuleType"].isNull())
 		result_.ruleType = resultNode["RuleType"].asString();
 	auto usersModelNode = resultNode["UsersModel"];
-		auto allUserGroups = usersModelNode["UserGroups"]["UserGroups"];
-		for (auto value : allUserGroups)
-			result_.usersModel.userGroups.push_back(value.asString());
 		auto allUsers = usersModelNode["Users"]["Users"];
 		for (auto value : allUsers)
 			result_.usersModel.users.push_back(value.asString());
+		auto allUserGroups = usersModelNode["UserGroups"]["UserGroups"];
+		for (auto value : allUserGroups)
+			result_.usersModel.userGroups.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

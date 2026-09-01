@@ -47,10 +47,10 @@ void GetMailTaskStatusResult::parse(const std::string &payload)
 			resultObject.execTime = valueResultDATA["execTime"].asString();
 		if(!valueResultDATA["mailId"].isNull())
 			resultObject.mailId = valueResultDATA["mailId"].asString();
-		if(!valueResultDATA["status"].isNull())
-			resultObject.status = valueResultDATA["status"].asString();
 		if(!valueResultDATA["taskId"].isNull())
 			resultObject.taskId = std::stol(valueResultDATA["taskId"].asString());
+		if(!valueResultDATA["status"].isNull())
+			resultObject.status = valueResultDATA["status"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

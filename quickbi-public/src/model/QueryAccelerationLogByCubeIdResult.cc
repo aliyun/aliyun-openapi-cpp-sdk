@@ -40,34 +40,34 @@ void QueryAccelerationLogByCubeIdResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["TotalPages"].isNull())
-		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
+	if(!resultNode["Pre"].isNull())
+		result_.pre = std::stoi(resultNode["Pre"].asString());
 	if(!resultNode["TotalNum"].isNull())
 		result_.totalNum = std::stoi(resultNode["TotalNum"].asString());
 	if(!resultNode["PageNum"].isNull())
 		result_.pageNum = std::stoi(resultNode["PageNum"].asString());
 	if(!resultNode["PageSize"].isNull())
 		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
-	if(!resultNode["Pre"].isNull())
-		result_.pre = std::stoi(resultNode["Pre"].asString());
 	if(!resultNode["Next"].isNull())
 		result_.next = std::stoi(resultNode["Next"].asString());
+	if(!resultNode["TotalPages"].isNull())
+		result_.totalPages = std::stoi(resultNode["TotalPages"].asString());
 	auto allDataNode = resultNode["Data"]["DataItem"];
 	for (auto resultNodeDataDataItem : allDataNode)
 	{
 		Result::DataItem dataItemObject;
-		if(!resultNodeDataDataItem["JobId"].isNull())
-			dataItemObject.jobId = resultNodeDataDataItem["JobId"].asString();
-		if(!resultNodeDataDataItem["JobHistoryId"].isNull())
-			dataItemObject.jobHistoryId = resultNodeDataDataItem["JobHistoryId"].asString();
-		if(!resultNodeDataDataItem["JonStartDate"].isNull())
-			dataItemObject.jonStartDate = resultNodeDataDataItem["JonStartDate"].asString();
 		if(!resultNodeDataDataItem["JobStatus"].isNull())
 			dataItemObject.jobStatus = resultNodeDataDataItem["JobStatus"].asString();
-		if(!resultNodeDataDataItem["Duration"].isNull())
-			dataItemObject.duration = resultNodeDataDataItem["Duration"].asString();
+		if(!resultNodeDataDataItem["JonStartDate"].isNull())
+			dataItemObject.jonStartDate = resultNodeDataDataItem["JonStartDate"].asString();
 		if(!resultNodeDataDataItem["Log"].isNull())
 			dataItemObject.log = resultNodeDataDataItem["Log"].asString();
+		if(!resultNodeDataDataItem["JobHistoryId"].isNull())
+			dataItemObject.jobHistoryId = resultNodeDataDataItem["JobHistoryId"].asString();
+		if(!resultNodeDataDataItem["Duration"].isNull())
+			dataItemObject.duration = resultNodeDataDataItem["Duration"].asString();
+		if(!resultNodeDataDataItem["JobId"].isNull())
+			dataItemObject.jobId = resultNodeDataDataItem["JobId"].asString();
 		result_.data.push_back(dataItemObject);
 	}
 	if(!value["Success"].isNull())

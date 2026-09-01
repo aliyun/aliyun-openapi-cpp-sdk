@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
+					bool isDeleted;
 					std::vector<std::string> roleIdList;
 					std::string accountId;
 					std::string email;

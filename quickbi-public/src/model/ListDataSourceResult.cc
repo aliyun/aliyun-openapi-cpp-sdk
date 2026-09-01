@@ -43,22 +43,22 @@ void ListDataSourceResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
-		if(!valueResultData["CreatorId"].isNull())
-			resultObject.creatorId = valueResultData["CreatorId"].asString();
-		if(!valueResultData["CreatorName"].isNull())
-			resultObject.creatorName = valueResultData["CreatorName"].asString();
-		if(!valueResultData["DatasourceId"].isNull())
-			resultObject.datasourceId = valueResultData["DatasourceId"].asString();
 		if(!valueResultData["GmtCreate"].isNull())
 			resultObject.gmtCreate = valueResultData["GmtCreate"].asString();
+		if(!valueResultData["DatasourceId"].isNull())
+			resultObject.datasourceId = valueResultData["DatasourceId"].asString();
+		if(!valueResultData["CreatorId"].isNull())
+			resultObject.creatorId = valueResultData["CreatorId"].asString();
 		if(!valueResultData["GmtModified"].isNull())
 			resultObject.gmtModified = valueResultData["GmtModified"].asString();
-		if(!valueResultData["ShowName"].isNull())
-			resultObject.showName = valueResultData["ShowName"].asString();
-		if(!valueResultData["DsType"].isNull())
-			resultObject.dsType = valueResultData["DsType"].asString();
 		if(!valueResultData["ParentDsType"].isNull())
 			resultObject.parentDsType = valueResultData["ParentDsType"].asString();
+		if(!valueResultData["ShowName"].isNull())
+			resultObject.showName = valueResultData["ShowName"].asString();
+		if(!valueResultData["CreatorName"].isNull())
+			resultObject.creatorName = valueResultData["CreatorName"].asString();
+		if(!valueResultData["DsType"].isNull())
+			resultObject.dsType = valueResultData["DsType"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

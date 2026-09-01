@@ -40,14 +40,14 @@ void QueryLastAccelerationEngineJobResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["JobHistoryId"].isNull())
-		result_.jobHistoryId = resultNode["JobHistoryId"].asString();
 	if(!resultNode["Status"].isNull())
 		result_.status = resultNode["Status"].asString();
 	if(!resultNode["GmtCreate"].isNull())
 		result_.gmtCreate = resultNode["GmtCreate"].asString();
 	if(!resultNode["GmtModified"].isNull())
 		result_.gmtModified = resultNode["GmtModified"].asString();
+	if(!resultNode["JobHistoryId"].isNull())
+		result_.jobHistoryId = resultNode["JobHistoryId"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

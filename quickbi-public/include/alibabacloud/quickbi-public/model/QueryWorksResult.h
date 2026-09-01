@@ -41,11 +41,19 @@ namespace AlibabaCloud
 						std::string pathName;
 						std::string name;
 					};
+					struct GlobalParamVoListItem
+					{
+						bool required;
+						std::string dataType;
+						std::string paramAlias;
+						std::string paramName;
+					};
 					int status;
 					std::string ownerName;
 					long publicInvalidTime;
 					std::string description;
 					std::string workType;
+					std::vector<GlobalParamVoListItem> globalParamVoList;
 					std::string modifyName;
 					std::string workspaceId;
 					int auth3rdFlag;

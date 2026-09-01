@@ -43,38 +43,38 @@ void QueryWorksBloodRelationshipResult::parse(const std::string &payload)
 	for (auto valueResultItem : allResultNode)
 	{
 		Item resultObject;
-		if(!valueResultItem["ComponentId"].isNull())
-			resultObject.componentId = valueResultItem["ComponentId"].asString();
-		if(!valueResultItem["ComponentName"].isNull())
-			resultObject.componentName = valueResultItem["ComponentName"].asString();
 		if(!valueResultItem["ComponentType"].isNull())
 			resultObject.componentType = std::stoi(valueResultItem["ComponentType"].asString());
 		if(!valueResultItem["ComponentTypeName"].isNull())
 			resultObject.componentTypeName = valueResultItem["ComponentTypeName"].asString();
+		if(!valueResultItem["ComponentName"].isNull())
+			resultObject.componentName = valueResultItem["ComponentName"].asString();
 		if(!valueResultItem["ComponentTypeCnName"].isNull())
 			resultObject.componentTypeCnName = valueResultItem["ComponentTypeCnName"].asString();
+		if(!valueResultItem["ComponentId"].isNull())
+			resultObject.componentId = valueResultItem["ComponentId"].asString();
 		if(!valueResultItem["DatasetId"].isNull())
 			resultObject.datasetId = valueResultItem["DatasetId"].asString();
 		auto allQueryParamsNode = valueResultItem["QueryParams"]["QueryParam"];
 		for (auto valueResultItemQueryParamsQueryParam : allQueryParamsNode)
 		{
 			Item::QueryParam queryParamsObject;
-			if(!valueResultItemQueryParamsQueryParam["AreaId"].isNull())
-				queryParamsObject.areaId = valueResultItemQueryParamsQueryParam["AreaId"].asString();
 			if(!valueResultItemQueryParamsQueryParam["AreaName"].isNull())
 				queryParamsObject.areaName = valueResultItemQueryParamsQueryParam["AreaName"].asString();
-			if(!valueResultItemQueryParamsQueryParam["Caption"].isNull())
-				queryParamsObject.caption = valueResultItemQueryParamsQueryParam["Caption"].asString();
-			if(!valueResultItemQueryParamsQueryParam["DataType"].isNull())
-				queryParamsObject.dataType = valueResultItemQueryParamsQueryParam["DataType"].asString();
-			if(!valueResultItemQueryParamsQueryParam["IsMeasure"].isNull())
-				queryParamsObject.isMeasure = valueResultItemQueryParamsQueryParam["IsMeasure"].asString() == "true";
 			if(!valueResultItemQueryParamsQueryParam["PathId"].isNull())
 				queryParamsObject.pathId = valueResultItemQueryParamsQueryParam["PathId"].asString();
 			if(!valueResultItemQueryParamsQueryParam["Uid"].isNull())
 				queryParamsObject.uid = valueResultItemQueryParamsQueryParam["Uid"].asString();
+			if(!valueResultItemQueryParamsQueryParam["IsMeasure"].isNull())
+				queryParamsObject.isMeasure = valueResultItemQueryParamsQueryParam["IsMeasure"].asString() == "true";
 			if(!valueResultItemQueryParamsQueryParam["Expression"].isNull())
 				queryParamsObject.expression = valueResultItemQueryParamsQueryParam["Expression"].asString();
+			if(!valueResultItemQueryParamsQueryParam["AreaId"].isNull())
+				queryParamsObject.areaId = valueResultItemQueryParamsQueryParam["AreaId"].asString();
+			if(!valueResultItemQueryParamsQueryParam["DataType"].isNull())
+				queryParamsObject.dataType = valueResultItemQueryParamsQueryParam["DataType"].asString();
+			if(!valueResultItemQueryParamsQueryParam["Caption"].isNull())
+				queryParamsObject.caption = valueResultItemQueryParamsQueryParam["Caption"].asString();
 			resultObject.queryParams.push_back(queryParamsObject);
 		}
 		result_.push_back(resultObject);

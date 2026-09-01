@@ -40,10 +40,10 @@ void BatchAddFeishuUsersResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["FailCount"].isNull())
-		result_.failCount = std::stoi(resultNode["FailCount"].asString());
 	if(!resultNode["OkCount"].isNull())
 		result_.okCount = std::stoi(resultNode["OkCount"].asString());
+	if(!resultNode["FailCount"].isNull())
+		result_.failCount = std::stoi(resultNode["FailCount"].asString());
 	auto allFailResultsNode = resultNode["FailResults"]["FailResultsItem"];
 	for (auto resultNodeFailResultsFailResultsItem : allFailResultsNode)
 	{
@@ -52,12 +52,12 @@ void BatchAddFeishuUsersResult::parse(const std::string &payload)
 		for (auto resultNodeFailResultsFailResultsItemFailInfosFailInfosItem : allFailInfosNode)
 		{
 			Result::FailResultsItem::FailInfosItem failInfosObject;
-			if(!resultNodeFailResultsFailResultsItemFailInfosFailInfosItem["Code"].isNull())
-				failInfosObject.code = resultNodeFailResultsFailResultsItemFailInfosFailInfosItem["Code"].asString();
-			if(!resultNodeFailResultsFailResultsItemFailInfosFailInfosItem["CodeDesc"].isNull())
-				failInfosObject.codeDesc = resultNodeFailResultsFailResultsItemFailInfosFailInfosItem["CodeDesc"].asString();
 			if(!resultNodeFailResultsFailResultsItemFailInfosFailInfosItem["Input"].isNull())
 				failInfosObject.input = resultNodeFailResultsFailResultsItemFailInfosFailInfosItem["Input"].asString();
+			if(!resultNodeFailResultsFailResultsItemFailInfosFailInfosItem["CodeDesc"].isNull())
+				failInfosObject.codeDesc = resultNodeFailResultsFailResultsItemFailInfosFailInfosItem["CodeDesc"].asString();
+			if(!resultNodeFailResultsFailResultsItemFailInfosFailInfosItem["Code"].isNull())
+				failInfosObject.code = resultNodeFailResultsFailResultsItemFailInfosFailInfosItem["Code"].asString();
 			failResultsItemObject.failInfos.push_back(failInfosObject);
 		}
 		result_.failResults.push_back(failResultsItemObject);

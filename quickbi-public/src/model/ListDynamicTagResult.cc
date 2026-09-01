@@ -43,20 +43,20 @@ void ListDynamicTagResult::parse(const std::string &payload)
 	for (auto valueResultData : allResultNode)
 	{
 		Data resultObject;
-		if(!valueResultData["OrganizationId"].isNull())
-			resultObject.organizationId = valueResultData["OrganizationId"].asString();
-		if(!valueResultData["ConfigId"].isNull())
-			resultObject.configId = valueResultData["ConfigId"].asString();
-		if(!valueResultData["ConfigName"].isNull())
-			resultObject.configName = valueResultData["ConfigName"].asString();
-		if(!valueResultData["DsId"].isNull())
-			resultObject.dsId = valueResultData["DsId"].asString();
 		if(!valueResultData["TableName"].isNull())
 			resultObject.tableName = valueResultData["TableName"].asString();
 		if(!valueResultData["ColumnName"].isNull())
 			resultObject.columnName = valueResultData["ColumnName"].asString();
 		if(!valueResultData["RelatedAttribute"].isNull())
 			resultObject.relatedAttribute = std::stoi(valueResultData["RelatedAttribute"].asString());
+		if(!valueResultData["ConfigName"].isNull())
+			resultObject.configName = valueResultData["ConfigName"].asString();
+		if(!valueResultData["DsId"].isNull())
+			resultObject.dsId = valueResultData["DsId"].asString();
+		if(!valueResultData["OrganizationId"].isNull())
+			resultObject.organizationId = valueResultData["OrganizationId"].asString();
+		if(!valueResultData["ConfigId"].isNull())
+			resultObject.configId = valueResultData["ConfigId"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

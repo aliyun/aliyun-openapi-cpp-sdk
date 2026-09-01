@@ -40,38 +40,38 @@ void GetDataSourceConnectionInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
+	if(!resultNode["ModifyUser"].isNull())
+		result_.modifyUser = resultNode["ModifyUser"].asString();
 	if(!resultNode["Address"].isNull())
 		result_.address = resultNode["Address"].asString();
-	if(!resultNode["AuthLevel"].isNull())
-		result_.authLevel = resultNode["AuthLevel"].asString();
-	if(!resultNode["CreatorId"].isNull())
-		result_.creatorId = resultNode["CreatorId"].asString();
-	if(!resultNode["DsId"].isNull())
-		result_.dsId = resultNode["DsId"].asString();
-	if(!resultNode["DsType"].isNull())
-		result_.dsType = resultNode["DsType"].asString();
-	if(!resultNode["DsVersion"].isNull())
-		result_.dsVersion = resultNode["DsVersion"].asString();
 	if(!resultNode["Instance"].isNull())
 		result_.instance = resultNode["Instance"].asString();
 	if(!resultNode["InstanceId"].isNull())
 		result_.instanceId = resultNode["InstanceId"].asString();
-	if(!resultNode["ModifyUser"].isNull())
-		result_.modifyUser = resultNode["ModifyUser"].asString();
-	if(!resultNode["NoSasl"].isNull())
-		result_.noSasl = resultNode["NoSasl"].asString() == "true";
-	if(!resultNode["ParentDsType"].isNull())
-		result_.parentDsType = resultNode["ParentDsType"].asString();
+	if(!resultNode["CreatorId"].isNull())
+		result_.creatorId = resultNode["CreatorId"].asString();
 	if(!resultNode["Port"].isNull())
 		result_.port = resultNode["Port"].asString();
-	if(!resultNode["Project"].isNull())
-		result_.project = resultNode["Project"].asString();
 	if(!resultNode["Schema"].isNull())
 		result_.schema = resultNode["Schema"].asString();
-	if(!resultNode["ShowName"].isNull())
-		result_.showName = resultNode["ShowName"].asString();
 	if(!resultNode["WorkspaceId"].isNull())
 		result_.workspaceId = resultNode["WorkspaceId"].asString();
+	if(!resultNode["DsId"].isNull())
+		result_.dsId = resultNode["DsId"].asString();
+	if(!resultNode["ParentDsType"].isNull())
+		result_.parentDsType = resultNode["ParentDsType"].asString();
+	if(!resultNode["DsVersion"].isNull())
+		result_.dsVersion = resultNode["DsVersion"].asString();
+	if(!resultNode["ShowName"].isNull())
+		result_.showName = resultNode["ShowName"].asString();
+	if(!resultNode["AuthLevel"].isNull())
+		result_.authLevel = resultNode["AuthLevel"].asString();
+	if(!resultNode["DsType"].isNull())
+		result_.dsType = resultNode["DsType"].asString();
+	if(!resultNode["Project"].isNull())
+		result_.project = resultNode["Project"].asString();
+	if(!resultNode["NoSasl"].isNull())
+		result_.noSasl = resultNode["NoSasl"].asString() == "true";
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

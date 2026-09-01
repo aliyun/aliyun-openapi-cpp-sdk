@@ -40,24 +40,12 @@ void SmartqQueryAbilityResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["ChartType"].isNull())
-		result_.chartType = resultNode["ChartType"].asString();
-	if(!resultNode["LogicSql"].isNull())
-		result_.logicSql = resultNode["LogicSql"].asString();
 	if(!resultNode["ConclusionText"].isNull())
 		result_.conclusionText = resultNode["ConclusionText"].asString();
-	auto allMetaTypeNode = resultNode["MetaType"]["MetaTypeItem"];
-	for (auto resultNodeMetaTypeMetaTypeItem : allMetaTypeNode)
-	{
-		Result::MetaTypeItem metaTypeItemObject;
-		if(!resultNodeMetaTypeMetaTypeItem["Key"].isNull())
-			metaTypeItemObject.key = resultNodeMetaTypeMetaTypeItem["Key"].asString();
-		if(!resultNodeMetaTypeMetaTypeItem["Value"].isNull())
-			metaTypeItemObject.value = resultNodeMetaTypeMetaTypeItem["Value"].asString();
-		if(!resultNodeMetaTypeMetaTypeItem["Type"].isNull())
-			metaTypeItemObject.type = resultNodeMetaTypeMetaTypeItem["Type"].asString();
-		result_.metaType.push_back(metaTypeItemObject);
-	}
+	if(!resultNode["LogicSql"].isNull())
+		result_.logicSql = resultNode["LogicSql"].asString();
+	if(!resultNode["ChartType"].isNull())
+		result_.chartType = resultNode["ChartType"].asString();
 	auto allValuesNode = resultNode["Values"]["ValuesItem"];
 	for (auto resultNodeValuesValuesItem : allValuesNode)
 	{
@@ -66,6 +54,18 @@ void SmartqQueryAbilityResult::parse(const std::string &payload)
 		for (auto value : allRow)
 			valuesItemObject.row.push_back(value.asString());
 		result_.values.push_back(valuesItemObject);
+	}
+	auto allMetaTypeNode = resultNode["MetaType"]["MetaTypeItem"];
+	for (auto resultNodeMetaTypeMetaTypeItem : allMetaTypeNode)
+	{
+		Result::MetaTypeItem metaTypeItemObject;
+		if(!resultNodeMetaTypeMetaTypeItem["Type"].isNull())
+			metaTypeItemObject.type = resultNodeMetaTypeMetaTypeItem["Type"].asString();
+		if(!resultNodeMetaTypeMetaTypeItem["Value"].isNull())
+			metaTypeItemObject.value = resultNodeMetaTypeMetaTypeItem["Value"].asString();
+		if(!resultNodeMetaTypeMetaTypeItem["Key"].isNull())
+			metaTypeItemObject.key = resultNodeMetaTypeMetaTypeItem["Key"].asString();
+		result_.metaType.push_back(metaTypeItemObject);
 	}
 		auto allDataList = resultNode["DataList"]["DataList"];
 		for (auto value : allDataList)

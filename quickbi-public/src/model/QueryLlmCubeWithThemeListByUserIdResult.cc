@@ -40,10 +40,10 @@ void QueryLlmCubeWithThemeListByUserIdResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["CubeIds"].isNull())
-		result_.cubeIds = resultNode["CubeIds"].asString();
 	if(!resultNode["ThemeIds"].isNull())
 		result_.themeIds = resultNode["ThemeIds"].asString();
+	if(!resultNode["CubeIds"].isNull())
+		result_.cubeIds = resultNode["CubeIds"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

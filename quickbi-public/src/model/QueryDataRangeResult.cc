@@ -40,41 +40,41 @@ void QueryDataRangeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	auto allApiCopilotLlmCubeModelsNode = resultNode["ApiCopilotLlmCubeModels"]["ApiCopilotLlmCubeModelsItem"];
-	for (auto resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem : allApiCopilotLlmCubeModelsNode)
-	{
-		Result::ApiCopilotLlmCubeModelsItem apiCopilotLlmCubeModelsItemObject;
-		if(!resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["Alias"].isNull())
-			apiCopilotLlmCubeModelsItemObject.alias = resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["Alias"].asString();
-		if(!resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].isNull())
-			apiCopilotLlmCubeModelsItemObject.createUser = resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].asString();
-		if(!resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].isNull())
-			apiCopilotLlmCubeModelsItemObject.llmCubeId = resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].asString();
-		result_.apiCopilotLlmCubeModels.push_back(apiCopilotLlmCubeModelsItemObject);
-	}
 	auto allApiCopilotThemeModelsNode = resultNode["ApiCopilotThemeModels"]["ApiCopilotThemeModelsItem"];
 	for (auto resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem : allApiCopilotThemeModelsNode)
 	{
 		Result::ApiCopilotThemeModelsItem apiCopilotThemeModelsItemObject;
-		if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["CreateUser"].isNull())
-			apiCopilotThemeModelsItemObject.createUser = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["CreateUser"].asString();
 		if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["ThemeId"].isNull())
 			apiCopilotThemeModelsItemObject.themeId = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["ThemeId"].asString();
+		if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["CreateUser"].isNull())
+			apiCopilotThemeModelsItemObject.createUser = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["CreateUser"].asString();
 		if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["ThemeName"].isNull())
 			apiCopilotThemeModelsItemObject.themeName = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["ThemeName"].asString();
 		auto allApiCopilotLlmCubeModels1Node = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItem["ApiCopilotLlmCubeModels"]["ApiCopilotLlmCubeModelsItem"];
 		for (auto resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem : allApiCopilotLlmCubeModels1Node)
 		{
-			Result::ApiCopilotThemeModelsItem::ApiCopilotLlmCubeModelsItem2 apiCopilotLlmCubeModels1Object;
+			Result::ApiCopilotThemeModelsItem::ApiCopilotLlmCubeModelsItem apiCopilotLlmCubeModels1Object;
 			if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["Alias"].isNull())
 				apiCopilotLlmCubeModels1Object.alias = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["Alias"].asString();
-			if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].isNull())
-				apiCopilotLlmCubeModels1Object.createUser = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].asString();
 			if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].isNull())
 				apiCopilotLlmCubeModels1Object.llmCubeId = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].asString();
+			if(!resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].isNull())
+				apiCopilotLlmCubeModels1Object.createUser = resultNodeApiCopilotThemeModelsApiCopilotThemeModelsItemApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].asString();
 			apiCopilotThemeModelsItemObject.apiCopilotLlmCubeModels1.push_back(apiCopilotLlmCubeModels1Object);
 		}
 		result_.apiCopilotThemeModels.push_back(apiCopilotThemeModelsItemObject);
+	}
+	auto allApiCopilotLlmCubeModelsNode = resultNode["ApiCopilotLlmCubeModels"]["ApiCopilotLlmCubeModelsItem"];
+	for (auto resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem : allApiCopilotLlmCubeModelsNode)
+	{
+		Result::ApiCopilotLlmCubeModelsItem2 apiCopilotLlmCubeModelsItem2Object;
+		if(!resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["Alias"].isNull())
+			apiCopilotLlmCubeModelsItem2Object.alias = resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["Alias"].asString();
+		if(!resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].isNull())
+			apiCopilotLlmCubeModelsItem2Object.llmCubeId = resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["LlmCubeId"].asString();
+		if(!resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].isNull())
+			apiCopilotLlmCubeModelsItem2Object.createUser = resultNodeApiCopilotLlmCubeModelsApiCopilotLlmCubeModelsItem["CreateUser"].asString();
+		result_.apiCopilotLlmCubeModels.push_back(apiCopilotLlmCubeModelsItem2Object);
 	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";

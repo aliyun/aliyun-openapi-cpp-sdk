@@ -40,24 +40,26 @@ void QueryUserInfoByUserIdResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
+	if(!resultNode["IsDeleted"].isNull())
+		result_.isDeleted = resultNode["IsDeleted"].asString() == "true";
 	if(!resultNode["AccountId"].isNull())
 		result_.accountId = resultNode["AccountId"].asString();
-	if(!resultNode["AccountName"].isNull())
-		result_.accountName = resultNode["AccountName"].asString();
-	if(!resultNode["AdminUser"].isNull())
-		result_.adminUser = resultNode["AdminUser"].asString() == "true";
-	if(!resultNode["AuthAdminUser"].isNull())
-		result_.authAdminUser = resultNode["AuthAdminUser"].asString() == "true";
 	if(!resultNode["Email"].isNull())
 		result_.email = resultNode["Email"].asString();
-	if(!resultNode["NickName"].isNull())
-		result_.nickName = resultNode["NickName"].asString();
 	if(!resultNode["Phone"].isNull())
 		result_.phone = resultNode["Phone"].asString();
 	if(!resultNode["UserId"].isNull())
 		result_.userId = resultNode["UserId"].asString();
+	if(!resultNode["AdminUser"].isNull())
+		result_.adminUser = resultNode["AdminUser"].asString() == "true";
+	if(!resultNode["NickName"].isNull())
+		result_.nickName = resultNode["NickName"].asString();
 	if(!resultNode["UserType"].isNull())
 		result_.userType = std::stoi(resultNode["UserType"].asString());
+	if(!resultNode["AuthAdminUser"].isNull())
+		result_.authAdminUser = resultNode["AuthAdminUser"].asString() == "true";
+	if(!resultNode["AccountName"].isNull())
+		result_.accountName = resultNode["AccountName"].asString();
 		auto allRoleIdList = resultNode["RoleIdList"]["RoleIdList"];
 		for (auto value : allRoleIdList)
 			result_.roleIdList.push_back(value.asString());

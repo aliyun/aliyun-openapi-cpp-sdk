@@ -43,25 +43,25 @@ void QueryCopilotEmbedConfigResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["AgentName"].isNull())
-			resultObject.agentName = valueResultResultItem["AgentName"].asString();
-		if(!valueResultResultItem["CopilotId"].isNull())
-			resultObject.copilotId = valueResultResultItem["CopilotId"].asString();
-		if(!valueResultResultItem["CreateUser"].isNull())
-			resultObject.createUser = valueResultResultItem["CreateUser"].asString();
-		if(!valueResultResultItem["CreateUserName"].isNull())
-			resultObject.createUserName = valueResultResultItem["CreateUserName"].asString();
 		if(!valueResultResultItem["ModifyUser"].isNull())
 			resultObject.modifyUser = valueResultResultItem["ModifyUser"].asString();
 		if(!valueResultResultItem["ModuleName"].isNull())
 			resultObject.moduleName = valueResultResultItem["ModuleName"].asString();
+		if(!valueResultResultItem["CreateUser"].isNull())
+			resultObject.createUser = valueResultResultItem["CreateUser"].asString();
+		if(!valueResultResultItem["AgentName"].isNull())
+			resultObject.agentName = valueResultResultItem["AgentName"].asString();
+		if(!valueResultResultItem["CreateUserName"].isNull())
+			resultObject.createUserName = valueResultResultItem["CreateUserName"].asString();
 		if(!valueResultResultItem["ShowName"].isNull())
 			resultObject.showName = valueResultResultItem["ShowName"].asString();
+		if(!valueResultResultItem["CopilotId"].isNull())
+			resultObject.copilotId = valueResultResultItem["CopilotId"].asString();
 		auto dataRangeNode = value["DataRange"];
-		if(!dataRangeNode["AllCube"].isNull())
-			resultObject.dataRange.allCube = dataRangeNode["AllCube"].asString() == "true";
 		if(!dataRangeNode["AllTheme"].isNull())
 			resultObject.dataRange.allTheme = dataRangeNode["AllTheme"].asString() == "true";
+		if(!dataRangeNode["AllCube"].isNull())
+			resultObject.dataRange.allCube = dataRangeNode["AllCube"].asString() == "true";
 			auto allLlmCubes = dataRangeNode["LlmCubes"]["LlmCubes"];
 			for (auto value : allLlmCubes)
 				resultObject.dataRange.llmCubes.push_back(value.asString());

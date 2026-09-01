@@ -42,10 +42,10 @@ void QueryDatasetSwitchInfoResult::parse(const std::string &payload)
 	auto resultNode = value["Result"];
 	if(!resultNode["CubeId"].isNull())
 		result_.cubeId = resultNode["CubeId"].asString();
-	if(!resultNode["IsOpenColumnLevelPermission"].isNull())
-		result_.isOpenColumnLevelPermission = std::stoi(resultNode["IsOpenColumnLevelPermission"].asString());
 	if(!resultNode["IsOpenRowLevelPermission"].isNull())
 		result_.isOpenRowLevelPermission = std::stoi(resultNode["IsOpenRowLevelPermission"].asString());
+	if(!resultNode["IsOpenColumnLevelPermission"].isNull())
+		result_.isOpenColumnLevelPermission = std::stoi(resultNode["IsOpenColumnLevelPermission"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

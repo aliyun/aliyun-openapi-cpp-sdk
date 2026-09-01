@@ -48,12 +48,12 @@ void ListWorkspaceUserRolesByUserIdResult::parse(const std::string &payload)
 		if(!valueResultData["WorkspaceName"].isNull())
 			resultObject.workspaceName = valueResultData["WorkspaceName"].asString();
 		auto roleModelNode = value["RoleModel"];
+		if(!roleModelNode["RoleName"].isNull())
+			resultObject.roleModel.roleName = roleModelNode["RoleName"].asString();
 		if(!roleModelNode["RoleId"].isNull())
 			resultObject.roleModel.roleId = roleModelNode["RoleId"].asString();
 		if(!roleModelNode["RoleCode"].isNull())
 			resultObject.roleModel.roleCode = roleModelNode["RoleCode"].asString();
-		if(!roleModelNode["RoleName"].isNull())
-			resultObject.roleModel.roleName = roleModelNode["RoleName"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())
