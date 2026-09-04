@@ -8,14 +8,22 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
-    name: CPP
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macosx-latest]
+    runs-on: ${{ matrix.os }}
     env:
       CPLUS_INCLUDE_PATH: "/usr/local/include/:/usr/include/jsoncpp/:/usr/local/opt/openssl/include/:/usr/lib/"
     steps:
       - uses: actions/checkout@v3
-      - run: sudo apt-get install lcov libcurl4-openssl-dev libssl-dev uuid-dev libjson-c-dev libjsoncpp-dev nodejs npm
+
+      - if: ${{ matrix.os == 'ubuntu-latest' }}
+        run: sudo apt-get install lcov libcurl4-openssl-dev libssl-dev uuid-dev libjson-c-dev libjsoncpp-dev nodejs npm
+      - if: ${{ matrix.os == 'macosx-latest' }}
+        run: brew install lcov libcurl4-openssl-dev libssl-dev uuid-dev libjson-c-dev libjsoncpp-dev nodejs npm
+
       - run: bash ./unit_test.sh
-      - run: bash  ./generate_code_cov.sh
+      - run: bash ./generate_code_cov.sh
       - run: bash ./function_test.sh
       - run: bash <(curl -s https://codecov.io/bash)
