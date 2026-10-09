@@ -1,0 +1,63 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_AIREGISTRY_MODEL_CREATEPROMPTREQUEST_H_
+#define ALIBABACLOUD_AIREGISTRY_MODEL_CREATEPROMPTREQUEST_H_
+
+#include <alibabacloud/airegistry/AIRegistryExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <string>
+#include <vector>
+#include <map>
+
+namespace AlibabaCloud {
+namespace AIRegistry {
+namespace Model {
+class ALIBABACLOUD_AIREGISTRY_EXPORT CreatePromptRequest : public RpcServiceRequest {
+public:
+	CreatePromptRequest();
+	~CreatePromptRequest();
+	std::string getPromptKey() const;
+	void setPromptKey(const std::string &promptKey);
+	std::string getBizTags() const;
+	void setBizTags(const std::string &bizTags);
+	std::string getNamespaceId() const;
+	void setNamespaceId(const std::string &namespaceId);
+	std::string getTargetVersion() const;
+	void setTargetVersion(const std::string &targetVersion);
+	std::string get_Template() const;
+	void set_Template(const std::string &_template);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	std::string getVariables() const;
+	void setVariables(const std::string &variables);
+	std::string getCommitMsg() const;
+	void setCommitMsg(const std::string &commitMsg);
+
+private:
+	std::string promptKey_;
+	std::string bizTags_;
+	std::string namespaceId_;
+	std::string targetVersion_;
+	std::string _template_;
+	std::string description_;
+	std::string variables_;
+	std::string commitMsg_;
+};
+} // namespace Model
+} // namespace AIRegistry
+} // namespace AlibabaCloud
+#endif // !ALIBABACLOUD_AIREGISTRY_MODEL_CREATEPROMPTREQUEST_H_
