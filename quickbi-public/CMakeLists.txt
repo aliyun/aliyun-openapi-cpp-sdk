@@ -121,6 +121,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListAccelerationOfWorkspaceResult.h
 	include/alibabacloud/quickbi-public/model/ListApiDatasourceRequest.h
 	include/alibabacloud/quickbi-public/model/ListApiDatasourceResult.h
+	include/alibabacloud/quickbi-public/model/ListAuthConfigByResourceRequest.h
+	include/alibabacloud/quickbi-public/model/ListAuthConfigByResourceResult.h
 	include/alibabacloud/quickbi-public/model/ListByUserGroupIdRequest.h
 	include/alibabacloud/quickbi-public/model/ListByUserGroupIdResult.h
 	include/alibabacloud/quickbi-public/model/ListCollectionsRequest.h
@@ -273,6 +275,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/SmartqQueryAbilityResult.h
 	include/alibabacloud/quickbi-public/model/TransferUsergroupRequest.h
 	include/alibabacloud/quickbi-public/model/TransferUsergroupResult.h
+	include/alibabacloud/quickbi-public/model/UpdateAuthorizationAttributesRequest.h
+	include/alibabacloud/quickbi-public/model/UpdateAuthorizationAttributesResult.h
 	include/alibabacloud/quickbi-public/model/UpdateCubeBySqlRequest.h
 	include/alibabacloud/quickbi-public/model/UpdateCubeBySqlResult.h
 	include/alibabacloud/quickbi-public/model/UpdateDataLevelPermissionStatusRequest.h
@@ -400,6 +404,8 @@ set(quickbi-public_src
 	src/model/ListAccelerationOfWorkspaceResult.cc
 	src/model/ListApiDatasourceRequest.cc
 	src/model/ListApiDatasourceResult.cc
+	src/model/ListAuthConfigByResourceRequest.cc
+	src/model/ListAuthConfigByResourceResult.cc
 	src/model/ListByUserGroupIdRequest.cc
 	src/model/ListByUserGroupIdResult.cc
 	src/model/ListCollectionsRequest.cc
@@ -552,6 +558,8 @@ set(quickbi-public_src
 	src/model/SmartqQueryAbilityResult.cc
 	src/model/TransferUsergroupRequest.cc
 	src/model/TransferUsergroupResult.cc
+	src/model/UpdateAuthorizationAttributesRequest.cc
+	src/model/UpdateAuthorizationAttributesResult.cc
 	src/model/UpdateCubeBySqlRequest.cc
 	src/model/UpdateCubeBySqlResult.cc
 	src/model/UpdateDataLevelPermissionStatusRequest.cc

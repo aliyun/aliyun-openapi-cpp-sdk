@@ -1851,6 +1851,42 @@ Quickbi_publicClient::ListApiDatasourceOutcomeCallable Quickbi_publicClient::lis
 	return task->get_future();
 }
 
+Quickbi_publicClient::ListAuthConfigByResourceOutcome Quickbi_publicClient::listAuthConfigByResource(const ListAuthConfigByResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAuthConfigByResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAuthConfigByResourceOutcome(ListAuthConfigByResourceResult(outcome.result()));
+	else
+		return ListAuthConfigByResourceOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listAuthConfigByResourceAsync(const ListAuthConfigByResourceRequest& request, const ListAuthConfigByResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAuthConfigByResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListAuthConfigByResourceOutcomeCallable Quickbi_publicClient::listAuthConfigByResourceCallable(const ListAuthConfigByResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAuthConfigByResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->listAuthConfigByResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::ListByUserGroupIdOutcome Quickbi_publicClient::listByUserGroupId(const ListByUserGroupIdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4581,6 +4617,42 @@ Quickbi_publicClient::TransferUsergroupOutcomeCallable Quickbi_publicClient::tra
 			[this, request]()
 			{
 			return this->transferUsergroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::UpdateAuthorizationAttributesOutcome Quickbi_publicClient::updateAuthorizationAttributes(const UpdateAuthorizationAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAuthorizationAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAuthorizationAttributesOutcome(UpdateAuthorizationAttributesResult(outcome.result()));
+	else
+		return UpdateAuthorizationAttributesOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::updateAuthorizationAttributesAsync(const UpdateAuthorizationAttributesRequest& request, const UpdateAuthorizationAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAuthorizationAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::UpdateAuthorizationAttributesOutcomeCallable Quickbi_publicClient::updateAuthorizationAttributesCallable(const UpdateAuthorizationAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAuthorizationAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAuthorizationAttributes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

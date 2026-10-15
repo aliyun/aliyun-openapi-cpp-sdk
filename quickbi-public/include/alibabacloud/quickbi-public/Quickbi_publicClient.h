@@ -122,6 +122,8 @@
 #include "model/ListAccelerationOfWorkspaceResult.h"
 #include "model/ListApiDatasourceRequest.h"
 #include "model/ListApiDatasourceResult.h"
+#include "model/ListAuthConfigByResourceRequest.h"
+#include "model/ListAuthConfigByResourceResult.h"
 #include "model/ListByUserGroupIdRequest.h"
 #include "model/ListByUserGroupIdResult.h"
 #include "model/ListCollectionsRequest.h"
@@ -274,6 +276,8 @@
 #include "model/SmartqQueryAbilityResult.h"
 #include "model/TransferUsergroupRequest.h"
 #include "model/TransferUsergroupResult.h"
+#include "model/UpdateAuthorizationAttributesRequest.h"
+#include "model/UpdateAuthorizationAttributesResult.h"
 #include "model/UpdateCubeBySqlRequest.h"
 #include "model/UpdateCubeBySqlResult.h"
 #include "model/UpdateDataLevelPermissionStatusRequest.h"
@@ -457,6 +461,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListApiDatasourceResult> ListApiDatasourceOutcome;
 			typedef std::future<ListApiDatasourceOutcome> ListApiDatasourceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListApiDatasourceRequest&, const ListApiDatasourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApiDatasourceAsyncHandler;
+			typedef Outcome<Error, Model::ListAuthConfigByResourceResult> ListAuthConfigByResourceOutcome;
+			typedef std::future<ListAuthConfigByResourceOutcome> ListAuthConfigByResourceOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ListAuthConfigByResourceRequest&, const ListAuthConfigByResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAuthConfigByResourceAsyncHandler;
 			typedef Outcome<Error, Model::ListByUserGroupIdResult> ListByUserGroupIdOutcome;
 			typedef std::future<ListByUserGroupIdOutcome> ListByUserGroupIdOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ListByUserGroupIdRequest&, const ListByUserGroupIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListByUserGroupIdAsyncHandler;
@@ -685,6 +692,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TransferUsergroupResult> TransferUsergroupOutcome;
 			typedef std::future<TransferUsergroupOutcome> TransferUsergroupOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::TransferUsergroupRequest&, const TransferUsergroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransferUsergroupAsyncHandler;
+			typedef Outcome<Error, Model::UpdateAuthorizationAttributesResult> UpdateAuthorizationAttributesOutcome;
+			typedef std::future<UpdateAuthorizationAttributesOutcome> UpdateAuthorizationAttributesOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateAuthorizationAttributesRequest&, const UpdateAuthorizationAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAuthorizationAttributesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCubeBySqlResult> UpdateCubeBySqlOutcome;
 			typedef std::future<UpdateCubeBySqlOutcome> UpdateCubeBySqlOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateCubeBySqlRequest&, const UpdateCubeBySqlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCubeBySqlAsyncHandler;
@@ -876,6 +886,9 @@ namespace AlibabaCloud
 			ListApiDatasourceOutcome listApiDatasource(const Model::ListApiDatasourceRequest &request)const;
 			void listApiDatasourceAsync(const Model::ListApiDatasourceRequest& request, const ListApiDatasourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListApiDatasourceOutcomeCallable listApiDatasourceCallable(const Model::ListApiDatasourceRequest& request) const;
+			ListAuthConfigByResourceOutcome listAuthConfigByResource(const Model::ListAuthConfigByResourceRequest &request)const;
+			void listAuthConfigByResourceAsync(const Model::ListAuthConfigByResourceRequest& request, const ListAuthConfigByResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAuthConfigByResourceOutcomeCallable listAuthConfigByResourceCallable(const Model::ListAuthConfigByResourceRequest& request) const;
 			ListByUserGroupIdOutcome listByUserGroupId(const Model::ListByUserGroupIdRequest &request)const;
 			void listByUserGroupIdAsync(const Model::ListByUserGroupIdRequest& request, const ListByUserGroupIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListByUserGroupIdOutcomeCallable listByUserGroupIdCallable(const Model::ListByUserGroupIdRequest& request) const;
@@ -1104,6 +1117,9 @@ namespace AlibabaCloud
 			TransferUsergroupOutcome transferUsergroup(const Model::TransferUsergroupRequest &request)const;
 			void transferUsergroupAsync(const Model::TransferUsergroupRequest& request, const TransferUsergroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TransferUsergroupOutcomeCallable transferUsergroupCallable(const Model::TransferUsergroupRequest& request) const;
+			UpdateAuthorizationAttributesOutcome updateAuthorizationAttributes(const Model::UpdateAuthorizationAttributesRequest &request)const;
+			void updateAuthorizationAttributesAsync(const Model::UpdateAuthorizationAttributesRequest& request, const UpdateAuthorizationAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateAuthorizationAttributesOutcomeCallable updateAuthorizationAttributesCallable(const Model::UpdateAuthorizationAttributesRequest& request) const;
 			UpdateCubeBySqlOutcome updateCubeBySql(const Model::UpdateCubeBySqlRequest &request)const;
 			void updateCubeBySqlAsync(const Model::UpdateCubeBySqlRequest& request, const UpdateCubeBySqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCubeBySqlOutcomeCallable updateCubeBySqlCallable(const Model::UpdateCubeBySqlRequest& request) const;
