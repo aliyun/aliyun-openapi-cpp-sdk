@@ -43,14 +43,14 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 	for (auto valueSubOrdersSubOrder : allSubOrdersNode)
 	{
 		SubOrder subOrdersObject;
+		if(!valueSubOrdersSubOrder["InstanceId"].isNull())
+			subOrdersObject.instanceId = valueSubOrdersSubOrder["InstanceId"].asString();
+		if(!valueSubOrdersSubOrder["TradeAmount"].isNull())
+			subOrdersObject.tradeAmount = std::stof(valueSubOrdersSubOrder["TradeAmount"].asString());
 		if(!valueSubOrdersSubOrder["OriginalAmount"].isNull())
 			subOrdersObject.originalAmount = std::stof(valueSubOrdersSubOrder["OriginalAmount"].asString());
 		if(!valueSubOrdersSubOrder["DiscountAmount"].isNull())
 			subOrdersObject.discountAmount = std::stof(valueSubOrdersSubOrder["DiscountAmount"].asString());
-		if(!valueSubOrdersSubOrder["TradeAmount"].isNull())
-			subOrdersObject.tradeAmount = std::stof(valueSubOrdersSubOrder["TradeAmount"].asString());
-		if(!valueSubOrdersSubOrder["InstanceId"].isNull())
-			subOrdersObject.instanceId = valueSubOrdersSubOrder["InstanceId"].asString();
 		auto allRuleIds = value["RuleIds"]["RuleId"];
 		for (auto value : allRuleIds)
 			subOrdersObject.ruleIds.push_back(value.asString());
@@ -69,30 +69,30 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 		rules_.push_back(rulesObject);
 	}
 	auto orderNode = value["Order"];
+	if(!orderNode["Currency"].isNull())
+		order_.currency = orderNode["Currency"].asString();
+	if(!orderNode["TradeAmount"].isNull())
+		order_.tradeAmount = std::stof(orderNode["TradeAmount"].asString());
 	if(!orderNode["OriginalAmount"].isNull())
 		order_.originalAmount = std::stof(orderNode["OriginalAmount"].asString());
 	if(!orderNode["DiscountAmount"].isNull())
 		order_.discountAmount = std::stof(orderNode["DiscountAmount"].asString());
-	if(!orderNode["TradeAmount"].isNull())
-		order_.tradeAmount = std::stof(orderNode["TradeAmount"].asString());
-	if(!orderNode["Currency"].isNull())
-		order_.currency = orderNode["Currency"].asString();
 	auto allCouponsNode = orderNode["Coupons"]["Coupon"];
 	for (auto orderNodeCouponsCoupon : allCouponsNode)
 	{
 		Order::Coupon couponObject;
+		if(!orderNodeCouponsCoupon["CouponNo"].isNull())
+			couponObject.couponNo = orderNodeCouponsCoupon["CouponNo"].asString();
 		if(!orderNodeCouponsCoupon["Description"].isNull())
 			couponObject.description = orderNodeCouponsCoupon["Description"].asString();
 		if(!orderNodeCouponsCoupon["IsSelected"].isNull())
 			couponObject.isSelected = orderNodeCouponsCoupon["IsSelected"].asString();
-		if(!orderNodeCouponsCoupon["CouponNo"].isNull())
-			couponObject.couponNo = orderNodeCouponsCoupon["CouponNo"].asString();
+		if(!orderNodeCouponsCoupon["ActivityExtInfo"].isNull())
+			couponObject.activityExtInfo = orderNodeCouponsCoupon["ActivityExtInfo"].asString();
 		if(!orderNodeCouponsCoupon["Name"].isNull())
 			couponObject.name = orderNodeCouponsCoupon["Name"].asString();
 		if(!orderNodeCouponsCoupon["Effective"].isNull())
 			couponObject.effective = orderNodeCouponsCoupon["Effective"].asString() == "true";
-		if(!orderNodeCouponsCoupon["ActivityExtInfo"].isNull())
-			couponObject.activityExtInfo = orderNodeCouponsCoupon["ActivityExtInfo"].asString();
 		order_.coupons.push_back(couponObject);
 	}
 		auto allRuleIds1 = orderNode["RuleIds"]["RuleId"];

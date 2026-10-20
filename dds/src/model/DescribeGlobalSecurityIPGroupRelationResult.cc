@@ -43,16 +43,16 @@ void DescribeGlobalSecurityIPGroupRelationResult::parse(const std::string &paylo
 	for (auto valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem : allGlobalSecurityIPGroupRelNode)
 	{
 		GlobalSecurityIPGroupRelItem globalSecurityIPGroupRelObject;
-		if(!valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["GlobalSecurityGroupId"].isNull())
-			globalSecurityIPGroupRelObject.globalSecurityGroupId = valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["GlobalSecurityGroupId"].asString();
+		if(!valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["GlobalIgName"].isNull())
+			globalSecurityIPGroupRelObject.globalIgName = valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["GlobalIgName"].asString();
 		if(!valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["GIpList"].isNull())
 			globalSecurityIPGroupRelObject.gIpList = valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["GIpList"].asString();
+		if(!valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["GlobalSecurityGroupId"].isNull())
+			globalSecurityIPGroupRelObject.globalSecurityGroupId = valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["GlobalSecurityGroupId"].asString();
 		if(!valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["RegionId"].isNull())
 			globalSecurityIPGroupRelObject.regionId = valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["RegionId"].asString();
 		if(!valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["WhitelistNetType"].isNull())
 			globalSecurityIPGroupRelObject.whitelistNetType = valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["WhitelistNetType"].asString();
-		if(!valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["GlobalIgName"].isNull())
-			globalSecurityIPGroupRelObject.globalIgName = valueGlobalSecurityIPGroupRelGlobalSecurityIPGroupRelItem["GlobalIgName"].asString();
 		globalSecurityIPGroupRel_.push_back(globalSecurityIPGroupRelObject);
 	}
 	if(!value["DBClusterId"].isNull())

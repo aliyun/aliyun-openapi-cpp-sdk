@@ -43,24 +43,24 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	for (auto valueRegionsDdsRegion : allRegionsNode)
 	{
 		DdsRegion regionsObject;
+		if(!valueRegionsDdsRegion["RegionName"].isNull())
+			regionsObject.regionName = valueRegionsDdsRegion["RegionName"].asString();
 		if(!valueRegionsDdsRegion["ZoneIds"].isNull())
 			regionsObject.zoneIds = valueRegionsDdsRegion["ZoneIds"].asString();
 		if(!valueRegionsDdsRegion["RegionId"].isNull())
 			regionsObject.regionId = valueRegionsDdsRegion["RegionId"].asString();
-		if(!valueRegionsDdsRegion["RegionName"].isNull())
-			regionsObject.regionName = valueRegionsDdsRegion["RegionName"].asString();
 		if(!valueRegionsDdsRegion["EndPoint"].isNull())
 			regionsObject.endPoint = valueRegionsDdsRegion["EndPoint"].asString();
 		auto allZonesNode = valueRegionsDdsRegion["Zones"]["Zone"];
 		for (auto valueRegionsDdsRegionZonesZone : allZonesNode)
 		{
 			DdsRegion::Zone zonesObject;
-			if(!valueRegionsDdsRegionZonesZone["ZoneId"].isNull())
-				zonesObject.zoneId = valueRegionsDdsRegionZonesZone["ZoneId"].asString();
 			if(!valueRegionsDdsRegionZonesZone["VpcEnabled"].isNull())
 				zonesObject.vpcEnabled = valueRegionsDdsRegionZonesZone["VpcEnabled"].asString() == "true";
 			if(!valueRegionsDdsRegionZonesZone["ZoneName"].isNull())
 				zonesObject.zoneName = valueRegionsDdsRegionZonesZone["ZoneName"].asString();
+			if(!valueRegionsDdsRegionZonesZone["ZoneId"].isNull())
+				zonesObject.zoneId = valueRegionsDdsRegionZonesZone["ZoneId"].asString();
 			regionsObject.zones.push_back(zonesObject);
 		}
 		regions_.push_back(regionsObject);

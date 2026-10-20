@@ -39,12 +39,12 @@ void DescribeBackupStorageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["FreeSize"].isNull())
+		freeSize_ = std::stol(value["FreeSize"].asString());
 	if(!value["FullStorageSize"].isNull())
 		fullStorageSize_ = std::stol(value["FullStorageSize"].asString());
 	if(!value["LogStorageSize"].isNull())
 		logStorageSize_ = std::stol(value["LogStorageSize"].asString());
-	if(!value["FreeSize"].isNull())
-		freeSize_ = std::stol(value["FreeSize"].asString());
 
 }
 

@@ -88,3 +88,21 @@ void DescribeAccountsRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeAccountsRequest::getDBName() const {
+  return dBName_;
+}
+
+void DescribeAccountsRequest::setDBName(const std::string &dBName) {
+  dBName_ = dBName;
+  setParameter(std::string("DBName"), dBName);
+}
+
+std::string DescribeAccountsRequest::getCharacterType() const {
+  return characterType_;
+}
+
+void DescribeAccountsRequest::setCharacterType(const std::string &characterType) {
+  characterType_ = characterType;
+  setParameter(std::string("CharacterType"), characterType);
+}
+

@@ -34,16 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct DBInstance
 				{
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
 					struct MongosAttribute
 					{
 						std::string nodeClass;
 						std::string nodeDescription;
 						std::string nodeId;
+					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
 					};
 					struct ShardAttribute
 					{
@@ -81,6 +81,7 @@ namespace AlibabaCloud
 					std::string vpcAuthMode;
 					std::string creationTime;
 					std::string regionId;
+					std::string originalStorageType;
 					std::string expireTime;
 					std::string kindCode;
 					int backupRetentionPolicy;

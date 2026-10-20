@@ -178,6 +178,15 @@ void CreateNodeRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string CreateNodeRequest::getSearchDBInstanceClass() const {
+  return searchDBInstanceClass_;
+}
+
+void CreateNodeRequest::setSearchDBInstanceClass(const std::string &searchDBInstanceClass) {
+  searchDBInstanceClass_ = searchDBInstanceClass;
+  setParameter(std::string("SearchDBInstanceClass"), searchDBInstanceClass);
+}
+
 std::string CreateNodeRequest::getAccountPassword() const {
   return accountPassword_;
 }
@@ -185,5 +194,23 @@ std::string CreateNodeRequest::getAccountPassword() const {
 void CreateNodeRequest::setAccountPassword(const std::string &accountPassword) {
   accountPassword_ = accountPassword;
   setParameter(std::string("AccountPassword"), accountPassword);
+}
+
+int CreateNodeRequest::getSearchNodeCount() const {
+  return searchNodeCount_;
+}
+
+void CreateNodeRequest::setSearchNodeCount(int searchNodeCount) {
+  searchNodeCount_ = searchNodeCount;
+  setParameter(std::string("SearchNodeCount"), std::to_string(searchNodeCount));
+}
+
+int CreateNodeRequest::getSearchStorage() const {
+  return searchStorage_;
+}
+
+void CreateNodeRequest::setSearchStorage(int searchStorage) {
+  searchStorage_ = searchStorage;
+  setParameter(std::string("SearchStorage"), std::to_string(searchStorage));
 }
 

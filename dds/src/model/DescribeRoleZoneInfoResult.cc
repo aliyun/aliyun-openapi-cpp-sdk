@@ -43,14 +43,14 @@ void DescribeRoleZoneInfoResult::parse(const std::string &payload)
 	for (auto valueZoneInfosZoneInfo : allZoneInfosNode)
 	{
 		ZoneInfo zoneInfosObject;
-		if(!valueZoneInfosZoneInfo["InsName"].isNull())
-			zoneInfosObject.insName = valueZoneInfosZoneInfo["InsName"].asString();
-		if(!valueZoneInfosZoneInfo["NodeType"].isNull())
-			zoneInfosObject.nodeType = valueZoneInfosZoneInfo["NodeType"].asString();
-		if(!valueZoneInfosZoneInfo["RoleType"].isNull())
-			zoneInfosObject.roleType = valueZoneInfosZoneInfo["RoleType"].asString();
 		if(!valueZoneInfosZoneInfo["ZoneId"].isNull())
 			zoneInfosObject.zoneId = valueZoneInfosZoneInfo["ZoneId"].asString();
+		if(!valueZoneInfosZoneInfo["RoleType"].isNull())
+			zoneInfosObject.roleType = valueZoneInfosZoneInfo["RoleType"].asString();
+		if(!valueZoneInfosZoneInfo["NodeType"].isNull())
+			zoneInfosObject.nodeType = valueZoneInfosZoneInfo["NodeType"].asString();
+		if(!valueZoneInfosZoneInfo["InsName"].isNull())
+			zoneInfosObject.insName = valueZoneInfosZoneInfo["InsName"].asString();
 		if(!valueZoneInfosZoneInfo["RoleId"].isNull())
 			zoneInfosObject.roleId = valueZoneInfosZoneInfo["RoleId"].asString();
 		zoneInfos_.push_back(zoneInfosObject);

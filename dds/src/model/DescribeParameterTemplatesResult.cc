@@ -43,16 +43,16 @@ void DescribeParameterTemplatesResult::parse(const std::string &payload)
 	for (auto valueParametersTemplateRecord : allParametersNode)
 	{
 		TemplateRecord parametersObject;
-		if(!valueParametersTemplateRecord["CheckingCode"].isNull())
-			parametersObject.checkingCode = valueParametersTemplateRecord["CheckingCode"].asString();
-		if(!valueParametersTemplateRecord["ParameterName"].isNull())
-			parametersObject.parameterName = valueParametersTemplateRecord["ParameterName"].asString();
-		if(!valueParametersTemplateRecord["ParameterValue"].isNull())
-			parametersObject.parameterValue = valueParametersTemplateRecord["ParameterValue"].asString();
 		if(!valueParametersTemplateRecord["ForceModify"].isNull())
 			parametersObject.forceModify = valueParametersTemplateRecord["ForceModify"].asString() == "true";
+		if(!valueParametersTemplateRecord["CheckingCode"].isNull())
+			parametersObject.checkingCode = valueParametersTemplateRecord["CheckingCode"].asString();
+		if(!valueParametersTemplateRecord["ParameterValue"].isNull())
+			parametersObject.parameterValue = valueParametersTemplateRecord["ParameterValue"].asString();
 		if(!valueParametersTemplateRecord["ForceRestart"].isNull())
 			parametersObject.forceRestart = valueParametersTemplateRecord["ForceRestart"].asString() == "true";
+		if(!valueParametersTemplateRecord["ParameterName"].isNull())
+			parametersObject.parameterName = valueParametersTemplateRecord["ParameterName"].asString();
 		if(!valueParametersTemplateRecord["ParameterDescription"].isNull())
 			parametersObject.parameterDescription = valueParametersTemplateRecord["ParameterDescription"].asString();
 		parameters_.push_back(parametersObject);

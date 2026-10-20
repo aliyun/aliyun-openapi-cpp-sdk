@@ -97,6 +97,15 @@ void DescribeInstanceRecoverTimeRequest::setResourceOwnerAccount(const std::stri
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+bool DescribeInstanceRecoverTimeRequest::getOnlyDbTableRecovery() const {
+  return onlyDbTableRecovery_;
+}
+
+void DescribeInstanceRecoverTimeRequest::setOnlyDbTableRecovery(bool onlyDbTableRecovery) {
+  onlyDbTableRecovery_ = onlyDbTableRecovery;
+  setParameter(std::string("OnlyDbTableRecovery"), onlyDbTableRecovery ? "true" : "false");
+}
+
 std::string DescribeInstanceRecoverTimeRequest::getOwnerAccount() const {
   return ownerAccount_;
 }

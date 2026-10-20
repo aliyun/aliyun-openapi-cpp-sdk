@@ -76,6 +76,8 @@ public:
 	void setSearchNodeCount(long searchNodeCount);
 	std::string getTargetHiddenZoneId() const;
 	void setTargetHiddenZoneId(const std::string &targetHiddenZoneId);
+	bool getAlignPrimaryZone() const;
+	void setAlignPrimaryZone(bool alignPrimaryZone);
 	std::string getOrderType() const;
 	void setOrderType(const std::string &orderType);
 
@@ -103,6 +105,7 @@ private:
 	std::string dBInstanceClass_;
 	long searchNodeCount_;
 	std::string targetHiddenZoneId_;
+	bool alignPrimaryZone_;
 	std::string orderType_;
 };
 } // namespace Model

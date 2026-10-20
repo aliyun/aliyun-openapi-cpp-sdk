@@ -43,6 +43,15 @@ void DescribeDBInstanceEncryptionKeyRequest::setAccessKeyId(const std::string &a
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstanceEncryptionKeyRequest::getEncryptionType() const {
+  return encryptionType_;
+}
+
+void DescribeDBInstanceEncryptionKeyRequest::setEncryptionType(const std::string &encryptionType) {
+  encryptionType_ = encryptionType;
+  setParameter(std::string("EncryptionType"), encryptionType);
+}
+
 std::string DescribeDBInstanceEncryptionKeyRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -987,6 +987,78 @@ DdsClient::DescribeActiveOperationTasksOutcomeCallable DdsClient::describeActive
 	return task->get_future();
 }
 
+DdsClient::DescribeAdvancedBackupPolicyOutcome DdsClient::describeAdvancedBackupPolicy(const DescribeAdvancedBackupPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAdvancedBackupPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAdvancedBackupPolicyOutcome(DescribeAdvancedBackupPolicyResult(outcome.result()));
+	else
+		return DescribeAdvancedBackupPolicyOutcome(outcome.error());
+}
+
+void DdsClient::describeAdvancedBackupPolicyAsync(const DescribeAdvancedBackupPolicyRequest& request, const DescribeAdvancedBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAdvancedBackupPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeAdvancedBackupPolicyOutcomeCallable DdsClient::describeAdvancedBackupPolicyCallable(const DescribeAdvancedBackupPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAdvancedBackupPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAdvancedBackupPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeAdvancedBackupStatusOutcome DdsClient::describeAdvancedBackupStatus(const DescribeAdvancedBackupStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAdvancedBackupStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAdvancedBackupStatusOutcome(DescribeAdvancedBackupStatusResult(outcome.result()));
+	else
+		return DescribeAdvancedBackupStatusOutcome(outcome.error());
+}
+
+void DdsClient::describeAdvancedBackupStatusAsync(const DescribeAdvancedBackupStatusRequest& request, const DescribeAdvancedBackupStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAdvancedBackupStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeAdvancedBackupStatusOutcomeCallable DdsClient::describeAdvancedBackupStatusCallable(const DescribeAdvancedBackupStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAdvancedBackupStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAdvancedBackupStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeAuditLogFilterOutcome DdsClient::describeAuditLogFilter(const DescribeAuditLogFilterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3213,6 +3285,78 @@ DdsClient::ModifyActiveOperationTasksOutcomeCallable DdsClient::modifyActiveOper
 			[this, request]()
 			{
 			return this->modifyActiveOperationTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::ModifyAdvancedBackupPolicyOutcome DdsClient::modifyAdvancedBackupPolicy(const ModifyAdvancedBackupPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAdvancedBackupPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAdvancedBackupPolicyOutcome(ModifyAdvancedBackupPolicyResult(outcome.result()));
+	else
+		return ModifyAdvancedBackupPolicyOutcome(outcome.error());
+}
+
+void DdsClient::modifyAdvancedBackupPolicyAsync(const ModifyAdvancedBackupPolicyRequest& request, const ModifyAdvancedBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAdvancedBackupPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifyAdvancedBackupPolicyOutcomeCallable DdsClient::modifyAdvancedBackupPolicyCallable(const ModifyAdvancedBackupPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAdvancedBackupPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAdvancedBackupPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::ModifyAdvancedBackupStatusOutcome DdsClient::modifyAdvancedBackupStatus(const ModifyAdvancedBackupStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAdvancedBackupStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAdvancedBackupStatusOutcome(ModifyAdvancedBackupStatusResult(outcome.result()));
+	else
+		return ModifyAdvancedBackupStatusOutcome(outcome.error());
+}
+
+void DdsClient::modifyAdvancedBackupStatusAsync(const ModifyAdvancedBackupStatusRequest& request, const ModifyAdvancedBackupStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAdvancedBackupStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifyAdvancedBackupStatusOutcomeCallable DdsClient::modifyAdvancedBackupStatusCallable(const ModifyAdvancedBackupStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAdvancedBackupStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAdvancedBackupStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

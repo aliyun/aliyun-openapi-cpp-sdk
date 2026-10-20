@@ -187,6 +187,15 @@ void ModifyNodeSpecBatchRequest::setTargetHiddenZoneId(const std::string &target
   setParameter(std::string("TargetHiddenZoneId"), targetHiddenZoneId);
 }
 
+bool ModifyNodeSpecBatchRequest::getAlignPrimaryZone() const {
+  return alignPrimaryZone_;
+}
+
+void ModifyNodeSpecBatchRequest::setAlignPrimaryZone(bool alignPrimaryZone) {
+  alignPrimaryZone_ = alignPrimaryZone;
+  setParameter(std::string("AlignPrimaryZone"), alignPrimaryZone ? "true" : "false");
+}
+
 std::string ModifyNodeSpecBatchRequest::getOrderType() const {
   return orderType_;
 }

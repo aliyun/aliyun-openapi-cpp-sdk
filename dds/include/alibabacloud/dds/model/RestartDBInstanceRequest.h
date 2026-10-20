@@ -32,6 +32,8 @@ public:
 	~RestartDBInstanceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getNodeType() const;
+	void setNodeType(const std::string &nodeType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSwitchMode() const;
@@ -42,6 +44,8 @@ public:
 	void setNodeId(const std::string &nodeId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	bool getParallelRestartMongos() const;
+	void setParallelRestartMongos(bool parallelRestartMongos);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
@@ -49,11 +53,13 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string nodeType_;
 	std::string accessKeyId_;
 	std::string switchMode_;
 	std::string dBInstanceId_;
 	std::string nodeId_;
 	std::string resourceOwnerAccount_;
+	bool parallelRestartMongos_;
 	std::string ownerAccount_;
 	long ownerId_;
 };

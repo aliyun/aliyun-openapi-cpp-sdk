@@ -49,6 +49,41 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					struct NetworkAddress
+					{
+						std::string role;
+						std::string networkAddress;
+						std::string vPCId;
+						std::string networkType;
+						std::string nodeType;
+						std::string vSwitchId;
+						std::string expiredTime;
+						std::string port;
+						std::string nodeId;
+						std::string iPAddress;
+					};
+					struct ConfigserverAttribute
+					{
+						std::string status;
+						std::string nodeClass;
+						std::string nodeDescription;
+						int maxConnections;
+						std::string currentKernelVersion;
+						int port;
+						std::string nodeId;
+						int nodeStorage;
+						std::string lockMode;
+						std::string connectString;
+						int maxIOPS;
+					};
+					struct ShardSearchNodesItem
+					{
+						std::string searchNodeCount;
+						std::string searchNodeId;
+						std::string nodeId;
+						std::string searchNodeClass;
+						std::string searchNodeStorage;
+					};
 					struct MongosAttribute
 					{
 						std::string connectSting;
@@ -69,11 +104,15 @@ namespace AlibabaCloud
 					struct ShardAttribute
 					{
 						std::string status;
+						int ebsIOPS;
 						int maxConnections;
 						int readonlyReplicas;
 						int port;
+						int ebsBandwidth;
+						int ecsIOPS;
 						std::string lockMode;
 						std::string replicaSetName;
+						int ecsBandwidth;
 						std::string maxDiskMbps;
 						int maxIOPS;
 						std::string nodeClass;
@@ -82,33 +121,6 @@ namespace AlibabaCloud
 						std::string nodeId;
 						int nodeStorage;
 						std::string connectString;
-					};
-					struct ConfigserverAttribute
-					{
-						std::string status;
-						std::string nodeClass;
-						std::string nodeDescription;
-						int maxConnections;
-						std::string currentKernelVersion;
-						int port;
-						std::string nodeId;
-						int nodeStorage;
-						std::string lockMode;
-						std::string connectString;
-						int maxIOPS;
-					};
-					struct NetworkAddress
-					{
-						std::string role;
-						std::string networkAddress;
-						std::string vPCId;
-						std::string networkType;
-						std::string nodeType;
-						std::string vSwitchId;
-						std::string expiredTime;
-						std::string port;
-						std::string nodeId;
-						std::string iPAddress;
 					};
 					std::string resourceGroupId;
 					std::string capacityUnit;
@@ -137,6 +149,7 @@ namespace AlibabaCloud
 					std::string dBInstanceClass;
 					std::string vSwitchId;
 					std::string lockMode;
+					int ecsBandwidth;
 					long provisionedIops;
 					std::string currentKernelVersion;
 					std::string creationTime;
@@ -144,7 +157,10 @@ namespace AlibabaCloud
 					std::vector<DBInstance::ConfigserverAttribute> configserverList;
 					std::string expireTime;
 					std::string disasterRecoveryInfo;
+					int ebsIOPS;
 					std::string vPCCloudInstanceIds;
+					std::vector<DBInstance::ShardSearchNodesItem> shardSearchNodes;
+					int ebsBandwidth;
 					std::string encryptionKey;
 					std::string storageEngine;
 					std::string maintainEndTime;
@@ -154,12 +170,14 @@ namespace AlibabaCloud
 					std::string maintainStartTime;
 					bool burstingEnabled;
 					bool coldDataEnabled;
+					bool aIGatewayEnabled;
 					std::string zoneId;
 					std::string readonlyReplicas;
 					std::string replicationFactor;
 					std::string cloudType;
 					std::string dBInstanceOrderStatus;
 					std::vector<DBInstance::ShardAttribute> shardList;
+					int ecsIOPS;
 					int maxIOPS;
 					std::string secondaryZoneId;
 					int searchNodeStorage;
@@ -168,6 +186,7 @@ namespace AlibabaCloud
 					std::string protocolType;
 					std::string chargeType;
 					std::string regionId;
+					std::string originalStorageType;
 					std::string kindCode;
 					std::string searchNodeClass;
 				};

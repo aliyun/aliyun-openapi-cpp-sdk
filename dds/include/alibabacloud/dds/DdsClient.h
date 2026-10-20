@@ -74,6 +74,10 @@
 #include "model/DescribeActiveOperationTaskTypeResult.h"
 #include "model/DescribeActiveOperationTasksRequest.h"
 #include "model/DescribeActiveOperationTasksResult.h"
+#include "model/DescribeAdvancedBackupPolicyRequest.h"
+#include "model/DescribeAdvancedBackupPolicyResult.h"
+#include "model/DescribeAdvancedBackupStatusRequest.h"
+#include "model/DescribeAdvancedBackupStatusResult.h"
 #include "model/DescribeAuditLogFilterRequest.h"
 #include "model/DescribeAuditLogFilterResult.h"
 #include "model/DescribeAuditPolicyRequest.h"
@@ -198,6 +202,10 @@
 #include "model/ModifyActiveOperationMaintenanceConfigResult.h"
 #include "model/ModifyActiveOperationTasksRequest.h"
 #include "model/ModifyActiveOperationTasksResult.h"
+#include "model/ModifyAdvancedBackupPolicyRequest.h"
+#include "model/ModifyAdvancedBackupPolicyResult.h"
+#include "model/ModifyAdvancedBackupStatusRequest.h"
+#include "model/ModifyAdvancedBackupStatusResult.h"
 #include "model/ModifyAuditLogFilterRequest.h"
 #include "model/ModifyAuditLogFilterResult.h"
 #include "model/ModifyAuditPolicyRequest.h"
@@ -371,6 +379,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeActiveOperationTasksResult> DescribeActiveOperationTasksOutcome;
 			typedef std::future<DescribeActiveOperationTasksOutcome> DescribeActiveOperationTasksOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeActiveOperationTasksRequest&, const DescribeActiveOperationTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveOperationTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAdvancedBackupPolicyResult> DescribeAdvancedBackupPolicyOutcome;
+			typedef std::future<DescribeAdvancedBackupPolicyOutcome> DescribeAdvancedBackupPolicyOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeAdvancedBackupPolicyRequest&, const DescribeAdvancedBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdvancedBackupPolicyAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAdvancedBackupStatusResult> DescribeAdvancedBackupStatusOutcome;
+			typedef std::future<DescribeAdvancedBackupStatusOutcome> DescribeAdvancedBackupStatusOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeAdvancedBackupStatusRequest&, const DescribeAdvancedBackupStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdvancedBackupStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuditLogFilterResult> DescribeAuditLogFilterOutcome;
 			typedef std::future<DescribeAuditLogFilterOutcome> DescribeAuditLogFilterOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeAuditLogFilterRequest&, const DescribeAuditLogFilterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilterAsyncHandler;
@@ -557,6 +571,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyActiveOperationTasksResult> ModifyActiveOperationTasksOutcome;
 			typedef std::future<ModifyActiveOperationTasksOutcome> ModifyActiveOperationTasksOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyActiveOperationTasksRequest&, const ModifyActiveOperationTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyActiveOperationTasksAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAdvancedBackupPolicyResult> ModifyAdvancedBackupPolicyOutcome;
+			typedef std::future<ModifyAdvancedBackupPolicyOutcome> ModifyAdvancedBackupPolicyOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::ModifyAdvancedBackupPolicyRequest&, const ModifyAdvancedBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAdvancedBackupPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAdvancedBackupStatusResult> ModifyAdvancedBackupStatusOutcome;
+			typedef std::future<ModifyAdvancedBackupStatusOutcome> ModifyAdvancedBackupStatusOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::ModifyAdvancedBackupStatusRequest&, const ModifyAdvancedBackupStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAdvancedBackupStatusAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAuditLogFilterResult> ModifyAuditLogFilterOutcome;
 			typedef std::future<ModifyAuditLogFilterOutcome> ModifyAuditLogFilterOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyAuditLogFilterRequest&, const ModifyAuditLogFilterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditLogFilterAsyncHandler;
@@ -769,6 +789,12 @@ namespace AlibabaCloud
 			DescribeActiveOperationTasksOutcome describeActiveOperationTasks(const Model::DescribeActiveOperationTasksRequest &request)const;
 			void describeActiveOperationTasksAsync(const Model::DescribeActiveOperationTasksRequest& request, const DescribeActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeActiveOperationTasksOutcomeCallable describeActiveOperationTasksCallable(const Model::DescribeActiveOperationTasksRequest& request) const;
+			DescribeAdvancedBackupPolicyOutcome describeAdvancedBackupPolicy(const Model::DescribeAdvancedBackupPolicyRequest &request)const;
+			void describeAdvancedBackupPolicyAsync(const Model::DescribeAdvancedBackupPolicyRequest& request, const DescribeAdvancedBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAdvancedBackupPolicyOutcomeCallable describeAdvancedBackupPolicyCallable(const Model::DescribeAdvancedBackupPolicyRequest& request) const;
+			DescribeAdvancedBackupStatusOutcome describeAdvancedBackupStatus(const Model::DescribeAdvancedBackupStatusRequest &request)const;
+			void describeAdvancedBackupStatusAsync(const Model::DescribeAdvancedBackupStatusRequest& request, const DescribeAdvancedBackupStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAdvancedBackupStatusOutcomeCallable describeAdvancedBackupStatusCallable(const Model::DescribeAdvancedBackupStatusRequest& request) const;
 			DescribeAuditLogFilterOutcome describeAuditLogFilter(const Model::DescribeAuditLogFilterRequest &request)const;
 			void describeAuditLogFilterAsync(const Model::DescribeAuditLogFilterRequest& request, const DescribeAuditLogFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditLogFilterOutcomeCallable describeAuditLogFilterCallable(const Model::DescribeAuditLogFilterRequest& request) const;
@@ -955,6 +981,12 @@ namespace AlibabaCloud
 			ModifyActiveOperationTasksOutcome modifyActiveOperationTasks(const Model::ModifyActiveOperationTasksRequest &request)const;
 			void modifyActiveOperationTasksAsync(const Model::ModifyActiveOperationTasksRequest& request, const ModifyActiveOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyActiveOperationTasksOutcomeCallable modifyActiveOperationTasksCallable(const Model::ModifyActiveOperationTasksRequest& request) const;
+			ModifyAdvancedBackupPolicyOutcome modifyAdvancedBackupPolicy(const Model::ModifyAdvancedBackupPolicyRequest &request)const;
+			void modifyAdvancedBackupPolicyAsync(const Model::ModifyAdvancedBackupPolicyRequest& request, const ModifyAdvancedBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAdvancedBackupPolicyOutcomeCallable modifyAdvancedBackupPolicyCallable(const Model::ModifyAdvancedBackupPolicyRequest& request) const;
+			ModifyAdvancedBackupStatusOutcome modifyAdvancedBackupStatus(const Model::ModifyAdvancedBackupStatusRequest &request)const;
+			void modifyAdvancedBackupStatusAsync(const Model::ModifyAdvancedBackupStatusRequest& request, const ModifyAdvancedBackupStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAdvancedBackupStatusOutcomeCallable modifyAdvancedBackupStatusCallable(const Model::ModifyAdvancedBackupStatusRequest& request) const;
 			ModifyAuditLogFilterOutcome modifyAuditLogFilter(const Model::ModifyAuditLogFilterRequest &request)const;
 			void modifyAuditLogFilterAsync(const Model::ModifyAuditLogFilterRequest& request, const ModifyAuditLogFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAuditLogFilterOutcomeCallable modifyAuditLogFilterCallable(const Model::ModifyAuditLogFilterRequest& request) const;

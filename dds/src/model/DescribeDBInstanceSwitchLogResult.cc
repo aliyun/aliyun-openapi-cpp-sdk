@@ -43,22 +43,22 @@ void DescribeDBInstanceSwitchLogResult::parse(const std::string &payload)
 	for (auto valueLogItemsLogItemsItem : allLogItemsNode)
 	{
 		LogItemsItem logItemsObject;
-		if(!valueLogItemsLogItemsItem["SwitchStatus"].isNull())
-			logItemsObject.switchStatus = valueLogItemsLogItemsItem["SwitchStatus"].asString();
-		if(!valueLogItemsLogItemsItem["SwitchTime"].isNull())
-			logItemsObject.switchTime = valueLogItemsLogItemsItem["SwitchTime"].asString();
 		if(!valueLogItemsLogItemsItem["SwitchCode"].isNull())
 			logItemsObject.switchCode = valueLogItemsLogItemsItem["SwitchCode"].asString();
 		if(!valueLogItemsLogItemsItem["NodeId"].isNull())
 			logItemsObject.nodeId = valueLogItemsLogItemsItem["NodeId"].asString();
+		if(!valueLogItemsLogItemsItem["SwitchStatus"].isNull())
+			logItemsObject.switchStatus = valueLogItemsLogItemsItem["SwitchStatus"].asString();
+		if(!valueLogItemsLogItemsItem["SwitchTime"].isNull())
+			logItemsObject.switchTime = valueLogItemsLogItemsItem["SwitchTime"].asString();
 		logItems_.push_back(logItemsObject);
 	}
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stol(value["PageNumber"].asString());
 

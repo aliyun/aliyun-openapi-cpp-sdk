@@ -39,12 +39,12 @@ void DescribeDBInstanceSpecInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CPU"].isNull())
-		cPU_ = value["CPU"].asString();
-	if(!value["Memory"].isNull())
-		memory_ = value["Memory"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
+	if(!value["Memory"].isNull())
+		memory_ = value["Memory"].asString();
+	if(!value["CPU"].isNull())
+		cPU_ = value["CPU"].asString();
 
 }
 

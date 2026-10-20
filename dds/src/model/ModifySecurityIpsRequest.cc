@@ -34,6 +34,15 @@ void ModifySecurityIpsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifySecurityIpsRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void ModifySecurityIpsRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::string ModifySecurityIpsRequest::getSecurityIps() const {
   return securityIps_;
 }
@@ -77,6 +86,15 @@ std::string ModifySecurityIpsRequest::getModifyMode() const {
 void ModifySecurityIpsRequest::setModifyMode(const std::string &modifyMode) {
   modifyMode_ = modifyMode;
   setParameter(std::string("ModifyMode"), modifyMode);
+}
+
+bool ModifySecurityIpsRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void ModifySecurityIpsRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 std::string ModifySecurityIpsRequest::getResourceOwnerAccount() const {

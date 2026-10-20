@@ -43,40 +43,40 @@ void DescribeBinlogFilesResult::parse(const std::string &payload)
 	for (auto valueItemsLogFile : allItemsNode)
 	{
 		LogFile itemsObject;
-		if(!valueItemsLogFile["LogFileName"].isNull())
-			itemsObject.logFileName = valueItemsLogFile["LogFileName"].asString();
-		if(!valueItemsLogFile["DumpDownloadURL"].isNull())
-			itemsObject.dumpDownloadURL = valueItemsLogFile["DumpDownloadURL"].asString();
-		if(!valueItemsLogFile["LogBeginTime"].isNull())
-			itemsObject.logBeginTime = valueItemsLogFile["LogBeginTime"].asString();
-		if(!valueItemsLogFile["DumpBucket"].isNull())
-			itemsObject.dumpBucket = valueItemsLogFile["DumpBucket"].asString();
-		if(!valueItemsLogFile["LinkExpiredTime"].isNull())
-			itemsObject.linkExpiredTime = valueItemsLogFile["LinkExpiredTime"].asString();
 		if(!valueItemsLogFile["DownloadLink"].isNull())
 			itemsObject.downloadLink = valueItemsLogFile["DownloadLink"].asString();
-		if(!valueItemsLogFile["OSSEndpoint"].isNull())
-			itemsObject.oSSEndpoint = valueItemsLogFile["OSSEndpoint"].asString();
-		if(!valueItemsLogFile["LogEndTime"].isNull())
-			itemsObject.logEndTime = valueItemsLogFile["LogEndTime"].asString();
-		if(!valueItemsLogFile["DumpState"].isNull())
-			itemsObject.dumpState = std::stoi(valueItemsLogFile["DumpState"].asString());
-		if(!valueItemsLogFile["FileSize"].isNull())
-			itemsObject.fileSize = valueItemsLogFile["FileSize"].asString();
-		if(!valueItemsLogFile["FileId"].isNull())
-			itemsObject.fileId = valueItemsLogFile["FileId"].asString();
+		if(!valueItemsLogFile["LogBeginTime"].isNull())
+			itemsObject.logBeginTime = valueItemsLogFile["LogBeginTime"].asString();
 		if(!valueItemsLogFile["BinLogId"].isNull())
 			itemsObject.binLogId = valueItemsLogFile["BinLogId"].asString();
+		if(!valueItemsLogFile["LogFileName"].isNull())
+			itemsObject.logFileName = valueItemsLogFile["LogFileName"].asString();
+		if(!valueItemsLogFile["OSSEndpoint"].isNull())
+			itemsObject.oSSEndpoint = valueItemsLogFile["OSSEndpoint"].asString();
 		if(!valueItemsLogFile["LogStatus"].isNull())
 			itemsObject.logStatus = valueItemsLogFile["LogStatus"].asString();
+		if(!valueItemsLogFile["DumpDownloadURL"].isNull())
+			itemsObject.dumpDownloadURL = valueItemsLogFile["DumpDownloadURL"].asString();
+		if(!valueItemsLogFile["LinkExpiredTime"].isNull())
+			itemsObject.linkExpiredTime = valueItemsLogFile["LinkExpiredTime"].asString();
+		if(!valueItemsLogFile["DumpState"].isNull())
+			itemsObject.dumpState = std::stoi(valueItemsLogFile["DumpState"].asString());
+		if(!valueItemsLogFile["LogEndTime"].isNull())
+			itemsObject.logEndTime = valueItemsLogFile["LogEndTime"].asString();
+		if(!valueItemsLogFile["FileId"].isNull())
+			itemsObject.fileId = valueItemsLogFile["FileId"].asString();
+		if(!valueItemsLogFile["DumpBucket"].isNull())
+			itemsObject.dumpBucket = valueItemsLogFile["DumpBucket"].asString();
+		if(!valueItemsLogFile["FileSize"].isNull())
+			itemsObject.fileSize = valueItemsLogFile["FileSize"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["MaxRecordsPerPage"].isNull())
 		maxRecordsPerPage_ = std::stoi(value["MaxRecordsPerPage"].asString());
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

@@ -46,6 +46,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getDBName() const;
+	void setDBName(const std::string &dBName);
 	std::string getCharacterType() const;
 	void setCharacterType(const std::string &characterType);
 
@@ -58,6 +60,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string dBName_;
 	std::string characterType_;
 };
 } // namespace Model

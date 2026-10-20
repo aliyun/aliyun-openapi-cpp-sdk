@@ -43,30 +43,30 @@ void DescribeRestoreDBInstanceListResult::parse(const std::string &payload)
 	for (auto valueDBInstancesDBInstance : allDBInstancesNode)
 	{
 		DBInstance dBInstancesObject;
-		if(!valueDBInstancesDBInstance["CreationTime"].isNull())
-			dBInstancesObject.creationTime = valueDBInstancesDBInstance["CreationTime"].asString();
-		if(!valueDBInstancesDBInstance["LockMode"].isNull())
-			dBInstancesObject.lockMode = valueDBInstancesDBInstance["LockMode"].asString();
+		if(!valueDBInstancesDBInstance["IsDeleted"].isNull())
+			dBInstancesObject.isDeleted = std::stoi(valueDBInstancesDBInstance["IsDeleted"].asString());
 		if(!valueDBInstancesDBInstance["EngineVersion"].isNull())
 			dBInstancesObject.engineVersion = valueDBInstancesDBInstance["EngineVersion"].asString();
-		if(!valueDBInstancesDBInstance["DBInstanceDescription"].isNull())
-			dBInstancesObject.dBInstanceDescription = valueDBInstancesDBInstance["DBInstanceDescription"].asString();
-		if(!valueDBInstancesDBInstance["DBInstanceType"].isNull())
-			dBInstancesObject.dBInstanceType = valueDBInstancesDBInstance["DBInstanceType"].asString();
 		if(!valueDBInstancesDBInstance["DBInstanceStatus"].isNull())
 			dBInstancesObject.dBInstanceStatus = valueDBInstancesDBInstance["DBInstanceStatus"].asString();
-		if(!valueDBInstancesDBInstance["RegionId"].isNull())
-			dBInstancesObject.regionId = valueDBInstancesDBInstance["RegionId"].asString();
 		if(!valueDBInstancesDBInstance["ZoneId"].isNull())
 			dBInstancesObject.zoneId = valueDBInstancesDBInstance["ZoneId"].asString();
 		if(!valueDBInstancesDBInstance["DBInstanceId"].isNull())
 			dBInstancesObject.dBInstanceId = valueDBInstancesDBInstance["DBInstanceId"].asString();
-		if(!valueDBInstancesDBInstance["SecondaryZoneId"].isNull())
-			dBInstancesObject.secondaryZoneId = valueDBInstancesDBInstance["SecondaryZoneId"].asString();
 		if(!valueDBInstancesDBInstance["HiddenZoneId"].isNull())
 			dBInstancesObject.hiddenZoneId = valueDBInstancesDBInstance["HiddenZoneId"].asString();
-		if(!valueDBInstancesDBInstance["IsDeleted"].isNull())
-			dBInstancesObject.isDeleted = std::stoi(valueDBInstancesDBInstance["IsDeleted"].asString());
+		if(!valueDBInstancesDBInstance["CreationTime"].isNull())
+			dBInstancesObject.creationTime = valueDBInstancesDBInstance["CreationTime"].asString();
+		if(!valueDBInstancesDBInstance["DBInstanceType"].isNull())
+			dBInstancesObject.dBInstanceType = valueDBInstancesDBInstance["DBInstanceType"].asString();
+		if(!valueDBInstancesDBInstance["LockMode"].isNull())
+			dBInstancesObject.lockMode = valueDBInstancesDBInstance["LockMode"].asString();
+		if(!valueDBInstancesDBInstance["RegionId"].isNull())
+			dBInstancesObject.regionId = valueDBInstancesDBInstance["RegionId"].asString();
+		if(!valueDBInstancesDBInstance["DBInstanceDescription"].isNull())
+			dBInstancesObject.dBInstanceDescription = valueDBInstancesDBInstance["DBInstanceDescription"].asString();
+		if(!valueDBInstancesDBInstance["SecondaryZoneId"].isNull())
+			dBInstancesObject.secondaryZoneId = valueDBInstancesDBInstance["SecondaryZoneId"].asString();
 		dBInstances_.push_back(dBInstancesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -43,12 +43,12 @@ void DescribeDBInstancePerformanceResult::parse(const std::string &payload)
 	for (auto valuePerformanceKeysPerformanceKey : allPerformanceKeysNode)
 	{
 		PerformanceKey performanceKeysObject;
-		if(!valuePerformanceKeysPerformanceKey["Key"].isNull())
-			performanceKeysObject.key = valuePerformanceKeysPerformanceKey["Key"].asString();
-		if(!valuePerformanceKeysPerformanceKey["Unit"].isNull())
-			performanceKeysObject.unit = valuePerformanceKeysPerformanceKey["Unit"].asString();
 		if(!valuePerformanceKeysPerformanceKey["ValueFormat"].isNull())
 			performanceKeysObject.valueFormat = valuePerformanceKeysPerformanceKey["ValueFormat"].asString();
+		if(!valuePerformanceKeysPerformanceKey["Unit"].isNull())
+			performanceKeysObject.unit = valuePerformanceKeysPerformanceKey["Unit"].asString();
+		if(!valuePerformanceKeysPerformanceKey["Key"].isNull())
+			performanceKeysObject.key = valuePerformanceKeysPerformanceKey["Key"].asString();
 		auto allPerformanceValuesNode = valuePerformanceKeysPerformanceKey["PerformanceValues"]["PerformanceValue"];
 		for (auto valuePerformanceKeysPerformanceKeyPerformanceValuesPerformanceValue : allPerformanceValuesNode)
 		{

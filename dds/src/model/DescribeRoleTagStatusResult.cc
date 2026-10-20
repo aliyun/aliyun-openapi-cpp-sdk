@@ -39,10 +39,10 @@ void DescribeRoleTagStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RoleTagStatus"].isNull())
-		roleTagStatus_ = value["RoleTagStatus"].asString();
 	if(!value["ShardRoleTagStatus"].isNull())
 		shardRoleTagStatus_ = value["ShardRoleTagStatus"].asString();
+	if(!value["RoleTagStatus"].isNull())
+		roleTagStatus_ = value["RoleTagStatus"].asString();
 
 }
 

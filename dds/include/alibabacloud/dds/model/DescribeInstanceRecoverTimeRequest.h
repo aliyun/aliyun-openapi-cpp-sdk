@@ -46,6 +46,8 @@ public:
 	void setDestRegion(const std::string &destRegion);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	bool getOnlyDbTableRecovery() const;
+	void setOnlyDbTableRecovery(bool onlyDbTableRecovery);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
@@ -60,6 +62,7 @@ private:
 	std::string dBInstanceId_;
 	std::string destRegion_;
 	std::string resourceOwnerAccount_;
+	bool onlyDbTableRecovery_;
 	std::string ownerAccount_;
 	long ownerId_;
 };

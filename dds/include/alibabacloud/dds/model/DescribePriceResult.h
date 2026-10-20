@@ -119,6 +119,30 @@ namespace AlibabaCloud
 						bool isContractActivity;
 						ContractActivity contractActivity;
 					};
+					struct OptionalPromotion
+					{
+						std::string activityCategory;
+						std::string promotionName;
+						std::vector<std::string> promotionRuleIdList;
+						std::string promotionOptionNo;
+						double canPromFee;
+						std::string activityExtInfo;
+						bool show;
+						std::string optionCode;
+						bool selected;
+						std::vector<std::string> targetArticleItemCodes;
+					};
+					struct PromDetail
+					{
+						std::string promotionName;
+						std::string derivedPromType;
+						long promotionId;
+						double finalPromFee;
+						std::string promotionCode;
+						std::string activityExtInfo;
+						std::string optionCode;
+						std::string promType;
+					};
 					struct ModuleInstanceItem
 					{
 						struct DepreciateInfo1
@@ -133,7 +157,7 @@ namespace AlibabaCloud
 							double listPrice;
 							bool isContractActivity;
 						};
-						struct PromDetail
+						struct PromDetail3
 						{
 							std::string promotionName;
 							std::string derivedPromType;
@@ -155,7 +179,7 @@ namespace AlibabaCloud
 						std::string moduleName;
 						double standDiscountPrice;
 						std::string discountFee;
-						std::vector<ModuleInstanceItem::PromDetail> promDetailList2;
+						std::vector<ModuleInstanceItem::PromDetail3> promDetailList2;
 						bool needOrderPay;
 						double payFee;
 						bool contractActivity;
@@ -170,30 +194,6 @@ namespace AlibabaCloud
 						std::vector<ModuleInstanceItem::ModuleAttr> moduleAttrs;
 						std::string priceType;
 					};
-					struct OptionalPromotion
-					{
-						std::string activityCategory;
-						std::string promotionName;
-						std::vector<std::string> promotionRuleIdList;
-						std::string promotionOptionNo;
-						double canPromFee;
-						std::string activityExtInfo;
-						bool show;
-						std::string optionCode;
-						bool selected;
-						std::vector<std::string> targetArticleItemCodes;
-					};
-					struct PromDetail3
-					{
-						std::string promotionName;
-						std::string derivedPromType;
-						long promotionId;
-						double finalPromFee;
-						std::string promotionCode;
-						std::string activityExtInfo;
-						std::string optionCode;
-						std::string promType;
-					};
 					double standPrice;
 					std::string instanceId;
 					double standDiscountPrice;
@@ -204,7 +204,7 @@ namespace AlibabaCloud
 					bool contractActivity;
 					std::vector<SubOrder::OptionalPromotion> optionalPromotions;
 					std::string isNewOfficialActivity;
-					std::vector<SubOrder::PromDetail3> promDetailList;
+					std::vector<SubOrder::PromDetail> promDetailList;
 					std::vector<std::string> ruleIds;
 					std::vector<SubOrder::ModuleInstanceItem> moduleInstance;
 					bool isContractActivity;

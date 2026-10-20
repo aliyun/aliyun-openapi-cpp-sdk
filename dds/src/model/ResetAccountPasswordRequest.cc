@@ -97,6 +97,15 @@ void ResetAccountPasswordRequest::setAccountPassword(const std::string &accountP
   setParameter(std::string("AccountPassword"), accountPassword);
 }
 
+std::string ResetAccountPasswordRequest::getDBName() const {
+  return dBName_;
+}
+
+void ResetAccountPasswordRequest::setDBName(const std::string &dBName) {
+  dBName_ = dBName;
+  setParameter(std::string("DBName"), dBName);
+}
+
 std::string ResetAccountPasswordRequest::getCharacterType() const {
   return characterType_;
 }

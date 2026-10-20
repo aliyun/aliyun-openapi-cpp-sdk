@@ -214,6 +214,15 @@ void ModifyNodeSpecRequest::setTargetHiddenZoneId(const std::string &targetHidde
   setParameter(std::string("TargetHiddenZoneId"), targetHiddenZoneId);
 }
 
+bool ModifyNodeSpecRequest::getAlignPrimaryZone() const {
+  return alignPrimaryZone_;
+}
+
+void ModifyNodeSpecRequest::setAlignPrimaryZone(bool alignPrimaryZone) {
+  alignPrimaryZone_ = alignPrimaryZone;
+  setParameter(std::string("AlignPrimaryZone"), alignPrimaryZone ? "true" : "false");
+}
+
 std::string ModifyNodeSpecRequest::getOrderType() const {
   return orderType_;
 }

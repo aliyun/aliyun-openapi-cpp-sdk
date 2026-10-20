@@ -40,20 +40,20 @@ void DescribeActiveOperationMaintenanceConfigResult::parse(const std::string &pa
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto configNode = value["Config"];
-	if(!configNode["CycleType"].isNull())
-		config_.cycleType = configNode["CycleType"].asString();
 	if(!configNode["Status"].isNull())
 		config_.status = std::stoi(configNode["Status"].asString());
+	if(!configNode["CycleTime"].isNull())
+		config_.cycleTime = configNode["CycleTime"].asString();
+	if(!configNode["CycleType"].isNull())
+		config_.cycleType = configNode["CycleType"].asString();
+	if(!configNode["MaintainEndTime"].isNull())
+		config_.maintainEndTime = configNode["MaintainEndTime"].asString();
+	if(!configNode["CreatedTime"].isNull())
+		config_.createdTime = configNode["CreatedTime"].asString();
 	if(!configNode["ModifiedTime"].isNull())
 		config_.modifiedTime = configNode["ModifiedTime"].asString();
 	if(!configNode["MaintainStartTime"].isNull())
 		config_.maintainStartTime = configNode["MaintainStartTime"].asString();
-	if(!configNode["MaintainEndTime"].isNull())
-		config_.maintainEndTime = configNode["MaintainEndTime"].asString();
-	if(!configNode["CycleTime"].isNull())
-		config_.cycleTime = configNode["CycleTime"].asString();
-	if(!configNode["CreatedTime"].isNull())
-		config_.createdTime = configNode["CreatedTime"].asString();
 	if(!value["HasConfig"].isNull())
 		hasConfig_ = std::stoi(value["HasConfig"].asString());
 

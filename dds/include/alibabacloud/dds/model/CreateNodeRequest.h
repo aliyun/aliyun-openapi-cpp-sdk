@@ -64,8 +64,14 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getSearchDBInstanceClass() const;
+	void setSearchDBInstanceClass(const std::string &searchDBInstanceClass);
 	std::string getAccountPassword() const;
 	void setAccountPassword(const std::string &accountPassword);
+	int getSearchNodeCount() const;
+	void setSearchNodeCount(int searchNodeCount);
+	int getSearchStorage() const;
+	void setSearchStorage(int searchStorage);
 
 private:
 	long resourceOwnerId_;
@@ -85,7 +91,10 @@ private:
 	int nodeStorage_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string searchDBInstanceClass_;
 	std::string accountPassword_;
+	int searchNodeCount_;
+	int searchStorage_;
 };
 } // namespace Model
 } // namespace Dds

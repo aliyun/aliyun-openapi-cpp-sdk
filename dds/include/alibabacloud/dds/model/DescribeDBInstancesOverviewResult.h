@@ -34,6 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct DBInstance
 				{
+					struct MongosAttribute
+					{
+						std::string nodeClass;
+						std::string nodeDescription;
+						std::string nodeId;
+					};
 					struct Tag
 					{
 						std::string value;
@@ -45,12 +51,6 @@ namespace AlibabaCloud
 						std::string nodeDescription;
 						int readonlyReplicas;
 						int nodeStorage;
-						std::string nodeId;
-					};
-					struct MongosAttribute
-					{
-						std::string nodeClass;
-						std::string nodeDescription;
 						std::string nodeId;
 					};
 					std::string resourceGroupId;

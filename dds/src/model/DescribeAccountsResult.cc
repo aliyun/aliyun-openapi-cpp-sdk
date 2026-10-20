@@ -43,16 +43,28 @@ void DescribeAccountsResult::parse(const std::string &payload)
 	for (auto valueAccountsAccount : allAccountsNode)
 	{
 		Account accountsObject;
-		if(!valueAccountsAccount["CharacterType"].isNull())
-			accountsObject.characterType = valueAccountsAccount["CharacterType"].asString();
-		if(!valueAccountsAccount["AccountStatus"].isNull())
-			accountsObject.accountStatus = valueAccountsAccount["AccountStatus"].asString();
 		if(!valueAccountsAccount["AccountDescription"].isNull())
 			accountsObject.accountDescription = valueAccountsAccount["AccountDescription"].asString();
+		if(!valueAccountsAccount["AccountStatus"].isNull())
+			accountsObject.accountStatus = valueAccountsAccount["AccountStatus"].asString();
 		if(!valueAccountsAccount["DBInstanceId"].isNull())
 			accountsObject.dBInstanceId = valueAccountsAccount["DBInstanceId"].asString();
+		if(!valueAccountsAccount["DBName"].isNull())
+			accountsObject.dBName = valueAccountsAccount["DBName"].asString();
+		if(!valueAccountsAccount["CharacterType"].isNull())
+			accountsObject.characterType = valueAccountsAccount["CharacterType"].asString();
 		if(!valueAccountsAccount["AccountName"].isNull())
 			accountsObject.accountName = valueAccountsAccount["AccountName"].asString();
+		auto allRolesNode = valueAccountsAccount["Roles"]["Role"];
+		for (auto valueAccountsAccountRolesRole : allRolesNode)
+		{
+			Account::Role rolesObject;
+			if(!valueAccountsAccountRolesRole["Role"].isNull())
+				rolesObject.role = valueAccountsAccountRolesRole["Role"].asString();
+			if(!valueAccountsAccountRolesRole["DBName"].isNull())
+				rolesObject.dBName = valueAccountsAccountRolesRole["DBName"].asString();
+			accountsObject.roles.push_back(rolesObject);
+		}
 		accounts_.push_back(accountsObject);
 	}
 

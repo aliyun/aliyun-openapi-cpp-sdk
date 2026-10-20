@@ -28,10 +28,18 @@ namespace Dds {
 namespace Model {
 class ALIBABACLOUD_DDS_EXPORT CreateAccountRequest : public RpcServiceRequest {
 public:
+	struct Roles {
+		std::string role;
+		std::string dBName;
+	};
 	CreateAccountRequest();
 	~CreateAccountRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::vector<Roles> getRoles() const;
+	void setRoles(const std::vector<Roles> &roles);
+	std::string getAccountDescription() const;
+	void setAccountDescription(const std::string &accountDescription);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getAccountName() const;
@@ -46,11 +54,15 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getAccountPassword() const;
 	void setAccountPassword(const std::string &accountPassword);
+	std::string getDBName() const;
+	void setDBName(const std::string &dBName);
 	std::string getCharacterType() const;
 	void setCharacterType(const std::string &characterType);
 
 private:
 	long resourceOwnerId_;
+	std::vector<Roles> roles_;
+	std::string accountDescription_;
 	std::string accessKeyId_;
 	std::string accountName_;
 	std::string dBInstanceId_;
@@ -58,6 +70,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string accountPassword_;
+	std::string dBName_;
 	std::string characterType_;
 };
 } // namespace Model

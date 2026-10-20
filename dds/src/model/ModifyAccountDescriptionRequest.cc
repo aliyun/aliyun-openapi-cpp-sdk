@@ -97,6 +97,15 @@ void ModifyAccountDescriptionRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ModifyAccountDescriptionRequest::getDBName() const {
+  return dBName_;
+}
+
+void ModifyAccountDescriptionRequest::setDBName(const std::string &dBName) {
+  dBName_ = dBName;
+  setParameter(std::string("DBName"), dBName);
+}
+
 std::string ModifyAccountDescriptionRequest::getCharacterType() const {
   return characterType_;
 }

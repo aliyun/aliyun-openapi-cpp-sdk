@@ -43,18 +43,18 @@ void ModifyGlobalSecurityIPGroupNameResult::parse(const std::string &payload)
 	for (auto valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem : allGlobalSecurityIPGroupNode)
 	{
 		GlobalSecurityIPGroupItem globalSecurityIPGroupObject;
-		if(!valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["GlobalSecurityGroupId"].isNull())
-			globalSecurityIPGroupObject.globalSecurityGroupId = valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["GlobalSecurityGroupId"].asString();
-		if(!valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["GlobalIgName"].isNull())
-			globalSecurityIPGroupObject.globalIgName = valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["GlobalIgName"].asString();
 		if(!valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["SecurityIPType"].isNull())
 			globalSecurityIPGroupObject.securityIPType = valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["SecurityIPType"].asString();
+		if(!valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["GlobalIgName"].isNull())
+			globalSecurityIPGroupObject.globalIgName = valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["GlobalIgName"].asString();
 		if(!valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["GIpList"].isNull())
 			globalSecurityIPGroupObject.gIpList = valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["GIpList"].asString();
-		if(!valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["WhitelistNetType"].isNull())
-			globalSecurityIPGroupObject.whitelistNetType = valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["WhitelistNetType"].asString();
+		if(!valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["GlobalSecurityGroupId"].isNull())
+			globalSecurityIPGroupObject.globalSecurityGroupId = valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["GlobalSecurityGroupId"].asString();
 		if(!valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["RegionId"].isNull())
 			globalSecurityIPGroupObject.regionId = valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["RegionId"].asString();
+		if(!valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["WhitelistNetType"].isNull())
+			globalSecurityIPGroupObject.whitelistNetType = valueGlobalSecurityIPGroupGlobalSecurityIPGroupItem["WhitelistNetType"].asString();
 		globalSecurityIPGroup_.push_back(globalSecurityIPGroupObject);
 	}
 

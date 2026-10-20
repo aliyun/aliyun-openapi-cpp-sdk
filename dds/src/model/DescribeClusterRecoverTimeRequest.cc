@@ -88,6 +88,15 @@ void DescribeClusterRecoverTimeRequest::setResourceOwnerAccount(const std::strin
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+bool DescribeClusterRecoverTimeRequest::getOnlyDbTableRecovery() const {
+  return onlyDbTableRecovery_;
+}
+
+void DescribeClusterRecoverTimeRequest::setOnlyDbTableRecovery(bool onlyDbTableRecovery) {
+  onlyDbTableRecovery_ = onlyDbTableRecovery;
+  setParameter(std::string("OnlyDbTableRecovery"), onlyDbTableRecovery ? "true" : "false");
+}
+
 std::string DescribeClusterRecoverTimeRequest::getOwnerAccount() const {
   return ownerAccount_;
 }

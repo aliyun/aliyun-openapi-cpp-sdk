@@ -43,10 +43,10 @@ void DescribeKmsKeysResult::parse(const std::string &payload)
 	for (auto valueKmsKeysKmsKey : allKmsKeysNode)
 	{
 		KmsKey kmsKeysObject;
-		if(!valueKmsKeysKmsKey["KeyAlias"].isNull())
-			kmsKeysObject.keyAlias = valueKmsKeysKmsKey["KeyAlias"].asString();
 		if(!valueKmsKeysKmsKey["KeyId"].isNull())
 			kmsKeysObject.keyId = valueKmsKeysKmsKey["KeyId"].asString();
+		if(!valueKmsKeysKmsKey["KeyAlias"].isNull())
+			kmsKeysObject.keyAlias = valueKmsKeysKmsKey["KeyAlias"].asString();
 		kmsKeys_.push_back(kmsKeysObject);
 	}
 

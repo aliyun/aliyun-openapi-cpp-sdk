@@ -45,10 +45,10 @@ void DescribeSecurityGroupConfigurationResult::parse(const std::string &payload)
 		RdsEcsSecurityGroupRel itemsObject;
 		if(!valueItemsRdsEcsSecurityGroupRel["SecurityGroupId"].isNull())
 			itemsObject.securityGroupId = valueItemsRdsEcsSecurityGroupRel["SecurityGroupId"].asString();
-		if(!valueItemsRdsEcsSecurityGroupRel["NetType"].isNull())
-			itemsObject.netType = valueItemsRdsEcsSecurityGroupRel["NetType"].asString();
 		if(!valueItemsRdsEcsSecurityGroupRel["RegionId"].isNull())
 			itemsObject.regionId = valueItemsRdsEcsSecurityGroupRel["RegionId"].asString();
+		if(!valueItemsRdsEcsSecurityGroupRel["NetType"].isNull())
+			itemsObject.netType = valueItemsRdsEcsSecurityGroupRel["NetType"].asString();
 		items_.push_back(itemsObject);
 	}
 

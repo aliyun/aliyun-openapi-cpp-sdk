@@ -232,6 +232,15 @@ void ModifyDBInstanceSpecRequest::setTargetHiddenZoneId(const std::string &targe
   setParameter(std::string("TargetHiddenZoneId"), targetHiddenZoneId);
 }
 
+bool ModifyDBInstanceSpecRequest::getAlignPrimaryZone() const {
+  return alignPrimaryZone_;
+}
+
+void ModifyDBInstanceSpecRequest::setAlignPrimaryZone(bool alignPrimaryZone) {
+  alignPrimaryZone_ = alignPrimaryZone;
+  setParameter(std::string("AlignPrimaryZone"), alignPrimaryZone ? "true" : "false");
+}
+
 std::string ModifyDBInstanceSpecRequest::getOrderType() const {
   return orderType_;
 }

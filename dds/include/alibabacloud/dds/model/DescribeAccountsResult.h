@@ -34,9 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct Account
 				{
+					struct Role
+					{
+						std::string role;
+						std::string dBName;
+					};
 					std::string accountDescription;
 					std::string accountStatus;
 					std::string dBInstanceId;
+					std::string dBName;
+					std::vector<Account::Role> roles;
 					std::string characterType;
 					std::string accountName;
 				};

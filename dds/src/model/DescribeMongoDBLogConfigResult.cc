@@ -39,32 +39,32 @@ void DescribeMongoDBLogConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["UserProjectName"].isNull())
-		userProjectName_ = value["UserProjectName"].asString();
-	if(!value["IsUserProjectLogstoreExist"].isNull())
-		isUserProjectLogstoreExist_ = std::stoi(value["IsUserProjectLogstoreExist"].asString());
-	if(!value["IsEtlMetaExist"].isNull())
-		isEtlMetaExist_ = std::stoi(value["IsEtlMetaExist"].asString());
-	if(!value["ServiceType"].isNull())
-		serviceType_ = value["ServiceType"].asString();
 	if(!value["EnableAudit"].isNull())
 		enableAudit_ = value["EnableAudit"].asString() == "true";
-	if(!value["TtlForTrail"].isNull())
-		ttlForTrail_ = std::stol(value["TtlForTrail"].asString());
-	if(!value["UsedStorageForTrail"].isNull())
-		usedStorageForTrail_ = std::stol(value["UsedStorageForTrail"].asString());
+	if(!value["IsUserProjectLogstoreExist"].isNull())
+		isUserProjectLogstoreExist_ = std::stoi(value["IsUserProjectLogstoreExist"].asString());
 	if(!value["PreserveStorageForTrail"].isNull())
 		preserveStorageForTrail_ = std::stol(value["PreserveStorageForTrail"].asString());
-	if(!value["TtlForStandard"].isNull())
-		ttlForStandard_ = std::stol(value["TtlForStandard"].asString());
 	if(!value["UsedStorageForStandard"].isNull())
 		usedStorageForStandard_ = std::stol(value["UsedStorageForStandard"].asString());
-	if(!value["PreserveStorageForStandard"].isNull())
-		preserveStorageForStandard_ = std::stol(value["PreserveStorageForStandard"].asString());
 	if(!value["HotTtlForV2Standard"].isNull())
 		hotTtlForV2Standard_ = std::stol(value["HotTtlForV2Standard"].asString());
+	if(!value["TtlForStandard"].isNull())
+		ttlForStandard_ = std::stol(value["TtlForStandard"].asString());
+	if(!value["PreserveStorageForStandard"].isNull())
+		preserveStorageForStandard_ = std::stol(value["PreserveStorageForStandard"].asString());
+	if(!value["UserProjectName"].isNull())
+		userProjectName_ = value["UserProjectName"].asString();
+	if(!value["ServiceType"].isNull())
+		serviceType_ = value["ServiceType"].asString();
+	if(!value["UsedStorageForTrail"].isNull())
+		usedStorageForTrail_ = std::stol(value["UsedStorageForTrail"].asString());
 	if(!value["TtlForV2Standard"].isNull())
 		ttlForV2Standard_ = std::stol(value["TtlForV2Standard"].asString());
+	if(!value["IsEtlMetaExist"].isNull())
+		isEtlMetaExist_ = std::stoi(value["IsEtlMetaExist"].asString());
+	if(!value["TtlForTrail"].isNull())
+		ttlForTrail_ = std::stol(value["TtlForTrail"].asString());
 
 }
 

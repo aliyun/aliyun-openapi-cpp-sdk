@@ -43,46 +43,46 @@ void DescribeClusterBackupsResult::parse(const std::string &payload)
 	for (auto valueClusterBackupsclusterBackup : allClusterBackupsNode)
 	{
 		ClusterBackup clusterBackupsObject;
-		if(!valueClusterBackupsclusterBackup["IsAvail"].isNull())
-			clusterBackupsObject.isAvail = std::stoi(valueClusterBackupsclusterBackup["IsAvail"].asString());
 		if(!valueClusterBackupsclusterBackup["ClusterBackupId"].isNull())
 			clusterBackupsObject.clusterBackupId = valueClusterBackupsclusterBackup["ClusterBackupId"].asString();
-		if(!valueClusterBackupsclusterBackup["ClusterBackupStatus"].isNull())
-			clusterBackupsObject.clusterBackupStatus = valueClusterBackupsclusterBackup["ClusterBackupStatus"].asString();
 		if(!valueClusterBackupsclusterBackup["ClusterBackupStartTime"].isNull())
 			clusterBackupsObject.clusterBackupStartTime = valueClusterBackupsclusterBackup["ClusterBackupStartTime"].asString();
-		if(!valueClusterBackupsclusterBackup["ClusterBackupSize"].isNull())
-			clusterBackupsObject.clusterBackupSize = valueClusterBackupsclusterBackup["ClusterBackupSize"].asString();
-		if(!valueClusterBackupsclusterBackup["ClusterBackupEndTime"].isNull())
-			clusterBackupsObject.clusterBackupEndTime = valueClusterBackupsclusterBackup["ClusterBackupEndTime"].asString();
-		if(!valueClusterBackupsclusterBackup["ClusterBackupMode"].isNull())
-			clusterBackupsObject.clusterBackupMode = valueClusterBackupsclusterBackup["ClusterBackupMode"].asString();
 		if(!valueClusterBackupsclusterBackup["Progress"].isNull())
 			clusterBackupsObject.progress = valueClusterBackupsclusterBackup["Progress"].asString();
 		if(!valueClusterBackupsclusterBackup["AttachLogStatus"].isNull())
 			clusterBackupsObject.attachLogStatus = valueClusterBackupsclusterBackup["AttachLogStatus"].asString();
 		if(!valueClusterBackupsclusterBackup["EngineVersion"].isNull())
 			clusterBackupsObject.engineVersion = valueClusterBackupsclusterBackup["EngineVersion"].asString();
+		if(!valueClusterBackupsclusterBackup["ClusterBackupSize"].isNull())
+			clusterBackupsObject.clusterBackupSize = valueClusterBackupsclusterBackup["ClusterBackupSize"].asString();
+		if(!valueClusterBackupsclusterBackup["ClusterBackupMode"].isNull())
+			clusterBackupsObject.clusterBackupMode = valueClusterBackupsclusterBackup["ClusterBackupMode"].asString();
+		if(!valueClusterBackupsclusterBackup["IsAvail"].isNull())
+			clusterBackupsObject.isAvail = std::stoi(valueClusterBackupsclusterBackup["IsAvail"].asString());
+		if(!valueClusterBackupsclusterBackup["ClusterBackupStatus"].isNull())
+			clusterBackupsObject.clusterBackupStatus = valueClusterBackupsclusterBackup["ClusterBackupStatus"].asString();
 		if(!valueClusterBackupsclusterBackup["BackupExpireTime"].isNull())
 			clusterBackupsObject.backupExpireTime = valueClusterBackupsclusterBackup["BackupExpireTime"].asString();
+		if(!valueClusterBackupsclusterBackup["ClusterBackupEndTime"].isNull())
+			clusterBackupsObject.clusterBackupEndTime = valueClusterBackupsclusterBackup["ClusterBackupEndTime"].asString();
 		auto allBackupsNode = valueClusterBackupsclusterBackup["Backups"]["backup"];
 		for (auto valueClusterBackupsclusterBackupBackupsbackup : allBackupsNode)
 		{
 			ClusterBackup::Backup backupsObject;
-			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupId"].isNull())
-				backupsObject.backupId = valueClusterBackupsclusterBackupBackupsbackup["BackupId"].asString();
 			if(!valueClusterBackupsclusterBackupBackupsbackup["InstanceName"].isNull())
 				backupsObject.instanceName = valueClusterBackupsclusterBackupBackupsbackup["InstanceName"].asString();
 			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupDownloadURL"].isNull())
 				backupsObject.backupDownloadURL = valueClusterBackupsclusterBackupBackupsbackup["BackupDownloadURL"].asString();
 			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupIntranetDownloadURL"].isNull())
 				backupsObject.backupIntranetDownloadURL = valueClusterBackupsclusterBackupBackupsbackup["BackupIntranetDownloadURL"].asString();
-			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupStartTime"].isNull())
-				backupsObject.backupStartTime = valueClusterBackupsclusterBackupBackupsbackup["BackupStartTime"].asString();
 			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupEndTime"].isNull())
 				backupsObject.backupEndTime = valueClusterBackupsclusterBackupBackupsbackup["BackupEndTime"].asString();
 			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupSize"].isNull())
 				backupsObject.backupSize = valueClusterBackupsclusterBackupBackupsbackup["BackupSize"].asString();
+			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupStartTime"].isNull())
+				backupsObject.backupStartTime = valueClusterBackupsclusterBackupBackupsbackup["BackupStartTime"].asString();
+			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupId"].isNull())
+				backupsObject.backupId = valueClusterBackupsclusterBackupBackupsbackup["BackupId"].asString();
 			if(!valueClusterBackupsclusterBackupBackupsbackup["IsAvail"].isNull())
 				backupsObject.isAvail = valueClusterBackupsclusterBackupBackupsbackup["IsAvail"].asString();
 			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupStatus"].isNull())
@@ -90,14 +90,14 @@ void DescribeClusterBackupsResult::parse(const std::string &payload)
 			if(!valueClusterBackupsclusterBackupBackupsbackup["BackupName"].isNull())
 				backupsObject.backupName = valueClusterBackupsclusterBackupBackupsbackup["BackupName"].asString();
 			auto extraInfo1Node = value["ExtraInfo"];
+			if(!extraInfo1Node["NodeType"].isNull())
+				backupsObject.extraInfo1.nodeType = extraInfo1Node["NodeType"].asString();
 			if(!extraInfo1Node["NodeId"].isNull())
 				backupsObject.extraInfo1.nodeId = extraInfo1Node["NodeId"].asString();
 			if(!extraInfo1Node["StorageSize"].isNull())
 				backupsObject.extraInfo1.storageSize = extraInfo1Node["StorageSize"].asString();
 			if(!extraInfo1Node["InstanceClass"].isNull())
 				backupsObject.extraInfo1.instanceClass = extraInfo1Node["InstanceClass"].asString();
-			if(!extraInfo1Node["NodeType"].isNull())
-				backupsObject.extraInfo1.nodeType = extraInfo1Node["NodeType"].asString();
 			clusterBackupsObject.backups.push_back(backupsObject);
 		}
 		auto extraInfoNode = value["ExtraInfo"];
@@ -105,12 +105,12 @@ void DescribeClusterBackupsResult::parse(const std::string &payload)
 			clusterBackupsObject.extraInfo.registryFromHistory = extraInfoNode["RegistryFromHistory"].asString();
 		clusterBackups_.push_back(clusterBackupsObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

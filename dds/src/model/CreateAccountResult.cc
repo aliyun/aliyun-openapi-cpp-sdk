@@ -39,6 +39,13 @@ void CreateAccountResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["TaskId"].isNull())
+		taskId_ = std::stoi(value["TaskId"].asString());
 
+}
+
+int CreateAccountResult::getTaskId()const
+{
+	return taskId_;
 }
 

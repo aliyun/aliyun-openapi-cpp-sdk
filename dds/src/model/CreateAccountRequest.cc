@@ -34,6 +34,29 @@ void CreateAccountRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::vector<CreateAccountRequest::Roles> CreateAccountRequest::getRoles() const {
+  return roles_;
+}
+
+void CreateAccountRequest::setRoles(const std::vector<CreateAccountRequest::Roles> &roles) {
+  roles_ = roles;
+  for(int dep1 = 0; dep1 != roles.size(); dep1++) {
+  auto rolesObj = roles.at(dep1);
+  std::string rolesObjStr = std::string("Roles") + "." + std::to_string(dep1 + 1);
+    setParameter(rolesObjStr + ".Role", rolesObj.role);
+    setParameter(rolesObjStr + ".DBName", rolesObj.dBName);
+  }
+}
+
+std::string CreateAccountRequest::getAccountDescription() const {
+  return accountDescription_;
+}
+
+void CreateAccountRequest::setAccountDescription(const std::string &accountDescription) {
+  accountDescription_ = accountDescription;
+  setParameter(std::string("AccountDescription"), accountDescription);
+}
+
 std::string CreateAccountRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -95,6 +118,15 @@ std::string CreateAccountRequest::getAccountPassword() const {
 void CreateAccountRequest::setAccountPassword(const std::string &accountPassword) {
   accountPassword_ = accountPassword;
   setParameter(std::string("AccountPassword"), accountPassword);
+}
+
+std::string CreateAccountRequest::getDBName() const {
+  return dBName_;
+}
+
+void CreateAccountRequest::setDBName(const std::string &dBName) {
+  dBName_ = dBName;
+  setParameter(std::string("DBName"), dBName);
 }
 
 std::string CreateAccountRequest::getCharacterType() const {

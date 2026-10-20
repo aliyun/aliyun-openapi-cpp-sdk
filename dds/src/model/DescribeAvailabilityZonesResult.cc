@@ -43,10 +43,10 @@ void DescribeAvailabilityZonesResult::parse(const std::string &payload)
 	for (auto valueAvailableZonesAvailableZone : allAvailableZonesNode)
 	{
 		AvailableZone availableZonesObject;
-		if(!valueAvailableZonesAvailableZone["ZoneId"].isNull())
-			availableZonesObject.zoneId = valueAvailableZonesAvailableZone["ZoneId"].asString();
 		if(!valueAvailableZonesAvailableZone["ZoneName"].isNull())
 			availableZonesObject.zoneName = valueAvailableZonesAvailableZone["ZoneName"].asString();
+		if(!valueAvailableZonesAvailableZone["ZoneId"].isNull())
+			availableZonesObject.zoneId = valueAvailableZonesAvailableZone["ZoneId"].asString();
 		if(!valueAvailableZonesAvailableZone["RegionId"].isNull())
 			availableZonesObject.regionId = valueAvailableZonesAvailableZone["RegionId"].asString();
 		availableZones_.push_back(availableZonesObject);

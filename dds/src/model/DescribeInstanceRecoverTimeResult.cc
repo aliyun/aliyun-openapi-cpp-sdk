@@ -43,10 +43,10 @@ void DescribeInstanceRecoverTimeResult::parse(const std::string &payload)
 	for (auto valueRestoreRangesAvailableRestoreTime : allRestoreRangesNode)
 	{
 		AvailableRestoreTime restoreRangesObject;
-		if(!valueRestoreRangesAvailableRestoreTime["RestoreBeginTime"].isNull())
-			restoreRangesObject.restoreBeginTime = valueRestoreRangesAvailableRestoreTime["RestoreBeginTime"].asString();
 		if(!valueRestoreRangesAvailableRestoreTime["RestoreEndTime"].isNull())
 			restoreRangesObject.restoreEndTime = valueRestoreRangesAvailableRestoreTime["RestoreEndTime"].asString();
+		if(!valueRestoreRangesAvailableRestoreTime["RestoreBeginTime"].isNull())
+			restoreRangesObject.restoreBeginTime = valueRestoreRangesAvailableRestoreTime["RestoreBeginTime"].asString();
 		if(!valueRestoreRangesAvailableRestoreTime["RestoreType"].isNull())
 			restoreRangesObject.restoreType = valueRestoreRangesAvailableRestoreTime["RestoreType"].asString();
 		restoreRanges_.push_back(restoreRangesObject);

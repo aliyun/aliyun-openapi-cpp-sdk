@@ -38,22 +38,23 @@ namespace AlibabaCloud
 				explicit DescribeBackupPolicyResult(const std::string &payload);
 				~DescribeBackupPolicyResult();
 				std::string getHighFrequencyBackupRetention()const;
-				std::string getPreferredBackupTime()const;
 				int getBackupRetentionPolicyOnClusterDeletion()const;
+				std::string getPreferredBackupTime()const;
 				std::string getCrossBackupPeriod()const;
 				std::string getPreferredNextBackupTime()const;
-				std::string getPreferredBackupPeriod()const;
 				std::string getCrossLogRetentionType()const;
-				int getLogBackupRetentionPeriod()const;
+				std::string getPreferredBackupPeriod()const;
 				int getCrossRetentionValue()const;
-				std::string getSrcRegion()const;
-				std::string getCrossRetentionType()const;
+				int getLogBackupRetentionPeriod()const;
 				int getCrossLogRetentionValue()const;
+				std::string getCrossRetentionType()const;
+				std::string getSrcRegion()const;
 				int getEnableCrossLogBackup()const;
 				bool getPreserveOneEachHour()const;
 				std::string getSnapshotBackupType()const;
 				int getEnableBackupLog()const;
 				std::string getBackupRetentionPeriod()const;
+				bool getBackupTamperProofEnabled()const;
 				std::string getDestRegion()const;
 				int getBackupInterval()const;
 
@@ -61,22 +62,23 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string highFrequencyBackupRetention_;
-				std::string preferredBackupTime_;
 				int backupRetentionPolicyOnClusterDeletion_;
+				std::string preferredBackupTime_;
 				std::string crossBackupPeriod_;
 				std::string preferredNextBackupTime_;
-				std::string preferredBackupPeriod_;
 				std::string crossLogRetentionType_;
-				int logBackupRetentionPeriod_;
+				std::string preferredBackupPeriod_;
 				int crossRetentionValue_;
-				std::string srcRegion_;
-				std::string crossRetentionType_;
+				int logBackupRetentionPeriod_;
 				int crossLogRetentionValue_;
+				std::string crossRetentionType_;
+				std::string srcRegion_;
 				int enableCrossLogBackup_;
 				bool preserveOneEachHour_;
 				std::string snapshotBackupType_;
 				int enableBackupLog_;
 				std::string backupRetentionPeriod_;
+				bool backupTamperProofEnabled_;
 				std::string destRegion_;
 				int backupInterval_;
 

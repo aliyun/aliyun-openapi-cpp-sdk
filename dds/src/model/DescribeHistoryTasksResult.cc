@@ -45,52 +45,52 @@ void DescribeHistoryTasksResult::parse(const std::string &payload)
 		ItemsItem itemsObject;
 		if(!valueItemsItemsItem["Status"].isNull())
 			itemsObject.status = valueItemsItemsItem["Status"].asString();
-		if(!valueItemsItemsItem["TaskId"].isNull())
-			itemsObject.taskId = valueItemsItemsItem["TaskId"].asString();
-		if(!valueItemsItemsItem["CurrentStepName"].isNull())
-			itemsObject.currentStepName = valueItemsItemsItem["CurrentStepName"].asString();
-		if(!valueItemsItemsItem["StartTime"].isNull())
-			itemsObject.startTime = valueItemsItemsItem["StartTime"].asString();
-		if(!valueItemsItemsItem["EndTime"].isNull())
-			itemsObject.endTime = valueItemsItemsItem["EndTime"].asString();
-		if(!valueItemsItemsItem["TaskType"].isNull())
-			itemsObject.taskType = valueItemsItemsItem["TaskType"].asString();
-		if(!valueItemsItemsItem["RemainTime"].isNull())
-			itemsObject.remainTime = std::stoi(valueItemsItemsItem["RemainTime"].asString());
 		if(!valueItemsItemsItem["Progress"].isNull())
 			itemsObject.progress = std::stof(valueItemsItemsItem["Progress"].asString());
-		if(!valueItemsItemsItem["RegionId"].isNull())
-			itemsObject.regionId = valueItemsItemsItem["RegionId"].asString();
-		if(!valueItemsItemsItem["InstanceType"].isNull())
-			itemsObject.instanceType = valueItemsItemsItem["InstanceType"].asString();
+		if(!valueItemsItemsItem["TaskId"].isNull())
+			itemsObject.taskId = valueItemsItemsItem["TaskId"].asString();
+		if(!valueItemsItemsItem["EndTime"].isNull())
+			itemsObject.endTime = valueItemsItemsItem["EndTime"].asString();
 		if(!valueItemsItemsItem["InstanceId"].isNull())
 			itemsObject.instanceId = valueItemsItemsItem["InstanceId"].asString();
-		if(!valueItemsItemsItem["InstanceName"].isNull())
-			itemsObject.instanceName = valueItemsItemsItem["InstanceName"].asString();
-		if(!valueItemsItemsItem["DbType"].isNull())
-			itemsObject.dbType = valueItemsItemsItem["DbType"].asString();
+		if(!valueItemsItemsItem["StartTime"].isNull())
+			itemsObject.startTime = valueItemsItemsItem["StartTime"].asString();
 		if(!valueItemsItemsItem["Product"].isNull())
 			itemsObject.product = valueItemsItemsItem["Product"].asString();
-		if(!valueItemsItemsItem["TaskDetail"].isNull())
-			itemsObject.taskDetail = valueItemsItemsItem["TaskDetail"].asString();
-		if(!valueItemsItemsItem["ReasonCode"].isNull())
-			itemsObject.reasonCode = valueItemsItemsItem["ReasonCode"].asString();
 		if(!valueItemsItemsItem["ActionInfo"].isNull())
 			itemsObject.actionInfo = valueItemsItemsItem["ActionInfo"].asString();
+		if(!valueItemsItemsItem["ReasonCode"].isNull())
+			itemsObject.reasonCode = valueItemsItemsItem["ReasonCode"].asString();
+		if(!valueItemsItemsItem["DbType"].isNull())
+			itemsObject.dbType = valueItemsItemsItem["DbType"].asString();
+		if(!valueItemsItemsItem["TaskDetail"].isNull())
+			itemsObject.taskDetail = valueItemsItemsItem["TaskDetail"].asString();
+		if(!valueItemsItemsItem["CallerUid"].isNull())
+			itemsObject.callerUid = valueItemsItemsItem["CallerUid"].asString();
+		if(!valueItemsItemsItem["InstanceName"].isNull())
+			itemsObject.instanceName = valueItemsItemsItem["InstanceName"].asString();
 		if(!valueItemsItemsItem["Uid"].isNull())
 			itemsObject.uid = valueItemsItemsItem["Uid"].asString();
 		if(!valueItemsItemsItem["CallerSource"].isNull())
 			itemsObject.callerSource = valueItemsItemsItem["CallerSource"].asString();
-		if(!valueItemsItemsItem["CallerUid"].isNull())
-			itemsObject.callerUid = valueItemsItemsItem["CallerUid"].asString();
+		if(!valueItemsItemsItem["CurrentStepName"].isNull())
+			itemsObject.currentStepName = valueItemsItemsItem["CurrentStepName"].asString();
+		if(!valueItemsItemsItem["TaskType"].isNull())
+			itemsObject.taskType = valueItemsItemsItem["TaskType"].asString();
+		if(!valueItemsItemsItem["RegionId"].isNull())
+			itemsObject.regionId = valueItemsItemsItem["RegionId"].asString();
+		if(!valueItemsItemsItem["RemainTime"].isNull())
+			itemsObject.remainTime = std::stoi(valueItemsItemsItem["RemainTime"].asString());
+		if(!valueItemsItemsItem["InstanceType"].isNull())
+			itemsObject.instanceType = valueItemsItemsItem["InstanceType"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

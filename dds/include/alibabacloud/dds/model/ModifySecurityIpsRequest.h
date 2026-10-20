@@ -32,6 +32,8 @@ public:
 	~ModifySecurityIpsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getSecurityIps() const;
 	void setSecurityIps(const std::string &securityIps);
 	std::string getAccessKeyId() const;
@@ -42,6 +44,8 @@ public:
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getModifyMode() const;
 	void setModifyMode(const std::string &modifyMode);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -53,11 +57,13 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string clientToken_;
 	std::string securityIps_;
 	std::string accessKeyId_;
 	std::string securityIpGroupName_;
 	std::string dBInstanceId_;
 	std::string modifyMode_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

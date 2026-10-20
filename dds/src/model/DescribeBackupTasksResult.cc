@@ -43,16 +43,16 @@ void DescribeBackupTasksResult::parse(const std::string &payload)
 	for (auto valueBackupJobsBackupTask : allBackupJobsNode)
 	{
 		BackupTask backupJobsObject;
-		if(!valueBackupJobsBackupTask["BackupjobId"].isNull())
-			backupJobsObject.backupjobId = valueBackupJobsBackupTask["BackupjobId"].asString();
-		if(!valueBackupJobsBackupTask["BackupSetStatus"].isNull())
-			backupJobsObject.backupSetStatus = valueBackupJobsBackupTask["BackupSetStatus"].asString();
-		if(!valueBackupJobsBackupTask["BackupStartTime"].isNull())
-			backupJobsObject.backupStartTime = valueBackupJobsBackupTask["BackupStartTime"].asString();
-		if(!valueBackupJobsBackupTask["Progress"].isNull())
-			backupJobsObject.progress = valueBackupJobsBackupTask["Progress"].asString();
 		if(!valueBackupJobsBackupTask["JobMode"].isNull())
 			backupJobsObject.jobMode = valueBackupJobsBackupTask["JobMode"].asString();
+		if(!valueBackupJobsBackupTask["Progress"].isNull())
+			backupJobsObject.progress = valueBackupJobsBackupTask["Progress"].asString();
+		if(!valueBackupJobsBackupTask["BackupjobId"].isNull())
+			backupJobsObject.backupjobId = valueBackupJobsBackupTask["BackupjobId"].asString();
+		if(!valueBackupJobsBackupTask["BackupStartTime"].isNull())
+			backupJobsObject.backupStartTime = valueBackupJobsBackupTask["BackupStartTime"].asString();
+		if(!valueBackupJobsBackupTask["BackupSetStatus"].isNull())
+			backupJobsObject.backupSetStatus = valueBackupJobsBackupTask["BackupSetStatus"].asString();
 		backupJobs_.push_back(backupJobsObject);
 	}
 

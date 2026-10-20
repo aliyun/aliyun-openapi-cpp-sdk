@@ -34,6 +34,15 @@ void RestartDBInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string RestartDBInstanceRequest::getNodeType() const {
+  return nodeType_;
+}
+
+void RestartDBInstanceRequest::setNodeType(const std::string &nodeType) {
+  nodeType_ = nodeType;
+  setParameter(std::string("NodeType"), nodeType);
+}
+
 std::string RestartDBInstanceRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -77,6 +86,15 @@ std::string RestartDBInstanceRequest::getResourceOwnerAccount() const {
 void RestartDBInstanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+bool RestartDBInstanceRequest::getParallelRestartMongos() const {
+  return parallelRestartMongos_;
+}
+
+void RestartDBInstanceRequest::setParallelRestartMongos(bool parallelRestartMongos) {
+  parallelRestartMongos_ = parallelRestartMongos;
+  setParameter(std::string("ParallelRestartMongos"), parallelRestartMongos ? "true" : "false");
 }
 
 std::string RestartDBInstanceRequest::getOwnerAccount() const {

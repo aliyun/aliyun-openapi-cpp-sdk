@@ -73,6 +73,10 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeActiveOperationTaskTypeResult.h
 	include/alibabacloud/dds/model/DescribeActiveOperationTasksRequest.h
 	include/alibabacloud/dds/model/DescribeActiveOperationTasksResult.h
+	include/alibabacloud/dds/model/DescribeAdvancedBackupPolicyRequest.h
+	include/alibabacloud/dds/model/DescribeAdvancedBackupPolicyResult.h
+	include/alibabacloud/dds/model/DescribeAdvancedBackupStatusRequest.h
+	include/alibabacloud/dds/model/DescribeAdvancedBackupStatusResult.h
 	include/alibabacloud/dds/model/DescribeAuditLogFilterRequest.h
 	include/alibabacloud/dds/model/DescribeAuditLogFilterResult.h
 	include/alibabacloud/dds/model/DescribeAuditPolicyRequest.h
@@ -197,6 +201,10 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifyActiveOperationMaintenanceConfigResult.h
 	include/alibabacloud/dds/model/ModifyActiveOperationTasksRequest.h
 	include/alibabacloud/dds/model/ModifyActiveOperationTasksResult.h
+	include/alibabacloud/dds/model/ModifyAdvancedBackupPolicyRequest.h
+	include/alibabacloud/dds/model/ModifyAdvancedBackupPolicyResult.h
+	include/alibabacloud/dds/model/ModifyAdvancedBackupStatusRequest.h
+	include/alibabacloud/dds/model/ModifyAdvancedBackupStatusResult.h
 	include/alibabacloud/dds/model/ModifyAuditLogFilterRequest.h
 	include/alibabacloud/dds/model/ModifyAuditLogFilterResult.h
 	include/alibabacloud/dds/model/ModifyAuditPolicyRequest.h
@@ -338,6 +346,10 @@ set(dds_src
 	src/model/DescribeActiveOperationTaskTypeResult.cc
 	src/model/DescribeActiveOperationTasksRequest.cc
 	src/model/DescribeActiveOperationTasksResult.cc
+	src/model/DescribeAdvancedBackupPolicyRequest.cc
+	src/model/DescribeAdvancedBackupPolicyResult.cc
+	src/model/DescribeAdvancedBackupStatusRequest.cc
+	src/model/DescribeAdvancedBackupStatusResult.cc
 	src/model/DescribeAuditLogFilterRequest.cc
 	src/model/DescribeAuditLogFilterResult.cc
 	src/model/DescribeAuditPolicyRequest.cc
@@ -462,6 +474,10 @@ set(dds_src
 	src/model/ModifyActiveOperationMaintenanceConfigResult.cc
 	src/model/ModifyActiveOperationTasksRequest.cc
 	src/model/ModifyActiveOperationTasksResult.cc
+	src/model/ModifyAdvancedBackupPolicyRequest.cc
+	src/model/ModifyAdvancedBackupPolicyResult.cc
+	src/model/ModifyAdvancedBackupStatusRequest.cc
+	src/model/ModifyAdvancedBackupStatusResult.cc
 	src/model/ModifyAuditLogFilterRequest.cc
 	src/model/ModifyAuditLogFilterResult.cc
 	src/model/ModifyAuditPolicyRequest.cc

@@ -43,20 +43,20 @@ void DescribeAuditRecordsResult::parse(const std::string &payload)
 	for (auto valueItemsSQLRecord : allItemsNode)
 	{
 		SQLRecord itemsObject;
-		if(!valueItemsSQLRecord["HostAddress"].isNull())
-			itemsObject.hostAddress = valueItemsSQLRecord["HostAddress"].asString();
 		if(!valueItemsSQLRecord["TableName"].isNull())
 			itemsObject.tableName = valueItemsSQLRecord["TableName"].asString();
-		if(!valueItemsSQLRecord["ReturnRowCounts"].isNull())
-			itemsObject.returnRowCounts = std::stol(valueItemsSQLRecord["ReturnRowCounts"].asString());
-		if(!valueItemsSQLRecord["DBName"].isNull())
-			itemsObject.dBName = valueItemsSQLRecord["DBName"].asString();
 		if(!valueItemsSQLRecord["ExecuteTime"].isNull())
 			itemsObject.executeTime = valueItemsSQLRecord["ExecuteTime"].asString();
 		if(!valueItemsSQLRecord["ThreadID"].isNull())
 			itemsObject.threadID = valueItemsSQLRecord["ThreadID"].asString();
+		if(!valueItemsSQLRecord["ReturnRowCounts"].isNull())
+			itemsObject.returnRowCounts = std::stol(valueItemsSQLRecord["ReturnRowCounts"].asString());
+		if(!valueItemsSQLRecord["DBName"].isNull())
+			itemsObject.dBName = valueItemsSQLRecord["DBName"].asString();
 		if(!valueItemsSQLRecord["TotalExecutionTimes"].isNull())
 			itemsObject.totalExecutionTimes = std::stol(valueItemsSQLRecord["TotalExecutionTimes"].asString());
+		if(!valueItemsSQLRecord["HostAddress"].isNull())
+			itemsObject.hostAddress = valueItemsSQLRecord["HostAddress"].asString();
 		if(!valueItemsSQLRecord["Syntax"].isNull())
 			itemsObject.syntax = valueItemsSQLRecord["Syntax"].asString();
 		if(!valueItemsSQLRecord["AccountName"].isNull())

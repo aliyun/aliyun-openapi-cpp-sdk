@@ -41,10 +41,10 @@ void ModifyTaskInfoResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["ErrorTaskId"].isNull())
 		errorTaskId_ = value["ErrorTaskId"].asString();
-	if(!value["SuccessCount"].isNull())
-		successCount_ = value["SuccessCount"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["SuccessCount"].isNull())
+		successCount_ = value["SuccessCount"].asString();
 
 }
 
