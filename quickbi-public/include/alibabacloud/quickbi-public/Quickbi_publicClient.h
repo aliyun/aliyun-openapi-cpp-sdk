@@ -72,6 +72,8 @@
 #include "model/CreateDatasetResult.h"
 #include "model/CreateTicketRequest.h"
 #include "model/CreateTicketResult.h"
+#include "model/CreateTicket4AiProRequest.h"
+#include "model/CreateTicket4AiProResult.h"
 #include "model/CreateTicket4CopilotRequest.h"
 #include "model/CreateTicket4CopilotResult.h"
 #include "model/CreateUserGroupRequest.h"
@@ -162,6 +164,8 @@
 #include "model/ListWorkspaceUserRolesByUserIdResult.h"
 #include "model/ManualRunMailTaskRequest.h"
 #include "model/ManualRunMailTaskResult.h"
+#include "model/ModifyAiproEmbedConfigRequest.h"
+#include "model/ModifyAiproEmbedConfigResult.h"
 #include "model/ModifyApiDatasourceParametersRequest.h"
 #include "model/ModifyApiDatasourceParametersResult.h"
 #include "model/ModifyCopilotEmbedConfigRequest.h"
@@ -170,6 +174,8 @@
 #include "model/ModifyDashboardNl2sqlStatusResult.h"
 #include "model/QueryAccelerationLogByCubeIdRequest.h"
 #include "model/QueryAccelerationLogByCubeIdResult.h"
+#include "model/QueryAiproEmbedConfigRequest.h"
+#include "model/QueryAiproEmbedConfigResult.h"
 #include "model/QueryApprovalInfoRequest.h"
 #include "model/QueryApprovalInfoResult.h"
 #include "model/QueryAuditLogRequest.h"
@@ -284,6 +290,8 @@
 #include "model/UpdateDataLevelPermissionStatusResult.h"
 #include "model/UpdateDataSourceRequest.h"
 #include "model/UpdateDataSourceResult.h"
+#include "model/UpdateDataSourcePropertiesRequest.h"
+#include "model/UpdateDataSourcePropertiesResult.h"
 #include "model/UpdateEmbeddedStatusRequest.h"
 #include "model/UpdateEmbeddedStatusResult.h"
 #include "model/UpdateTicketNumRequest.h"
@@ -386,6 +394,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateTicketResult> CreateTicketOutcome;
 			typedef std::future<CreateTicketOutcome> CreateTicketOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateTicketRequest&, const CreateTicketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTicketAsyncHandler;
+			typedef Outcome<Error, Model::CreateTicket4AiProResult> CreateTicket4AiProOutcome;
+			typedef std::future<CreateTicket4AiProOutcome> CreateTicket4AiProOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateTicket4AiProRequest&, const CreateTicket4AiProOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTicket4AiProAsyncHandler;
 			typedef Outcome<Error, Model::CreateTicket4CopilotResult> CreateTicket4CopilotOutcome;
 			typedef std::future<CreateTicket4CopilotOutcome> CreateTicket4CopilotOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CreateTicket4CopilotRequest&, const CreateTicket4CopilotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTicket4CopilotAsyncHandler;
@@ -521,6 +532,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ManualRunMailTaskResult> ManualRunMailTaskOutcome;
 			typedef std::future<ManualRunMailTaskOutcome> ManualRunMailTaskOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ManualRunMailTaskRequest&, const ManualRunMailTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ManualRunMailTaskAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAiproEmbedConfigResult> ModifyAiproEmbedConfigOutcome;
+			typedef std::future<ModifyAiproEmbedConfigOutcome> ModifyAiproEmbedConfigOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::ModifyAiproEmbedConfigRequest&, const ModifyAiproEmbedConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAiproEmbedConfigAsyncHandler;
 			typedef Outcome<Error, Model::ModifyApiDatasourceParametersResult> ModifyApiDatasourceParametersOutcome;
 			typedef std::future<ModifyApiDatasourceParametersOutcome> ModifyApiDatasourceParametersOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::ModifyApiDatasourceParametersRequest&, const ModifyApiDatasourceParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiDatasourceParametersAsyncHandler;
@@ -533,6 +547,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryAccelerationLogByCubeIdResult> QueryAccelerationLogByCubeIdOutcome;
 			typedef std::future<QueryAccelerationLogByCubeIdOutcome> QueryAccelerationLogByCubeIdOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryAccelerationLogByCubeIdRequest&, const QueryAccelerationLogByCubeIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAccelerationLogByCubeIdAsyncHandler;
+			typedef Outcome<Error, Model::QueryAiproEmbedConfigResult> QueryAiproEmbedConfigOutcome;
+			typedef std::future<QueryAiproEmbedConfigOutcome> QueryAiproEmbedConfigOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryAiproEmbedConfigRequest&, const QueryAiproEmbedConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAiproEmbedConfigAsyncHandler;
 			typedef Outcome<Error, Model::QueryApprovalInfoResult> QueryApprovalInfoOutcome;
 			typedef std::future<QueryApprovalInfoOutcome> QueryApprovalInfoOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::QueryApprovalInfoRequest&, const QueryApprovalInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryApprovalInfoAsyncHandler;
@@ -704,6 +721,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDataSourceResult> UpdateDataSourceOutcome;
 			typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateDataSourceRequest&, const UpdateDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDataSourceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDataSourcePropertiesResult> UpdateDataSourcePropertiesOutcome;
+			typedef std::future<UpdateDataSourcePropertiesOutcome> UpdateDataSourcePropertiesOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateDataSourcePropertiesRequest&, const UpdateDataSourcePropertiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDataSourcePropertiesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateEmbeddedStatusResult> UpdateEmbeddedStatusOutcome;
 			typedef std::future<UpdateEmbeddedStatusOutcome> UpdateEmbeddedStatusOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateEmbeddedStatusRequest&, const UpdateEmbeddedStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEmbeddedStatusAsyncHandler;
@@ -811,6 +831,9 @@ namespace AlibabaCloud
 			CreateTicketOutcome createTicket(const Model::CreateTicketRequest &request)const;
 			void createTicketAsync(const Model::CreateTicketRequest& request, const CreateTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTicketOutcomeCallable createTicketCallable(const Model::CreateTicketRequest& request) const;
+			CreateTicket4AiProOutcome createTicket4AiPro(const Model::CreateTicket4AiProRequest &request)const;
+			void createTicket4AiProAsync(const Model::CreateTicket4AiProRequest& request, const CreateTicket4AiProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTicket4AiProOutcomeCallable createTicket4AiProCallable(const Model::CreateTicket4AiProRequest& request) const;
 			CreateTicket4CopilotOutcome createTicket4Copilot(const Model::CreateTicket4CopilotRequest &request)const;
 			void createTicket4CopilotAsync(const Model::CreateTicket4CopilotRequest& request, const CreateTicket4CopilotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTicket4CopilotOutcomeCallable createTicket4CopilotCallable(const Model::CreateTicket4CopilotRequest& request) const;
@@ -946,6 +969,9 @@ namespace AlibabaCloud
 			ManualRunMailTaskOutcome manualRunMailTask(const Model::ManualRunMailTaskRequest &request)const;
 			void manualRunMailTaskAsync(const Model::ManualRunMailTaskRequest& request, const ManualRunMailTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ManualRunMailTaskOutcomeCallable manualRunMailTaskCallable(const Model::ManualRunMailTaskRequest& request) const;
+			ModifyAiproEmbedConfigOutcome modifyAiproEmbedConfig(const Model::ModifyAiproEmbedConfigRequest &request)const;
+			void modifyAiproEmbedConfigAsync(const Model::ModifyAiproEmbedConfigRequest& request, const ModifyAiproEmbedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAiproEmbedConfigOutcomeCallable modifyAiproEmbedConfigCallable(const Model::ModifyAiproEmbedConfigRequest& request) const;
 			ModifyApiDatasourceParametersOutcome modifyApiDatasourceParameters(const Model::ModifyApiDatasourceParametersRequest &request)const;
 			void modifyApiDatasourceParametersAsync(const Model::ModifyApiDatasourceParametersRequest& request, const ModifyApiDatasourceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyApiDatasourceParametersOutcomeCallable modifyApiDatasourceParametersCallable(const Model::ModifyApiDatasourceParametersRequest& request) const;
@@ -958,6 +984,9 @@ namespace AlibabaCloud
 			QueryAccelerationLogByCubeIdOutcome queryAccelerationLogByCubeId(const Model::QueryAccelerationLogByCubeIdRequest &request)const;
 			void queryAccelerationLogByCubeIdAsync(const Model::QueryAccelerationLogByCubeIdRequest& request, const QueryAccelerationLogByCubeIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryAccelerationLogByCubeIdOutcomeCallable queryAccelerationLogByCubeIdCallable(const Model::QueryAccelerationLogByCubeIdRequest& request) const;
+			QueryAiproEmbedConfigOutcome queryAiproEmbedConfig(const Model::QueryAiproEmbedConfigRequest &request)const;
+			void queryAiproEmbedConfigAsync(const Model::QueryAiproEmbedConfigRequest& request, const QueryAiproEmbedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryAiproEmbedConfigOutcomeCallable queryAiproEmbedConfigCallable(const Model::QueryAiproEmbedConfigRequest& request) const;
 			QueryApprovalInfoOutcome queryApprovalInfo(const Model::QueryApprovalInfoRequest &request)const;
 			void queryApprovalInfoAsync(const Model::QueryApprovalInfoRequest& request, const QueryApprovalInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryApprovalInfoOutcomeCallable queryApprovalInfoCallable(const Model::QueryApprovalInfoRequest& request) const;
@@ -1129,6 +1158,9 @@ namespace AlibabaCloud
 			UpdateDataSourceOutcome updateDataSource(const Model::UpdateDataSourceRequest &request)const;
 			void updateDataSourceAsync(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDataSourceOutcomeCallable updateDataSourceCallable(const Model::UpdateDataSourceRequest& request) const;
+			UpdateDataSourcePropertiesOutcome updateDataSourceProperties(const Model::UpdateDataSourcePropertiesRequest &request)const;
+			void updateDataSourcePropertiesAsync(const Model::UpdateDataSourcePropertiesRequest& request, const UpdateDataSourcePropertiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDataSourcePropertiesOutcomeCallable updateDataSourcePropertiesCallable(const Model::UpdateDataSourcePropertiesRequest& request) const;
 			UpdateEmbeddedStatusOutcome updateEmbeddedStatus(const Model::UpdateEmbeddedStatusRequest &request)const;
 			void updateEmbeddedStatusAsync(const Model::UpdateEmbeddedStatusRequest& request, const UpdateEmbeddedStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateEmbeddedStatusOutcomeCallable updateEmbeddedStatusCallable(const Model::UpdateEmbeddedStatusRequest& request) const;

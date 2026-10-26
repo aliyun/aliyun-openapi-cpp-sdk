@@ -140,6 +140,28 @@ void QueryDatasetInfoResult::parse(const std::string &payload)
 			cubeTableListItemObject.dsType = resultNodeCubeTableListCubeTableListItem["DsType"].asString();
 		if(!resultNodeCubeTableListCubeTableListItem["Sql"].isNull())
 			cubeTableListItemObject.sql = resultNodeCubeTableListCubeTableListItem["Sql"].asString();
+		auto allChildTablesNode = resultNodeCubeTableListCubeTableListItem["ChildTables"]["ChildTablesItem"];
+		for (auto resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem : allChildTablesNode)
+		{
+			Result::CubeTableListItem::ChildTablesItem childTablesObject;
+			if(!resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["TableName"].isNull())
+				childTablesObject.tableName = resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["TableName"].asString();
+			if(!resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["UniqueId"].isNull())
+				childTablesObject.uniqueId = resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["UniqueId"].asString();
+			if(!resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["FactTable"].isNull())
+				childTablesObject.factTable = resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["FactTable"].asString() == "true";
+			if(!resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["DatasourceId"].isNull())
+				childTablesObject.datasourceId = resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["DatasourceId"].asString();
+			if(!resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["Customsql"].isNull())
+				childTablesObject.customsql = resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["Customsql"].asString() == "true";
+			if(!resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["Caption"].isNull())
+				childTablesObject.caption = resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["Caption"].asString();
+			if(!resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["DsType"].isNull())
+				childTablesObject.dsType = resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["DsType"].asString();
+			if(!resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["Sql"].isNull())
+				childTablesObject.sql = resultNodeCubeTableListCubeTableListItemChildTablesChildTablesItem["Sql"].asString();
+			cubeTableListItemObject.childTables.push_back(childTablesObject);
+		}
 		result_.cubeTableList.push_back(cubeTableListItemObject);
 	}
 	auto directoryNode = resultNode["Directory"];

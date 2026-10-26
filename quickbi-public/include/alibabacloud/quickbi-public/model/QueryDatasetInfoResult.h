@@ -69,10 +69,22 @@ namespace AlibabaCloud
 					};
 					struct CubeTableListItem
 					{
+						struct ChildTablesItem
+						{
+							std::string tableName;
+							std::string uniqueId;
+							bool factTable;
+							std::string datasourceId;
+							bool customsql;
+							std::string caption;
+							std::string dsType;
+							std::string sql;
+						};
 						std::string tableName;
 						std::string uniqueId;
 						bool factTable;
 						std::string datasourceId;
+						std::vector<CubeTableListItem::ChildTablesItem> childTables;
 						bool customsql;
 						std::string caption;
 						std::string dsType;

@@ -951,6 +951,42 @@ Quickbi_publicClient::CreateTicketOutcomeCallable Quickbi_publicClient::createTi
 	return task->get_future();
 }
 
+Quickbi_publicClient::CreateTicket4AiProOutcome Quickbi_publicClient::createTicket4AiPro(const CreateTicket4AiProRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTicket4AiProOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTicket4AiProOutcome(CreateTicket4AiProResult(outcome.result()));
+	else
+		return CreateTicket4AiProOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::createTicket4AiProAsync(const CreateTicket4AiProRequest& request, const CreateTicket4AiProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTicket4AiPro(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::CreateTicket4AiProOutcomeCallable Quickbi_publicClient::createTicket4AiProCallable(const CreateTicket4AiProRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTicket4AiProOutcome()>>(
+			[this, request]()
+			{
+			return this->createTicket4AiPro(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::CreateTicket4CopilotOutcome Quickbi_publicClient::createTicket4Copilot(const CreateTicket4CopilotRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2571,6 +2607,42 @@ Quickbi_publicClient::ManualRunMailTaskOutcomeCallable Quickbi_publicClient::man
 	return task->get_future();
 }
 
+Quickbi_publicClient::ModifyAiproEmbedConfigOutcome Quickbi_publicClient::modifyAiproEmbedConfig(const ModifyAiproEmbedConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAiproEmbedConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAiproEmbedConfigOutcome(ModifyAiproEmbedConfigResult(outcome.result()));
+	else
+		return ModifyAiproEmbedConfigOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::modifyAiproEmbedConfigAsync(const ModifyAiproEmbedConfigRequest& request, const ModifyAiproEmbedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAiproEmbedConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ModifyAiproEmbedConfigOutcomeCallable Quickbi_publicClient::modifyAiproEmbedConfigCallable(const ModifyAiproEmbedConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAiproEmbedConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAiproEmbedConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::ModifyApiDatasourceParametersOutcome Quickbi_publicClient::modifyApiDatasourceParameters(const ModifyApiDatasourceParametersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2709,6 +2781,42 @@ Quickbi_publicClient::QueryAccelerationLogByCubeIdOutcomeCallable Quickbi_public
 			[this, request]()
 			{
 			return this->queryAccelerationLogByCubeId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryAiproEmbedConfigOutcome Quickbi_publicClient::queryAiproEmbedConfig(const QueryAiproEmbedConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAiproEmbedConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAiproEmbedConfigOutcome(QueryAiproEmbedConfigResult(outcome.result()));
+	else
+		return QueryAiproEmbedConfigOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryAiproEmbedConfigAsync(const QueryAiproEmbedConfigRequest& request, const QueryAiproEmbedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAiproEmbedConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryAiproEmbedConfigOutcomeCallable Quickbi_publicClient::queryAiproEmbedConfigCallable(const QueryAiproEmbedConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAiproEmbedConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAiproEmbedConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4761,6 +4869,42 @@ Quickbi_publicClient::UpdateDataSourceOutcomeCallable Quickbi_publicClient::upda
 			[this, request]()
 			{
 			return this->updateDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::UpdateDataSourcePropertiesOutcome Quickbi_publicClient::updateDataSourceProperties(const UpdateDataSourcePropertiesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDataSourcePropertiesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDataSourcePropertiesOutcome(UpdateDataSourcePropertiesResult(outcome.result()));
+	else
+		return UpdateDataSourcePropertiesOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::updateDataSourcePropertiesAsync(const UpdateDataSourcePropertiesRequest& request, const UpdateDataSourcePropertiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDataSourceProperties(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::UpdateDataSourcePropertiesOutcomeCallable Quickbi_publicClient::updateDataSourcePropertiesCallable(const UpdateDataSourcePropertiesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDataSourcePropertiesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDataSourceProperties(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

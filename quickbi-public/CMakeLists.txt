@@ -71,6 +71,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/CreateDatasetResult.h
 	include/alibabacloud/quickbi-public/model/CreateTicketRequest.h
 	include/alibabacloud/quickbi-public/model/CreateTicketResult.h
+	include/alibabacloud/quickbi-public/model/CreateTicket4AiProRequest.h
+	include/alibabacloud/quickbi-public/model/CreateTicket4AiProResult.h
 	include/alibabacloud/quickbi-public/model/CreateTicket4CopilotRequest.h
 	include/alibabacloud/quickbi-public/model/CreateTicket4CopilotResult.h
 	include/alibabacloud/quickbi-public/model/CreateUserGroupRequest.h
@@ -161,6 +163,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListWorkspaceUserRolesByUserIdResult.h
 	include/alibabacloud/quickbi-public/model/ManualRunMailTaskRequest.h
 	include/alibabacloud/quickbi-public/model/ManualRunMailTaskResult.h
+	include/alibabacloud/quickbi-public/model/ModifyAiproEmbedConfigRequest.h
+	include/alibabacloud/quickbi-public/model/ModifyAiproEmbedConfigResult.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersRequest.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersResult.h
 	include/alibabacloud/quickbi-public/model/ModifyCopilotEmbedConfigRequest.h
@@ -169,6 +173,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ModifyDashboardNl2sqlStatusResult.h
 	include/alibabacloud/quickbi-public/model/QueryAccelerationLogByCubeIdRequest.h
 	include/alibabacloud/quickbi-public/model/QueryAccelerationLogByCubeIdResult.h
+	include/alibabacloud/quickbi-public/model/QueryAiproEmbedConfigRequest.h
+	include/alibabacloud/quickbi-public/model/QueryAiproEmbedConfigResult.h
 	include/alibabacloud/quickbi-public/model/QueryApprovalInfoRequest.h
 	include/alibabacloud/quickbi-public/model/QueryApprovalInfoResult.h
 	include/alibabacloud/quickbi-public/model/QueryAuditLogRequest.h
@@ -283,6 +289,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/UpdateDataLevelPermissionStatusResult.h
 	include/alibabacloud/quickbi-public/model/UpdateDataSourceRequest.h
 	include/alibabacloud/quickbi-public/model/UpdateDataSourceResult.h
+	include/alibabacloud/quickbi-public/model/UpdateDataSourcePropertiesRequest.h
+	include/alibabacloud/quickbi-public/model/UpdateDataSourcePropertiesResult.h
 	include/alibabacloud/quickbi-public/model/UpdateEmbeddedStatusRequest.h
 	include/alibabacloud/quickbi-public/model/UpdateEmbeddedStatusResult.h
 	include/alibabacloud/quickbi-public/model/UpdateTicketNumRequest.h
@@ -354,6 +362,8 @@ set(quickbi-public_src
 	src/model/CreateDatasetResult.cc
 	src/model/CreateTicketRequest.cc
 	src/model/CreateTicketResult.cc
+	src/model/CreateTicket4AiProRequest.cc
+	src/model/CreateTicket4AiProResult.cc
 	src/model/CreateTicket4CopilotRequest.cc
 	src/model/CreateTicket4CopilotResult.cc
 	src/model/CreateUserGroupRequest.cc
@@ -444,6 +454,8 @@ set(quickbi-public_src
 	src/model/ListWorkspaceUserRolesByUserIdResult.cc
 	src/model/ManualRunMailTaskRequest.cc
 	src/model/ManualRunMailTaskResult.cc
+	src/model/ModifyAiproEmbedConfigRequest.cc
+	src/model/ModifyAiproEmbedConfigResult.cc
 	src/model/ModifyApiDatasourceParametersRequest.cc
 	src/model/ModifyApiDatasourceParametersResult.cc
 	src/model/ModifyCopilotEmbedConfigRequest.cc
@@ -452,6 +464,8 @@ set(quickbi-public_src
 	src/model/ModifyDashboardNl2sqlStatusResult.cc
 	src/model/QueryAccelerationLogByCubeIdRequest.cc
 	src/model/QueryAccelerationLogByCubeIdResult.cc
+	src/model/QueryAiproEmbedConfigRequest.cc
+	src/model/QueryAiproEmbedConfigResult.cc
 	src/model/QueryApprovalInfoRequest.cc
 	src/model/QueryApprovalInfoResult.cc
 	src/model/QueryAuditLogRequest.cc
@@ -566,6 +580,8 @@ set(quickbi-public_src
 	src/model/UpdateDataLevelPermissionStatusResult.cc
 	src/model/UpdateDataSourceRequest.cc
 	src/model/UpdateDataSourceResult.cc
+	src/model/UpdateDataSourcePropertiesRequest.cc
+	src/model/UpdateDataSourcePropertiesResult.cc
 	src/model/UpdateEmbeddedStatusRequest.cc
 	src/model/UpdateEmbeddedStatusResult.cc
 	src/model/UpdateTicketNumRequest.cc
