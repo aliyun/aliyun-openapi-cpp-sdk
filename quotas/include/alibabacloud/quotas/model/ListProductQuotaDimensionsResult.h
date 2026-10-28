@@ -48,8 +48,8 @@ namespace AlibabaCloud
 					std::string dimensionKey;
 					std::vector<std::string> dimensionValues;
 					std::vector<QuotaDimensionsItem::DimensionValueDetailItem> dimensionValueDetail;
-					bool requisite;
 					std::string name;
+					bool requisite;
 					std::vector<std::string> dependentDimensions;
 				};
 

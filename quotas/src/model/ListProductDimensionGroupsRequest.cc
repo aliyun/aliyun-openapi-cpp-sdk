@@ -25,15 +25,6 @@ ListProductDimensionGroupsRequest::ListProductDimensionGroupsRequest()
 
 ListProductDimensionGroupsRequest::~ListProductDimensionGroupsRequest() {}
 
-std::string ListProductDimensionGroupsRequest::getOriginalContext() const {
-  return originalContext_;
-}
-
-void ListProductDimensionGroupsRequest::setOriginalContext(const std::string &originalContext) {
-  originalContext_ = originalContext;
-  setBodyParameter(std::string("OriginalContext"), originalContext);
-}
-
 std::string ListProductDimensionGroupsRequest::getProductCode() const {
   return productCode_;
 }
@@ -50,6 +41,15 @@ std::string ListProductDimensionGroupsRequest::getNextToken() const {
 void ListProductDimensionGroupsRequest::setNextToken(const std::string &nextToken) {
   nextToken_ = nextToken;
   setParameter(std::string("NextToken"), nextToken);
+}
+
+std::string ListProductDimensionGroupsRequest::getOriginalContext() const {
+  return originalContext_;
+}
+
+void ListProductDimensionGroupsRequest::setOriginalContext(const std::string &originalContext) {
+  originalContext_ = originalContext;
+  setBodyParameter(std::string("OriginalContext"), originalContext);
 }
 
 int ListProductDimensionGroupsRequest::getMaxResults() const {

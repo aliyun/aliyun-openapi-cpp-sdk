@@ -40,31 +40,31 @@ void GetQuotaApplicationApprovalResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto moduleNode = value["Module"];
+	if(!moduleNode["ReminderIntervalHours"].isNull())
+		module_.reminderIntervalHours = std::stoi(moduleNode["ReminderIntervalHours"].asString());
+	if(!moduleNode["UnsupportReminderReason"].isNull())
+		module_.unsupportReminderReason = moduleNode["UnsupportReminderReason"].asString();
 	if(!moduleNode["ApprovalHours"].isNull())
 		module_.approvalHours = std::stoi(moduleNode["ApprovalHours"].asString());
 	if(!moduleNode["SupportReminder"].isNull())
 		module_.supportReminder = moduleNode["SupportReminder"].asString() == "true";
-	if(!moduleNode["UnsupportReminderReason"].isNull())
-		module_.unsupportReminderReason = moduleNode["UnsupportReminderReason"].asString();
-	if(!moduleNode["ReminderIntervalHours"].isNull())
-		module_.reminderIntervalHours = std::stoi(moduleNode["ReminderIntervalHours"].asString());
 	auto allErrorArgs = value["ErrorArgs"]["ErrorArg"];
 	for (const auto &item : allErrorArgs)
 		errorArgs_.push_back(item.asString());
+	if(!value["AllowRetry"].isNull())
+		allowRetry_ = value["AllowRetry"].asString() == "true";
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["DynamicCode"].isNull())
 		dynamicCode_ = value["DynamicCode"].asString();
 	if(!value["DynamicMessage"].isNull())
 		dynamicMessage_ = value["DynamicMessage"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
-	if(!value["AllowRetry"].isNull())
-		allowRetry_ = value["AllowRetry"].asString() == "true";
 
 }
 
@@ -78,14 +78,14 @@ std::vector<std::string> GetQuotaApplicationApprovalResult::getErrorArgs()const
 	return errorArgs_;
 }
 
-int GetQuotaApplicationApprovalResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
-}
-
 std::string GetQuotaApplicationApprovalResult::getErrorMsg()const
 {
 	return errorMsg_;
+}
+
+int GetQuotaApplicationApprovalResult::getHttpStatusCode()const
+{
+	return httpStatusCode_;
 }
 
 std::string GetQuotaApplicationApprovalResult::getDynamicCode()const

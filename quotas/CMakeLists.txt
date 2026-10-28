@@ -45,6 +45,8 @@ set(quotas_public_header_model
 	include/alibabacloud/quotas/model/GetQuotaApplicationApprovalResult.h
 	include/alibabacloud/quotas/model/GetQuotaTemplateServiceStatusRequest.h
 	include/alibabacloud/quotas/model/GetQuotaTemplateServiceStatusResult.h
+	include/alibabacloud/quotas/model/GetQuotaUtilizationOverviewRequest.h
+	include/alibabacloud/quotas/model/GetQuotaUtilizationOverviewResult.h
 	include/alibabacloud/quotas/model/ListAlarmHistoriesRequest.h
 	include/alibabacloud/quotas/model/ListAlarmHistoriesResult.h
 	include/alibabacloud/quotas/model/ListDependentQuotasRequest.h
@@ -67,12 +69,16 @@ set(quotas_public_header_model
 	include/alibabacloud/quotas/model/ListQuotaApplicationsDetailForTemplateResult.h
 	include/alibabacloud/quotas/model/ListQuotaApplicationsForTemplateRequest.h
 	include/alibabacloud/quotas/model/ListQuotaApplicationsForTemplateResult.h
+	include/alibabacloud/quotas/model/ListQuotaUtilizationReportRequest.h
+	include/alibabacloud/quotas/model/ListQuotaUtilizationReportResult.h
 	include/alibabacloud/quotas/model/ModifyQuotaTemplateServiceStatusRequest.h
 	include/alibabacloud/quotas/model/ModifyQuotaTemplateServiceStatusResult.h
 	include/alibabacloud/quotas/model/ModifyTemplateQuotaItemRequest.h
 	include/alibabacloud/quotas/model/ModifyTemplateQuotaItemResult.h
 	include/alibabacloud/quotas/model/RemindQuotaApplicationApprovalRequest.h
 	include/alibabacloud/quotas/model/RemindQuotaApplicationApprovalResult.h
+	include/alibabacloud/quotas/model/StartQuotaUtilizationReportRequest.h
+	include/alibabacloud/quotas/model/StartQuotaUtilizationReportResult.h
 	include/alibabacloud/quotas/model/UpdateQuotaAlarmRequest.h
 	include/alibabacloud/quotas/model/UpdateQuotaAlarmResult.h )
 
@@ -102,6 +108,8 @@ set(quotas_src
 	src/model/GetQuotaApplicationApprovalResult.cc
 	src/model/GetQuotaTemplateServiceStatusRequest.cc
 	src/model/GetQuotaTemplateServiceStatusResult.cc
+	src/model/GetQuotaUtilizationOverviewRequest.cc
+	src/model/GetQuotaUtilizationOverviewResult.cc
 	src/model/ListAlarmHistoriesRequest.cc
 	src/model/ListAlarmHistoriesResult.cc
 	src/model/ListDependentQuotasRequest.cc
@@ -124,12 +132,16 @@ set(quotas_src
 	src/model/ListQuotaApplicationsDetailForTemplateResult.cc
 	src/model/ListQuotaApplicationsForTemplateRequest.cc
 	src/model/ListQuotaApplicationsForTemplateResult.cc
+	src/model/ListQuotaUtilizationReportRequest.cc
+	src/model/ListQuotaUtilizationReportResult.cc
 	src/model/ModifyQuotaTemplateServiceStatusRequest.cc
 	src/model/ModifyQuotaTemplateServiceStatusResult.cc
 	src/model/ModifyTemplateQuotaItemRequest.cc
 	src/model/ModifyTemplateQuotaItemResult.cc
 	src/model/RemindQuotaApplicationApprovalRequest.cc
 	src/model/RemindQuotaApplicationApprovalResult.cc
+	src/model/StartQuotaUtilizationReportRequest.cc
+	src/model/StartQuotaUtilizationReportResult.cc
 	src/model/UpdateQuotaAlarmRequest.cc
 	src/model/UpdateQuotaAlarmResult.cc )
 

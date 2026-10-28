@@ -43,32 +43,32 @@ void ListQuotaApplicationTemplatesResult::parse(const std::string &payload)
 	for (auto valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem : allQuotaApplicationTemplatesNode)
 	{
 		QuotaApplicationTemplatesItem quotaApplicationTemplatesObject;
-		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["Id"].isNull())
-			quotaApplicationTemplatesObject.id = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["Id"].asString();
-		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ProductCode"].isNull())
-			quotaApplicationTemplatesObject.productCode = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ProductCode"].asString();
-		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["Dimensions"].isNull())
-			quotaApplicationTemplatesObject.dimensions = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["Dimensions"].asString();
-		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["DesireValue"].isNull())
-			quotaApplicationTemplatesObject.desireValue = std::stof(valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["DesireValue"].asString());
-		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["NoticeType"].isNull())
-			quotaApplicationTemplatesObject.noticeType = std::stoi(valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["NoticeType"].asString());
-		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaActionCode"].isNull())
-			quotaApplicationTemplatesObject.quotaActionCode = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaActionCode"].asString();
-		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ApplicableType"].isNull())
-			quotaApplicationTemplatesObject.applicableType = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ApplicableType"].asString();
-		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["EnvLanguage"].isNull())
-			quotaApplicationTemplatesObject.envLanguage = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["EnvLanguage"].asString();
-		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaName"].isNull())
-			quotaApplicationTemplatesObject.quotaName = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaName"].asString();
 		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaDescription"].isNull())
 			quotaApplicationTemplatesObject.quotaDescription = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaDescription"].asString();
 		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["EffectiveTime"].isNull())
 			quotaApplicationTemplatesObject.effectiveTime = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["EffectiveTime"].asString();
-		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ExpireTime"].isNull())
-			quotaApplicationTemplatesObject.expireTime = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ExpireTime"].asString();
+		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ProductCode"].isNull())
+			quotaApplicationTemplatesObject.productCode = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ProductCode"].asString();
+		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["Dimensions"].isNull())
+			quotaApplicationTemplatesObject.dimensions = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["Dimensions"].asString();
+		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["EnvLanguage"].isNull())
+			quotaApplicationTemplatesObject.envLanguage = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["EnvLanguage"].asString();
+		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaActionCode"].isNull())
+			quotaApplicationTemplatesObject.quotaActionCode = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaActionCode"].asString();
+		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaName"].isNull())
+			quotaApplicationTemplatesObject.quotaName = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaName"].asString();
 		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaCategory"].isNull())
 			quotaApplicationTemplatesObject.quotaCategory = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["QuotaCategory"].asString();
+		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["NoticeType"].isNull())
+			quotaApplicationTemplatesObject.noticeType = std::stoi(valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["NoticeType"].asString());
+		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["Id"].isNull())
+			quotaApplicationTemplatesObject.id = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["Id"].asString();
+		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["DesireValue"].isNull())
+			quotaApplicationTemplatesObject.desireValue = std::stof(valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["DesireValue"].asString());
+		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ExpireTime"].isNull())
+			quotaApplicationTemplatesObject.expireTime = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ExpireTime"].asString();
+		if(!valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ApplicableType"].isNull())
+			quotaApplicationTemplatesObject.applicableType = valueQuotaApplicationTemplatesQuotaApplicationTemplatesItem["ApplicableType"].asString();
 		auto periodNode = value["Period"];
 		if(!periodNode["PeriodValue"].isNull())
 			quotaApplicationTemplatesObject.period.periodValue = std::stoi(periodNode["PeriodValue"].asString());
@@ -79,12 +79,12 @@ void ListQuotaApplicationTemplatesResult::parse(const std::string &payload)
 			quotaApplicationTemplatesObject.applicableRange.push_back(value.asString());
 		quotaApplicationTemplates_.push_back(quotaApplicationTemplatesObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

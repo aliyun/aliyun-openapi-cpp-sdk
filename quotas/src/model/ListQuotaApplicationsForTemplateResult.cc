@@ -43,24 +43,24 @@ void ListQuotaApplicationsForTemplateResult::parse(const std::string &payload)
 	for (auto valueQuotaBatchApplicationsQuotaBatchApplicationsItem : allQuotaBatchApplicationsNode)
 	{
 		QuotaBatchApplicationsItem quotaBatchApplicationsObject;
-		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ProductCode"].isNull())
-			quotaBatchApplicationsObject.productCode = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ProductCode"].asString();
 		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["QuotaActionCode"].isNull())
 			quotaBatchApplicationsObject.quotaActionCode = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["QuotaActionCode"].asString();
+		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ApplyTime"].isNull())
+			quotaBatchApplicationsObject.applyTime = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ApplyTime"].asString();
 		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["BatchQuotaApplicationId"].isNull())
 			quotaBatchApplicationsObject.batchQuotaApplicationId = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["BatchQuotaApplicationId"].asString();
 		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["EffectiveTime"].isNull())
 			quotaBatchApplicationsObject.effectiveTime = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["EffectiveTime"].asString();
-		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ExpireTime"].isNull())
-			quotaBatchApplicationsObject.expireTime = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ExpireTime"].asString();
-		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ApplyTime"].isNull())
-			quotaBatchApplicationsObject.applyTime = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ApplyTime"].asString();
-		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["DesireValue"].isNull())
-			quotaBatchApplicationsObject.desireValue = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["DesireValue"].asString();
+		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ProductCode"].isNull())
+			quotaBatchApplicationsObject.productCode = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ProductCode"].asString();
 		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["QuotaCategory"].isNull())
 			quotaBatchApplicationsObject.quotaCategory = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["QuotaCategory"].asString();
 		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["Dimensions"].isNull())
 			quotaBatchApplicationsObject.dimensions = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["Dimensions"].asString();
+		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["DesireValue"].isNull())
+			quotaBatchApplicationsObject.desireValue = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["DesireValue"].asString();
+		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ExpireTime"].isNull())
+			quotaBatchApplicationsObject.expireTime = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["ExpireTime"].asString();
 		if(!valueQuotaBatchApplicationsQuotaBatchApplicationsItem["Reason"].isNull())
 			quotaBatchApplicationsObject.reason = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["Reason"].asString();
 		auto allAuditStatusVosNode = valueQuotaBatchApplicationsQuotaBatchApplicationsItem["AuditStatusVos"]["AuditStatusVo"];
@@ -78,10 +78,10 @@ void ListQuotaApplicationsForTemplateResult::parse(const std::string &payload)
 			quotaBatchApplicationsObject.aliyunUids.push_back(value.asString());
 		quotaBatchApplications_.push_back(quotaBatchApplicationsObject);
 	}
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
 		maxResults_ = std::stoi(value["MaxResults"].asString());
 

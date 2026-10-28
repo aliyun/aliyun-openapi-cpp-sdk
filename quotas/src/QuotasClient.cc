@@ -31,21 +31,21 @@ QuotasClient::QuotasClient(const Credentials &credentials, const ClientConfigura
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quotas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Quotas");
 }
 
 QuotasClient::QuotasClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quotas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Quotas");
 }
 
 QuotasClient::QuotasClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quotas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Quotas");
 }
 
 QuotasClient::~QuotasClient()
@@ -483,6 +483,42 @@ QuotasClient::GetQuotaTemplateServiceStatusOutcomeCallable QuotasClient::getQuot
 	return task->get_future();
 }
 
+QuotasClient::GetQuotaUtilizationOverviewOutcome QuotasClient::getQuotaUtilizationOverview(const GetQuotaUtilizationOverviewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetQuotaUtilizationOverviewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetQuotaUtilizationOverviewOutcome(GetQuotaUtilizationOverviewResult(outcome.result()));
+	else
+		return GetQuotaUtilizationOverviewOutcome(outcome.error());
+}
+
+void QuotasClient::getQuotaUtilizationOverviewAsync(const GetQuotaUtilizationOverviewRequest& request, const GetQuotaUtilizationOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getQuotaUtilizationOverview(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::GetQuotaUtilizationOverviewOutcomeCallable QuotasClient::getQuotaUtilizationOverviewCallable(const GetQuotaUtilizationOverviewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetQuotaUtilizationOverviewOutcome()>>(
+			[this, request]()
+			{
+			return this->getQuotaUtilizationOverview(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 QuotasClient::ListAlarmHistoriesOutcome QuotasClient::listAlarmHistories(const ListAlarmHistoriesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -879,6 +915,42 @@ QuotasClient::ListQuotaApplicationsForTemplateOutcomeCallable QuotasClient::list
 	return task->get_future();
 }
 
+QuotasClient::ListQuotaUtilizationReportOutcome QuotasClient::listQuotaUtilizationReport(const ListQuotaUtilizationReportRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListQuotaUtilizationReportOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListQuotaUtilizationReportOutcome(ListQuotaUtilizationReportResult(outcome.result()));
+	else
+		return ListQuotaUtilizationReportOutcome(outcome.error());
+}
+
+void QuotasClient::listQuotaUtilizationReportAsync(const ListQuotaUtilizationReportRequest& request, const ListQuotaUtilizationReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listQuotaUtilizationReport(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::ListQuotaUtilizationReportOutcomeCallable QuotasClient::listQuotaUtilizationReportCallable(const ListQuotaUtilizationReportRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListQuotaUtilizationReportOutcome()>>(
+			[this, request]()
+			{
+			return this->listQuotaUtilizationReport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 QuotasClient::ModifyQuotaTemplateServiceStatusOutcome QuotasClient::modifyQuotaTemplateServiceStatus(const ModifyQuotaTemplateServiceStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1053,42 @@ QuotasClient::RemindQuotaApplicationApprovalOutcomeCallable QuotasClient::remind
 			[this, request]()
 			{
 			return this->remindQuotaApplicationApproval(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+QuotasClient::StartQuotaUtilizationReportOutcome QuotasClient::startQuotaUtilizationReport(const StartQuotaUtilizationReportRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartQuotaUtilizationReportOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartQuotaUtilizationReportOutcome(StartQuotaUtilizationReportResult(outcome.result()));
+	else
+		return StartQuotaUtilizationReportOutcome(outcome.error());
+}
+
+void QuotasClient::startQuotaUtilizationReportAsync(const StartQuotaUtilizationReportRequest& request, const StartQuotaUtilizationReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startQuotaUtilizationReport(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+QuotasClient::StartQuotaUtilizationReportOutcomeCallable QuotasClient::startQuotaUtilizationReportCallable(const StartQuotaUtilizationReportRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartQuotaUtilizationReportOutcome()>>(
+			[this, request]()
+			{
+			return this->startQuotaUtilizationReport(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

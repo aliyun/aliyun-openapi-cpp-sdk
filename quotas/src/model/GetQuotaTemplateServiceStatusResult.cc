@@ -40,10 +40,10 @@ void GetQuotaTemplateServiceStatusResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto templateServiceStatusNode = value["TemplateServiceStatus"];
-	if(!templateServiceStatusNode["ServiceStatus"].isNull())
-		templateServiceStatus_.serviceStatus = std::stoi(templateServiceStatusNode["ServiceStatus"].asString());
 	if(!templateServiceStatusNode["ResourceDirectoryId"].isNull())
 		templateServiceStatus_.resourceDirectoryId = templateServiceStatusNode["ResourceDirectoryId"].asString();
+	if(!templateServiceStatusNode["ServiceStatus"].isNull())
+		templateServiceStatus_.serviceStatus = std::stoi(templateServiceStatusNode["ServiceStatus"].asString());
 
 }
 

@@ -34,16 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct QuotasItem
 				{
-					struct Period
-					{
-						int periodValue;
-						std::string periodUnit;
-					};
 					struct UsageMetric
 					{
 						std::string metricName;
 						std::string metricDimensions;
 						std::string metricNamespace;
+					};
+					struct Period
+					{
+						int periodValue;
+						std::string periodUnit;
 					};
 					struct QuotaItemsItem
 					{
@@ -53,24 +53,24 @@ namespace AlibabaCloud
 						std::string quotaUnit;
 					};
 					std::string quotaDescription;
-					std::string unadjustableDetail;
 					bool consumable;
+					std::string unadjustableDetail;
 					UsageMetric usageMetric;
-					float totalUsage;
-					std::string productCode;
 					std::string effectiveTime;
+					std::string productCode;
+					float totalUsage;
 					std::string quotaType;
 					Period period;
-					std::string quotaUnit;
 					std::string dimensions;
 					bool globalQuota;
+					std::string quotaUnit;
 					bool adjustable;
 					std::string quotaActionCode;
 					std::vector<QuotasItem::QuotaItemsItem> quotaItems;
 					std::string quotaName;
 					std::string quotaArn;
-					float totalQuota;
 					std::string applyReasonTips;
+					float totalQuota;
 					std::string quotaCategory;
 					std::vector<std::string> supportedRange;
 					std::string expireTime;

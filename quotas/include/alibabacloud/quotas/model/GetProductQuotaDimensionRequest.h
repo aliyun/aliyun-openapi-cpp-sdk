@@ -29,25 +29,25 @@ namespace Model {
 class ALIBABACLOUD_QUOTAS_EXPORT GetProductQuotaDimensionRequest : public RpcServiceRequest {
 public:
 	struct DependentDimensions {
-		std::string key;
 		std::string value;
+		std::string key;
 	};
 	GetProductQuotaDimensionRequest();
 	~GetProductQuotaDimensionRequest();
-	std::string getOriginalContext() const;
-	void setOriginalContext(const std::string &originalContext);
 	std::string getProductCode() const;
 	void setProductCode(const std::string &productCode);
-	std::vector<DependentDimensions> getDependentDimensions() const;
-	void setDependentDimensions(const std::vector<DependentDimensions> &dependentDimensions);
 	std::string getDimensionKey() const;
 	void setDimensionKey(const std::string &dimensionKey);
+	std::string getOriginalContext() const;
+	void setOriginalContext(const std::string &originalContext);
+	std::vector<DependentDimensions> getDependentDimensions() const;
+	void setDependentDimensions(const std::vector<DependentDimensions> &dependentDimensions);
 
 private:
-	std::string originalContext_;
 	std::string productCode_;
-	std::vector<DependentDimensions> dependentDimensions_;
 	std::string dimensionKey_;
+	std::string originalContext_;
+	std::vector<DependentDimensions> dependentDimensions_;
 };
 } // namespace Model
 } // namespace Quotas

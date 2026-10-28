@@ -29,8 +29,8 @@ namespace Model {
 class ALIBABACLOUD_QUOTAS_EXPORT ListQuotaAlarmsRequest : public RpcServiceRequest {
 public:
 	struct QuotaDimensions {
-		std::string key;
 		std::string value;
+		std::string key;
 	};
 	ListQuotaAlarmsRequest();
 	~ListQuotaAlarmsRequest();

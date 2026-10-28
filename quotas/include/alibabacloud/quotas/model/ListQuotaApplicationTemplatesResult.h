@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						std::string periodUnit;
 					};
 					std::string quotaDescription;
-					std::string productCode;
 					std::string effectiveTime;
+					std::string productCode;
 					Period period;
 					std::string dimensions;
 					std::string envLanguage;

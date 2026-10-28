@@ -41,38 +41,38 @@ void CreateQuotaApplicationResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["DesireValue"].isNull())
-		desireValue_ = std::stoi(value["DesireValue"].asString());
+	if(!value["ApplyTime"].isNull())
+		applyTime_ = value["ApplyTime"].asString();
+	if(!value["QuotaDescription"].isNull())
+		quotaDescription_ = value["QuotaDescription"].asString();
+	if(!value["EffectiveTime"].isNull())
+		effectiveTime_ = value["EffectiveTime"].asString();
+	if(!value["ProductCode"].isNull())
+		productCode_ = value["ProductCode"].asString();
+	if(!value["AuditReason"].isNull())
+		auditReason_ = value["AuditReason"].asString();
+	if(!value["QuotaUnit"].isNull())
+		quotaUnit_ = value["QuotaUnit"].asString();
+	if(!value["Dimension"].isNull())
+		dimension_ = value["Dimension"].asString();
+	if(!value["ApproveValue"].isNull())
+		approveValue_ = std::stof(value["ApproveValue"].asString());
+	if(!value["Reason"].isNull())
+		reason_ = value["Reason"].asString();
 	if(!value["QuotaActionCode"].isNull())
 		quotaActionCode_ = value["QuotaActionCode"].asString();
 	if(!value["QuotaName"].isNull())
 		quotaName_ = value["QuotaName"].asString();
-	if(!value["ApplicationId"].isNull())
-		applicationId_ = value["ApplicationId"].asString();
-	if(!value["Reason"].isNull())
-		reason_ = value["Reason"].asString();
-	if(!value["AuditReason"].isNull())
-		auditReason_ = value["AuditReason"].asString();
-	if(!value["QuotaDescription"].isNull())
-		quotaDescription_ = value["QuotaDescription"].asString();
-	if(!value["ProductCode"].isNull())
-		productCode_ = value["ProductCode"].asString();
 	if(!value["QuotaArn"].isNull())
 		quotaArn_ = value["QuotaArn"].asString();
-	if(!value["ApplyTime"].isNull())
-		applyTime_ = value["ApplyTime"].asString();
-	if(!value["ApproveValue"].isNull())
-		approveValue_ = std::stof(value["ApproveValue"].asString());
-	if(!value["Dimension"].isNull())
-		dimension_ = value["Dimension"].asString();
 	if(!value["NoticeType"].isNull())
 		noticeType_ = std::stol(value["NoticeType"].asString());
-	if(!value["EffectiveTime"].isNull())
-		effectiveTime_ = value["EffectiveTime"].asString();
+	if(!value["ApplicationId"].isNull())
+		applicationId_ = value["ApplicationId"].asString();
+	if(!value["DesireValue"].isNull())
+		desireValue_ = std::stoi(value["DesireValue"].asString());
 	if(!value["ExpireTime"].isNull())
 		expireTime_ = value["ExpireTime"].asString();
-	if(!value["QuotaUnit"].isNull())
-		quotaUnit_ = value["QuotaUnit"].asString();
 
 }
 
@@ -91,14 +91,14 @@ std::string CreateQuotaApplicationResult::getQuotaDescription()const
 	return quotaDescription_;
 }
 
-std::string CreateQuotaApplicationResult::getProductCode()const
-{
-	return productCode_;
-}
-
 std::string CreateQuotaApplicationResult::getEffectiveTime()const
 {
 	return effectiveTime_;
+}
+
+std::string CreateQuotaApplicationResult::getProductCode()const
+{
+	return productCode_;
 }
 
 std::string CreateQuotaApplicationResult::getAuditReason()const
@@ -146,14 +146,14 @@ long CreateQuotaApplicationResult::getNoticeType()const
 	return noticeType_;
 }
 
-int CreateQuotaApplicationResult::getDesireValue()const
-{
-	return desireValue_;
-}
-
 std::string CreateQuotaApplicationResult::getApplicationId()const
 {
 	return applicationId_;
+}
+
+int CreateQuotaApplicationResult::getDesireValue()const
+{
+	return desireValue_;
 }
 
 std::string CreateQuotaApplicationResult::getExpireTime()const

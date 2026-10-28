@@ -30,19 +30,19 @@ class ALIBABACLOUD_QUOTAS_EXPORT ListProductDimensionGroupsRequest : public RpcS
 public:
 	ListProductDimensionGroupsRequest();
 	~ListProductDimensionGroupsRequest();
-	std::string getOriginalContext() const;
-	void setOriginalContext(const std::string &originalContext);
 	std::string getProductCode() const;
 	void setProductCode(const std::string &productCode);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::string getOriginalContext() const;
+	void setOriginalContext(const std::string &originalContext);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
 
 private:
-	std::string originalContext_;
 	std::string productCode_;
 	std::string nextToken_;
+	std::string originalContext_;
 	int maxResults_;
 };
 } // namespace Model

@@ -43,11 +43,11 @@ namespace AlibabaCloud
 					std::string applyTime;
 					std::string quotaDescription;
 					std::string batchQuotaApplicationId;
-					std::string productCode;
 					std::string effectiveTime;
+					std::string productCode;
 					Period period;
-					std::string quotaUnit;
 					std::string auditReason;
+					std::string quotaUnit;
 					double approveValue;
 					std::string reason;
 					std::string envLanguage;

@@ -25,15 +25,6 @@ GetProductQuotaDimensionRequest::GetProductQuotaDimensionRequest()
 
 GetProductQuotaDimensionRequest::~GetProductQuotaDimensionRequest() {}
 
-std::string GetProductQuotaDimensionRequest::getOriginalContext() const {
-  return originalContext_;
-}
-
-void GetProductQuotaDimensionRequest::setOriginalContext(const std::string &originalContext) {
-  originalContext_ = originalContext;
-  setBodyParameter(std::string("OriginalContext"), originalContext);
-}
-
 std::string GetProductQuotaDimensionRequest::getProductCode() const {
   return productCode_;
 }
@@ -41,6 +32,24 @@ std::string GetProductQuotaDimensionRequest::getProductCode() const {
 void GetProductQuotaDimensionRequest::setProductCode(const std::string &productCode) {
   productCode_ = productCode;
   setBodyParameter(std::string("ProductCode"), productCode);
+}
+
+std::string GetProductQuotaDimensionRequest::getDimensionKey() const {
+  return dimensionKey_;
+}
+
+void GetProductQuotaDimensionRequest::setDimensionKey(const std::string &dimensionKey) {
+  dimensionKey_ = dimensionKey;
+  setBodyParameter(std::string("DimensionKey"), dimensionKey);
+}
+
+std::string GetProductQuotaDimensionRequest::getOriginalContext() const {
+  return originalContext_;
+}
+
+void GetProductQuotaDimensionRequest::setOriginalContext(const std::string &originalContext) {
+  originalContext_ = originalContext;
+  setBodyParameter(std::string("OriginalContext"), originalContext);
 }
 
 std::vector<GetProductQuotaDimensionRequest::DependentDimensions> GetProductQuotaDimensionRequest::getDependentDimensions() const {
@@ -52,17 +61,8 @@ void GetProductQuotaDimensionRequest::setDependentDimensions(const std::vector<G
   for(int dep1 = 0; dep1 != dependentDimensions.size(); dep1++) {
   auto dependentDimensionsObj = dependentDimensions.at(dep1);
   std::string dependentDimensionsObjStr = std::string("DependentDimensions") + "." + std::to_string(dep1 + 1);
-    setBodyParameter(dependentDimensionsObjStr + ".Key", dependentDimensionsObj.key);
     setBodyParameter(dependentDimensionsObjStr + ".Value", dependentDimensionsObj.value);
+    setBodyParameter(dependentDimensionsObjStr + ".Key", dependentDimensionsObj.key);
   }
-}
-
-std::string GetProductQuotaDimensionRequest::getDimensionKey() const {
-  return dimensionKey_;
-}
-
-void GetProductQuotaDimensionRequest::setDimensionKey(const std::string &dimensionKey) {
-  dimensionKey_ = dimensionKey;
-  setBodyParameter(std::string("DimensionKey"), dimensionKey);
 }
 

@@ -36,10 +36,10 @@ namespace AlibabaCloud
 				{
 					bool dynamic;
 					std::string secondCategoryNameEn;
-					std::string productName;
 					std::string commonQuotaSupport;
-					std::string secondCategoryName;
+					std::string productName;
 					std::string productCode;
+					std::string secondCategoryName;
 					std::string flowControlSupport;
 					std::string whiteListLabelQuotaSupport;
 					long secondCategoryId;

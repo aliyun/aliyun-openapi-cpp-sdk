@@ -42,14 +42,14 @@ namespace AlibabaCloud
 					std::string quotaActionCode;
 					std::string applyTime;
 					std::vector<QuotaBatchApplicationsItem::AuditStatusVo> auditStatusVos;
-					std::string productCode;
 					std::string batchQuotaApplicationId;
 					std::string effectiveTime;
+					std::string productCode;
 					std::string quotaCategory;
 					std::vector<std::string> aliyunUids;
 					std::string dimensions;
-					std::string expireTime;
 					double desireValue;
+					std::string expireTime;
 					std::string reason;
 				};
 

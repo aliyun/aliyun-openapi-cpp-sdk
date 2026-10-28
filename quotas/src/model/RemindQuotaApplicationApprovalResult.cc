@@ -42,22 +42,22 @@ void RemindQuotaApplicationApprovalResult::parse(const std::string &payload)
 	auto allErrorArgs = value["ErrorArgs"]["ErrorArg"];
 	for (const auto &item : allErrorArgs)
 		errorArgs_.push_back(item.asString());
+	if(!value["AllowRetry"].isNull())
+		allowRetry_ = value["AllowRetry"].asString() == "true";
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["DynamicCode"].isNull())
 		dynamicCode_ = value["DynamicCode"].asString();
 	if(!value["DynamicMessage"].isNull())
 		dynamicMessage_ = value["DynamicMessage"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Module"].isNull())
 		module_ = value["Module"].asString();
-	if(!value["AllowRetry"].isNull())
-		allowRetry_ = value["AllowRetry"].asString() == "true";
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -71,14 +71,14 @@ std::vector<std::string> RemindQuotaApplicationApprovalResult::getErrorArgs()con
 	return errorArgs_;
 }
 
-int RemindQuotaApplicationApprovalResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
-}
-
 std::string RemindQuotaApplicationApprovalResult::getErrorMsg()const
 {
 	return errorMsg_;
+}
+
+int RemindQuotaApplicationApprovalResult::getHttpStatusCode()const
+{
+	return httpStatusCode_;
 }
 
 std::string RemindQuotaApplicationApprovalResult::getDynamicCode()const

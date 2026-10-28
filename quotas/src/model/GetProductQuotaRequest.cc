@@ -61,8 +61,8 @@ void GetProductQuotaRequest::setDimensions(const std::vector<GetProductQuotaRequ
   for(int dep1 = 0; dep1 != dimensions.size(); dep1++) {
   auto dimensionsObj = dimensions.at(dep1);
   std::string dimensionsObjStr = std::string("Dimensions") + "." + std::to_string(dep1 + 1);
-    setBodyParameter(dimensionsObjStr + ".Key", dimensionsObj.key);
     setBodyParameter(dimensionsObjStr + ".Value", dimensionsObj.value);
+    setBodyParameter(dimensionsObjStr + ".Key", dimensionsObj.key);
   }
 }
 

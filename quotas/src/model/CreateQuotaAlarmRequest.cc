@@ -79,8 +79,8 @@ void CreateQuotaAlarmRequest::setQuotaDimensions(const std::vector<CreateQuotaAl
   for(int dep1 = 0; dep1 != quotaDimensions.size(); dep1++) {
   auto quotaDimensionsObj = quotaDimensions.at(dep1);
   std::string quotaDimensionsObjStr = std::string("QuotaDimensions") + "." + std::to_string(dep1 + 1);
-    setBodyParameter(quotaDimensionsObjStr + ".Key", quotaDimensionsObj.key);
     setBodyParameter(quotaDimensionsObjStr + ".Value", quotaDimensionsObj.value);
+    setBodyParameter(quotaDimensionsObjStr + ".Key", quotaDimensionsObj.key);
   }
 }
 

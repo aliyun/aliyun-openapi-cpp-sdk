@@ -46,8 +46,8 @@ namespace AlibabaCloud
 				~GetQuotaApplicationApprovalResult();
 				bool getAllowRetry()const;
 				std::vector<std::string> getErrorArgs()const;
-				int getHttpStatusCode()const;
 				std::string getErrorMsg()const;
+				int getHttpStatusCode()const;
 				std::string getDynamicCode()const;
 				std::string getDynamicMessage()const;
 				std::string getErrorCode()const;
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 			private:
 				bool allowRetry_;
 				std::vector<std::string> errorArgs_;
-				int httpStatusCode_;
 				std::string errorMsg_;
+				int httpStatusCode_;
 				std::string dynamicCode_;
 				std::string dynamicMessage_;
 				std::string errorCode_;
