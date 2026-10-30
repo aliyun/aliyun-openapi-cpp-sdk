@@ -17,6 +17,7 @@
 #include <algorithm>
 #include <alibabacloud/core/AlibabaCloud.h>
 #include <alibabacloud/core/HmacSha1Signer.h>
+#include <alibabacloud/core/HmacSha256Signer.h>
 #include <alibabacloud/core/RoaServiceClient.h>
 #include <alibabacloud/core/Utils.h>
 #include <iomanip>
@@ -30,7 +31,12 @@ RoaServiceClient::RoaServiceClient(
     const ClientConfiguration &configuration,
     const std::shared_ptr<Signer> &signer)
     : CoreClient(servicename, configuration),
-      credentialsProvider_(credentialsProvider), signer_(signer) {}
+      credentialsProvider_(credentialsProvider),
+      signer_(signer ? signer
+                     : configuration.backToHmacSHA1()
+                           ? std::shared_ptr<Signer>(
+                                 std::make_shared<HmacSha1Signer>())
+                           : std::make_shared<HmacSha256Signer>()) {}
 
 RoaServiceClient::~RoaServiceClient() {}
 
