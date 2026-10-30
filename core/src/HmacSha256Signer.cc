@@ -34,7 +34,7 @@ HmacSha256Signer::~HmacSha256Signer() {}
 
 std::string HmacSha256Signer::generate(const std::string &src,
                                       const std::string &secret) const {
-  if (src.empty() || secret.size() > std::numeric_limits<int>::max())
+  if (src.empty() || secret.size() > (std::numeric_limits<int>::max)())
     return std::string();
 
 #ifdef _WIN32
