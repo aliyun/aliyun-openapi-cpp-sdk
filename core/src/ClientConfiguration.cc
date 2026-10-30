@@ -57,6 +57,12 @@ void ClientConfiguration::setReadTimeout(const long readTimeout) {
   readTimeout_ = readTimeout;
 }
 
+bool ClientConfiguration::useHmacSha1() const { return useHmacSha1_; }
+
+void ClientConfiguration::setUseHmacSha1(bool useHmacSha1) {
+  useHmacSha1_ = useHmacSha1;
+}
+
 bool ClientConfiguration::rejectUnauthorized() const {
   return rejectUnauthorized_;
 }
