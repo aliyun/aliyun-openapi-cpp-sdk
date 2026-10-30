@@ -43,8 +43,9 @@ public:
   void setConnectTimeout(const long connectTimeout);
   void setReadTimeout(const long readTimeout);
 
-  bool useHmacSha1() const;
-  void setUseHmacSha1(bool useHmacSha1);
+  // Signature V2 only. SHA1 is less secure; fallback is not recommended.
+  bool backToHmacSHA1() const;
+  void setBackToHmacSHA1(bool backToHmacSHA1);
 
   bool rejectUnauthorized() const;
   void setRejectUnauthorized(const bool rejectUnauthorized);
@@ -56,7 +57,7 @@ private:
   long connectTimeout_;
   long readTimeout_;
   bool rejectUnauthorized_ = true;
-  bool useHmacSha1_ = false;
+  bool backToHmacSHA1_ = false;
 };
 } // namespace AlibabaCloud
 

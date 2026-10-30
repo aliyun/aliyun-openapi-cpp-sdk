@@ -33,7 +33,7 @@ RpcServiceClient::RpcServiceClient(
     : CoreClient(servicename, configuration),
       credentialsProvider_(credentialsProvider),
       signer_(signer ? signer
-                     : configuration.useHmacSha1()
+                     : configuration.backToHmacSHA1()
                            ? std::shared_ptr<Signer>(
                                  std::make_shared<HmacSha1Signer>())
                            : std::make_shared<HmacSha256Signer>()) {}

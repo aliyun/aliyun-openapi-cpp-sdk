@@ -30,11 +30,11 @@ TEST(ClientConfiguration, basic) {
   EXPECT_TRUE(config.proxy().user() == user);
   EXPECT_TRUE(config.proxy().password() == password);
 
-  EXPECT_FALSE(config.useHmacSha1());
-  config.setUseHmacSha1(true);
-  EXPECT_TRUE(config.useHmacSha1());
-  config.setUseHmacSha1(false);
-  EXPECT_FALSE(config.useHmacSha1());
+  EXPECT_FALSE(config.backToHmacSHA1());
+  config.setBackToHmacSHA1(true);
+  EXPECT_TRUE(config.backToHmacSHA1());
+  config.setBackToHmacSHA1(false);
+  EXPECT_FALSE(config.backToHmacSHA1());
 
   EXPECT_TRUE(config.connectTimeout() == kDefaultConnectTimeout);
   EXPECT_TRUE(config.readTimeout() == kDefaultReadTimeout);

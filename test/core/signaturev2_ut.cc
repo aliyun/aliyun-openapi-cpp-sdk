@@ -128,7 +128,7 @@ TEST(SignatureV2, defaultAndConfiguredAlgorithms) {
       for (auto method : {HttpRequest::Method::Get, HttpRequest::Method::Post}) {
         ClientConfiguration config("cn-hangzhou");
         if (sha1)
-          config.setUseHmacSha1(true);
+          config.setBackToHmacSHA1(true);
         const Credentials credentials("test-key", "test-secret", token);
         auto provider = std::make_shared<SimpleCredentialsProvider>(credentials);
         SignatureV2RpcClient rpc("ecs", provider, config);
@@ -169,7 +169,7 @@ TEST(SignatureV2, explicitSignerOverridesConfiguration) {
   auto provider = std::make_shared<SimpleCredentialsProvider>(credentials);
   for (bool sha1 : {false, true}) {
     ClientConfiguration config;
-    config.setUseHmacSha1(!sha1);
+    config.setBackToHmacSHA1(!sha1);
     std::shared_ptr<Signer> signer = sha1
         ? std::shared_ptr<Signer>(std::make_shared<HmacSha1Signer>())
         : std::make_shared<HmacSha256Signer>();
@@ -188,7 +188,7 @@ TEST(SignatureV2, assumeRoleUsesConfiguredAlgorithm) {
   const Credentials credentials("source-key", "source-secret");
   for (bool sha1 : {false, true}) {
     ClientConfiguration config;
-    config.setUseHmacSha1(sha1);
+    config.setBackToHmacSHA1(sha1);
     SignatureV2StsProvider provider(credentials, config, "acs:ram::123:role/test", "session");
     Sts::Model::AssumeRoleRequest request;
     request.setRoleArn("acs:ram::123:role/test");
