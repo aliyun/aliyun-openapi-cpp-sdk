@@ -37,18 +37,14 @@ CommonClient::CommonClient(const Credentials &credentials,
     : CoreClient(SERVICE_NAME, configuration),
       credentialsProvider_(
           std::make_shared<SimpleCredentialsProvider>(credentials)),
-      signer_(configuration.backToHmacSHA1()
-                  ? std::shared_ptr<Signer>(std::make_shared<HmacSha1Signer>())
-                  : std::make_shared<HmacSha256Signer>()) {}
+      signer_(std::make_shared<HmacSha256Signer>()) {}
 
 CommonClient::CommonClient(
     const std::shared_ptr<CredentialsProvider> &credentialsProvider,
     const ClientConfiguration &configuration)
     : CoreClient(SERVICE_NAME, configuration),
       credentialsProvider_(credentialsProvider),
-      signer_(configuration.backToHmacSHA1()
-                  ? std::shared_ptr<Signer>(std::make_shared<HmacSha1Signer>())
-                  : std::make_shared<HmacSha256Signer>()) {}
+      signer_(std::make_shared<HmacSha256Signer>()) {}
 
 CommonClient::CommonClient(const std::string &accessKeyId,
                            const std::string &accessKeySecret,
@@ -56,9 +52,7 @@ CommonClient::CommonClient(const std::string &accessKeyId,
     : CoreClient(SERVICE_NAME, configuration),
       credentialsProvider_(std::make_shared<SimpleCredentialsProvider>(
           accessKeyId, accessKeySecret)),
-      signer_(configuration.backToHmacSHA1()
-                  ? std::shared_ptr<Signer>(std::make_shared<HmacSha1Signer>())
-                  : std::make_shared<HmacSha256Signer>()) {}
+      signer_(std::make_shared<HmacSha256Signer>()) {}
 
 CommonClient::~CommonClient() {}
 

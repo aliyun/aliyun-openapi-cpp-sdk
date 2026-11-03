@@ -20,6 +20,7 @@
 #include "CoreClient.h"
 #include "CredentialsProvider.h"
 #include "HmacSha1Signer.h"
+#include "HmacSha256Signer.h"
 #include "HttpRequest.h"
 #include "Outcome.h"
 #include "RpcServiceRequest.h"
@@ -38,7 +39,8 @@ public:
       const std::string &servicename,
       const std::shared_ptr<CredentialsProvider> &credentialsProvider,
       const ClientConfiguration &configuration,
-      const std::shared_ptr<Signer> &signer = nullptr);
+      const std::shared_ptr<Signer> &signer =
+          std::make_shared<HmacSha256Signer>());
   virtual ~RpcServiceClient();
 
   std::shared_ptr<CredentialsProvider> credentialsProvider() {

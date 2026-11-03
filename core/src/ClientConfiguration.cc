@@ -57,12 +57,6 @@ void ClientConfiguration::setReadTimeout(const long readTimeout) {
   readTimeout_ = readTimeout;
 }
 
-bool ClientConfiguration::backToHmacSHA1() const { return backToHmacSHA1_; }
-
-void ClientConfiguration::setBackToHmacSHA1(bool backToHmacSHA1) {
-  backToHmacSHA1_ = backToHmacSHA1;
-}
-
 bool ClientConfiguration::rejectUnauthorized() const {
   return rejectUnauthorized_;
 }

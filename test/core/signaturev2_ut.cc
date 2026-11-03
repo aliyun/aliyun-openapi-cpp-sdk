@@ -122,54 +122,49 @@ TEST(SignatureV2, sha256KnownVectors) {
   EXPECT_TRUE(signer.generate("", "").empty());
 }
 
-TEST(SignatureV2, defaultAndConfiguredAlgorithms) {
-  for (bool sha1 : {false, true}) {
-    for (const std::string &token : {std::string(), std::string("token+/=")}) {
-      for (auto method : {HttpRequest::Method::Get, HttpRequest::Method::Post}) {
-        ClientConfiguration config("cn-hangzhou");
-        if (sha1)
-          config.setBackToHmacSHA1(true);
-        const Credentials credentials("test-key", "test-secret", token);
-        auto provider = std::make_shared<SimpleCredentialsProvider>(credentials);
-        SignatureV2RpcClient rpc("ecs", provider, config);
-        RpcServiceRequest rpcRequest("Ecs", "2014-05-26", "DescribeRegions");
-        rpcRequest.setBodyParameter("Value", "中文 +/~*");
-        assertRpcSignature(rpc.buildHttpRequest("example.test", rpcRequest, method),
-                           credentials, sha1);
+TEST(SignatureV2, defaultAlgorithm) {
+  for (const std::string &token : {std::string(), std::string("token+/=")}) {
+    for (auto method : {HttpRequest::Method::Get, HttpRequest::Method::Post}) {
+      ClientConfiguration config("cn-hangzhou");
+      const Credentials credentials("test-key", "test-secret", token);
+      auto provider = std::make_shared<SimpleCredentialsProvider>(credentials);
+      SignatureV2RpcClient rpc("ecs", provider, config);
+      RpcServiceRequest rpcRequest("Ecs", "2014-05-26", "DescribeRegions");
+      rpcRequest.setBodyParameter("Value", "中文 +/~*");
+      assertRpcSignature(rpc.buildHttpRequest("example.test", rpcRequest, method),
+                         credentials, false);
 
-        SignatureV2RoaClient roa("cs", provider, config);
-        RoaServiceRequest roaRequest("CS", "2015-12-15");
-        roaRequest.setResourcePath("/regions/cn-hangzhou/clusters");
-        const std::string body = "中文 +/~*";
-        roaRequest.setContent(body.data(), body.size());
-        assertRoaSignature(roa.buildHttpRequest("example.test", roaRequest, method),
-                           credentials, sha1);
+      SignatureV2RoaClient roa("cs", provider, config);
+      RoaServiceRequest roaRequest("CS", "2015-12-15");
+      roaRequest.setResourcePath("/regions/cn-hangzhou/clusters");
+      const std::string body = "中文 +/~*";
+      roaRequest.setContent(body.data(), body.size());
+      assertRoaSignature(roa.buildHttpRequest("example.test", roaRequest, method),
+                         credentials, false);
 
-        CommonRequest commonRequest;
-        commonRequest.setVersion("2014-05-26");
-        commonRequest.setBodyParameter("Value", "中文 +/~*");
-        SignatureV2CommonClient common(credentials, config);
-        assertRpcSignature(common.buildRpcHttpRequest("example.test", commonRequest, method),
-                           credentials, sha1);
-        assertRoaSignature(common.buildRoaHttpRequest("example.test", commonRequest, method),
-                           credentials, sha1);
-        SignatureV2CommonClient byProvider(provider, config);
-        assertRpcSignature(byProvider.buildRpcHttpRequest("example.test", commonRequest, method),
-                           credentials, sha1);
-        SignatureV2CommonClient byKey("test-key", "test-secret", config);
-        assertRpcSignature(byKey.buildRpcHttpRequest("example.test", commonRequest, method),
-                           Credentials("test-key", "test-secret"), sha1);
-      }
+      CommonRequest commonRequest;
+      commonRequest.setVersion("2014-05-26");
+      commonRequest.setBodyParameter("Value", "中文 +/~*");
+      SignatureV2CommonClient common(credentials, config);
+      assertRpcSignature(common.buildRpcHttpRequest("example.test", commonRequest, method),
+                         credentials, false);
+      assertRoaSignature(common.buildRoaHttpRequest("example.test", commonRequest, method),
+                         credentials, false);
+      SignatureV2CommonClient byProvider(provider, config);
+      assertRpcSignature(byProvider.buildRpcHttpRequest("example.test", commonRequest, method),
+                         credentials, false);
+      SignatureV2CommonClient byKey("test-key", "test-secret", config);
+      assertRpcSignature(byKey.buildRpcHttpRequest("example.test", commonRequest, method),
+                         Credentials("test-key", "test-secret"), false);
     }
   }
 }
 
-TEST(SignatureV2, explicitSignerOverridesConfiguration) {
+TEST(SignatureV2, explicitSignerIsPreserved) {
   const Credentials credentials("test-key", "test-secret");
   auto provider = std::make_shared<SimpleCredentialsProvider>(credentials);
   for (bool sha1 : {false, true}) {
     ClientConfiguration config;
-    config.setBackToHmacSHA1(!sha1);
     std::shared_ptr<Signer> signer = sha1
         ? std::shared_ptr<Signer>(std::make_shared<HmacSha1Signer>())
         : std::make_shared<HmacSha256Signer>();
@@ -184,18 +179,15 @@ TEST(SignatureV2, explicitSignerOverridesConfiguration) {
   }
 }
 
-TEST(SignatureV2, assumeRoleUsesConfiguredAlgorithm) {
+TEST(SignatureV2, assumeRoleUsesSha256) {
   const Credentials credentials("source-key", "source-secret");
-  for (bool sha1 : {false, true}) {
-    ClientConfiguration config;
-    config.setBackToHmacSHA1(sha1);
-    SignatureV2StsProvider provider(credentials, config, "acs:ram::123:role/test", "session");
-    Sts::Model::AssumeRoleRequest request;
-    request.setRoleArn("acs:ram::123:role/test");
-    request.setRoleSessionName("session");
-    assertRpcSignature(provider.buildHttpRequest("sts.example.test", request, HttpRequest::Method::Post),
-                       credentials, sha1);
-  }
+  ClientConfiguration config;
+  SignatureV2StsProvider provider(credentials, config, "acs:ram::123:role/test", "session");
+  Sts::Model::AssumeRoleRequest request;
+  request.setRoleArn("acs:ram::123:role/test");
+  request.setRoleSessionName("session");
+  assertRpcSignature(provider.buildHttpRequest("sts.example.test", request, HttpRequest::Method::Post),
+                     credentials, false);
 }
 
 } // namespace
