@@ -25,6 +25,7 @@ class ALIBABACLOUD_CORE_EXPORT Signer {
 public:
   enum Type {
     HmacSha1,
+    HmacSha256,
   };
   virtual ~Signer();
 

@@ -42,6 +42,7 @@ set(core_public_header
 	include/alibabacloud/core/Error.h
 	include/alibabacloud/core/Global.h
 	include/alibabacloud/core/HmacSha1Signer.h
+	include/alibabacloud/core/HmacSha256Signer.h
 	include/alibabacloud/core/HttpClient.h
 	include/alibabacloud/core/HttpMessage.h
 	include/alibabacloud/core/HttpResponse.h
@@ -103,6 +104,7 @@ set(core_src
 	src/Executor.cc
 	src/Executor.h
 	src/HmacSha1Signer.cc
+	src/HmacSha256Signer.cc
 	src/HttpClient.cc
 	src/HttpMessage.cc
 	src/HttpResponse.cc

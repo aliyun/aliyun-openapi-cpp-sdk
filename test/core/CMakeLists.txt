@@ -53,6 +53,7 @@ add_executable(core_ut
   httpresponse_ut.cc
   httpmessage_ut.cc
   hmacsha1signer_ut.cc
+  signaturev2_ut.cc
   networkproxy_ut.cc
   roaserviceclient_ut.cc
   roaservicerequest_ut.cc

@@ -126,7 +126,7 @@ namespace {
     string signature_nonce = "fb62c51d-f735-4ec7-870d-c6ce03368214";
     EXPECT_TRUE(rr.header("x-acs-signature-nonce").length() == signature_nonce.length());
 
-    EXPECT_TRUE(rr.header("x-acs-signature-method") == "HMAC-SHA1");
+    EXPECT_TRUE(rr.header("x-acs-signature-method") == "HMAC-SHA256");
     EXPECT_TRUE(rr.header("x-acs-signature-version") == "1.0");
     EXPECT_TRUE(rr.header("x-acs-version") == "");
     EXPECT_TRUE(rr.header("x-sdk-client") == string("CPP/").append(ALIBABACLOUD_VERSION_STR));
