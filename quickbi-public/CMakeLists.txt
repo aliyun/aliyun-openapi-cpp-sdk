@@ -113,6 +113,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/GetMailTaskListResult.h
 	include/alibabacloud/quickbi-public/model/GetMailTaskStatusRequest.h
 	include/alibabacloud/quickbi-public/model/GetMailTaskStatusResult.h
+	include/alibabacloud/quickbi-public/model/GetPersonalICodeRequest.h
+	include/alibabacloud/quickbi-public/model/GetPersonalICodeResult.h
 	include/alibabacloud/quickbi-public/model/GetUserGroupInfoRequest.h
 	include/alibabacloud/quickbi-public/model/GetUserGroupInfoResult.h
 	include/alibabacloud/quickbi-public/model/GetWorksEmbedListRequest.h
@@ -293,6 +295,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/UpdateDataSourcePropertiesResult.h
 	include/alibabacloud/quickbi-public/model/UpdateEmbeddedStatusRequest.h
 	include/alibabacloud/quickbi-public/model/UpdateEmbeddedStatusResult.h
+	include/alibabacloud/quickbi-public/model/UpdatePersonalICodeRequest.h
+	include/alibabacloud/quickbi-public/model/UpdatePersonalICodeResult.h
 	include/alibabacloud/quickbi-public/model/UpdateTicketNumRequest.h
 	include/alibabacloud/quickbi-public/model/UpdateTicketNumResult.h
 	include/alibabacloud/quickbi-public/model/UpdateUserRequest.h
@@ -404,6 +408,8 @@ set(quickbi-public_src
 	src/model/GetMailTaskListResult.cc
 	src/model/GetMailTaskStatusRequest.cc
 	src/model/GetMailTaskStatusResult.cc
+	src/model/GetPersonalICodeRequest.cc
+	src/model/GetPersonalICodeResult.cc
 	src/model/GetUserGroupInfoRequest.cc
 	src/model/GetUserGroupInfoResult.cc
 	src/model/GetWorksEmbedListRequest.cc
@@ -584,6 +590,8 @@ set(quickbi-public_src
 	src/model/UpdateDataSourcePropertiesResult.cc
 	src/model/UpdateEmbeddedStatusRequest.cc
 	src/model/UpdateEmbeddedStatusResult.cc
+	src/model/UpdatePersonalICodeRequest.cc
+	src/model/UpdatePersonalICodeResult.cc
 	src/model/UpdateTicketNumRequest.cc
 	src/model/UpdateTicketNumResult.cc
 	src/model/UpdateUserRequest.cc

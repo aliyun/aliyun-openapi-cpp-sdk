@@ -42,6 +42,24 @@ void QueryDataResult::parse(const std::string &payload)
 	auto resultNode = value["Result"];
 	if(!resultNode["Sql"].isNull())
 		result_.sql = resultNode["Sql"].asString();
+	auto allValuesV2Node = resultNode["ValuesV2"]["ValuesV2Item"];
+	for (auto resultNodeValuesV2ValuesV2Item : allValuesV2Node)
+	{
+		Result::ValuesV2Item valuesV2ItemObject;
+		auto allRowValueNode = resultNodeValuesV2ValuesV2Item["RowValue"]["RowValueItem"];
+		for (auto resultNodeValuesV2ValuesV2ItemRowValueRowValueItem : allRowValueNode)
+		{
+			Result::ValuesV2Item::RowValueItem rowValueObject;
+			if(!resultNodeValuesV2ValuesV2ItemRowValueRowValueItem["R"].isNull())
+				rowValueObject.r = resultNodeValuesV2ValuesV2ItemRowValueRowValueItem["R"].asString();
+			if(!resultNodeValuesV2ValuesV2ItemRowValueRowValueItem["V"].isNull())
+				rowValueObject.v = resultNodeValuesV2ValuesV2ItemRowValueRowValueItem["V"].asString();
+			if(!resultNodeValuesV2ValuesV2ItemRowValueRowValueItem["L"].isNull())
+				rowValueObject.l = resultNodeValuesV2ValuesV2ItemRowValueRowValueItem["L"].asString();
+			valuesV2ItemObject.rowValue.push_back(rowValueObject);
+		}
+		result_.valuesV2.push_back(valuesV2ItemObject);
+	}
 	auto allHeadersNode = resultNode["Headers"]["HeadersItem"];
 	for (auto resultNodeHeadersHeadersItem : allHeadersNode)
 	{

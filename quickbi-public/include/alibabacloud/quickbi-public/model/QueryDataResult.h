@@ -34,6 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
+					struct ValuesV2Item
+					{
+						struct RowValueItem
+						{
+							std::string r;
+							std::string v;
+							std::string l;
+						};
+						std::vector<ValuesV2Item::RowValueItem> rowValue;
+					};
 					struct HeadersItem
 					{
 						std::string type;
@@ -44,6 +54,7 @@ namespace AlibabaCloud
 						std::string granularity;
 						std::string originalColumn;
 					};
+					std::vector<ValuesV2Item> valuesV2;
 					std::vector<HeadersItem> headers;
 					std::vector<std::string> values;
 					std::string sql;

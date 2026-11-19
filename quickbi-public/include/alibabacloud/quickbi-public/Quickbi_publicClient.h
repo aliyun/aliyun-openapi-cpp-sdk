@@ -114,6 +114,8 @@
 #include "model/GetMailTaskListResult.h"
 #include "model/GetMailTaskStatusRequest.h"
 #include "model/GetMailTaskStatusResult.h"
+#include "model/GetPersonalICodeRequest.h"
+#include "model/GetPersonalICodeResult.h"
 #include "model/GetUserGroupInfoRequest.h"
 #include "model/GetUserGroupInfoResult.h"
 #include "model/GetWorksEmbedListRequest.h"
@@ -294,6 +296,8 @@
 #include "model/UpdateDataSourcePropertiesResult.h"
 #include "model/UpdateEmbeddedStatusRequest.h"
 #include "model/UpdateEmbeddedStatusResult.h"
+#include "model/UpdatePersonalICodeRequest.h"
+#include "model/UpdatePersonalICodeResult.h"
 #include "model/UpdateTicketNumRequest.h"
 #include "model/UpdateTicketNumResult.h"
 #include "model/UpdateUserRequest.h"
@@ -457,6 +461,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetMailTaskStatusResult> GetMailTaskStatusOutcome;
 			typedef std::future<GetMailTaskStatusOutcome> GetMailTaskStatusOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::GetMailTaskStatusRequest&, const GetMailTaskStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMailTaskStatusAsyncHandler;
+			typedef Outcome<Error, Model::GetPersonalICodeResult> GetPersonalICodeOutcome;
+			typedef std::future<GetPersonalICodeOutcome> GetPersonalICodeOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::GetPersonalICodeRequest&, const GetPersonalICodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPersonalICodeAsyncHandler;
 			typedef Outcome<Error, Model::GetUserGroupInfoResult> GetUserGroupInfoOutcome;
 			typedef std::future<GetUserGroupInfoOutcome> GetUserGroupInfoOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::GetUserGroupInfoRequest&, const GetUserGroupInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserGroupInfoAsyncHandler;
@@ -727,6 +734,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateEmbeddedStatusResult> UpdateEmbeddedStatusOutcome;
 			typedef std::future<UpdateEmbeddedStatusOutcome> UpdateEmbeddedStatusOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateEmbeddedStatusRequest&, const UpdateEmbeddedStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEmbeddedStatusAsyncHandler;
+			typedef Outcome<Error, Model::UpdatePersonalICodeResult> UpdatePersonalICodeOutcome;
+			typedef std::future<UpdatePersonalICodeOutcome> UpdatePersonalICodeOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdatePersonalICodeRequest&, const UpdatePersonalICodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePersonalICodeAsyncHandler;
 			typedef Outcome<Error, Model::UpdateTicketNumResult> UpdateTicketNumOutcome;
 			typedef std::future<UpdateTicketNumOutcome> UpdateTicketNumOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::UpdateTicketNumRequest&, const UpdateTicketNumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTicketNumAsyncHandler;
@@ -894,6 +904,9 @@ namespace AlibabaCloud
 			GetMailTaskStatusOutcome getMailTaskStatus(const Model::GetMailTaskStatusRequest &request)const;
 			void getMailTaskStatusAsync(const Model::GetMailTaskStatusRequest& request, const GetMailTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMailTaskStatusOutcomeCallable getMailTaskStatusCallable(const Model::GetMailTaskStatusRequest& request) const;
+			GetPersonalICodeOutcome getPersonalICode(const Model::GetPersonalICodeRequest &request)const;
+			void getPersonalICodeAsync(const Model::GetPersonalICodeRequest& request, const GetPersonalICodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPersonalICodeOutcomeCallable getPersonalICodeCallable(const Model::GetPersonalICodeRequest& request) const;
 			GetUserGroupInfoOutcome getUserGroupInfo(const Model::GetUserGroupInfoRequest &request)const;
 			void getUserGroupInfoAsync(const Model::GetUserGroupInfoRequest& request, const GetUserGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserGroupInfoOutcomeCallable getUserGroupInfoCallable(const Model::GetUserGroupInfoRequest& request) const;
@@ -1164,6 +1177,9 @@ namespace AlibabaCloud
 			UpdateEmbeddedStatusOutcome updateEmbeddedStatus(const Model::UpdateEmbeddedStatusRequest &request)const;
 			void updateEmbeddedStatusAsync(const Model::UpdateEmbeddedStatusRequest& request, const UpdateEmbeddedStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateEmbeddedStatusOutcomeCallable updateEmbeddedStatusCallable(const Model::UpdateEmbeddedStatusRequest& request) const;
+			UpdatePersonalICodeOutcome updatePersonalICode(const Model::UpdatePersonalICodeRequest &request)const;
+			void updatePersonalICodeAsync(const Model::UpdatePersonalICodeRequest& request, const UpdatePersonalICodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdatePersonalICodeOutcomeCallable updatePersonalICodeCallable(const Model::UpdatePersonalICodeRequest& request) const;
 			UpdateTicketNumOutcome updateTicketNum(const Model::UpdateTicketNumRequest &request)const;
 			void updateTicketNumAsync(const Model::UpdateTicketNumRequest& request, const UpdateTicketNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateTicketNumOutcomeCallable updateTicketNumCallable(const Model::UpdateTicketNumRequest& request) const;

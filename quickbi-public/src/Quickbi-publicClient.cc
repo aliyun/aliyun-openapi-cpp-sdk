@@ -1707,6 +1707,42 @@ Quickbi_publicClient::GetMailTaskStatusOutcomeCallable Quickbi_publicClient::get
 	return task->get_future();
 }
 
+Quickbi_publicClient::GetPersonalICodeOutcome Quickbi_publicClient::getPersonalICode(const GetPersonalICodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPersonalICodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPersonalICodeOutcome(GetPersonalICodeResult(outcome.result()));
+	else
+		return GetPersonalICodeOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::getPersonalICodeAsync(const GetPersonalICodeRequest& request, const GetPersonalICodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPersonalICode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::GetPersonalICodeOutcomeCallable Quickbi_publicClient::getPersonalICodeCallable(const GetPersonalICodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPersonalICodeOutcome()>>(
+			[this, request]()
+			{
+			return this->getPersonalICode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::GetUserGroupInfoOutcome Quickbi_publicClient::getUserGroupInfo(const GetUserGroupInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4941,6 +4977,42 @@ Quickbi_publicClient::UpdateEmbeddedStatusOutcomeCallable Quickbi_publicClient::
 			[this, request]()
 			{
 			return this->updateEmbeddedStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::UpdatePersonalICodeOutcome Quickbi_publicClient::updatePersonalICode(const UpdatePersonalICodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePersonalICodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePersonalICodeOutcome(UpdatePersonalICodeResult(outcome.result()));
+	else
+		return UpdatePersonalICodeOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::updatePersonalICodeAsync(const UpdatePersonalICodeRequest& request, const UpdatePersonalICodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePersonalICode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::UpdatePersonalICodeOutcomeCallable Quickbi_publicClient::updatePersonalICodeCallable(const UpdatePersonalICodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePersonalICodeOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePersonalICode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
